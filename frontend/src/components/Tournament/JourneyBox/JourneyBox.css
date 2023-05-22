@@ -1,0 +1,34 @@
+.journey_box {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: fit-content;
+    padding: 3px;
+    border: 1px solid black;
+    margin: 20px;
+}
+.journey_item {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    height: 40px;
+    border-top: 1px solid white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding-top: 0.6rem;
+}
+.journey_item_result {
+    width: 220px;
+}
+.journey_vs_team {
+    width: 120px;
+    padding-left: 15px;
+}
+.green {
+    background-color: forestgreen;
+    color: white;
+}
+.red {
+    background-color: red;
+    color: white;
+}

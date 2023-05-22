@@ -1,0 +1,6 @@
+.summary_innings {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    height: fit-content;
+}

@@ -1,0 +1,41 @@
+#summary_scoreline {
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.summary_teamname {
+    width: 75%;
+    height: 100%;
+    padding-top: 6px;
+    padding-left: 10px;
+    font-weight: 600;
+}
+
+.summary_score {
+    width: 25%;
+    height: 100%;
+    padding-top: 7px;
+    display: flex;
+    flex-direction: row;
+}
+
+#final_score {
+    width: 65%;
+    padding-right: 4px;
+    text-align: right;
+    font-weight: 600;
+}
+
+#final_overs {
+    font-size: 0.8rem;
+    width: 35%;
+    padding-left: 10px;
+    font-weight: 400;
+    padding-top: 6px;
+}
+
+

@@ -1,0 +1,128 @@
+.player_stats {
+    display: flex;
+    flex-direction: row;
+    border: 1px dotted black;
+    padding: 3px;
+    height: fit-content;
+    width: fit-content;
+}
+.pstat_box {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: fit-content;
+}
+.pstat_header{
+    display: flex;
+    flex-direction: row;
+    padding-left: 30px;
+}
+.pstat_header_info{
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+.pstat_header_playername{
+    height: 50px;
+    width: 400px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding-top: 25px;
+}
+.pstat_header_teamname{
+    height: 50px;
+    width: 400px;
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding-top: 10px;
+}
+
+.p_statbox{
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    width: fit-content;
+    padding: 25px;
+    padding-top: 0px;
+}
+.p_statbox_left {
+    display: flex;
+    flex-direction: row;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+
+}
+.p_statbox_right {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    border-left: 1px double white;
+    border-right: 1px double white;
+    border-bottom: 1px double white;
+}
+.p_statbox_keys{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+.p_statbox_keys_item {
+    height: 40px;
+    width: 120px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-top: 1px double white;
+    padding-top: 0.5rem;
+    padding-left: 8px;
+}
+.p_statbox_values {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+.p_statbox_values_item {
+    height: 40px;
+    width: 90px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-top: 1px solid white;
+    padding-top: 0.5rem;
+    padding-left: 15px;
+    border-left: 1px double white;
+
+}
+
+.pstat_emptybox{
+    width: 60px;
+}
+.p_stat_bold {
+    font-weight: 700;
+    font-size: 1rem;
+}
+.p_stat_buttons {
+    display: flex;
+    flex-direction: column;
+    height: 406px;
+    width: 100px;
+    color: var(--color1);
+    background-color: var(--color2);
+}
+.p_stat_button_item {
+    margin: 5px 5px;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 4px;
+    height: 40px;
+    padding-top: 0.5rem;
+    border: 1px solid var(--color1);
+}
+.p_stat_button_item:hover {
+    background-color: var(--color1);
+    color: var(--color2);
+    cursor: default;
+}
+.pstat_selected {
+    color: var(--color2);
+    background-color: var(--color1);
+}

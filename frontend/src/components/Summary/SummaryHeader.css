@@ -1,0 +1,14 @@
+.summary_header {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: black;
+    font-size: 1rem;
+}
+
+.summary_header_items {
+    height: 30px;
+    padding-top: 00.3rem;
+}

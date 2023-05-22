@@ -1,0 +1,91 @@
+.pt {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+}
+
+.pt_group {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+}
+
+.pt_header{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    height: 30px;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.pt_header_items_1{
+    width: 115px;
+    text-align: center;
+}
+
+.pt_header_items_2,
+.pt_header_items_3,
+.pt_header_items_4,
+.pt_header_items_5{
+    width: 50px;
+    color: black;
+    text-align: center;
+}
+.pt_header_items_6 {
+    width: 70px;
+    color: black;
+    text-align: center;
+}
+
+.pt_team {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    height: 35px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    border-bottom: 1px solid white;
+    padding-top: 0.4rem;
+    border-radius: 1px;
+}
+
+.pt_team_no{
+    width: 30px;
+    padding-left: 10px;
+}
+.pt_team_Team{
+    width: 85px;
+    font-weight: 600;
+}
+
+.pt_team_P,
+.pt_team_W,
+.pt_team_L,
+.pt_team_Pts{
+    width: 50px;
+    text-align: center;
+}
+
+.pt_team_NRR{
+    width: 70px;
+    text-align: center;
+}
+.pt_parent {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    width: fit-content;
+}
+.pt_journey_box {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+

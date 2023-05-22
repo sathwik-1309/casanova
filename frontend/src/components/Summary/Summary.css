@@ -1,0 +1,22 @@
+.summary {
+    width: 600px;
+    height: fit-content;
+    border: 1px dotted black;
+    padding: 3px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+.summary_parent {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    width: fit-content;
+}
+.summary_boxes {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+    padding: 20px;
+}

@@ -1,0 +1,17 @@
+.listcards{
+    margin: 25px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.listcards_header{
+    text-align: center;
+    color: black;
+    height: 40px;
+    font-weight: 600;
+    width: 400px;
+}

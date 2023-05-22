@@ -1,0 +1,143 @@
+.match_scorecard{
+    display: flex;
+    height: fit-content;
+    width: 700px;
+    border: 1px dotted black;
+    border-radius: 8px;
+    padding: 3px;
+    flex-direction: column;
+}
+
+#match_scorecard_header {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+#match_scorecard_body {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.match_scorecard_header1 {
+    height: 40px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding-top: 0.5rem;
+}
+
+
+.match_scorecard_header2 {
+    height: 40px;
+    display: flex;
+    border-top: 1px solid white;
+}
+
+.match_scorecard_header_4s,
+.match_scorecard_header_6s{
+    width: 38%;
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 600;
+    padding-top: 0.5rem;
+}
+
+.match_scorecard_header_score{
+    width: 24%;
+    display: flex;
+}
+
+#scorecard_score {
+    width: 70%;
+    font-size: 1.3rem;
+    padding-top: 0.5rem;
+    font-weight: 600;
+    text-align: right;
+    padding-right: 12px;
+}
+
+#scorecard_overs {
+    width: 30%;
+    font-size: 0.9rem;
+    padding-top: 0.9rem;
+    font-weight: 400;
+}
+
+#scorecard_item {
+    height: 35px;
+    border-top: 1px solid white;
+    display: flex;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+#scorecard_item:hover {
+    border: 1px solid white;
+}
+
+.scorecard_item_batsman {
+    width: 35%;
+    padding-left: 10px;
+    padding-top: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.scorecard_item_data1 {
+    width: 23%;
+    padding-left: 10px;
+    padding-top: 0.6rem;
+    font-size: 0.8rem;
+}
+
+.scorecard_item_data2 {
+    width: 22%;
+    padding-left: 10px;
+    padding-top: 0.6rem;
+    font-size: 0.9rem;
+}
+
+.scorecard_item_score {
+    width: 20%;
+    display: flex;
+}
+
+.scorecard_runs {
+    width: 55%;
+    text-align: right;
+    font-weight: 600;
+    padding-top: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.scorecard_not_out {
+    padding-right: 0px;
+}
+
+.scorecard_out {
+    padding-right: 8px;
+}
+
+#scorecard_balls {
+    width: 45%;
+    padding-left: 10px;
+    font-weight: 400;
+    font-size: 0.8rem;
+    padding-top: 0.8rem;
+}
+.scorecard_parent {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    width: fit-content;
+}
+.scorecard_boxes {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+    padding: 20px;
+}
+

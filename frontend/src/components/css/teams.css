@@ -1,0 +1,493 @@
+.ind1 {
+    background-color: rgb(34,106,191);
+    color: #fefefe;
+}
+.ind2 {
+    background-color: rgb(19,39,112);
+    color: #fefefe;
+}
+.ind3,
+.ind4 {
+    border: 1px solid white;
+}
+
+.pak1 {
+    background-color: rgb(41, 95, 44);
+    color: #fefefe;
+}
+.pak2 {
+    background-color: rgb(133, 188, 75);
+    color: rgb(0,0,0);
+}
+.pak4 {
+    border: 1px solid rgb(0,0,0);
+}
+.pak3 {
+    border: 1px solid white;
+}
+
+.aus1 {
+    background-color: rgb(13,13,13);
+    color: rgb(255,255,255);
+}
+.aus2 {
+    background-color: rgb(255, 232, 34);
+    color: rgb(0,0,0);
+}
+.aus3 {
+    border: 1px solid rgb(255,255,255);
+}
+.aus4 {
+    border: 1px solid rgb(0,0,0);
+}
+
+.nz1 {
+    background-color: rgb(128, 125, 133);
+    color: #fefefe;
+}
+.nz2 {
+    background-color: rgb(13,13,13);
+    color: #fefefe;
+}
+.nz3,
+.nz4 {
+    border: 1px solid white;
+}
+
+.wi1 {
+    background-color: rgb(126, 41, 60);
+    color: #fefefe;
+}
+.wi2 {
+    background-color: rgb(255, 232, 34);
+    color: rgb(0,0,0);
+}
+.wi3 {
+    border: 1px solid white;
+}
+.wi4 {
+    border: 1px solid rgb(0,0,0);
+}
+
+.eng1 {
+    background-color: rgb(222, 20, 44);
+    color: #fefefe;
+}
+.eng2 {
+    background-color: rgb(33, 48, 85);
+    color: #fefefe;
+}
+.eng3,
+.eng4 {
+    border: 1px solid white;
+}
+
+.sa1 {
+    background-color: rgb(0, 147, 76);
+    color: #fefefe;
+}
+.sa2 {
+    background-color: rgb(253, 188, 53);
+    color: rgb(0,0,0);
+}
+.sa3 {
+    border: 1px solid white;
+}
+.sa4 {
+    border: 1px solid rgb(0,0,0);
+}
+
+
+.ban1 {
+    background-color: rgb(3, 113, 69);
+    color: #fefefe;
+}
+.ban2 {
+    background-color: rgb(236, 46, 53);
+    color: #fefefe;
+}
+.ban3,
+.ban4 {
+    border: 1px solid white;
+}
+
+.afg1 {
+    background-color: rgb(38, 76, 195);
+    color: #fefefe;
+}
+.afg2 {
+    background-color: rgb(197, 48, 54);
+    color: #fefefe;
+}
+.afg3,
+.afg4 {
+    border: 1px solid white;
+}
+
+.sl1 {
+    background-color: rgb(34, 61, 100);
+    color: #fefefe;
+}
+.sl2 {
+    background-color: rgb(255, 208, 20);
+    color: rgb(0,0,0);
+}
+.sl3 {
+    border: 1px solid white;
+}
+.sl4 {
+    border: 1px solid rgb(0,0,0);
+}
+
+.jan1{
+    background-color: rgb(219, 0, 7);
+    color: rgb(255,255,255);
+}
+.jan2{
+    background-color: rgb(247, 132, 124);
+    color: rgb(255,255,255);
+}
+.jan3,
+.jan4 {
+    border: 1px solid rgb(255,255,255);
+}
+
+.feb1{
+    background-color: rgb(125,12,148);
+    color: rgb(255,255,255);
+}
+.feb2{
+    background-color: rgb(207, 139, 252);
+    color: rgb(125,12,148);
+}
+.feb3 {
+    border: 1px solid rgb(255,255,255);
+}
+.feb4 {
+    border: 1px solid rgb(125,12,148);
+}
+
+.mar1{
+    background-color: rgb(255, 209, 0);
+    color: rgb(0, 53, 148);
+}
+.mar2{
+    background-color: rgb(0, 53, 148);
+    color: rgb(255,255,255);
+}
+.mar4 {
+    border: 1px solid rgb(255,255,255);
+}
+.mar3 {
+    border: 1px solid rgb(0, 53, 148);
+}
+
+
+.apr1{
+    background-color: rgb(255,20,147);
+    color: rgb(255,255,255);
+}
+.apr2{
+    background-color: rgb(250, 230, 248);
+    color: rgb(255,20,147);
+}
+.apr3 {
+    border: 1px solid rgb(255,255,255);
+}
+.apr4 {
+    border: 1px solid rgb(255,20,147);
+}
+
+.may1{
+    background-color: rgb(67, 110, 27);
+    color: rgb(255,255,255);
+}
+.may2{
+    background-color: rgb(255, 184, 28);
+    color: rgb(18, 87, 64);
+}
+.may3 {
+    border: 1px solid rgb(255,255,255);
+}
+.may4 {
+    border: 1px solid rgb(18, 87, 64);
+}
+
+.june1{
+    background-color: rgb(112, 68, 4);
+    color: rgb(255,255,255);
+}
+.june2{
+    background-color: rgb(209, 164, 100);
+    color: rgb(112, 68, 4);
+}
+.june3 {
+    border: 1px solid rgb(255,255,255);
+}
+.june4 {
+    border: 1px solid rgb(112, 68, 4);
+}
+
+
+.july1{
+    background-color: rgb(227, 157, 245);
+    color: rgb(0,0,0)
+}
+.july2{
+    background-color: rgb(0,0,0);
+    color: rgb(222, 164, 237);
+}
+.july3 {
+    border: 1px solid rgb(0,0,0);
+}
+.july4 {
+    border: 1px solid rgb(222, 164, 237);
+}
+
+.aug1{
+    background-color: rgb(18, 91, 52);
+    color: rgb(126, 200, 174);
+}
+.aug2{
+    background-color:whitesmoke;
+    color: rgb(18, 91, 52);
+}
+.aug3 {
+    border: 1px solid rgb(126, 200, 174);
+}
+.aug4 {
+    border: 1px solid rgb(18, 91, 52);
+}
+
+.sept1{
+    background-color: rgb(0, 118, 182);
+    color: rgb(255,255,255);
+}
+.sept2{
+    background-color: whitesmoke;
+    color: rgb(0, 118, 182);
+}
+.sept3 {
+    border: 1px solid rgb(255,255,255);
+}
+.sept4 {
+    border: 1px solid rgb(0,118,182);
+}
+
+.oct1{
+    background-color: rgb(168, 5, 84);
+    color: rgb(255,255,255);
+}
+.oct2{
+    background-color: rgb(2,2,2);
+    color: rgb(229,184,11);
+}
+.oct3 {
+    border: 1px solid rgb(255,255,255);
+}
+.oct4 {
+    border: 1px solid rgb(229,184,11);
+}
+
+.nov1{
+    background-color: rgb(245, 151, 10);
+    color: rgb(16, 24, 32);
+}
+.nov2{
+    background-color: rgb(38, 36, 33);
+    color: rgb(245, 151, 10);
+}
+.nov3 {
+    border: 1px solid rgb(16,24,32);
+}
+.nov4 {
+    border: 1px solid rgb(245,151,10);
+}
+
+.dec1{
+    background-color: rgb(33, 48, 77);
+    color: rgb(255,255,255);
+}
+.dec2{
+    background-color: rgb(212,175,55);
+    color: rgb(33, 48, 77);
+}
+.dec3 {
+    border: 1px solid rgb(255,255,255);
+}
+.dec4 {
+    border: 1px solid rgb(33,48,77);
+}
+
+.mi1{
+    background-color: rgb(0, 75, 141);
+    color: #fefefe;
+}
+.mi2{
+    background-color: rgb(255, 209, 65);
+    color: rgb(0,0,0);
+}
+.mi3 {
+    border: 1px solid white;
+}
+.mi4 {
+    border: 1px solid rgb(0,0,0);
+}
+
+.rr1{
+    background-color: rgb(231,56,149);
+    color: #fefefe;
+}
+.rr2{
+    background-color: rgb(7, 78, 162);
+    color: #fefefe;
+}
+.rr3,
+.rr4 {
+    border: 1px solid white;
+}
+
+.csk1 {
+    /* background-color: rgb(249, 205, 5); */
+    background-color: #F9CD05;
+    color: #000;
+}
+.csk2 {
+    /* background-color: rgb(29, 65, 140); */
+    background-color: #1D418C;
+    color: white;
+}
+.csk4 {
+    border: 1px solid white;
+}
+.csk3 {
+    border: 1px solid #000;
+}
+
+.srh1 {
+    background-color: #EE7429;
+    color: white;
+}
+.srh2 {
+    background-color: rgb(0,0,0);
+    color: white;
+}
+.srh3,
+.srh4 {
+    border: 1px solid white;
+}
+
+.rcb1 {
+    /* background-color: #fe2414; */
+    /* background-color: #e31717; */
+    background-color: #db0202;
+    color: white;
+}
+.rcb2 {
+    background-color: rgb(255, 209, 65);
+    /* background-color: rgb(242, 209, 160); */
+    color: #2b2a29;
+}
+.rcb3 {
+    border: 1px solid white;
+}
+.rcb4 {
+    border: 1px solid #2b2a29;
+}
+
+.kxip1 {
+    background-color: rgb(221, 31, 45);
+    color: white;
+}
+.kxip2 {
+    background-color: #dcdddf;
+    color: #000;
+}
+.kxip3 {
+    border: 1px solid white;
+}
+.kxip4 {
+    border: 1px solid #000;
+}
+
+.pbks1 {
+    background-color: rgb(221, 31, 45);
+    color: white;
+}
+.pbks2 {
+    background-color: #dcdddf;
+    color: #000;
+}
+.pbks3 {
+    border: 1px solid white;
+}
+.pbks4 {
+    border: 1px solid #000;
+}
+
+.dc1 {
+    /* background-color: #2561ae; */
+    background-color: #1b93de;
+    color: white;
+}
+.dc2 {
+    background-color: #d71921;
+    color: white;
+}
+.dc3,
+.dc4 {
+    border: 1px solid white;
+}
+
+.kkr1 {
+    background-color: #3a225d;
+    color: white;
+}
+.kkr2 {
+    background-color: #f2c028;
+    color: black;
+}
+.kkr3 {
+    border: 1px solid white;
+}
+.kkr4 {
+    border: 1px solid black;
+}
+
+.wt20_1,
+.wt20_4,
+.wt20_5 {
+    /* font-family:Arial Rounded MT Bold; */
+    /* font-family: "Audiowide", sans-serif; */
+    /* font-family: 'Varela Round', sans-serif; */
+    /* font-family: 'Roboto Slab', serif; */
+    /* font-family: 'Rokkitt', serif ;*/
+    /* font-style: italic; */
+    /* font-family: 'Audiowide', cursive; */
+    /*font-family: 'Lato', sans-serif;*/
+    /*font-family: 'Poppins', sans-serif;*/
+    /*font-family: 'Montserrat', sans-serif;*/
+    /*font-style: italic;*/
+    /*font-family: 'Noto Sans JP', sans-serif;*/
+    /*font-family: 'Karla', sans-serif;*/
+    /*font-family: 'Lexend', sans-serif;*/
+    font-family: 'Wix Madefor Text', sans-serif;
+    font-style: normal;
+    font-size: 20px;
+}
+
+.ipl_2 {
+    /*font-family: 'Poppins', sans-serif;*/
+    font-family: 'Wix Madefor Text', sans-serif;
+    font-style: italic;
+    font-size: 20px;
+}
+
+.csl_3,
+.csl_6 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-style: italic;
+}
+
+

@@ -1,0 +1,113 @@
+.scorebox {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    width: fit-content;
+    padding: 3px;
+    border: 1px dotted black;
+    border-radius: 2px;
+    cursor: default;
+}
+.scorebox:hover {
+    border: 4px solid black;
+}
+.scorebox_header {
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+}
+.scorebox_name {
+    width: 235px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding-top: 0.3rem;
+    padding-left: 10px;
+}
+.scorebox_score {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+}
+.scorebox_runs {
+    width: 45px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding-top: 5px;
+    text-align: right;
+}
+.scorebox_balls {
+    width: 45px;
+    font-size: 0.7rem;
+    font-weight: 300;
+    padding-top: 10px;
+    padding-left: 15px;
+}
+.scorebox_header2 {
+    height: 25px;
+    display: flex;
+    flex-direction: row;
+}
+.scorebox_teamname {
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding-top: 0.2rem;
+    padding-left: 10px;
+    width: 350px;
+}
+
+.scorebox_vs_team {
+    width: 60px;
+    text-align: left;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding-top: 0.2rem;
+}
+.scorebox_empty {
+    width: 60px;
+}
+.scorebox_labels {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    height: 25px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding-top: 0.3rem;
+    /*border-top: 1px solid white;*/
+}
+.scorebox_data {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    height: 30px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    /*border-top: 1px solid white;*/
+}
+.scorebox_label_item {
+    width: 40px;
+}
+.scorebox_data_item {
+    width: 40px;
+    padding-top: 0.4rem;
+}
+.scorebox_label_item_sr {
+    width: 70px;
+}
+.scorebox_data_item_sr {
+    width: 70px;
+    padding-top: 0.4rem;
+}
+.scorebox_bold {
+    font-weight: 700;
+    font-size: 1rem;
+    padding-top: 0.2rem;
+}
+.scorebox_body {
+    display: flex;
+    flex-direction: column;
+}
+.scorebox_info {
+    display: flex;
+    flex-direction: column;
+}

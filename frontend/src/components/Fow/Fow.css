@@ -1,0 +1,75 @@
+.fow {
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    height: fit-content;
+    border-radius: 5px;
+    border: 1px dotted black;
+    padding: 3px;
+}
+
+#fow_header{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+
+.fow_header1 {
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: 600;
+    height: 40px;
+    padding-top: 0.5rem;
+}
+
+.fow_header2 {
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: 400;
+    height: 40px;
+    padding-top: 0.6rem;
+    border-top: 1px white solid;
+    display: flex;
+    font-size: 0.9rem;
+}
+
+.fow_item {
+    height: 40px;
+    display: flex;
+    border-top: 1px white solid;
+    
+}
+
+.fow_item:hover {
+    border: 1px solid white;
+}
+
+#fow_item_score,
+#fow_item_delivery {
+    width: 20%;
+    font-size: 1rem;
+    padding-top: 0.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+#fow_item_batsman,
+#fow_item_bowler {
+    width: 30%;
+    font-size: 1rem;
+    padding-top: 0.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+#fow_header2_score,
+#fow_header2_delivery {
+    text-align: center;
+    width: 20%;
+}
+
+#fow_header2_batsman,
+#fow_header2_bowler {
+    text-align: center;
+    width: 30%;
+}

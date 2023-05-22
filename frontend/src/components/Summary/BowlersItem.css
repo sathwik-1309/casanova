@@ -1,0 +1,42 @@
+#bowlers_item{
+    display: flex;
+    height: 30px;
+    width: 90%;
+    margin-top: 1px;
+    margin-left: 10%;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+#bowlers_item:hover {
+    border: 0.5px solid white;
+}
+
+.bowler_name{
+    width: 65%;
+    padding-left: 10px;
+    padding-top: 0.4rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.bowler_fig{
+    width: 35%;
+    display: flex;
+    padding-top: 0.4rem;
+}
+
+.fig{
+    width: 65%;
+    text-align: right;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.overs{
+    font-weight: 400;
+    font-size: 0.7rem;
+    width: 35%;
+    padding-left: 10px;
+    padding-top: 3px;
+}

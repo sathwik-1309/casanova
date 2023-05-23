@@ -1,0 +1,24 @@
+{
+  "m_id": 152,
+  "batted_first": "june",
+  "batted_second": "nov",
+  "toss": "nov",
+  "pitch": 3,
+  "ball_color": [
+    "r",
+    "y",
+    "y",
+    "r"
+  ],
+  "cap1": "stokes",
+  "cap2": "kohli",
+  "keeper1": "rizwan",
+  "keeper2": "samson",
+  "winner": "nov",
+  "stage": "group",
+  "venue": "ahmedabad",
+  "motm_player": "harshal patel",
+  "motm_team": "nov",
+  "t_id": 6,
+  "test": "true"
+}

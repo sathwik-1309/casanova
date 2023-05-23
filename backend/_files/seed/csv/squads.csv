@@ -1,0 +1,59 @@
+team_id,name,abb,captain,keeper_id,tournament_id
+1,india,ind,3,8,1
+2,pakistan,pak,21,21,1
+3,australia,aus,28,34,1
+4,new zealand,nz,45,47,1
+5,west indies,wi,62,58,1
+6,south africa,sa,73,71,1
+7,england,eng,86,88,1
+8,bangladesh,ban,104,99,1
+21,sunrisers hyderabad,srh,29,84,2
+22,chennai super kings,csk,8,8,2
+23,royal challengers bangalore,rcb,3,127,2
+24,mumbai indians,mi,2,71,2
+25,rajasthan royals,rr,31,148,2
+26,kings xi punjab,kxip,163,59,2
+27,delhi capitals,dc,173,4,2
+28,kolkata knight riders,kkr,7,7,2
+31,january dragon,jan,113,195,3
+32,february gazzelles,feb,128,128,3
+33,march eagles,mar,46,205,3
+34,april avengers,apr,2,1,3
+35,may monsters,may,139,210,3
+36,june viking,june,31,216,3
+37,july scorpions,july,8,8,3
+38,august axes,aug,45,129,3
+39,september sharks,sept,86,88,3
+40,october commanders,oct,29,59,3
+41,november nexus,nov,3,148,3
+42,december firewolves,dec,85,71,3
+1,india,ind,3,4,4
+2,pakistan,pak,18,216,4
+3,australia,aus,28,195,4
+4,new zealand,nz,45,205,4
+5,west indies,wi,139,59,4
+6,south africa,sa,73,71,4
+7,england,eng,86,88,4
+8,bangladesh,ban,96,100,4
+1,india,ind,2,7,5
+2,pakistan,pak,18,216,5
+3,australia,aus,28,195,5
+4,new zealand,nz,45,245,5
+5,west indies,wi,59,59,5
+6,south africa,sa,237,71,5
+7,england,eng,88,88,5
+8,bangladesh,ban,98,100,5
+9,afganistan,afg,113,288,5
+10,srilanka,sl,265,263,5
+31,january dragon,jan,28,264,6
+32,february gazzelles,feb,50,100,6
+33,march eagles,mar,98,317,6
+34,april avengers,apr,2,1,6
+35,may monsters,may,237,99,6
+36,june viking,june,87,216,6
+37,july scorpions,july,8,8,6
+38,august axes,aug,45,34,6
+39,september sharks,sept,88,88,6
+40,october commanders,oct,18,4,6
+41,november nexus,nov,3,288,6
+42,december firewolves,dec,195,71,6

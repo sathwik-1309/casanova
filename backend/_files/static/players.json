@@ -1,0 +1,7308 @@
+[
+  {
+    "id": 1,
+    "fullname": "kl rahul",
+    "name": "kl rahul",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": true,
+    "country": 1,
+    "ipl": 26,
+    "csl": 34,
+    "names": [
+      "kl rahul",
+      "kl rahul",
+      "rahul",
+      "kl",
+      "k rahul",
+      "rahul kl",
+      "rahul",
+      "kl",
+      "k rahul"
+    ],
+    "born": 34
+  },
+  {
+    "id": 2,
+    "fullname": "rohit sharma",
+    "name": "rohit",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 24,
+    "csl": 34,
+    "names": [
+      "rohit sharma",
+      "rohit",
+      "r sharma",
+      "sharma",
+      "r sharma",
+      "sharma"
+    ],
+    "born": 34
+  },
+  {
+    "id": 3,
+    "fullname": "virat kohli",
+    "name": "kohli",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 23,
+    "csl": 41,
+    "names": [
+      "virat kohli",
+      "kohli",
+      "v kohli",
+      "virat",
+      "v kohli",
+      "virat"
+    ],
+    "born": 41
+  },
+  {
+    "id": 4,
+    "fullname": "rishab pant",
+    "name": "pant",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": true,
+    "country": 1,
+    "ipl": 27,
+    "csl": 40,
+    "names": [
+      "rishab pant",
+      "pant",
+      "rishab",
+      "r pant",
+      "rishab",
+      "r pant"
+    ],
+    "born": 40
+  },
+  {
+    "id": 5,
+    "fullname": "vijay shankar",
+    "name": "shankar",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 21,
+    "csl": 31,
+    "names": [
+      "vijay shankar",
+      "shankar",
+      "vijay",
+      "v shankar",
+      "vijay",
+      "v shankar"
+    ],
+    "born": 31
+  },
+  {
+    "id": 6,
+    "fullname": "hardik pandya",
+    "name": "hardik",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 24,
+    "csl": 40,
+    "names": [
+      "hardik pandya",
+      "hardik",
+      "h pandya",
+      "pandya",
+      "h pandya",
+      "pandya"
+    ],
+    "born": 40
+  },
+  {
+    "id": 7,
+    "fullname": "dinesh karthik",
+    "name": "d karthik",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": true,
+    "country": 1,
+    "ipl": 28,
+    "csl": 36,
+    "names": [
+      "dinesh karthik",
+      "d karthik",
+      "dinesh",
+      "karthik",
+      "dinesh",
+      "karthik"
+    ],
+    "born": 36
+  },
+  {
+    "id": 8,
+    "fullname": "ms dhoni",
+    "name": "dhoni",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": true,
+    "country": 1,
+    "ipl": 22,
+    "csl": 37,
+    "names": [
+      "ms dhoni",
+      "dhoni",
+      "msd",
+      "ms",
+      "msd",
+      "ms"
+    ],
+    "born": 37
+  },
+  {
+    "id": 9,
+    "fullname": "ravi jadeja",
+    "name": "jadeja",
+    "skillset": [
+      "all",
+      "l",
+      "l",
+      "off"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 22,
+    "csl": 42,
+    "names": [
+      "ravi jadeja",
+      "jadeja",
+      "r jadeja",
+      "ravi",
+      "r jadeja",
+      "ravi"
+    ],
+    "born": 42
+  },
+  {
+    "id": 10,
+    "fullname": "bhuvneshwar kumar",
+    "name": "b kumar",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 21,
+    "csl": 32,
+    "names": [
+      "bhuvneshwar kumar",
+      "b kumar",
+      "bhuvi",
+      "bhuvnesh",
+      "bhuvneshwar",
+      "kumar",
+      "bhuvi",
+      "bhuvnesh",
+      "bhuvneshwar",
+      "kumar"
+    ],
+    "born": 32
+  },
+  {
+    "id": 11,
+    "fullname": "kuldeep yadav",
+    "name": "kuldeep",
+    "skillset": [
+      "bow",
+      "l",
+      "l",
+      "leg"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 28,
+    "csl": 42,
+    "names": [
+      "kuldeep yadav",
+      "kuldeep",
+      "yadav",
+      "k yadav",
+      "yadav",
+      "k yadav"
+    ],
+    "born": 42
+  },
+  {
+    "id": 12,
+    "fullname": "jasprit bumrah",
+    "name": "bumrah",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 24,
+    "csl": 42,
+    "names": [
+      "jasprit bumrah",
+      "bumrah",
+      "j bumrah",
+      "jasprit",
+      "j bumrah",
+      "jasprit"
+    ],
+    "born": 42
+  },
+  {
+    "id": 13,
+    "fullname": "yuzi chahal",
+    "name": "chahal",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "leg"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 23,
+    "csl": 37,
+    "names": [
+      "yuzi chahal",
+      "chahal",
+      "y chahal",
+      "yuzi",
+      "y chahal",
+      "yuzvendra chahal",
+      "yuzi"
+    ],
+    "born": 37
+  },
+  {
+    "id": 14,
+    "fullname": "mohammad shami",
+    "name": "shami",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 26,
+    "csl": 39,
+    "names": [
+      "mohammad shami",
+      "shami",
+      "mohammad",
+      "m shami",
+      "mohammad",
+      "m shami"
+    ],
+    "born": 39
+  },
+  {
+    "id": 15,
+    "fullname": "kedar jadhav",
+    "name": "jadhav",
+    "skillset": [
+      "bat",
+      "r",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 22,
+    "csl": null,
+    "names": [
+      "kedar jadhav",
+      "jadhav",
+      "kedar",
+      "k jadhav",
+      "kedar",
+      "k jadhav"
+    ],
+    "born": 33
+  },
+  {
+    "id": 16,
+    "fullname": "fakhar zaman",
+    "name": "fakhar",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 2,
+    "ipl": null,
+    "csl": 34,
+    "names": [
+      "fakhar zaman",
+      "fakhar",
+      "f zaman",
+      "zaman",
+      "f zaman",
+      "zaman"
+    ],
+    "born": 34
+  },
+  {
+    "id": 17,
+    "fullname": "imam-ul-haq",
+    "name": "imam-ul-haq",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 2,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "imam-ul-haq",
+      "imam-ul-haq",
+      "imam",
+      "imam"
+    ],
+    "born": 42
+  },
+  {
+    "id": 18,
+    "fullname": "babar azam",
+    "name": "babar",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 2,
+    "ipl": null,
+    "csl": 40,
+    "names": [
+      "babar azam",
+      "babar",
+      "b azam",
+      "azam",
+      "b azam",
+      "azam"
+    ],
+    "born": 40
+  },
+  {
+    "id": 19,
+    "fullname": "mohammad hafeez",
+    "name": "hafeez",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 2,
+    "ipl": null,
+    "csl": 40,
+    "names": [
+      "mohammad hafeez",
+      "hafeez",
+      "m hafeez",
+      "mohammad",
+      "m hafeez",
+      "mohammad"
+    ],
+    "born": 40
+  },
+  {
+    "id": 20,
+    "fullname": "haris sohail",
+    "name": "h sohail",
+    "skillset": [
+      "bat",
+      "l",
+      "l",
+      "off"
+    ],
+    "keeper": false,
+    "country": 2,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "haris sohail",
+      "h sohail",
+      "sohail"
+    ],
+    "born": 31
+  },
+  {
+    "id": 21,
+    "fullname": "sarfaraz ahmed",
+    "name": "sarfaraz",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": true,
+    "country": 2,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "sarfaraz ahmed",
+      "sarfaraz",
+      "ahmed",
+      "s ahmed",
+      "ahmed",
+      "s ahmed"
+    ],
+    "born": 35
+  },
+  {
+    "id": 22,
+    "fullname": "imad wasim",
+    "name": "imad",
+    "skillset": [
+      "all",
+      "l",
+      "l",
+      "off"
+    ],
+    "keeper": false,
+    "country": 2,
+    "ipl": null,
+    "csl": 42,
+    "names": [
+      "imad wasim",
+      "imad",
+      "i wasim",
+      "wasim",
+      "i wasim",
+      "wasim"
+    ],
+    "born": 42
+  },
+  {
+    "id": 23,
+    "fullname": "shahdab khan",
+    "name": "shadab",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "leg"
+    ],
+    "keeper": false,
+    "country": 2,
+    "ipl": null,
+    "csl": 40,
+    "names": [
+      "shadab khan",
+      "shadab",
+      "s khan",
+      "khan",
+      "s khan",
+      "khan"
+    ],
+    "born": 40
+  },
+  {
+    "id": 24,
+    "fullname": "wahab riaz",
+    "name": "wahab",
+    "skillset": [
+      "bow",
+      "r",
+      "l",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 2,
+    "ipl": null,
+    "csl": 36,
+    "names": [
+      "wahab riaz",
+      "wahab",
+      "riaz",
+      "w riaz",
+      "riaz",
+      "w riaz"
+    ],
+    "born": 36
+  },
+  {
+    "id": 25,
+    "fullname": "mohammad amir",
+    "name": "amir",
+    "skillset": [
+      "bow",
+      "l",
+      "l",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 2,
+    "ipl": null,
+    "csl": 42,
+    "names": [
+      "mohammad amir",
+      "amir",
+      "m amir",
+      "mohammad",
+      "m amir",
+      "mohammad"
+    ],
+    "born": 34
+  },
+  {
+    "id": 26,
+    "fullname": "shaheen afridi",
+    "name": "shaheen",
+    "skillset": [
+      "bow",
+      "l",
+      "l",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 2,
+    "ipl": null,
+    "csl": 34,
+    "names": [
+      "shaheen afridi",
+      "shaheen",
+      "afridi",
+      "afridi",
+      "s afridi"
+    ],
+    "born": 34
+  },
+  {
+    "id": 27,
+    "fullname": "hassan ali",
+    "name": "hassan",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 2,
+    "ipl": null,
+    "csl": 37,
+    "names": [
+      "hassan ali",
+      "hassan",
+      "ali",
+      "h ali",
+      "ali",
+      "h ali"
+    ],
+    "born": 37
+  },
+  {
+    "id": 28,
+    "fullname": "aaron finch",
+    "name": "finch",
+    "skillset": [
+      "bat",
+      "r",
+      "l",
+      "off"
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": null,
+    "csl": 31,
+    "names": [
+      "aaron finch",
+      "finch",
+      "a finch",
+      "aaron",
+      "a finch",
+      "aaron"
+    ],
+    "born": 41
+  },
+  {
+    "id": 29,
+    "fullname": "david warner",
+    "name": "warner",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": 21,
+    "csl": 40,
+    "names": [
+      "david warner",
+      "warner",
+      "david",
+      "d warner",
+      "david",
+      "d warner"
+    ],
+    "born": 40
+  },
+  {
+    "id": 30,
+    "fullname": "usman khawaja",
+    "name": "khawaja",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": null,
+    "csl": 35,
+    "names": [
+      "usman khawaja",
+      "khawaja",
+      "u khawaja",
+      "usman",
+      "u khawaja",
+      "usman"
+    ],
+    "born": 42
+  },
+  {
+    "id": 31,
+    "fullname": "steve smith",
+    "name": "smith",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": 25,
+    "csl": 36,
+    "names": [
+      "steve smith",
+      "smith",
+      "s smith",
+      "steve",
+      "s smith",
+      "steve"
+    ],
+    "born": 36
+  },
+  {
+    "id": 32,
+    "fullname": "glenn maxwell",
+    "name": "maxwell",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": null,
+    "csl": 40,
+    "names": [
+      "glenn maxwell",
+      "maxwell",
+      "glenn",
+      "g maxwell",
+      "glenn",
+      "g maxwell"
+    ],
+    "born": 40
+  },
+  {
+    "id": 33,
+    "fullname": "marcus stoinis",
+    "name": "stoinis",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": 23,
+    "csl": 38,
+    "names": [
+      "marcus stoinis",
+      "stoinis",
+      "m stoinis",
+      "marcus",
+      "m stoinis",
+      "marcus"
+    ],
+    "born": 38
+  },
+  {
+    "id": 34,
+    "fullname": "alex carey",
+    "name": "carey",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": true,
+    "country": 3,
+    "ipl": null,
+    "csl": 38,
+    "names": [
+      "alex carey",
+      "carey",
+      "a carey",
+      "alex",
+      "a carey",
+      "alex"
+    ],
+    "born": 38
+  },
+  {
+    "id": 35,
+    "fullname": "pat cummins",
+    "name": "cummins",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": null,
+    "csl": 35,
+    "names": [
+      "pat cummins",
+      "cummins",
+      "p cummins",
+      "pat",
+      "patrick cummins",
+      "p cummins",
+      "pat",
+      "patrick cummins"
+    ],
+    "born": 35
+  },
+  {
+    "id": 36,
+    "fullname": "mitchell starc",
+    "name": "starc",
+    "skillset": [
+      "bow",
+      "l",
+      "l",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": null,
+    "csl": 31,
+    "names": [
+      "mitchell starc",
+      "starc",
+      "m starc",
+      "mitchell",
+      "m starc",
+      "mitchell"
+    ],
+    "born": 31
+  },
+  {
+    "id": 37,
+    "fullname": "jason behrendorff",
+    "name": "behrendorff",
+    "skillset": [
+      "bow",
+      "l",
+      "l",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": 24,
+    "csl": null,
+    "names": [
+      "jason behrendorff",
+      "behrendorff",
+      "j behrendorff",
+      "jason",
+      "j behrendorff",
+      "jason"
+    ],
+    "born": 34
+  },
+  {
+    "id": 38,
+    "fullname": "nathon lyon",
+    "name": "lyon",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": null,
+    "csl": 41,
+    "names": [
+      "nathan lyon",
+      "lyon",
+      "nathan",
+      "n lyon",
+      "nathan",
+      "n lyon"
+    ],
+    "born": 41
+  },
+  {
+    "id": 39,
+    "fullname": "adam zampa",
+    "name": "zampa",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "leg"
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": null,
+    "csl": 33,
+    "names": [
+      "adam zampa",
+      "zampa",
+      "a zampa",
+      "adam",
+      "a zampa",
+      "adam"
+    ],
+    "born": 33
+  },
+  {
+    "id": 40,
+    "fullname": "shaun marsh",
+    "name": "s marsh",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": null,
+    "csl": 37,
+    "names": [
+      "shaun marsh",
+      "s marsh",
+      "marsh",
+      "shaun",
+      "marsh",
+      "shaun"
+    ],
+    "born": 37
+  },
+  {
+    "id": 41,
+    "fullname": "nathan coulter-nile",
+    "name": "coulter-nile",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": null,
+    "csl": 40,
+    "names": [
+      "nathan coulter-nile",
+      "coulter-nile",
+      "coulternile",
+      "nathan",
+      "coulternile",
+      "nathan"
+    ],
+    "born": 40
+  },
+  {
+    "id": 42,
+    "fullname": "peter handscomb",
+    "name": "handscomb",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "peter handscomb",
+      "handscomb",
+      "peter",
+      "peter"
+    ],
+    "born": 34
+  },
+  {
+    "id": 43,
+    "fullname": "martin guptill",
+    "name": "guptill",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 4,
+    "ipl": 21,
+    "csl": 35,
+    "names": [
+      "martin guptill",
+      "guptill",
+      "martin",
+      "m guptill",
+      "martin",
+      "m guptill"
+    ],
+    "born": 39
+  },
+  {
+    "id": 44,
+    "fullname": "henry nicolls",
+    "name": "nicholls",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 4,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "henry nicholls",
+      "nicholls",
+      "henry",
+      "h nicholls",
+      "henry",
+      "h nicholls"
+    ],
+    "born": 41
+  },
+  {
+    "id": 45,
+    "fullname": "kane williamson",
+    "name": "williamson",
+    "skillset": [
+      "bat",
+      "r",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 4,
+    "ipl": 21,
+    "csl": 38,
+    "names": [
+      "kane williamson",
+      "williamson",
+      "kane",
+      "k willamson",
+      "kane",
+      "k willamson"
+    ],
+    "born": 38
+  },
+  {
+    "id": 46,
+    "fullname": "ross taylor",
+    "name": "r taylor",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 4,
+    "ipl": null,
+    "csl": 33,
+    "names": [
+      "ross taylor",
+      "r taylor",
+      "ross",
+      "taylor",
+      "ross",
+      "taylor"
+    ],
+    "born": 33
+  },
+  {
+    "id": 47,
+    "fullname": "tom latham",
+    "name": "latham",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": true,
+    "country": 4,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "tom latham",
+      "latham",
+      "tom",
+      "t latham",
+      "tom",
+      "t latham"
+    ],
+    "born": 34
+  },
+  {
+    "id": 48,
+    "fullname": "jimmy neesham",
+    "name": "neesham",
+    "skillset": [
+      "all",
+      "l",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 4,
+    "ipl": null,
+    "csl": 39,
+    "names": [
+      "jimmy neesham",
+      "neesham",
+      "jimmy",
+      "j neesham",
+      "jimmy",
+      "j neesham"
+    ],
+    "born": 39
+  },
+  {
+    "id": 49,
+    "fullname": "colin de grandhomme",
+    "name": "grandhomme",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 4,
+    "ipl": 23,
+    "csl": 37,
+    "names": [
+      "colin de grandhomme",
+      "grandhomme",
+      "cdg",
+      "granddhomme",
+      "de",
+      "colin",
+      "cdg",
+      "granddhomme",
+      "de",
+      "colin"
+    ],
+    "born": 37
+  },
+  {
+    "id": 50,
+    "fullname": "mitchell santner",
+    "name": "santner",
+    "skillset": [
+      "all",
+      "l",
+      "l",
+      "off"
+    ],
+    "keeper": false,
+    "country": 4,
+    "ipl": 22,
+    "csl": 32,
+    "names": [
+      "mitchell santner",
+      "santner",
+      "m santner",
+      "mitchell",
+      "m santner",
+      "mitchell"
+    ],
+    "born": 32
+  },
+  {
+    "id": 51,
+    "fullname": "matt henry",
+    "name": "henry",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 4,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "matt henry",
+      "henry",
+      "m henry",
+      "matt",
+      "m henry",
+      "matt"
+    ],
+    "born": 42
+  },
+  {
+    "id": 52,
+    "fullname": "trent boult",
+    "name": "boult",
+    "skillset": [
+      "bow",
+      "r",
+      "l",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 4,
+    "ipl": 27,
+    "csl": 37,
+    "names": [
+      "trent boult",
+      "boult",
+      "t boult",
+      "trent",
+      "t boult",
+      "trent"
+    ],
+    "born": 37
+  },
+  {
+    "id": 53,
+    "fullname": "lockie ferguson",
+    "name": "ferguson",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 4,
+    "ipl": 28,
+    "csl": 36,
+    "names": [
+      "lockie ferguson",
+      "ferguson",
+      "lockie",
+      "l ferguson",
+      "lockie",
+      "l ferguson"
+    ],
+    "born": 36
+  },
+  {
+    "id": 54,
+    "fullname": "tim southee",
+    "name": "southee",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 4,
+    "ipl": 23,
+    "csl": 42,
+    "names": [
+      "tim southee",
+      "southee",
+      "t southee",
+      "tim",
+      "t southee",
+      "tim"
+    ],
+    "born": 42
+  },
+  {
+    "id": 55,
+    "fullname": "ish sodhi",
+    "name": "sodhi",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "leg"
+    ],
+    "keeper": false,
+    "country": 4,
+    "ipl": 25,
+    "csl": 34,
+    "names": [
+      "ish sodhi",
+      "sodhi",
+      "i sodhi",
+      "ish",
+      "i sodhi",
+      "ish"
+    ],
+    "born": 40
+  },
+  {
+    "id": 56,
+    "fullname": "chris gayle",
+    "name": "gayle",
+    "skillset": [
+      "bat",
+      "l",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 5,
+    "ipl": 26,
+    "csl": 39,
+    "names": [
+      "chris gayle",
+      "gayle",
+      "c gayle",
+      "chris",
+      "c gayle",
+      "chris"
+    ],
+    "born": 39
+  },
+  {
+    "id": 57,
+    "fullname": "evin lewis",
+    "name": "lewis",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 5,
+    "ipl": 24,
+    "csl": 33,
+    "names": [
+      "evin lewis",
+      "lewis",
+      "e lewis",
+      "evin",
+      "e lewis",
+      "evin"
+    ],
+    "born": 42
+  },
+  {
+    "id": 58,
+    "fullname": "shai hope",
+    "name": "hope",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": true,
+    "country": 5,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "shai hope",
+      "hope",
+      "s hope",
+      "shai",
+      "s hope",
+      "shai"
+    ],
+    "born": 41
+  },
+  {
+    "id": 59,
+    "fullname": "nicolas pooran",
+    "name": "pooran",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": true,
+    "country": 5,
+    "ipl": 26,
+    "csl": 40,
+    "names": [
+      "nicolas pooran",
+      "pooran",
+      "n pooran",
+      "nicolas",
+      "n pooran",
+      "nicolas"
+    ],
+    "born": 40
+  },
+  {
+    "id": 60,
+    "fullname": "shimron hetmyer",
+    "name": "hetmyer",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 5,
+    "ipl": 23,
+    "csl": 42,
+    "names": [
+      "shimron hetmyer",
+      "hetmyer",
+      "s hetmyer",
+      "shimron",
+      "s hetmyer",
+      "shimron"
+    ],
+    "born": 42
+  },
+  {
+    "id": 61,
+    "fullname": "andre russell",
+    "name": "russell",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 5,
+    "ipl": 28,
+    "csl": 34,
+    "names": [
+      "andre russell",
+      "russell",
+      "andre",
+      "a russell",
+      "andre",
+      "a russell"
+    ],
+    "born": 34
+  },
+  {
+    "id": 62,
+    "fullname": "jason holder",
+    "name": "holder",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 5,
+    "ipl": null,
+    "csl": 41,
+    "names": [
+      "jason holder",
+      "holder",
+      "j holder",
+      "jason",
+      "j holder",
+      "jason"
+    ],
+    "born": 41
+  },
+  {
+    "id": 63,
+    "fullname": "carlos brathwaite",
+    "name": "brathwaite",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 5,
+    "ipl": null,
+    "csl": 37,
+    "names": [
+      "carlos brathwaite",
+      "brathwaite",
+      "c brathwaite",
+      "carlos",
+      "c brathwai",
+      "c brathwaite",
+      "carlos",
+      "c brathwai"
+    ],
+    "born": 37
+  },
+  {
+    "id": 64,
+    "fullname": "fabian allen",
+    "name": "allen",
+    "skillset": [
+      "all",
+      "r",
+      "l",
+      "off"
+    ],
+    "keeper": false,
+    "country": 5,
+    "ipl": null,
+    "csl": 35,
+    "names": [
+      "fabian allen",
+      "allen",
+      "fabian",
+      "f allen",
+      "fabian",
+      "f allen"
+    ],
+    "born": 35
+  },
+  {
+    "id": 65,
+    "fullname": "sheldon cottrell",
+    "name": "cottrell",
+    "skillset": [
+      "bow",
+      "r",
+      "l",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 5,
+    "ipl": null,
+    "csl": 38,
+    "names": [
+      "sheldon cottrell",
+      "cottrell",
+      "sheldon",
+      "s cottrell",
+      "sheldon",
+      "s cottrell"
+    ],
+    "born": 38
+  },
+  {
+    "id": 66,
+    "fullname": "kemar roach",
+    "name": "roach",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 5,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "kemar roach",
+      "roach",
+      "kemar",
+      "kemar"
+    ],
+    "born": 36
+  },
+  {
+    "id": 67,
+    "fullname": "oushane thomas",
+    "name": "thomas",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 5,
+    "ipl": 25,
+    "csl": null,
+    "names": [
+      "oshane thomas",
+      "thomas",
+      "oushane",
+      "o thomas",
+      "oshane",
+      "oushane",
+      "o thomas",
+      "oshane"
+    ],
+    "born": 32
+  },
+  {
+    "id": 68,
+    "fullname": "shanon gabriel",
+    "name": "gabriel",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 5,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "shanon gabriel",
+      "gabriel",
+      "shanon",
+      "shanon"
+    ],
+    "born": 34
+  },
+  {
+    "id": 69,
+    "fullname": "sunil ambris",
+    "name": "ambris",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 5,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "sunil ambris",
+      "ambris",
+      "s ambris",
+      "sunil",
+      "s ambris",
+      "sunil"
+    ],
+    "born": 33
+  },
+  {
+    "id": 70,
+    "fullname": "hashim amla",
+    "name": "amla",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 6,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "hashim amla",
+      "amla",
+      "h amla",
+      "hashim",
+      "h amla",
+      "hashim"
+    ],
+    "born": 33
+  },
+  {
+    "id": 71,
+    "fullname": "quinton de kock",
+    "name": "de kock",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": true,
+    "country": 6,
+    "ipl": 24,
+    "csl": 42,
+    "names": [
+      "quinton de kock",
+      "de kock",
+      "quinton",
+      "de",
+      "kock",
+      "quinton",
+      "de",
+      "kock"
+    ],
+    "born": 42
+  },
+  {
+    "id": 72,
+    "fullname": "aiden markram",
+    "name": "markram",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 6,
+    "ipl": null,
+    "csl": 40,
+    "names": [
+      "aiden markram",
+      "markram",
+      "aiden",
+      "aiden"
+    ],
+    "born": 40
+  },
+  {
+    "id": 73,
+    "fullname": "faf du plessis",
+    "name": "du plessis",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 6,
+    "ipl": 22,
+    "csl": 37,
+    "names": [
+      "faf du plessis",
+      "du plessis",
+      "faf",
+      "plessis",
+      "du",
+      "faf",
+      "plessis",
+      "du"
+    ],
+    "born": 37
+  },
+  {
+    "id": 74,
+    "fullname": "van der dussen",
+    "name": "van der dussen",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 6,
+    "ipl": null,
+    "csl": 32,
+    "names": [
+      "van der dussen",
+      "van der dussen",
+      "dussen",
+      "van",
+      "der",
+      "dussen",
+      "van",
+      "der"
+    ],
+    "born": 32
+  },
+  {
+    "id": 75,
+    "fullname": "jp duminy",
+    "name": "duminy",
+    "skillset": [
+      "bat",
+      "l",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 6,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "jp duminy",
+      "duminy",
+      "jp",
+      "jp"
+    ],
+    "born": 34
+  },
+  {
+    "id": 76,
+    "fullname": "dwaine pretorious",
+    "name": "pretorious",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 6,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "dwaine pretorious",
+      "pretorious",
+      "dwaine",
+      "dwaine"
+    ],
+    "born": 33
+  },
+  {
+    "id": 77,
+    "fullname": "andile phehlukwayo",
+    "name": "phehlukwayo",
+    "skillset": [
+      "all",
+      "l",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 6,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "andile phehlukwayo",
+      "phehlukwayo",
+      "andile",
+      "andile"
+    ],
+    "born": 33
+  },
+  {
+    "id": 78,
+    "fullname": "kagiso rabada",
+    "name": "rabada",
+    "skillset": [
+      "bow",
+      "l",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 6,
+    "ipl": 27,
+    "csl": 35,
+    "names": [
+      "kagiso rabada",
+      "rabada",
+      "kagiso",
+      "k rabada"
+    ],
+    "born": 35
+  },
+  {
+    "id": 79,
+    "fullname": "lungi ngidi",
+    "name": "ngidi",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 6,
+    "ipl": null,
+    "csl": 33,
+    "names": [
+      "lungi ngidi",
+      "ngidi",
+      "lungi",
+      "l ngidi",
+      "lungi",
+      "l ngidi"
+    ],
+    "born": 33
+  },
+  {
+    "id": 80,
+    "fullname": "imran tahir",
+    "name": "tahir",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "leg"
+    ],
+    "keeper": false,
+    "country": 6,
+    "ipl": 22,
+    "csl": 33,
+    "names": [
+      "imran tahir",
+      "tahir",
+      "imran",
+      "imran"
+    ],
+    "born": 33
+  },
+  {
+    "id": 81,
+    "fullname": "chris morris",
+    "name": "morris",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 6,
+    "ipl": 27,
+    "csl": 34,
+    "names": [
+      "chris morris",
+      "morris",
+      "chris",
+      "chris"
+    ],
+    "born": 34
+  },
+  {
+    "id": 82,
+    "fullname": "david miller",
+    "name": "miller",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 6,
+    "ipl": 26,
+    "csl": 36,
+    "names": [
+      "david miller",
+      "miller",
+      "d miller",
+      "david",
+      "d miller",
+      "david"
+    ],
+    "born": 36
+  },
+  {
+    "id": 83,
+    "fullname": "jason roy",
+    "name": "roy",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 7,
+    "ipl": null,
+    "csl": 33,
+    "names": [
+      "jason roy",
+      "roy",
+      "j roy",
+      "jason",
+      "j roy",
+      "jason"
+    ],
+    "born": 37
+  },
+  {
+    "id": 84,
+    "fullname": "jonny bairstow",
+    "name": "bairstow",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": true,
+    "country": 7,
+    "ipl": 21,
+    "csl": 39,
+    "names": [
+      "jonny bairstow",
+      "bairstow",
+      "jonny",
+      "johnny bairstow",
+      "jonny"
+    ],
+    "born": 39
+  },
+  {
+    "id": 85,
+    "fullname": "joe root",
+    "name": "root",
+    "skillset": [
+      "bat",
+      "r",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 7,
+    "ipl": null,
+    "csl": 32,
+    "names": [
+      "joe root",
+      "root",
+      "j root",
+      "joe",
+      "j root",
+      "joe"
+    ],
+    "born": 42
+  },
+  {
+    "id": 86,
+    "fullname": "eoin morgan",
+    "name": "morgan",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 7,
+    "ipl": null,
+    "csl": 39,
+    "names": [
+      "eoin morgan",
+      "morgan",
+      "eoin",
+      "e morgan",
+      "eoin",
+      "e morgan"
+    ],
+    "born": 39
+  },
+  {
+    "id": 87,
+    "fullname": "ben stokes",
+    "name": "stokes",
+    "skillset": [
+      "all",
+      "l",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 7,
+    "ipl": 25,
+    "csl": 36,
+    "names": [
+      "ben stokes",
+      "stokes",
+      "b stokes",
+      "ben",
+      "b stokes",
+      "ben"
+    ],
+    "born": 36
+  },
+  {
+    "id": 88,
+    "fullname": "jos buttler",
+    "name": "buttler",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": true,
+    "country": 7,
+    "ipl": 25,
+    "csl": 39,
+    "names": [
+      "jos butler",
+      "butler",
+      "buttler",
+      "jos buttler",
+      "jos",
+      "j buttler",
+      "jos",
+      "j buttler"
+    ],
+    "born": 39
+  },
+  {
+    "id": 89,
+    "fullname": "chris woakes",
+    "name": "woakes",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 7,
+    "ipl": null,
+    "csl": 33,
+    "names": [
+      "chris woakes",
+      "woakes",
+      "chris",
+      "chris"
+    ],
+    "born": 33
+  },
+  {
+    "id": 90,
+    "fullname": "liam plunkett",
+    "name": "plunkett",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 7,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "liam plunkett",
+      "plunkett",
+      "liam",
+      "liam"
+    ],
+    "born": 34
+  },
+  {
+    "id": 91,
+    "fullname": "joffra archer",
+    "name": "archer",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 7,
+    "ipl": 25,
+    "csl": 34,
+    "names": [
+      "joffra archer",
+      "archer",
+      "j archer",
+      "joffra",
+      "j archer",
+      "joffra",
+      "jofra archer"
+    ],
+    "born": 34
+  },
+  {
+    "id": 92,
+    "fullname": "adil rashid",
+    "name": "a rashid",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "leg"
+    ],
+    "keeper": false,
+    "country": 7,
+    "ipl": null,
+    "csl": 32,
+    "names": [
+      "adil rashid",
+      "a rashid",
+      "rashid",
+      "adil",
+      "rashid",
+      "adil"
+    ],
+    "born": 32
+  },
+  {
+    "id": 93,
+    "fullname": "mark wood",
+    "name": "wood",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 7,
+    "ipl": null,
+    "csl": 31,
+    "names": [
+      "mark wood",
+      "wood",
+      "mark",
+      "mark",
+      "m wood"
+    ],
+    "born": 31
+  },
+  {
+    "id": 94,
+    "fullname": "moen ali",
+    "name": "m ali",
+    "skillset": [
+      "all",
+      "l",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 7,
+    "ipl": 23,
+    "csl": 36,
+    "names": [
+      "moen ali",
+      "m ali",
+      "ali",
+      "moen",
+      "ali",
+      "moen"
+    ],
+    "born": 36
+  },
+  {
+    "id": 95,
+    "fullname": "james vince",
+    "name": "vince",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 7,
+    "ipl": null,
+    "csl": 33,
+    "names": [
+      "james vince",
+      "vince",
+      "j vince",
+      "james",
+      "j vince",
+      "james"
+    ],
+    "born": 33
+  },
+  {
+    "id": 96,
+    "fullname": "tamim iqbal",
+    "name": "tamim",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 8,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "tamim iqbal",
+      "tamim",
+      "t iqbal",
+      "iqbal",
+      "t iqbal",
+      "iqbal"
+    ],
+    "born": 33
+  },
+  {
+    "id": 97,
+    "fullname": "soumya sarkar",
+    "name": "s sarkar",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 8,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "soumya sarkar",
+      "s sarkar",
+      "sarkar",
+      "soumya",
+      "sarkar",
+      "soumya"
+    ],
+    "born": 32
+  },
+  {
+    "id": 98,
+    "fullname": "shakib al hasan",
+    "name": "shakib",
+    "skillset": [
+      "all",
+      "l",
+      "l",
+      "off"
+    ],
+    "keeper": false,
+    "country": 8,
+    "ipl": 21,
+    "csl": 33,
+    "names": [
+      "shakib al hasan",
+      "shakib",
+      "al",
+      "hasan",
+      "al",
+      "hasan"
+    ],
+    "born": 33
+  },
+  {
+    "id": 99,
+    "fullname": "mushfiqur rahim",
+    "name": "mushfiqur",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": true,
+    "country": 8,
+    "ipl": null,
+    "csl": 35,
+    "names": [
+      "mushfiqur rahim",
+      "mushfiqur",
+      "rahim",
+      "rahim"
+    ],
+    "born": 35
+  },
+  {
+    "id": 100,
+    "fullname": "liton das",
+    "name": "litton",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": true,
+    "country": 8,
+    "ipl": null,
+    "csl": 32,
+    "names": [
+      "liton das",
+      "litton",
+      "liton",
+      "l das",
+      "das",
+      "liton",
+      "l das",
+      "das",
+      "litton das"
+    ],
+    "born": 32
+  },
+  {
+    "id": 101,
+    "fullname": "mahmudullah",
+    "name": "mahmudullah",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 8,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "mahmudullah",
+      "mahmudullah"
+    ],
+    "born": 32
+  },
+  {
+    "id": 102,
+    "fullname": "mosaddek",
+    "name": "mosaddek",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 8,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "mosaddek hossain",
+      "mosaddek"
+    ],
+    "born": 42
+  },
+  {
+    "id": 103,
+    "fullname": "shaifuddin",
+    "name": "shaifuddin",
+    "skillset": [
+      "all",
+      "l",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 8,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "shaifuddin",
+      "shaifuddin"
+    ],
+    "born": 41
+  },
+  {
+    "id": 104,
+    "fullname": "mashrafe mortaza",
+    "name": "mashrafe",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 8,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "mashrafe mortaza",
+      "mashrafe",
+      "mortaza",
+      "mortaza"
+    ],
+    "born": 40
+  },
+  {
+    "id": 105,
+    "fullname": "mehidy hassan",
+    "name": "mehidy",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 8,
+    "ipl": null,
+    "csl": 37,
+    "names": [
+      "mehidy hassan",
+      "mehidy",
+      "hassan",
+      "m hassan",
+      "hassan",
+      "m hassan"
+    ],
+    "born": 40
+  },
+  {
+    "id": 106,
+    "fullname": "mustafizur rahman",
+    "name": "mustafizur",
+    "skillset": [
+      "bow",
+      "l",
+      "l",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 8,
+    "ipl": null,
+    "csl": 38,
+    "names": [
+      "mustafizur rahman",
+      "mustafizur",
+      "rahman",
+      "rahman"
+    ],
+    "born": 39
+  },
+  {
+    "id": 107,
+    "fullname": "shabbir rahman",
+    "name": "shabbir",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 8,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "shabbir rahman",
+      "shabbir",
+      "rahman",
+      "s rahman",
+      "rahman",
+      "s rahman"
+    ],
+    "born": 41
+  },
+  {
+    "id": 108,
+    "fullname": "rubel hossain",
+    "name": "rubel",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 8,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "rubel hossain",
+      "rubel",
+      "hossain",
+      "hossain"
+    ],
+    "born": 31
+  },
+  {
+    "id": 109,
+    "fullname": "manish pandey",
+    "name": "m pandey",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 21,
+    "csl": 39,
+    "names": [
+      "manish pandey",
+      "m pandey",
+      "manish",
+      "pandey",
+      "manish",
+      "pandey"
+    ],
+    "born": 39
+  },
+  {
+    "id": 110,
+    "fullname": "deepak hooda",
+    "name": "d hooda",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 21,
+    "csl": 34,
+    "names": [
+      "deepak hooda",
+      "d hooda",
+      "hooda",
+      "deepak",
+      "hooda",
+      "deepak"
+    ],
+    "born": 34
+  },
+  {
+    "id": 111,
+    "fullname": "yusuf pathan",
+    "name": "y pathan",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 21,
+    "csl": null,
+    "names": [
+      "yusuf pathan",
+      "y pathan",
+      "pathan",
+      "yusuf",
+      "pathan",
+      "yusuf"
+    ],
+    "born": 41
+  },
+  {
+    "id": 112,
+    "fullname": "rashid khan",
+    "name": "rashid khan",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "leg"
+    ],
+    "keeper": false,
+    "country": 9,
+    "ipl": 21,
+    "csl": 39,
+    "names": [
+      "rashid khan",
+      "rashid khan",
+      "r khan",
+      "rashid",
+      "khan",
+      "r khan",
+      "rashid",
+      "khan"
+    ],
+    "born": 39
+  },
+  {
+    "id": 113,
+    "fullname": "mohammad nabi",
+    "name": "nabi",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 9,
+    "ipl": 21,
+    "csl": 31,
+    "names": [
+      "mohammad nabi",
+      "nabi",
+      "mohammad",
+      "mohammad"
+    ],
+    "born": 31
+  },
+  {
+    "id": 114,
+    "fullname": "khaleel ahmed",
+    "name": "khaleel",
+    "skillset": [
+      "bow",
+      "l",
+      "l",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 21,
+    "csl": null,
+    "names": [
+      "khaleel ahmed",
+      "khaleel",
+      "ahmed",
+      "k ahmed",
+      "ahmed",
+      "k ahmed"
+    ],
+    "born": 42
+  },
+  {
+    "id": 115,
+    "fullname": "sandeep sharma",
+    "name": "sandeep",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 21,
+    "csl": null,
+    "names": [
+      "sandeep sharma",
+      "sandeep",
+      "sharma",
+      "sharma"
+    ],
+    "born": 35
+  },
+  {
+    "id": 116,
+    "fullname": "abishek sharma",
+    "name": "abishek",
+    "skillset": [
+      "all",
+      "l",
+      "l",
+      "off"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 21,
+    "csl": null,
+    "names": [
+      "abishek sharma",
+      "abishek",
+      "a sharma",
+      "sharma",
+      "a sharma",
+      "sharma"
+    ],
+    "born": 39
+  },
+  {
+    "id": 117,
+    "fullname": "shahbaz nadeem",
+    "name": "nadeem",
+    "skillset": [
+      "bow",
+      "r",
+      "l",
+      "off"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 21,
+    "csl": 38,
+    "names": [
+      "shahbaz nadeem",
+      "s nadeem"
+    ],
+    "born": 38
+  },
+  {
+    "id": 118,
+    "fullname": "basil thampi",
+    "name": "thampi",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 21,
+    "csl": null,
+    "names": [
+      "basil thampi",
+      "thampi",
+      "b thampi",
+      "basil",
+      "b thampi",
+      "basil"
+    ],
+    "born": 39
+  },
+  {
+    "id": 119,
+    "fullname": "wridhimman saha",
+    "name": "saha",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 21,
+    "csl": null,
+    "names": [
+      "wridhimman saha",
+      "saha",
+      "wridhimman",
+      "wridhimman"
+    ],
+    "born": 40
+  },
+  {
+    "id": 120,
+    "fullname": "shane watson",
+    "name": "watson",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": 22,
+    "csl": null,
+    "names": [
+      "shane watson",
+      "watson",
+      "shane",
+      "shane"
+    ],
+    "born": 36
+  },
+  {
+    "id": 121,
+    "fullname": "suresh raina",
+    "name": "raina",
+    "skillset": [
+      "bat",
+      "l",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 22,
+    "csl": 41,
+    "names": [
+      "suresh raina",
+      "raina",
+      "suresh",
+      "s raina",
+      "suresh",
+      "s raina"
+    ],
+    "born": 41
+  },
+  {
+    "id": 122,
+    "fullname": "ambati rayudu",
+    "name": "rayudu",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 22,
+    "csl": null,
+    "names": [
+      "ambati rayudu",
+      "rayudu",
+      "ambati",
+      "ambati"
+    ],
+    "born": 39
+  },
+  {
+    "id": 123,
+    "fullname": "dwayne bravo",
+    "name": "dj bravo",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 5,
+    "ipl": 22,
+    "csl": null,
+    "names": [
+      "dwayne bravo",
+      "dj bravo",
+      "dwayne",
+      "bravo",
+      "dwayne",
+      "bravo"
+    ],
+    "born": 40
+  },
+  {
+    "id": 124,
+    "fullname": "harbhajan singh",
+    "name": "harbhajan",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 22,
+    "csl": null,
+    "names": [
+      "harbhajan singh",
+      "harbhajan",
+      "singh",
+      "singh"
+    ],
+    "born": 37
+  },
+  {
+    "id": 125,
+    "fullname": "deepak chahar",
+    "name": "d chahar",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 22,
+    "csl": 38,
+    "names": [
+      "deepak chahar",
+      "d chahar",
+      "chahar",
+      "d",
+      "deepak",
+      "chahar",
+      "d",
+      "deepak"
+    ],
+    "born": 38
+  },
+  {
+    "id": 126,
+    "fullname": "shardul thakur",
+    "name": "thakur",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 22,
+    "csl": 40,
+    "names": [
+      "shardul thakur",
+      "thakur",
+      "s thakur",
+      "shardul",
+      "s thakur",
+      "shardul"
+    ],
+    "born": 40
+  },
+  {
+    "id": 127,
+    "fullname": "parthiv patel",
+    "name": "parthiv",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": true,
+    "country": 1,
+    "ipl": 23,
+    "csl": null,
+    "names": [
+      "parthiv patel",
+      "parthiv",
+      "p patel",
+      "patel",
+      "p patel",
+      "patel"
+    ],
+    "born": 33
+  },
+  {
+    "id": 128,
+    "fullname": "ab de villiers",
+    "name": "de villiers",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": true,
+    "country": 6,
+    "ipl": 23,
+    "csl": 32,
+    "names": [
+      "ab de villiers",
+      "de villiers",
+      "de",
+      "villiers",
+      "devilliers",
+      "ab",
+      "de",
+      "villiers",
+      "devilliers",
+      "ab"
+    ],
+    "born": 32
+  },
+  {
+    "id": 129,
+    "fullname": "akshdeep nath",
+    "name": "akshdeep",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": true,
+    "country": 1,
+    "ipl": 23,
+    "csl": null,
+    "names": [
+      "akshdeep nath",
+      "akshdeep",
+      "nath",
+      "nath"
+    ],
+    "born": 35
+  },
+  {
+    "id": 130,
+    "fullname": "navdeep saini",
+    "name": "saini",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 23,
+    "csl": 41,
+    "names": [
+      "navdeep saini",
+      "saini",
+      "navdeep",
+      "navdeep"
+    ],
+    "born": 41
+  },
+  {
+    "id": 131,
+    "fullname": "umesh yadav",
+    "name": "umesh",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 23,
+    "csl": 38,
+    "names": [
+      "umesh yadav",
+      "umesh",
+      "yadav",
+      "yadav"
+    ],
+    "born": 40
+  },
+  {
+    "id": 132,
+    "fullname": "mohammad siraj",
+    "name": "siraj",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 23,
+    "csl": 33,
+    "names": [
+      "mohammad siraj",
+      "siraj",
+      "mohammad",
+      "mohammad"
+    ],
+    "born": 33
+  },
+  {
+    "id": 133,
+    "fullname": "pawan negi",
+    "name": "negi",
+    "skillset": [
+      "bow",
+      "l",
+      "l",
+      "off"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 23,
+    "csl": null,
+    "names": [
+      "pawan negi",
+      "negi",
+      "pawan",
+      "p negi",
+      "pawan",
+      "p negi"
+    ],
+    "born": 31
+  },
+  {
+    "id": 134,
+    "fullname": "dale steyn",
+    "name": "steyn",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 6,
+    "ipl": 23,
+    "csl": 36,
+    "names": [
+      "dale steyn",
+      "steyn",
+      "dale",
+      "d steyn",
+      "dale",
+      "d steyn"
+    ],
+    "born": 36
+  },
+  {
+    "id": 135,
+    "fullname": "washington sundar",
+    "name": "sundar",
+    "skillset": [
+      "all",
+      "l",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 23,
+    "csl": 41,
+    "names": [
+      "washington sundar",
+      "sundar",
+      "washington",
+      "washington"
+    ],
+    "born": 40
+  },
+  {
+    "id": 136,
+    "fullname": "gurkeerat singh mann",
+    "name": "gurkeerat",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "gurkeerat singh mann",
+      "gurkeerat",
+      "singh",
+      "mann",
+      "singh",
+      "mann"
+    ],
+    "born": 36
+  },
+  {
+    "id": 137,
+    "fullname": "suryakumar yadav",
+    "name": "suryakumar",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 24,
+    "csl": 39,
+    "names": [
+      "suryakumar yadav",
+      "suryakumar",
+      "yadav",
+      "s yadav",
+      "yadav",
+      "s yadav"
+    ],
+    "born": 39
+  },
+  {
+    "id": 138,
+    "fullname": "ishan kishan",
+    "name": "kishan",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 24,
+    "csl": 37,
+    "names": [
+      "ishan kishan",
+      "kishan",
+      "ishan",
+      "ishan"
+    ],
+    "born": 37
+  },
+  {
+    "id": 139,
+    "fullname": "kieron pollard",
+    "name": "pollard",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 5,
+    "ipl": 24,
+    "csl": 35,
+    "names": [
+      "kieron pollard",
+      "pollard",
+      "k pollard",
+      "kieron",
+      "k pollard",
+      "kieron"
+    ],
+    "born": 35
+  },
+  {
+    "id": 140,
+    "fullname": "krunal pandya",
+    "name": "krunal",
+    "skillset": [
+      "all",
+      "l",
+      "l",
+      "off"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 24,
+    "csl": 37,
+    "names": [
+      "krunal pandya",
+      "krunal",
+      "pandya",
+      "k pandya",
+      "pandya",
+      "k pandya"
+    ],
+    "born": 33
+  },
+  {
+    "id": 141,
+    "fullname": "rahul chahar",
+    "name": "r chahar",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "leg"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 24,
+    "csl": 38,
+    "names": [
+      "rahul chahar",
+      "r chahar",
+      "rahul",
+      "chahar",
+      "rahul",
+      "chahar"
+    ],
+    "born": 38
+  },
+  {
+    "id": 142,
+    "fullname": "lasith malinga",
+    "name": "malinga",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 10,
+    "ipl": 24,
+    "csl": 38,
+    "names": [
+      "lasith malinga",
+      "malinga",
+      "lasith",
+      "lasith"
+    ],
+    "born": 38
+  },
+  {
+    "id": 143,
+    "fullname": "mitchell mcclenaghan",
+    "name": "mcclenaghan",
+    "skillset": [
+      "bow",
+      "l",
+      "l",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 4,
+    "ipl": 24,
+    "csl": null,
+    "names": [
+      "mitchell mcclenaghan",
+      "mcclenaghan",
+      "mitchell",
+      "mitchell"
+    ],
+    "born": 36
+  },
+  {
+    "id": 144,
+    "fullname": "yuvraj singh",
+    "name": "yuvraj",
+    "skillset": [
+      "all",
+      "l",
+      "l",
+      "off"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 24,
+    "csl": null,
+    "names": [
+      "yuvraj singh",
+      "yuvraj",
+      "singh",
+      "y singh",
+      "singh",
+      "y singh"
+    ],
+    "born": 42
+  },
+  {
+    "id": 145,
+    "fullname": "ben cutting",
+    "name": "b cutting",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": 24,
+    "csl": 31,
+    "names": [
+      "ben cutting",
+      "b cutting",
+      "ben",
+      "cutting",
+      "ben",
+      "cutting"
+    ],
+    "born": 31
+  },
+  {
+    "id": 146,
+    "fullname": "alzzari joseph",
+    "name": "alzzari",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 5,
+    "ipl": 24,
+    "csl": null,
+    "names": [
+      "alzzari joseph",
+      "alzzari",
+      "a joseph",
+      "joseph",
+      "a joseph",
+      "joseph"
+    ],
+    "born": 41
+  },
+  {
+    "id": 147,
+    "fullname": "ajinkya rahane",
+    "name": "rahane",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 25,
+    "csl": 36,
+    "names": [
+      "ajinkya rahane",
+      "rahane",
+      "ajinkya",
+      "ajinkya"
+    ],
+    "born": 36
+  },
+  {
+    "id": 148,
+    "fullname": "sanju samson",
+    "name": "samson",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": true,
+    "country": 1,
+    "ipl": 25,
+    "csl": 41,
+    "names": [
+      "sanju samson",
+      "samson",
+      "sanju",
+      "sanju"
+    ],
+    "born": 41
+  },
+  {
+    "id": 149,
+    "fullname": "rahul tripathi",
+    "name": "r tripathi",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 25,
+    "csl": 33,
+    "names": [
+      "rahul tripathi",
+      "r tripathi",
+      "tripathi",
+      "rahul",
+      "tripathi",
+      "rahul"
+    ],
+    "born": 33
+  },
+  {
+    "id": 150,
+    "fullname": "riyan parag",
+    "name": "parag",
+    "skillset": [
+      "bat",
+      "r",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 25,
+    "csl": null,
+    "names": [
+      "riyan parag",
+      "parag",
+      "riyan",
+      "riyan"
+    ],
+    "born": 41
+  },
+  {
+    "id": 151,
+    "fullname": "krishnappa gowtham",
+    "name": "k gowtham",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 25,
+    "csl": null,
+    "names": [
+      "krishnappa gowtham",
+      "k gowtham",
+      "krishnappa",
+      "gowtham",
+      "krishnappa",
+      "gowtham"
+    ],
+    "born": 40
+  },
+  {
+    "id": 152,
+    "fullname": "shreyas gopal",
+    "name": "gopal",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "leg"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 25,
+    "csl": 36,
+    "names": [
+      "shreyas gopal",
+      "gopal",
+      "shreyas",
+      "shreyas"
+    ],
+    "born": 39
+  },
+  {
+    "id": 153,
+    "fullname": "jaydev unadkat",
+    "name": "unadkat",
+    "skillset": [
+      "bow",
+      "r",
+      "l",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 25,
+    "csl": null,
+    "names": [
+      "jaydev unadkat",
+      "unadkat",
+      "undakat",
+      "jaydev",
+      "undakat",
+      "jaydev"
+    ],
+    "born": 40
+  },
+  {
+    "id": 154,
+    "fullname": "dhawal kulkarni",
+    "name": "kulkarni",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 25,
+    "csl": null,
+    "names": [
+      "dhawal kulkarni",
+      "kulkarni",
+      "dhawal",
+      "dhawal"
+    ],
+    "born": 42
+  },
+  {
+    "id": 155,
+    "fullname": "stuart binny",
+    "name": "binny",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 25,
+    "csl": null,
+    "names": [
+      "stuart binny",
+      "binny",
+      "s binny",
+      "stuart",
+      "s binny",
+      "stuart"
+    ],
+    "born": 36
+  },
+  {
+    "id": 156,
+    "fullname": "varun aaron",
+    "name": "v aaron",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 25,
+    "csl": null,
+    "names": [
+      "varun aaron",
+      "v aaron",
+      "varun",
+      "aaron",
+      "varun",
+      "aaron"
+    ],
+    "born": 40
+  },
+  {
+    "id": 157,
+    "fullname": "liam livingstone",
+    "name": "livingstone",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 7,
+    "ipl": 25,
+    "csl": 38,
+    "names": [
+      "liam livingstone",
+      "livingstone",
+      "liam",
+      "l livingstone"
+    ],
+    "born": 38
+  },
+  {
+    "id": 158,
+    "fullname": "ashton turner",
+    "name": "turner",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": 25,
+    "csl": null,
+    "names": [
+      "ashton turner",
+      "turner",
+      "a turner",
+      "ashton",
+      "a turner",
+      "ashton"
+    ],
+    "born": 31
+  },
+  {
+    "id": 159,
+    "fullname": "mayank agarwal",
+    "name": "mayank",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 26,
+    "csl": 32,
+    "names": [
+      "mayank agarwal",
+      "mayank",
+      "agarwal",
+      "agarwal"
+    ],
+    "born": 32
+  },
+  {
+    "id": 160,
+    "fullname": "sarfaraz khan",
+    "name": "sarfaraz khan",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 26,
+    "csl": null,
+    "names": [
+      "sarfaraz khan",
+      "sarfaraz khan",
+      "s khan",
+      "sarfaraz",
+      "khan",
+      "s khan",
+      "sarfaraz",
+      "khan"
+    ],
+    "born": 40
+  },
+  {
+    "id": 161,
+    "fullname": "mandeep singh",
+    "name": "mandeep",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 26,
+    "csl": null,
+    "names": [
+      "mandeep singh",
+      "mandeep",
+      "singh",
+      "singh"
+    ],
+    "born": 42
+  },
+  {
+    "id": 162,
+    "fullname": "sam curran",
+    "name": "s curran",
+    "skillset": [
+      "all",
+      "l",
+      "l",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 7,
+    "ipl": 26,
+    "csl": 36,
+    "names": [
+      "sam curran",
+      "s curran",
+      "curran",
+      "sam",
+      "curran",
+      "sam"
+    ],
+    "born": 36
+  },
+  {
+    "id": 163,
+    "fullname": "ravi ashwin",
+    "name": "ashwin",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 26,
+    "csl": 39,
+    "names": [
+      "ravi ashwin",
+      "ashwin",
+      "ravi",
+      "r ashwin",
+      "ravi",
+      "r ashwin"
+    ],
+    "born": 39
+  },
+  {
+    "id": 164,
+    "fullname": "mujeeb ur rahman",
+    "name": "mujeeb",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 9,
+    "ipl": 26,
+    "csl": 33,
+    "names": [
+      "mujeeb ur rahman",
+      "mujeeb",
+      "ur",
+      "rahman",
+      "ur",
+      "rahman"
+    ],
+    "born": 33
+  },
+  {
+    "id": 165,
+    "fullname": "ankit rajpoot",
+    "name": "rajpoot",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 26,
+    "csl": null,
+    "names": [
+      "ankit rajpoot",
+      "rajpoot",
+      "ankit",
+      "ankit"
+    ],
+    "born": 42
+  },
+  {
+    "id": 166,
+    "fullname": "murugan ashwin",
+    "name": "murugan",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "leg"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 26,
+    "csl": 34,
+    "names": [
+      "murugan ashwin",
+      "murugan",
+      "ashwin",
+      "ashwin"
+    ],
+    "born": 39
+  },
+  {
+    "id": 167,
+    "fullname": "andrew tye",
+    "name": "tye",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": 26,
+    "csl": 42,
+    "names": [
+      "andrew tye",
+      "tye",
+      "a tye",
+      "andrew",
+      "a tye",
+      "andrew"
+    ],
+    "born": 42
+  },
+  {
+    "id": 168,
+    "fullname": "hardus viljoen",
+    "name": "viljoen",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 6,
+    "ipl": 26,
+    "csl": null,
+    "names": [
+      "hardus viljoen",
+      "viljoen",
+      "hardus",
+      "hardus"
+    ],
+    "born": 33
+  },
+  {
+    "id": 169,
+    "fullname": "arshdeep singh",
+    "name": "arshdeep",
+    "skillset": [
+      "bow",
+      "l",
+      "l",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 26,
+    "csl": 32,
+    "names": [
+      "arshdeep singh",
+      "arshdeep",
+      "singh",
+      "singh"
+    ],
+    "born": 32
+  },
+  {
+    "id": 170,
+    "fullname": "karun nair",
+    "name": "karun",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 26,
+    "csl": null,
+    "names": [
+      "karun nair",
+      "karun",
+      "nair",
+      "k nair",
+      "nair",
+      "k nair"
+    ],
+    "born": 42
+  },
+  {
+    "id": 171,
+    "fullname": "prithwi shaw",
+    "name": "prithwi",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 27,
+    "csl": 41,
+    "names": [
+      "prithwi shaw",
+      "prithwi",
+      "p shaw",
+      "shaw",
+      "prithvi shaw",
+      "prithvi",
+      "p shaw",
+      "shaw",
+      "prithvi shaw",
+      "prithvi"
+    ],
+    "born": 41
+  },
+  {
+    "id": 172,
+    "fullname": "shikhar dhawan",
+    "name": "shikhar",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 27,
+    "csl": 35,
+    "names": [
+      "shikhar dhawan",
+      "shikhar",
+      "dhawan",
+      "dhawan"
+    ],
+    "born": 42
+  },
+  {
+    "id": 173,
+    "fullname": "shreyas iyer",
+    "name": "iyer",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 27,
+    "csl": 42,
+    "names": [
+      "shreyas iyer",
+      "iyer",
+      "shreyas",
+      "s iyer",
+      "shreyas",
+      "s iyer"
+    ],
+    "born": 42
+  },
+  {
+    "id": 174,
+    "fullname": "colin ingram",
+    "name": "ingram",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 6,
+    "ipl": 27,
+    "csl": null,
+    "names": [
+      "colin ingram",
+      "ingram",
+      "colin",
+      "colin"
+    ],
+    "born": 37
+  },
+  {
+    "id": 175,
+    "fullname": "sherfane rutherford",
+    "name": "rutherford",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 5,
+    "ipl": 27,
+    "csl": 38,
+    "names": [
+      "sherfane rutherford",
+      "rutherford",
+      "sherfane",
+      "sherfane"
+    ],
+    "born": 38
+  },
+  {
+    "id": 176,
+    "fullname": "keamo paul",
+    "name": "paul",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 5,
+    "ipl": 27,
+    "csl": null,
+    "names": [
+      "keamo paul",
+      "paul",
+      "keamo",
+      "keamo"
+    ],
+    "born": 32
+  },
+  {
+    "id": 177,
+    "fullname": "axar patel",
+    "name": "axar",
+    "skillset": [
+      "all",
+      "l",
+      "l",
+      "off"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 27,
+    "csl": 31,
+    "names": [
+      "axar patel",
+      "axar",
+      "patel",
+      "a patel",
+      "patel",
+      "a patel"
+    ],
+    "born": 31
+  },
+  {
+    "id": 178,
+    "fullname": "amit mishra",
+    "name": "mishra",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "leg"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 27,
+    "csl": 41,
+    "names": [
+      "amit mishra",
+      "mishra",
+      "amit",
+      "amit"
+    ],
+    "born": 41
+  },
+  {
+    "id": 179,
+    "fullname": "ishant sharma",
+    "name": "ishant",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 27,
+    "csl": 39,
+    "names": [
+      "ishant sharma",
+      "ishant",
+      "i sharma",
+      "sharma",
+      "i sharma",
+      "sharma"
+    ],
+    "born": 39
+  },
+  {
+    "id": 180,
+    "fullname": "colin munro",
+    "name": "munro",
+    "skillset": [
+      "bat",
+      "l",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 4,
+    "ipl": 27,
+    "csl": 33,
+    "names": [
+      "colin munro",
+      "munro",
+      "c munro",
+      "colin",
+      "c munro",
+      "colin"
+    ],
+    "born": 33
+  },
+  {
+    "id": 181,
+    "fullname": "sandeep lamichanne",
+    "name": "lamichanne",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "leg"
+    ],
+    "keeper": false,
+    "country": 11,
+    "ipl": 27,
+    "csl": 38,
+    "names": [
+      "sandeep lamichanne",
+      "lamichanne",
+      "sandeep",
+      "sandeep",
+      "lamichhanne"
+    ],
+    "born": 38
+  },
+  {
+    "id": 182,
+    "fullname": "hanuma vihari",
+    "name": "vihari",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "hanuma vihari",
+      "vihari",
+      "hanuma",
+      "h vihari",
+      "hanuma",
+      "h vihari"
+    ],
+    "born": 40
+  },
+  {
+    "id": 183,
+    "fullname": "rahul tehwatia",
+    "name": "tehwatia",
+    "skillset": [
+      "all",
+      "l",
+      "r",
+      "leg"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 27,
+    "csl": 35,
+    "names": [
+      "rahul tehwatia",
+      "tehwatia",
+      "rahul",
+      "rahul"
+    ],
+    "born": 35
+  },
+  {
+    "id": 184,
+    "fullname": "chris lynn",
+    "name": "lynn",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": 28,
+    "csl": 34,
+    "names": [
+      "chris lynn",
+      "lynn",
+      "chris",
+      "chris"
+    ],
+    "born": 34
+  },
+  {
+    "id": 185,
+    "fullname": "shubman gill",
+    "name": "gill",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 28,
+    "csl": 39,
+    "names": [
+      "shubman gill",
+      "gill",
+      "shubman",
+      "s gill",
+      "shubman",
+      "s gill"
+    ],
+    "born": 39
+  },
+  {
+    "id": 186,
+    "fullname": "robin utthappa",
+    "name": "utthappa",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 28,
+    "csl": null,
+    "names": [
+      "robin utthappa",
+      "utthappa",
+      "r utthappa",
+      "robin",
+      "r utthappa",
+      "robin"
+    ],
+    "born": 41
+  },
+  {
+    "id": 187,
+    "fullname": "nitish rana",
+    "name": "rana",
+    "skillset": [
+      "bat",
+      "l",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 28,
+    "csl": null,
+    "names": [
+      "nitish rana",
+      "rana",
+      "nitish",
+      "nitish"
+    ],
+    "born": 42
+  },
+  {
+    "id": 188,
+    "fullname": "sunil narine",
+    "name": "narine",
+    "skillset": [
+      "all",
+      "l",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 5,
+    "ipl": 28,
+    "csl": 35,
+    "names": [
+      "sunil narine",
+      "narine",
+      "sunil",
+      "s narine"
+    ],
+    "born": 35
+  },
+  {
+    "id": 189,
+    "fullname": "piyush chawla",
+    "name": "chawla",
+    "skillset": [
+      "bow",
+      "l",
+      "r",
+      "leg"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 28,
+    "csl": null,
+    "names": [
+      "piyush chawla",
+      "chawla",
+      "piyush",
+      "piyush"
+    ],
+    "born": 42
+  },
+  {
+    "id": 190,
+    "fullname": "prasidh krishna",
+    "name": "prasidh",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 28,
+    "csl": null,
+    "names": [
+      "prasidh krishna",
+      "prasidh",
+      "krishna",
+      "krishna"
+    ],
+    "born": 32
+  },
+  {
+    "id": 191,
+    "fullname": "harry gurney",
+    "name": "gurney",
+    "skillset": [
+      "bow",
+      "l",
+      "l",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 7,
+    "ipl": 28,
+    "csl": null,
+    "names": [
+      "harry gurney",
+      "gurney",
+      "harry",
+      "harry"
+    ],
+    "born": 40
+  },
+  {
+    "id": 192,
+    "fullname": "prthviraj",
+    "name": "prthviraj",
+    "skillset": [
+      "bow",
+      "l",
+      "l",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 28,
+    "csl": null,
+    "names": [
+      "prithviraj",
+      "prthviraj"
+    ],
+    "born": 38
+  },
+  {
+    "id": 193,
+    "fullname": "rinku singh",
+    "name": "rinku",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": 28,
+    "csl": null,
+    "names": [
+      "rinku singh",
+      "rinku",
+      "r singh",
+      "singh",
+      "r singh",
+      "singh"
+    ],
+    "born": 40
+  },
+  {
+    "id": 194,
+    "fullname": "alex hales",
+    "name": "hales",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 7,
+    "ipl": null,
+    "csl": 31,
+    "names": [
+      "alex hales",
+      "hales",
+      "alex",
+      "alex"
+    ],
+    "born": 31
+  },
+  {
+    "id": 195,
+    "fullname": "matthew wade",
+    "name": "wade",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": true,
+    "country": 3,
+    "ipl": null,
+    "csl": 42,
+    "names": [
+      "matthew wade",
+      "wade",
+      "mathhew",
+      "matthew",
+      "m wade",
+      "mathhew",
+      "matthew",
+      "m wade"
+    ],
+    "born": 42
+  },
+  {
+    "id": 196,
+    "fullname": "ben mcdormutt",
+    "name": "mcdormutt",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": null,
+    "csl": 31,
+    "names": [
+      "ben mcdormutt",
+      "mcdormutt",
+      "b mcdormutt",
+      "ben",
+      "b mcdormutt",
+      "ben"
+    ],
+    "born": 42
+  },
+  {
+    "id": 197,
+    "fullname": "rilee rossouw",
+    "name": "rossouw",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 6,
+    "ipl": null,
+    "csl": 35,
+    "names": [
+      "rilee rossouw",
+      "rossouw",
+      "r rossouw",
+      "rilee",
+      "r rossouw",
+      "rilee"
+    ],
+    "born": 40
+  },
+  {
+    "id": 198,
+    "fullname": "josh hazlewood",
+    "name": "hazlewood",
+    "skillset": [
+      "bow",
+      "l",
+      "l",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": null,
+    "csl": 31,
+    "names": [
+      "josh hazlewood",
+      "hazlewood",
+      "josh",
+      "j hazlewood",
+      "josh",
+      "j hazlewood"
+    ],
+    "born": 31
+  },
+  {
+    "id": 199,
+    "fullname": "moises henriques",
+    "name": "henriques",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": null,
+    "csl": 32,
+    "names": [
+      "moises henriques",
+      "henriques",
+      "m henriques",
+      "moises",
+      "m henriques",
+      "moises"
+    ],
+    "born": 32
+  },
+  {
+    "id": 200,
+    "fullname": "darren bravo",
+    "name": "dm bravo",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 5,
+    "ipl": null,
+    "csl": 32,
+    "names": [
+      "darren bravo",
+      "dm bravo",
+      "bravo",
+      "darren",
+      "d bravo",
+      "bravo",
+      "darren",
+      "d bravo"
+    ],
+    "born": 32
+  },
+  {
+    "id": 201,
+    "fullname": "shoaib malik",
+    "name": "s malik",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 2,
+    "ipl": null,
+    "csl": 32,
+    "names": [
+      "shoaib malik",
+      "s malik",
+      "shoaib",
+      "malik",
+      "shoaib",
+      "malik"
+    ],
+    "born": 32
+  },
+  {
+    "id": 202,
+    "fullname": "isuru udana",
+    "name": "udana",
+    "skillset": [
+      "bow",
+      "r",
+      "l",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 10,
+    "ipl": null,
+    "csl": 32,
+    "names": [
+      "isuru udana",
+      "udana",
+      "i udana",
+      "isuru",
+      "i udana",
+      "isuru"
+    ],
+    "born": 32
+  },
+  {
+    "id": 203,
+    "fullname": "kane richardson",
+    "name": "richardson",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "0"
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": null,
+    "csl": 39,
+    "names": [
+      "kane richardson",
+      "richardson",
+      "k richardson",
+      "kane",
+      "k richardson",
+      "kane"
+    ],
+    "born": 32
+  },
+  {
+    "id": 204,
+    "fullname": "andre fletcher",
+    "name": "fletcher",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 5,
+    "ipl": null,
+    "csl": 33,
+    "names": [
+      "andre fletcher",
+      "fletcher",
+      "andre",
+      "andre"
+    ],
+    "born": 41
+  },
+  {
+    "id": 205,
+    "fullname": "tim seifert",
+    "name": "seifert",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": true,
+    "country": 4,
+    "ipl": null,
+    "csl": 33,
+    "names": [
+      "tim seifert",
+      "seifert",
+      "t seifert",
+      "tim",
+      "t seifert",
+      "tim"
+    ],
+    "born": 42
+  },
+  {
+    "id": 206,
+    "fullname": "tom curran",
+    "name": "t curran",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 7,
+    "ipl": null,
+    "csl": 33,
+    "names": [
+      "tom curran",
+      "t curran",
+      "tom",
+      "curran",
+      "tom",
+      "curran"
+    ],
+    "born": 33
+  },
+  {
+    "id": 207,
+    "fullname": "callum ferguson",
+    "name": "c ferguson",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": null,
+    "csl": 34,
+    "names": [
+      "callum ferguson",
+      "c ferguson",
+      "callum",
+      "ferguson",
+      "callum",
+      "ferguson"
+    ],
+    "born": 34
+  },
+  {
+    "id": 208,
+    "fullname": "travis head",
+    "name": "head",
+    "skillset": [
+      "bat",
+      "l",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": null,
+    "csl": 32,
+    "names": [
+      "travis head",
+      "head",
+      "travis",
+      "t head",
+      "travis",
+      "t head"
+    ],
+    "born": 42
+  },
+  {
+    "id": 209,
+    "fullname": "hayden walsh",
+    "name": "walsh jr",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "leg"
+    ],
+    "keeper": false,
+    "country": 5,
+    "ipl": null,
+    "csl": 34,
+    "names": [
+      "hayden walsh",
+      "walsh jr",
+      "hayden",
+      "h walsh",
+      "walsh",
+      "hayden",
+      "h walsh",
+      "walsh"
+    ],
+    "born": 34
+  },
+  {
+    "id": 210,
+    "fullname": "dinesh chandimal",
+    "name": "chandimal",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": true,
+    "country": 10,
+    "ipl": null,
+    "csl": 35,
+    "names": [
+      "dinesh chandimal",
+      "chandimal",
+      "dinesh",
+      "d chandimal",
+      "dinesh",
+      "d chandimal"
+    ],
+    "born": 41
+  },
+  {
+    "id": 211,
+    "fullname": "joe denly",
+    "name": "denly",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 7,
+    "ipl": null,
+    "csl": 35,
+    "names": [
+      "joe denly",
+      "denly",
+      "joe",
+      "j denly",
+      "joe",
+      "j denly"
+    ],
+    "born": 33
+  },
+  {
+    "id": 212,
+    "fullname": "dan christian",
+    "name": "christian",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": null,
+    "csl": 35,
+    "names": [
+      "dan christian",
+      "christian",
+      "d christian",
+      "dan",
+      "d christian",
+      "dan"
+    ],
+    "born": 35
+  },
+  {
+    "id": 213,
+    "fullname": "james pattinson",
+    "name": "pattinson",
+    "skillset": [
+      "bow",
+      "l",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": null,
+    "csl": 35,
+    "names": [
+      "james pattinson",
+      "pattinson",
+      "james",
+      "j pattinson",
+      "james",
+      "j pattinson"
+    ],
+    "born": 35
+  },
+  {
+    "id": 214,
+    "fullname": "natarajan",
+    "name": "natarajan",
+    "skillset": [
+      "bow",
+      "l",
+      "l",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": null,
+    "csl": 35,
+    "names": [
+      "t natarajan",
+      "natarajan"
+    ],
+    "born": 35
+  },
+  {
+    "id": 215,
+    "fullname": "josua philippe",
+    "name": "philippe",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": null,
+    "csl": 36,
+    "names": [
+      "josua philippe",
+      "philippe",
+      "josua",
+      "josua"
+    ],
+    "born": 36
+  },
+  {
+    "id": 216,
+    "fullname": "mohammad rizwan",
+    "name": "rizwan",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": true,
+    "country": 2,
+    "ipl": null,
+    "csl": 36,
+    "names": [
+      "mohammad rizwan",
+      "rizwan",
+      "mohammad",
+      "mohammad"
+    ],
+    "born": 36
+  },
+  {
+    "id": 217,
+    "fullname": "chris green",
+    "name": "green",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": null,
+    "csl": 37,
+    "names": [
+      "chris green",
+      "green",
+      "c grenn",
+      "chris",
+      "c grenn",
+      "chris"
+    ],
+    "born": 37
+  },
+  {
+    "id": 218,
+    "fullname": "darcy short",
+    "name": "short",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": null,
+    "csl": 38,
+    "names": [
+      "darcy short",
+      "short",
+      "darcy",
+      "darcy"
+    ],
+    "born": 38
+  },
+  {
+    "id": 219,
+    "fullname": "kusal perera",
+    "name": "kusal",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 10,
+    "ipl": null,
+    "csl": 38,
+    "names": [
+      "kusal perera",
+      "kusal",
+      "perera",
+      "perera"
+    ],
+    "born": 38
+  },
+  {
+    "id": 220,
+    "fullname": "kyle jamieson",
+    "name": "jamieson",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 4,
+    "ipl": null,
+    "csl": 38,
+    "names": [
+      "kyle jamieson",
+      "jamieson",
+      "k jamieson",
+      "kyle",
+      "k jamieson",
+      "kyle"
+    ],
+    "born": 42
+  },
+  {
+    "id": 221,
+    "fullname": "varun chakravarthy",
+    "name": "chakravarthy",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": null,
+    "csl": 38,
+    "names": [
+      "varun chakravarthy",
+      "chakravarthy",
+      "v chakravarthy",
+      "varun",
+      "v chakravarthy",
+      "varun"
+    ],
+    "born": 38
+  },
+  {
+    "id": 222,
+    "fullname": "dawid malan",
+    "name": "malan",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 7,
+    "ipl": null,
+    "csl": 31,
+    "names": [
+      "dawid malan",
+      "malan",
+      "dawid",
+      "dawid"
+    ],
+    "born": 39
+  },
+  {
+    "id": 223,
+    "fullname": "jhye richardson",
+    "name": "j richardson",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": null,
+    "csl": 39,
+    "names": [
+      "jhye richardson",
+      "j richardson",
+      "jhye",
+      "richardson",
+      "jhye",
+      "richardson"
+    ],
+    "born": 39
+  },
+  {
+    "id": 224,
+    "fullname": "daniel sams",
+    "name": "sams",
+    "skillset": [
+      "all",
+      "r",
+      "l",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": null,
+    "csl": 40,
+    "names": [
+      "daniel sams",
+      "sams",
+      "daniel",
+      "d sams",
+      "daniel",
+      "d sams"
+    ],
+    "born": 40
+  },
+  {
+    "id": 225,
+    "fullname": "chris jordan",
+    "name": "jordan",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 7,
+    "ipl": null,
+    "csl": 40,
+    "names": [
+      "chris jordan",
+      "jordan",
+      "c jordan",
+      "chris",
+      "c jordan",
+      "chris"
+    ],
+    "born": 40
+  },
+  {
+    "id": 226,
+    "fullname": "ashton agar",
+    "name": "agar",
+    "skillset": [
+      "bow",
+      "l",
+      "l",
+      "off"
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": null,
+    "csl": 40,
+    "names": [
+      "ashton agar",
+      "agar",
+      "ashton",
+      "a agar",
+      "ashton",
+      "a agar"
+    ],
+    "born": 40
+  },
+  {
+    "id": 227,
+    "fullname": "tom banton",
+    "name": "banton",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 7,
+    "ipl": null,
+    "csl": 41,
+    "names": [
+      "tom banton",
+      "banton",
+      "tom",
+      "tom"
+    ],
+    "born": 41
+  },
+  {
+    "id": 228,
+    "fullname": "dhananjaya de silva",
+    "name": "dhananjaya",
+    "skillset": [
+      "bat",
+      "r",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 10,
+    "ipl": null,
+    "csl": 35,
+    "names": [
+      "dhananjaya de silva",
+      "dhananjaya",
+      "de silva",
+      "silva",
+      "de",
+      "d silva"
+    ],
+    "born": 39
+  },
+  {
+    "id": 229,
+    "fullname": "anrich nortje",
+    "name": "nortje",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 6,
+    "ipl": null,
+    "csl": 41,
+    "names": [
+      "anrich nortje",
+      "nortje",
+      "a nortje",
+      "anrich",
+      "a nortje",
+      "anrich"
+    ],
+    "born": 41
+  },
+  {
+    "id": 230,
+    "fullname": "haris rauf",
+    "name": "haris rauf",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 2,
+    "ipl": null,
+    "csl": 41,
+    "names": [
+      "haris rauf",
+      "haris rauf",
+      "h rauf",
+      "h rauf"
+    ],
+    "born": 41
+  },
+  {
+    "id": 231,
+    "fullname": "glenn phillips",
+    "name": "phillips",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 4,
+    "ipl": null,
+    "csl": 42,
+    "names": [
+      "glenn phillips",
+      "phillips",
+      "glenn",
+      "glenn",
+      "g phillips"
+    ],
+    "born": 42
+  },
+  {
+    "id": 232,
+    "fullname": "sohail tanvir",
+    "name": "tanvir",
+    "skillset": [
+      "all",
+      "l",
+      "l",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 2,
+    "ipl": null,
+    "csl": 42,
+    "names": [
+      "sohail tanvir",
+      "tanvir",
+      "sohail",
+      "s tanvir",
+      "sohail",
+      "s tanvir"
+    ],
+    "born": 42
+  },
+  {
+    "id": 233,
+    "fullname": "sean abbott",
+    "name": "abbott",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": null,
+    "csl": 32,
+    "names": [
+      "sean abbott",
+      "abbott",
+      "sean",
+      "sean"
+    ],
+    "born": 32
+  },
+  {
+    "id": 234,
+    "fullname": "akeal hossain",
+    "name": "akeal",
+    "skillset": [
+      "bow",
+      "l",
+      "l",
+      "off"
+    ],
+    "keeper": false,
+    "country": 5,
+    "ipl": null,
+    "csl": 34,
+    "names": [
+      "akeal hossain",
+      "akeal",
+      "hossain",
+      "hossain"
+    ],
+    "born": 34
+  },
+  {
+    "id": 235,
+    "fullname": "sikandar raza",
+    "name": "raza",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 12,
+    "ipl": null,
+    "csl": 34,
+    "names": [
+      "sikandar raza",
+      "raza",
+      "sikandar",
+      "sikandar"
+    ],
+    "born": 34
+  },
+  {
+    "id": 236,
+    "fullname": "tabraiz shamsi",
+    "name": "shamsi",
+    "skillset": [
+      "bow",
+      "l",
+      "l",
+      "leg"
+    ],
+    "keeper": false,
+    "country": 6,
+    "ipl": null,
+    "csl": 36,
+    "names": [
+      "tabraiz shamsi",
+      "shamsi",
+      "tabraiz",
+      "tabraiz"
+    ],
+    "born": 32
+  },
+  {
+    "id": 237,
+    "fullname": "temba bavuma",
+    "name": "bavuma",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 6,
+    "ipl": null,
+    "csl": 35,
+    "names": [
+      "temba bavuma",
+      "bavuma",
+      "temba",
+      "temba"
+    ],
+    "born": 35
+  },
+  {
+    "id": 238,
+    "fullname": "reeza hendricks",
+    "name": "r hendricks",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 6,
+    "ipl": null,
+    "csl": 38,
+    "names": [
+      "reeza hendricks",
+      "r hendricks",
+      "reeza",
+      "hendricks",
+      "reeza",
+      "hendricks"
+    ],
+    "born": 38
+  },
+  {
+    "id": 239,
+    "fullname": "gunathilaka",
+    "name": "gunathilaka",
+    "skillset": [
+      "bat",
+      "l",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 10,
+    "ipl": null,
+    "csl": 33,
+    "names": [
+      "danushka gunathilaka",
+      "gunathilaka"
+    ],
+    "born": 33
+  },
+  {
+    "id": 240,
+    "fullname": "haider ali",
+    "name": "haider",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 2,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "haider ali",
+      "haider",
+      "ali",
+      "ali"
+    ],
+    "born": 40
+  },
+  {
+    "id": 241,
+    "fullname": "faheem ashraf",
+    "name": "faheem",
+    "skillset": [
+      "all",
+      "l",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 2,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "faheem ashraf",
+      "faheem",
+      "ashraf",
+      "ashraf"
+    ],
+    "born": 31
+  },
+  {
+    "id": 242,
+    "fullname": "sharjeel khan",
+    "name": "sharjeel",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 2,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "sharjeel khan",
+      "sharjeel",
+      "khan",
+      "khan"
+    ],
+    "born": 38
+  },
+  {
+    "id": 243,
+    "fullname": "mohammad nawaz",
+    "name": "nawaz",
+    "skillset": [
+      "bow",
+      "l",
+      "l",
+      "off"
+    ],
+    "keeper": false,
+    "country": 2,
+    "ipl": null,
+    "csl": 33,
+    "names": [
+      "mohammad nawaz",
+      "nawaz",
+      "mohammad",
+      "mohammad"
+    ],
+    "born": 33
+  },
+  {
+    "id": 244,
+    "fullname": "mohammad hasnain",
+    "name": "hasnain",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 2,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "mohammad hasnain",
+      "hasnain",
+      "mohammad",
+      "mohammad"
+    ],
+    "born": 34
+  },
+  {
+    "id": 245,
+    "fullname": "devon conway",
+    "name": "conway",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": true,
+    "country": 4,
+    "ipl": null,
+    "csl": 37,
+    "names": [
+      "devon conway",
+      "conway",
+      "devon",
+      "d conway"
+    ],
+    "born": 37
+  },
+  {
+    "id": 246,
+    "fullname": "daryll mitchell",
+    "name": "d mitchell",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 4,
+    "ipl": null,
+    "csl": 35,
+    "names": [
+      "daryll mitchell",
+      "d mitchell",
+      "daryll",
+      "mitchell",
+      "daryll",
+      "daryl mitchell",
+      "mitchell"
+    ],
+    "born": 35
+  },
+  {
+    "id": 247,
+    "fullname": "adam milne",
+    "name": "milne",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 4,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "adam milne",
+      "milne",
+      "adam",
+      "adam"
+    ],
+    "born": 34
+  },
+  {
+    "id": 248,
+    "fullname": "lendl simmons",
+    "name": "simmons",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 5,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "lendl simmons",
+      "simmons",
+      "lendl",
+      "lendl"
+    ],
+    "born": 31
+  },
+  {
+    "id": 249,
+    "fullname": "obed mccoy",
+    "name": "o mccoy",
+    "skillset": [
+      "bow",
+      "l",
+      "l",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 5,
+    "ipl": null,
+    "csl": 36,
+    "names": [
+      "obed mccoy",
+      "o mccoy",
+      "obed",
+      "mccoy",
+      "obed",
+      "mccoy"
+    ],
+    "born": 31
+  },
+  {
+    "id": 250,
+    "fullname": "fidel edwards",
+    "name": "f edwards",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 5,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "fidel edwards",
+      "f edwards",
+      "fidel",
+      "edwards",
+      "fidel",
+      "edwards"
+    ],
+    "born": 32
+  },
+  {
+    "id": 251,
+    "fullname": "george linde",
+    "name": "linde",
+    "skillset": [
+      "bow",
+      "l",
+      "l",
+      "off"
+    ],
+    "keeper": false,
+    "country": 6,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "george linde",
+      "linde",
+      "george",
+      "george"
+    ],
+    "born": 42
+  },
+  {
+    "id": 252,
+    "fullname": "heinrich klaasen",
+    "name": "klaasen",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 6,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "heinrich klaasen",
+      "klaasen",
+      "heinrich",
+      "heinrich"
+    ],
+    "born": 37
+  },
+  {
+    "id": 253,
+    "fullname": "sam billings",
+    "name": "billings",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 7,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "sam billings",
+      "billings",
+      "sam",
+      "sam"
+    ],
+    "born": 36
+  },
+  {
+    "id": 254,
+    "fullname": "mohammad mithun",
+    "name": "m mithun",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 8,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "mohammad mithun",
+      "m mithun",
+      "mohammad",
+      "mithun",
+      "mohammad",
+      "mithun"
+    ],
+    "born": 33
+  },
+  {
+    "id": 255,
+    "fullname": "mohammad naim",
+    "name": "naim",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 8,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "mohammad naim",
+      "naim",
+      "mohammad",
+      "mohammad"
+    ],
+    "born": 38
+  },
+  {
+    "id": 256,
+    "fullname": "afif hossain",
+    "name": "afif",
+    "skillset": [
+      "all",
+      "l",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 8,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "afif hossain",
+      "afif",
+      "hossain",
+      "hossain"
+    ],
+    "born": 39
+  },
+  {
+    "id": 257,
+    "fullname": "taskin ahmed",
+    "name": "taskin",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 8,
+    "ipl": null,
+    "csl": 34,
+    "names": [
+      "taskin ahmed",
+      "taskin",
+      "ahmed",
+      "ahmed"
+    ],
+    "born": 34
+  },
+  {
+    "id": 258,
+    "fullname": "shoriful islam",
+    "name": "shoriful",
+    "skillset": [
+      "bow",
+      "l",
+      "l",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 8,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "shoriful islam",
+      "shoriful",
+      "islam",
+      "islam"
+    ],
+    "born": 36
+  },
+  {
+    "id": 259,
+    "fullname": "mahedi hassan",
+    "name": "mahedi",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 8,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "mahedi hassan",
+      "mahedi",
+      "hassan",
+      "hassan"
+    ],
+    "born": 42
+  },
+  {
+    "id": 260,
+    "fullname": "nasum ahmed",
+    "name": "nasum",
+    "skillset": [
+      "bow",
+      "l",
+      "l",
+      "off"
+    ],
+    "keeper": false,
+    "country": 8,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "nasum ahmed",
+      "nasum",
+      "ahmed",
+      "ahmed"
+    ],
+    "born": 42
+  },
+  {
+    "id": 261,
+    "fullname": "mitchel marsh",
+    "name": "m marsh",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": null,
+    "csl": 32,
+    "names": [
+      "mitchel marsh",
+      "m marsh",
+      "marsh",
+      "mitchell marsh"
+    ],
+    "born": 40
+  },
+  {
+    "id": 262,
+    "fullname": "pathum nissanka",
+    "name": "nissanka",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 10,
+    "ipl": null,
+    "csl": 35,
+    "names": [
+      "pathum nissanka",
+      "nissanka"
+    ],
+    "born": 35
+  },
+  {
+    "id": 263,
+    "fullname": "kusal mendis",
+    "name": "k mendis",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": true,
+    "country": 10,
+    "ipl": null,
+    "csl": 32,
+    "names": [
+      "kusal mendis",
+      "k mendis",
+      "mendis"
+    ],
+    "born": 32
+  },
+  {
+    "id": 264,
+    "fullname": "bhanuka rajapaksa",
+    "name": "rajapaksa",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": true,
+    "country": 10,
+    "ipl": null,
+    "csl": 31,
+    "names": [
+      "bhanuka rajapaksa",
+      "rajapaksa"
+    ],
+    "born": 40
+  },
+  {
+    "id": 265,
+    "fullname": "dasun shanaka",
+    "name": "shanaka",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 10,
+    "ipl": null,
+    "csl": 39,
+    "names": [
+      "dasun shanaka",
+      "shanaka"
+    ],
+    "born": 39
+  },
+  {
+    "id": 266,
+    "fullname": "charith asalanka",
+    "name": "asalanka",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 10,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "charith asalanka",
+      "asalanka"
+    ],
+    "born": 36
+  },
+  {
+    "id": 267,
+    "fullname": "chamika karunaratne",
+    "name": "chamika",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 10,
+    "ipl": null,
+    "csl": 35,
+    "names": [
+      "chamika karunaratne",
+      "chamika",
+      "c karunaratne"
+    ],
+    "born": 35
+  },
+  {
+    "id": 268,
+    "fullname": "wanindu hasaranga",
+    "name": "hasaranga",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "leg"
+    ],
+    "keeper": false,
+    "country": 10,
+    "ipl": null,
+    "csl": 37,
+    "names": [
+      "wanindu hasaranga",
+      "hasaranga"
+    ],
+    "born": 37
+  },
+  {
+    "id": 269,
+    "fullname": "maheesh theekshana",
+    "name": "theekshana",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 10,
+    "ipl": null,
+    "csl": 38,
+    "names": [
+      "maheesh theekshana",
+      "theekshana"
+    ],
+    "born": 38
+  },
+  {
+    "id": 270,
+    "fullname": "dushmantha chameera",
+    "name": "chameera",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 10,
+    "ipl": null,
+    "csl": 40,
+    "names": [
+      "dushmantha chameera",
+      "chameera"
+    ],
+    "born": 31
+  },
+  {
+    "id": 271,
+    "fullname": "lahiru kumara",
+    "name": "l kumara",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 10,
+    "ipl": null,
+    "csl": 42,
+    "names": [
+      "lahiru kumara",
+      "l kumara",
+      "kumara",
+      "lahiru"
+    ],
+    "born": 32
+  },
+  {
+    "id": 272,
+    "fullname": "tristan stubbs",
+    "name": "stubbs",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 6,
+    "ipl": null,
+    "csl": 38,
+    "names": [
+      "tristan stubbs",
+      "stubbs",
+      "t stubbs"
+    ],
+    "born": 38
+  },
+  {
+    "id": 273,
+    "fullname": "najmul hossain shanto",
+    "name": "shanto",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 8,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "najmul hossain shanto",
+      "shanto"
+    ],
+    "born": 38
+  },
+  {
+    "id": 274,
+    "fullname": "nurul hassan",
+    "name": "nurul",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 8,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "nurul hassan",
+      "nurul"
+    ],
+    "born": 41
+  },
+  {
+    "id": 275,
+    "fullname": "hasan mahmud",
+    "name": "h mahmud",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 8,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "hasan mahmud",
+      "h mahmud"
+    ],
+    "born": 40
+  },
+  {
+    "id": 276,
+    "fullname": "finn allen",
+    "name": "finn",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 4,
+    "ipl": null,
+    "csl": 42,
+    "names": [
+      "finn allen",
+      "finn",
+      "f allen"
+    ],
+    "born": 34
+  },
+  {
+    "id": 277,
+    "fullname": "shan masood",
+    "name": "s masood",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 2,
+    "ipl": null,
+    "csl": 41,
+    "names": [
+      "shan masood",
+      "s masood",
+      "masood"
+    ],
+    "born": 40
+  },
+  {
+    "id": 278,
+    "fullname": "iftikhar ahmed",
+    "name": "iftikhar",
+    "skillset": [
+      "bat",
+      "r",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 2,
+    "ipl": null,
+    "csl": 37,
+    "names": [
+      "iftikhar ahmed",
+      "iftikhar"
+    ],
+    "born": 39
+  },
+  {
+    "id": 279,
+    "fullname": "asif ali",
+    "name": "a ali",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 2,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "asif ali",
+      "a ali",
+      "asif"
+    ],
+    "born": 40
+  },
+  {
+    "id": 280,
+    "fullname": "mohammad wasim jr",
+    "name": "wasim jr",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 2,
+    "ipl": null,
+    "csl": 38,
+    "names": [
+      "mohammad wasim jr",
+      "wasim jr",
+      "w jr"
+    ],
+    "born": 38
+  },
+  {
+    "id": 281,
+    "fullname": "naseem shah",
+    "name": "naseem",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 2,
+    "ipl": null,
+    "csl": 32,
+    "names": [
+      "naseem shah",
+      "naseem",
+      "n shah"
+    ],
+    "born": 32
+  },
+  {
+    "id": 282,
+    "fullname": "wayne parnell",
+    "name": "parnell",
+    "skillset": [
+      "all",
+      "l",
+      "l",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 6,
+    "ipl": null,
+    "csl": 37,
+    "names": [
+      "wayne parnell",
+      "parnell"
+    ],
+    "born": 37
+  },
+  {
+    "id": 283,
+    "fullname": "kyle mayers",
+    "name": "k mayers",
+    "skillset": [
+      "all",
+      "l",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 5,
+    "ipl": null,
+    "csl": 33,
+    "names": [
+      "kyle mayers",
+      "k mayers",
+      "mayers"
+    ],
+    "born": 39
+  },
+  {
+    "id": 284,
+    "fullname": "brandon king",
+    "name": "king",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 5,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "brandon king",
+      "king"
+    ],
+    "born": 42
+  },
+  {
+    "id": 285,
+    "fullname": "rovman powell",
+    "name": "r powell",
+    "skillset": [
+      "bat",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 5,
+    "ipl": null,
+    "csl": 37,
+    "names": [
+      "rovman powell",
+      "r powell",
+      "powell"
+    ],
+    "born": 37
+  },
+  {
+    "id": 286,
+    "fullname": "odean smith",
+    "name": "o smith",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 5,
+    "ipl": null,
+    "csl": 31,
+    "names": [
+      "odean smith",
+      "o smith",
+      "odean"
+    ],
+    "born": 41
+  },
+  {
+    "id": 287,
+    "fullname": "harry brook",
+    "name": "h brook",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 7,
+    "ipl": null,
+    "csl": 39,
+    "names": [
+      "harry brook",
+      "h brook",
+      "brook"
+    ],
+    "born": 39
+  },
+  {
+    "id": 288,
+    "fullname": "rahmanullah gurbaz",
+    "name": "gurbaz",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": true,
+    "country": 9,
+    "ipl": null,
+    "csl": 41,
+    "names": [
+      "rahmanullah gurbaz",
+      "gurbaz"
+    ],
+    "born": 41
+  },
+  {
+    "id": 289,
+    "fullname": "hazratullah zazai",
+    "name": "zazai",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 9,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "hazratullah zazai",
+      "zazai"
+    ],
+    "born": 33
+  },
+  {
+    "id": 290,
+    "fullname": "ibrahim zadran",
+    "name": "ibrahim",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 9,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "ibrahim zadran",
+      "ibrahim"
+    ],
+    "born": 42
+  },
+  {
+    "id": 291,
+    "fullname": "usman ghani",
+    "name": "ghani",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 9,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "usman ghani",
+      "ghani",
+      "u ghani"
+    ],
+    "born": 41
+  },
+  {
+    "id": 292,
+    "fullname": "gulbadin naib",
+    "name": "gulbadin",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 9,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "gulbadin naib",
+      "gulbadin"
+    ],
+    "born": 36
+  },
+  {
+    "id": 293,
+    "fullname": "najibullah zadran",
+    "name": "najibullah",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 9,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "najibullah zadran",
+      "najibullah"
+    ],
+    "born": 32
+  },
+  {
+    "id": 294,
+    "fullname": "naveen ul haq",
+    "name": "naveen",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 9,
+    "ipl": null,
+    "csl": 39,
+    "names": [
+      "naveen ul haq",
+      "naveen"
+    ],
+    "born": 39
+  },
+  {
+    "id": 295,
+    "fullname": "fazalhaq farooqi",
+    "name": "farooqi",
+    "skillset": [
+      "bow",
+      "l",
+      "l",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 9,
+    "ipl": null,
+    "csl": 39,
+    "names": [
+      "fazalhaq farooqi",
+      "farooqi"
+    ],
+    "born": 39
+  },
+  {
+    "id": 296,
+    "fullname": "kesav maharaj",
+    "name": "maharaj",
+    "skillset": [
+      "bow",
+      "r",
+      "l",
+      "off"
+    ],
+    "keeper": false,
+    "country": 6,
+    "ipl": null,
+    "csl": 38,
+    "names": [
+      "kesav maharaj",
+      "maharaj"
+    ],
+    "born": 32
+  },
+  {
+    "id": 297,
+    "fullname": "tim david",
+    "name": "t david",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": null,
+    "csl": 33,
+    "names": [
+      "tim david",
+      "t david"
+    ],
+    "born": 33
+  },
+  {
+    "id": 298,
+    "fullname": "phil salt",
+    "name": "salt",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 7,
+    "ipl": null,
+    "csl": 38,
+    "names": [
+      "phil salt",
+      "salt"
+    ],
+    "born": 38
+  },
+  {
+    "id": 299,
+    "fullname": "umran malik",
+    "name": "umran",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": null,
+    "csl": 41,
+    "names": [
+      "umran malik",
+      "umran"
+    ],
+    "born": 41
+  },
+  {
+    "id": 300,
+    "fullname": "ruturaj gaikwad",
+    "name": "r gaikwad",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": null,
+    "csl": 31,
+    "names": [
+      "ruturaj gaikwad",
+      "r gaikwad",
+      "ruturaj"
+    ],
+    "born": 31
+  },
+  {
+    "id": 301,
+    "fullname": "cameron green",
+    "name": "c green",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": null,
+    "csl": 36,
+    "names": [
+      "cameron green",
+      "c green"
+    ],
+    "born": 36
+  },
+  {
+    "id": 302,
+    "fullname": "david willey",
+    "name": "willey",
+    "skillset": [
+      "bow",
+      "l",
+      "l",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 7,
+    "ipl": null,
+    "csl": 32,
+    "names": [
+      "david willey",
+      "willey"
+    ],
+    "born": 32
+  },
+  {
+    "id": 303,
+    "fullname": "ravi bishnoi",
+    "name": "bishnoi",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "leg"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": null,
+    "csl": 41,
+    "names": [
+      "ravi bishnoi",
+      "bishnoi"
+    ],
+    "born": 39
+  },
+  {
+    "id": 304,
+    "fullname": "marco jansen",
+    "name": "jansen",
+    "skillset": [
+      "bow",
+      "r",
+      "l",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 6,
+    "ipl": null,
+    "csl": 35,
+    "names": [
+      "marco jansen",
+      "jansen"
+    ],
+    "born": 35
+  },
+  {
+    "id": 305,
+    "fullname": "dewald brevis",
+    "name": "d brevis",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 6,
+    "ipl": null,
+    "csl": 34,
+    "names": [
+      "dewald brevis",
+      "d brevis",
+      "brewis"
+    ],
+    "born": 34
+  },
+  {
+    "id": 306,
+    "fullname": "reece topley",
+    "name": "topley",
+    "skillset": [
+      "bow",
+      "l",
+      "l",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 7,
+    "ipl": null,
+    "csl": 40,
+    "names": [
+      "reece topley",
+      "topley"
+    ],
+    "born": 32
+  },
+  {
+    "id": 307,
+    "fullname": "johnson charles",
+    "name": "j charles",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 5,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "johnson charles",
+      "j charles"
+    ],
+    "born": 31
+  },
+  {
+    "id": 308,
+    "fullname": "josh inglis",
+    "name": "inglis",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 3,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "josh inglis",
+      "inglis"
+    ],
+    "born": 33
+  },
+  {
+    "id": 309,
+    "fullname": "roston chase",
+    "name": "r chase",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 5,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "roston chase",
+      "r chase"
+    ],
+    "born": 33
+  },
+  {
+    "id": 310,
+    "fullname": "david wiese",
+    "name": "wiese",
+    "skillset": [
+      "all",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 6,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "david wiese",
+      "wiese"
+    ],
+    "born": 35
+  },
+  {
+    "id": 311,
+    "fullname": "shivam dube",
+    "name": "dube",
+    "skillset": [
+      "all",
+      "l",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "shivam dube",
+      "dube"
+    ],
+    "born": 36
+  },
+  {
+    "id": 312,
+    "fullname": "devdutt padikkal",
+    "name": "padikkal",
+    "skillset": [
+      "bat",
+      "l",
+      null,
+      null
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "devdutt padikkal",
+      "padikkal"
+    ],
+    "born": 37
+  },
+  {
+    "id": 313,
+    "fullname": "harshal patel",
+    "name": "harshal",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": null,
+    "csl": 41,
+    "names": [
+      "harshal patel",
+      "harshal",
+      "h patel"
+    ],
+    "born": 41
+  },
+  {
+    "id": 314,
+    "fullname": "venkatesh iyer",
+    "name": "v iyer",
+    "skillset": [
+      "all",
+      "l",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": null,
+    "csl": null,
+    "names": [
+      "venkatesh iyer",
+      "v iyer"
+    ],
+    "born": 42
+  },
+  {
+    "id": 315,
+    "fullname": "avesh khan",
+    "name": "avesh",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": null,
+    "csl": 37,
+    "names": [
+      "avesh khan",
+      "avesh"
+    ],
+    "born": 42
+  },
+  {
+    "id": 316,
+    "fullname": "shahbaz ahmed",
+    "name": "shahbaz",
+    "skillset": [
+      "all",
+      "l",
+      "l",
+      "off"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": null,
+    "csl": 36,
+    "names": [
+      "shahbaz ahmed",
+      "shahbaz"
+    ],
+    "born": 42
+  },
+  {
+    "id": 317,
+    "fullname": "mohammad haris",
+    "name": "m haris",
+    "skillset": [
+      "bat",
+      "r",
+      null,
+      null
+    ],
+    "keeper": true,
+    "country": 2,
+    "ipl": null,
+    "csl": 33,
+    "names": [
+      "mohammad haris",
+      "m haris",
+      "haris"
+    ],
+    "born": 33
+  },
+  {
+    "id": 318,
+    "fullname": "michael bracewell",
+    "name": "m bracewell",
+    "skillset": [
+      "all",
+      "l",
+      "r",
+      "off"
+    ],
+    "keeper": false,
+    "country": 4,
+    "ipl": null,
+    "csl": 32,
+    "names": [
+      "michael bracewell",
+      "m bracewell",
+      "bracewell"
+    ],
+    "born": 32
+  },
+  {
+    "id": 319,
+    "fullname": "dilshan madushanka",
+    "name": "madushanka",
+    "skillset": [
+      "bow",
+      "l",
+      "l",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 10,
+    "ipl": null,
+    "csl": 39,
+    "names": [
+      "dilshan madushanka",
+      "madushanka"
+    ],
+    "born": 39
+  },
+  {
+    "id": 320,
+    "fullname": "shivam mavi",
+    "name": "s mavi",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": null,
+    "csl": 38,
+    "names": [
+      "shivam mavi",
+      "s mavi",
+      "mavi"
+    ],
+    "born": 41
+  }
+]

@@ -1,0 +1,7 @@
+name,id,season,winners_team_id,runners_team_id,pots_id,mvp_id,most_runs_id,most_wickets_id
+wt20,1,1,3,1,6,29,29,6
+ipl,2,1,25,21,109,109,147,114
+csl,3,1,40,41,18,195,18,36
+wt20,4,2,4,1,245,50,245,188
+wt20,5,3,3,10,31,31,31,234
+csl,6,2,,,,,,,

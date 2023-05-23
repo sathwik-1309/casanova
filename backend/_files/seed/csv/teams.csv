@@ -1,0 +1,31 @@
+id,name,abb,captain,t_id
+1,india,ind,3,1
+2,pakistan,pak,21,1
+3,australia,aus,28,1
+4,new zealand,nz,45,1
+5,west indies,wi,62,1
+6,south africa,sa,73,1
+7,england,eng,86,1
+8,bangladesh,ban,104,1
+9,afganistan,afg,113,5
+10,srilanka,sl,265,5
+21,sunrisers hyderabad,srh,29,2
+22,chennai super kings,csk,8,2
+23,royal challengers bangalore,rcb,3,2
+24,mumbai indians,mi,2,2
+25,rajasthan royals,rr,31,2
+26,punjab kings,pbks,163,2
+27,delhi capitals,dc,173,2
+28,kolkata knight riders,kkr,7,2
+31,january dragon,jan,113,3
+32,february gazzelles,feb,128,3
+33,march eagles,mar,46,3
+34,april avengers,apr,2,3
+35,may monsters,may,139,3
+36,june viking,june,31,3
+37,july scorpions,july,8,3
+38,august axes,aug,45,3
+39,september sharks,sept,86,3
+40,october commanders,oct,29,3
+41,november nexus,nov,3,3
+42,december firewolves,dec,85,3

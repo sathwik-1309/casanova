@@ -1,0 +1,6 @@
+# backend
+/backend/log
+/backend/tmp
+# frontend
+
+/frontend/node_modules/.cache

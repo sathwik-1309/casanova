@@ -1,11 +1,22 @@
+.journey_box_parent {
+    display: flex;
+    flex-direction: column;
+    padding: 3px;
+    border: 1px solid black;
+    margin: 20px;
+}
+.journey_box_teamname {
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding-top: 0.4rem;
+    text-align: center;
+    height: 40px;
+}
 .journey_box {
     display: flex;
     flex-direction: column;
     height: fit-content;
     width: fit-content;
-    padding: 3px;
-    border: 1px solid black;
-    margin: 20px;
 }
 .journey_item {
     display: flex;

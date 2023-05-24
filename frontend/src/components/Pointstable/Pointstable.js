@@ -1,6 +1,6 @@
 import './Pointstable.css'
 import '../css/teams.css'
-import React, { useState, useEffect } from 'react'; 
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Photocard from "../Photocard/Photocard";
 import PBatStats from "../Player/PBatStats/PBatStats";
@@ -81,7 +81,7 @@ function Pointstable(props) {
             </div>
             <div className='pt_journey_box'>
                 {journey.map((team_id, index) => (
-                    <JourneyBox journey={data.journey[team_id.toString()]} key={index}/>
+                    <JourneyBox journey={data.journeys[team_id.toString()]} key={index}/>
                 ))}
             </div>
         </div>

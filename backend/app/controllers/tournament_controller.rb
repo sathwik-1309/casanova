@@ -30,7 +30,10 @@ class TournamentController < ApplicationController
           match_hash["vs_team"] = match_hash["won"] ? Squad.find(match.loser_id).get_abb : Squad.find(match.winner_id).get_abb
           journey_team << match_hash
         end
-        journey["#{team_id}"] = journey_team
+        journey["#{team_id}"] = {
+          "teamname" => "#{Util.get_flag(team_id)} #{squad.abbrevation.upcase}",
+          "color" => squad.abbrevation,
+          "journey" => journey_team}
         temp << pt
       end
       temp = temp.sort_by { |team| [-team["points"], -team["nrr"]] }
@@ -45,7 +48,7 @@ class TournamentController < ApplicationController
 
     hash["tour"] = "#{Tournament.find(t_id.to_i).name}_#{t_id}"
     hash["points_table"] = points_table
-    hash["journey"] = journey
+    hash["journeys"] = journey
     render(:json => Oj.dump(hash))
   end
 

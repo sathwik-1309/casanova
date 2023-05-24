@@ -1,13 +1,13 @@
 CSL
 
-JUNE VS NOV
-Ahmedabad 19-May-2023
+MAY VS FEB
+Delhi 18-May-2023
 
-JUNE:163/3
+MAY:183/9
 
 First Innings-Batting
 Overs:20.0
-EXTRAS: 3(B:0 LB:0 NB:3 WD:0)
+EXTRAS: 4(B:0 LB:0 NB:2 WD:2)
 
 Batsman
 
@@ -23,181 +23,182 @@ B
 
 SR
 
-Rizwan
+Guptill
 
-not out
-
-72
-
-57
-
-14
-
-8
+c Adil Rashid b Bhuvi
 
 1
 
-126.3
+3
 
-Cameron Green
-
-b Harshal
-
-29
-
-25
-
-7
-
-4
+1
 
 0
 
-116.0
+0
 
-Steve Smith
+33.3
 
-lbw b Harshal
+Shikhar Dhawan
 
-35
-
-24
+c Head b Bracewell
 
 5
-
-2
-
-2
-
-145.8
-
-Miller
-
-b Harshal
-
-0
-
-1
-
-1
-
-0
-
-0
-
-0.0
-
-Ben Stokes
-
-not out
-
-25
-
-15
 
 6
 
+0
+
+0
+
+0
+
+83.3
+
+De Silva
+
+b Mitchell Santner
+
+67
+
+40
+
+10
+
+9
+
+2
+
+167.5
+
+Rossouw
+
+lbw b Mitchell Santner
+
+15
+
+15
+
+3
+
+1
+
+0
+
+100.0
+
+Daryl Mitchell
+
+b Bhuvi
+
+23
+
+18
+
+3
+
+1
+
+1
+
+127.8
+
+Mushfiqur
+
+c Arshdeep b Naseem
+Shah
+
+15
+
+11
+
+4
+
+1
+
+1
+
+136.4
+
+Chamika
+
+c Bracewell b Bhuvi
+
+1
+
+2
+
+1
+
+0
+
+0
+
+50.0
+
+Jansen
+
+not out
+
+18
+
+8
+
+2
+
+2
+
+1
+
+225.0
+
+Sunil Narine
+
+lbw b Arshdeep
+
+23
+
+8
+
+2
+
+4
+
+1
+
+287.5
+
+Pat Cummins
+
+b Arshdeep
+
+0
+
+2
+
+2
+
+0
+
+0
+
+0.0
+
+Kagiso Rabada
+
+not out
+
+11
+
+9
+
 5
 
-0
-
-166.7
-
-Dinesh Karthik
-
-Did not Bat
+2
 
 0
 
-0
-
-0
-
-0
-
-0
-
-0.0
-
-Moen Ali
-
-Did not Bat
-
-0
-
-0
-
-0
-
-0
-
-0
-
-0.0
-
-Sam Curran
-
-Did not Bat
-
-0
-
-0
-
-0
-
-0
-
-0
-
-0.0
-
-Lockie Ferguson
-
-Did not Bat
-
-0
-
-0
-
-0
-
-0
-
-0
-
-0.0
-
-Shahbaz
-
-Did not Bat
-
-0
-
-0
-
-0
-
-0
-
-0
-
-0.0
-
-Obed McCoy
-
-Did not Bat
-
-0
-
-0
-
-0
-
-0
-
-0
-
-0.0
+122.2
 
 First Innings-Bowling
 Bowler
@@ -218,137 +219,137 @@ WD NB 4s
 
 6s
 
-Jason Holder
-
-3.0
-
-20
-
-0
-
-0
-
-6.7
-
-4
-
-0
-
-0
-
-2
-
-0
-
-Anrich Nortje
+Bhuvi
 
 4.0
 
-26
-
-0
-
-0
-
-6.5
-
-6
-
-0
-
-0
-
-1
-
-1
-
-Bishnoi
-
-4.0
-
-37
-
-0
-
-0
-
-9.3
-
-5
-
-0
-
-1
-
-4
-
-1
-
-Haris Rauf
-
-4.0
-
-40
-
-0
-
-0
-
-10.0
-
-7
-
-0
-
-0
-
-6
-
-1
-
-Harshal
-
-4.0
-
-29
+34
 
 3
 
 0
 
-7.3
+8.5
+
+3
+
+2
+
+0
+
+3
+
+1
+
+Arshdeep
+
+4.0
+
+32
+
+2
+
+0
+
+8.0
+
+8
+
+0
+
+0
 
 6
 
 0
 
+Bracewell
+
+3.0
+
+30
+
 1
+
+0
+
+10.0
+
+1
+
+0
+
+0
+
+3
+
+1
+
+Naseem Shah
+
+4.0
+
+43
+
+1
+
+0
+
+10.8
 
 4
 
 0
 
-Sundar
+0
 
-1.0
+3
 
-11
+3
+
+Adil Rashid
+
+2.0
+
+18
 
 0
 
 0
 
-11.0
+9.0
 
-1
-
-0
+2
 
 0
 
 2
 
+2
+
 0
+
+Mitchell Santner
+
+3.0
+
+26
+
+2
+
+0
+
+8.7
+
+4
+
+0
+
+0
+
+3
+
+1
 
 First Innings-Fall of Wickets
 No
@@ -363,33 +364,93 @@ Bowler
 
 1
 
-49
+3
 
-7.3
+0.4
 
-Cameron Green
+Guptill
 
-Harshal
+Bhuvi
 
 2
 
-118
+24
 
-15.1
+3.1
 
-Steve Smith
+Shikhar Dhawan
 
-Harshal
+Bracewell
 
 3
 
-118
+86
+
+9.4
+
+Rossouw
+
+Mitchell Santner
+
+4
+
+105
+
+11.2
+
+De Silva
+
+Mitchell Santner
+
+5
+
+128
+
+14.4
+
+Mushfiqur
+
+Naseem Shah
+
+6
+
+131
 
 15.2
 
-Miller
+Chamika
 
-Harshal
+Bhuvi
+
+7
+
+132
+
+15.4
+
+Daryl Mitchell
+
+Bhuvi
+
+8
+
+156
+
+17.1
+
+Sunil Narine
+
+Arshdeep
+
+9
+
+156
+
+17.3
+
+Pat Cummins
+
+Arshdeep
 
 First Innings-OVERS
 No
@@ -419,152 +480,152 @@ Runs Wkts Per Ball Score
 19
 20
 
-J Holder
-
-8
-
-0
-
-A Nortje
+Bhuvi
 
 4
-
-0
-
-Bishnoi
-
-11
-
-0
-
-A Nortje
-
-4
-
-0
-
-J Holder
-
-7
-
-0
-
-H Rauf
-
-7
-
-0
-
-Bishnoi
-
-4
-
-0
-
-Harshal
-
-8
 
 1
 
-Bishnoi
-
-17
-
-0
-
-Harshal
-
-8
-
-0
-
-H Rauf
-
-9
-
-0
-
-Sundar
-
-11
-
-0
-
-Bishnoi
-
-5
-
-0
-
-A Nortje
+Arshdeep
 
 10
 
 0
 
-J Holder
+Bhuvi
 
-5
+10
 
 0
 
-Harshal
+Bracewell
 
-2
+4
 
-2
+1
 
-H Rauf
+N Shah
 
 17
 
 0
 
-Harshal
+Bracewell
 
-11
-
-0
-
-H Rauf
-
-7
+12
 
 0
 
-A Nortje
+A Rashid
+
+13
+
+0
+
+M Santner
 
 8
 
 0
 
-101141
-101011
-141041
-011011
-011014
-401110
-1 0 0nb 1 0 1 0
-0 4 W 0 1 1nb 1
-164141
-141011
-010611
-114140
-111101
-016111
-101111
-WW0011
-401444
-104411
-410011
-011114
+A Rashid
 
-NOV:164/6
+5
+
+0
+
+M Santner
+
+7
+
+1
+
+Bracewell
+
+14
+
+0
+
+M Santner
+
+11
+
+1
+
+N Shah
+
+5
+
+0
+
+Arshdeep
+
+5
+
+0
+
+N Shah
+
+5
+
+1
+
+Bhuvi
+
+10
+
+2
+
+N Shah
+
+16
+
+0
+
+Arshdeep
+
+4
+
+2
+
+Bhuvi
+
+10
+
+0
+
+Arshdeep
+
+13
+
+0
+
+1 1 0wd 0 W 0 1
+401140
+1 1 1 0wd 1 1 4
+W11011
+646001
+111144
+1 0nb 4 1 1 0nb 0 4
+041111
+011111
+111W04
+411161
+1W0046
+011111
+111011
+111W11
+1W1W44
+160441
+W0W004
+110116
+004144
+
+FEB:181/5
 
 Second Innings-Batting
 Overs:20.0
-EXTRAS: 1(B:0 LB:0 NB:0 WD:1)
+EXTRAS: 8(B:0 LB:0 NB:1 WD:7)
 
 Batsman
 
@@ -580,114 +641,97 @@ B
 
 SR
 
-Gurbaz
+Litton
 
-b Lockie Ferguson
+b Jansen
 
-68
+22
 
-51
-
-11
-
-6
+17
 
 2
+
+1
+
+1
+
+129.4
+
+Head
+
+b Kagiso Rabada
+
+4
+
+3
+
+1
+
+1
+
+0
 
 133.3
 
-Prithwi Shaw
+Mitchell Marsh
 
-c Rizwan b Lockie
-Ferguson
+c Rossouw b Pat
+Cummins
 
-17
-
-11
-
-2
-
-3
-
-0
-
-154.5
-
-Virat Kohli
-
-lbw b Lockie Ferguson
-
-0
-
-4
-
-4
-
-0
-
-0
-
-0.0
-
-Shan Masood
-
-lbw b Shahbaz
-
-29
-
-17
-
-4
-
-2
-
-2
-
-170.6
-
-Sanju Samson
-
-c Miller b Lockie
-Ferguson
+24
 
 15
 
-14
-
 5
-
-2
-
-0
-
-107.1
-
-Sundar
-
-c Cameron Green b
-Obed McCoy
-
-19
-
-12
 
 3
 
+1
+
+160.0
+
+Joe Root
+
+not out
+
+49
+
+38
+
+6
+
+5
+
 0
+
+128.9
+
+Van Der Dussen
+
+stumped b De Silva
+
+5
+
+4
 
 2
 
-158.3
+1
 
-Jason Holder
+0
 
-not out
+125.0
+
+Bracewell
+
+c Chamika b Sunil
+Narine
 
 2
 
 4
 
-3
+2
 
 0
 
@@ -695,39 +739,23 @@ not out
 
 50.0
 
-Harshal
+Mitchell Santner
 
 not out
 
-13
+67
 
-7
+40
 
-3
+10
 
-2
+5
 
-0
+4
 
-185.7
+167.5
 
-Anrich Nortje
-
-Did not Bat
-
-0
-
-0
-
-0
-
-0
-
-0
-
-0.0
-
-Haris Rauf
+Bhuvi
 
 Did not Bat
 
@@ -743,7 +771,39 @@ Did not Bat
 
 0.0
 
-Bishnoi
+Adil Rashid
+
+Did not Bat
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0.0
+
+Arshdeep
+
+Did not Bat
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0.0
+
+Naseem Shah
 
 Did not Bat
 
@@ -778,53 +838,97 @@ WD NB 4s
 
 6s
 
-Sam Curran
+Kagiso Rabada
 
 4.0
 
-39
+42
+
+1
 
 0
 
-0
-
-9.8
+10.5
 
 5
 
-0
+1
 
 0
+
+6
+
+1
+
+Pat Cummins
+
+4.0
+
+31
+
+1
+
+0
+
+7.8
 
 4
 
 1
 
-Ben Stokes
-
-1.0
-
-12
-
 0
-
-0
-
-12.0
 
 2
 
-0
-
-0
-
 1
 
-1
-
-Shahbaz
+Jansen
 
 4.0
+
+37
+
+1
+
+0
+
+9.3
+
+5
+
+0
+
+1
+
+1
+
+3
+
+Sunil Narine
+
+4.0
+
+34
+
+1
+
+0
+
+8.5
+
+5
+
+3
+
+0
+
+4
+
+0
+
+De Silva
+
+3.0
 
 26
 
@@ -832,11 +936,11 @@ Shahbaz
 
 0
 
-6.5
+8.7
 
-6
+3
 
-0
+2
 
 0
 
@@ -844,91 +948,25 @@ Shahbaz
 
 0
 
-Lockie Ferguson
+Chamika
 
-4.0
+1.0
 
-28
-
-4
-
-1
-
-7.0
-
-8
+11
 
 0
 
 0
 
-2
-
-2
-
-Moen Ali
-
-2.0
-
-19
+11.0
 
 0
 
 0
 
-9.5
-
-2
-
-1
-
-0
-
-1
-
-1
-
-Cameron Green
-
-2.0
-
-19
-
 0
 
 0
-
-9.5
-
-2
-
-0
-
-0
-
-3
-
-0
-
-Obed McCoy
-
-3.0
-
-21
-
-1
-
-0
-
-7.0
-
-4
-
-0
-
-0
-
-1
 
 1
 
@@ -945,67 +983,56 @@ Bowler
 
 1
 
-28
+5
 
-3.2
+0.4
 
-Prithwi Shaw
+Head
 
-Lockie Ferguson
+Kagiso Rabada
 
 2
 
-28
+35
 
 3.6
 
-Virat Kohli
+Mitchell Marsh
 
-Lockie Ferguson
+Pat Cummins
 
-3
+3
 
-87
+60
 
-10.2
+6.4
 
-Shan Masood
+Litton
 
-Shahbaz
+Jansen
 
 4
 
-108
+65
 
-13.6
+7.2
 
-Sanju Samson
+Van Der Dussen
 
-Lockie Ferguson
+De Silva
 
 5
 
-148
+68
 
-17.5
+8.1
 
-Gurbaz
+Bracewell
 
-Lockie Ferguson
-
-6
-
-150
-
-18.3
-
-Sundar
-
-Obed McCoy
+Sunil Narine
 
 Second Innings-OVERS
-
-No
+No
 
 Bowler
 
@@ -1032,148 +1059,148 @@ Runs Wkts Per Ball Score
 19
 20
 
-S Curran
-
-11
-
-0
-
-B Stokes
-
-12
-
-0
-
-Shahbaz
-
-5
-
-0
-
-L Ferguson
-
-0
-
-2
-
-Shahbaz
-
-11
-
-0
-
-L Ferguson
-
-8
-
-0
-
-M Ali
-
-13
-
-0
-
-S Curran
+K Rabada
 
 6
 
-0
-
-C Green
-
-11
-
-0
-
-S Curran
-
-9
-
-0
-
-Shahbaz
-
-2
-
 1
 
-O McCoy
+P Cummins
 
 5
 
 0
 
-Shahbaz
+K Rabada
 
-8
+17
 
 0
 
-L Ferguson
+P Cummins
 
 7
 
 1
 
-M Ali
+Jansen
+
+5
+
+0
+
+S Narine
+
+11
+
+0
+
+Jansen
+
+10
+
+1
+
+D Silva
+
+7
+
+1
+
+S Narine
+
+6
+
+1
+
+D Silva
+
+13
+
+0
+
+S Narine
 
 6
 
 0
 
-O McCoy
+Chamika
 
-13
+11
 
 0
 
-C Green
+Jansen
+
+14
+
+0
+
+D Silva
+
+6
+
+0
+
+P Cummins
+
+6
+
+0
+
+K Rabada
 
 8
 
 0
 
-L Ferguson
+Jansen
 
-13
+8
 
-1
+0
 
-O McCoy
+S Narine
 
-3
+11
 
-1
+0
 
-S Curran
+K Rabada
+
+11
+
+0
+
+P Cummins
 
 13
 
 0
 
-014114
-141006
-110111
-0W000W
-041114
-410111
-611014
-012111
-114014
-001611
-1W0010
+104W01
+011111
+0wd 0 1 1 4 4 6
+14011W
 101111
-110114
-11104W
-1 0 1 1 1 0wd 1
-416011
-011411
-6106W0
-11W010
-440311
+014141
+0nb 6 1 1 W 0 1
+4W1101
+W01410
+0wd 1 1 4 2 0 4
+021111
+111116
+016061
+1 0 0wd 1 1 1 1
+1 0wd 1 1 0 1 1
+411011
+111401
+1 0wd 1 0 4 1 0wd 0wd 1
+140411
+161410
 
-Result: NOV won the match by 4 wickets
+Result: MAY won the match by 2 runs
 Generated by Cricket Scorer
 
 

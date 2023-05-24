@@ -9,7 +9,7 @@ module New
     m_id = args["m_id"]
     latest_m_id = Match.last.id
     if latest_m_id + 1 != m_id
-      puts "❌ m_id is not latest"
+      puts "❌ m_id is not latest: #{m_id}, latest m_id: #{latest_m_id}"
       return
     end
     status = Magic.validate_match_list(m_id, textfile)

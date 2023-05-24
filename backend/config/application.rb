@@ -8,6 +8,7 @@ require_relative '../lib/magic'
 require_relative '../lib/ingest'
 require_relative '../lib/validator'
 require_relative '../lib/uploader'
+require_relative '../lib/helpers'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.

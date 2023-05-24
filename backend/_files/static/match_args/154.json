@@ -1,0 +1,23 @@
+{
+  "m_id": 154,
+  "batted_first": "oct",
+  "batted_second": "apr",
+  "toss": "apr",
+  "pitch": 3,
+  "ball_color": [
+    "y",
+    "y",
+    "y",
+    "y"
+  ],
+  "cap1": "babar",
+  "cap2": "rohit",
+  "keeper1": "pooran",
+  "keeper2": "kl rahul",
+  "winner": "apr",
+  "stage": "group",
+  "venue": "pune",
+  "motm_player": "rohit sharma",
+  "motm_team": "apr",
+  "t_id": 6
+}

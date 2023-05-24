@@ -1,24 +1,23 @@
 {
   "m_id": 152,
-  "batted_first": "june",
-  "batted_second": "nov",
-  "toss": "nov",
-  "pitch": 3,
+  "batted_first": "may",
+  "batted_second": "feb",
+  "toss": "may",
+  "pitch": 2,
   "ball_color": [
-    "r",
     "y",
     "y",
-    "r"
+    "y",
+    "y"
   ],
-  "cap1": "stokes",
-  "cap2": "kohli",
-  "keeper1": "rizwan",
-  "keeper2": "samson",
-  "winner": "nov",
+  "cap1": "cummins",
+  "cap2": "santner",
+  "keeper1": "mushfiqur",
+  "keeper2": "liton das",
+  "winner": "may",
   "stage": "group",
-  "venue": "ahmedabad",
-  "motm_player": "harshal patel",
-  "motm_team": "nov",
-  "t_id": 6,
-  "test": "true"
+  "venue": "delhi",
+  "motm_player": "dhananjaya",
+  "motm_team": "may",
+  "t_id": 6
 }

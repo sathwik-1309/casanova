@@ -10,6 +10,7 @@ import TournamentPage from "./pages/TournamentPage/TournamentPage";
 import PlayerPage from "./pages/PlayerPage/PlayerPage";
 import MatchesPage from "./pages/MatchesPage/MatchesPage";
 import './components/css/teams.css'
+import TournamentsPage from "./pages/TournamentsPage/TournamentsPage";
 
 
 function App() {
@@ -25,6 +26,8 @@ function App() {
       <Route path="/" element={<WebPage page={<HomePage/>}/>} />
       {/* <Route path="/tournament" element={<Tournament/>} /> */}
       <Route path="/tournament/:t_id/:page" element={<WebPage page={<TournamentPage/>}/>} />
+
+      <Route path="/tournaments/:tour_class" element={<WebPage page={<TournamentsPage/>}/>} />
 
       <Route path="/match/:m_id" element={<WebPage page={<MatchPage/>}/>}  />
       <Route path="/match/:m_id/:inn_no/:graphic" element={<WebPage page={<MatchPage/>}/>}  />

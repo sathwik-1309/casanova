@@ -1,0 +1,23 @@
+{
+  "m_id": 155,
+  "batted_first": "jan",
+  "batted_second": "feb",
+  "toss": "feb",
+  "pitch": 2,
+  "ball_color": [
+    "y",
+    "r",
+    "y",
+    "r"
+  ],
+  "cap1": "finch",
+  "cap2": "santner",
+  "keeper1": "rajapaksa",
+  "keeper2": "kusal mendis",
+  "winner": "jan",
+  "stage": "group",
+  "venue": "lucknow",
+  "motm_player": "finch",
+  "motm_team": "jan",
+  "t_id": 6
+}

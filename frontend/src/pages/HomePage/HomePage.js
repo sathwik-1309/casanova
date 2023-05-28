@@ -2,13 +2,11 @@ import './HomePage.css'
 import Navbar from "./Navbar";
 
 function HomePage() {
-    return ( 
+    return (
         <div id="home_page">
-            <div id="home_page_item1">
-                <Navbar/>
-            </div>
+            <Navbar/>
             <div id="home_page_item2">
-            
+
             </div>
         </div>
         )

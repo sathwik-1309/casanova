@@ -6752,10 +6752,11 @@
     "keeper": false,
     "country": 9,
     "ipl": null,
-    "csl": null,
+    "csl": 32,
     "names": [
       "najibullah zadran",
-      "najibullah"
+      "najibullah",
+      "najib"
     ],
     "born": 32
   },

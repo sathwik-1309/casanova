@@ -258,5 +258,18 @@ module Helper
         return hash
     end
 
+    def self.tournament_class_box(tour_type)
+        hash = {}
+        tours = Tournament.where(name: tour_type).where('winners_id != 0')
+        total_tours = Tournament.where(name: tour_type)
+        latest_winner = tours.last.winners
+        hash["tour_name"] = tour_type.upcase
+        hash["w_teamname"] = latest_winner.get_teamname
+        hash["w_color"] = latest_winner.abbrevation
+        hash["tournaments"] = total_tours.length
+        hash["matches"] = Match.where(tournament_id: total_tours.pluck(:id)).count
+        return hash
+    end
+
 end
 

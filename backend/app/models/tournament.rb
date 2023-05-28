@@ -17,16 +17,16 @@ class Tournament < ApplicationRecord
         return Squad.find(self.runners_id)
     end
     def pots
-        return Squad.find(self.pots_id)
+        return Player.find(self.pots_id)
     end
     def mvp
-        return Squad.find(self.mvp_id)
+        return Player.find(self.mvp_id)
     end
     def most_runs
-        return Squad.find(self.most_runs_id)
+        return Player.find(self.most_runs_id)
     end
     def most_wickets
-        return Squad.find(self.most_wickets_id)
+        return Player.find(self.most_wickets_id)
     end
 
 
@@ -48,5 +48,16 @@ class Tournament < ApplicationRecord
 
     def get_tour_font
         return "#{self.name}_#{self.id}"
+    end
+
+    def tournament_box
+        hash = {}
+        if self.winners_id != nil
+            hash["w_teamname"] = self.winners.get_teamname
+            hash["w_color"] = self.winners.abbrevation
+            hash["pots"] = self.pots.fullname.titleize
+        end
+        hash["matches"] = Match.where(tournament_id: self.id).count
+        return hash
     end
 end

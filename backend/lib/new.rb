@@ -7,11 +7,10 @@ module New
 
   def self.upload_match(args, existing = true, textfile = NEW_MATCH)
     m_id = args["m_id"]
-    latest_m_id = Match.last.id
-    if latest_m_id + 1 != m_id
-      puts "❌ m_id is not latest: #{m_id}, latest m_id: #{latest_m_id}"
-      return
-    end
+    # latest_m_id = Match.last.id
+    # if latest_m_id + 1 != m_id
+    #   puts "❌ m_id is not latest: #{m_id}, latest m_id: #{latest_m_id}"
+    # end
     status = Magic.validate_match_list(m_id, textfile)
     i = Ingest.new(args)
     unless i.status

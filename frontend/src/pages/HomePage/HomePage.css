@@ -1,15 +1,10 @@
 #home_page {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    width: 100%;
-}
-
-#home_page_item1 {
-    height: 25%;
-    width: 100%;
+    height: fit-content;
+    width: fit-content;
 }
 
 #home_page_item2 {
-    height: 70%;
+
 }

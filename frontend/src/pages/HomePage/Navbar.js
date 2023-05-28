@@ -1,13 +1,30 @@
 import './Navbar.css'
-import NavbarItem from './NavbarItem';
+import TournamentClassBox from "./TournamentClassBox";
+import React, { useState, useEffect } from 'react';
 
 function Navbar(props) {
+    let url = `http://localhost:3001/home_page`
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await fetch(url);
+            const jsonData = await response.json();
+            setData(jsonData);
+        };
+
+        fetchData();
+    }, []);
+
+    if (!data) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <div id="home_navbar">
-            <NavbarItem tour="WT20"/>
-            <NavbarItem tour="IPL"/>
-            <NavbarItem tour="CSL"/>
+            {data.tournaments.map((data, index) => (
+                <TournamentClassBox key={index} data={data}/>
+            ))}
         </div>
     )
 

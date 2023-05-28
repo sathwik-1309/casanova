@@ -454,6 +454,12 @@
     border: 1px solid black;
 }
 
+.default-font {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-style: italic;
+}
+
 .wt20_1,
 .wt20_4,
 .wt20_5 {

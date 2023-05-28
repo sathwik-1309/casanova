@@ -1,7 +1,7 @@
 {
   "inn1": {
-    "score": 163,
-    "for": 3,
+    "score": 192,
+    "for": 5,
     "overs": 20,
     "extras": {
       "total_extras": 2,
@@ -12,16 +12,67 @@
     },
     "batting": [
       {
-        "id": 216,
+        "id": 194,
         "batted": true,
         "pos": 1,
-        "runs": 72,
-        "balls": 57,
-        "c0": 14,
-        "c1": 34,
+        "runs": 8,
+        "balls": 5,
+        "c0": 2,
+        "c1": 2,
         "c2": 0,
         "c3": 0,
-        "c4": 8,
+        "c4": 0,
+        "c6": 1,
+        "method": "b",
+        "fielder": null,
+        "bowler": 169,
+        "not_out": false
+      },
+      {
+        "id": 300,
+        "batted": true,
+        "pos": 2,
+        "runs": 25,
+        "balls": 22,
+        "c0": 8,
+        "c1": 11,
+        "c2": 1,
+        "c3": 0,
+        "c4": 0,
+        "c6": 2,
+        "method": "b",
+        "fielder": null,
+        "bowler": 50,
+        "not_out": false
+      },
+      {
+        "id": 222,
+        "batted": true,
+        "pos": 3,
+        "runs": 42,
+        "balls": 26,
+        "c0": 10,
+        "c1": 8,
+        "c2": 1,
+        "c3": 0,
+        "c4": 5,
+        "c6": 2,
+        "method": "c",
+        "fielder": "van der dussen",
+        "bowler": 92,
+        "not_out": false
+      },
+      {
+        "id": 28,
+        "batted": true,
+        "pos": 4,
+        "runs": 71,
+        "balls": 37,
+        "c0": 8,
+        "c1": 15,
+        "c2": 1,
+        "c3": 0,
+        "c4": 12,
         "c6": 1,
         "method": null,
         "fielder": null,
@@ -29,67 +80,50 @@
         "not_out": true
       },
       {
-        "id": 301,
-        "batted": true,
-        "pos": 2,
-        "runs": 29,
-        "balls": 25,
-        "c0": 8,
-        "c1": 13,
-        "c2": 0,
-        "c3": 0,
-        "c4": 4,
-        "c6": 0,
-        "method": "b",
-        "fielder": null,
-        "bowler": 313,
-        "not_out": false
-      },
-      {
-        "id": 31,
-        "batted": true,
-        "pos": 3,
-        "runs": 35,
-        "balls": 24,
-        "c0": 5,
-        "c1": 15,
-        "c2": 0,
-        "c3": 0,
-        "c4": 2,
-        "c6": 2,
-        "method": "lbw",
-        "fielder": null,
-        "bowler": 313,
-        "not_out": false
-      },
-      {
-        "id": 82,
-        "batted": true,
-        "pos": 4,
-        "runs": 0,
-        "balls": 1,
-        "c0": 1,
-        "c1": 0,
-        "c2": 0,
-        "c3": 0,
-        "c4": 0,
-        "c6": 0,
-        "method": "b",
-        "fielder": null,
-        "bowler": 313,
-        "not_out": false
-      },
-      {
-        "id": 87,
+        "id": 264,
         "batted": true,
         "pos": 5,
-        "runs": 25,
-        "balls": 15,
-        "c0": 5,
-        "c1": 5,
+        "runs": 6,
+        "balls": 4,
+        "c0": 1,
+        "c1": 2,
         "c2": 0,
         "c3": 0,
-        "c4": 5,
+        "c4": 1,
+        "c6": 0,
+        "method": "c",
+        "fielder": "kusal mendis",
+        "bowler": 50,
+        "not_out": false
+      },
+      {
+        "id": 177,
+        "batted": true,
+        "pos": 6,
+        "runs": 25,
+        "balls": 21,
+        "c0": 6,
+        "c1": 11,
+        "c2": 1,
+        "c3": 0,
+        "c4": 3,
+        "c6": 0,
+        "method": "b",
+        "fielder": null,
+        "bowler": 10,
+        "not_out": false
+      },
+      {
+        "id": 145,
+        "batted": true,
+        "pos": 7,
+        "runs": 13,
+        "balls": 7,
+        "c0": 1,
+        "c1": 3,
+        "c2": 1,
+        "c3": 0,
+        "c4": 2,
         "c6": 0,
         "method": null,
         "fielder": null,
@@ -97,271 +131,244 @@
         "not_out": true
       },
       {
-        "id": 7,
+        "id": 113,
         "batted": false
       },
       {
-        "id": 94,
+        "id": 36,
         "batted": false
       },
       {
-        "id": 162,
+        "id": 198,
         "batted": false
       },
       {
-        "id": 316,
-        "batted": false
-      },
-      {
-        "id": 53,
-        "batted": false
-      },
-      {
-        "id": 249,
+        "id": 93,
         "batted": false
       }
     ],
     "spells": [
       {
-        "bowler": 62,
-        "overs": 3.0,
-        "runs": 20,
-        "wickets": 0
-      },
-      {
-        "bowler": 229,
-        "overs": 4.0,
-        "runs": 26,
-        "wickets": 0
-      },
-      {
-        "bowler": 303,
+        "bowler": 10,
         "overs": 4.0,
         "runs": 37,
-        "wickets": 0
+        "wickets": 1
       },
       {
-        "bowler": 230,
+        "bowler": 169,
+        "overs": 3.0,
+        "runs": 42,
+        "wickets": 1
+      },
+      {
+        "bowler": 318,
         "overs": 4.0,
-        "runs": 40,
+        "runs": 28,
         "wickets": 0
       },
       {
-        "bowler": 313,
+        "bowler": 281,
+        "overs": 2.0,
+        "runs": 24,
+        "wickets": 0
+      },
+      {
+        "bowler": 92,
+        "overs": 3.0,
+        "runs": 27,
+        "wickets": 1
+      },
+      {
+        "bowler": 50,
         "overs": 4.0,
-        "runs": 29,
-        "wickets": 3
-      },
-      {
-        "bowler": 135,
-        "overs": 1.0,
-        "runs": 11,
-        "wickets": 0
+        "runs": 34,
+        "wickets": 2
       }
     ]
   },
   "inn2": {
-    "score": 164,
-    "for": 6,
+    "score": 155,
+    "for": 5,
     "overs": 20,
     "extras": {
-      "total_extras": 1,
+      "total_extras": 3,
       "wides": 1,
-      "no_balls": 0,
+      "no_balls": 2,
       "lbs": 0,
       "byes": 0
     },
     "batting": [
       {
-        "id": 288,
+        "id": 263,
         "batted": true,
         "pos": 1,
-        "runs": 68,
-        "balls": 51,
-        "c0": 12,
+        "runs": 62,
+        "balls": 52,
+        "c0": 13,
         "c1": 30,
-        "c2": 1,
+        "c2": 2,
         "c3": 0,
-        "c4": 6,
-        "c6": 2,
-        "method": "b",
-        "fielder": null,
-        "bowler": 53,
+        "c4": 7,
+        "c6": 0,
+        "method": "c",
+        "fielder": "malan",
+        "bowler": 36,
         "not_out": false
       },
       {
-        "id": 171,
+        "id": 261,
         "batted": true,
         "pos": 2,
-        "runs": 17,
+        "runs": 30,
+        "balls": 24,
+        "c0": 9,
+        "c1": 10,
+        "c2": 1,
+        "c3": 0,
+        "c4": 3,
+        "c6": 1,
+        "method": "b",
+        "fielder": null,
+        "bowler": 177,
+        "not_out": false
+      },
+      {
+        "id": 85,
+        "batted": true,
+        "pos": 3,
+        "runs": 9,
         "balls": 11,
-        "c0": 3,
+        "c0": 5,
         "c1": 5,
+        "c2": 0,
+        "c3": 0,
+        "c4": 1,
+        "c6": 0,
+        "method": "c",
+        "fielder": "rajapaksa",
+        "bowler": 113,
+        "not_out": false
+      },
+      {
+        "id": 293,
+        "batted": true,
+        "pos": 4,
+        "runs": 21,
+        "balls": 20,
+        "c0": 5,
+        "c1": 13,
+        "c2": 0,
+        "c3": 0,
+        "c4": 2,
+        "c6": 0,
+        "method": null,
+        "fielder": null,
+        "bowler": null,
+        "not_out": true
+      },
+      {
+        "id": 74,
+        "batted": true,
+        "pos": 5,
+        "runs": 13,
+        "balls": 6,
+        "c0": 2,
+        "c1": 1,
         "c2": 0,
         "c3": 0,
         "c4": 3,
         "c6": 0,
         "method": "c",
-        "fielder": "rizwan",
-        "bowler": 53,
+        "fielder": "alex hales",
+        "bowler": 93,
         "not_out": false
       },
       {
-        "id": 3,
-        "batted": true,
-        "pos": 3,
-        "runs": 0,
-        "balls": 4,
-        "c0": 4,
-        "c1": 0,
-        "c2": 0,
-        "c3": 0,
-        "c4": 0,
-        "c6": 0,
-        "method": "lbw",
-        "fielder": null,
-        "bowler": 53,
-        "not_out": false
-      },
-      {
-        "id": 277,
-        "batted": true,
-        "pos": 4,
-        "runs": 29,
-        "balls": 17,
-        "c0": 4,
-        "c1": 9,
-        "c2": 0,
-        "c3": 0,
-        "c4": 2,
-        "c6": 2,
-        "method": "lbw",
-        "fielder": null,
-        "bowler": 316,
-        "not_out": false
-      },
-      {
-        "id": 148,
-        "batted": true,
-        "pos": 5,
-        "runs": 15,
-        "balls": 14,
-        "c0": 5,
-        "c1": 7,
-        "c2": 0,
-        "c3": 0,
-        "c4": 2,
-        "c6": 0,
-        "method": "c",
-        "fielder": "miller",
-        "bowler": 53,
-        "not_out": false
-      },
-      {
-        "id": 135,
+        "id": 318,
         "batted": true,
         "pos": 6,
-        "runs": 19,
-        "balls": 12,
+        "runs": 10,
+        "balls": 7,
         "c0": 3,
-        "c1": 7,
+        "c1": 2,
         "c2": 0,
         "c3": 0,
-        "c4": 0,
-        "c6": 2,
+        "c4": 2,
+        "c6": 0,
         "method": "c",
-        "fielder": "cameron green",
-        "bowler": 249,
+        "fielder": "ruturaj",
+        "bowler": 198,
         "not_out": false
       },
       {
-        "id": 62,
+        "id": 50,
         "batted": true,
         "pos": 7,
-        "runs": 2,
-        "balls": 4,
-        "c0": 2,
-        "c1": 2,
+        "runs": 7,
+        "balls": 2,
+        "c0": 0,
+        "c1": 1,
         "c2": 0,
         "c3": 0,
         "c4": 0,
-        "c6": 0,
+        "c6": 1,
         "method": null,
         "fielder": null,
         "bowler": null,
         "not_out": true
       },
       {
-        "id": 313,
-        "batted": true,
-        "pos": 8,
-        "runs": 13,
-        "balls": 7,
-        "c0": 2,
-        "c1": 2,
-        "c2": 0,
-        "c3": 1,
-        "c4": 2,
-        "c6": 0,
-        "method": null,
-        "fielder": null,
-        "bowler": null,
-        "not_out": true
-      },
-      {
-        "id": 229,
+        "id": 10,
         "batted": false
       },
       {
-        "id": 230,
+        "id": 92,
         "batted": false
       },
       {
-        "id": 303,
+        "id": 169,
+        "batted": false
+      },
+      {
+        "id": 281,
         "batted": false
       }
     ],
     "spells": [
       {
-        "bowler": 162,
+        "bowler": 36,
         "overs": 4.0,
         "runs": 39,
-        "wickets": 0
-      },
-      {
-        "bowler": 87,
-        "overs": 1.0,
-        "runs": 12,
-        "wickets": 0
-      },
-      {
-        "bowler": 316,
-        "overs": 4.0,
-        "runs": 26,
         "wickets": 1
       },
       {
-        "bowler": 53,
+        "bowler": 198,
         "overs": 4.0,
-        "runs": 28,
-        "wickets": 4
+        "runs": 29,
+        "wickets": 1
       },
       {
-        "bowler": 94,
-        "overs": 2.0,
-        "runs": 19,
-        "wickets": 0
-      },
-      {
-        "bowler": 301,
-        "overs": 2.0,
-        "runs": 19,
-        "wickets": 0
-      },
-      {
-        "bowler": 249,
+        "bowler": 177,
         "overs": 3.0,
-        "runs": 21,
+        "runs": 27,
+        "wickets": 1
+      },
+      {
+        "bowler": 93,
+        "overs": 4.0,
+        "runs": 20,
+        "wickets": 1
+      },
+      {
+        "bowler": 145,
+        "overs": 2.0,
+        "runs": 15,
+        "wickets": 0
+      },
+      {
+        "bowler": 113,
+        "overs": 3.0,
+        "runs": 25,
         "wickets": 1
       }
     ]

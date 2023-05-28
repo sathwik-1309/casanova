@@ -28,7 +28,6 @@ module Magic
                 end
             end
             index += 1
-            # puts index
         end
         return start_index, end_index
     end
@@ -78,7 +77,6 @@ module Magic
     end
 
     def self.get_team_score_index(list)
-        # puts
         flag = true
         index = 0
         while flag and index < list.length
@@ -95,8 +93,8 @@ module Magic
             return
         end
         temp = list[score_index][0].split(":")
+        print temp
         team = temp[0]
-        puts team
         team_id = Team.find_by(abbrevation: team.downcase).id
         if team_id.nil?
             puts "#Magic team not found #{team} ❌"
@@ -295,7 +293,6 @@ module Magic
 
     def self.validate_temp_json
         file = File.read(MATCH_JSON_PATH)
-        # puts "Magic# Innings 1 .."
         data = JSON.parse(file)
         inn1 = data["inn1"]
         status = Magic.validate_innings_json(inn1)
@@ -303,7 +300,6 @@ module Magic
             puts "Magic# Innings 1 ❌"
             return status
         end
-        # puts "Magic# Innings 2 .."
         inn2 = data["inn2"]
         status = Magic.validate_innings_json(inn2)
         unless status

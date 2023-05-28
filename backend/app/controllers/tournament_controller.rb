@@ -36,12 +36,14 @@ class TournamentController < ApplicationController
           "journey" => journey_team}
         temp << pt
       end
-      temp = temp.sort_by { |team| [-team["points"], -team["nrr"]] }
+      temp = temp.sort_by { |team| [-team["points"], -(team["nrr"][2..].to_i)] }
+      print temp
       pos = 0
       temp.each do |team|
         pos += 1
         team["pos"] = pos
       end
+      print temp
 
       points_table << temp
     end
@@ -163,6 +165,25 @@ class TournamentController < ApplicationController
 
     hash["tour"] = Tournament.find(t_id).get_tour_font
     hash["ball_stats"] = ball_stats
+    render(:json => Oj.dump(hash))
+  end
+
+  def tournaments_home
+    hash = {}
+    hash["tournaments"] = []
+    hash["tournaments"] << Helper.tournament_class_box("wt20")
+    hash["tournaments"] << Helper.tournament_class_box("ipl")
+    hash["tournaments"] << Helper.tournament_class_box("csl")
+    render(:json => Oj.dump(hash))
+  end
+
+  def tournament_home
+    hash = {}
+    hash["tournaments"] = []
+    tours = Tournament.where(name: params[:tour_class])
+    tours.each do|tour|
+      hash["tournaments"] << tour.tournament_box
+    end
     render(:json => Oj.dump(hash))
   end
 end

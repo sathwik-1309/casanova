@@ -1,0 +1,23 @@
+{
+  "m_id": 156,
+  "batted_first": "dec",
+  "batted_second": "july",
+  "toss": "july",
+  "pitch": 3,
+  "ball_color": [
+    "y",
+    "y",
+    "y",
+    "y"
+  ],
+  "cap1": "wade",
+  "cap2": "dhoni",
+  "keeper1": "de kock",
+  "keeper2": "dhoni",
+  "winner": "dec",
+  "stage": "group",
+  "venue": "mumbai",
+  "motm_player": "tim southee",
+  "motm_team": "dec",
+  "t_id": 6
+}

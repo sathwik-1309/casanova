@@ -5,13 +5,13 @@ function WebPage(props) {
     return (
     <div id="webpage_layout">
         <div id="webpage_layout_item1">
-            <Sidebar/>
+            <Sidebar s_id={props.s_id} />
         </div>
         <div id="webpage_layout_item2">
             {props.page}
         </div>
     </div>
-    
+
 )}
 
 export default WebPage

@@ -5,7 +5,7 @@ class Player < ApplicationRecord
     has_one :ball_stats
     has_many :performances
     def country
-        return Team.find(self.country_team_id)
+        return Team.find_by(id: self.country_team_id)
     end
 
     # private

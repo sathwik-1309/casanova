@@ -485,8 +485,8 @@ module Uploader
             b.five_wickets += 1 if spell.wickets >= 50
             b.boundary_p = Util.get_boundary_p(b.c4, b.c6, Util.overs_to_balls(b.overs))
             b.dot_p = Util.get_dot_p(b.dots, Util.overs_to_balls(b.overs))
-            b.best_id = spell.inning_id if b.best.wickets < spell.wickets
-            b.best_id = spell.inning_id if (b.best.wickets == spell.wickets and b.best.economy > spell.economy)
+            b.best_id = spell.inning_id if b.best.nil? or b.best.wickets < spell.wickets
+            b.best_id = spell.inning_id if b.best.nil? or (b.best.wickets == spell.wickets and b.best.economy > spell.economy)
             unless b.save
                 puts "ball_stats update error ❌"
                 puts b.errors.full_messages

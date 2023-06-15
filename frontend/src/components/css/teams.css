@@ -455,7 +455,8 @@
 }
 
 .default-font {
-    font-family: 'Montserrat', sans-serif;
+    /*font-family: 'Montserrat', sans-serif;*/
+    font-family: 'Poppins', sans-serif;
     font-size: 20px;
     font-style: italic;
 }
@@ -494,6 +495,10 @@
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
     font-style: italic;
+}
+
+body {
+    cursor: default;
 }
 
 

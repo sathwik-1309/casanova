@@ -7,9 +7,9 @@ function TournamentClassBox(props) {
             <div className="tc_box_tourname">
                 {data.tour_name}
             </div>
-            <div className={`tc_box_champions ${data.w_color}1`}>
+            <div className={`tc_box_champions`}>
                 <div className='tc_box_label'>🏆 WINNERS 🏆</div>
-                <div className='tc_box_teamname'>{data.w_teamname}</div>
+                <div className={`tc_box_teamname ${data.w_color}1`}>{data.w_teamname}</div>
             </div>
             <div className='tc_box_data'>Tournaments: {data.tournaments}</div>
             <div className='tc_box_data'>Matches: {data.matches}</div>

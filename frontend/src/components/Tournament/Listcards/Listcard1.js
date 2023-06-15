@@ -35,15 +35,12 @@ function LitscardItem(props){
 }
 
 function Listcard1(props){
-    console.log(props)
     let player = props.data
     let pic_height = '0px'
     if (player.pos === 1){
-        console.log("yes")
         pic_height = '70px';
     }
     else {
-        console.log("no")
         pic_height = '60px'
     }
     const height_style = {

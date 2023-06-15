@@ -1,0 +1,8 @@
+.tournaments_navbar {
+    display: flex;
+    margin: 50px;
+    flex-wrap: wrap;
+    /*justify-content: center;*/
+    align-items: center;
+    gap: 150px;
+}

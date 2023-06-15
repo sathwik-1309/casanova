@@ -21,10 +21,11 @@ Rails.application.routes.draw do
     get '/:t_id/points_table' => 'tournament#points_table'
     get '/:t_id/bat_stats' => 'tournament#bat_stats'
     get '/:t_id/ball_stats' => 'tournament#ball_stats'
+    get '/:t_id' => 'tournament#tournament_home'
   end
 
   scope :tournaments do
-    get '/:tour_class' => 'tournament#tournament_home'
+    get '/:tour_class' => 'tournament#tournaments_home'
   end
 
 
@@ -33,7 +34,21 @@ Rails.application.routes.draw do
     get '/:p_id/ball_stats' => 'player#ball_stats'
   end
 
-  get 'home_page' => 'tournament#tournaments_home'
+  scope :players do
+    get '' => 'player#players'
+    get '/batting_meta' => 'player#batting_meta'
+    get '/bowling_meta' => 'player#bowling_meta'
+  end
+
+  scope :teams do
+    get '' => 'team#teams'
+  end
+
+  scope :venues do
+    get '' => 'venue#venues'
+  end
+
+  get 'home_page' => 'tournament#home_page'
 
 
 end

@@ -1,0 +1,23 @@
+{
+  "m_id": 161,
+  "batted_first": "dec",
+  "batted_second": "jan",
+  "toss": "jan",
+  "pitch": 3,
+  "ball_color": [
+    "y",
+    "y",
+    "y",
+    "y"
+  ],
+  "cap1": "wade",
+  "cap2": "finch",
+  "keeper1": "wade",
+  "keeper2": "rajapaksa",
+  "winner": "jan",
+  "stage": "quarter-final",
+  "venue": "pune",
+  "motm_player": "alex hales",
+  "motm_team": "jan",
+  "t_id": 6
+}

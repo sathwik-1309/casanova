@@ -13,7 +13,7 @@ function TournamentPage() {
     let component = <Pointstable t_id={t_id}/>
     switch(page) {
         case "pointstable":
-            component = <Pointstable t_id={t_id}/>
+            component = <Pointstable t_id={t_id} type={`batting`}/>
           break;
         case "bat_stats":
             component = <BatStats t_id={t_id}/>
@@ -31,9 +31,9 @@ function TournamentPage() {
         //     component = <Manhatten m_id = {m_id} inn_no={inn_no}/>
         //   break;
         default:
-            component = <Pointstable t_id={t_id}/>
+            component = component
       }
-    return ( 
+    return (
         <div id="tournament_page">
             {/*<div id="tournament_page_item1">*/}
             {/*    <Topbar page={page} t_id={t_id}/>*/}
@@ -43,7 +43,7 @@ function TournamentPage() {
                     {component}
                 </div>
             </div>
-            
+
         </div>
         )
 

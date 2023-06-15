@@ -1,0 +1,23 @@
+{
+  "m_id": 159,
+  "batted_first": "july",
+  "batted_second": "may",
+  "toss": "may",
+  "pitch": 2,
+  "ball_color": [
+    "y",
+    "r",
+    "y",
+    "r"
+  ],
+  "cap1": "dhoni",
+  "cap2": "cummins",
+  "keeper1": "dhoni",
+  "keeper2": "mushfiqur",
+  "winner": "may",
+  "stage": "quarter-final",
+  "venue": "delhi",
+  "motm_player": "cummins",
+  "motm_team": "may",
+  "t_id": 6
+}

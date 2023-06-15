@@ -1,0 +1,23 @@
+{
+  "m_id": 158,
+  "batted_first": "mar",
+  "batted_second": "oct",
+  "toss": "oct",
+  "pitch": 3.5,
+  "ball_color": [
+    "y",
+    "g",
+    "y",
+    "g"
+  ],
+  "cap1": "shakib",
+  "cap2": "babar azam",
+  "keeper1": "m haris",
+  "keeper2": "pant",
+  "winner": "oct",
+  "stage": "group",
+  "venue": "bengaluru",
+  "motm_player": "maxwell",
+  "motm_team": "oct",
+  "t_id": 6
+}

@@ -1,20 +1,17 @@
 
 import './MatchesPage.css'
 import React, {useEffect, useState} from "react";
-import BatsmenItem from "../../components/Summary/BatsmenItem";
 import MatchBox from "../../components/Match/MatchBox/MatchBox";
+import {useParams} from "react-router-dom";
 
 function MatchesPage(props){
     let url = 'http://localhost:3001/matches'
-    if (props.t_id) {
-        url = url + `?t_id=${props.t_id}`
+    let { tour_class } = useParams()
+
+    if (props.tour_class) {
+        url = url + `?tour_class=${tour_class}`
     }
-    else if (props.p_id) {
-        url = url + `?p_id=${props.p_id}`
-    }
-    else if (props.venue) {
-        url = url + `?venue=${props.venue}`
-    }
+
     const [data, setData] = useState(null);
 
     useEffect(() => {

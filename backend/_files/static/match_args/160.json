@@ -1,0 +1,23 @@
+{
+  "m_id": 160,
+  "batted_first": "nov",
+  "batted_second": "oct",
+  "toss": "oct",
+  "pitch": 2.5,
+  "ball_color": [
+    "y",
+    "y",
+    "y",
+    "y"
+  ],
+  "cap1": "kohli",
+  "cap2": "babar azam",
+  "keeper1": "samson",
+  "keeper2": "pant",
+  "winner": "oct",
+  "stage": "quarter-final",
+  "venue": "kolkata",
+  "motm_player": "david warner",
+  "motm_team": "oct",
+  "t_id": 6
+}

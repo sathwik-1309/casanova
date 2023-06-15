@@ -12,8 +12,9 @@
 }
 
 #webpage_layout_item2 {
-    width: 90%;
-    height: 100%;
+    width: 100%;
+    height: fit-content;
     margin-left: 10%;
-    
+    padding-bottom: 50px;
+    padding-right: 50px;
 }

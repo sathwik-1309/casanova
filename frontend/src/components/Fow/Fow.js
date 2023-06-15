@@ -1,6 +1,6 @@
 import './Fow.css'
 import '../css/teams.css'
-import React, { useState, useEffect } from 'react'; 
+import React, { useState, useEffect } from 'react';
 
 function Header(props) {
     let class1 = "fow_header1 " + props.color + "1"
@@ -78,6 +78,6 @@ function Fow(props) {
             ))}
         </div>
         );
-    
+
     }
 export default Fow;

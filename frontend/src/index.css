@@ -6,9 +6,13 @@
 
 html, body {
   height: 100%;
+  background-color: #f3e8fc;
 }
 
 :root {
   --color1: #3b5998;
   --color2: #e9ebee;
+  --dark: #111013;
+  --white: #fff;
+  --shadow-border: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

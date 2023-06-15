@@ -4,7 +4,7 @@ import Photocard from "../../Photocard/Photocard";
 function PBatStats(props) {
 
     let url = `http://localhost:3001/player/${props.p_id}/bat_stats`
-    console.log(url)
+
     const [all, setall] = useState(null);
     const [data, setdata] = useState(all ? all.career : null);
     const [selected, setSelected] = useState("career");

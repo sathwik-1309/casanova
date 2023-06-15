@@ -1,7 +1,6 @@
 .matchbox {
     display: flex;
     flex-direction: column;
-    border: 1px dotted black;
     border-radius: 3px;
     height: fit-content;
     width: fit-content;
@@ -9,6 +8,14 @@
     text-decoration: none;
     color: black;
     cursor: default;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: white;
+}
+.matchbox:hover {
+    background-color: var(--dark);
+    color: white;
+    /*border: 2px solid var(--dark);*/
+    /*padding: 1px;*/
 }
 
 .matchbox_header {
@@ -32,7 +39,7 @@
     border-top: 1px solid white;
     font-size: 0.8rem;
     font-weight: 600;
-    padding-top: 0.2rem;
+    padding-top: 4px;
 }
 .matchbox_teamname {
     width: 60px;

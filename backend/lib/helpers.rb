@@ -16,7 +16,15 @@ module Helper
         hash["fours"] += score.c4
         hash["sixes"] += score.c6
         hash["fifties"] += 1 if score.runs >= 50
+        hash["thirties"] += 1 if score.runs >= 30
+        hash["hundreds"] += 1 if score.runs >= 100
         hash["dismissed"] += 1 if score.not_out == false
+        if hash["best_runs"] < score.runs or (hash["best_runs"] == score.runs and hash["best_balls"] > score.balls)
+            hash["best_runs"] = score.runs
+            hash["best_runs_with_notout"] = score.get_runs_with_notout
+            hash["best_balls"] = score.balls
+        end
+
         return hash
     end
 
@@ -30,7 +38,11 @@ module Helper
         hash["fours"] = 0
         hash["sixes"] = 0
         hash["fifties"] = 0
+        hash["thirties"] = 0
+        hash["hundreds"] = 0
         hash["dismissed"] = 0
+        hash["best_runs"] = 0
+        hash["best_balls"] = 0
         hash["squad_id"] = squad_id
         return hash
     end
@@ -113,8 +125,11 @@ module Helper
         hash["dots"] = 0
         hash["fours"] = 0
         hash["sixes"] = 0
-        hash["3w"] = 0
+        hash["_3w"] = 0
         hash["maidens"] = 0
+        hash["best_wickets"] = 0
+        hash["best_runs"] = 0
+        hash["_5w"] = 0
         hash["squad_id"] = squad_id
         return hash
     end
@@ -127,8 +142,15 @@ module Helper
         hash["dots"] += spell.dots
         hash["fours"] += spell.c4
         hash["sixes"] += spell.c6
-        hash["3w"] += 1 if spell.wickets >= 3
+        hash["_3w"] += 1 if spell.wickets >= 3
+        hash["_5w"] += 1 if spell.wickets >= 5
         hash["maidens"] += spell.maidens
+        if hash["best_wickets"] < spell.wickets or (hash["best_wickets"] == spell.wickets and hash["best_runs"] > spell.runs)
+            hash["best_fig"] = spell.get_fig
+            hash["best_overs"] = spell.overs
+            hash["best_wickets"] = spell.wickets
+            hash["best_runs"] = spell.runs
+        end
         return hash
     end
 
@@ -268,6 +290,42 @@ module Helper
         hash["w_color"] = latest_winner.abbrevation
         hash["tournaments"] = total_tours.length
         hash["matches"] = Match.where(tournament_id: total_tours.pluck(:id)).count
+        return hash
+    end
+
+    def self.group_by_team(hashes, key)
+        grouped_hash = {}
+
+        hashes.each do |hash|
+            color = hash[key]
+            if grouped_hash[color]
+                grouped_hash[color][hash["skill"].downcase] << hash
+                # grouped_hash[color] << hash
+            else
+                grouped_hash[color] = {}
+                grouped_hash[color]['bat'] = []
+                grouped_hash[color]['wk'] = []
+                grouped_hash[color]['all'] = []
+                grouped_hash[color]['bow'] = []
+                grouped_hash[color][hash["skill"].downcase] = [hash]
+                # grouped_hash[color] = [hash]
+            end
+        end
+        grouped_hash
+    end
+
+    def self.construct_player_details(player)
+        hash = {}
+        hash["name"] = player.fullname.length > 13 ? player.name.titleize : player.fullname.titleize
+        hash["p_id"] = player.id
+        if player.keeper
+            hash["skill"] = "WK"
+        else
+            hash["skill"] = player.skill.upcase
+        end
+        hash["batting_hand"] = player.batting_hand
+        hash["bowling_hand"] = player.bowling_hand
+        hash["bowling_style"] = player.bowling_style
         return hash
     end
 

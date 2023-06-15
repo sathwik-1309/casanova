@@ -52,7 +52,9 @@ class Tournament < ApplicationRecord
 
     def tournament_box
         hash = {}
+        hash["tour_class"] = "#{self.name.upcase}-#{self.season}"
         if self.winners_id != nil
+
             hash["w_teamname"] = self.winners.get_teamname
             hash["w_color"] = self.winners.abbrevation
             hash["pots"] = self.pots.fullname.titleize

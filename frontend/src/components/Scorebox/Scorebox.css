@@ -10,6 +10,7 @@
 }
 .scorebox:hover {
     border: 4px solid black;
+    padding: 0px;
 }
 .scorebox_header {
     display: flex;

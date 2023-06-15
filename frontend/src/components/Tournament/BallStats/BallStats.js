@@ -7,7 +7,6 @@ function BallStats(props) {
 
     let url = `http://localhost:3001/tournament/${t_id}/ball_stats`
     const [data, setData] = useState(null);
-    console.log(data)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -22,7 +21,6 @@ function BallStats(props) {
     if (!data) {
         return <div>Loading...</div>;
     }
-    console.log(data.ball_stats.boxes)
 
     return (
 

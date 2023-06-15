@@ -1,11 +1,11 @@
 .summary {
     width: 600px;
     height: fit-content;
-    border: 1px dotted black;
     padding: 3px;
-    border-radius: 8px;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: white;
 }
 .summary_parent {
     display: flex;

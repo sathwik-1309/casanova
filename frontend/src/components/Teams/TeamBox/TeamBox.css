@@ -1,0 +1,38 @@
+.teambox_parent {
+    background-color: white;
+    box-shadow: var(--shadow-border);
+    padding: 1px;
+}
+.teambox_parent:hover {
+    border: 1px solid black;
+    padding: 0px;
+}
+
+.teambox {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+}
+.teambox_trophies {
+    height: 40px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.teambox_teamname {
+    height: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    padding-top: 4px;
+}
+.teambox_tournaments {
+    height: 40px;
+    font-size: 1rem;
+    font-weight: 400;
+    padding-left: 10px;
+}
+

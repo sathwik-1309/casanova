@@ -6,11 +6,11 @@ function Listcards(props) {
 
     return (
         <div className='listcards'>
-        <div className='listcards_header'>{props.data.header}</div>
-        {props.data.data.map((listcard, index) => (
-            <Listcard1 key={index} data={listcard}/>
-        ))}
-    </div>
+            <div className='listcards_header'>{props.data.header}</div>
+            {props.data.data.map((listcard, index) => (
+                <Listcard1 key={index} data={listcard}/>
+            ))}
+        </div>
     );
 }
 

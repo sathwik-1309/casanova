@@ -1,0 +1,23 @@
+{
+  "m_id": 162,
+  "batted_first": "june",
+  "batted_second": "mar",
+  "toss": "mar",
+  "pitch": 3.5,
+  "ball_color": [
+    "y",
+    "g",
+    "g",
+    "y"
+  ],
+  "cap1": "stokes",
+  "cap2": "shakib",
+  "keeper1": "rizwan",
+  "keeper2": "m haris",
+  "winner": "june",
+  "stage": "quarter-final",
+  "venue": "mumbai",
+  "motm_player": "c green",
+  "motm_team": "june",
+  "t_id": 6
+}

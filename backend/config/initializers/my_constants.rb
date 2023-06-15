@@ -13,6 +13,7 @@ MATCH_INGEST_JSON_PATH = "#{Dir.pwd}/_files/temp/ingest.json"
 MATCH_CSV_PATH = "#{Dir.pwd}/_files/temp/match_data"
 PLAYERS_JSON_PATH = "#{Dir.pwd}/_files/static/players.json"
 TOURNAMENT_JSON_PATH = "#{Dir.pwd}/_files/static/tournaments.json"
+TEAM_MEDALS = "#{Dir.pwd}/_files/static/team_medals.json"
 ARGS_JSON_PATH = "#{Dir.pwd}/_files/static/match_args"
 MATCH_TEXT_FILE_PATH = "#{Dir.pwd}/_files/static/txt"
 

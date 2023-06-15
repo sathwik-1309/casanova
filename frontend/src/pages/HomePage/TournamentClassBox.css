@@ -6,18 +6,19 @@
     margin: 0 70px;
     display: flex;
     flex-direction: column;
-    border: 1px solid #3c5898 ;
     text-decoration: none;
-    border-radius: 10px;
     font-weight: 600;
     background-color: white;
+    cursor: default;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 
 .home_navbar_item:hover {
-    /*background-color: #fefefe;*/
-    /*color: #9cb2ce;*/
+    /*background-color: var(--dark);*/
+    /*color: white;*/
     border: 3px solid black;
+    padding: 0px;
 }
 
 .tc_box_tourname {
@@ -36,14 +37,14 @@
 .tc_box_label {
     height: 30px;
     font-size: 10px;
-    padding-top: 10px;
+    padding-top: 8px;
     font-weight: 500;
 }
 .tc_box_teamname {
     height: 40px;
     font-size: 15px;
     font-weight: 600;
-    padding-top: 7px;
+    padding-top: 11px;
 }
 .tc_box_data {
     height: 30px;

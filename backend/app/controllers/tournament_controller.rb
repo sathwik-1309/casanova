@@ -36,7 +36,14 @@ class TournamentController < ApplicationController
           "journey" => journey_team}
         temp << pt
       end
-      temp = temp.sort_by { |team| [-team["points"], -(team["nrr"][2..].to_i)] }
+      temp.each do |team|
+        if team["nrr"][0] == '-'
+          team["nrr_float"] = -1 * (team["nrr"][2..].to_f)
+        else
+          team["nrr_float"] = team["nrr"][2..].to_f
+        end
+      end
+      temp = temp.sort_by { |team| [-team["points"], -team["nrr_float"]] }
       print temp
       pos = 0
       temp.each do |team|
@@ -141,10 +148,10 @@ class TournamentController < ApplicationController
       "header"=> "Best Bowling Avg",
       "data"=>Helper.format_individual_stats(ball_stats_hash_avg[0..4], "avg", "wickets", t_id)}
 
-    ball_stats_hash = ball_stats_hash.sort_by { |bowler| [-bowler["3w"], -bowler["wickets"]] }
+    ball_stats_hash = ball_stats_hash.sort_by { |bowler| [-bowler["_3w"], -bowler["wickets"]] }
     ball_stats["boxes"] << {
       "header"=> "Most 3-w hauls",
-      "data"=>Helper.format_individual_stats(ball_stats_hash[0..4], "3w", "wickets", t_id)}
+      "data"=>Helper.format_individual_stats(ball_stats_hash[0..4], "_3w", "wickets", t_id)}
 
     ball_stats_hash = ball_stats_hash.sort_by { |bowler| [-bowler["maidens"], -bowler["wickets"]] }
     ball_stats["boxes"] << {
@@ -168,7 +175,7 @@ class TournamentController < ApplicationController
     render(:json => Oj.dump(hash))
   end
 
-  def tournaments_home
+  def home_page
     hash = {}
     hash["tournaments"] = []
     hash["tournaments"] << Helper.tournament_class_box("wt20")
@@ -177,13 +184,40 @@ class TournamentController < ApplicationController
     render(:json => Oj.dump(hash))
   end
 
-  def tournament_home
+  def tournaments_home
     hash = {}
     hash["tournaments"] = []
     tours = Tournament.where(name: params[:tour_class])
     tours.each do|tour|
       hash["tournaments"] << tour.tournament_box
     end
+    render(:json => Oj.dump(hash))
+  end
+
+  def tournament_home
+    t_id = params[:t_id]
+    hash = {}
+    final = Match.find_by(tournament_id: t_id, stage: 'final')
+    if final
+      box1 = {}
+      winner = Squad.find(final.winner_id)
+      runner = Squad.find(final.loser_id)
+      box1["winners"] = {
+        "teamname" => winner.get_teamname,
+        "color" => winner.abbrevation
+      }
+      box1["runners"] = {
+        "teamname" => runner.get_teamname,
+        "color" => runner.abbrevation
+      }
+      box1["final"] = Match.match_box(final.id)
+      box1["gem"] = {}
+      gem = Player.find(final.motm_id)
+      box1["gem"]["name"] = gem.fullname.upcase
+      box1["gem"]["p_id"] = final.motm_id
+      box1["gem"]["color"] = Squad.find(Score.find_by(match_id: final.id, player_id: gem.id).squad_id).abbrevation
+    end
+    hash["box1"] = box1
     render(:json => Oj.dump(hash))
   end
 end

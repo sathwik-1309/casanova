@@ -46,9 +46,16 @@ module New
 
   def self.add_existing_matches_to_db
     input_path = ARGS_JSON_PATH
+    existing_matches = []
     Dir.foreach(input_path) do |filename|
       next if filename == '.' || filename == '..'  # Skip current directory and parent directory
       m_id = filename.split(".")[0]
+      existing_matches << [filename, m_id.to_i]
+    end
+    sorted_array = existing_matches.sort_by { |array| array[1] }
+    sorted_array.each do |array|
+      filename = array[0]
+      m_id = array[1]
       file = File.read(ARGS_JSON_PATH + '/' + filename)
       args = JSON.parse(file)
       New.upload_match(args, false , MATCH_TEXT_FILE_PATH + "/#{m_id}.txt")

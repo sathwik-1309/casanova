@@ -1,0 +1,45 @@
+.tournament_home {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+.tournament_home_box1 {
+    display: flex;
+    background-color: white;
+    box-shadow: var(--shadow-border);
+    height: fit-content;
+    width: fit-content;
+    padding: 3px;
+}
+.th_box1_medals {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    padding: 10px;
+}
+.th_box1_winner_label,
+.th_box1_runner_label {
+    color: black;
+    font-weight: 500;
+    font-size: 1rem;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.th_box1_winner_team {
+    height: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.th_box1_runner_team {
+    height: 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

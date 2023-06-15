@@ -31,22 +31,22 @@
 .summary_batsman_score {
     width: 30%;
     /*border-radius: 2px;*/
-    padding-top: 0.4rem;
+    padding-top: 0.2rem;
     display: flex;
 }
 
 #summary_batsman_score_runs {
     width: 45%;
     text-align: right;
-    font-weight: 600;
-    font-size: 0.9rem;
+    font-weight: 700;
+    font-size: 1rem;
 }
 
 #summary_batsman_score_notout {
     width: 20%;
     padding-top: 0;
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 700;
 }
 
 
@@ -54,7 +54,7 @@
     width: 35%;
     font-weight: 400;
     font-size: 0.7rem;
-    padding-top: 3px;
+    padding-top: 4px;
 
 }
 

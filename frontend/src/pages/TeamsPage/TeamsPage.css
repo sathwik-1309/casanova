@@ -1,0 +1,32 @@
+.teams_page {
+    display: flex;
+    flex-direction: column;
+}
+
+.teams_page_buttons {
+    display: flex;
+    height: fit-content;
+}
+.teams_page_button_item {
+    display: flex;
+    height: 40px;
+    width: 80px;
+    font-size: 1rem;
+    font-weight: 600;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    background-color: var(--dark);
+}
+.selected {
+    background-color: var(--white);
+    color: var(--dark);
+}
+.teams_page_teams {
+    display: flex;
+    margin: 50px;
+    flex-wrap: wrap;
+    /*justify-content: center;*/
+    align-items: center;
+    gap: 50px;
+}

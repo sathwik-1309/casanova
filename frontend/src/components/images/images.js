@@ -193,7 +193,8 @@ export const images =
     189: require('../images/189.webp'),
     190: require('../images/190.webp'),
     191: require('../images/191.webp'),
-    193: require('../images/193.webp')
+    193: require('../images/193.webp'),
+    194: require('../images/194.webp'),
+    195: require('../images/195.webp')
 
 }
-  

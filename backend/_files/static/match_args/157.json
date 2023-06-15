@@ -1,0 +1,23 @@
+{
+  "m_id": 157,
+  "batted_first": "nov",
+  "batted_second": "sept",
+  "toss": "sept",
+  "pitch": 2,
+  "ball_color": [
+    "y",
+    "y",
+    "y",
+    "y"
+  ],
+  "cap1": "kohli",
+  "cap2": "buttler",
+  "keeper1": "samson",
+  "keeper2": "buttler",
+  "winner": "nov",
+  "stage": "group",
+  "venue": "dharamshala",
+  "motm_player": "gurbaz",
+  "motm_team": "nov",
+  "t_id": 6
+}

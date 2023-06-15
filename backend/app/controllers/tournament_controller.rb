@@ -197,6 +197,7 @@ class TournamentController < ApplicationController
   def tournament_home
     t_id = params[:t_id]
     hash = {}
+    tour = Tournament.find(t_id)
     final = Match.find_by(tournament_id: t_id, stage: 'final')
     if final
       box1 = {}
@@ -211,11 +212,20 @@ class TournamentController < ApplicationController
         "color" => runner.abbrevation
       }
       box1["final"] = Match.match_box(final.id)
-      box1["gem"] = {}
       gem = Player.find(final.motm_id)
-      box1["gem"]["name"] = gem.fullname.upcase
-      box1["gem"]["p_id"] = final.motm_id
-      box1["gem"]["color"] = Squad.find(Score.find_by(match_id: final.id, player_id: gem.id).squad_id).abbrevation
+      box1["gem"] = gem.tour_individual_awards_to_hash(t_id, "gem")
+
+      pots = Player.find(tour.pots_id)
+      box1["pots"] = pots.tour_individual_awards_to_hash(t_id, "pots")
+
+      mvp = Player.find(tour.mvp_id)
+      box1["mvp"] = mvp.tour_individual_awards_to_hash(t_id, "mvp")
+
+      most_runs_player = Player.find(tour.most_runs_id)
+      box1["most_runs_id"] = most_runs_player.tour_individual_awards_to_hash(t_id, "most_runs")
+
+      most_wickets_player = Player.find(tour.most_wickets_id)
+      box1["most_wickets_id"] = most_wickets_player.tour_individual_awards_to_hash(t_id, "most_wickets")
     end
     hash["box1"] = box1
     render(:json => Oj.dump(hash))

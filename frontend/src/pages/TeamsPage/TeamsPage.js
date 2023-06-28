@@ -4,12 +4,17 @@ import TeamBox from "../../components/Teams/TeamBox/TeamBox";
 import {useParams} from "react-router-dom";
 function TeamsPage(props) {
     let {tour_class} = useParams()
+    let {t_id} = useParams()
     let url = 'http://localhost:3001/teams'
 
     let initial_state = "wt20"
     if (props.tour_class) {
         url = url + `?tour_class=${tour_class}`
         initial_state = `${tour_class}`
+    }
+    if (props.t_id) {
+        url = url + `?t_id=${t_id}`
+        initial_state = `${t_id}`
     }
 
     const [data, setData] = useState(null);

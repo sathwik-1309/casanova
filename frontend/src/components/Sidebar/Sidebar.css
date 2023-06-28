@@ -6,6 +6,9 @@
     /*background-color: #29487d;*/
     background-color: var(--dark);
     color: var(--white);
-    border-right: 1px solid var(--white);
+    /*border-right: 1px solid var(--white);*/
     font-family: Poppins, Sans-Serif;
+    /*box-shadow: var(--shadow-border);*/
+    font-size: 14px;
+    font-weight: 500;
 }

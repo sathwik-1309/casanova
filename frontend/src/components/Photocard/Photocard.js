@@ -4,9 +4,9 @@ import {images} from '../images/images.js';
 
 function Photocard(props){
     let img1 = images[props.p_id]
-    if (props.p_id > 195) {
-        img1 = images[0];
-    }
+    // if (props.p_id > 400) {
+    //     img1 = images[0];
+    // }
 
     const height_style = {
         width: props.height,

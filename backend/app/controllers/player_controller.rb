@@ -117,20 +117,10 @@ class PlayerController < ApplicationController
       when 'csl'
         tour_ids = CSL_IDS
       end
-      temp = Score.where(tournament_id: tour_ids).pluck(:player_id, :squad_id).uniq
-      squads = Squad.all
-      teams = Team.all
-      temp2 = temp.map { |array| [array[0], squads.find(array[1]).team_id] }
-      temp2 = temp2.uniq
-      temp2.each do |a|
-        player = players.find(a[0])
-        team_id = a[1]
-        hash = Helper.construct_player_details(player)
-        team = teams.find(team_id)
-        hash["color"] = team.abbrevation
-        hash["teamname"] = team.get_teamname
-        array << hash
-      end
+      array = Helper.construct_players_hash_for_tour(tour_ids, players)
+    elsif params[:t_id]
+      tour_ids = params[:t_id]
+      array = Helper.construct_players_hash_for_tour(tour_ids, players)
     else
       players.each do |player|
         hash = Helper.construct_player_details(player)

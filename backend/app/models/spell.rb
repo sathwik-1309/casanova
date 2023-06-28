@@ -32,4 +32,13 @@ class Spell < ApplicationRecord
         hash["p_id"] = p_id
         return hash
     end
+
+    def get_mvp_points_spell(match_eco, match_bow_sr)
+        # Points = (O*E) + (W*S1)
+        rel_eco = (match_eco/self.economy).round(2)
+        rel_sr = self.sr.nil? ? 0 : (match_bow_sr/self.sr).round(2)
+        rel_eco = 0 if rel_eco < 0.85
+        points = (Util.overs_to_balls(self.overs) * rel_eco * 0.8) + (self.wickets * rel_sr)
+        return points.round(2)
+    end
 end

@@ -1,0 +1,23 @@
+{
+  "m_id": 165,
+  "batted_first": "jan",
+  "batted_second": "may",
+  "toss": "may",
+  "pitch": 3,
+  "ball_color": [
+    "y",
+    "y",
+    "y",
+    "y"
+  ],
+  "cap1": "finch",
+  "cap2": "pat cummins",
+  "keeper1": "rajapaksa",
+  "keeper2": "mushfiqur",
+  "winner": "jan",
+  "stage": "final",
+  "venue": "bengaluru",
+  "motm_player": "ruturaj gaikwad",
+  "motm_team": "jan",
+  "t_id": 6
+}

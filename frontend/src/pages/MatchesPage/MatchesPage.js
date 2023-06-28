@@ -7,9 +7,13 @@ import {useParams} from "react-router-dom";
 function MatchesPage(props){
     let url = 'http://localhost:3001/matches'
     let { tour_class } = useParams()
+    let { t_id } = useParams()
 
     if (props.tour_class) {
         url = url + `?tour_class=${tour_class}`
+    }
+    else if (props.t_id) {
+        url = url + `?t_id=${t_id}`
     }
 
     const [data, setData] = useState(null);

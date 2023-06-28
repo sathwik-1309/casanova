@@ -44,11 +44,10 @@ gem "bootsnap", require: false
 
 gem 'activerecord'
 gem 'csv'
-gem 'pdf-reader', '~>2.0.0'
 gem 'json'
 gem 'oj'
 gem 'rack-cors'
-gem 'will_paginate'
+gem 'byebug'
 # Use Sass to process CSS
 # gem "sassc-rails"
 

@@ -13,7 +13,7 @@ function TournamentPage() {
     let component = <Pointstable t_id={t_id}/>
     switch(page) {
         case "pointstable":
-            component = <Pointstable t_id={t_id} type={`batting`}/>
+            component = <Pointstable t_id={t_id}/>
           break;
         case "bat_stats":
             component = <BatStats t_id={t_id}/>

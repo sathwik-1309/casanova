@@ -1,10 +1,10 @@
 .teambox_parent {
     background-color: white;
     box-shadow: var(--shadow-border);
-    padding: 1px;
+    padding: 3px;
 }
 .teambox_parent:hover {
-    border: 1px solid black;
+    border: 3px solid black;
     padding: 0px;
 }
 
@@ -26,8 +26,9 @@
     height: 50px;
     font-size: 1rem;
     font-weight: 600;
-    text-align: center;
-    padding-top: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .teambox_tournaments {
     height: 40px;

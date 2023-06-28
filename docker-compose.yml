@@ -1,13 +1,11 @@
 version: '3.9'
 services:
-  web:
+  backend:
     build:
       context: ./backend
       dockerfile: Dockerfile
     ports:
-      - 3001:3000
-    volumes:
-      - .:/backend
+      - 3001:3001
     depends_on:
       - db
   frontend:

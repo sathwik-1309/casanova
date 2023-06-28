@@ -43,9 +43,13 @@ function DropdownMenu(props) {
 
 function PlayersPage(props) {
     let { tour_class } = useParams()
+    let { t_id } = useParams()
     let url = `http://localhost:3001/players`
     if (props.tour_class) {
         url = url + `?tour_class=${tour_class}`
+    }
+    else if (props.t_id) {
+        url = url + `?t_id=${t_id}`
     }
     const [data, setData] = useState(null);
     const [team, setTeam] = useState(null);

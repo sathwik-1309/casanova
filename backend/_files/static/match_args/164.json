@@ -1,0 +1,23 @@
+{
+  "m_id": 164,
+  "batted_first": "june",
+  "batted_second": "jan",
+  "toss": "jan",
+  "pitch": 2.5,
+  "ball_color": [
+    "y",
+    "r",
+    "r",
+    "y"
+  ],
+  "cap1": "stokes",
+  "cap2": "finch",
+  "keeper1": "rizwan",
+  "keeper2": "rajapaksa",
+  "winner": "jan",
+  "stage": "semi-final",
+  "venue": "dharamshala",
+  "motm_player": "ruturaj gaikwad",
+  "motm_team": "jan",
+  "t_id": 6
+}

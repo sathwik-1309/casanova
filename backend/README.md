@@ -1,24 +1,48 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Commands
 
-Things you may want to cover:
+### Seed everything from csv
 
-* Ruby version
+     rails  r script/seed.rb
 
-* System dependencies
+### Add new match
 
-* Configuration
+     rails  r script/new.rb
 
-* Database creation
 
-* Database initialization
+### Add existing matches
 
-* How to run the test suite
+     rails  r script/existing.rb
 
-* Services (job queues, cache servers, search engines, etc.)
+### Add new players
 
-* Deployment instructions
+     rails  r script/players/new_players.rb
 
-* ...
+### Update schdeule
+
+     rails  r script/schedule/update_schedule.rb
+
+### Update squads
+
+     rails r scripts/squads/update_squads.rb
+
+## Generate Static files
+
+### Generate schdeule.json
+
+     rails  r script/schedule/schedule_json.rb
+
+### Generate players.json
+
+     rails  r script/players/players_json.rb
+
+### Generate squads.json
+
+     rails  r script/squads/squad_json.rb
+
+## Other
+
+### Get mvp
+
+    rails  r script/mvp.rb

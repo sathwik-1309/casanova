@@ -67,7 +67,6 @@ function Fow(props) {
         return <div>Loading...fow</div>;
       }
 
-    console.log(data)
     let class1 = 'fow ' + data.tour
 
     return (

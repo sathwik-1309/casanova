@@ -13,7 +13,7 @@ function Topbar(props) {
         class1 = temp + temp2
         class2 = temp + temp1
     }
-    
+
     const temp3 = "match_topbar_item2_items"
     const temp4 = " match_topbar_item2_white"
     let class3 = temp3
@@ -22,6 +22,7 @@ function Topbar(props) {
     let class6 = temp3
     let class7 = temp3
     let class8 = temp3
+    let class9 = temp3
     switch(graphic) {
         case "summary":
             class3 = temp3 + temp4
@@ -41,6 +42,9 @@ function Topbar(props) {
         case "manhatten":
             class8 = temp3 + temp4
           break;
+        case "worm":
+            class9 = temp3 + temp4
+            break;
         default:
             class3 = temp3 + temp4
       }
@@ -53,6 +57,7 @@ function Topbar(props) {
       const url6 = `http://localhost:3000/match/${m_id}/${inn_no}/bowling_card`
       const url7 = `http://localhost:3000/match/${m_id}/${inn_no}/partnerships`
       const url8 = `http://localhost:3000/match/${m_id}/${inn_no}/manhatten`
+      const url9 = `http://localhost:3000/match/${m_id}/${inn_no}/worm`
 
     return (
         <div id="match_topbar">
@@ -83,7 +88,10 @@ function Topbar(props) {
                 <a className={class8} href={url8}>
                     Manhatten
                 </a>
-                
+                <a className={class9} href={url9}>
+                    Worm
+                </a>
+
             </div>
         </div>
     )

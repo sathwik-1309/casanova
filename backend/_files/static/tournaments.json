@@ -1,26 +1,74 @@
 [
     {
         "id": 1,
+        "name": "wt20",
+        "season": 1,
+        "winners_id": 3,
+        "runners_id": 1,
+        "pots_id": 6,
+        "mvp_id": 29,
+        "most_runs_id": 29,
+        "most_wickets_id": 6,
         "groups": [[1,2,3,5], [4,6,7,8]]
     },
     {
         "id": 2,
+        "name": "ipl",
+        "season": 1,
+        "winners_id": 13,
+        "runners_id": 9,
+        "pots_id": 109,
+        "mvp_id": 109,
+        "most_runs_id": 147,
+        "most_wickets_id": 114,
         "groups": [[21,22,23,24,25,26,27,28]]
     },
     {
         "id": 3,
+        "name": "csl",
+        "season": 1,
+        "winners_id": 26,
+        "runners_id": 27,
+        "pots_id": 18,
+        "mvp_id": 195,
+        "most_runs_id": 18,
+        "most_wickets_id": 36,
         "groups": [[31,32,33,34,35,36], [37,38,39,40,41,42]]
     },
     {
         "id": 4,
+        "name": "wt20",
+        "season": 2,
+        "winners_id": 32,
+        "runners_id": 29,
+        "pots_id": 245,
+        "mvp_id": 50,
+        "most_runs_id": 245,
+        "most_wickets_id": 188,
         "groups": [[1,2,3,4,5,6,7,8]]
     },
     {
         "id": 5,
+        "name": "wt20",
+        "season": 3,
+        "winners_id": 39,
+        "runners_id": 46,
+        "pots_id": 31,
+        "mvp_id": 31,
+        "most_runs_id": 31,
+        "most_wickets_id": 234,
         "groups": [[1,3,10,8,6], [2,4,5,7,9]]
     },
     {
         "id": 6,
+        "name": "csl",
+        "season": 2,
+        "winners_id": null,
+        "runners_id": null,
+        "pots_id": null,
+        "mvp_id": null,
+        "most_runs_id": null,
+        "most_wickets_id": null,
         "groups": [[37,38,42],[31,32,35],[36,39,41],[33,34,40]]
     }
 ]

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_11_150325) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
   create_table "ball_stats", force: :cascade do |t|
     t.integer "innings"
     t.float "overs"
@@ -246,6 +246,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_150325) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "schedules", force: :cascade do |t|
+    t.integer "squad1_id"
+    t.integer "squad2_id"
+    t.string "venue"
+    t.string "stage"
+    t.boolean "completed"
+    t.integer "tournament_id"
+    t.index ["tournament_id"], name: "index_schedules_on_tournament_id"
+  end
+
   create_table "scores", force: :cascade do |t|
     t.integer "runs"
     t.integer "balls"
@@ -301,6 +311,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_150325) do
     t.index ["player_id"], name: "index_spells_on_player_id"
     t.index ["squad_id"], name: "index_spells_on_squad_id"
     t.index ["tournament_id"], name: "index_spells_on_tournament_id"
+  end
+
+  create_table "squad_players", force: :cascade do |t|
+    t.integer "player_id"
+    t.integer "squad_id"
+    t.integer "team_id"
+    t.integer "tournament_id"
+    t.index ["player_id"], name: "index_squad_players_on_player_id"
+    t.index ["squad_id"], name: "index_squad_players_on_squad_id"
+    t.index ["team_id"], name: "index_squad_players_on_team_id"
+    t.index ["tournament_id"], name: "index_squad_players_on_tournament_id"
   end
 
   create_table "squads", force: :cascade do |t|
@@ -390,6 +411,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_150325) do
   add_foreign_key "performances", "players"
   add_foreign_key "performances", "squads"
   add_foreign_key "performances", "tournaments"
+  add_foreign_key "schedules", "tournaments"
   add_foreign_key "scores", "innings"
   add_foreign_key "scores", "matches"
   add_foreign_key "scores", "players"
@@ -400,6 +422,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_150325) do
   add_foreign_key "spells", "players"
   add_foreign_key "spells", "squads"
   add_foreign_key "spells", "tournaments"
+  add_foreign_key "squad_players", "players"
+  add_foreign_key "squad_players", "squads"
+  add_foreign_key "squad_players", "teams"
+  add_foreign_key "squad_players", "tournaments"
   add_foreign_key "squads", "teams"
   add_foreign_key "squads", "tournaments"
   add_foreign_key "wickets", "balls"

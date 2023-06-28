@@ -5,3 +5,37 @@
     padding: 20px;
     border: 1px solid #ccc;
 }
+.worm {
+    display: flex;
+    flex-direction: column;
+}
+.worm_line {
+    display: flex;
+    width: fit-content;
+    height: 35px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding-top: 5px;
+    border-top: 1px solid white;
+}
+
+.worm_line_teamname {
+    width: 300px;
+    padding-left: 10px;
+}
+.worm_line_rr {
+    width: 200px;
+}
+.worm_line_score {
+    width: 150px;
+    text-align: right;
+}
+.worm_line_overs {
+    width: 50px;
+    text-align: right;
+    padding-right: 20px;
+    padding-top: 3px;
+    font-size: 0.7rem;
+    font-weight: 400;
+}
+

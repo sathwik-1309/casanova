@@ -259,12 +259,6 @@ class MatchController < ApplicationController
         render(:json => Oj.dump(hash))
     end
 
-    def match_box
-        m_id = params[:m_id]
-        hash = Match.match_box(m_id.to_i)
-        render(:json => Oj.dump(hash))
-    end
-
     def matches
         t_id = params[:t_id]
         p_id = params[:p_id]
@@ -287,5 +281,20 @@ class MatchController < ApplicationController
             array << Match.match_box(m_id)
         end
         render(:json => Oj.dump(array))
+    end
+
+    def worm
+        hash = {}
+        m_id = params[:m_id].to_i
+        inn1_id = (2*m_id) - 1
+        inn1 = Inning.find(inn1_id)
+        inn1_hash = inn1.get_worm_details
+        inn2 = Inning.find(inn1_id+1)
+        inn2_hash = inn2.get_worm_details
+
+        hash['inn1'] = inn1_hash
+        hash['inn2'] = inn2_hash
+
+        render(:json => Oj.dump(hash))
     end
 end

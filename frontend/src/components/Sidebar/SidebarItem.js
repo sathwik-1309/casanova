@@ -4,7 +4,7 @@ function SidebarItem(props){
     let link = props.url;
 
     return(
-        <a className="sidebar-item" href={link}>
+        <a className="sidebar-item" href={link} >
             {props.name}
         </a>
     )

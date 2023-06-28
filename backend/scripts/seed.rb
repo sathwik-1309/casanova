@@ -29,8 +29,10 @@ Seed.add_spells
 Seed.add_wickets
 
 Seed.add_bat_stats
+# Seed.add_new_players_batstats
 
 Seed.add_ball_stats
+# Seed.add_new_players_ballstats
 
 Seed.add_partnerships
 
@@ -42,3 +44,14 @@ Seed.update_squads
 Seed.update_teams
 
 Seed.update_tournaments
+
+Seed.preload_squad_players
+Seed.preload_schedules
+Seed.add_new_players
+
+# add new squads
+Seed.add_new_squads
+# clears and preloads squad_player entries in db
+Seed.update_squad_players
+
+Seed.add_existing_matches

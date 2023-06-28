@@ -1,4 +1,5 @@
 require 'csv'
+require "#{Dir.pwd}/lib/new"
 module Seed
 
     def self.add_tournaments
@@ -213,6 +214,42 @@ module Seed
         puts "Player Updated keeper"
     end
 
+    def self.add_new_players
+        file = File.read(PLAYERS_JSON_PATH)
+        data = JSON.parse(file)
+        latest_pid = Player.last.id
+        data.each do |player|
+            p_id = player["id"]
+            if p_id > latest_pid
+                p = Player.new
+                p.id = p_id
+                p.fullname = player["fullname"]
+                p.name = player["name"]
+                p.country_team_id = player["country"]
+                p.skill = player["skillset"][0]
+                p.batting_hand = player["skillset"][1]
+                p.bowling_hand = player["skillset"][2]
+                p.bowling_style = player["skillset"][3]
+                p.keeper = player["keeper"]
+                p.motms = 0
+                p.pots = 0
+                p.mvps = 0
+                p.gems = 0
+                p.most_wickets = 0
+                p.most_runs = 0
+                p.winners = 0
+                p.runners = 0
+                p.csl_team_id = player["csl"]
+                p.ipl_team_id = player["ipl"]
+                p.born_team_id = player["born"]
+                unless p.save
+                    puts "Player add error ❌"
+                end
+            end
+        end
+        puts "New players added"
+    end
+
     def self.add_matches
         CSV.foreach(SEED_CSV_PATH + '/matches.csv', headers: true) do |row|
             m = Match.new
@@ -340,7 +377,7 @@ module Seed
                 bow_runs = runs
                 extra_type = nil
             end
-            if row['wicket'] == '1'
+            if row['wicket_ball'] == '1'
                 wicket_ball = true
             end
             b.runs = runs
@@ -493,6 +530,36 @@ module Seed
         puts "BatStats added"
     end
 
+    def self.add_new_players_batstats
+        latest_batstats_pid = BatStat.last.player_id
+        latest_pid = Player.last.id
+        while latest_batstats_pid <= latest_pid
+            latest_batstats_pid += 1
+            b = BatStat.new
+            b.id = latest_batstats_pid
+            b.player_id = latest_batstats_pid
+            b.innings = 0
+            b.runs = 0
+            b.balls = 0
+            b.sr = 0
+            b.avg = 0
+            b.not_outs = 0
+            b.dots = 0
+            b.c1 = 0
+            b.c2 = 0
+            b.c3 = 0
+            b.c4 = 0
+            b.c6 = 0
+            b.thirties = 0
+            b.fifties = 0
+            b.hundreds = 0
+            unless b.save
+                puts "Batstat for new players failed ❌"
+            end
+        end
+        puts "BatStats for new players added"
+    end
+
     def self.add_ball_stats
         CSV.foreach(SEED_CSV_PATH + '/ball_stats.csv', headers: true) do |row|
             b = BallStat.new
@@ -524,6 +591,39 @@ module Seed
             b.save
         end
         puts "BallStats added"
+    end
+
+    def self.add_new_players_ballstats
+        latest_ballstats_pid = BallStat.last.player_id
+        latest_pid = Player.last.id
+        while latest_ballstats_pid <= latest_pid
+            latest_ballstats_pid += 1
+            b = BallStat.new
+            b.id = latest_ballstats_pid
+            b.player_id = latest_ballstats_pid
+            b.overs = 0
+            b.innings = 0
+            b.maidens = 0
+            b.runs = 0
+            b.economy = 0
+            b.wickets = 0
+            b.sr = 0
+            b.avg = 0
+            b.wides = 0
+            b.no_balls = 0
+            b.dots = 0
+            b.c1 = 0
+            b.c2 = 0
+            b.c3 = 0
+            b.c4 = 0
+            b.c6 = 0
+            b.three_wickets = 0
+            b.five_wickets = 0
+            unless b.save
+                puts "Ballstat for new players failed ❌"
+            end
+        end
+        puts "BallStats for new players added"
     end
 
     def self.update_overs
@@ -684,5 +784,103 @@ module Seed
 
         end
         puts "Playing 11 Performances added"
+    end
+
+    def self.preload_squad_players
+        file = File.read(SQUADS_JSON_PATH)
+        data = JSON.parse(file)
+        data.each do|tour|
+            t_id = tour['t_id']
+            squads = tour['squads']
+            squads.each do|squad|
+                team_id = squad['team_id']
+                squad_id = squad['squad_id']
+                players = squad['players']
+                players.each do|p_id|
+                    s = SquadPlayer.new
+                    s.player_id = p_id
+                    s.squad_id = squad_id
+                    s.team_id = team_id
+                    s.tournament_id = t_id
+                    unless s.save
+                        puts "Squad Player error ❌"
+                    end
+                end
+
+            end
+        end
+        puts "Squad players preloaded"
+    end
+
+    def self.preload_schedules
+        file = File.read(SCHEDULE_JSON_PATH)
+        data = JSON.parse(file)
+        data.each do|tour|
+            t_id = tour['t_id']
+            matches = tour['matches']
+            matches.each do|match|
+                s = Schedule.new
+                s.id = match['m_id']
+                s.squad1_id = Squad.find_by(tournament_id: t_id, team_id: Team.find_by(abbrevation: match['squad1']))&.id
+                s.squad2_id = Squad.find_by(tournament_id: t_id, team_id: Team.find_by(abbrevation: match['squad2']))&.id
+                s.venue = match['venue']
+                s.stage = match['stage']
+                s.tournament_id = t_id
+                s.completed = Match.where(id: match['m_id']).present? ? true : false
+                unless s.save
+                    puts "❌ ERROR in preload schedules in match #{m_id}"
+                end
+            end
+        end
+        puts "Schedules preloaded"
+    end
+
+    def self.clear_schedule_entries
+        Schedule.delete_all
+        puts "Schedules Cleared from db"
+    end
+
+    def self.add_new_squads
+        file = File.read(SQUADS_JSON_PATH)
+        data = JSON.parse(file)
+        data.each do|tour|
+            t_id = tour['t_id']
+            squads = tour['squads']
+            squads.each do|squad|
+                team_id = squad['team_id']
+                squad_id = squad['squad_id']
+                x = Squad.where(team_id: team_id, tournament_id: t_id)
+                if x==[]
+                    s = Squad.new
+                    s.id = squad_id
+                    s.name = squad['name']
+                    s.abbrevation = squad['abbrevation']
+                    s.matches = 0
+                    s.won = 0
+                    s.lost = 0
+                    s.runs = 0
+                    s.wickets = 0
+                    s.runs_conceded = 0
+                    s.wickets_lost = 0
+                    s.tournament_id = t_id
+                    s.team_id = team_id
+                    s.captain_id = squad['captain_id']
+                    s.keeper_id = squad['keeper_id']
+                    s.nrr = 0
+                    unless s.save
+                        puts "❌ New squad could not be added. #{squad_id}"
+                    end
+                end
+            end
+        end
+    end
+
+    def self.update_squad_players
+        SquadPlayer.delete_all
+        Seed.preload_squad_players
+    end
+
+    def self.add_existing_matches
+        New.add_existing_matches_to_db
     end
 end

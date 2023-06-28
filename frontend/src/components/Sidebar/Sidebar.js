@@ -5,6 +5,7 @@ import {useParams} from "react-router-dom";
 function Sidebar(props){
     const s_id = props.s_id
     let { tour_class } = useParams();
+    let { t_id } = useParams();
     if (s_id === 'home') {
         return(
             <div className="sidebar">
@@ -24,6 +25,17 @@ function Sidebar(props){
                 <SidebarItem name="Matches" url={`http://localhost:3000/tournaments/${tour_class}/matches`}/>
                 <SidebarItem name="Venues" url={`http://localhost:3000/tournaments/${tour_class}/venues`}/>
                 <SidebarItem name="Players" url={`http://localhost:3000/tournaments/${tour_class}/players`}/>
+            </div>
+        );
+    }
+    else if (s_id === 'tour') {
+        return(
+            <div className="sidebar">
+                <SidebarItem name="Home" url='http://localhost:3000/'/>
+                <SidebarItem name="Teams" url={`http://localhost:3000/tournament/${t_id}/teams`}/>
+                <SidebarItem name="Matches" url={`http://localhost:3000/tournament/${t_id}/matches`}/>
+                <SidebarItem name="Venues" url={`http://localhost:3000/tournament/${t_id}/venues`}/>
+                <SidebarItem name="Players" url={`http://localhost:3000/tournament/${t_id}/players`}/>
             </div>
         );
     }

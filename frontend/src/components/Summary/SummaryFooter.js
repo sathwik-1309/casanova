@@ -7,9 +7,9 @@ function Motm(props) {
     let motm = props.motm
     let class1 = "summary_motm "+props.color+"1"
     let img = images[motm.pid]
-    if (motm.pid > 195) {
-        img = images[0]
-    }
+    // if (motm.pid > 195) {
+    //     img = images[0]
+    // }
 
 
     let motm_stats = "NA"

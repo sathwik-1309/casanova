@@ -17,11 +17,15 @@ function VenueBox(props) {
 }
 function VenuesPage(props) {
     let {tour_class} = useParams()
+    let {t_id} = useParams()
     let url = 'http://localhost:3001/venues'
     const [data, setData] = useState(null);
 
     if (props.tour_class) {
         url = url + `?tour_class=${tour_class}`
+    }
+    else if (props.t_id) {
+        url = url + `?t_id=${t_id}`
     }
 
     useEffect(() => {

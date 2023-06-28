@@ -215,19 +215,31 @@ class TournamentController < ApplicationController
       gem = Player.find(final.motm_id)
       box1["gem"] = gem.tour_individual_awards_to_hash(t_id, "gem")
 
+      box2 = {}
       pots = Player.find(tour.pots_id)
-      box1["pots"] = pots.tour_individual_awards_to_hash(t_id, "pots")
+      box2["pots"] = pots.tour_individual_awards_to_hash(t_id, "pots")
 
       mvp = Player.find(tour.mvp_id)
-      box1["mvp"] = mvp.tour_individual_awards_to_hash(t_id, "mvp")
+      box2["mvp"] = mvp.tour_individual_awards_to_hash(t_id, "mvp")
 
       most_runs_player = Player.find(tour.most_runs_id)
-      box1["most_runs_id"] = most_runs_player.tour_individual_awards_to_hash(t_id, "most_runs")
+      box2["most_runs"] = most_runs_player.tour_individual_awards_to_hash(t_id, "most_runs")
 
       most_wickets_player = Player.find(tour.most_wickets_id)
-      box1["most_wickets_id"] = most_wickets_player.tour_individual_awards_to_hash(t_id, "most_wickets")
+      box2["most_wickets"] = most_wickets_player.tour_individual_awards_to_hash(t_id, "most_wickets")
     end
+
+    tour_stats = {}
+    matches = Match.where(tournament_id: t_id)
+    tour_stats["matches"] = matches.count
+    tour_stats["defended"] = matches.where('win_by_runs > 0').length
+    tour_stats["chased"] = matches.where('win_by_wickets > 0').length
+    inn1 = Inning.where(tournament_id: t_id, inn_no: 1)
+    tour_stats["avg_score"] = (inn1.pluck(:score).sum.to_f/inn1.length).round(0)
+    tour_stats["avg_wickets"] = (inn1.pluck(:for).sum.to_f/inn1.length).round(1)
     hash["box1"] = box1
+    hash["box2"] = box2
+    hash["tour_stats"] = tour_stats
     render(:json => Oj.dump(hash))
   end
 end

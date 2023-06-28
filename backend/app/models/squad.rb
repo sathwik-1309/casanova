@@ -11,9 +11,13 @@ class Squad < ApplicationRecord
     def captain
         return Player.find(self.captain_id)
     end
-    def players
+    def get_players
         player_ids = Performance.where(squad_id: self.id).pluck(:player_id)
         return Player.where(id: player_ids|[])
+    end
+    def players
+        player_ids = SquadPlayer.where(squad_id: self.id).pluck(:player_id)
+        return Player.where(id: player_ids)
     end
     def matches_list
         match_ids = Match.where(winner_id: self.id).pluck(:id)

@@ -18,9 +18,11 @@ module New
       return false
     end
     status = Validator.validate_match
-    return unless status
+    raise StandardError, "Validator.validate_match failed" unless status
+    status = Validator.check_schedule_entry(args)
+    raise StandardError, "Validator.check_schedule_entry failed" unless status
     status = Uploader.upload_match
-    return unless status
+    raise StandardError, "Uploader.upload_match failed" unless status
     if existing
       New.create_json_file(m_id, args)
       New.copy_text_file(NEW_MATCH, m_id)

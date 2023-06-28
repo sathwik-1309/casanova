@@ -592,6 +592,18 @@ module Uploader
         return true
     end
 
+    def self.increment_player_motm
+        player = Match.last.motm
+        player.motms = player.motms + 1
+        unless player.save
+            puts "increment_player_motm update error ❌"
+            puts player.errors.full_messages
+            puts "increment_player_motm update error end ❌"
+            return false
+        end
+        return true
+    end
+
     def self.upload_match
         status_list = []
         status_list << Uploader.match
@@ -612,6 +624,7 @@ module Uploader
         status_list << Uploader.update_ball_stats
         status_list << Uploader.update_partnerships
         status_list << Uploader.update_squads_and_teams
+        status_list << Uploader.increment_player_motm
 
         if status_list.include? false
             puts "Uploader# Model.save error exists ❌"

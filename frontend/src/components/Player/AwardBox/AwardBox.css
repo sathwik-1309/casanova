@@ -1,0 +1,52 @@
+.award_box {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    box-shadow: var(--shadow-border);
+}
+.award_box_data {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    height: fit-content;
+}
+.ab_row1 {
+    display: flex;
+    height: 35px;
+}
+.ab_name {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1rem;
+}
+.ab_teamname {
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+.ab_row2 {
+    height: 35px;
+    display: flex;
+    font-weight: 600;
+    font-size: 1rem;
+}
+.ab_info {
+    width: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ab_logo {
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-style: normal;
+}

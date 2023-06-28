@@ -1,0 +1,29 @@
+.topbar {
+    display: flex;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    background-color: #8d50ad;
+    font-size: 1rem;
+    font-weight: 600;
+    position: fixed;
+    width: 92%;
+    /*box-shadow: var(--shadow-border);*/
+}
+.topbar_item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 36px;
+    text-decoration: none;
+    /*color: #e0e0e0;*/
+    color: white;
+    cursor: default;
+}
+.topbar_item:hover {
+    color: #e0e0e0;
+}
+.topbar_selected {
+    border-bottom: 2px solid white;
+}

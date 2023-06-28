@@ -315,5 +315,21 @@ class CreateTables < ActiveRecord::Migration[7.0]
       t.timestamps
     end
 
+    create_table :schedules do |t|
+      t.integer :squad1_id
+      t.integer :squad2_id
+      t.string :venue
+      t.string :stage
+      t.boolean :completed
+      t.belongs_to :tournament, foreign_key: true
+    end
+
+    create_table :squad_players do |t|
+      t.belongs_to :player, foreign_key: true
+      t.belongs_to :squad, foreign_key: true
+      t.belongs_to :team, foreign_key: true
+      t.belongs_to :tournament, foreign_key: true
+    end
+
   end
 end

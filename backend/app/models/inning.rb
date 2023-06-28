@@ -44,4 +44,26 @@ class Inning < ApplicationRecord
     def get_overs
         return Over.where(inning_id: self.id)
     end
+
+    def get_rr
+        rr = ((self.score*6).to_f/Util.overs_to_balls(self.overs))
+        rr = sprintf('%.2f', rr.abs)
+        return rr
+    end
+
+    def get_worm_details
+        inn = {}
+        bat_team = self.bat_team
+        inn['teamname'] = bat_team.get_abb
+        inn['team_id'] = bat_team.team_id
+        team_scores = Over.where(inning_id: self.id).pluck(:score)
+        wicket_overs = Over.where(id: Wicket.where(inning_id: self.id).pluck(:over_id)).pluck(:over_no)
+        inn['scores'] = [0] + team_scores
+        inn['wickets'] = wicket_overs.uniq
+        inn['color'] = bat_team.abbrevation
+        inn['rr'] = self.get_rr
+        inn['score'] = Util.get_score(self.score, self.for)
+        inn['overs'] = self.overs
+        return inn
+    end
 end

@@ -3,4 +3,3 @@
 /backend/tmp
 /backend/_files/temp
 # frontend
-/frontend/node_modules/.cache

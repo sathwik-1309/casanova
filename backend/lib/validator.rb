@@ -122,4 +122,58 @@ module Validator
         end
         return status
     end
+
+    def self.check_schedule_entry(args)
+        t_id = args['t_id']
+        team1 = Squad.find_by(team_id: Team.find_by(abbrevation: args['batted_first']).id, tournament_id: t_id)
+        team2 = Squad.find_by(team_id: Team.find_by(abbrevation: args['batted_second']).id, tournament_id: t_id)
+        # base_query = Schedule.where(tournament_id: t_id, completed: false, venue: args['venue'], stage: args['stage'])
+        # query1 = base_query.where(squad1_id: team1.id, squad2_id: team2.id)
+        # query2 = base_query.where(squad1_id: team2.id, squad2_id: team1.id)
+        schedule = Schedule.find(args['m_id'])
+        status = Validator.verify_next_schedule(schedule, args, team1, team2)
+        return false unless status
+        status = Validator.update_schedule(schedule, args)
+        return false unless status
+        return true
+    end
+
+    def self.update_schedule(schedule, args)
+        schedule.completed = true
+        unless schedule.save
+            puts "❌Validator#update_schedule: Schedule could not be updated for match #{args['m_id']}"
+            return false
+        end
+        return true
+    end
+
+    def self.verify_next_schedule(schedule, args, team1, team2)
+        status = true
+        if schedule.id != args['m_id']
+            status = false
+        end
+        if schedule.tournament_id != args['t_id']
+            status = false
+        end
+        if schedule.venue != args['venue']
+            status = false
+        end
+        if schedule.stage != args['stage']
+            status = false
+        end
+        if schedule.completed != false
+            status = false
+        end
+        if [team1.id, team2.id].exclude? schedule.squad1_id
+            status = false
+        end
+        if [team1.id, team2.id].exclude? schedule.squad2_id
+            status = false
+        end
+        unless status
+            puts "❌Validator#verify_next_schedule: Schedule not same as match #{args['m_id']}"
+        end
+        return status
+    end
+
 end

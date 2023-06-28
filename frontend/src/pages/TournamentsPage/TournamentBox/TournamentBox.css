@@ -8,6 +8,7 @@
     background-color: white;
     color: black;
     box-shadow: var(--shadow-border);
+    text-decoration: none;
 }
 .tournament_box:hover {
     border: 3px solid black;

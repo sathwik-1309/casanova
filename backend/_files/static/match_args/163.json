@@ -1,0 +1,23 @@
+{
+  "m_id": 163,
+  "batted_first": "oct",
+  "batted_second": "may",
+  "toss": "may",
+  "pitch": 3.5,
+  "ball_color": [
+    "y",
+    "g",
+    "g",
+    "y"
+  ],
+  "cap1": "babar",
+  "cap2": "cummins",
+  "keeper1": "pant",
+  "keeper2": "mushfiqur",
+  "winner": "may",
+  "stage": "semi-final",
+  "venue": "ahmedabad",
+  "motm_player": "dhananjaya",
+  "motm_team": "may",
+  "t_id": 6
+}

@@ -7,6 +7,7 @@ import Summary from '../../components/Summary/Summary';
 import Fow from '../../components/Fow/Fow';
 import './MatchPage.css'
 import Topbar from "./Topbar/Topbar";
+import Worm from "../../components/Match/Worm/Worm";
 
 function MatchPage() {
     let { m_id } = useParams();
@@ -32,10 +33,13 @@ function MatchPage() {
         case "manhatten":
             component = <Manhatten m_id = {m_id} inn_no={inn_no}/>
           break;
+        case "worm":
+            component = <Worm m_id = {m_id} inn_no={inn_no}/>
+            break;
         default:
             component = <Summary m_id = {m_id}/>
       }
-    return ( 
+    return (
         <div id="match_page">
             <div id="match_page_item1">
                 <Topbar graphic={graphic} inn_no={inn_no} m_id={m_id}/>
@@ -45,7 +49,7 @@ function MatchPage() {
                     {component}
                 </div>
             </div>
-            
+
         </div>
         )
 

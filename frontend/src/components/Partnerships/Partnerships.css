@@ -90,13 +90,13 @@
 }
 
 #graphic_box_2_runs {
-    width: 50%;  
+    width: 50%;
     text-align: right;
     padding-right: 3px;
     font-weight: 600;
 }
 #graphic_box_2_balls {
-    width: 50%;  
+    width: 50%;
     padding-left: 3px;
     font-weight: 400;
     font-size: 1rem;
@@ -110,12 +110,10 @@
 }
 
 .graphic_box_graphics_b1_2 {
-    border-top-left-radius: 5%;
-    border-bottom-left-radius: 5%;
+    border-left: 1px solid white;
 }
 .graphic_box_graphics_b2_1 {
-    border-top-right-radius: 5%;
-    border-bottom-right-radius: 5%;
+    border-right: 1px solid white;
 }
 
 #graphic_box_empty_space {

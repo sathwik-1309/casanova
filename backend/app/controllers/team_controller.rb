@@ -15,6 +15,10 @@ class TeamController < ApplicationController
         hash["csl"] = []
         teams = Team.where(id: Squad.where(tournament_id: CSL_IDS).pluck(:team_id).uniq)
       end
+    elsif params[:t_id]
+      tour = Tournament.find(params[:t_id])
+      hash[tour.name] = []
+      teams = Team.where(id: Squad.where(tournament_id: params[:t_id]).pluck(:team_id))
     else
       hash["wt20"] = []
       hash["ipl"] = []

@@ -4,6 +4,8 @@ class VenueController < ApplicationController
 
     if params[:tour_class]
       matches = Match.where(tournament_id: (Tournament.where(name: params[:tour_class])).pluck(:id))
+    elsif params[:t_id]
+      matches = Match.where(tournament_id: params[:t_id])
     else
       matches = Match.all
     end

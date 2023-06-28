@@ -38,4 +38,14 @@ class Score < ApplicationRecord
         return hash
     end
 
+    def get_mvp_points_score(match_sr)
+        # Points = (R+5N)*S
+        not_out = self.not_out ? 5 : 1
+        not_out = 1 if self.balls <= 7
+        # relative strike-rate
+        rel_sr = self.sr.nil? ? 0 : (self.sr/match_sr).round(2)
+        points = (self.runs + not_out) * rel_sr
+        return points.round(2)
+    end
+
 end

@@ -277,7 +277,6 @@ module Seed
             m.no_balls = row['noballs']
             m.wides = row['wides']
             m.extras = row['extras']
-            m.runs = row['runs']
             m.tournament_id = row['tournament_id']
             m.inn1_id = row['inn1_id']
             m.inn2_id = row['inn2_id']
@@ -289,7 +288,18 @@ module Seed
             m.wickets = row['wickets']
             m.save
         end
-        puts "Match added"
+        puts "Matches added"
+    end
+
+    def self.update_matches
+        CSV.foreach(SEED_CSV_PATH + '/matches.csv', headers: true) do |row|
+            m = Match.find(row['id'])
+            m.runs = row['runs']
+            unless m.save
+                puts "❌ seed#update_matches: error while updating match"
+            end
+        end
+        puts "Matches Updated"
     end
 
     def self.add_innings
@@ -500,131 +510,131 @@ module Seed
         puts "Wickets added"
     end
 
-    def self.add_bat_stats
-        CSV.foreach(SEED_CSV_PATH + '/bat_stats.csv', headers: true) do |row|
-            b = BatStat.new
-            b.id = row['p_id']
-            b.player_id = row['p_id']
-            b.innings = row['innings']
-            b.runs = row['runs']
-            b.balls = row['balls']
-            b.sr = row['sr']
-            b.avg = row['avg']
-            b.not_outs = row['not_outs']
-            b.dots = row['dots']
-            b.c1 = row['c1']
-            b.c2 = row['c2']
-            b.c3 = row['c3']
-            b.c4 = row['c4']
-            b.c6 = row['c6']
-            b.thirties = row['c30']
-            b.fifties = row['c50']
-            b.hundreds = row['c100']
-            if row['balls']!='0'
-                b.boundary_p = (((row['c4'].to_f+row['c6'].to_f)/row['balls'].to_f)*100).round(2)
-                b.dot_p = ((row['dots'].to_f/row['balls'].to_f)*100).round(2)
-            end
-            b.best_id = row['best']
-            b.save
-        end
-        puts "BatStats added"
-    end
+    # def self.add_bat_stats
+    #     CSV.foreach(SEED_CSV_PATH + '/bat_stats.csv', headers: true) do |row|
+    #         b = BatStat.new
+    #         b.id = row['p_id']
+    #         b.player_id = row['p_id']
+    #         b.innings = row['innings']
+    #         b.runs = row['runs']
+    #         b.balls = row['balls']
+    #         b.sr = row['sr']
+    #         b.avg = row['avg']
+    #         b.not_outs = row['not_outs']
+    #         b.dots = row['dots']
+    #         b.c1 = row['c1']
+    #         b.c2 = row['c2']
+    #         b.c3 = row['c3']
+    #         b.c4 = row['c4']
+    #         b.c6 = row['c6']
+    #         b.thirties = row['c30']
+    #         b.fifties = row['c50']
+    #         b.hundreds = row['c100']
+    #         if row['balls']!='0'
+    #             b.boundary_p = (((row['c4'].to_f+row['c6'].to_f)/row['balls'].to_f)*100).round(2)
+    #             b.dot_p = ((row['dots'].to_f/row['balls'].to_f)*100).round(2)
+    #         end
+    #         b.best_id = row['best']
+    #         b.save
+    #     end
+    #     puts "BatStats added"
+    # end
 
-    def self.add_new_players_batstats
-        latest_batstats_pid = BatStat.last.player_id
-        latest_pid = Player.last.id
-        while latest_batstats_pid <= latest_pid
-            latest_batstats_pid += 1
-            b = BatStat.new
-            b.id = latest_batstats_pid
-            b.player_id = latest_batstats_pid
-            b.innings = 0
-            b.runs = 0
-            b.balls = 0
-            b.sr = 0
-            b.avg = 0
-            b.not_outs = 0
-            b.dots = 0
-            b.c1 = 0
-            b.c2 = 0
-            b.c3 = 0
-            b.c4 = 0
-            b.c6 = 0
-            b.thirties = 0
-            b.fifties = 0
-            b.hundreds = 0
-            unless b.save
-                puts "Batstat for new players failed ❌"
-            end
-        end
-        puts "BatStats for new players added"
-    end
+    # def self.add_new_players_batstats
+    #     latest_batstats_pid = BatStat.last.player_id
+    #     latest_pid = Player.last.id
+    #     while latest_batstats_pid <= latest_pid
+    #         latest_batstats_pid += 1
+    #         b = BatStat.new
+    #         b.id = latest_batstats_pid
+    #         b.player_id = latest_batstats_pid
+    #         b.innings = 0
+    #         b.runs = 0
+    #         b.balls = 0
+    #         b.sr = 0
+    #         b.avg = 0
+    #         b.not_outs = 0
+    #         b.dots = 0
+    #         b.c1 = 0
+    #         b.c2 = 0
+    #         b.c3 = 0
+    #         b.c4 = 0
+    #         b.c6 = 0
+    #         b.thirties = 0
+    #         b.fifties = 0
+    #         b.hundreds = 0
+    #         unless b.save
+    #             puts "Batstat for new players failed ❌"
+    #         end
+    #     end
+    #     puts "BatStats for new players added"
+    # end
 
-    def self.add_ball_stats
-        CSV.foreach(SEED_CSV_PATH + '/ball_stats.csv', headers: true) do |row|
-            b = BallStat.new
-            b.id = row['p_id']
-            b.player_id = row['p_id']
-            b.overs = row['overs']
-            b.innings = row['innings']
-            b.maidens = row['maidens']
-            b.runs = row['runs']
-            b.economy = row['economy']
-            b.wickets = row['wickets']
-            b.sr = row['sr']
-            b.avg = row['avg']
-            b.wides = row['wides']
-            b.no_balls = row['noballs']
-            b.dots = row['dots']
-            b.c1 = row['c1']
-            b.c2 = row['c2']
-            b.c3 = row['c3']
-            b.c4 = row['c4']
-            b.c6 = row['c6']
-            b.three_wickets = row['three_wickets']
-            b.five_wickets = row['five_wickets']
-            if row['overs']!='0'
-                b.boundary_p = (((row['c4'].to_f+row['c6'].to_f)/Util.overs_to_balls(row['overs'].to_f))*100).round(2)
-                b.dot_p = ((row['dots'].to_f/Util.overs_to_balls(row['overs'].to_f))*100).round(2)
-            end
-            b.best_id = row['best']
-            b.save
-        end
-        puts "BallStats added"
-    end
-
-    def self.add_new_players_ballstats
-        latest_ballstats_pid = BallStat.last.player_id
-        latest_pid = Player.last.id
-        while latest_ballstats_pid <= latest_pid
-            latest_ballstats_pid += 1
-            b = BallStat.new
-            b.id = latest_ballstats_pid
-            b.player_id = latest_ballstats_pid
-            b.overs = 0
-            b.innings = 0
-            b.maidens = 0
-            b.runs = 0
-            b.economy = 0
-            b.wickets = 0
-            b.sr = 0
-            b.avg = 0
-            b.wides = 0
-            b.no_balls = 0
-            b.dots = 0
-            b.c1 = 0
-            b.c2 = 0
-            b.c3 = 0
-            b.c4 = 0
-            b.c6 = 0
-            b.three_wickets = 0
-            b.five_wickets = 0
-            unless b.save
-                puts "Ballstat for new players failed ❌"
-            end
-        end
-        puts "BallStats for new players added"
-    end
+    # def self.add_ball_stats
+    #     CSV.foreach(SEED_CSV_PATH + '/ball_stats.csv', headers: true) do |row|
+    #         b = BallStat.new
+    #         b.id = row['p_id']
+    #         b.player_id = row['p_id']
+    #         b.overs = row['overs']
+    #         b.innings = row['innings']
+    #         b.maidens = row['maidens']
+    #         b.runs = row['runs']
+    #         b.economy = row['economy']
+    #         b.wickets = row['wickets']
+    #         b.sr = row['sr']
+    #         b.avg = row['avg']
+    #         b.wides = row['wides']
+    #         b.no_balls = row['noballs']
+    #         b.dots = row['dots']
+    #         b.c1 = row['c1']
+    #         b.c2 = row['c2']
+    #         b.c3 = row['c3']
+    #         b.c4 = row['c4']
+    #         b.c6 = row['c6']
+    #         b.three_wickets = row['three_wickets']
+    #         b.five_wickets = row['five_wickets']
+    #         if row['overs']!='0'
+    #             b.boundary_p = (((row['c4'].to_f+row['c6'].to_f)/Util.overs_to_balls(row['overs'].to_f))*100).round(2)
+    #             b.dot_p = ((row['dots'].to_f/Util.overs_to_balls(row['overs'].to_f))*100).round(2)
+    #         end
+    #         b.best_id = row['best']
+    #         b.save
+    #     end
+    #     puts "BallStats added"
+    # end
+    #
+    # def self.add_new_players_ballstats
+    #     latest_ballstats_pid = BallStat.last.player_id
+    #     latest_pid = Player.last.id
+    #     while latest_ballstats_pid <= latest_pid
+    #         latest_ballstats_pid += 1
+    #         b = BallStat.new
+    #         b.id = latest_ballstats_pid
+    #         b.player_id = latest_ballstats_pid
+    #         b.overs = 0
+    #         b.innings = 0
+    #         b.maidens = 0
+    #         b.runs = 0
+    #         b.economy = 0
+    #         b.wickets = 0
+    #         b.sr = 0
+    #         b.avg = 0
+    #         b.wides = 0
+    #         b.no_balls = 0
+    #         b.dots = 0
+    #         b.c1 = 0
+    #         b.c2 = 0
+    #         b.c3 = 0
+    #         b.c4 = 0
+    #         b.c6 = 0
+    #         b.three_wickets = 0
+    #         b.five_wickets = 0
+    #         unless b.save
+    #             puts "Ballstat for new players failed ❌"
+    #         end
+    #     end
+    #     puts "BallStats for new players added"
+    # end
 
     def self.update_overs
         overs = Over.all

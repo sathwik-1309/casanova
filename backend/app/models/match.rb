@@ -11,6 +11,13 @@ class Match < ApplicationRecord
     has_many :performances
     belongs_to :tournament
 
+    after_commit do
+        unless self.runs.nil?
+            self.update_stats
+            Uploader.update_milestone_image(self)
+        end
+    end
+
     def inn1
         return Inning.find(self.inn1_id)
     end
@@ -86,5 +93,12 @@ class Match < ApplicationRecord
                 return "lost by #{self.win_by_wickets} Wickets".upcase
             end
         end
+    end
+
+    private
+
+    def update_stats
+        Uploader.update_bat_stats(self.id)
+        Uploader.update_ball_stats(self.id)
     end
 end

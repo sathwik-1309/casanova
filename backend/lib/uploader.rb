@@ -420,78 +420,35 @@ module Uploader
         return true
     end
 
-    def self.update_bat_stats
-        m_id = Match.last.id
+    def self.update_bat_stats(m_id)
         scores = Score.where(match_id: m_id).where(batted: true)
         scores.each do|score|
-            b = BatStat.find_by(player_id: score.player_id)
-            b.innings += 1
-            b.runs += score.runs
-            b.balls += score.balls
-            b.not_outs += 1 if score.not_out
-            b.avg = Util.get_avg(b.runs, b.innings - b.not_outs) if b.innings - b.not_outs > 0
-            b.sr = Util.get_sr(b.runs, b.balls)
-            b.dots += score.dots
-            b.c1 += score.c1
-            b.c2 += score.c2
-            b.c3 += score.c3
-            b.c4 += score.c4
-            b.c6 += score.c6
-            b.thirties += 1 if score.runs >= 30
-            b.fifties += 1 if score.runs >= 50
-            b.hundreds += 1 if score.runs >= 100
-            b.boundary_p = Util.get_boundary_p(b.c4, b.c6, b.balls)
-            b.dot_p = Util.get_dot_p(b.dots, b.balls)
-            if b.best.nil?
-                b.best_id = score.inning_id
-            else
-                b.best_id = score.inning_id if b.best.runs < score.runs
-                b.best_id = score.inning_id if (b.best.runs == score.runs and b.best.balls > score.balls)
-            end
-            unless b.save
-                puts "bat_stats update error ❌"
-                puts b.errors.full_messages
-                puts "bat_stats update error end ❌"
-                return false
+            sub_types = ["overall", "#{score.tournament.name}", "tour_#{score.tournament.id}", "#{score.squad.team.abbrevation}"]
+            sub_types.each do|sub_type|
+                b = BatStat.find_by(player_id: score.player_id, sub_type: sub_type)
+                if b.nil?
+                    b = BatStat.create_db_entry(score.player_id, sub_type)
+                    raise StandardError if b.nil?
+                end
+                status = Uploader.update_bat_stats_entry(b, score)
+                raise StandardError unless status
             end
         end
         return true
     end
 
-    def self.update_ball_stats
-        m_id = Match.last.id
+    def self.update_ball_stats(m_id)
         spells = Spell.where(match_id: m_id)
         spells.each do|spell|
-            b = BallStat.find_by(player_id: spell.player_id)
-            b.innings += 1
-            b.overs += spell.overs
-            b.maidens += spell.maidens
-            b.runs += spell.runs
-            b.wickets += spell.wickets
-            b.economy = Util.get_economy(b.runs, b.overs)
-            if b.wickets > 0
-                b.avg = Util.get_bow_avg(b.runs, b.wickets)
-                b.sr = Util.get_bow_sr(b.overs, b.wickets)
-            end
-            b.wides += spell.wides
-            b.no_balls += spell.no_balls
-            b.dots += spell.dots
-            b.c1 += spell.c1
-            b.c2 += spell.c2
-            b.c3 += spell.c3
-            b.c4 += spell.c4
-            b.c6 += spell.c6
-            b.three_wickets += 1 if spell.wickets >= 3
-            b.five_wickets += 1 if spell.wickets >= 50
-            b.boundary_p = Util.get_boundary_p(b.c4, b.c6, Util.overs_to_balls(b.overs))
-            b.dot_p = Util.get_dot_p(b.dots, Util.overs_to_balls(b.overs))
-            b.best_id = spell.inning_id if b.best.nil? or b.best.wickets < spell.wickets
-            b.best_id = spell.inning_id if b.best.nil? or (b.best.wickets == spell.wickets and b.best.economy > spell.economy)
-            unless b.save
-                puts "ball_stats update error ❌"
-                puts b.errors.full_messages
-                puts "ball_stats update error end ❌"
-                return false
+            sub_types = ["overall", "#{spell.tournament.name}", "tour_#{spell.tournament.id}", "#{spell.squad.team.abbrevation}"]
+            sub_types.each do|sub_type|
+                b = BallStat.find_by(player_id: spell.player_id, sub_type: sub_type)
+                if b.nil?
+                    b = BallStat.create_db_entry(spell.player_id, sub_type)
+                    raise StandardError if b.nil?
+                end
+                status = Uploader.update_ball_stats_entry(b, spell)
+                raise StandardError unless status
             end
         end
         return true
@@ -616,12 +573,13 @@ module Uploader
         status_list << Uploader.partnerships
         status_list << Uploader.update_overs
         status_list << Uploader.update_innings
-        status_list << Uploader.update_match
         status_list << Uploader.performances_and_player_matches
         status_list << Uploader.update_scores
         status_list << Uploader.update_spells
-        status_list << Uploader.update_bat_stats
-        status_list << Uploader.update_ball_stats
+        status_list << Uploader.update_match
+        # handled in match after commit hook
+        # status_list << Uploader.update_bat_stats
+        # status_list << Uploader.update_ball_stats
         status_list << Uploader.update_partnerships
         status_list << Uploader.update_squads_and_teams
         status_list << Uploader.increment_player_motm
@@ -634,6 +592,102 @@ module Uploader
             return true
         end
     end
+
+    private
+
+    def self.update_bat_stats_entry(b, score)
+        b.innings += 1
+        b.runs += score.runs
+        b.balls += score.balls
+        b.not_outs += 1 if score.not_out
+        b.avg = Util.get_avg(b.runs, b.innings - b.not_outs) if b.innings - b.not_outs > 0
+        b.sr = Util.get_sr(b.runs, b.balls)
+        b.dots += score.dots
+        b.c1 += score.c1
+        b.c2 += score.c2
+        b.c3 += score.c3
+        b.c4 += score.c4
+        b.c6 += score.c6
+        b.thirties += 1 if score.runs >= 30
+        b.fifties += 1 if score.runs >= 50
+        b.hundreds += 1 if score.runs >= 100
+        b.boundary_p = Util.get_boundary_p(b.c4, b.c6, b.balls)
+        b.dot_p = Util.get_dot_p(b.dots, b.balls)
+        if b.best.nil?
+            b.best_id = score.inning_id
+        else
+            b.best_id = score.inning_id if b.best.runs < score.runs
+            b.best_id = score.inning_id if (b.best.runs == score.runs and b.best.balls > score.balls)
+        end
+        unless b.save
+            puts "bat_stats update error ❌"
+            puts b.errors.full_messages
+            puts "bat_stats update error end ❌"
+            return false
+        end
+        return true
+    end
+
+    def self.update_ball_stats_entry(b, spell)
+        b.innings += 1
+        b.overs = Util.balls_to_overs(Util.overs_to_balls(spell.overs)+Util.overs_to_balls(b.overs))
+        b.maidens += spell.maidens
+        b.runs += spell.runs
+        b.wickets += spell.wickets
+        b.economy = Util.get_economy(b.runs, b.overs)
+        if b.wickets > 0
+            b.avg = Util.get_bow_avg(b.runs, b.wickets)
+            b.sr = Util.get_bow_sr(b.overs, b.wickets)
+        end
+        b.wides += spell.wides
+        b.no_balls += spell.no_balls
+        b.dots += spell.dots
+        b.c1 += spell.c1
+        b.c2 += spell.c2
+        b.c3 += spell.c3
+        b.c4 += spell.c4
+        b.c6 += spell.c6
+        b.three_wickets += 1 if spell.wickets >= 3
+        b.five_wickets += 1 if spell.wickets >= 5
+        b.boundary_p = Util.get_boundary_p(b.c4, b.c6, Util.overs_to_balls(b.overs))
+        b.dot_p = Util.get_dot_p(b.dots, Util.overs_to_balls(b.overs))
+        b.best_id = spell.inning_id if b.best.nil? or b.best.wickets < spell.wickets
+        b.best_id = spell.inning_id if b.best.nil? or (b.best.wickets == spell.wickets and b.best.economy > spell.economy)
+        unless b.save
+            puts "ball_stats update error ❌"
+            puts b.errors.full_messages
+            puts "ball_stats update error end ❌"
+            return false
+        end
+        return true
+    end
+
+    def self.update_milestone_image(match)
+        new_image = Milestone.get_new_milestone_image(match)
+        m = MilestoneImage.new
+        m.image = new_image
+        m.match_id = match.id
+        m.tournament_id = match.tournament_id
+        unless m.save
+            puts m.errors.full_messages
+            puts "❌ Uploader#update_milestone_image: Failed to update ml image"
+            return false
+        end
+        return true
+    end
+
+    def self.add_new_milestone(m)
+        unless m.save
+            puts m.errors.full_messages
+            puts "❌ Uploader#add_new_milestone: Failed to add ml"
+            return false
+        end
+        return true
+    end
+
+    # def self.update_milestones(match, prev_image, new_image)
+    #
+    # end
 end
 
 

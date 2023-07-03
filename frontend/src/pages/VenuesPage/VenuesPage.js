@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './VenuesPage.css'
-import TeamBox from "../../components/Teams/TeamBox/TeamBox";
 import {useParams} from "react-router-dom";
+import { BACKEND_API_URL } from './../../my_constants'
 
 function VenueBox(props) {
     let data = props.data
@@ -18,7 +18,7 @@ function VenueBox(props) {
 function VenuesPage(props) {
     let {tour_class} = useParams()
     let {t_id} = useParams()
-    let url = 'http://localhost:3001/venues'
+    let url = `${BACKEND_API_URL}/venues`
     const [data, setData] = useState(null);
 
     if (props.tour_class) {

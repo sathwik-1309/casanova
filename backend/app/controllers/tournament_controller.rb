@@ -67,50 +67,95 @@ class TournamentController < ApplicationController
 
     bat_stats = {}
     bat_stats["boxes"] = []
-    bat_stats_hash = Helper.construct_bat_stats_hash(Score.where(tournament_id: t_id, batted: true))
-    bat_stats_hash = bat_stats_hash.sort_by { |batsman| [-batsman["runs"], batsman["innings"]] }
+    stats = BatStat.where(sub_type: "tour_#{t_id}")
+    selected = stats.sort_by { |stat| -stat.runs }[0..4]
     bat_stats["boxes"] << {
       "header"=> "Highest Scorers",
-      "data"=> Helper.format_individual_stats(bat_stats_hash[0..4], "runs", "innings", t_id)}
+      "data"=> Helper.bat_stats_to_hash(selected, 'runs', t_id)}
 
-    bat_stats_hash_sr = bat_stats_hash.select { |batsman| batsman["runs"] > 80}
-    bat_stats_hash_sr = bat_stats_hash_sr.sort_by { |batsman| [-batsman["sr"], -batsman["runs"]] }
+    stats2 = stats.select { |stat| stat.sr and stat.runs > 80 }
+    selected = stats2.sort_by { |stat| -stat.sr }[0..4]
     bat_stats["boxes"] << {
       "header"=> "Highest Strike-rates",
-      "data"=>Helper.format_individual_stats(bat_stats_hash_sr[0..4], "sr", "runs", t_id)}
+      "data"=> Helper.bat_stats_to_hash(selected, 'sr', t_id)}
 
-    bat_stats_hash = bat_stats_hash.sort_by { |batsman| [-batsman["sixes"], -batsman["sr"]] }
+    selected = stats.sort_by { |stat| -stat.c6 }[0..4]
     bat_stats["boxes"] << {
       "header"=> "Most Sixes",
-      "data"=>Helper.format_individual_stats(bat_stats_hash[0..4], "sixes", "innings", t_id)}
+      "data"=> Helper.bat_stats_to_hash(selected, 'c6', t_id)}
 
-    bat_stats_hash = bat_stats_hash.sort_by { |batsman| [-batsman["fours"], -batsman["sr"]] }
+    selected = stats.sort_by { |stat| -stat.c4 }[0..4]
     bat_stats["boxes"] << {
       "header"=> "Most Fours",
-      "data"=>Helper.format_individual_stats(bat_stats_hash[0..4], "fours", "innings", t_id)}
+      "data"=> Helper.bat_stats_to_hash(selected, 'c4', t_id)}
 
-    bat_stats_hash = bat_stats_hash.sort_by { |batsman| [-batsman["fifties"], -batsman["runs"]] }
+    selected = stats.sort_by { |stat| -stat.fifties }[0..4]
     bat_stats["boxes"] << {
       "header"=> "Most Fifties",
-      "data"=>Helper.format_individual_stats(bat_stats_hash[0..4], "fifties", "innings", t_id)}
+      "data"=> Helper.bat_stats_to_hash(selected, 'fifties', t_id)}
 
-    bat_stats_hash_avg = bat_stats_hash.select { |batsman| batsman["avg"]}
-    bat_stats_hash_avg = bat_stats_hash_avg.sort_by { |batsman| [-batsman["avg"], -batsman["runs"]] }
+    stats2 = stats.select { |stat| stat.avg and stat.runs > 80 }
+    selected = stats2.sort_by { |stat| -stat.avg }[0..4]
     bat_stats["boxes"] << {
       "header"=> "Highest Average",
-      "data"=>Helper.format_individual_stats(bat_stats_hash_avg[0..4], "avg", "runs", t_id)}
+      "data"=> Helper.bat_stats_to_hash(selected, 'avg', t_id)}
 
-    bat_stats_hash_dp = bat_stats_hash.select { |batsman| batsman["runs"] > 50}
-    bat_stats_hash_dp = bat_stats_hash_dp.sort_by { |batsman| [batsman["dot_p"], -batsman["runs"]] }
+    stats2 = stats.select { |stat| stat.runs > 80 }
+    selected = stats2.sort_by { |stat| stat.dot_p }[0..4]
     bat_stats["boxes"] << {
-      "header"=> "Lowest Dot-ball %",
-      "data"=>Helper.format_individual_stats(bat_stats_hash_dp[0..4], "dot_p", "runs", t_id)}
+      "header"=> "Lowest Dot %",
+      "data"=> Helper.bat_stats_to_hash(selected, 'dot_p', t_id)}
 
-    bat_stats_hash_bp = bat_stats_hash.select { |batsman| batsman["runs"] > 80}
-    bat_stats_hash_bp = bat_stats_hash_bp.sort_by { |batsman| [-batsman["boundary_p"], -batsman["runs"]] }
+    stats2 = stats.select { |stat| stat.runs > 80 }
+    selected = stats2.sort_by { |stat| -stat.boundary_p }[0..4]
     bat_stats["boxes"] << {
       "header"=> "Highest Boundary %",
-      "data"=>Helper.format_individual_stats(bat_stats_hash_bp[0..4], "boundary_p", "runs", t_id)}
+      "data"=> Helper.bat_stats_to_hash(selected, 'boundary_p', t_id)}
+
+    # bat_stats_hash = Helper.construct_bat_stats_hash(Score.where(tournament_id: t_id, batted: true))
+    # bat_stats_hash = bat_stats_hash.sort_by { |batsman| [-batsman["runs"], batsman["innings"]] }
+    # bat_stats["boxes"] << {
+    #   "header"=> "Highest Scorers",
+    #   "data"=> Helper.format_individual_stats(bat_stats_hash[0..4], "runs", "innings", t_id)}
+    #
+    # bat_stats_hash_sr = bat_stats_hash.select { |batsman| batsman["runs"] > 80}
+    # bat_stats_hash_sr = bat_stats_hash_sr.sort_by { |batsman| [-batsman["sr"], -batsman["runs"]] }
+    # bat_stats["boxes"] << {
+    #   "header"=> "Highest Strike-rates",
+    #   "data"=>Helper.format_individual_stats(bat_stats_hash_sr[0..4], "sr", "runs", t_id)}
+    #
+    # bat_stats_hash = bat_stats_hash.sort_by { |batsman| [-batsman["sixes"], -batsman["sr"]] }
+    # bat_stats["boxes"] << {
+    #   "header"=> "Most Sixes",
+    #   "data"=>Helper.format_individual_stats(bat_stats_hash[0..4], "sixes", "innings", t_id)}
+    #
+    # bat_stats_hash = bat_stats_hash.sort_by { |batsman| [-batsman["fours"], -batsman["sr"]] }
+    # bat_stats["boxes"] << {
+    #   "header"=> "Most Fours",
+    #   "data"=>Helper.format_individual_stats(bat_stats_hash[0..4], "fours", "innings", t_id)}
+    #
+    # bat_stats_hash = bat_stats_hash.sort_by { |batsman| [-batsman["fifties"], -batsman["runs"]] }
+    # bat_stats["boxes"] << {
+    #   "header"=> "Most Fifties",
+    #   "data"=>Helper.format_individual_stats(bat_stats_hash[0..4], "fifties", "innings", t_id)}
+    #
+    # bat_stats_hash_avg = bat_stats_hash.select { |batsman| batsman["avg"]}
+    # bat_stats_hash_avg = bat_stats_hash_avg.sort_by { |batsman| [-batsman["avg"], -batsman["runs"]] }
+    # bat_stats["boxes"] << {
+    #   "header"=> "Highest Average",
+    #   "data"=>Helper.format_individual_stats(bat_stats_hash_avg[0..4], "avg", "runs", t_id)}
+    #
+    # bat_stats_hash_dp = bat_stats_hash.select { |batsman| batsman["runs"] > 50}
+    # bat_stats_hash_dp = bat_stats_hash_dp.sort_by { |batsman| [batsman["dot_p"], -batsman["runs"]] }
+    # bat_stats["boxes"] << {
+    #   "header"=> "Lowest Dot-ball %",
+    #   "data"=>Helper.format_individual_stats(bat_stats_hash_dp[0..4], "dot_p", "runs", t_id)}
+    #
+    # bat_stats_hash_bp = bat_stats_hash.select { |batsman| batsman["runs"] > 80}
+    # bat_stats_hash_bp = bat_stats_hash_bp.sort_by { |batsman| [-batsman["boundary_p"], -batsman["runs"]] }
+    # bat_stats["boxes"] << {
+    #   "header"=> "Highest Boundary %",
+    #   "data"=>Helper.format_individual_stats(bat_stats_hash_bp[0..4], "boundary_p", "runs", t_id)}
 
     hash["tour"] = Tournament.find(t_id).get_tour_font
     hash["bat_stats"] = bat_stats
@@ -197,10 +242,12 @@ class TournamentController < ApplicationController
   def tournament_home
     t_id = params[:t_id]
     hash = {}
+    box1 = {}
+    box2 = {}
     tour = Tournament.find(t_id)
     final = Match.find_by(tournament_id: t_id, stage: 'final')
     if final
-      box1 = {}
+      hash['ongoing'] = false
       winner = Squad.find(final.winner_id)
       runner = Squad.find(final.loser_id)
       box1["winners"] = {
@@ -214,8 +261,8 @@ class TournamentController < ApplicationController
       box1["final"] = Match.match_box(final.id)
       gem = Player.find(final.motm_id)
       box1["gem"] = gem.tour_individual_awards_to_hash(t_id, "gem")
+      box1["gem"]["data"] = gem.match_performance_string(final.id)
 
-      box2 = {}
       pots = Player.find(tour.pots_id)
       box2["pots"] = pots.tour_individual_awards_to_hash(t_id, "pots")
 
@@ -227,6 +274,35 @@ class TournamentController < ApplicationController
 
       most_wickets_player = Player.find(tour.most_wickets_id)
       box2["most_wickets"] = most_wickets_player.tour_individual_awards_to_hash(t_id, "most_wickets")
+
+    else
+      hash['ongoing'] = true
+      upcoming_matches = []
+      latest_mid = Match.last.id
+      schedules = Schedule.where(tournament_id: t_id).where("id > #{latest_mid}").order(id: :asc).limit(3)
+      tourname = Tournament.find(t_id).get_tour_with_season
+      schedules.each do|schedule|
+        temp = {}
+        temp['tourname'] = tourname
+        temp['venue'] = schedule.venue.upcase
+        temp['team1'] = Helper.upcoming_match_team_to_hash(schedule.squad1)
+        temp['team2'] = Helper.upcoming_match_team_to_hash(schedule.squad2)
+        upcoming_matches << temp
+      end
+      box1['upcoming_matches'] = upcoming_matches
+      points = tour.get_mvp_sorted_hash
+      points = points.sort_by { |key, value| -value }
+      mvp_pid = points[0][0]
+      mvp = Player.find(mvp_pid)
+      box2["mvp"] = mvp.tour_individual_awards_to_hash(t_id, "mvp", {"points" => points[0][1]})
+
+      most_runs = BatStat.where(sub_type: "tour_#{t_id}").order(runs: :desc).limit(1).first
+      most_runs_player = Player.find(most_runs.player_id)
+      box2["most_runs"] = most_runs_player.tour_individual_awards_to_hash(t_id, "most_runs", {"runs" => most_runs.runs})
+
+      most_wickets = BallStat.where(sub_type: "tour_#{t_id}").order(wickets: :desc).limit(1).first
+      most_wickets_player = Player.find(most_wickets.player_id)
+      box2["most_wickets"] = most_wickets_player.tour_individual_awards_to_hash(t_id, "most_wickets", {"wickets" => most_wickets.wickets})
     end
 
     tour_stats = {}

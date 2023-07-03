@@ -48,6 +48,7 @@
     margin: 10px;
     border-radius: 1px;
     box-shadow: var(--shadow-border);
+    margin: 0 20px;
 }
 .th_box_champions {
     background-color: gold;
@@ -76,8 +77,10 @@
 .th_box_final {
     display: flex;
     flex-direction: column;
-    padding-left: 10px;
-    margin: 0 10px;
+    margin: 0 20px;
+}
+.th_box1_gembox {
+    margin: 0 20px;
 }
 .th_box_final_label {
     width: 150px;
@@ -252,4 +255,24 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.th_schedulebox {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+    background-color: white;
+    box-shadow: var(--shadow-border);
+    padding: 10px;
+}
+.th_schedulebox_label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.th_schedulebox_matches {
+    display: flex;
 }

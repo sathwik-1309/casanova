@@ -8,7 +8,7 @@ class Player < ApplicationRecord
         return Team.find_by(id: self.country_team_id)
     end
 
-    def tour_individual_awards_to_hash(t_id, award="")
+    def tour_individual_awards_to_hash(t_id, award="", args={})
         hash = {}
         hash["name"] = self.fullname.upcase
         hash["p_id"] = self.id
@@ -18,20 +18,33 @@ class Player < ApplicationRecord
         hash["data2"] = "Mat: #{Score.where(tournament_id: t_id, player_id: self.id).count}"
         case award
         when "most_runs"
-            runs_array = Score.where(batted: 'true', player_id: self.id, tournament_id: t_id, ).pluck(:runs)
-            hash["data"] = "#{runs_array.sum} Runs"
-        when "most_wickets"
-            wickets_array = Spell.where(tournament_id: t_id, player_id: self.id).pluck(:wickets)
-            hash["data"] = "#{wickets_array.sum} Wickets"
-        when "mvp"
-            points = 0
-            p = Player.find(hash["p_id"])
-            scores = Score.where(player_id: hash["p_id"], tournament_id: t_id)
-            matches = 0
-            scores.each do|score|
-                matches += 1
-                points += p.get_mvp_points(score.match_id)
+            if args['runs']
+                hash["data"] = "#{args['runs']} Runs"
+            else
+                runs_array = Score.where(batted: 'true', player_id: self.id, tournament_id: t_id).pluck(:runs)
+                hash["data"] = "#{runs_array.sum} Runs"
             end
+        when "most_wickets"
+            if args['wickets']
+                hash["data"] = "#{args['wickets']} Wickets"
+            else
+                wickets_array = Spell.where(tournament_id: t_id, player_id: self.id).pluck(:wickets)
+                hash["data"] = "#{wickets_array.sum} Wickets"
+            end
+        when "mvp"
+            scores = Score.where(player_id: self.id, tournament_id: t_id)
+            matches = 0
+            if args['points']
+                points = args['points']
+                matches = scores.length
+            else
+                points = 0
+                scores.each do|score|
+                    matches += 1
+                    points += self.get_mvp_points(score.match_id)
+                end
+            end
+
             hash["data"] = "#{points.round(1)} @#{(points/matches).round(1)}"
 
         when "pots"
@@ -81,6 +94,23 @@ class Player < ApplicationRecord
         points += score.get_mvp_points_score(match_sr) unless score.nil?
         points += spell.get_mvp_points_spell(match_eco, match_bow_sr) unless spell.nil?
         return points.round(2)
+    end
+
+    def match_performance_string(m_id)
+        score = Score.find_by(player_id: self.id, match_id: m_id, batted: true)
+        spell = Spell.where(player_id: self.id, match_id: m_id)
+        perf = ""
+        unless score.nil?
+            perf += "#{score.get_runs_with_notout} off #{score.balls}"
+        end
+        if spell.present?
+            spell = spell.first
+            if score
+                perf += " & "
+            end
+            perf += "#{spell.wickets}-#{spell.runs} (#{spell.overs})"
+        end
+        perf
     end
 
     # private

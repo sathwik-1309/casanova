@@ -1,6 +1,7 @@
 import './Partnerships.css'
 import '../css/teams.css'
 import React, { useState, useEffect } from 'react'; 
+import { BACKEND_API_URL } from './../../my_constants'
 
 function Header(props) {
     let class1 = "partnership_header1 " + props.color + "1"
@@ -109,7 +110,7 @@ function PartnershipItem(x) {
 }
 
 function Partnerships(props) {
-    let url = "http://localhost:3001/match/" + props.m_id + "/"+props.inn_no + "/partnerships"
+    let url = `${BACKEND_API_URL}/match/${props.m_id}/${props.inn_no}/partnerships`
     const [data, setData] = useState(null);
 
     useEffect(() => {

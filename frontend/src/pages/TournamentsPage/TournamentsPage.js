@@ -2,10 +2,11 @@ import {useParams} from "react-router-dom";
 import './TournamentsPage.css'
 import React, {useEffect, useState} from "react";
 import TournamentsNavbar from "./TournamentsNavbar/TournamentsNavbar";
+import { BACKEND_API_URL } from './../../my_constants'
 
 function TournamentsPage(props) {
     let { tour_class } = useParams();
-    let url = `http://localhost:3001/tournaments/${tour_class}`
+    let url = `${BACKEND_API_URL}/tournaments/${tour_class}`
     const [data, setData] = useState(null);
 
     useEffect(() => {

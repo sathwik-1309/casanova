@@ -1,13 +1,13 @@
 CSL
 
-JAN VS MAY
-Bengaluru 24-Jun-2023
+OCT VS APR
+Pune 23-May-2023
 
-JAN:208/3
+OCT:183/4
 
 First Innings-Batting
 Overs:20.0
-EXTRAS: 3(B:0 LB:0 NB:0 WD:3)
+EXTRAS: 3(B:0 LB:0 NB:1 WD:2)
 
 Batsman
 
@@ -23,87 +23,104 @@ B
 
 SR
 
-Ruturaj
+David Warner
 
-not out
+b Joffra Archer
 
-132
+54
 
-64
+39
+
+8
+
+8
+
+0
+
+138.5
+
+Babar Azam
+
+c Joffra Archer b Taskin
+
+3
+
+7
+
+3
+
+0
+
+0
+
+42.9
+
+Markram
+
+c Deepak Hooda b
+Andre Russell
+
+104
+
+61
+
+15
 
 11
 
-12
+5
 
-8
+170.5
 
-206.3
+Glenn Maxwell
 
-Alex Hales
-
-b Sunil Narine
+b Shaheen Afridi
 
 5
 
-9
+6
 
-3
-
-0
-
-0
-
-55.6
-
-Malan
-
-lbw b Pat Cummins
-
-1
-
-2
+4
 
 1
 
 0
 
-0
+83.3
 
-50.0
-
-Finch
-
-b Jansen
-
-41
-
-28
-
-8
-
-5
-
-1
-
-146.4
-
-Rajapaksa
+Nicolas Pooran
 
 not out
 
-26
+14
 
-17
+8
 
-5
+4
 
 3
 
 0
 
-152.9
+175.0
 
-Nabi
+Shadab Khan
+
+not out
+
+0
+
+0
+
+1
+
+0
+
+0
+
+0.0
+
+Hardik Pandya
 
 Did not Bat
 
@@ -119,7 +136,7 @@ Did not Bat
 
 0.0
 
-Axar Patel
+Chris Jordan
 
 Did not Bat
 
@@ -135,7 +152,7 @@ Did not Bat
 
 0.0
 
-Mitchell Starc
+Agar
 
 Did not Bat
 
@@ -151,7 +168,7 @@ Did not Bat
 
 0.0
 
-Josh Hazlewood
+Pant
 
 Did not Bat
 
@@ -167,23 +184,7 @@ Did not Bat
 
 0.0
 
-Mark Wood
-
-Did not Bat
-
-0
-
-0
-
-0
-
-0
-
-0
-
-0.0
-
-Odean
+Topley
 
 Did not Bat
 
@@ -218,107 +219,19 @@ WD NB 4s
 
 6s
 
-Kagiso Rabada
+Shaheen Afridi
 
 4.0
-
-45
-
-0
-
-0
-
-11.3
-
-5
-
-1
-
-0
-
-5
-
-2
-
-Pat Cummins
-
-4.0
-
-46
-
-1
-
-0
-
-11.5
-
-5
-
-1
-
-0
-
-5
-
-2
-
-Sunil Narine
-
-4.0
-
-33
-
-1
-
-0
-
-8.3
-
-4
-
-0
-
-0
-
-2
-
-1
-
-Jansen
-
-4.0
-
-40
-
-1
-
-0
-
-10.0
-
-7
-
-1
-
-0
-
-4
-
-2
-
-Chamika
-
-2.0
 
 24
 
-0
+1
 
 0
 
-12.0
+6.0
 
-2
+8
 
 0
 
@@ -326,27 +239,115 @@ Chamika
 
 3
 
+0
+
+Taskin
+
+4.0
+
+41
+
 1
 
-De Silva
+0
 
-2.0
+10.3
 
-20
+7
 
 0
 
 0
 
-10.0
+5
 
 2
 
+Joffra Archer
+
+4.0
+
+34
+
+1
+
 0
+
+8.5
+
+7
+
+0
+
+0
+
+6
+
+0
+
+Akeal
+
+3.0
+
+34
+
+0
+
+0
+
+11.3
+
+3
+
+1
+
+1
+
+4
+
+1
+
+Raza
+
+2.0
+
+19
+
+0
+
+0
+
+9.5
+
+2
+
+1
 
 0
 
 1
+
+1
+
+Andre Russell
+
+3.0
+
+31
+
+1
+
+0
+
+10.3
+
+3
+
+0
+
+0
+
+4
 
 1
 
@@ -363,33 +364,43 @@ Bowler
 
 1
 
-18
+6
 
-2.6
+1.5
 
-Alex Hales
+Babar Azam
 
-Sunil Narine
+Taskin
 
 2
 
-27
+134
 
-3.6
+15.2
 
-Malan
+David Warner
 
-Pat Cummins
+Joffra Archer
 
 3
 
-130
+141
 
-13.3
+16.5
 
-Finch
+Glenn Maxwell
 
-Jansen
+Shaheen Afridi
+
+4
+
+183
+
+19.6
+
+Markram
+
+Andre Russell
 
 First Innings-OVERS
 No
@@ -419,152 +430,152 @@ Runs Wkts Per Ball Score
 19
 20
 
-K Rabada
-
-9
-
-0
-
-P Cummins
-
-5
-
-0
-
-S Narine
+S Afridi
 
 4
 
-1
-
-P Cummins
-
-9
-
-1
-
-Jansen
-
-13
-
 0
 
-K Rabada
+Taskin
+
+2
+
+1
+
+S Afridi
 
 7
 
 0
 
-S Narine
+Taskin
+
+7
+
+0
+
+S Afridi
+
+10
+
+0
+
+J Archer
+
+9
+
+0
+
+Akeal
+
+9
+
+0
+
+Raza
 
 8
 
 0
 
-Chamika
+Akeal
 
-13
-
-0
-
-S Narine
-
-13
+10
 
 0
 
-Jansen
+A Russell
 
-13
-
-0
-
-D Silva
-
-6
+7
 
 0
 
-Chamika
+Taskin
 
 11
 
 0
 
-D Silva
+Raza
+
+11
+
+0
+
+A Russell
 
 14
 
 0
 
-Jansen
+J Archer
 
-6
+9
+
+0
+
+Akeal
+
+15
+
+0
+
+J Archer
+
+5
 
 1
 
-S Narine
+S Afridi
 
-8
+3
+
+1
+
+Taskin
+
+21
 
 0
 
-Jansen
+J Archer
 
-8
+11
 
 0
 
-P Cummins
+A Russell
 
 10
 
-0
+1
 
-K Rabada
-
-10
-
-0
-
-P Cummins
-
-22
-
-0
-
-K Rabada
-
-19
-
-0
-
-101061
-1 0 0 1 0wd 1 1
-10111W
-11601W
-461020
-140101
+010111
+0110W0
+041101
+110140
+410401
+000441
+0 0wd 0 1 1 1 0nb 4
 011141
-011164
-061141
-110416
-101121
-114401
-211064
-0 4 0wd W 0 0 1
-031121
-411011
-431011
-0wd 1 1 1 1 1 4
-064444
-416044
+111601
+140011
+114041
+1 1 6 1 0wd 0 1
+114161
+111114
+441114
+1W0004
+1101W0
+640614
+104141
+41401W
 
-MAY:203/4
+APR:186/4
 
 Second Innings-Batting
-Overs:20.0
-EXTRAS: 10(B:0 LB:0 NB:2 WD:8)
+Overs:18.5
+EXTRAS: 3(B:0 LB:0 NB:0 WD:3)
 
 Batsman
 
@@ -580,104 +591,105 @@ B
 
 SR
 
-Shikhar Dhawan
+Rohit Sharma
 
-c Alex Hales b Mark
-Wood
+c Babar Azam b Chris
+Jordan
 
-49
+81
 
-28
+47
 
-8
-
-3
-
-4
-
-175.0
-
-Guptill
-
-b Mitchell Starc
-
-0
-
-1
-
-0
-
-0
-
-0
-
-0.0
-
-De Silva
-
-c Ruturaj b Nabi
-
-21
-
-19
-
-8
-
-0
-
-2
-
-110.5
-
-Rossouw
-
-b Odean
-
-35
-
-19
-
-4
-
-5
-
-1
-
-184.2
-
-Daryl Mitchell
-
-not out
-
-39
-
-32
+9
 
 9
 
 3
 
+172.3
+
+KL Rahul
+
+c Shadab Khan b Topley
+
+11
+
+9
+
+3
+
+2
+
 0
 
-121.9
+122.2
 
-Mushfiqur
+Fakhar Zaman
 
-not out
+lbw b Hardik Pandya
 
-49
+6
 
-23
-
-5
-
-8
+4
 
 1
 
-213.0
+1
 
-Sunil Narine
+0
+
+150.0
+
+Brewis
+
+c Markram b Hardik
+Pandya
+
+3
+
+5
+
+2
+
+0
+
+0
+
+60.0
+
+Deepak Hooda
+
+not out
+
+73
+
+42
+
+11
+
+12
+
+1
+
+173.8
+
+Andre Russell
+
+not out
+
+9
+
+6
+
+3
+
+1
+
+0
+
+150.0
+
+Joffra Archer
 
 Did not Bat
 
@@ -693,7 +705,7 @@ Did not Bat
 
 0.0
 
-Pat Cummins
+Shaheen Afridi
 
 Did not Bat
 
@@ -709,7 +721,7 @@ Did not Bat
 
 0.0
 
-Kagiso Rabada
+Raza
 
 Did not Bat
 
@@ -725,7 +737,7 @@ Did not Bat
 
 0.0
 
-Chamika
+Akeal
 
 Did not Bat
 
@@ -741,7 +753,7 @@ Did not Bat
 
 0.0
 
-Jansen
+Taskin
 
 Did not Bat
 
@@ -776,135 +788,135 @@ WD NB 4s
 
 6s
 
-Mitchell Starc
+Topley
 
-4.0
+3.5
 
-52
-
-1
-
-0
-
-13.0
-
-5
+40
 
 1
 
 0
 
-5
+10.4
 
-3
-
-Josh Hazlewood
-
-4.0
-
-41
+7
 
 0
 
 0
-
-10.3
-
-6
-
-1
-
-1
-
-2
-
-2
-
-Nabi
-
-3.0
-
-29
-
-1
-
-0
-
-9.7
-
-5
-
-3
-
-0
-
-3
-
-1
-
-Mark Wood
-
-4.0
-
-23
-
-1
-
-0
-
-5.8
-
-6
-
-0
-
-0
-
-2
-
-0
-
-Axar Patel
-
-3.0
-
-38
-
-0
-
-0
-
-12.7
-
-3
-
-0
-
-1
 
 4
 
 2
 
-Odean
+Hardik Pandya
 
-2.0
+4.0
 
-20
+38
+
+2
+
+0
+
+9.5
+
+5
+
+0
+
+0
+
+7
+
+0
+
+Agar
+
+4.0
+
+33
+
+0
+
+0
+
+8.3
+
+6
 
 1
 
 0
 
-10.0
-
 3
 
-3
+1
+
+Chris Jordan
+
+3.0
+
+27
+
+1
 
 0
 
+9.0
+
 3
+
+1
+
+0
+
+4
+
+0
+
+Shadab Khan
+
+3.0
+
+40
+
+0
+
+0
+
+13.3
+
+3
+
+1
+
+0
+
+6
+
+1
+
+Glenn Maxwell
+
+1.0
+
+8
+
+0
+
+0
+
+8.0
+
+1
+
+0
+
+0
+
+1
 
 0
 
@@ -921,46 +933,47 @@ Bowler
 
 1
 
-13
+15
 
-0.6
+2.1
 
-Guptill
+KL Rahul
 
-Mitchell Starc
+Topley
 
 2
 
-71
+28
 
-7.2
+3.5
 
-Shikhar Dhawan
+Fakhar Zaman
 
-Mark Wood
+Hardik Pandya
 
 3
 
-77
+36
 
-8.2
+5.2
 
-De Silva
+Brewis
 
-Nabi
+Hardik Pandya
 
 4
 
-130
+168
 
-13.5
+17.1
 
-Rossouw
+Rohit Sharma
 
-Odean
+Chris Jordan
 
 Second Innings-OVERS
-No
+
+No
 
 Bowler
 
@@ -985,149 +998,142 @@ Runs Wkts Per Ball Score
 17
 18
 19
-20
 
-M Starc
-
-13
-
-1
-
-J Hazlewood
-
-12
-
-0
-
-M Starc
-
-10
-
-0
-
-Nabi
-
-12
-
-0
-
-M Wood
-
-5
-
-0
-
-J Hazlewood
-
-6
-
-0
-
-A Patel
-
-13
-
-0
-
-M Wood
-
-6
-
-1
-
-Nabi
-
-3
-
-1
-
-A Patel
-
-11
-
-0
-
-Nabi
-
-14
-
-0
-
-M Wood
-
-4
-
-0
-
-A Patel
-
-14
-
-0
-
-Odean
+Topley
 
 7
 
-1
-
-M Starc
-
-13
-
 0
 
-Odean
-
-13
-
-0
-
-J Hazlewood
-
-10
-
-0
-
-M Wood
+H Pandya
 
 8
 
 0
 
-J Hazlewood
+Topley
 
-13
+7
+
+1
+
+H Pandya
+
+7
+
+1
+
+Agar
+
+7
 
 0
 
-M Starc
+H Pandya
 
-16
+9
+
+1
+
+Agar
+
+5
 
 0
 
-06601W
-604101
-0 0 0wd 1 1 6 1
-160401
-110111
-2 1 0 1 0nb 1 0
-101416
-0W4011
-0W0111
-011144
-0 4 4 1 0wd 0wd 1 0wd 1
-110011
-0 4 1 1 6 0nb 1
-1 0 1 4 0wd W 0
-121144
-1 1 1 0wd 0 0wd 4 4
-1 1 3 0 0wd 1 3
-014111
-116140
-013444
+C Jordan
 
-Result: JAN won the match by 5 runs
+8
+
+0
+
+S Khan
+
+17
+
+0
+
+Agar
+
+12
+
+0
+
+S Khan
+
+9
+
+0
+
+G Maxwell
+
+8
+
+0
+
+Agar
+
+9
+
+0
+
+C Jordan
+
+10
+
+0
+
+S Khan
+
+14
+
+0
+
+Topley
+
+17
+
+0
+
+H Pandya
+
+14
+
+0
+
+C Jordan
+
+9
+
+1
+
+Topley
+
+9
+
+0
+
+100114
+101141
+W16000
+4101W1
+101104
+0W1404
+011111
+011114
+1 0 4 0wd 4 1 6
+601410
+411021
+101141
+1 1 0 0wd 1 4 1
+1 4 1 1 1 0wd 1
+401414
+041246
+401144
+W01404
+11403
+
+Result: APR won the match by 6 wickets
 Generated by Cricket Scorer
 
+

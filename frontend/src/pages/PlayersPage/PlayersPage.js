@@ -3,6 +3,8 @@ import './PlayersPage.css'
 import PlayersBox from "../../components/Player/PlayersBox/PlayersBox";
 import {useParams} from "react-router-dom";
 import Worm from "../../components/Match/Worm/Worm";
+import { BACKEND_API_URL } from './../../my_constants'
+
 function DropdownMenu(props) {
     const options = props.teams
     const [isOpen, setIsOpen] = useState(false);
@@ -44,7 +46,7 @@ function DropdownMenu(props) {
 function PlayersPage(props) {
     let { tour_class } = useParams()
     let { t_id } = useParams()
-    let url = `http://localhost:3001/players`
+    let url = `${BACKEND_API_URL}/players`
     if (props.tour_class) {
         url = url + `?tour_class=${tour_class}`
     }

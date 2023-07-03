@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import './Worm.css'
 import Graph from "../../Graph/Graph";
+import { BACKEND_API_URL } from './../../../my_constants'
 
 function Worm(props) {
-    let url = `http://localhost:3001/match/${props.m_id}/worm`
+    let url = `${BACKEND_API_URL}/match/${props.m_id}/worm`
     const [data, setData] = useState(null);
 
     useEffect(() => {

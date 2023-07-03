@@ -1,9 +1,11 @@
 import './PBatStats.css'
 import React, { useState, useEffect } from 'react';
 import Photocard from "../../Photocard/Photocard";
+import { BACKEND_API_URL } from './../../../my_constants'
+
 function PBatStats(props) {
 
-    let url = `http://localhost:3001/player/${props.p_id}/bat_stats`
+    let url = `${BACKEND_API_URL}/player/${props.p_id}/bat_stats`
 
     const [all, setall] = useState(null);
     const [data, setdata] = useState(all ? all.career : null);

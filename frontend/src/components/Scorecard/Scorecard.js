@@ -2,6 +2,7 @@ import './Scorecard.css'
 import '../css/teams.css'
 import React, { useState, useEffect } from 'react';
 import PerformanceBox from "../PerformanceBox/PerformanceBox";
+import { BACKEND_API_URL } from './../../my_constants'
 
 function Header(props) {
 
@@ -86,7 +87,7 @@ function ScoreItem(props) {
 }
 
 function Scorecard(props) {
-    let url = "http://localhost:3001/match/" + props.m_id + "/"+props.inn_no + "/scorecard"
+    let url = `${BACKEND_API_URL}/match/${props.m_id}/+${props.inn_no}/scorecard`
     
     const [scorecard, setscorecard] = useState(null);
 

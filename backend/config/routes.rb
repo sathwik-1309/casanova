@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     get '/:m_id/:inn_no/manhatten' => 'match#manhatten'
     get '/:m_id/:inn_no/partnerships' => 'match#partnerships'
     get '/:m_id/worm' => 'match#worm'
+    get '/:m_id/:inn_no/commentry' => 'match#commentry'
     # get '/:m_id/match_box' => 'match#match_box'
   end
 

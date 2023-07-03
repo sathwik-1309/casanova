@@ -15,4 +15,5 @@ class Team < ApplicationRecord
         lost = Match.where(loser_id: squad_ids).count
         return won, won+lost
     end
+
 end

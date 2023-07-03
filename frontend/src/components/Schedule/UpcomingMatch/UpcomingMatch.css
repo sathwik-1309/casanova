@@ -1,0 +1,54 @@
+.upcoming_match {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+    margin: 15px;
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: var(--shadow-border);
+}
+
+.um_header {
+    display: flex;
+    height: 25px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    /*background-color: var(--dark);*/
+    /*color: white;*/
+}
+
+.um_tourname {
+    display: flex;
+    width: 140px;
+    justify-content: center;
+    align-items: center;
+}
+.um_venue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+}
+.um_teams {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+}
+
+.um_teamname {
+    height: 35px;
+    width: 140px;
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.um_empty {
+    width: 20px;
+    height: 100px;
+}
+.um_captain_pic {
+    display: flex;
+}

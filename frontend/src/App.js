@@ -3,7 +3,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import HomePage from "./pages/HomePage/HomePage";
 import MatchPage from "./pages/MatchPage/MatchPage";
 import WebPage from "./pages/WebPage/WebPage";

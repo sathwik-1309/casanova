@@ -3,6 +3,8 @@ import '../css/teams.css'
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import JourneyBox from "../Tournament/JourneyBox/JourneyBox";
+import { BACKEND_API_URL } from './../../my_constants'
+
 
 
 function GroupTableItem(props) {
@@ -41,7 +43,7 @@ function GroupTable(props) {
 function Pointstable(props) {
     let { t_id } = useParams();
 
-    let url = `http://localhost:3001/tournament/${t_id}/points_table`
+    let url = `${BACKEND_API_URL}/tournament/${t_id}/points_table`
     const [data, setData] = useState(null);
     const [journey, setJourney] = useState([]);
 

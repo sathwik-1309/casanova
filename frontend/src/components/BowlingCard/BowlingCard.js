@@ -2,6 +2,7 @@ import './BowlingCard.css'
 import '../css/teams.css'
 import React, { useState, useEffect } from 'react';
 import PerformanceBox from "../PerformanceBox/PerformanceBox";
+import { BACKEND_API_URL } from './../../my_constants'
 
 function Header(props) {
     let class1 = "bowling_card_header1 " + props.color + "1"
@@ -68,7 +69,7 @@ function BowlerItem(x) {
 }
 
 function BowlingCard(props) {
-    let url = "http://localhost:3001/match/" + props.m_id + "/"+props.inn_no + "/bowling_card"
+    let url = `${BACKEND_API_URL}/match/${props.m_id}/${props.inn_no}/${bowling_card}`
     const [data, setData] = useState(null);
 
     useEffect(() => {

@@ -14,4 +14,4 @@ RUN gem install bundler && bundle install
 COPY . .
 
 # Start the Rails server
-CMD ["puma", "-C", "config/puma.rb"]
+ENTRYPOINT ["puma", "-C", "config/puma.rb"]

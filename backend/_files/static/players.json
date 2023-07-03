@@ -7307,6 +7307,27 @@
       "mavi"
     ],
     "born": 41
+  },
+  {
+    "id": 321,
+    "fullname": "shivam mavi",
+    "name": "s mavi",
+    "skillset": [
+      "bow",
+      "r",
+      "r",
+      "fast"
+    ],
+    "keeper": false,
+    "country": 1,
+    "ipl": null,
+    "csl": 38,
+    "names": [
+      "shivam mavi",
+      "s mavi",
+      "mavi"
+    ],
+    "born": 41
   }
 
 ]

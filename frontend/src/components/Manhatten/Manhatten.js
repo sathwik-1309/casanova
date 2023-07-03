@@ -1,6 +1,7 @@
 import './Manhatten.css'
 import '../css/teams.css'
-import React, { useState, useEffect } from 'react'; 
+import React, { useState, useEffect } from 'react';
+import { BACKEND_API_URL } from './../../my_constants'
 
 function Wicket(x) {
     let class1 = "manhatten_2_1_3_3 "+ x.color+"2"
@@ -91,7 +92,7 @@ function ManhattenItem(x) {
                     {x.over.bowler}
                 </div>
             </div>
-            <div id='manhatten_2_1_2'> 
+            <div id='manhatten_2_1_2'>
                 {empty}
             </div>
             <Graphics color={x.color} runs={x.over.runs} wickets={x.over.wickets}/>
@@ -101,7 +102,7 @@ function ManhattenItem(x) {
 }
 
 function Manhatten(props) {
-    let url = "http://localhost:3001/match/" + props.m_id + "/"+props.inn_no + "/manhatten"
+    let url = `${BACKEND_API_URL}/match/${props.m_id}/${props.inn_no}/manhatten`
     const [data, setData] = useState(null);
 
     useEffect(() => {

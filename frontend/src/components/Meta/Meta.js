@@ -1,6 +1,6 @@
 import './Meta.css'
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { BACKEND_API_URL } from './../../my_constants'
 
 function MetaItem(props) {
     let p = props.player
@@ -79,10 +79,10 @@ function Meta(props) {
     let meta_type = props.type
 
     if (meta_type === "batting") {
-        url = 'http://localhost:3001/players/batting_meta'
+        url = `${BACKEND_API_URL}/players/batting_meta`
     }
     else {
-        url = 'http://localhost:3001/players/bowling_meta'
+        url = `${BACKEND_API_URL}/players/bowling_meta`
     }
 
     const [data, setData] = useState(null);

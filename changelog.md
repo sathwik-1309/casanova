@@ -14,5 +14,12 @@
 - UI theme changed to dark
 - Navigation updated of sidebar
 
+# v1.5
+- 165
+- Tournament page etc changes in front end
+- lot of backend changes 
+- docker-compose.yml file added
+- node_modules removed from github
+
 
 

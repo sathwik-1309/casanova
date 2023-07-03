@@ -1,8 +1,8 @@
 {
-  "m_id": 165,
-  "batted_first": "jan",
-  "batted_second": "may",
-  "toss": "may",
+  "m_id": 154,
+  "batted_first": "oct",
+  "batted_second": "apr",
+  "toss": "apr",
   "pitch": 3,
   "ball_color": [
     "y",
@@ -10,14 +10,14 @@
     "y",
     "y"
   ],
-  "cap1": "finch",
-  "cap2": "pat cummins",
-  "keeper1": "rajapaksa",
-  "keeper2": "mushfiqur",
-  "winner": "jan",
-  "stage": "final",
-  "venue": "bengaluru",
-  "motm_player": "ruturaj gaikwad",
-  "motm_team": "jan",
+  "cap1": "babar",
+  "cap2": "rohit",
+  "keeper1": "pooran",
+  "keeper2": "kl rahul",
+  "winner": "apr",
+  "stage": "group",
+  "venue": "pune",
+  "motm_player": "rohit sharma",
+  "motm_team": "apr",
   "t_id": 6
 }

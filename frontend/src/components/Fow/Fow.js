@@ -1,6 +1,7 @@
 import './Fow.css'
 import '../css/teams.css'
 import React, { useState, useEffect } from 'react';
+import { BACKEND_API_URL } from './../../my_constants'
 
 function Header(props) {
     let class1 = "fow_header1 " + props.color + "1"
@@ -49,7 +50,7 @@ function FowItem(props) {
 }
 
 function Fow(props) {
-    let url = "http://localhost:3001/match/" + props.m_id + "/"+props.inn_no + "/fow"
+    let url = `${BACKEND_API_URL}/match/${props.m_id}/${props.inn_no}/fow`
     const [data, setData] = useState(null);
 
     useEffect(() => {

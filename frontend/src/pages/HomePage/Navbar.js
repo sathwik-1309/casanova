@@ -1,9 +1,10 @@
 import './Navbar.css'
 import TournamentClassBox from "./TournamentClassBox";
 import React, { useState, useEffect } from 'react';
+import { BACKEND_API_URL } from "./../../my_constants";
 
 function Navbar(props) {
-    let url = `http://localhost:3001/home_page`
+    let url = `${BACKEND_API_URL}/home_page`
     const [data, setData] = useState(null);
 
     useEffect(() => {

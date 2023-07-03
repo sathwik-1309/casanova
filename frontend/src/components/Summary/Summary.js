@@ -3,13 +3,12 @@ import React, { useState, useEffect } from 'react';
 import SummaryInnings from './SummaryInnings';
 import SummaryFooter from './SummaryFooter';
 import SummaryHeader from './SummaryHeader';
-import BatsmenItem from "./BatsmenItem";
-import Scorebox from "../Scorebox/Scorebox";
 import PerformanceBox from "../PerformanceBox/PerformanceBox";
+import { BACKEND_API_URL } from './../../my_constants';
 
 function Summary(props) {
 
-    let url = `http://localhost:3001/match/${props.m_id}/summary`
+    let url = `${BACKEND_API_URL}/match/${props.m_id}/summary`
     const [data, setData] = useState(null);
 
     useEffect(() => {

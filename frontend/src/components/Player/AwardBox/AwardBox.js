@@ -4,6 +4,7 @@ import './AwardBox.css'
 import Summary from "../../Summary/Summary";
 
 function AwardBox(props){
+    console.log(props.player.p_id)
     let player = props.player
     const pic_height = '70px';
     let content = <Photocard p_id = {player.p_id} color={player.color} height={pic_height}/>
@@ -20,6 +21,9 @@ function AwardBox(props){
             break;
         case "most_wickets":
             logo = '🏏'
+            break;
+        case "gem":
+            logo = '💎'
             break;
     }
 

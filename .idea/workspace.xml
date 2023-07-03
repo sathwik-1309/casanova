@@ -8,7 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/casanova.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/casanova.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/changelog.md" beforeDir="false" afterPath="$PROJECT_DIR$/changelog.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +117,7 @@
       <workItem from="1687246079171" duration="29546000" />
       <workItem from="1687422387955" duration="4353000" />
       <workItem from="1687433678835" duration="37045000" />
-      <workItem from="1687836379317" duration="19221000" />
+      <workItem from="1687836379317" duration="100297000" />
     </task>
     <task id="LOCAL-00001" summary="new">
       <created>1684769209986</created>

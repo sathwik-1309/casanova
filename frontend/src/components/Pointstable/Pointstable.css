@@ -47,13 +47,15 @@
 
 .pt_team {
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: row;
     width: fit-content;
     height: 35px;
     font-size: 0.9rem;
-    font-weight: 400;
+    font-weight: 600;
     border-bottom: 1px solid white;
-    padding-top: 0.4rem;
+    /*padding-top: 0.4rem;*/
     border-radius: 1px;
 }
 .pt_team:hover {

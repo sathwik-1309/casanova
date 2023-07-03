@@ -3,11 +3,12 @@
     height: 40px;
     align-items: center;
     justify-content: center;
-    background-color: #8d50ad;
+    background-color: white;
     font-size: 1rem;
     font-weight: 600;
     position: fixed;
     width: 92%;
+    border-bottom: 1px solid lightgray;
     /*box-shadow: var(--shadow-border);*/
 }
 .topbar_item {
@@ -17,13 +18,14 @@
     width: 120px;
     height: 36px;
     text-decoration: none;
-    /*color: #e0e0e0;*/
-    color: white;
+    color: black;
     cursor: default;
+    margin: 4px 0;
 }
 .topbar_item:hover {
-    color: #e0e0e0;
+    color: var(--analysis1);
 }
 .topbar_selected {
-    border-bottom: 2px solid white;
+    margin-bottom: 1px;
+    border-bottom: 3px solid black;
 }

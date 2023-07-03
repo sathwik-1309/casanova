@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
   create_table "ball_stats", force: :cascade do |t|
+    t.string "sub_type"
     t.integer "innings"
     t.float "overs"
     t.integer "maidens"
@@ -65,6 +66,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
   end
 
   create_table "bat_stats", force: :cascade do |t|
+    t.string "sub_type"
     t.integer "innings"
     t.integer "runs"
     t.integer "balls"
@@ -144,6 +146,26 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["tournament_id"], name: "index_matches_on_tournament_id"
+  end
+
+  create_table "milestone_images", force: :cascade do |t|
+    t.json "image"
+    t.integer "match_id"
+    t.integer "tournament_id"
+    t.index ["match_id"], name: "index_milestone_images_on_match_id"
+    t.index ["tournament_id"], name: "index_milestone_images_on_tournament_id"
+  end
+
+  create_table "milestones", force: :cascade do |t|
+    t.boolean "in_match"
+    t.string "ml_type"
+    t.string "sub_type"
+    t.json "value"
+    t.json "tags"
+    t.integer "match_id"
+    t.integer "tournament_id"
+    t.index ["match_id"], name: "index_milestones_on_match_id"
+    t.index ["tournament_id"], name: "index_milestones_on_tournament_id"
   end
 
   create_table "overs", force: :cascade do |t|
@@ -401,6 +423,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
   add_foreign_key "innings", "matches"
   add_foreign_key "innings", "tournaments"
   add_foreign_key "matches", "tournaments"
+  add_foreign_key "milestone_images", "matches"
+  add_foreign_key "milestone_images", "tournaments"
+  add_foreign_key "milestones", "matches"
+  add_foreign_key "milestones", "tournaments"
   add_foreign_key "overs", "innings"
   add_foreign_key "overs", "matches"
   add_foreign_key "overs", "tournaments"

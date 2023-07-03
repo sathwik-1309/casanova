@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Listcards from "../Listcards/Listcards";
+import { BACKEND_API_URL } from './../../../my_constants'
 
 function BatStats(props) {
     let { t_id } = useParams();
 
-    let url = `http://localhost:3001/tournament/${t_id}/bat_stats`
+    let url = `${BACKEND_API_URL}/tournament/${t_id}/bat_stats`
     const [data, setData] = useState(null);
 
     useEffect(() => {

@@ -228,6 +228,7 @@ class CreateTables < ActiveRecord::Migration[7.0]
     end
 
     create_table :bat_stats do |t|
+      t.string :sub_type
       t.integer :innings
       t.integer :runs
       t.integer :balls
@@ -252,6 +253,7 @@ class CreateTables < ActiveRecord::Migration[7.0]
     end
 
     create_table :ball_stats do |t|
+      t.string :sub_type
       t.integer :innings
       t.float :overs
       t.integer :maidens
@@ -330,6 +332,24 @@ class CreateTables < ActiveRecord::Migration[7.0]
       t.belongs_to :team, foreign_key: true
       t.belongs_to :tournament, foreign_key: true
     end
+
+    create_table :milestones do |t|
+      t.boolean :in_match
+      t.string :ml_type
+      t.string :sub_type
+      t.json :value
+      t.json :tags
+      t.belongs_to :match, foreign_key: true
+      t.belongs_to :tournament, foreign_key: true
+    end
+
+    create_table :milestone_images do |t|
+      t.json :image
+      t.belongs_to :match, foreign_key: true
+      t.belongs_to :tournament, foreign_key: true
+    end
+
+
 
   end
 end

@@ -297,4 +297,66 @@ class MatchController < ApplicationController
 
         render(:json => Oj.dump(hash))
     end
+
+    def commentry
+        overs_arr = []
+        m_id = params[:m_id].to_i
+        inn_no = params[:inn_no].to_i
+        inn_id = (2*m_id) - 2 + inn_no
+        inn = Inning.find(inn_id)
+        overs = Over.where(inning_id: inn_id)
+        batsman_hash = {}
+        wicket_count = 0
+        overs.each do|over|
+            hash = {}
+            hash['over_no'] = over.over_no
+            hash['runs'] = over.runs
+            hash['score'] = "#{over.score} - #{over.for}"
+            hash['teamname'] = inn.bat_team.get_abb
+            ball_arr = []
+            sequence = []
+            balls = Ball.where(over_id: over.id)
+            balls.each do|ball|
+                ball_hash = {}
+                ball_hash['delivery'] = ball.delivery
+                ball_hash['batsman'] = ball.batsman.name.titleize
+                ball_hash['bowler'] = ball.bowler.name.titleize
+                ball_hash['result'], ball_hash['tag'] = ball.get_result_and_tag
+                ball_hash['delivery'] = ball.delivery
+                sequence << ball_hash['result']
+                ball_arr << ball_hash
+                if batsman_hash.has_key? ball_hash['batsman']
+                    temp = batsman_hash[ball_hash['batsman']]
+                    temp["runs"] += ball.runs
+                    temp["balls"] += 1 unless ball.extra_type == "wd"
+                else
+                    batsman_hash[ball_hash['batsman']] = {
+                      "name" => ball_hash['batsman'],
+                      "runs" => ball.runs,
+                      "balls" => 1
+                    }
+                end
+                if ball.wicket_ball
+                    wicket_count += 1
+                    batsman_hash.delete(ball_hash['batsman'])
+                end
+            end
+            hash['sequence'] = sequence
+            hash['balls'] = ball_arr
+            hash['batsman1'] = batsman_hash[batsman_hash.keys[0]].dup
+            if batsman_hash.keys.length == 1
+                batter = Score.find_by(inning_id: inn_id, position: wicket_count+2).player.name.titleize
+                batsman_hash[batter] = {
+                  "name" => batter,
+                  "runs" => 0,
+                  "balls" => 0
+                }
+                hash['batsman2'] = batsman_hash[batter].dup
+            else
+                hash['batsman2'] = batsman_hash[batsman_hash.keys[1]].dup
+            end
+            overs_arr << hash
+        end
+        render(:json => Oj.dump({ "overs" => overs_arr }))
+    end
 end

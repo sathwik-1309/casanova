@@ -3,7 +3,7 @@ import {useParams} from "react-router-dom";
 
 function TopbarItem(props) {
     let { t_id } = useParams();
-    let name = 'Home'
+    let name = 'HOME'
     let link = `http://localhost:3000/tournament/${t_id}`
     let classname1 = 'topbar_item'
     const currentURL = window.location.href;
@@ -12,21 +12,21 @@ function TopbarItem(props) {
 
     switch (props.name) {
         case "points_table":
-            name = "Points Table"
+            name = "POINTS TABLE"
             link = `http://localhost:3000/tournament/${t_id}/points_table`
             if (selected === 'points_table') {
                 classname1 = classname1 + ' topbar_selected'
             }
             break;
         case "bat_stats":
-            name = "Bat Stats"
+            name = "BAT STATS"
             link = `http://localhost:3000/tournament/${t_id}/bat_stats`
             if (selected === 'bat_stats') {
                 classname1 = classname1 + ' topbar_selected'
             }
             break;
         case "ball_stats":
-            name = "Ball Stats"
+            name = "BALL STATS"
             link = `http://localhost:3000/tournament/${t_id}/ball_stats`
             if (selected === 'ball_stats') {
                 classname1 = classname1 + ' topbar_selected'

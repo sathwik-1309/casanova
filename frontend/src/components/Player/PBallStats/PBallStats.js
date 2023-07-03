@@ -1,9 +1,11 @@
 import '../PBatStats/PBatStats.css'
 import React, { useState, useEffect } from 'react';
 import Photocard from "../../Photocard/Photocard";
+import { BACKEND_API_URL } from './../../../my_constants'
+
 function PBallStats(props) {
 
-    let url = `http://localhost:3001/player/${props.p_id}/ball_stats`
+    let url = `${BACKEND_API_URL}/player/${props.p_id}/ball_stats`
     const [all, setall] = useState(null);
     const [data, setdata] = useState(all ? all.career : null);
     const [selected, setSelected] = useState("career");

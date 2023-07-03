@@ -50,6 +50,10 @@ class Tournament < ApplicationRecord
         return "#{self.name}_#{self.id}"
     end
 
+    def get_tour_with_season
+        return "#{self.name.upcase}-#{self.season}"
+    end
+
     def tournament_box
         hash = {}
         hash["tour_class"] = "#{self.name.upcase}-#{self.season}"
@@ -61,5 +65,21 @@ class Tournament < ApplicationRecord
         end
         hash["matches"] = Match.where(tournament_id: self.id).count
         return hash
+    end
+
+    def get_mvp_sorted_hash
+        scores = Score.where(tournament_id: self.id)
+        points_hash = {}
+        scores.each do|score|
+            p_id = score.player_id
+            p = Player.find(p_id)
+            points = p.get_mvp_points(score.match_id)
+            if points_hash[p_id]
+                points_hash[p_id] += points
+            else
+                points_hash[p_id] = points
+            end
+        end
+        points_hash
     end
 end

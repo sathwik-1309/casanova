@@ -2,10 +2,12 @@ import React, {useEffect, useState} from 'react';
 import './TeamsPage.css'
 import TeamBox from "../../components/Teams/TeamBox/TeamBox";
 import {useParams} from "react-router-dom";
+import { BACKEND_API_URL } from './../../my_constants'
+
 function TeamsPage(props) {
     let {tour_class} = useParams()
     let {t_id} = useParams()
-    let url = 'http://localhost:3001/teams'
+    let url = `${BACKEND_API_URL}/teams`
 
     let initial_state = "wt20"
     if (props.tour_class) {

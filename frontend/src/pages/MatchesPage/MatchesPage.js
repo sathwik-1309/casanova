@@ -3,9 +3,10 @@ import './MatchesPage.css'
 import React, {useEffect, useState} from "react";
 import MatchBox from "../../components/Match/MatchBox/MatchBox";
 import {useParams} from "react-router-dom";
+import { BACKEND_API_URL } from './../../my_constants'
 
 function MatchesPage(props){
-    let url = 'http://localhost:3001/matches'
+    let url = `${BACKEND_API_URL}/matches`
     let { tour_class } = useParams()
     let { t_id } = useParams()
 

@@ -348,5 +348,45 @@ module Helper
         return array
     end
 
+    def self.bat_stats_to_hash(selected, sort_key, t_id)
+        arr = []
+        players = Player.where(id: selected.pluck(:player_id))
+        count = 0
+        selected.each do|stats|
+            count += 1
+            hash = {}
+            player = players.find { |obj| obj.id == stats.player_id }
+            hash['name'] = Util.case(player.fullname, t_id.to_i)
+            hash['p_id'] = player.id
+            squad = Squad.find(Score.find_by(tournament_id: t_id, player_id: player.id).squad_id)
+            hash['teamname'] = squad.get_abb
+            hash['color'] = squad.abbrevation
+            hash['pos'] = count
+            hash['data1'] = stats.send(sort_key.to_sym)
+            arr << hash
+        end
+        return arr
+    end
+
+    def self.upcoming_match_team_to_hash(squad)
+        hash = {}
+        hash['teamname'] = squad.get_abb
+        hash['color'] = squad.abbrevation
+        hash['captain_id'] = squad.captain_id
+        hash
+    end
+
+    def self.get_tour_class_ids(t_id)
+        if WT20_IDS.include? t_id
+            return WT20_IDS
+        elsif IPL_IDS.include? t_id
+            return IPL_IDS
+        elsif CSL_IDS.include? t_id
+            return CSL_IDS
+        else
+            raise StandardError.new("Helpers#get_tour_class_ids: no tour_class for t_id #{t_id}")
+        end
+    end
+
 end
 

@@ -9,17 +9,18 @@
 - new_players script added
 
 # v1.4
-- 162
+- 165
 - batting_meta, bowling_meta
 - UI theme changed to dark
 - Navigation updated of sidebar
-
-# v1.5
-- 165
 - Tournament page etc changes in front end
-- lot of backend changes 
+- lot of backend changes
 - docker-compose.yml file added
 - node_modules removed from github
+- milestone, milestone_image, commentry api
 
 
 
+# v.1.5
+- 151
+- docker configured

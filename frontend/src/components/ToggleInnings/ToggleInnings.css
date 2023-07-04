@@ -1,0 +1,30 @@
+.toggle_innings {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    padding: 0 10px;
+}
+
+.ti_inn {
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 38px;
+    width: 80px;
+    margin: 2px 4px;
+    border: 1px solid var(--analysis2);
+    text-decoration: none;
+    color: var(--analysis2);
+}
+.ti_inn:hover {
+    background-color: var(--analysis2);
+    color: var(--analysis1);
+}
+
+.ti_selected {
+    background-color: var(--analysis2);
+    color: var(--analysis1);
+}

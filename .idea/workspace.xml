@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96929959-f5b6-4eeb-b4a0-a96f71e89911" name="Changes" comment="m156">
+    <list default="true" id="96929959-f5b6-4eeb-b4a0-a96f71e89911" name="Changes" comment="docker">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/changelog.md" beforeDir="false" afterPath="$PROJECT_DIR$/changelog.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +115,7 @@
       <workItem from="1687422387955" duration="4353000" />
       <workItem from="1687433678835" duration="37045000" />
       <workItem from="1687836379317" duration="103472000" />
-      <workItem from="1688370167609" duration="1456000" />
+      <workItem from="1688370167609" duration="11770000" />
     </task>
     <task id="LOCAL-00001" summary="new">
       <created>1684769209986</created>
@@ -160,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685707073078</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="docker">
+      <created>1688373642333</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1688373642333</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,6 +189,7 @@
     <MESSAGE value="changelog" />
     <MESSAGE value="v1.3" />
     <MESSAGE value="m156" />
-    <option name="LAST_COMMIT_MESSAGE" value="m156" />
+    <MESSAGE value="docker" />
+    <option name="LAST_COMMIT_MESSAGE" value="docker" />
   </component>
 </project>

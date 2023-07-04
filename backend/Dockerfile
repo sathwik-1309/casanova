@@ -1,17 +1,27 @@
-# Use the official Ruby image as the base image
-FROM ruby:2.7.6
+# This dockerfile is used to make an alpine image with ruby:2.7.6.
+# This is used as base image for staging and production
+FROM ruby:2.7.6-alpine as base
 
-# Set the working directory inside the container
-WORKDIR /backend
+RUN apk update && \
+    apk add bash
+# Set working directory
+WORKDIR backend
 
-# Copy the Gemfile and Gemfile.lock to the working directory
-COPY Gemfile Gemfile.lock ./
+FROM base as gem-cache
 
-# Install dependencies using Bundler
-RUN gem install bundler && bundle install
+# Copy the application
+COPY Gemfile /backend
+COPY Gemfile.lock /backend
 
-# Copy the rest of the application code to the working directory
-COPY . .
+# General utilities
+RUN apk add --no-cache build-base git && \
+    gem install bundler -v 2.3.5 && \
+     bundle install
 
-# Start the Rails server
+FROM base
+
+COPY --from=gem-cache /usr/local/bundle /usr/local/bundle
+COPY . /backend
+
+# Set the entrypoint
 ENTRYPOINT ["puma", "-C", "config/puma.rb"]

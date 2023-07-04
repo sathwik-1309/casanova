@@ -74,6 +74,12 @@ function TopbarItem(props) {
                 classname1 = classname1 + ' topbar_selected'
             }
             break;
+        case "commentry":
+            name = "COMMENTRY"
+            if (selected === props.name) {
+                classname1 = classname1 + ' topbar_selected'
+            }
+            break;
     }
     return (
         <a className={classname1} href={link}>
@@ -108,6 +114,7 @@ function Topbar(props) {
                 <TopbarItem name='partnerships' link={`http://localhost:3000/match/${m_id}/${inn_no}/partnerships`}/>
                 <TopbarItem name='manhatten' link={`http://localhost:3000/match/${m_id}/${inn_no}/manhatten`}/>
                 <TopbarItem name='worm' link={`http://localhost:3000/match/${m_id}/${inn_no}/worm`}/>
+                <TopbarItem name='commentry' link={`http://localhost:3000/match/${m_id}/${inn_no}/commentry`}/>
             </>
             break;
     }

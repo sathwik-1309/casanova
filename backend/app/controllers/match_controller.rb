@@ -306,6 +306,7 @@ class MatchController < ApplicationController
         inn = Inning.find(inn_id)
         overs = Over.where(inning_id: inn_id)
         batsman_hash = {}
+        bowler_hash = {}
         wicket_count = 0
         overs.each do|over|
             hash = {}
@@ -341,20 +342,36 @@ class MatchController < ApplicationController
                     batsman_hash.delete(ball_hash['batsman'])
                 end
             end
-            hash['sequence'] = sequence
+            hash['sequence'] = sequence.join(' ')
             hash['balls'] = ball_arr
             hash['batsman1'] = batsman_hash[batsman_hash.keys[0]].dup
-            if batsman_hash.keys.length == 1
-                batter = Score.find_by(inning_id: inn_id, position: wicket_count+2).player.name.titleize
-                batsman_hash[batter] = {
-                  "name" => batter,
-                  "runs" => 0,
-                  "balls" => 0
-                }
-                hash['batsman2'] = batsman_hash[batter].dup
-            else
-                hash['batsman2'] = batsman_hash[batsman_hash.keys[1]].dup
+            if wicket_count < 10
+                if batsman_hash.keys.length == 1
+                    batter = Score.find_by(inning_id: inn_id, position: wicket_count+2).player.name.titleize
+                    batsman_hash[batter] = {
+                      "name" => batter,
+                      "runs" => 0,
+                      "balls" => 0
+                    }
+                    hash['batsman2'] = batsman_hash[batter].dup
+                else
+                    hash['batsman2'] = batsman_hash[batsman_hash.keys[1]].dup
+                end
             end
+            bowler = over.bowler.name.titleize
+            if bowler_hash.keys.include? bowler
+                bowler_hash[bowler]["wickets"] += over.wickets
+                bowler_hash[bowler]["runs"] += over.bow_runs
+                bowler_hash[bowler]["overs"] = Util.balls_to_overs(Util.overs_to_balls(bowler_hash[bowler]["overs"]) + over.balls)
+            else
+                bowler_hash[bowler] = {
+                  "name" => bowler,
+                  "wickets" => over.wickets,
+                  "runs" => over.bow_runs,
+                  "overs" => Util.balls_to_overs(over.balls)
+                }
+            end
+            hash['bowler'] = bowler_hash[bowler].dup
             overs_arr << hash
         end
         render(:json => Oj.dump({ "overs" => overs_arr }))

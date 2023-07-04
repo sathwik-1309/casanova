@@ -1,10 +1,10 @@
 .topbar {
     display: flex;
-    height: 40px;
+    height: 45px;
     align-items: center;
     justify-content: center;
-    background-color: white;
-    font-size: 1rem;
+    background-color: var(--analysis1);
+    font-size: 0.9rem;
     font-weight: 600;
     position: fixed;
     width: 92%;
@@ -16,16 +16,16 @@
     align-items: center;
     justify-content: center;
     width: 120px;
-    height: 36px;
+    height: 38px;
     text-decoration: none;
-    color: black;
+    color: white;
     cursor: default;
-    margin: 4px 0;
 }
 .topbar_item:hover {
-    color: var(--analysis1);
+    color: var(--analysis2);
+    border-bottom: 2px solid var(--analysis2);
 }
 .topbar_selected {
-    margin-bottom: 1px;
-    border-bottom: 3px solid black;
+    color: var(--analysis2);
+    border-bottom: 2px solid var(--analysis2);
 }

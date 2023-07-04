@@ -60,9 +60,9 @@ function ScoreItem(props) {
         class4 = 'scorecard_item_score ' + props.color + c1
     }
 
-    
+
     let class5 = 'scorecard_runs '+ temp1
-    
+
     return (
         <div id="scorecard_item" onClick={() => props.func(i.scorebox)}>
             <div className={class1}>
@@ -87,8 +87,8 @@ function ScoreItem(props) {
 }
 
 function Scorecard(props) {
-    let url = `${BACKEND_API_URL}/match/${props.m_id}/+${props.inn_no}/scorecard`
-    
+    let url = `${BACKEND_API_URL}/match/${props.m_id}/${props.inn_no}/scorecard`
+
     const [scorecard, setscorecard] = useState(null);
 
     useEffect(() => {
@@ -135,6 +135,6 @@ function Scorecard(props) {
         </div>
         );
 
-    
+
     }
 export default Scorecard;

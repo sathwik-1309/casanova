@@ -69,7 +69,7 @@ function BowlerItem(x) {
 }
 
 function BowlingCard(props) {
-    let url = `${BACKEND_API_URL}/match/${props.m_id}/${props.inn_no}/${bowling_card}`
+    let url = `${BACKEND_API_URL}/match/${props.m_id}/${props.inn_no}/bowling_card`
     const [data, setData] = useState(null);
 
     useEffect(() => {
@@ -114,6 +114,6 @@ function BowlingCard(props) {
             </div>
         </div>
         );
-    
+
     }
 export default BowlingCard;

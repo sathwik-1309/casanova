@@ -7,6 +7,7 @@ import Summary from '../../components/Summary/Summary';
 import Fow from '../../components/Fow/Fow';
 import './MatchPage.css'
 import Worm from "../../components/Match/Worm/Worm";
+import Commentry from "../../components/Match/Commentry/Commentry";
 
 function MatchPage() {
     let { m_id } = useParams();
@@ -34,6 +35,9 @@ function MatchPage() {
           break;
         case "worm":
             component = <Worm m_id = {m_id} inn_no={inn_no}/>
+            break;
+        case "commentry":
+            component = <Commentry m_id = {m_id} inn_no={inn_no}/>
             break;
         default:
             component = <Summary m_id = {m_id}/>

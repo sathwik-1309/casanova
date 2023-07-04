@@ -120,7 +120,6 @@ function Manhatten(props) {
         return <div>Loading...manhatten</div>;
       }
 
-    console.log(data)
     let class1 = "manhatten "+ data.tour
     return (
         <div className={class1}>

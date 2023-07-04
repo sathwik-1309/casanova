@@ -2,6 +2,7 @@
 /backend/log/
 /backend/tmp/
 /backend/_files/temp/
+backend/tmp/
 
 # frontend
 /frontend/node_modules/

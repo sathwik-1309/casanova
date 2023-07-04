@@ -24,3 +24,8 @@
 # v.1.5
 - 151
 - docker configured
+
+# v.1.6
+- 151
+- docker configured with alpine
+- topbar changes

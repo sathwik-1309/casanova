@@ -6,14 +6,13 @@ import Scorecard from '../../components/Scorecard/Scorecard';
 import Summary from '../../components/Summary/Summary';
 import Fow from '../../components/Fow/Fow';
 import './MatchPage.css'
-import Topbar from "./Topbar/Topbar";
 import Worm from "../../components/Match/Worm/Worm";
 
 function MatchPage() {
     let { m_id } = useParams();
     let { graphic } = useParams();
     let { inn_no } = useParams();
-    let component = <Summary m_id = {m_id}/>
+    let component;
     switch(graphic) {
         case "summary":
             component = <Summary m_id = {m_id}/>
@@ -41,9 +40,6 @@ function MatchPage() {
       }
     return (
         <div id="match_page">
-            <div id="match_page_item1">
-                <Topbar graphic={graphic} inn_no={inn_no} m_id={m_id}/>
-            </div>
             <div id="match_page_item2">
                 <div>
                     {component}

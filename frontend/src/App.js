@@ -51,8 +51,7 @@ function App() {
 
       <Route path="/venues" element={<WebPage page={<VenuesPage/>}/>}  />
 
-      <Route path="/match/:m_id" element={<WebPage page={<MatchPage/>}/>}  />
-      <Route path="/match/:m_id/:inn_no/:graphic" element={<WebPage page={<MatchPage/>}/>}  />
+      <Route path="/match/:m_id/:inn_no/:graphic" element={<WebPage page={<MatchPage/>} s_id='match'/>}/>
 
       <Route path="/player/:p_id/:page" element={<WebPage page={<PlayerPage/>}/>} />
 

@@ -1,13 +1,18 @@
 import Sidebar from '../../components/Sidebar/Sidebar'
 import './WebPage.css'
-import Pointstable from "../../components/Pointstable/Pointstable";
 import Topbar from "../../components/Topbar/Topbar";
 
 function WebPage(props) {
     let topbar = <></>
+    let classname1 = "webpage_layout_item2"
     switch (props.s_id) {
         case "tour":
-            topbar = <Topbar id='tour'/>
+            classname1 += " webpage_layout_item2_margin"
+            topbar = <Topbar s_id='tour'/>
+            break;
+        case "match":
+            classname1 += " webpage_layout_item2_margin"
+            topbar = <Topbar s_id='match'/>
             break;
     }
     return (
@@ -17,7 +22,7 @@ function WebPage(props) {
         </div>
         <div id="webpage_layout2">
             {topbar}
-            <div id="webpage_layout_item2">
+            <div className={classname1}>
                 {props.page}
             </div>
         </div>

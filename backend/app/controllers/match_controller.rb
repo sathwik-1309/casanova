@@ -308,10 +308,21 @@ class MatchController < ApplicationController
         ret_hash['tour_font'] = inn.tournament.get_tour_font
         overs = Over.where(inning_id: inn_id)
         batsman_hash = {}
+        scores_arr = []
         bowler_hash = {}
         wicket_count = 0
         ret_hash['bat_team_color'] = inn.bat_team.abbrevation
         ret_hash['bow_team_color'] = inn.bow_team.abbrevation
+        scores = inn.scores.where(batted: true).order(position: :asc)
+        scores.each do |score|
+            temp1 = {}
+            temp1['name'] = score.player.name.titleize
+            temp1['runs'] = 0
+            temp1['balls'] = 0
+            scores_arr << temp1
+        end
+        batsman_hash[scores_arr[0]['name']] = scores_arr[0]
+        batsman_hash[scores_arr[1]['name']] = scores_arr[1]
         overs.each do|over|
             hash = {}
             hash['over_no'] = over.over_no
@@ -335,32 +346,20 @@ class MatchController < ApplicationController
                     temp["runs"] += ball.runs
                     temp["balls"] += 1 unless ball.extra_type == "wd"
                 else
-                    batsman_hash[ball_hash['batsman']] = {
-                      "name" => ball_hash['batsman'],
-                      "runs" => ball.runs,
-                      "balls" => 1
-                    }
+                    raise StandardError.new("❌ match_controller#commentry: error")
                 end
                 if ball.wicket_ball
                     wicket_count += 1
                     batsman_hash.delete(ball_hash['batsman'])
+                    new_batter = scores_arr[wicket_count+1]
+                    batsman_hash[new_batter['name']] = new_batter
                 end
             end
             hash['sequence'] = sequence.join(' ')
             hash['balls'] = ball_arr
             hash['batsman1'] = batsman_hash[batsman_hash.keys[0]].dup
             if wicket_count < 10
-                if batsman_hash.keys.length == 1
-                    batter = Score.find_by(inning_id: inn_id, position: wicket_count+2).player.name.titleize
-                    batsman_hash[batter] = {
-                      "name" => batter,
-                      "runs" => 0,
-                      "balls" => 0
-                    }
-                    hash['batsman2'] = batsman_hash[batter].dup
-                else
-                    hash['batsman2'] = batsman_hash[batsman_hash.keys[1]].dup
-                end
+                hash['batsman2'] = batsman_hash[batsman_hash.keys[1]].dup
             end
             bowler = over.bowler.name.titleize
             if bowler_hash.keys.include? bowler

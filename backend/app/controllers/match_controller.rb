@@ -300,14 +300,18 @@ class MatchController < ApplicationController
 
     def commentry
         overs_arr = []
+        ret_hash = {}
         m_id = params[:m_id].to_i
         inn_no = params[:inn_no].to_i
         inn_id = (2*m_id) - 2 + inn_no
         inn = Inning.find(inn_id)
+        ret_hash['tour_font'] = inn.tournament.get_tour_font
         overs = Over.where(inning_id: inn_id)
         batsman_hash = {}
         bowler_hash = {}
         wicket_count = 0
+        ret_hash['bat_team_color'] = inn.bat_team.abbrevation
+        ret_hash['bow_team_color'] = inn.bow_team.abbrevation
         overs.each do|over|
             hash = {}
             hash['over_no'] = over.over_no
@@ -374,6 +378,7 @@ class MatchController < ApplicationController
             hash['bowler'] = bowler_hash[bowler].dup
             overs_arr << hash
         end
-        render(:json => Oj.dump({ "overs" => overs_arr }))
+        ret_hash['overs'] = overs_arr
+        render(:json => Oj.dump(ret_hash))
     end
 end

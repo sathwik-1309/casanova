@@ -3,6 +3,7 @@
     flex-direction: column;
     height: fit-content;
     width: fit-content;
+    box-shadow: var(--shadow-border);
 }
 .commentry_overbox {
     display: flex;
@@ -12,19 +13,18 @@
     background-color: white;
     font-weight: 400;
     font-size: 1rem;
-    border-bottom: 1px solid grey;
+
 }
 .co_header {
     display: flex;
     flex-direction: column;
-    border-bottom: 1px solid lightgray;
 }
 .co_header_row1 {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 40px;
-    border-bottom: 1px solid lightgray;
+
 }
 .co_header_overs {
     font-weight: 600;
@@ -114,11 +114,20 @@
 }
 .commentry_ballbox {
     display: flex;
-    height: 40px;
+    height: 35px;
     border-top: 1px solid white;
+    font-size: 0.9rem;
+}
+.co_ball_result_parent {
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
 }
 .co_ball_result {
-    width: 40px;
+    width: 25px;
+    height: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -133,6 +142,7 @@
 .co_ball_commentry {
     display: flex;
     align-items: center;
+    font-weight: 500;
     width: 580px;
     padding-left: 10px;
 }
@@ -143,7 +153,6 @@
     font-weight: 700;
     font-size: 0.8rem;
     display: flex;
-    border: 5px solid white;
 }
 .co_tag_4 {
     background-color: var(--analysis2);
@@ -152,14 +161,12 @@
     font-weight: 700;
     font-size: 0.8rem;
     display: flex;
-    border: 5px solid white;
 }
 .co_tag_6 {
     background-color: var(--analysis1);
     color: white;
     border-radius: 50%;
     font-weight: 700;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     display: flex;
-    border: 5px solid white;
 }

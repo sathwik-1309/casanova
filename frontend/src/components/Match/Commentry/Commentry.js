@@ -16,7 +16,7 @@ function OverBox(props) {
     }
     return (
         <div className='commentry_overbox'>
-            <div className='co_header'>
+            <div className={`co_header ${props.bat_color}2`}>
                 <div className='co_header_row1'>
                     <div className='co_header_overs'>OVER {over.over_no}</div>
                     <div className='co_header_sequence'>{over.sequence} <span className='co_header_total_runs'>({over.runs} RUNS)</span></div>
@@ -39,7 +39,7 @@ function OverBox(props) {
                 </div>
             </div>
             {over.balls.map((ball, index) => (
-                <BallBox ball={ball}/>
+                <BallBox ball={ball} bat_color={props.bat_color}/>
             ))}
         </div>
 
@@ -51,7 +51,7 @@ function BallBox(props) {
     let result = 'co_ball_result'
     switch (ball.tag) {
         case "tag_W":
-            result += ' co_tag_w'
+            result += ` co_tag_w`
             break;
         case "tag_4":
             result += ' co_tag_4'
@@ -62,9 +62,11 @@ function BallBox(props) {
     }
     return (
         <div className='commentry_ballbox'>
-            <div className={result}>{ball.result}</div>
+            <div className={'co_ball_result_parent'}>
+                <div className={result}>{ball.result}</div>
+            </div>
             <div className='co_delivery'>{ball.delivery}</div>
-            <div className='co_ball_commentry'>{ball.bowler} to {ball.batsman}</div>
+            <div className={`co_ball_commentry ${props.bat_color}1`}>{ball.bowler} to {ball.batsman}</div>
 
         </div>
     );
@@ -93,9 +95,9 @@ function Commentry(props) {
     const overs = data.overs
 
     return (
-        <div className='commentry wt20_1'>
+        <div className={`commentry ${data.tour_font}`}>
             {overs.map((over, index) => (
-                <OverBox over={over}/>
+                <OverBox over={over} bat_color={data.bat_team_color} bow_color={data.bow_team_color}/>
             ))}
         </div>
     );

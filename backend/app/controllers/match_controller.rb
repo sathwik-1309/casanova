@@ -304,6 +304,10 @@ class MatchController < ApplicationController
         m_id = params[:m_id].to_i
         inn_no = params[:inn_no].to_i
         inn_id = (2*m_id) - 2 + inn_no
+        if inn_no == 2
+            target = Inning.find(inn_id-1).score + 1
+        end
+
         inn = Inning.find(inn_id)
         ret_hash['tour_font'] = inn.tournament.get_tour_font
         overs = Over.where(inning_id: inn_id)
@@ -323,11 +327,17 @@ class MatchController < ApplicationController
         end
         batsman_hash[scores_arr[0]['name']] = scores_arr[0]
         batsman_hash[scores_arr[1]['name']] = scores_arr[1]
+        cur_overs = 0.0
         overs.each do|over|
             hash = {}
             hash['over_no'] = over.over_no
             hash['runs'] = over.runs
             hash['score'] = "#{over.score} - #{over.for}"
+            over_delivery = (over.over_no - 1 + ((over.balls) * 0.1)).round(1)
+            hash['cur_rr'] = Util.get_rr(over.score,Util.overs_to_balls(over_delivery))
+            if inn_no == 2
+                hash['req_rr'] = Util.get_rr((target - over.score), 120 - Util.overs_to_balls(over_delivery))
+            end
             hash['teamname'] = inn.bat_team.get_abb
             ball_arr = []
             sequence = []

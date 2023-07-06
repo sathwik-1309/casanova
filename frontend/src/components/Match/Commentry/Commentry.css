@@ -33,19 +33,42 @@
     width: 80px;
 }
 .co_header_sequence {
-    width: 320px;
+    width: 250px;
     padding-left: 10px;
 }
 .co_header_total_runs {
     font-size: 0.9rem;
 }
+.co_header_crr_box,
+.co_header_req_rr_box {
+    display: flex;
+    flex-direction: column;
+    width: 55px;
+}
+.co_header_crr_label,
+.co_header_req_rr_label {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    font-size: 0.6rem;
+    font-weight: 500;
+    height: 15px;
+}
+.co_header_crr_value,
+.co_header_req_rr_value {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    font-weight: 500;
+    height: 20px;
+}
 .co_header_teamname {
-    width: 110px;
+    width: 90px;
     font-weight: 600;
     text-align: right;
 }
 .co_header_score {
-    width: 90px;
+    width: 75px;
     font-weight: 600;
     padding-left: 10px;
 }
@@ -145,6 +168,7 @@
     font-weight: 500;
     width: 580px;
     padding-left: 10px;
+    border-radius: 2px;
 }
 .co_tag_w {
     background-color: red;

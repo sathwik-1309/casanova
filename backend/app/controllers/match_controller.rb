@@ -309,6 +309,7 @@ class MatchController < ApplicationController
         end
 
         inn = Inning.find(inn_id)
+        t_id = inn.tournament_id
         ret_hash['tour_font'] = inn.tournament.get_tour_font
         overs = Over.where(inning_id: inn_id)
         batsman_hash = {}
@@ -320,7 +321,7 @@ class MatchController < ApplicationController
         scores = inn.scores.where(batted: true).order(position: :asc)
         scores.each do |score|
             temp1 = {}
-            temp1['name'] = score.player.name.titleize
+            temp1['name'] = Util.case(score.player.name, t_id)
             temp1['runs'] = 0
             temp1['balls'] = 0
             scores_arr << temp1
@@ -345,8 +346,8 @@ class MatchController < ApplicationController
             balls.each do|ball|
                 ball_hash = {}
                 ball_hash['delivery'] = ball.delivery
-                ball_hash['batsman'] = ball.batsman.name.titleize
-                ball_hash['bowler'] = ball.bowler.name.titleize
+                ball_hash['batsman'] = Util.case(ball.batsman.name, t_id)
+                ball_hash['bowler'] = Util.case(ball.bowler.name, t_id)
                 ball_hash['result'], ball_hash['tag'] = ball.get_result_and_tag
                 ball_hash['delivery'] = ball.delivery
                 sequence << ball_hash['result']
@@ -371,7 +372,7 @@ class MatchController < ApplicationController
             if wicket_count < 10
                 hash['batsman2'] = batsman_hash[batsman_hash.keys[1]].dup
             end
-            bowler = over.bowler.name.titleize
+            bowler = Util.case(over.bowler.name, t_id)
             if bowler_hash.keys.include? bowler
                 bowler_hash[bowler]["wickets"] += over.wickets
                 bowler_hash[bowler]["runs"] += over.bow_runs

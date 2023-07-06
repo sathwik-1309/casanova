@@ -431,7 +431,6 @@ class Ingest
                 if @ball=='W'
                     category = "c0"
                     wicket_ball = true
-                    Ingest::Wicket_.new(@parent)
                     @parent.spells[@parent.current_bowler]["balls"] += 1
                     @parent.spells[@parent.current_bowler]["wickets"] += 1
                     @parent.update_part(0)
@@ -496,7 +495,7 @@ class Ingest
             @parent.score += runs + extras
             ball_csv = [@parent.b_id, runs, extras, extra_type, @parent.overs, wicket_ball, @parent.score, @parent.for, category, bow_runs, @parent.ball_color, @parent.sr, @parent.current_bowler, @parent.o_id, @parent.inn_id, @parent.m_id, @parent.args["t_id"] ]
             @parent.balls_csv << ball_csv
-
+            Ingest::Wicket_.new(@parent) if wicket_ball
         end
 
     end

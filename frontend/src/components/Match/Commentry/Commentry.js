@@ -5,6 +5,13 @@ import './Commentry.css'
 function OverBox(props) {
     let batsman2 = <></>
     let over = props.over
+    let req_rr = <div className='co_header_req_rr_box'></div>
+    if (over.req_rr) {
+        req_rr = <div className='co_header_req_rr_box'>
+                    <div className='co_header_req_rr_label'>REQ</div>
+                    <div className='co_header_req_rr_value'>{over.req_rr}</div>
+                </div>
+    }
     if (over.batsman2) {
         batsman2 = <>
             <div className='co_header_batsman'>
@@ -20,6 +27,11 @@ function OverBox(props) {
                 <div className='co_header_row1'>
                     <div className='co_header_overs'>OVER {over.over_no}</div>
                     <div className='co_header_sequence'>{over.sequence} <span className='co_header_total_runs'>({over.runs} RUNS)</span></div>
+                    <div className='co_header_crr_box'>
+                        <div className='co_header_crr_label'>CRR</div>
+                        <div className='co_header_crr_value'>{over.cur_rr}</div>
+                    </div>
+                    {req_rr}
                     <div className='co_header_teamname'>{over.teamname}</div>
                     <div className='co_header_score'>{over.score}</div>
                 </div>
@@ -66,8 +78,7 @@ function BallBox(props) {
                 <div className={result}>{ball.result}</div>
             </div>
             <div className='co_delivery'>{ball.delivery}</div>
-            <div className={`co_ball_commentry ${props.bat_color}1`}>{ball.bowler} to {ball.batsman}</div>
-
+            <div className={`co_ball_commentry ${props.bat_color}1`}>{`${ball.bowler} to ${ball.batsman}`}</div>
         </div>
     );
 }

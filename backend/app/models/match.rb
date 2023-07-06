@@ -14,6 +14,7 @@ class Match < ApplicationRecord
     after_commit do
         unless self.runs.nil?
             self.update_stats
+            Uploader.increment_player_motm(self)
             Uploader.update_milestone_image(self)
             self.update_tournament
         end

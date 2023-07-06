@@ -549,9 +549,9 @@ module Uploader
         return true
     end
 
-    def self.increment_player_motm
-        player = Match.last.motm
-        player.motms = player.motms + 1
+    def self.increment_player_motm(match)
+        player = match.motm
+        player.trophies['motm'] += 1
         unless player.save
             puts "increment_player_motm update error ❌"
             puts player.errors.full_messages
@@ -580,9 +580,9 @@ module Uploader
         # handled in match after commit hook
         # status_list << Uploader.update_bat_stats
         # status_list << Uploader.update_ball_stats
+        # status_list << Uploader.increment_player_motm
         status_list << Uploader.update_partnerships
         status_list << Uploader.update_squads_and_teams
-        status_list << Uploader.increment_player_motm
 
         if status_list.include? false
             puts "Uploader# Model.save error exists ❌"

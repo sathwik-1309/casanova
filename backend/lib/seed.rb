@@ -140,17 +140,19 @@ module Seed
                 player.bowling_style = row['bowling_style']
             end
             player.country_team_id = row['country']
-            player.motms = row['motms']
-            player.pots = row['pots']
-            player.mvps = row['mvps']
-            player.most_runs = row['most_runs']
-            player.most_wickets = row['most_wickets']
-            player.winners = row['winners']
-            player.runners = row['runners']
-            player.gems = 0
+            trophies = {}
+            trophies['motm'] = row['motms'].to_i
+            trophies['pots'] = row['pots'].to_i
+            trophies['mvp'] = row['mvps'].to_i
+            trophies['most_runs'] = row['most_runs'].to_i
+            trophies['most_wickets'] = row['most_wickets'].to_i
+            trophies['winners'] = row['winners'].to_i
+            trophies['runners'] = row['runners'].to_i
+            trophies['gem'] = 0
             if GEMS_LIST.include?(player.id)
-                player.gems = 1
+                trophies['gem'] = 1
             end
+            player.trophies = trophies
             player.save
             # name
             # ipl_team_id
@@ -231,14 +233,17 @@ module Seed
                 p.bowling_hand = player["skillset"][2]
                 p.bowling_style = player["skillset"][3]
                 p.keeper = player["keeper"]
-                p.motms = 0
-                p.pots = 0
-                p.mvps = 0
-                p.gems = 0
-                p.most_wickets = 0
-                p.most_runs = 0
-                p.winners = 0
-                p.runners = 0
+                trophies = {
+                  "motm" => 0,
+                  "pots" => 0,
+                  "mvp" => 0,
+                  "most_runs" => 0,
+                  "most_wickets" => 0,
+                  "winners" => 0,
+                  "runners" => 0,
+                  "gem" => 0,
+                }
+                p.trophies = trophies
                 p.csl_team_id = player["csl"]
                 p.ipl_team_id = player["ipl"]
                 p.born_team_id = player["born"]

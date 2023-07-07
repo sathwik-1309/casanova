@@ -35,7 +35,7 @@ class MatchController < ApplicationController
         motm["pid"] = match.motm_id
         motm["color"] = Squad.find(Performance.find_by(player: match.motm_id, match_id: m_id).squad_id).abbrevation
         score = Score.where(match_id: m_id, player_id: match.motm_id).first
-        if score.batted
+        if score.batted and score.runs > 0
             runs = Util.get_runs_with_notout(score)
             motm["bat"] = {
                 "runs" => runs,

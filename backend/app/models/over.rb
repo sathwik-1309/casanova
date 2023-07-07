@@ -8,7 +8,7 @@ class Over < ApplicationRecord
     def bowler
         return Player.find(self.bowler_id)
     end
-    def balls
+    def get_balls
         return Ball.where(over_id: self.id)
     end
 end

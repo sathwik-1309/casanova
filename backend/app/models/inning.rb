@@ -46,8 +46,7 @@ class Inning < ApplicationRecord
     end
 
     def get_rr
-        rr = ((self.score*6).to_f/Util.overs_to_balls(self.overs))
-        rr = sprintf('%.2f', rr.abs)
+        rr = Util.get_rr(self.score, Util.overs_to_balls(self.overs))
         return rr
     end
 

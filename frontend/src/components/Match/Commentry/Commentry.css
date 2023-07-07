@@ -1,0 +1,196 @@
+.commentry {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: fit-content;
+    box-shadow: var(--shadow-border);
+}
+.commentry_overbox {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 600px;
+    background-color: white;
+    font-weight: 400;
+    font-size: 1rem;
+
+}
+.co_header {
+    display: flex;
+    flex-direction: column;
+}
+.co_header_row1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+
+}
+.co_header_overs {
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    width: 80px;
+}
+.co_header_sequence {
+    width: 250px;
+    padding-left: 10px;
+}
+.co_header_total_runs {
+    font-size: 0.9rem;
+}
+.co_header_crr_box,
+.co_header_req_rr_box {
+    display: flex;
+    flex-direction: column;
+    width: 55px;
+}
+.co_header_crr_label,
+.co_header_req_rr_label {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    font-size: 0.6rem;
+    font-weight: 500;
+    height: 15px;
+}
+.co_header_crr_value,
+.co_header_req_rr_value {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    font-weight: 500;
+    height: 20px;
+}
+.co_header_teamname {
+    width: 90px;
+    font-weight: 600;
+    text-align: right;
+}
+.co_header_score {
+    width: 75px;
+    font-weight: 600;
+    padding-left: 10px;
+}
+.co_header_row2 {
+    display: flex;
+    height: 60px;
+}
+.co_header_row2_col1 {
+    display: flex;
+    flex-direction: column;
+}
+.co_header_batsman {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+}
+.co_header_batsman_name {
+    width: 220px;
+    padding-left: 10px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+.co_header_batsman_runs {
+    width: 30px;
+    font-weight: 600;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+.co_header_batsman_balls {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+.co_header_row2_col2 {
+    display: flex;
+    flex-direction: column;
+    height: 60px;
+}
+.co_header_bowler_name {
+    display: flex;
+    align-items: center;
+    width: 320px;
+    height: 30px;
+    padding-right: 10px;
+    justify-content: right;
+}
+.co_header_bowler_fig {
+    width: 320px;
+    font-weight: 600;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+    justify-content: right;
+}
+.co_header_bowler_overs {
+    font-weight: 400;
+    font-size: 0.9rem;
+    padding-left: 8px;
+    align-items: center;
+    display: flex;
+}
+.commentry_ballbox {
+    display: flex;
+    height: 35px;
+    border-top: 1px solid white;
+    font-size: 0.9rem;
+}
+.co_ball_result_parent {
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+.co_ball_result {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.co_delivery {
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+}
+.co_ball_commentry {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    width: 580px;
+    padding-left: 10px;
+    border-radius: 2px;
+}
+.co_tag_w {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 0.8rem;
+    display: flex;
+}
+.co_tag_4 {
+    background-color: var(--analysis2);
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 0.8rem;
+    display: flex;
+}
+.co_tag_6 {
+    background-color: var(--analysis1);
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: flex;
+}

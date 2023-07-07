@@ -300,18 +300,45 @@ class MatchController < ApplicationController
 
     def commentry
         overs_arr = []
+        ret_hash = {}
         m_id = params[:m_id].to_i
         inn_no = params[:inn_no].to_i
         inn_id = (2*m_id) - 2 + inn_no
+        if inn_no == 2
+            target = Inning.find(inn_id-1).score + 1
+        end
+
         inn = Inning.find(inn_id)
+        t_id = inn.tournament_id
+        ret_hash['tour_font'] = inn.tournament.get_tour_font
         overs = Over.where(inning_id: inn_id)
         batsman_hash = {}
+        scores_arr = []
+        bowler_hash = {}
         wicket_count = 0
+        ret_hash['bat_team_color'] = inn.bat_team.abbrevation
+        ret_hash['bow_team_color'] = inn.bow_team.abbrevation
+        scores = inn.scores.where(batted: true).order(position: :asc)
+        scores.each do |score|
+            temp1 = {}
+            temp1['name'] = Util.case(score.player.name, t_id)
+            temp1['runs'] = 0
+            temp1['balls'] = 0
+            scores_arr << temp1
+        end
+        batsman_hash[scores_arr[0]['name']] = scores_arr[0]
+        batsman_hash[scores_arr[1]['name']] = scores_arr[1]
+        cur_overs = 0.0
         overs.each do|over|
             hash = {}
             hash['over_no'] = over.over_no
             hash['runs'] = over.runs
             hash['score'] = "#{over.score} - #{over.for}"
+            over_delivery = (over.over_no - 1 + ((over.balls) * 0.1)).round(1)
+            hash['cur_rr'] = Util.get_rr(over.score,Util.overs_to_balls(over_delivery))
+            if inn_no == 2
+                hash['req_rr'] = Util.get_rr((target - over.score), 120 - Util.overs_to_balls(over_delivery))
+            end
             hash['teamname'] = inn.bat_team.get_abb
             ball_arr = []
             sequence = []
@@ -319,8 +346,8 @@ class MatchController < ApplicationController
             balls.each do|ball|
                 ball_hash = {}
                 ball_hash['delivery'] = ball.delivery
-                ball_hash['batsman'] = ball.batsman.name.titleize
-                ball_hash['bowler'] = ball.bowler.name.titleize
+                ball_hash['batsman'] = Util.case(ball.batsman.name, t_id)
+                ball_hash['bowler'] = Util.case(ball.bowler.name, t_id)
                 ball_hash['result'], ball_hash['tag'] = ball.get_result_and_tag
                 ball_hash['delivery'] = ball.delivery
                 sequence << ball_hash['result']
@@ -330,33 +357,38 @@ class MatchController < ApplicationController
                     temp["runs"] += ball.runs
                     temp["balls"] += 1 unless ball.extra_type == "wd"
                 else
-                    batsman_hash[ball_hash['batsman']] = {
-                      "name" => ball_hash['batsman'],
-                      "runs" => ball.runs,
-                      "balls" => 1
-                    }
+                    raise StandardError.new("❌ match_controller#commentry: error")
                 end
                 if ball.wicket_ball
                     wicket_count += 1
                     batsman_hash.delete(ball_hash['batsman'])
+                    new_batter = scores_arr[wicket_count+1]
+                    batsman_hash[new_batter['name']] = new_batter
                 end
             end
-            hash['sequence'] = sequence
+            hash['sequence'] = sequence.join(' ')
             hash['balls'] = ball_arr
             hash['batsman1'] = batsman_hash[batsman_hash.keys[0]].dup
-            if batsman_hash.keys.length == 1
-                batter = Score.find_by(inning_id: inn_id, position: wicket_count+2).player.name.titleize
-                batsman_hash[batter] = {
-                  "name" => batter,
-                  "runs" => 0,
-                  "balls" => 0
-                }
-                hash['batsman2'] = batsman_hash[batter].dup
-            else
+            if wicket_count < 10
                 hash['batsman2'] = batsman_hash[batsman_hash.keys[1]].dup
             end
+            bowler = Util.case(over.bowler.name, t_id)
+            if bowler_hash.keys.include? bowler
+                bowler_hash[bowler]["wickets"] += over.wickets
+                bowler_hash[bowler]["runs"] += over.bow_runs
+                bowler_hash[bowler]["overs"] = Util.balls_to_overs(Util.overs_to_balls(bowler_hash[bowler]["overs"]) + over.balls)
+            else
+                bowler_hash[bowler] = {
+                  "name" => bowler,
+                  "wickets" => over.wickets,
+                  "runs" => over.bow_runs,
+                  "overs" => Util.balls_to_overs(over.balls)
+                }
+            end
+            hash['bowler'] = bowler_hash[bowler].dup
             overs_arr << hash
         end
-        render(:json => Oj.dump({ "overs" => overs_arr }))
+        ret_hash['overs'] = overs_arr
+        render(:json => Oj.dump(ret_hash))
     end
 end

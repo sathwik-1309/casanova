@@ -155,7 +155,7 @@ module Uploader
         m_id = Match.last.id
         overs = Over.where(match_id: m_id)
         overs.each do|over|
-            balls = Ball.where(over_id: over.id)
+            balls = Ball.where(over_id: over.id, extra_type: [nil, "lb", "b"])
             over.balls = balls.length
             runs, bow_runs, wickets, wides, no_balls, extras, dots, c1, c2, c3, c4, c6 = 0,0,0,0,0,0,0,0,0,0,0,0
             balls.each do |ball|
@@ -342,7 +342,7 @@ module Uploader
             maiden_overs = spell.get_overs.where(runs: 0, extras: 0)
             maidens = 0
             maiden_overs.each do |over|
-                if over.balls.length == 6
+                if over.balls == 6
                     maidens += 1
                 end
             end

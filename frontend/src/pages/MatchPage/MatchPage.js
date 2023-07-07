@@ -7,6 +7,7 @@ import Summary from '../../components/Summary/Summary';
 import Fow from '../../components/Fow/Fow';
 import './MatchPage.css'
 import Worm from "../../components/Match/Worm/Worm";
+import Commentry from "../../components/Match/Commentry/Commentry";
 
 function MatchPage() {
     let { m_id } = useParams();
@@ -16,24 +17,27 @@ function MatchPage() {
     switch(graphic) {
         case "summary":
             component = <Summary m_id = {m_id}/>
-          break;
+            break;
         case "scorecard":
             component = <Scorecard m_id = {m_id} inn_no={inn_no}/>
-          break;
+            break;
         case "fow":
             component = <Fow m_id = {m_id} inn_no={inn_no}/>
-          break;
+            break;
         case "bowling_card":
             component = <BowlingCard m_id = {m_id} inn_no={inn_no}/>
-          break;
+            break;
         case "partnerships":
             component = <Partnerships m_id = {m_id} inn_no={inn_no}/>
-          break;
+            break;
         case "manhatten":
             component = <Manhatten m_id = {m_id} inn_no={inn_no}/>
-          break;
+            break;
         case "worm":
             component = <Worm m_id = {m_id} inn_no={inn_no}/>
+            break;
+        case "commentry":
+            component = <Commentry m_id = {m_id} inn_no={inn_no}/>
             break;
         default:
             component = <Summary m_id = {m_id}/>

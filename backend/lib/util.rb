@@ -177,5 +177,11 @@ module Util
         return ((runs.to_f*100)/balls.to_f).round(2)
     end
 
+    def self.get_rr(runs, balls)
+        rr = ((runs*6).to_f/balls)
+        rr = sprintf('%.2f', rr.abs)
+        return rr
+    end
+
 end
 

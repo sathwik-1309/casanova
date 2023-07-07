@@ -304,20 +304,44 @@ class MatchController < ApplicationController
         m_id = params[:m_id].to_i
         inn_no = params[:inn_no].to_i
         inn_id = (2*m_id) - 2 + inn_no
-        if inn_no == 2
-            target = Inning.find(inn_id-1).score + 1
-        end
-
         inn = Inning.find(inn_id)
         t_id = inn.tournament_id
-        ret_hash['tour_font'] = inn.tournament.get_tour_font
         overs = Over.where(inning_id: inn_id)
+        ret_hash['bat_team_color'] = inn.bat_team.abbrevation
+        ret_hash['bow_team_color'] = inn.bow_team.abbrevation
+        if inn_no == 2
+            target = Inning.find(inn_id-1).score + 1
+            inn1_over_scores = Over.where(inning_id: inn_id-1).pluck(:score)
+            inn2_over_scores = overs.pluck(:score)
+            team_color1 = ret_hash['bow_team_color']
+            team_color2 = ret_hash['bat_team_color']
+        else
+            inn1_over_scores = overs.pluck(:score)
+            inn2_over_scores = Over.where(inning_id: inn_id+1).pluck(:score)
+            team_color2 = ret_hash['bow_team_color']
+            team_color1 = ret_hash['bat_team_color']
+        end
+        max_length = [inn1_over_scores.length, inn2_over_scores.length].max
+        inn1_over_scores = InningHelper.adjust_array_length(inn1_over_scores, 20)
+        inn2_over_scores = InningHelper.adjust_array_length(inn2_over_scores, 20)
+        percentage_array = InningHelper.calculate_percentage_array(inn1_over_scores, inn2_over_scores)
+        percentages = []
+
+        percentage_array.each do|arr|
+            temp1 = {
+              "color" => team_color1,
+              "value" => arr[0]
+            }
+            temp2 = {
+              "color" => team_color2,
+              "value" => arr[1]
+            }
+            percentages << [temp1, temp2]
+        end
         batsman_hash = {}
         scores_arr = []
         bowler_hash = {}
         wicket_count = 0
-        ret_hash['bat_team_color'] = inn.bat_team.abbrevation
-        ret_hash['bow_team_color'] = inn.bow_team.abbrevation
         scores = inn.scores.where(batted: true).order(position: :asc)
         scores.each do |score|
             temp1 = {}
@@ -328,7 +352,6 @@ class MatchController < ApplicationController
         end
         batsman_hash[scores_arr[0]['name']] = scores_arr[0]
         batsman_hash[scores_arr[1]['name']] = scores_arr[1]
-        cur_overs = 0.0
         overs.each do|over|
             hash = {}
             hash['over_no'] = over.over_no
@@ -338,8 +361,14 @@ class MatchController < ApplicationController
             hash['cur_rr'] = Util.get_rr(over.score,Util.overs_to_balls(over_delivery))
             if inn_no == 2
                 hash['req_rr'] = Util.get_rr((target - over.score), 120 - Util.overs_to_balls(over_delivery))
+                hash['p_teamname2'] = inn.bat_team.get_abb
+                hash['p_teamname1'] = inn.bow_team.get_abb
+            else
+                hash['p_teamname1'] = inn.bat_team.get_abb
+                hash['p_teamname2'] = inn.bow_team.get_abb
             end
             hash['teamname'] = inn.bat_team.get_abb
+
             ball_arr = []
             sequence = []
             balls = Ball.where(over_id: over.id)
@@ -362,8 +391,10 @@ class MatchController < ApplicationController
                 if ball.wicket_ball
                     wicket_count += 1
                     batsman_hash.delete(ball_hash['batsman'])
-                    new_batter = scores_arr[wicket_count+1]
-                    batsman_hash[new_batter['name']] = new_batter
+                    if wicket_count < 10
+                        new_batter = scores_arr[wicket_count+1]
+                        batsman_hash[new_batter['name']] = new_batter
+                    end
                 end
             end
             hash['sequence'] = sequence.join(' ')
@@ -388,6 +419,8 @@ class MatchController < ApplicationController
             hash['bowler'] = bowler_hash[bowler].dup
             overs_arr << hash
         end
+        ret_hash['tour_font'] = inn.tournament.get_tour_font
+        ret_hash['percentages'] = percentages
         ret_hash['overs'] = overs_arr
         render(:json => Oj.dump(ret_hash))
     end

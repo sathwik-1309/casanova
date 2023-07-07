@@ -2,6 +2,36 @@ import {BACKEND_API_URL} from "../../../my_constants";
 import React, {useEffect, useState} from "react";
 import './Commentry.css'
 
+function PercentageBox(props) {
+    if (props.data == null) {
+        return <></>
+    }
+    let team1 = props.data[0]
+    let team2 = props.data[1]
+    const width1 = {
+        width: team1.value*2,
+    };
+    const width2 = {
+        width: team2.value*2,
+    };
+    const empty_height = {
+        height: props.height*35 + 20,
+    };
+    return (
+        <div className='co_percentage_box_parent'>
+            <div className='co_percentage_box_empty' style={empty_height}></div>
+            <div className='co_percentage_box_labels'>
+                <div className='co_pb_label1'>{props.bat_team}</div>
+                <div className='co_pb_label2'>Win %</div>
+                <div className='co_pb_label3'>{props.bow_team}</div>
+            </div>
+            <div className='co_percentage_box'>
+                <div className={`co_pb_team1 ${team1.color}1`} style={width1}>{team1.value}</div>
+                <div className={`co_pb_team2 ${team2.color}1`} style={width2}>{team2.value}</div>
+            </div>
+        </div>
+    );
+}
 function OverBox(props) {
     let batsman2 = <></>
     let over = props.over
@@ -23,6 +53,9 @@ function OverBox(props) {
     }
     return (
         <div className='commentry_overbox'>
+            {over.balls.map((ball, index) => (
+                <BallBox ball={ball} bat_color={props.bat_color}/>
+            ))}
             <div className={`co_header ${props.bat_color}2`}>
                 <div className='co_header_row1'>
                     <div className='co_header_overs'>OVER {over.over_no}</div>
@@ -50,9 +83,6 @@ function OverBox(props) {
                     </div>
                 </div>
             </div>
-            {over.balls.map((ball, index) => (
-                <BallBox ball={ball} bat_color={props.bat_color}/>
-            ))}
         </div>
 
     );
@@ -107,9 +137,16 @@ function Commentry(props) {
 
     return (
         <div className={`commentry ${data.tour_font}`}>
-            {overs.map((over, index) => (
-                <OverBox over={over} bat_color={data.bat_team_color} bow_color={data.bow_team_color}/>
-            ))}
+            <div className='commentry_overboxes'>
+                {overs.map((over, index) => (
+                    <OverBox over={over} bat_color={data.bat_team_color} bow_color={data.bow_team_color}/>
+                ))}
+            </div>
+            <div className='commentry_percentages'>
+                {overs.map((over, index) => (
+                    <PercentageBox data={data.percentages[Number(over.over_no)-1]} height={over.balls.length} bat_team={over.p_teamname1} bow_team={over.p_teamname2}/>
+                ))}
+            </div>
         </div>
     );
 }

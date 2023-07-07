@@ -1,10 +1,14 @@
 # backend
-/backend/log/
-/backend/tmp/
-/backend/_files/temp/
+backend/log/
+backend/_files/temp/*
+backend/vendor/bundle/*
+backend/tmp/*
+backend/.byebug_history
+backend/_files/temp
+
 
 # frontend
 /frontend/node_modules/
 
 # other
-.idea/workspace.xml
+/.idea/workspace.xml

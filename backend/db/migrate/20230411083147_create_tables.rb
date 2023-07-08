@@ -338,6 +338,7 @@ class CreateTables < ActiveRecord::Migration[7.0]
       t.string :ml_type
       t.string :sub_type
       t.json :value
+      t.json :previous_value
       t.json :tags
       t.belongs_to :match, foreign_key: true
       t.belongs_to :tournament, foreign_key: true

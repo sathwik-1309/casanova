@@ -5,6 +5,7 @@ import SummaryFooter from './SummaryFooter';
 import SummaryHeader from './SummaryHeader';
 import PerformanceBox from "../PerformanceBox/PerformanceBox";
 import { BACKEND_API_URL } from './../../my_constants';
+import MilestoneBox from "../Match/MilestoneBox/MilestoneBox";
 
 function Summary(props) {
 
@@ -37,19 +38,21 @@ function Summary(props) {
     let class1 = "summary " + data.tour
 
     return (
-        <div className='summary_parent'>
-            <div className={class1}>
-                <SummaryHeader header={data.header}/>
-                <SummaryInnings inn={data.inn1} tour={data.tour} func={handleBox}/>
-                <SummaryInnings inn={data.inn2} tour={data.tour} func={handleBox}/>
-                <SummaryFooter footer={data.footer}/>
+        <div className='summary_outer_parent'>
+            <div className='summary_parent'>
+                <div className={class1}>
+                    <SummaryHeader header={data.header}/>
+                    <SummaryInnings inn={data.inn1} tour={data.tour} func={handleBox}/>
+                    <SummaryInnings inn={data.inn2} tour={data.tour} func={handleBox}/>
+                    <SummaryFooter footer={data.footer}/>
+                </div>
+                <div className='summary_boxes'>
+                    {boxes.map((box, index) => (
+                        <PerformanceBox data={box} index={index} func={handleBox}/>
+                    ))}
+                </div>
             </div>
-            <div className='summary_boxes'>
-                {boxes.map((box, index) => (
-                    <PerformanceBox data={box} index={index} func={handleBox}/>
-                ))}
-            </div>
-
+            <MilestoneBox data={data.milestones} font={data.tour}/>
         </div>
     )
 

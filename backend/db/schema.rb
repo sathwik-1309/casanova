@@ -161,6 +161,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
     t.string "ml_type"
     t.string "sub_type"
     t.json "value"
+    t.json "previous_value"
     t.json "tags"
     t.integer "match_id"
     t.integer "tournament_id"

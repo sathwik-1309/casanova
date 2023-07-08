@@ -51,6 +51,15 @@ class MatchController < ApplicationController
         end
         footer["motm"] = motm
         hash["footer"] = footer
+        milestones = Milestone.where(match_id: m_id).order(sub_type: :desc)
+        ml_messages = []
+        milestones.each do|ml|
+            ml_messages << ml.get_message_hash
+        end
+        ml_messages = ml_messages.group_by {|ml_hash| ml_hash['color'] }
+        arr1 = ml_messages[match.inn1.bat_team.abbrevation] || []
+        arr2 = ml_messages[match.inn1.bow_team.abbrevation] || []
+        hash["milestones"] =  arr1 + arr2
         render(:json => Oj.dump(hash))
     end
 

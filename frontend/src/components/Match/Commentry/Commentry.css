@@ -221,7 +221,7 @@
     border-radius: 4px;
     overflow: hidden;
     background-color: white;
-    padding: 2px;
+    padding: 5px;
 }
 .co_pb_team1,
 .co_pb_team2 {
@@ -238,7 +238,7 @@
 }
 .co_pb_label1,
 .co_pb_label3 {
-    width: 60px;
+    width: 70px;
     display: flex;
     align-items: center;
 }
@@ -249,7 +249,8 @@
     justify-content: flex-end;
 }
 .co_pb_label2 {
-    width: 80px;
+    width: 60px;
+    font-size: 0.9rem;
     display: flex;
     justify-content: center;
     align-items: center;

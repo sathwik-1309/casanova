@@ -24,10 +24,27 @@ function Milestone(props) {
 }
 
 function MilestoneBox(props) {
+    let [sort, setSort] = useState('all');
+    let [ml_data, set_ml_data] = useState(props.data);
+
+    const set_sort = (type_class) => {
+        setSort(type_class)
+        let filteredData = props.data.filter(function(obj) {
+            return obj.type_class === type_class;
+        });
+        set_ml_data(filteredData)
+    };
+
     return (
         <div className={`milestone_box ${props.font}`}>
             <div className='milestone_box_label'>Milestones</div>
-            {props.data.map((milestone, index) => (
+            <div className='milestone_box_buttons'>
+                <div className={sort === 'overall' ? 'milestone_box_button_item ml_b_button_selected' : 'milestone_box_button_item'} onClick={() => set_sort('overall')}>OVERALL</div>
+                <div className={sort === 'tour_class' ? 'milestone_box_button_item ml_b_button_selected' : 'milestone_box_button_item'} onClick={() => set_sort('tour_class')}>TOUR CLASS</div>
+                <div className={sort === 'tour' ? 'milestone_box_button_item ml_b_button_selected' : 'milestone_box_button_item'} onClick={() => set_sort('tour')}>TOUR</div>
+                <div className={sort === 'team' ? 'milestone_box_button_item ml_b_button_selected' : 'milestone_box_button_item'} onClick={() => set_sort('team')}>TEAM</div>
+            </div>
+            {ml_data.map((milestone, index) => (
                 <Milestone key={index} data={milestone}/>
             ))}
         </div>

@@ -227,11 +227,26 @@ class Milestone < ApplicationRecord
     part1 = Player.find(p_id).fullname.titleize
     part4 = Milestone.get_message_for_sub_type(self.sub_type)
 
-    message = "#{part1} has #{part4.downcase} #{part3} (#{self.value['value']})"
+    temp_val2 = self.value['value']
+    case self.sub_type
+    when BEST_SCORE
+      temp_val2 = Score.find(self.value['value']['score_id']).get_runs_with_notout
+    when BEST_SPELL
+      temp_val2 = Spell.find(self.value['value']['spell_id']).get_fig
+    end
+
+    message = "#{part1} has #{part4.downcase} #{part3} (#{temp_val2})"
     if self.previous_value.nil?
       previous = "Previously held by None"
     else
-      previous = "Previously held by #{Player.find(self.previous_value['p_id']).fullname.titleize} (#{self.previous_value['value']})"
+      temp_val = self.previous_value['value']
+      case self.sub_type
+      when BEST_SCORE
+        temp_val = Score.find(self.previous_value['value']['score_id']).get_runs_with_notout
+      when BEST_SPELL
+        temp_val = Spell.find(self.previous_value['value']['spell_id']).get_fig
+      end
+      previous = "Previously held by #{Player.find(self.previous_value['p_id']).fullname.titleize} (#{temp_val})"
     end
     return message, previous
   end

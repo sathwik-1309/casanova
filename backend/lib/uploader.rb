@@ -420,8 +420,8 @@ module Uploader
         return true
     end
 
-    def self.update_bat_stats(m_id)
-        scores = Score.where(match_id: m_id).where(batted: true)
+    def self.update_bat_stats(match)
+        scores = match.scores.where(batted: true)
         scores.each do|score|
             sub_types = ["overall", "#{score.tournament.name}", "tour_#{score.tournament.id}", "#{score.squad.team.abbrevation}"]
             sub_types.each do|sub_type|
@@ -437,8 +437,8 @@ module Uploader
         return true
     end
 
-    def self.update_ball_stats(m_id)
-        spells = Spell.where(match_id: m_id)
+    def self.update_ball_stats(match)
+        spells = match.spells
         spells.each do|spell|
             sub_types = ["overall", "#{spell.tournament.name}", "tour_#{spell.tournament.id}", "#{spell.squad.team.abbrevation}"]
             sub_types.each do|sub_type|
@@ -590,6 +590,23 @@ module Uploader
         else
             puts "Uploader# Match upload successfull ✅"
             return true
+        end
+    end
+
+    def self.update_tournament_after_final(match)
+        file = File.read(TOURNAMENT_JSON_PATH)
+        tours = JSON.parse(file)
+        tour = tours.select { |tour| tour['id'] == match.tournament_id} [0]
+        raise StandardError.new("❌ Uploader#update_tournament_after_final: tour not found in tournaments.json") if tour.nil?
+        t = Tournament.find(match.tournament_id)
+        t.winners_id = tour['winners_id']
+        t.runners_id = tour['runners_id']
+        t.pots_id = tour['pots_id']
+        t.mvp_id = tour['mvp_id']
+        t.most_runs_id = tour['most_runs_id']
+        t.most_wickets_id = tour['most_wickets_id']
+        unless t.save
+            puts "❌ Uploader#update_tournament_after_final: error updating"
         end
     end
 

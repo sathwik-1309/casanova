@@ -6,14 +6,7 @@
 }
 
 #match_page_item1 {
-    height: 8%;
-    width: 100%;
-    position: fixed;
-}
-
-#match_page_item2 {
-    height: 92%;
-    margin-top: 8%;
+    margin-top: 40px;
     width: 100%;
     padding: 0 5px;
     padding-left: 100px;

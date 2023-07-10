@@ -12,7 +12,6 @@ class Milestone < ApplicationRecord
   TYPE_CLASSES = [OVERALL, TOUR_CLASS, TOUR, TEAM]
 
   # milestone sub_types
-  TOP_5_RUNS = "top_5_runs"
   BEST_SR = "best_sr"
   BEST_AVG = "best_avg"
   MOST_4S = "most_4s"
@@ -24,7 +23,6 @@ class Milestone < ApplicationRecord
   BEST_SCORE= "best_score"
   MOST_RUNS = "most_runs"
 
-  TOP_5_WICKETS = "top_5_wickets"
   BEST_BOW_SR = "best_bow_sr"
   BEST_BOW_AVG = "best_bow_avg"
   BEST_ECONOMY = "best_economy"
@@ -204,6 +202,101 @@ class Milestone < ApplicationRecord
     return new_image
   end
 
+  def get_message_hash
+    hash = {}
+    squad = Score.find_by(player_id: self.value['p_id'], match_id: self.match_id).squad
+    hash['color'] = squad.abbrevation
+    hash['type_class'] = Milestone.get_type_class(self.ml_type)
+    tour = Tournament.find(self.tournament_id)
+    hash['message'], hash['previous'] = self.get_player_messasge_hash(tour, squad.get_abb, hash['type_class'])
+    return hash
+  end
+
+  def get_player_messasge_hash(tour, teamname, type_class)
+    p_id = self.value['p_id']
+    case type_class
+    when OVERALL
+      part3 = OVERALL
+    when TOUR_CLASS
+      part3 = "in #{tour.name.upcase}"
+    when TOUR
+      part3 = "in this tournament"
+    when TEAM
+      part3 = "for #{teamname}"
+    end
+    part1 = Player.find(p_id).fullname.titleize
+    part4 = Milestone.get_message_for_sub_type(self.sub_type)
+
+    temp_val2 = self.value['value']
+    case self.sub_type
+    when BEST_SCORE
+      temp_val2 = Score.find(self.value['value']['score_id']).get_runs_with_notout
+    when BEST_SPELL
+      temp_val2 = Spell.find(self.value['value']['spell_id']).get_fig
+    end
+
+    message = "#{part1} has #{part4.downcase} #{part3} (#{temp_val2})"
+    if self.previous_value.nil?
+      previous = "Previously held by None"
+    else
+      temp_val = self.previous_value['value']
+      case self.sub_type
+      when BEST_SCORE
+        temp_val = Score.find(self.previous_value['value']['score_id']).get_runs_with_notout
+      when BEST_SPELL
+        temp_val = Spell.find(self.previous_value['value']['spell_id']).get_fig
+      end
+      previous = "Previously held by #{Player.find(self.previous_value['p_id']).fullname.titleize} (#{temp_val})"
+    end
+    return message, previous
+  end
+
+  def self.get_message_for_sub_type(sub_type)
+    case sub_type
+    when MOST_RUNS
+      return "MOST RUNS"
+    when BEST_SR
+      return "BEST SR"
+    when BEST_AVG
+      return "BEST AVG"
+    when MOST_4S
+      return "MOST FOURS"
+    when MOST_6S
+      return "MOST SIXES"
+    when MOST_50S
+      return "MOST FIFTIES"
+    when MOST_100S
+      return "MOST HUNDREDS"
+    when LOWEST_DOT_P
+      return "LOWEST DOT %"
+    when HIGHEST_BP
+      return "HIGHEST BOUNDARY %"
+    when BEST_SCORE
+      return "BEST SCORE"
+    when MOST_WICKETS
+      return "MOST WICKETS"
+    when BEST_BOW_SR
+      return "BEST BOWLING SR"
+    when BEST_BOW_AVG
+      return "BEST BOWLING AVG"
+    when BEST_ECONOMY
+      return "BEST ECONOMY"
+    when MOST_MAIDENS
+      return "MOST MAIDENS"
+    when MOST_3W
+      return "MOST 3W-HAULS"
+    when MOST_5W
+      return "MOST 5W-HAULS"
+    when HIGHEST_DOT_P
+      return "HIGHEST DOT %"
+    when LOWEST_BP
+      return "LOWEST BOUNDARY %"
+    when BEST_SPELL
+      return "BEST SPELL"
+    end
+    raise StandardError.new("Milestone#get_message_for_sub_type: sub_type not found")
+  end
+
   private
 
   def self.fetch_image(last_match_found, type, type_class)
@@ -235,10 +328,10 @@ class Milestone < ApplicationRecord
         query = bat_stats.order(c6: :desc).limit(1)
         field = 'c6'
       when MOST_50S
-        query = bat_stats.order(fifties: :desc).limit(1)
+        query = bat_stats.where('fifties > 0').order(fifties: :desc).limit(1)
         field = 'fifties'
       when MOST_100S
-        query = bat_stats.order(hundreds: :desc).limit(1)
+        query = bat_stats.where('hundreds > 0').order(hundreds: :desc).limit(1)
         field = 'hundreds'
       when MOST_RUNS
         query = bat_stats.order(runs: :desc).limit(1)
@@ -260,13 +353,13 @@ class Milestone < ApplicationRecord
         query = ball_stats.order(wickets: :desc).limit(1)
         field = 'wickets'
       when MOST_MAIDENS
-        query = ball_stats.order(maidens: :desc).limit(1)
+        query = ball_stats.where('maidens > 0').order(maidens: :desc).limit(1)
         field = 'maidens'
       when MOST_3W
-        query = ball_stats.order(three_wickets: :desc).limit(1)
+        query = ball_stats.where('three_wickets > 0').order(three_wickets: :desc).limit(1)
         field = 'three_wickets'
       when MOST_5W
-        query = ball_stats.order(five_wickets: :desc).limit(1)
+        query = ball_stats.where('five_wickets > 0').order(five_wickets: :desc).limit(1)
         field = 'five_wickets'
       when HIGHEST_DOT_P
         query = ball_stats.where('overs > 8').order(dot_p: :desc).limit(1)
@@ -366,6 +459,7 @@ class Milestone < ApplicationRecord
             m.ml_type = type
             m.sub_type = sub_type
             m.value = value
+            m.previous_value = prev_image[type][sub_type]
             in_match = false
             match_players = Score.where(match: match.id).pluck(:player_id)
             if match_players.include? value["p_id"]

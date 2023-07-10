@@ -95,10 +95,77 @@ class Match < ApplicationRecord
         end
     end
 
+    def get_highlights_hash
+        arr = []
+        scores = self.scores.where('runs >= 50')
+        scores.each do|score|
+            score_type = "50"
+            score_ss = 50
+            arr << self.get_highlights_hash_score(score, score_ss, score_type)
+            if score.runs >= 100
+                score_type = "100"
+                score_ss = 100
+                arr << self.get_highlights_hash_score(score, score_ss, score_type)
+            end
+        end
+        spells = self.spells.where('wickets >= 3')
+        spells.each do|spell|
+            spell_type = "3W-haul"
+            spell_ss = 3
+            arr << self.get_highlights_hash_spell(spell, spell_ss, spell_type)
+            if spell.wickets >= 5
+                spell_type = "5W-haul"
+                spell_ss = 5
+                arr << self.get_highlights_hash_spell(spell, spell_ss, spell_type)
+            end
+        end
+        arr
+    end
+
     private
 
     def update_stats
         Uploader.update_bat_stats(self.id)
         Uploader.update_ball_stats(self.id)
+    end
+
+    def get_highlights_hash_spell(spell, spell_ss, spell_type)
+        temp = {}
+        team = spell.squad.team
+        temp['color'] = team.abbrevation
+        p_id = spell.player_id
+        tour_class_ids = Tournament.where(name: self.tournament.name).pluck(:id)
+        p_spells = Spell.where(player_id: p_id, match_id: 1..self.id, wickets: spell_ss..Float::INFINITY)
+        overall_ = p_spells.length
+        tour_class_ = p_spells.select { |spell| tour_class_ids.include? spell.tournament_id }.length
+        tour_ = p_spells.select { |spell| spell.tournament_id == self.tournament_id }.length
+        team_ = p_spells.select { |spell| team.squads.pluck(:id).include? spell.squad_id }.length
+        temp['message'] = "#{spell.player.name.titleize}'s' #{Util.ordinal_suffix(tour_class_)} #{spell_type} in #{self.tournament.name}"
+        temp['others'] = [
+          "#{Util.ordinal_suffix(tour_)} #{spell_type} in this tournament",
+          "#{Util.ordinal_suffix(team_)} #{spell_type} for #{team.get_abb}",
+          "#{Util.ordinal_suffix(overall_)} #{spell_type} overall"
+        ]
+        temp
+    end
+
+    def get_highlights_hash_score(score, score_ss, score_type)
+        temp = {}
+        team = score.squad.team
+        temp['color'] = team.abbrevation
+        p_id = score.player_id
+        tour_class_ids = Tournament.where(name: self.tournament.name).pluck(:id)
+        p_scores = Score.where(player_id: p_id, match_id: 1..self.id, runs: score_ss..Float::INFINITY)
+        overall_ = p_scores.length
+        tour_class_ = p_scores.select { |score| tour_class_ids.include? score.tournament_id }.length
+        tour_ = p_scores.select { |score| score.tournament_id == self.tournament_id }.length
+        team_ = p_scores.select { |score| team.squads.pluck(:id).include? score.squad_id }.length
+        temp['message'] = "#{score.player.name.titleize}'s' #{Util.ordinal_suffix(tour_class_)} #{score_type} in #{self.tournament.name}"
+        temp['others'] = [
+          "#{Util.ordinal_suffix(tour_)} #{score_type} in this tournament",
+          "#{Util.ordinal_suffix(team_)} #{score_type} for #{team.get_abb}",
+          "#{Util.ordinal_suffix(overall_)} #{score_type} overall"
+        ]
+        temp
     end
 end

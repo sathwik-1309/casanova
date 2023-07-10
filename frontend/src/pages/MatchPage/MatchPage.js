@@ -44,7 +44,7 @@ function MatchPage() {
       }
     return (
         <div id="match_page">
-            <div id="match_page_item2">
+            <div id="match_page_item1">
                 <div>
                     {component}
                 </div>

@@ -183,5 +183,17 @@ module Util
         return rr
     end
 
+    def self.ordinal_suffix(number)
+        return number.to_s + "th" if (11..13).include?(number % 100)
+
+        case number % 10
+        when 1 then number.to_s + "st"
+        when 2 then number.to_s + "nd"
+        when 3 then number.to_s + "rd"
+        else number.to_s + "th"
+        end
+    end
+
+
 end
 

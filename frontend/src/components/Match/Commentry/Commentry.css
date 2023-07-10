@@ -1,9 +1,17 @@
 .commentry {
     display: flex;
-    flex-direction: column;
     height: fit-content;
     width: fit-content;
+}
+.commentry_overboxes {
+    display: flex;
+    flex-direction: column;
     box-shadow: var(--shadow-border);
+}
+.commentry_percentages {
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
 }
 .commentry_overbox {
     display: flex;
@@ -14,6 +22,9 @@
     font-weight: 400;
     font-size: 1rem;
 
+}
+.co_header_parent {
+    display: flex;
 }
 .co_header {
     display: flex;
@@ -193,4 +204,54 @@
     font-weight: 700;
     font-size: 0.9rem;
     display: flex;
+}
+
+.co_percentage_box_parent {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: fit-content;
+    font-weight: 600;
+    font-size: 1rem;
+}
+.co_percentage_box {
+    display: flex;
+    height: 40px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: white;
+    padding: 5px;
+}
+.co_pb_team1,
+.co_pb_team2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.co_percentage_box_labels {
+    display: flex;
+    height: 35px;
+    width: 200px;
+    background-color: white;
+    padding: 5px;
+}
+.co_pb_label1,
+.co_pb_label3 {
+    width: 70px;
+    display: flex;
+    align-items: center;
+}
+.co_pb_label1 {
+    justify-content: flex-start;
+}
+.co_pb_label3 {
+    justify-content: flex-end;
+}
+.co_pb_label2 {
+    width: 60px;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

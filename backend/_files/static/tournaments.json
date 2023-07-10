@@ -63,12 +63,12 @@
         "id": 6,
         "name": "csl",
         "season": 2,
-        "winners_id": null,
-        "runners_id": null,
-        "pots_id": null,
-        "mvp_id": null,
-        "most_runs_id": null,
-        "most_wickets_id": null,
+        "winners_id": 47,
+        "runners_id": 51,
+        "pots_id": 300,
+        "mvp_id": 301,
+        "most_runs_id": 300,
+        "most_wickets_id": 53,
         "groups": [[37,38,42],[31,32,35],[36,39,41],[33,34,40]]
     }
 ]

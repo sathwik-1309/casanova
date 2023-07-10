@@ -15,6 +15,7 @@ class Match < ApplicationRecord
         unless self.runs.nil?
             self.update_stats
             Uploader.update_milestone_image(self)
+            self.update_tournament
         end
     end
 
@@ -125,8 +126,14 @@ class Match < ApplicationRecord
     private
 
     def update_stats
-        Uploader.update_bat_stats(self.id)
-        Uploader.update_ball_stats(self.id)
+        Uploader.update_bat_stats(self)
+        Uploader.update_ball_stats(self)
+    end
+
+    def update_tournament
+        if self.stage == 'final'
+            Uploader.update_tournament_after_final(self)
+        end
     end
 
     def get_highlights_hash_spell(spell, spell_ss, spell_type)

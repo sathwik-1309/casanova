@@ -60,6 +60,7 @@ class MatchController < ApplicationController
         arr1 = ml_messages[match.inn1.bat_team.abbrevation] || []
         arr2 = ml_messages[match.inn1.bow_team.abbrevation] || []
         hash["milestones"] =  arr1 + arr2
+        hash['highlights'] = match.get_highlights_hash
         render(:json => Oj.dump(hash))
     end
 

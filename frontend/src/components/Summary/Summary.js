@@ -6,6 +6,7 @@ import SummaryHeader from './SummaryHeader';
 import PerformanceBox from "../PerformanceBox/PerformanceBox";
 import { BACKEND_API_URL } from './../../my_constants';
 import MilestoneBox from "../Match/MilestoneBox/MilestoneBox";
+import HighlightsBox from "../Match/HighlightsBox/HighlightsBox";
 
 function Summary(props) {
 
@@ -52,6 +53,7 @@ function Summary(props) {
                     ))}
                 </div>
             </div>
+            <HighlightsBox data={data.highlights} font={data.tour}/>
             <MilestoneBox data={data.milestones} font={data.tour}/>
         </div>
     )

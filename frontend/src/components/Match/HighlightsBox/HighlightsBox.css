@@ -1,0 +1,49 @@
+.highlight_parent {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid lightgray;
+    margin-bottom: 1px;
+}
+.highlight {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    height: 35px;
+    border-radius: 2px;
+}
+.highlight:hover {
+    border: 1px solid white;
+}
+.highlight_other {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: black;
+}
+
+.highlights_box {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    background-color: white;
+    padding: 3px;
+    box-shadow: var(--shadow-border);
+    width: 600px;
+}
+.highlights_box_label {
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+}
+.h_other_item {
+    display: flex;
+    height: 35px;
+    align-items: center;
+    padding-left: 10px;
+}

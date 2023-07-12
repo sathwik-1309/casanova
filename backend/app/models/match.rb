@@ -175,4 +175,44 @@ class Match < ApplicationRecord
         ]
         temp
     end
+
+    def self.innings_progression_hash(innings, stage)
+        case stage
+        when 'powerplay'
+            o = innings.get_overs.find_by(over_no: 6)
+            Match.return_progression_hash(o.score, o.for, innings)
+        when 'middle'
+            o = innings.get_overs.find_by(over_no: 6)
+            prev_score = o.score
+            prev_for = o.for
+            o2 = innings.get_overs.where('over_no <= 15').order(over_no: :desc).limit(1).first
+            score = o2.score - prev_score
+            wickets = o2.for - prev_for
+            Match.return_progression_hash(score, wickets, innings)
+        when 'death'
+            o = innings.get_overs.find_by(over_no: 15)
+            if o.nil?
+                return nil
+            else
+                prev_score = o.score
+                prev_for = o.for
+                o2 = innings.get_overs.where('over_no > 15').order(over_no: :desc).limit(1).first
+                score = o2.score - prev_score
+                wickets = o2.for - prev_for
+                Match.return_progression_hash(score, wickets, innings)
+            end
+
+        end
+    end
+
+    private
+
+    def self.return_progression_hash(runs, wickets, innings)
+        return {
+          "score" => "#{runs}-#{wickets}",
+          "color" => innings.bat_team.abbrevation,
+          "teamname" =>  innings.bat_team.abbrevation.upcase,
+          "height" => [runs*4, 400].min
+        }
+    end
 end

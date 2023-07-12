@@ -434,4 +434,16 @@ class MatchController < ApplicationController
         ret_hash['overs'] = overs_arr
         render(:json => Oj.dump(ret_hash))
     end
+
+    def innings_progression
+        m_id = params[:m_id]
+        match = Match.find(m_id)
+        hash = {}
+        innings_progression = {}
+        innings_progression['powerplay'] = [ Match.innings_progression_hash(match.inn1, 'powerplay'), Match.innings_progression_hash(match.inn2, 'powerplay')]
+        innings_progression['middle'] = [ Match.innings_progression_hash(match.inn1, 'middle'), Match.innings_progression_hash(match.inn2, 'middle')]
+        innings_progression['death'] = [ Match.innings_progression_hash(match.inn1, 'death'), Match.innings_progression_hash(match.inn2, 'death')]
+        hash['innings_progression'] = innings_progression
+        render(:json => Oj.dump(hash))
+    end
 end

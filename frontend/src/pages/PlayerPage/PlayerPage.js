@@ -1,9 +1,6 @@
 import { useParams } from 'react-router-dom';
-import Topbar from './Topbar/Topbar';
 import './PlayerPage.css'
 import PBatStats from "../../components/Player/PBatStats/PBatStats";
-import Summary from "../../components/Summary/Summary";
-import Scorecard from "../../components/Scorecard/Scorecard";
 import PBallStats from "../../components/Player/PBallStats/PBallStats";
 
 

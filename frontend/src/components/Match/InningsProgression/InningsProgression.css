@@ -1,0 +1,48 @@
+.innings_progression {
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-border);
+    background-color: white;
+    width: fit-content;
+}
+.ip_graphic_box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: fit-content;
+}
+.ip_phase_box {
+    display: flex;
+    height: 450px;
+    align-items: flex-end;
+    padding: 0 20px;
+}
+.ip_phase_bar {
+    display: flex;
+    flex-direction: column;
+    width: 60px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.ip_labels {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: fit-content;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.ip_label {
+    display: flex;
+    justify-content: center;
+    width: 160px;
+}
+.ip_phase_bar_score {
+    display: flex;
+    justify-content: center;
+}
+.ip_phase_bar_graph {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}

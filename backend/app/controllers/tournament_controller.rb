@@ -318,4 +318,50 @@ class TournamentController < ApplicationController
     hash["tour_stats"] = tour_stats
     render(:json => Oj.dump(hash))
   end
+
+  def create
+    if TOURNAMENT_NAMES.exclude? params[:name]
+      error_msg = 'Tournament name not found'
+      render_404(error_msg, {"error"=>error_msg})
+      return
+    end
+    t = Tournament.new
+    t.id = Tournament.last.id + 1
+    t.name = params[:name]
+    t.season = Tournament.where(name: params[:name]).last.season + 1
+    unless t.save
+      error_msg = t.errors.full_messages
+      render_404(error_msg, {"error"=>error_msg})
+      return
+    end
+    render_200
+  end
+
+  def list
+    arr = []
+    tours = Tournament.all
+    tours.each do|tour|
+      hash = {}
+      hash['name'] = tour.get_tour_with_season
+      hash['matches'] = tour.matches.count
+      hash["t_id"] = tour.id
+      arr << hash
+    end
+    render(:json => Oj.dump(arr))
+  end
+
+  def delete
+    t_ids = params[:t_ids]
+    status = true
+    msg = "Tournaments deleted successfully"
+    t_ids.each do|t_id|
+      t = Tournament.find(t_id)
+      unless t.destroy
+        msg = "Failed to delete tournament"
+        status = false
+      end
+    end
+    render_404(msg, {"error"=>msg}) unless status
+    render_200(msg,{"error"=>msg})
+  end
 end

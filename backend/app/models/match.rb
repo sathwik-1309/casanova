@@ -123,7 +123,66 @@ class Match < ApplicationRecord
         arr
     end
 
+    def self.innings_phase_performers_hash(innings, phase)
+        case phase
+        when 'powerplay'
+            balls = innings.balls.where('delivery <= 6.0')
+        when 'middle'
+            balls = innings.balls.where('delivery >= 6.0 and delivery < 15.0')
+        when 'death'
+            balls = innings.balls.where('delivery >= 15.0')
+        end
+        return Match.get_phase_performers(balls)
+    end
+
     private
+
+    def self.get_phase_performers(balls)
+        batsmen = {}
+        bowlers = {}
+        balls.each do |ball|
+            unless batsmen.has_key? ball.batsman_id.to_s
+                p_id = ball.batsman_id.to_s
+                batsmen[p_id] = {
+                  "p_id" => p_id,
+                  "name" => Player.find(p_id).name.titleize,
+                  "runs" => 0,
+                  "balls" => 0,
+                  "out" => false
+                }
+            end
+            unless bowlers.has_key? ball.bowler_id.to_s
+                p_id = ball.bowler_id.to_s
+                bowlers[p_id] = {
+                  "p_id" => p_id,
+                  "name" => Player.find(p_id).name.titleize,
+                  "balls" => 0,
+                  "runs" => 0,
+                  "wickets" => 0
+                }
+            end
+            batsmen, bowlers = Match.update_player_hashes(ball, batsmen, bowlers)
+        end
+        batsman = batsmen.values.sort_by{|b| -b["runs"]}[0]
+        bowler = bowlers.values.sort_by{|b|[-b["wickets"], (Util.get_rr(b["runs"], b["balls"]))]}[0]
+        unless bowler.nil?
+            bowler["overs"] = Util.format_overs(Util.balls_to_overs(bowler["balls"]))
+        end
+        return batsman, bowler
+    end
+
+    def self.update_player_hashes(ball, batsmen, bowlers)
+        bat_runs = ball.runs - ball.extras
+        bat = batsmen[ball.batsman_id.to_s]
+        bat["balls"] += 1 unless ball.extra_type == 'wd'
+        bat["runs"] += bat_runs
+        bat["out"] = true if ball.wicket_ball
+        bow = bowlers[ball.bowler_id.to_s]
+        bow["balls"] += 1 unless ['wd', 'nb'].include? ball.extra_type
+        bow["runs"] += ball.bow_runs
+        bow["wickets"] += 1 if ball.wicket_ball
+        return batsmen, bowlers
+    end
 
     def update_stats
         Uploader.update_bat_stats(self)
@@ -175,6 +234,21 @@ class Match < ApplicationRecord
         ]
         temp
     end
+
+    def self.get_inn_hash_for_phase_performers(inn)
+        inn1 = {}
+        inn1['teamname'] = inn.bat_team.get_abb
+        inn1['color'] = inn.bat_team.abbrevation
+        inn1['score'] = inn.get_score
+        ['powerplay', 'middle', 'death'].each do|phase|
+            inn1[phase] = {}
+            inn1[phase]['performers'] = Match.innings_phase_performers_hash(inn, phase)
+        end
+
+
+        return inn1
+    end
+
 
     def self.innings_progression_hash(innings, stage)
         case stage

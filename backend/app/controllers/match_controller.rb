@@ -444,6 +444,11 @@ class MatchController < ApplicationController
         innings_progression['middle'] = [ Match.innings_progression_hash(match.inn1, 'middle'), Match.innings_progression_hash(match.inn2, 'middle')]
         innings_progression['death'] = [ Match.innings_progression_hash(match.inn1, 'death'), Match.innings_progression_hash(match.inn2, 'death')]
         hash['innings_progression'] = innings_progression
+        performers = {}
+
+        performers['inn1'] = Match.get_inn_hash_for_phase_performers(match.inn1)
+        performers['inn2'] = Match.get_inn_hash_for_phase_performers(match.inn2)
+        hash['performers'] = performers
         render(:json => Oj.dump(hash))
     end
 end

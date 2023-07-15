@@ -65,4 +65,8 @@ class Inning < ApplicationRecord
         inn['overs'] = self.overs
         return inn
     end
+
+    def get_score
+        return Util.get_score(self.score, self.for)
+    end
 end

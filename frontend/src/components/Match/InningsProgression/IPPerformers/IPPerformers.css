@@ -1,0 +1,63 @@
+.ip_performers {
+    width: fit-content;
+    height: fit-content;
+}
+.ip_performers_innings {
+    width: fit-content;
+}
+.pib_scoreline {
+    width: 690px;
+    height: 50px;
+}
+.pibs_teamname {
+    width: 590px;
+    padding-left: 10px;
+}
+.pibs_score {
+    width: 65px;
+}
+.pibs_overs {
+    width: 25px;
+    padding-top: 2px;
+}
+.ip_performers_box {
+    width: 230px;
+    padding: 5px;
+}
+.ip_player_box {
+    height: 50px;
+    margin: 1px;
+    overflow: hidden;
+}
+.ip_player_box_name {
+    width: 100px;
+}
+.ip_player_box_perf {
+    width: 70px;
+}
+.ip_player_box_bat_runs {
+    width: 50px;
+    justify-content: flex-end;
+    padding-right: 5px;
+}
+.ip_player_box_bat_balls {
+    width: 20px;
+    padding-top: 3px;
+    padding-left: 2px;
+}
+.ip_player_box_bow_fig {
+    width: 50px;
+    justify-content: flex-end;
+    padding-right: 5px;
+}
+.ip_player_box_bow_overs {
+    width: 20px;
+    padding-top: 3px;
+    padding-left: 2px;
+}
+.ip_pb_phase_score {
+    height: 25px;
+}
+.ip_pb_phase_label {
+    height: 40px;
+}

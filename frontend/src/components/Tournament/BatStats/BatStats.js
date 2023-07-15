@@ -22,7 +22,6 @@ function BatStats(props) {
     if (!data) {
         return <div>Loading...</div>;
     }
-    console.log(data.bat_stats.boxes)
 
     return (
 

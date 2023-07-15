@@ -11,12 +11,14 @@ import TournamentPage from "./pages/TournamentPage/TournamentPage";
 import PlayerPage from "./pages/PlayerPage/PlayerPage";
 import MatchesPage from "./pages/MatchesPage/MatchesPage";
 import './components/css/teams.css'
+import './common.css'
 import TournamentsPage from "./pages/TournamentsPage/TournamentsPage";
 import PlayersPage from "./pages/PlayersPage/PlayersPage";
 import TeamsPage from "./pages/TeamsPage/TeamsPage";
 import VenuesPage from "./pages/VenuesPage/VenuesPage";
 import TournamentHome from "./pages/TournamentPage/TournamentHome/TournamentHome";
 import Meta from "./components/Meta/Meta";
+import CreateTournament from "./pages/Create/Tournament/CreateTournament";
 
 
 function App() {
@@ -58,6 +60,9 @@ function App() {
       <Route path="/players" element={<WebPage page={<PlayersPage/>} s_id='players_page'/>} />
 
       <Route path="/matches" element={<WebPage page={<MatchesPage/>}/>}  />
+
+      <Route path="/create/tournament" element={<WebPage page={<CreateTournament/>}/>}  />
+
 
 
     </Routes>

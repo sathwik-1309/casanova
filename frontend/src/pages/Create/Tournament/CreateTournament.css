@@ -1,0 +1,91 @@
+.create_tour_parent {
+    margin-top: 15px;
+}
+.tour_form {
+    display: flex;
+    flex-direction: column;
+  }
+
+.tf_label {
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100px;
+    display: flex;
+    align-items: center;
+}
+.tf_field {
+    display: flex;
+    height: 50px;
+    margin-bottom: 8px;
+}
+
+input {
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    width: 300px;
+}
+.tf_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 80px;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+.tf_button:hover {
+    background-color: darkgray;
+    color: white;
+}
+
+.tournament_list {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    font-weight: 500;
+    width: 800px;
+    height: fit-content;
+    background-color: white;
+    align-items: center;
+    margin: 20px;
+    box-shadow: var(--shadow-border);
+    padding: 10px;
+}
+.tournament_list_label {
+    height: 40px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+.tournament_list_items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+.tournament_list_item {
+    height: 40px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid lightgray;
+    margin: 6px;
+}
+.tournament_list_item:hover {
+    border: 2px solid black;
+}
+.tf_selected {
+    background-color: rgb(30, 96, 212);
+    color: white;
+}

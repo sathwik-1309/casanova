@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     get '/:m_id/:inn_no/partnerships' => 'match#partnerships'
     get '/:m_id/worm' => 'match#worm'
     get '/:m_id/:inn_no/commentry' => 'match#commentry'
+    get '/:m_id/innings_progression' => 'match#innings_progression'
     # get '/:m_id/match_box' => 'match#match_box'
   end
 
@@ -20,6 +21,9 @@ Rails.application.routes.draw do
   end
 
   scope :tournament do
+    post '/create' => 'tournament#create'
+    get '/list' => 'tournament#list'
+    delete '/delete' => 'tournament#delete'
     get '/:t_id/points_table' => 'tournament#points_table'
     get '/:t_id/bat_stats' => 'tournament#bat_stats'
     get '/:t_id/ball_stats' => 'tournament#ball_stats'

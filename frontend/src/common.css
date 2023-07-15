@@ -1,0 +1,83 @@
+.flex-row {
+    display: flex;
+}
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hor-align {
+    justify-content: center;
+}
+.vert-align {
+    align-items: center;
+}
+.flex {
+    display: flex;
+}
+
+/* background-color */
+
+.bg-white {
+    background-color: white;
+}
+.bg-black {
+    background-color: black;
+}
+.bg-theme1 {
+    background-color: var(--analysis1);
+}
+.bg-shadow {
+    box-shadow: var(--shadow-border);
+}
+
+/* color */
+.c-white {
+    color: white;
+}
+
+/* border-radius */
+.b-radius-2 {
+    border-radius: 2px;
+}
+.b-radius-3 {
+    border-radius: 3px;
+}
+.b-radius-4 {
+    border-radius: 4px;
+}
+.b-radius-5 {
+    border-radius: 5px;
+}
+
+/* font-weights */
+
+.font-400 {
+    font-weight: 400;
+}
+.font-500 {
+    font-weight: 500;
+}
+.font-600 {
+    font-weight: 600;
+}
+.font-700 {
+    font-weight: 700;
+}
+
+/* font-sizes */
+
+.font-1 {
+    font-size: 1rem;
+}
+.font-0_9 {
+    font-size: 0.9rem;
+}
+.font-0_8 {
+    font-size: 0.8rem;
+}

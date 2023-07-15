@@ -253,7 +253,8 @@ class Match < ApplicationRecord
             inn1[phase] = {}
             inn1[phase]['performers'] = Match.innings_phase_performers_hash(inn, phase)
             unless innings_progression[phase][inn.inn_no-1].nil?
-                inn1[phase]['score'] = innings_progression[phase][inn.inn_no-1]["total_score"]
+                inn1[phase]['total_score'] = innings_progression[phase][inn.inn_no-1]["total_score"]
+                inn1[phase]['phase_score'] = innings_progression[phase][inn.inn_no-1]["score"]
             else
                 inn1[phase]['score'] = nil
             end
@@ -283,9 +284,14 @@ class Match < ApplicationRecord
                 prev_score = o.score
                 prev_for = o.for
                 o2 = innings.get_overs.where('over_no > 15').order(over_no: :desc).limit(1).first
-                score = o2.score - prev_score
-                wickets = o2.for - prev_for
-                Match.return_progression_hash(score, wickets, innings, o2.score, o2.for)
+                unless o2.nil?
+                    score = o2.score - prev_score
+                    wickets = o2.for - prev_for
+                    Match.return_progression_hash(score, wickets, innings, o2.score, o2.for)
+                else
+                    Match.return_progression_hash(score, wickets, innings, nil, nil)
+                end
+
             end
 
         end
@@ -294,12 +300,14 @@ class Match < ApplicationRecord
     private
 
     def self.return_progression_hash(runs, wickets, innings, total_runs, total_wickets)
+        return nil if runs.nil?
+        total_score = "#{total_runs}-#{total_wickets}" unless total_runs.nil?
         return {
           "score" => "#{runs}-#{wickets}",
           "color" => innings.bat_team.abbrevation,
           "teamname" =>  innings.bat_team.abbrevation.upcase,
           "height" => [runs*4, 400].min,
-          "total_score" => "#{total_runs}-#{total_wickets}",
+          "total_score" => total_score,
         }
     end
 end

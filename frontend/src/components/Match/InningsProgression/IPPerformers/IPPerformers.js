@@ -3,7 +3,7 @@ import './IPPerformers.css'
 
 function PlayerBox(props) {
     let data = props.data
-    let player_perf;
+    let player_perf; 
     if (props.type === 'batsman') {
         player_perf = <div className='ip_player_box_perf flex-row'>
             <div className='ip_player_box_bat_runs flex font-1 font-600'>{data.runs}</div>
@@ -18,7 +18,7 @@ function PlayerBox(props) {
     }
     return (
         <div className={`flex-row ip_player_box flex vert-align font-0_9 b-radius-3 ${data.color}1`}>
-            < Photocard p_id = {data.p_id} color={data.color} height={'48px'}/>
+            < Photocard p_id = {data.p_id} color={'no-color'} height={'48px'}/>
             <div className='ip_player_box_name'>{data.name}</div>
             {player_perf}
         </div>
@@ -27,12 +27,16 @@ function PlayerBox(props) {
 
 function PerformersBox(props) {
     let data = props.data
+    if (data.score === null) {
+        return <></>
+    }
     return (
         <div className='flex-col ip_performers_box font-500'>
             <PlayerBox type='batsman' data={data.performers[0]}/>
             <PlayerBox type='bowler' data={data.performers[1]}/>
-            <div className='flex-centered ip_pb_phase_score'>{data.score}</div>
-            <div className='flex-centered ip_pb_phase_label'>{props.phase}</div>
+            <div className='flex-centered font-600 font-0_9 ip_pb_phase_score'>{data.phase_score}</div>
+            <div className='flex-centered font-500 font-0_9 ip_pb_phase_score'>{data.total_score}</div>
+            <div className='flex-centered font-600 font-0_9 bg-black c-white ip_pb_phase_label'>{props.phase}</div>
         </div>
     );
 }
@@ -48,9 +52,9 @@ function PerformersInningsBox(props) {
                 <div className='pibs_overs font-400 font-0_8'>{data.overs}</div>
             </div>
             <div className='flex-row pib_performers_boxes'>
-                <PerformersBox data={data.powerplay} phase='powerplay'/>
-                <PerformersBox data={data.middle} phase='middle'/>
-                <PerformersBox data={data.death} phase='death'/>
+                <PerformersBox data={data.powerplay} phase='POWERPLAY'/>
+                <PerformersBox data={data.middle} phase='MIDDLE'/>
+                <PerformersBox data={data.death} phase='DEATH'/>
             </div>
         </div>
     );

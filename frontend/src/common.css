@@ -21,11 +21,24 @@
     display: flex;
 }
 
+/* background-color */
+
 .bg-white {
     background-color: white;
 }
+.bg-black {
+    background-color: black;
+}
+.bg-theme1 {
+    background-color: var(--analysis1);
+}
 .bg-shadow {
     box-shadow: var(--shadow-border);
+}
+
+/* color */
+.c-white {
+    color: white;
 }
 
 /* border-radius */

@@ -26,7 +26,8 @@
 }
 .ip_player_box {
     height: 50px;
-    border: 1px solid white;
+    margin: 1px;
+    overflow: hidden;
 }
 .ip_player_box_name {
     width: 100px;
@@ -53,4 +54,10 @@
     width: 20px;
     padding-top: 3px;
     padding-left: 2px;
+}
+.ip_pb_phase_score {
+    height: 25px;
+}
+.ip_pb_phase_label {
+    height: 40px;
 }

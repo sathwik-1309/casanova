@@ -1,3 +1,9 @@
+.innings_progression_parent {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 .innings_progression {
     display: flex;
     flex-direction: column;

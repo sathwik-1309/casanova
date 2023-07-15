@@ -304,6 +304,7 @@ class MatchController < ApplicationController
 
         hash['inn1'] = inn1_hash
         hash['inn2'] = inn2_hash
+        hash['tour_font'] = inn1.match.tournament.get_tour_font
 
         render(:json => Oj.dump(hash))
     end
@@ -446,9 +447,10 @@ class MatchController < ApplicationController
         hash['innings_progression'] = innings_progression
         performers = {}
 
-        performers['inn1'] = Match.get_inn_hash_for_phase_performers(match.inn1)
-        performers['inn2'] = Match.get_inn_hash_for_phase_performers(match.inn2)
+        performers['inn1'] = Match.get_inn_hash_for_phase_performers(match.inn1, innings_progression)
+        performers['inn2'] = Match.get_inn_hash_for_phase_performers(match.inn2, innings_progression)
         hash['performers'] = performers
+        hash['tour_font'] = match.tournament.get_tour_font
         render(:json => Oj.dump(hash))
     end
 end

@@ -11,6 +11,7 @@ import TournamentPage from "./pages/TournamentPage/TournamentPage";
 import PlayerPage from "./pages/PlayerPage/PlayerPage";
 import MatchesPage from "./pages/MatchesPage/MatchesPage";
 import './components/css/teams.css'
+import './common.css'
 import TournamentsPage from "./pages/TournamentsPage/TournamentsPage";
 import PlayersPage from "./pages/PlayersPage/PlayersPage";
 import TeamsPage from "./pages/TeamsPage/TeamsPage";

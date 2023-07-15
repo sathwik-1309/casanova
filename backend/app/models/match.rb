@@ -132,12 +132,12 @@ class Match < ApplicationRecord
         when 'death'
             balls = innings.balls.where('delivery >= 15.0')
         end
-        return Match.get_phase_performers(balls)
+        return Match.get_phase_performers(balls, innings)
     end
 
     private
 
-    def self.get_phase_performers(balls)
+    def self.get_phase_performers(balls, innings)
         batsmen = {}
         bowlers = {}
         balls.each do |ball|
@@ -148,7 +148,8 @@ class Match < ApplicationRecord
                   "name" => Player.find(p_id).name.titleize,
                   "runs" => 0,
                   "balls" => 0,
-                  "out" => false
+                  "out" => false,
+                  "color" => innings.bat_team.abbrevation
                 }
             end
             unless bowlers.has_key? ball.bowler_id.to_s
@@ -158,7 +159,8 @@ class Match < ApplicationRecord
                   "name" => Player.find(p_id).name.titleize,
                   "balls" => 0,
                   "runs" => 0,
-                  "wickets" => 0
+                  "wickets" => 0,
+                  "color" => innings.bow_team.abbrevation
                 }
             end
             batsmen, bowlers = Match.update_player_hashes(ball, batsmen, bowlers)
@@ -167,6 +169,12 @@ class Match < ApplicationRecord
         bowler = bowlers.values.sort_by{|b|[-b["wickets"], (Util.get_rr(b["runs"], b["balls"]))]}[0]
         unless bowler.nil?
             bowler["overs"] = Util.format_overs(Util.balls_to_overs(bowler["balls"]))
+            bowler["fig"] = "#{bowler["wickets"]}-#{bowler["runs"]}"
+        end
+        unless batsman.nil?
+            unless batsman["out"]
+                batsman["runs"] = "#{batsman["runs"]}*"
+            end
         end
         return batsman, bowler
     end
@@ -235,17 +243,21 @@ class Match < ApplicationRecord
         temp
     end
 
-    def self.get_inn_hash_for_phase_performers(inn)
+    def self.get_inn_hash_for_phase_performers(inn, innings_progression)
         inn1 = {}
-        inn1['teamname'] = inn.bat_team.get_abb
+        inn1['teamname'] = inn.bat_team.get_teamname
         inn1['color'] = inn.bat_team.abbrevation
         inn1['score'] = inn.get_score
+        inn1['overs'] = inn.overs
         ['powerplay', 'middle', 'death'].each do|phase|
             inn1[phase] = {}
             inn1[phase]['performers'] = Match.innings_phase_performers_hash(inn, phase)
+            unless innings_progression[phase][inn.inn_no-1].nil?
+                inn1[phase]['score'] = innings_progression[phase][inn.inn_no-1]["total_score"]
+            else
+                inn1[phase]['score'] = nil
+            end
         end
-
-
         return inn1
     end
 
@@ -254,7 +266,7 @@ class Match < ApplicationRecord
         case stage
         when 'powerplay'
             o = innings.get_overs.find_by(over_no: 6)
-            Match.return_progression_hash(o.score, o.for, innings)
+            Match.return_progression_hash(o.score, o.for, innings, o.score, o.for)
         when 'middle'
             o = innings.get_overs.find_by(over_no: 6)
             prev_score = o.score
@@ -262,7 +274,7 @@ class Match < ApplicationRecord
             o2 = innings.get_overs.where('over_no <= 15').order(over_no: :desc).limit(1).first
             score = o2.score - prev_score
             wickets = o2.for - prev_for
-            Match.return_progression_hash(score, wickets, innings)
+            Match.return_progression_hash(score, wickets, innings, o2.score, o2.for)
         when 'death'
             o = innings.get_overs.find_by(over_no: 15)
             if o.nil?
@@ -273,7 +285,7 @@ class Match < ApplicationRecord
                 o2 = innings.get_overs.where('over_no > 15').order(over_no: :desc).limit(1).first
                 score = o2.score - prev_score
                 wickets = o2.for - prev_for
-                Match.return_progression_hash(score, wickets, innings)
+                Match.return_progression_hash(score, wickets, innings, o2.score, o2.for)
             end
 
         end
@@ -281,12 +293,13 @@ class Match < ApplicationRecord
 
     private
 
-    def self.return_progression_hash(runs, wickets, innings)
+    def self.return_progression_hash(runs, wickets, innings, total_runs, total_wickets)
         return {
           "score" => "#{runs}-#{wickets}",
           "color" => innings.bat_team.abbrevation,
           "teamname" =>  innings.bat_team.abbrevation.upcase,
-          "height" => [runs*4, 400].min
+          "height" => [runs*4, 400].min,
+          "total_score" => "#{total_runs}-#{total_wickets}",
         }
     end
 end

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { BACKEND_API_URL } from "../../../my_constants";
 import './InningsProgression.css'
+import IPPerformers from "./IPPerformers/IPPerformers";
 
 function InningsProgression(props) {
     let url = `${BACKEND_API_URL}/match/${props.m_id}/innings_progression`
@@ -20,18 +21,22 @@ function InningsProgression(props) {
     if (!data) {
         return <div>Loading...innings progression</div>;
     }
+
     return (
-        <div className='innings_progression'>
-            <div className='ip_graphic_box'>
-                <InnProgressionPhaseBox data={data.innings_progression.powerplay}/>
-                <InnProgressionPhaseBox data={data.innings_progression.middle}/>
-                <InnProgressionPhaseBox data={data.innings_progression.death}/>
+        <div className='innings_progression_parent'>
+            <div className='innings_progression'>
+                <div className='ip_graphic_box'>
+                    <InnProgressionPhaseBox data={data.innings_progression.powerplay}/>
+                    <InnProgressionPhaseBox data={data.innings_progression.middle}/>
+                    <InnProgressionPhaseBox data={data.innings_progression.death}/>
+                </div>
+                <div className='ip_labels'>
+                    <div className='ip_label'>Overs 1-6</div>
+                    <div className='ip_label'>Overs 7-14</div>
+                    <div className='ip_label'>Overs 15-20</div>
+                </div>
             </div>
-            <div className='ip_labels'>
-                <div className='ip_label'>Overs 1-6</div>
-                <div className='ip_label'>Overs 7-14</div>
-                <div className='ip_label'>Overs 15-20</div>
-            </div>
+            <IPPerformers data={data.performers}/>
         </div>
     );
 }

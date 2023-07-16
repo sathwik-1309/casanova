@@ -49,7 +49,7 @@ function Worm(props) {
                     <div className='worm_line_overs'>{data.inn2.overs}</div>
                 </div>
             </div>
-            <InningsProgression m_id={props.m_id}/>
+            {/* <InningsProgression m_id={props.m_id}/> */}
         </div>
     );
 }

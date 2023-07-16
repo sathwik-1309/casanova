@@ -116,10 +116,11 @@ function Scorecard(props) {
         return <div>Loading...Scorecard</div>;
       }
 
-    let class1 = "match_scorecard " + scorecard.tour
+    let class1 = "match_scorecard bg-white bg-shadow " + scorecard.tour
     return (
         <div className='scorecard_parent'>
             <div className={class1}>
+                <div className='match_scorecard_label font-1 flex-centered font-600'>Scorecard</div>
                 <Header header={scorecard.header}/>
                 <div id="match_scorecard_body">
                     {scorecard.body.map((item, index) => (

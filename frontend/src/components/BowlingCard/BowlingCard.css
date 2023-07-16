@@ -1,12 +1,13 @@
 .bowling_card {
     display: flex;
     flex-direction: column;
-    border: 1px dotted black;
     padding: 3px;
     height: fit-content;
     width: 600px;
 }
-
+.bowling_card_label {
+    height: 35px;
+}
 #bowling_card_header {
     display: flex;
     flex-direction: column;

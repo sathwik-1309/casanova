@@ -166,7 +166,10 @@ class Match < ApplicationRecord
             batsmen, bowlers = Match.update_player_hashes(ball, batsmen, bowlers)
         end
         batsman = batsmen.values.sort_by{|b| -b["runs"]}[0]
-        bowler = bowlers.values.sort_by{|b|[-b["wickets"], (Util.get_rr(b["runs"], b["balls"]))]}[0]
+        bowlers.keys.each do|b|
+            bowlers[b]["economy"] = Util.get_rr(bowlers[b]["runs"], bowlers[b]["balls"])
+        end
+        bowler = bowlers.values.sort_by{|b|[-b["wickets"], b["economy"].to_f]}[0]
         unless bowler.nil?
             bowler["overs"] = Util.format_overs(Util.balls_to_overs(bowler["balls"]))
             bowler["fig"] = "#{bowler["wickets"]}-#{bowler["runs"]}"

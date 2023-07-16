@@ -23,7 +23,7 @@ function InningsProgression(props) {
     }
 
     return (
-        <div className='innings_progression_parent'>
+        <div className='innings_progression_parent default-font'>
             <div className='innings_progression'>
                 <div className='ip_graphic_box'>
                     <InnProgressionPhaseBox data={data.innings_progression.powerplay}/>

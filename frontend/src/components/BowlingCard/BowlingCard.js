@@ -98,10 +98,11 @@ function BowlingCard(props) {
       }
 
     console.log(data)
-    let class1 = 'bowling_card ' + data.tour
+    let class1 = 'bowling_card bg-white bg-shadow ' + data.tour
     return (
         <div className='bowling_card_parent'>
             <div className={class1}>
+                <div className='bowling_card_label font-1 flex-centered font-600'>Bowling Card</div>
                 <Header color={data.color} teamname={data.teamname}/>
                 {data.bowlers.map((bowler, index) => (
                 <BowlerItem key={index} bowler={bowler} color={data.color} func={handleBox}/>

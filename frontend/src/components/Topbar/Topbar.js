@@ -50,12 +50,12 @@ function TopbarItem(props) {
                 classname1 = classname1 + ' topbar_selected'
             }
             break;
-        case "fow":
-            name = "FOW"
-            if (selected === props.name) {
-                classname1 = classname1 + ' topbar_selected'
-            }
-            break;
+        // case "fow":
+        //     name = "FOW"
+        //     if (selected === props.name) {
+        //         classname1 = classname1 + ' topbar_selected'
+        //     }
+        //     break;
         case "partnerships":
             name = "PARTNERSHIPS"
             if (selected === props.name) {
@@ -76,6 +76,12 @@ function TopbarItem(props) {
             break;
         case "commentry":
             name = "COMMENTRY"
+            if (selected === props.name) {
+                classname1 = classname1 + ' topbar_selected'
+            }
+            break;
+        case "phase":
+            name = "PHASE"
             if (selected === props.name) {
                 classname1 = classname1 + ' topbar_selected'
             }
@@ -109,8 +115,8 @@ function Topbar(props) {
             topbar = <>
                 <TopbarItem name='summary' link={`http://localhost:3000/match/${m_id}/${inn_no}/summary`}/>
                 <TopbarItem name='scorecard' link={`http://localhost:3000/match/${m_id}/${inn_no}/scorecard`}/>
-                <TopbarItem name='fow' link={`http://localhost:3000/match/${m_id}/${inn_no}/fow`}/>
-                <TopbarItem name='bowling_card' link={`http://localhost:3000/match/${m_id}/${inn_no}/bowling_card`}/>
+                {/* <TopbarItem name='fow' link={`http://localhost:3000/match/${m_id}/${inn_no}/fow`}/> */}
+                <TopbarItem name='phase' link={`http://localhost:3000/match/${m_id}/${inn_no}/phase`}/>
                 <TopbarItem name='partnerships' link={`http://localhost:3000/match/${m_id}/${inn_no}/partnerships`}/>
                 <TopbarItem name='manhatten' link={`http://localhost:3000/match/${m_id}/${inn_no}/manhatten`}/>
                 <TopbarItem name='worm' link={`http://localhost:3000/match/${m_id}/${inn_no}/worm`}/>

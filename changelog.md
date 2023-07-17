@@ -20,7 +20,12 @@
 - milestone, milestone_image, commentry api
 
 
-
 # v.1.5
 - 151
 - docker configured
+- 
+# v.1.6
+- 165
+- match page cleaned
+- innings phase progression
+- player search bar added (lower stage)

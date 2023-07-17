@@ -38,6 +38,7 @@ Rails.application.routes.draw do
   scope :player do
     get '/:p_id/bat_stats' => 'player#bat_stats'
     get '/:p_id/ball_stats' => 'player#ball_stats'
+    get '/search' => 'player#search'
   end
 
   scope :players do

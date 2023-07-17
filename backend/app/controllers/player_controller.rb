@@ -132,4 +132,13 @@ class PlayerController < ApplicationController
     array = Helper.group_by_team(array, "color")
     render(:json => Oj.dump(array))
   end
+
+  def search
+    pattern = params[:pattern]
+
+    players = Player.where("fullname LIKE ?", "%#{pattern}%")
+    result = players.map { |player| { id: player.id, name: player.fullname.titleize } }[..9]
+
+    render json: result
+  end
 end

@@ -1,5 +1,4 @@
 import './Manhatten.css'
-import '../css/teams.css'
 import React, { useState, useEffect } from 'react';
 import { BACKEND_API_URL } from './../../my_constants'
 
@@ -13,8 +12,8 @@ function Wicket(x) {
 }
 
 function Header(x) {
-    let class1 = "manhatten_1_1 " + x.color + "1"
-    let class2 = "manhatten_1_2 " + x.color + "2"
+    let class1 = "manhatten_1_1 font-600 " + x.color + "1"
+    let class2 = "manhatten_1_2 font-600 " + x.color + "2"
     return (
         <div id="manhatten_1">
             <div className={class1}>
@@ -121,9 +120,10 @@ function Manhatten(props) {
       }
 
     console.log(data)
-    let class1 = "manhatten "+ data.tour
+    let class1 = "manhatten bg-white bg-shadow "+ data.tour
     return (
         <div className={class1}>
+            <div className='font-1 flex-centered font-600 h-35'>Manhatten</div>
             <Header color={data.color} teamname={data.teamname}/>
             <div id="manhatten_2">
             {data.overs.map((over, index) => (

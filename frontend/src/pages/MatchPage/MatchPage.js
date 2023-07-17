@@ -8,6 +8,7 @@ import Fow from '../../components/Fow/Fow';
 import './MatchPage.css'
 import Worm from "../../components/Match/Worm/Worm";
 import Commentry from "../../components/Match/Commentry/Commentry";
+import InningsProgression from '../../components/Match/InningsProgression/InningsProgression';
 
 function MatchPage() {
     let { m_id } = useParams();
@@ -19,7 +20,11 @@ function MatchPage() {
             component = <Summary m_id = {m_id}/>
             break;
         case "scorecard":
-            component = <Scorecard m_id = {m_id} inn_no={inn_no}/>
+            component = <div className='flex-col wrap gap-30'>
+            <Scorecard m_id = {m_id} inn_no={inn_no}/>
+            <BowlingCard m_id = {m_id} inn_no={inn_no}/>
+            <Fow m_id = {m_id} inn_no={inn_no}/>
+            </div>
             break;
         case "fow":
             component = <Fow m_id = {m_id} inn_no={inn_no}/>
@@ -38,6 +43,11 @@ function MatchPage() {
             break;
         case "commentry":
             component = <Commentry m_id = {m_id} inn_no={inn_no}/>
+            break;
+        case "phase":
+            component = <div className='flex-col'>
+                <InningsProgression m_id={m_id}/>
+            </div>
             break;
         default:
             component = <Summary m_id = {m_id}/>

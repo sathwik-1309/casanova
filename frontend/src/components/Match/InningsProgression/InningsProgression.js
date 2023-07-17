@@ -23,17 +23,18 @@ function InningsProgression(props) {
     }
 
     return (
-        <div className='innings_progression_parent'>
+        <div className='innings_progression_parent default-font'>
             <div className='innings_progression'>
+                <div className='flex-centered font-600 font-1 h-35 bg-black c-white'>PHASE COMPARISION</div>
                 <div className='ip_graphic_box'>
                     <InnProgressionPhaseBox data={data.innings_progression.powerplay}/>
                     <InnProgressionPhaseBox data={data.innings_progression.middle}/>
                     <InnProgressionPhaseBox data={data.innings_progression.death}/>
                 </div>
-                <div className='ip_labels'>
-                    <div className='ip_label'>Overs 1-6</div>
-                    <div className='ip_label'>Overs 7-14</div>
-                    <div className='ip_label'>Overs 15-20</div>
+                <div className='ip_labels font-0_9'>
+                    <div className='ip_label'>POWERPLAY</div>
+                    <div className='ip_label'>MIDDLE</div>
+                    <div className='ip_label'>DEATH</div>
                 </div>
             </div>
             <IPPerformers data={data.performers}/>

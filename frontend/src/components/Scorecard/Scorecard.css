@@ -2,10 +2,13 @@
     display: flex;
     height: fit-content;
     width: 700px;
-    border: 1px dotted black;
-    border-radius: 8px;
+    /* border: 1px dotted black; */
+    /* border-radius: 8px; */
     padding: 3px;
     flex-direction: column;
+}
+.match_scorecard_label {
+    height: 35px;
 }
 
 #match_scorecard_header {

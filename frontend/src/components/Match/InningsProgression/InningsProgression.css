@@ -41,7 +41,9 @@
 .ip_label {
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 160px;
+    height: 40px;
 }
 .ip_phase_bar_score {
     display: flex;

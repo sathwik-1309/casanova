@@ -62,7 +62,8 @@ function PerformersInningsBox(props) {
 
 function IPPerformers(props) {
     return (
-        <div className='flex-col bg-white bg-shadow ip_performers'>
+        <div className='flex-col bg-white bg-shadow ip_performers font-600 font-1'>
+            <div className='flex-centered h-35'>PHASE PERFORMERS</div>
             <PerformersInningsBox data={props.data.inn1}/>
             <PerformersInningsBox data={props.data.inn2}/>
         </div>

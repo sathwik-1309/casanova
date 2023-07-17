@@ -130,7 +130,7 @@ function Partnerships(props) {
 
     console.log(data)
 
-    let class1 = "partnerships "+data.tour
+    let class1 = "partnerships bg-white bg-shadow "+data.tour
     return (
         <div className={class1}>
             <Header color={data.color} teamname={data.teamname}/>

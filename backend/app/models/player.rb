@@ -113,5 +113,19 @@ class Player < ApplicationRecord
         perf
     end
 
+    # args can be t_id, tour_class, team_id,
+    def bat_stat_box(args)
+        scores = self.scores
+        if args['t_id']
+            scores = scores.select{|s|s.tournament_id == args['t_id']}
+        elsif args['tour_class']
+            t_ids = Tournament.where(name: args['tour_class']).pluck(:id)
+            scores = scores.select{|s| t_ids.include? s.tournament_id}
+        elsif args['team_id']
+            scores = scores.select{|s| Team.where(args['team_id']).squads.pluck(:id).incldue? s.squad_id}
+        end
+        return scores.count
+    end
+
     # private
 end

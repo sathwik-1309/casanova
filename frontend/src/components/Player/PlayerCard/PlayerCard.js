@@ -20,7 +20,7 @@ function PlayerCard(props){
             {content}
             <div className={`lci__data ${player.color}1`}>
                 <div className='lci_row1'>
-                    <div className='lci_name'>{player.name}</div>
+                    <div className='lci_name font-600 font-1'>{player.name}</div>
                     <div className={`lci_data1 ${player.color}2`}>{player.data1}</div>
                 </div>
                 <div className='lci_row2'>

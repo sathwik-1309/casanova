@@ -72,7 +72,7 @@ function Fow(props) {
 
     return (
         <div className={class1}>
-            <div className='bowling_card_label font-1 flex-centered font-600'>FOW</div>
+            <div className='font-1 flex-centered font-600 h-35'>FOW</div>
             <Header color={data.color} teamname={data.teamname}/>
             {data.fow.map((item, index) => (
             <FowItem key={index} item={item} color={data.color}/>

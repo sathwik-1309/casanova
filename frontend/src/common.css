@@ -93,3 +93,33 @@
 .font-0_8 {
     font-size: 0.8rem;
 }
+
+/* height */
+.h-35 {
+    height: 35px;
+}
+.h-30 {
+    height: 30px;
+}
+
+/* weight */
+.w-400 {
+    width: 400px;
+}
+.w-320 {
+    width: 320px;
+}
+.w-300 {
+    width: 300px;
+}
+
+/* position */
+.relative {
+    position: relative;
+}
+.absolute {
+    position: absolute;
+}
+.hidden {
+    display: hidden;
+}

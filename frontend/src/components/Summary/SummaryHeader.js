@@ -4,7 +4,7 @@ function SummaryHeader(props) {
     let header = props.header
 
     return (
-        <div className="summary_header">
+        <div className="summary_header font-600 font-1">
             <div className='summary_header_items'>
                 {header.title1}
             </div>

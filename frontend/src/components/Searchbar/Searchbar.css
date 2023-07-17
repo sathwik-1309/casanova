@@ -1,0 +1,11 @@
+.searchbar_suggestions {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.sb_suggestion {
+    padding-left: 10px;
+}
+.sb_suggestion:hover {
+    background-color: grey;
+    color: white;
+}

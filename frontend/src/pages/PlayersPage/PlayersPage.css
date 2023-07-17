@@ -59,6 +59,7 @@
 .players_page_drop_down {
     display: flex;
     height: 40px;
+    width: fit-content;
     z-index: 1;
 }
 .players_page_players {

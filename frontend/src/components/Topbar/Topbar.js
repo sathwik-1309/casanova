@@ -1,6 +1,7 @@
 import './Topbar.css'
 import {useParams} from "react-router-dom";
 import ToggleInnings from "../ToggleInnings/ToggleInnings";
+import Searchbar from '../Searchbar/Searchbar.tsx';
 
 function TopbarItem(props) {
     let name;
@@ -123,6 +124,10 @@ function Topbar(props) {
                 <TopbarItem name='commentry' link={`http://localhost:3000/match/${m_id}/${inn_no}/commentry`}/>
             </>
             break;
+        case 'players_page':
+            topbar = <>
+            <Searchbar type='players'/>
+            </>
     }
     return (
         <div className='topbar default-font'>

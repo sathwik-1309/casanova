@@ -552,27 +552,24 @@ module Uploader
     def self.increment_player_trophies(match)
         player = match.motm
         player.trophies['motm'] += 1
+        player.save!
         if match.stage == 'final'
             player.trophies['gem'] += 1
+            player.save!
             tour = match.tournament
             pots_p = tour.pots
-            pots_p.medals['pots'] += 1
-            mvp_p = tour.mvp
-            mvp_p.medals['mvp'] += 1
-            most_runs_p = tour.most_runs
-            most_runs_p.medals['most_runs'] += 1
-            most_wickets_p = tour.most_wickets
-            most_wickets_p.medals['most_wickets'] += 1
+            pots_p.trophies['pots'] += 1
             pots_p.save!
+            mvp_p = tour.mvp
+            mvp_p.trophies['mvp'] += 1
             mvp_p.save!
+            most_runs_p = tour.most_runs
+            most_runs_p.trophies['most_runs'] += 1
             most_runs_p.save!
+            most_wickets_p = tour.most_wickets
+            most_wickets_p.trophies['most_wickets'] += 1
             most_wickets_p.save!
-        end
-        unless player.save
-            puts "increment_player_motm update error ❌"
-            puts player.errors.full_messages
-            puts "increment_player_motm update error end ❌"
-            return false
+            Uploader.increment_player_medals(tour)
         end
         return true
     end
@@ -582,14 +579,14 @@ module Uploader
         data = JSON.parse(file)
         t_json = data.find{|t| t['id'] == tour.id}
         gold_id = t_json['medals']['gold']
-        players = SquadPlayer.where(squad_id: gold_id)
-        Uploader.update_players_medals(players, 'gold')
+        squad_players = SquadPlayer.where(squad_id: gold_id)
+        Uploader.update_players_medals(squad_players, 'gold')
         silver_id = t_json['medals']['silver']
-        players = SquadPlayer.where(squad_id: silver_id)
-        Uploader.update_players_medals(players, 'silver')
+        squad_players = SquadPlayer.where(squad_id: silver_id)
+        Uploader.update_players_medals(squad_players, 'silver')
         bronze_id = t_json['medals']['bronze']
-        players = SquadPlayer.where(squad_id: bronze_id)
-        Uploader.update_players_medals(players, 'bronze')
+        squad_players = SquadPlayer.where(squad_id: bronze_id)
+        Uploader.update_players_medals(squad_players, 'bronze')
     end
 
     def self.upload_match
@@ -640,6 +637,7 @@ module Uploader
         t.mvp_id = tour['mvp_id']
         t.most_runs_id = tour['most_runs_id']
         t.most_wickets_id = tour['most_wickets_id']
+        t.ongoing = false
         t.save!
     end
 
@@ -735,9 +733,10 @@ module Uploader
         return true
     end
 
-    def self.update_players_medals(players, medal)
-        players.each do|player|
-            player.medals[medal] += 1
+    def self.update_players_medals(squad_players, medal)
+        squad_players.each do|squad_player|
+            player = squad_player.player
+            player.trophies[medal] += 1
             player.save!
         end
     end

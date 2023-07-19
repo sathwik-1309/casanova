@@ -8,6 +8,7 @@ module Seed
             tournament.name = row['name']
             tournament.season = row['season']
             tournament.id = row['id']
+            tournament.ongoing = true
             tournament.save
         end
         puts "Tournament added"

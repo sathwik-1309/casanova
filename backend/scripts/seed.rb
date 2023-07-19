@@ -40,16 +40,16 @@ Seed.add_partnerships
 Seed.add_performances
 Seed.add_playing_11_performances
 
+# Seed.update_tournaments
+
+Seed.preload_squad_players
+Seed.preload_schedules
+
 Seed.update_matches
 
 Seed.update_squads
 
 Seed.update_teams
-
-# Seed.update_tournaments
-
-Seed.preload_squad_players
-Seed.preload_schedules
 
 # add new squads
 Seed.add_new_squads

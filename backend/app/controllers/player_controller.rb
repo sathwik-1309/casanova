@@ -141,4 +141,5 @@ class PlayerController < ApplicationController
 
     render json: result
   end
+
 end

@@ -316,7 +316,7 @@ class Match < ApplicationRecord
     end
 
     def update_player_trophies
+        self.reload
         Uploader.increment_player_trophies(self)
-        Uploader.increment_player_medals(self.tournament)
     end
 end

@@ -129,5 +129,15 @@ class Player < ApplicationRecord
         return scores.count
     end
 
+    def trophy_cabinet_hash
+        hash = {}
+        hash['gold'] = "🥇" * self.trophies['gold']
+        hash['silver'] = "🥈" * self.trophies['silver']
+        hash['bronze'] = "🥉" * self.trophies['bronze']
+        hash['gem'] = "💎" * self.trophies['gem']
+        hash['pots'] = "👑" * self.trophies['pots']
+        hash['mvp'] = "👑" * self.trophies['mvp']
+    end
+
     # private
 end

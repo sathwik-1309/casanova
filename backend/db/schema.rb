@@ -382,6 +382,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
     t.integer "most_runs_id"
     t.integer "most_wickets_id"
     t.integer "season"
+    t.boolean "ongoing"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

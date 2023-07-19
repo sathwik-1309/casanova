@@ -8,6 +8,7 @@ class CreateTables < ActiveRecord::Migration[7.0]
       t.integer :most_runs_id
       t.integer :most_wickets_id
       t.integer :season
+      t.boolean :ongoing
 
       t.timestamps
     end

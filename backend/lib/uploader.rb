@@ -549,9 +549,25 @@ module Uploader
         return true
     end
 
-    def self.increment_player_motm(match)
+    def self.increment_player_trophies(match)
         player = match.motm
         player.trophies['motm'] += 1
+        if match.stage == 'final'
+            player.trophies['gem'] += 1
+            tour = match.tournament
+            pots_p = tour.pots
+            pots_p.medals['pots'] += 1
+            mvp_p = tour.mvp
+            mvp_p.medals['mvp'] += 1
+            most_runs_p = tour.most_runs
+            most_runs_p.medals['most_runs'] += 1
+            most_wickets_p = tour.most_wickets
+            most_wickets_p.medals['most_wickets'] += 1
+            pots_p.save!
+            mvp_p.save!
+            most_runs_p.save!
+            most_wickets_p.save!
+        end
         unless player.save
             puts "increment_player_motm update error ❌"
             puts player.errors.full_messages
@@ -559,6 +575,21 @@ module Uploader
             return false
         end
         return true
+    end
+
+    def self.increment_player_medals(tour)
+        file = File.read(TOURNAMENT_JSON_PATH)
+        data = JSON.parse(file)
+        t_json = data.find{|t| t['id'] == tour.id}
+        gold_id = t_json['medals']['gold']
+        players = SquadPlayer.where(squad_id: gold_id)
+        Uploader.update_players_medals(players, 'gold')
+        silver_id = t_json['medals']['silver']
+        players = SquadPlayer.where(squad_id: silver_id)
+        Uploader.update_players_medals(players, 'silver')
+        bronze_id = t_json['medals']['bronze']
+        players = SquadPlayer.where(squad_id: bronze_id)
+        Uploader.update_players_medals(players, 'bronze')
     end
 
     def self.upload_match
@@ -599,15 +630,17 @@ module Uploader
         tour = tours.select { |tour| tour['id'] == match.tournament_id} [0]
         raise StandardError.new("❌ Uploader#update_tournament_after_final: tour not found in tournaments.json") if tour.nil?
         t = Tournament.find(match.tournament_id)
-        t.winners_id = tour['winners_id']
-        t.runners_id = tour['runners_id']
+        medals = {}
+        tour_medals = tour['medals']
+        medals['gold'] = tour_medals['gold']
+        medals['silver'] = tour_medals['silver']
+        medals['bronze'] = tour_medals['bronze']
+        t.medals = medals
         t.pots_id = tour['pots_id']
         t.mvp_id = tour['mvp_id']
         t.most_runs_id = tour['most_runs_id']
         t.most_wickets_id = tour['most_wickets_id']
-        unless t.save
-            puts "❌ Uploader#update_tournament_after_final: error updating"
-        end
+        t.save!
     end
 
     private
@@ -700,6 +733,13 @@ module Uploader
             return false
         end
         return true
+    end
+
+    def self.update_players_medals(players, medal)
+        players.each do|player|
+            player.medals[medal] += 1
+            player.save!
+        end
     end
 
     # def self.update_milestones(match, prev_image, new_image)

@@ -125,6 +125,7 @@ class Player < ApplicationRecord
             scores = scores.select{|s| Team.find(args['team_id']).squads.pluck(:id).include? s.squad_id}
         elsif args['venue']
             scores = scores.select{|s| Match.where(venue: args['venue']).pluck(:id).include? s.match_id}
+        end
         return scores.count
     end
 

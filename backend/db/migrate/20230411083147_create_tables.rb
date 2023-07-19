@@ -2,8 +2,7 @@ class CreateTables < ActiveRecord::Migration[7.0]
   def change
     create_table :tournaments do |t|
       t.string :name
-      t.integer :winners_id
-      t.integer :runners_id
+      t.json :medals
       t.integer :pots_id
       t.integer :mvp_id
       t.integer :most_runs_id

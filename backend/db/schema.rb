@@ -376,8 +376,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
 
   create_table "tournaments", force: :cascade do |t|
     t.string "name"
-    t.integer "winners_id"
-    t.integer "runners_id"
+    t.json "medals"
     t.integer "pots_id"
     t.integer "mvp_id"
     t.integer "most_runs_id"

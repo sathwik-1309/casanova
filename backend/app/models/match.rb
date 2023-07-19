@@ -14,9 +14,9 @@ class Match < ApplicationRecord
     after_commit do
         unless self.runs.nil?
             self.update_stats
-            Uploader.increment_player_motm(self)
-            Uploader.update_milestone_image(self)
             self.update_tournament
+            self.update_player_trophies
+            Uploader.update_milestone_image(self)
         end
     end
 
@@ -136,6 +136,12 @@ class Match < ApplicationRecord
         return Match.get_phase_performers(balls, innings)
     end
 
+    def update_tournament
+        if self.stage == 'final'
+            Uploader.update_tournament_after_final(self)
+        end
+    end
+
     private
 
     def self.get_phase_performers(balls, innings)
@@ -199,12 +205,6 @@ class Match < ApplicationRecord
     def update_stats
         Uploader.update_bat_stats(self)
         Uploader.update_ball_stats(self)
-    end
-
-    def update_tournament
-        if self.stage == 'final'
-            Uploader.update_tournament_after_final(self)
-        end
     end
 
     def get_highlights_hash_spell(spell, spell_ss, spell_type)
@@ -313,5 +313,10 @@ class Match < ApplicationRecord
           "height" => [runs*4, 400].min,
           "total_score" => total_score,
         }
+    end
+
+    def update_player_trophies
+        Uploader.increment_player_trophies(self)
+        Uploader.increment_player_medals(self.tournament)
     end
 end

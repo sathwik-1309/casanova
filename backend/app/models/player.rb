@@ -136,7 +136,6 @@ class Player < ApplicationRecord
         hash['bronze'] = "🥉" * self.trophies['bronze']
         hash['gem'] = "💎" * self.trophies['gem']
         hash['pots'] = "👑" * self.trophies['pots']
-        hash['mvp'] = "👑" * self.trophies['mvp']
     end
 
     # private

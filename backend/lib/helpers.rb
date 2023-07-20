@@ -282,7 +282,7 @@ module Helper
 
     def self.tournament_class_box(tour_type)
         hash = {}
-        tours = Tournament.where(name: tour_type).where('winners_id != 0')
+        tours = Tournament.where(name: tour_type).where(ongoing: false)
         total_tours = Tournament.where(name: tour_type)
         latest_winner = tours.last.winners
         hash["tour_name"] = tour_type.upcase

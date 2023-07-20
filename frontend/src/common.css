@@ -52,7 +52,9 @@
 .c-white {
     color: white;
 }
-
+.c-theme2 {
+    color: var(--analysis2)
+}
 /* border-radius */
 .b-radius-2 {
     border-radius: 2px;
@@ -87,6 +89,9 @@
 .font-1 {
     font-size: 1rem;
 }
+.font-1_2 {
+    font-size: 1.2rem;
+}
 .font-0_9 {
     font-size: 0.9rem;
 }
@@ -101,16 +106,31 @@
 .h-30 {
     height: 30px;
 }
+.h-40 {
+    height: 40px;
+}
+.h-50 {
+    height: 50px;
+}
 
 /* weight */
+.w-150 {
+    width: 150px;
+}
 .w-400 {
     width: 400px;
+}
+.w-450 {
+    width: 450px;
 }
 .w-320 {
     width: 320px;
 }
 .w-300 {
     width: 300px;
+}
+.w-460 {
+    width: 460px;
 }
 
 /* position */

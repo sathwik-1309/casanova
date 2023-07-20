@@ -129,5 +129,26 @@ class Player < ApplicationRecord
         return scores.count
     end
 
+    def get_profile_hash
+        h = {}
+        h['p_id'] = self.id
+        h['fullname'] = self.fullname.upcase
+        h['country'] = self.country.get_teamname
+        h['color'] = self.country.abbrevation
+        h['role'] = Util.get_role(self.skill)
+        h['batting'] = self.batting_hand == 'r' ? "Right-hand-bat" : "Left-hand-bat"
+        h['bowling'] = "-"
+        unless self.bowling_hand.nil?
+            hand = self.bowling_hand == 'r' ? "Right" : "Left"
+            h['bowling'] = "#{hand}-arm-#{self.bowling_style}"
+        end
+        teams = SquadPlayer.where(player_id: self.id).pluck(:team_id).uniq
+        h['teams'] = []
+        teams.each do |team_id|
+            h['teams'] << Team.find(team_id).get_abb
+        end
+        return h
+    end
+
     # private
 end

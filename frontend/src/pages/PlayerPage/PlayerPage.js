@@ -16,9 +16,6 @@ function PlayerPage() {
             component = <PBallStats p_id={p_id}/>
             break;
 
-
-
-
         default:
             component = <PBatStats p_id={p_id}/>
     }

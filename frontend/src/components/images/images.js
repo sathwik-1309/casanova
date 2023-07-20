@@ -1,7 +1,10 @@
 export const images =
 
 {
-    0:require('../images/0.png'),
+    "icons": {
+        "bow": require('../images/icons/bow.png')
+    },
+    0: require('../images/0.png'),
     1: require('../images/1.webp'),
     2: require('../images/2.webp'),
     3: require('../images/3.webp'),

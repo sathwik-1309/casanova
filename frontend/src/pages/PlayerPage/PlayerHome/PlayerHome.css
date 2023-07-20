@@ -1,0 +1,21 @@
+.player_home {
+    margin: 20px;
+}
+.player_profile {
+    padding: 5px;
+    padding-top: 20px;
+}
+.pp_info {
+    background-color: #1f2021;
+}
+.pp_info_label {
+    padding-left: 10px;
+    background-color: #494a4d;
+    color: lightgray;
+    margin: 1px 0;
+}
+.pp_info_value {
+    background-color: #494a4d;
+    color: white;
+    margin: 1px 0;
+}

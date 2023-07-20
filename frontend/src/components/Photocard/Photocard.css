@@ -1,7 +1,13 @@
+/* .photo_card {
+    border-radius: 50%;
+    background-color: aqua;
+} */
 
+.photocard_outline {
+    border-radius: 50%;
+}
 .photo_card_pic{
     height: 100%;
     aspect-ratio: 1/1;
     border-radius: 50%;
-    padding: 15%;
 }

@@ -141,4 +141,11 @@ class PlayerController < ApplicationController
 
     render json: result
   end
+
+  def home_page
+    player = Player.find(params[:p_id])
+    hash = {}
+    hash['profile'] = player.get_profile_hash
+    render(:json => Oj.dump(hash))
+  end
 end

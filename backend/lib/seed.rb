@@ -8,26 +8,28 @@ module Seed
             tournament.name = row['name']
             tournament.season = row['season']
             tournament.id = row['id']
+            tournament.ongoing = true
             tournament.save
         end
         puts "Tournament added"
     end
 
-    def self.update_tournaments
-        CSV.foreach(SEED_CSV_PATH + '/tournaments.csv', headers: true) do |row|
-            if row['id']!='6'
-                tournament = Tournament.find(row['id'])
-                tournament.winners_id = Squad.find_by(team_id: row['winners_team_id'], tournament_id: row['id']).id
-                tournament.runners_id = Squad.find_by(team_id: row['runners_team_id'], tournament_id: row['id']).id
-                tournament.pots_id = row['pots_id']
-                tournament.mvp_id = row['mvp_id']
-                tournament.most_runs_id = row['most_runs_id']
-                tournament.most_wickets_id = row['most_wickets_id']
-                tournament.save
-            end
-        end
-        puts "Tournament updated"
-    end
+    # not used anymore, moved to match hook
+    # def self.update_tournaments
+    #     CSV.foreach(SEED_CSV_PATH + '/tournaments.csv', headers: true) do |row|
+    #         if row['id']!='6'
+    #             tournament = Tournament.find(row['id'])
+    #             tournament.winners_id = Squad.find_by(team_id: row['winners_team_id'], tournament_id: row['id']).id
+    #             tournament.runners_id = Squad.find_by(team_id: row['runners_team_id'], tournament_id: row['id']).id
+    #             tournament.pots_id = row['pots_id']
+    #             tournament.mvp_id = row['mvp_id']
+    #             tournament.most_runs_id = row['most_runs_id']
+    #             tournament.most_wickets_id = row['most_wickets_id']
+    #             tournament.save
+    #         end
+    #     end
+    #     puts "Tournament updated"
+    # end
 
     def self.add_teams
         CSV.foreach(SEED_CSV_PATH + '/teams.csv', headers: true) do |row|
@@ -140,17 +142,8 @@ module Seed
                 player.bowling_style = row['bowling_style']
             end
             player.country_team_id = row['country']
-            player.motms = row['motms']
-            player.pots = row['pots']
-            player.mvps = row['mvps']
-            player.most_runs = row['most_runs']
-            player.most_wickets = row['most_wickets']
-            player.winners = row['winners']
-            player.runners = row['runners']
-            player.gems = 0
-            if GEMS_LIST.include?(player.id)
-                player.gems = 1
-            end
+            trophies = PLAYER_TROPHIES_INIT
+            player.trophies = trophies
             player.save
             # name
             # ipl_team_id
@@ -183,20 +176,21 @@ module Seed
         puts "Player Updated"
     end
 
-    def self.update_players_born
-        players = Player.all
-        players.each do|player|
-            id = player.id
-            csv_file = File.read(SEED_CSV_PATH + '/born.csv')
-            csv_data = CSV.parse(csv_file)
-            line = csv_data[id-1]
-            born = line[0]
-            born = Team.find_by(abbrevation: born).id
-            player.born_team_id = born
-            player.save
-        end
-        puts "Players updated born"
-    end
+    # deprecated, moved to add_new_players
+    # def self.update_players_born
+    #     players = Player.all
+    #     players.each do|player|
+    #         id = player.id
+    #         csv_file = File.read(SEED_CSV_PATH + '/born.csv')
+    #         csv_data = CSV.parse(csv_file)
+    #         line = csv_data[id-1]
+    #         born = line[0]
+    #         born = Team.find_by(abbrevation: born).id
+    #         player.born_team_id = born
+    #         player.save
+    #     end
+    #     puts "Players updated born"
+    # end
 
     def self.update_players_keeper
         all_players = Player.all.pluck(:id)
@@ -217,7 +211,10 @@ module Seed
     def self.add_new_players
         file = File.read(PLAYERS_JSON_PATH)
         data = JSON.parse(file)
-        latest_pid = Player.last.id
+        latest_pid = 0
+        if Player.last.present?
+            latest_pid = Player.last.id
+        end
         data.each do |player|
             p_id = player["id"]
             if p_id > latest_pid
@@ -231,14 +228,8 @@ module Seed
                 p.bowling_hand = player["skillset"][2]
                 p.bowling_style = player["skillset"][3]
                 p.keeper = player["keeper"]
-                p.motms = 0
-                p.pots = 0
-                p.mvps = 0
-                p.gems = 0
-                p.most_wickets = 0
-                p.most_runs = 0
-                p.winners = 0
-                p.runners = 0
+                trophies = PLAYER_TROPHIES_INIT
+                p.trophies = trophies
                 p.csl_team_id = player["csl"]
                 p.ipl_team_id = player["ipl"]
                 p.born_team_id = player["born"]

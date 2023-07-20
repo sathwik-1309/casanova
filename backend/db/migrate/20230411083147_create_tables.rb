@@ -2,13 +2,13 @@ class CreateTables < ActiveRecord::Migration[7.0]
   def change
     create_table :tournaments do |t|
       t.string :name
-      t.integer :winners_id
-      t.integer :runners_id
+      t.json :medals
       t.integer :pots_id
       t.integer :mvp_id
       t.integer :most_runs_id
       t.integer :most_wickets_id
       t.integer :season
+      t.boolean :ongoing
 
       t.timestamps
     end
@@ -53,15 +53,7 @@ class CreateTables < ActiveRecord::Migration[7.0]
       t.string :bowling_hand
       t.string :bowling_style
       t.boolean :keeper
-      t.integer :motms
-      t.integer :pots
-      t.integer :mvps
-      t.integer :gems
-      t.integer :most_wickets
-      t.integer :most_runs
-      t.integer :winners
-      t.integer :runners
-      t.integer :matches
+      t.json :trophies
       t.integer :csl_team_id
       t.integer :ipl_team_id
       t.integer :born_team_id

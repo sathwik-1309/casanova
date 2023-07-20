@@ -3,8 +3,11 @@
         "id": 1,
         "name": "wt20",
         "season": 1,
-        "winners_id": 3,
-        "runners_id": 1,
+        "medals": {
+            "gold": 3,
+            "silver": 1,
+            "bronze": [7, 4]
+        },
         "pots_id": 6,
         "mvp_id": 29,
         "most_runs_id": 29,
@@ -15,8 +18,11 @@
         "id": 2,
         "name": "ipl",
         "season": 1,
-        "winners_id": 13,
-        "runners_id": 9,
+        "medals": {
+            "gold": 13,
+            "silver": 9,
+            "bronze": [10]
+        },
         "pots_id": 109,
         "mvp_id": 109,
         "most_runs_id": 147,
@@ -27,8 +33,11 @@
         "id": 3,
         "name": "csl",
         "season": 1,
-        "winners_id": 26,
-        "runners_id": 27,
+        "medals": {
+            "gold": 26,
+            "silver": 27,
+            "bronze": [17, 18]
+        },
         "pots_id": 18,
         "mvp_id": 195,
         "most_runs_id": 18,
@@ -39,8 +48,11 @@
         "id": 4,
         "name": "wt20",
         "season": 2,
-        "winners_id": 32,
-        "runners_id": 29,
+        "medals": {
+            "gold": 32,
+            "silver": 29,
+            "bronze": [33]
+        },
         "pots_id": 245,
         "mvp_id": 50,
         "most_runs_id": 245,
@@ -51,8 +63,11 @@
         "id": 5,
         "name": "wt20",
         "season": 3,
-        "winners_id": 39,
-        "runners_id": 46,
+        "medals": {
+            "gold": 39,
+            "silver": 46,
+            "bronze": [45, 43]
+        },
         "pots_id": 31,
         "mvp_id": 31,
         "most_runs_id": 31,
@@ -63,8 +78,11 @@
         "id": 6,
         "name": "csl",
         "season": 2,
-        "winners_id": 47,
-        "runners_id": 51,
+        "medals": {
+            "gold": 47,
+            "silver": 51,
+            "bronze": [56, 52]
+        },
         "pots_id": 300,
         "mvp_id": 301,
         "most_runs_id": 300,

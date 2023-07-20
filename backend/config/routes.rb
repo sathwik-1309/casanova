@@ -34,12 +34,17 @@ Rails.application.routes.draw do
     get '/:tour_class' => 'tournament#tournaments_home'
   end
 
+  scope :search do
+    get '/player' => 'player#search'
+  end
+
 
   scope :player do
     get '/:p_id/bat_stats' => 'player#bat_stats'
+    get '/:p_id/bat_stats2' => 'player#bat_stats2'
     get '/:p_id/ball_stats' => 'player#ball_stats'
-    get ':p_id' => 'player#home_page'
-    get '/search' => 'player#search'
+    get '/:p_id/ball_stats2' => 'player#ball_stats2'
+    get '/:p_id' => 'player#home_page'
   end
 
   scope :players do

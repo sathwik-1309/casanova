@@ -5,7 +5,7 @@ import './Playerbox.css'
 function Playerbox(props) {
     const data = props.data
     return (
-        <div className='playerbox wt20_1'>
+        <a className='playerbox wt20_1' href={`http://localhost:3000/player/${data.p_id}`}>
             <Photocard height={'114px'} p_id={data.p_id} color={data.color}/>
             <div className={`playerbox_header1 ${data.color}1`}>
                 {data.skill}
@@ -13,7 +13,7 @@ function Playerbox(props) {
             <div className={`playerbox_name ${data.color}2`}>
                 {data.name}
             </div>
-        </div>
+        </a>
     );
 }
 

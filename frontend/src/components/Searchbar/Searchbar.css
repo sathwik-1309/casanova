@@ -4,6 +4,9 @@
 }
 .sb_suggestion {
     padding-left: 10px;
+    text-decoration: none;
+    cursor: default;
+    color: black;
 }
 .sb_suggestion:hover {
     background-color: grey;

@@ -3,8 +3,9 @@ import './Searchbar.css'
 import { BACKEND_API_URL } from './../../my_constants'
 
 function SearchbarSuggestion(props) {
+    let data = props.data
     return (
-        <div className='sb_suggestion h-30 flex vert-align'>{props.suggestion}</div>
+        <a className='sb_suggestion h-30 flex vert-align' href={`http://localhost:3000/player/${data.id}`}>{data.name}</a>
     );
 }
 
@@ -16,7 +17,7 @@ function Searchbar(props) {
         search(e.target.value);
     }
     const search = async (text: string) => {
-        const response = await fetch(`${BACKEND_API_URL}/player/search?pattern=${seachtext}`);
+        const response = await fetch(`${BACKEND_API_URL}/search/player?pattern=${seachtext}`);
         const result = await response.json();
         setSuggestions(result);
         console.log(result);
@@ -25,7 +26,7 @@ function Searchbar(props) {
     let sbox = <></>
     if (seachtext) {
         sbox = <>{suggestions && suggestions.map(item =>
-            <SearchbarSuggestion suggestion={item.name}/>)
+            <SearchbarSuggestion data={item}/>)
             }
             </>
     }

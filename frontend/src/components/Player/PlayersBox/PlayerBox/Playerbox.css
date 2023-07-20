@@ -6,6 +6,8 @@
     padding: 3px;
     background-color: white;
     box-shadow: var(--shadow-border);
+    text-decoration: none;
+    cursor: default;;
 }
 .playerbox:hover {
     background-color: var(--dark);

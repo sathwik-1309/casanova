@@ -147,6 +147,60 @@ class PlayerController < ApplicationController
     hash = {}
     hash['profile'] = player.profile_hash
     hash['trophy_cabinet'] = player.trophy_cabinet_hash
+    hash['stat_options'] = player.get_stat_options
     render(:json => Oj.dump(hash))
   end
+
+  # add support for venue and vs_team
+  def bat_stats2
+    p_id = params[:p_id]
+    hash = {}
+    type, value = Player.get_stat_type(params)
+    sub_type = Player.get_stat_sub_type(type, value)
+    player = Player.find(p_id)
+    hash['name'] = player.fullname.titleize
+    hash['teamname'], hash['color'] = player.get_stat_teamname_and_color(type, value)
+    hash['p_id'] = player.id
+    if sub_type
+      stat = BatStat.find_by(player_id: p_id, sub_type: sub_type)
+      hash['bat_stats'] = {}
+      # raise StandardError.new("PlayerController#bat_stats2: Stat not found for player #{p_id}, sub_type #{sub_type}") if stat.nil?
+      hash['bat_stats'] = stat.get_hash unless stat.nil?
+    else
+      case type
+      when Player::VENUE
+        scores = player.scores.select{|s| s.match.venue == value}
+      when Player::VS_TEAM
+        scores = player.scores.select{|s| s.inning.bow_team.abbrevation == value}
+      end
+      hash['bat_stats'] = Helper.construct_bat_stats_hash(scores)
+    end
+    render(:json => Oj.dump(hash))
+  end
+
+  def ball_stats2
+    p_id = params[:p_id]
+    hash = {}
+    type, value = Player.get_stat_type(params)
+    sub_type = Player.get_stat_sub_type(type, value)
+    player = Player.find(p_id)
+    hash['name'] = player.fullname.titleize
+    hash['teamname'], hash['color'] = player.get_stat_teamname_and_color(type, value)
+    hash['p_id'] = p_id
+    if sub_type
+      stat = BallStat.find_by(player_id: p_id, sub_type: sub_type)
+      hash['bow_stats'] = {}
+      hash['bow_stats'] = stat.get_hash unless stat.nil?
+    else
+      case type
+      when Player::VENUE
+        spells = player.spells.select{|s| s.match.venue == value}
+      when Player::VS_TEAM
+        spells = player.spells.select{|s| s.inning.bat_team.abbrevation == value}
+      end
+      hash['ball_stats'] = Helper.construct_ball_stats_hash(spells)
+    end
+    render(:json => Oj.dump(hash))
+  end
+
 end

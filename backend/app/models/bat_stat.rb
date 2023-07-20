@@ -32,4 +32,24 @@ class BatStat < ApplicationRecord
     def best
         return Score.find_by(player_id: self.player_id, inning_id: self.best_id)
     end
+
+    def get_hash
+        h = {}
+        # self.player.matches
+        h['matches'] = 0
+        h['innings'] = self.innings
+        h['runs'] = self.runs
+        h['sr'] = self.sr
+        h['avg'] = self.avg
+        h['dot_p'] = self.dot_p
+        h['boundary_p'] = self.boundary_p
+        h['fours'] = self.c4
+        h['sixes'] = self.c6
+        h['thirties'] = self.thirties
+        h['fifties'] = self.fifties
+        h['hundreds'] = self.hundreds
+        h['not_outs'] = self.not_outs
+        h['best_score'] = self.best_id.nil? ? nil : Score.find_by(player_id: self.player_id, inning_id: self.best_id).score_box
+        return h
+    end
 end

@@ -4,6 +4,18 @@ class Player < ApplicationRecord
     has_one :bat_stats
     has_one :ball_stats
     has_many :performances
+
+    # player types
+    OVERALL ='overall'
+    TOUR_CLASS = 'tour_class'
+    TOUR = 'tour'
+    TEAM = 'team'
+    VENUE = 'venue'
+    VS_TEAM = 'vs_team'
+
+    # player type classes
+    TYPE_CLASSES = [OVERALL, TOUR_CLASS, TOUR, TEAM, VENUE]
+
     def country
         return Team.find_by(id: self.country_team_id)
     end
@@ -114,7 +126,7 @@ class Player < ApplicationRecord
     end
 
     # args can be t_id, tour_class, team_id, venue, vs_team
-    def bat_stat_box(args)
+    def bat_stats_hash(args)
         scores = self.scores
         if args['t_id']
             scores = scores.select{|s|s.tournament_id == args['t_id']}
@@ -162,6 +174,64 @@ class Player < ApplicationRecord
         h['pots'] = "👑" * self.trophies['pots']
         h['mvp'] = "🎖" * self.trophies['mvp']
         return h
+    end
+
+    def self.get_stat_type(params)
+        if params[:overall]
+            return OVERALL, params[:overall]
+        elsif params[:tour_class]
+            return TOUR_CLASS, params[:tour_class]
+        elsif params[:tour]
+            return TOUR, params[:tour]
+        elsif params[:team]
+            return TEAM, params[:team]
+        elsif params[:venue]
+            return VENUE, params[:venue]
+        elsif params[:vs_team]
+            return VS_TEAM, params[:vs_team]
+        end
+        return OVERALL, 'default'
+    end
+
+    def self.get_stat_sub_type(type, value)
+        case type
+        when OVERALL
+            return OVERALL
+        when TOUR_CLASS
+            return value
+        when TOUR
+            return "tour_#{value}"
+        when TEAM
+            return value
+        end
+        return false
+    end
+
+    def get_stat_options
+        h = {}
+        h[OVERALL] = ['default']
+        squads_p = SquadPlayer.where(player_id: self.id)
+        h[TOUR_CLASS] = Tournament.where(id: squads_p.pluck(:tournament_id)).map{|t| t.name}.uniq
+        h[TEAM] = Squad.where(id: squads_p.pluck(:squad_id)).map{|s| s.team.abbrevation}.uniq
+        h[TOUR] = squads_p.pluck(:tournament_id)
+        h[VENUE] = self.scores.map{|s| s.match.venue}.uniq
+        h[VS_TEAM] = self.scores.map{|s| s.inning.bow_team.abbrevation}.uniq
+        return h
+    end
+
+    def get_stat_teamname_and_color(type, sub_type)
+        case type
+        when TOUR_CLASS
+            team = SquadPlayer.find_by(player_id: self.id, tournament_id: Tournament.where(name: sub_type).pluck(:id)).squad.team
+            return team.get_teamname, team.abbrevation
+        when TOUR
+            team = SquadPlayer.find_by(player_id: self.id, tournament_id: sub_type).squad.team
+            return team.get_teamname, team.abbrevation
+        when TEAM
+            team = Team.find_by(abbrevation: sub_type)
+            return team.get_teamname, team.abbrevation
+        end
+        return self.country.get_teamname, self.country.abbrevation
     end
 
     # private

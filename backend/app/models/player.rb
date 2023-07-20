@@ -129,7 +129,7 @@ class Player < ApplicationRecord
         return scores.count
     end
 
-    def get_profile_hash
+    def profile_hash
         h = {}
         h['p_id'] = self.id
         h['fullname'] = self.fullname.upcase
@@ -147,6 +147,20 @@ class Player < ApplicationRecord
         teams.each do |team_id|
             h['teams'] << Team.find(team_id).get_abb
         end
+        return h
+    end
+
+    def trophy_cabinet_hash
+        h = {}
+        h['motm'] = "⭐️" * self.trophies['motm']
+        h['gold'] = "🥇️" * self.trophies['gold']
+        h['silver'] = "🥈️" * self.trophies['silver']
+        h['bronze'] = "🥉" * self.trophies['bronze']
+        h['gem'] = "💎" * self.trophies['gem']
+        h['most_runs'] = "🏏" * self.trophies['most_runs']
+        h['most_wickets'] = "🏏" * self.trophies['most_wickets']
+        h['pots'] = "👑" * self.trophies['pots']
+        h['mvp'] = "🎖" * self.trophies['mvp']
         return h
     end
 

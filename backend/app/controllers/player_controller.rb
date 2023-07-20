@@ -145,7 +145,8 @@ class PlayerController < ApplicationController
   def home_page
     player = Player.find(params[:p_id])
     hash = {}
-    hash['profile'] = player.get_profile_hash
+    hash['profile'] = player.profile_hash
+    hash['trophy_cabinet'] = player.trophy_cabinet_hash
     render(:json => Oj.dump(hash))
   end
 end

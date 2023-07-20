@@ -11,10 +11,12 @@ class Tournament < ApplicationRecord
     has_many :performances
 
     def winners
-        return Squad.find(self.winners_id)
+        return nil unless self.medals['gold']
+        return Squad.find(self.medals['gold'])
     end
     def runners
-        return Squad.find(self.runners_id)
+        return nil unless self.medals['silver']
+        return Squad.find(self.medals['silver'])
     end
     def pots
         return Player.find(self.pots_id)
@@ -29,23 +31,6 @@ class Tournament < ApplicationRecord
         return Player.find(self.most_wickets_id)
     end
 
-
-    def validate
-        status = true
-        errors = []
-
-        unless TOURNAMENT_NAMES.include?(self.name)
-            status = false
-            errors << "name cannot be #{self.name}"
-        end
-
-        if self.winners_id && Squad.all.pluck(:id).exclude?(self.winners_id)
-            status = false
-            errors << "winners_id not a foreign key: #{self.winners_id}"
-        end
-        return status,errors
-    end
-
     def get_tour_font
         return "#{self.name}_#{self.id}"
     end
@@ -58,7 +43,7 @@ class Tournament < ApplicationRecord
         hash = {}
         hash["tour_class"] = "#{self.name.upcase}-#{self.season}"
         hash["t_id"] = self.id
-        if self.winners_id != nil
+        if self.medals != nil
             hash["w_teamname"] = self.winners.get_teamname
             hash["w_color"] = self.winners.abbrevation
             hash["pots"] = self.pots.fullname.titleize

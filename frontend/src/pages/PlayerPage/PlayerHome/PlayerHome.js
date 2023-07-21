@@ -3,6 +3,7 @@ import {React, useState, useEffect } from "react";
 import {useParams} from "react-router-dom";
 import {BACKEND_API_URL} from "../../../my_constants";
 import './PlayerHome.css'
+import ControlBox from "../../../components/Player/Stats/ControlBox/ControlBox";
 
 function Label(props) {
     return (
@@ -92,9 +93,15 @@ function PlayerHome(props) {
         return <div>Loading...</div>;
     }
     return (
-        <div className="player_home flex-row wrap gap-60">
-            <PlayerProfile p_id={p_id} data={data.profile}/>
-            <TrophyCabinet data={data.trophy_cabinet}/>
+        <div className="player_home flex-col wrap gap-60">
+            <div className='flex-row wrap gap-60'>
+                <PlayerProfile p_id={p_id} data={data.profile}/>
+                <TrophyCabinet data={data.trophy_cabinet}/>
+            </div>
+            <div className='flex-row wrap gap-60'>
+                <ControlBox p_id={p_id} stat_type='bat_stats'/>
+                <ControlBox p_id={p_id} stat_type='ball_stats'/>
+            </div>
         </div>
     );
 }

@@ -189,8 +189,8 @@ class PlayerController < ApplicationController
     hash['p_id'] = p_id
     if sub_type
       stat = BallStat.find_by(player_id: p_id, sub_type: sub_type)
-      hash['bow_stats'] = {}
-      hash['bow_stats'] = stat.get_hash unless stat.nil?
+      hash['ball_stats'] = {}
+      hash['ball_stats'] = stat.get_hash unless stat.nil?
     else
       case type
       when Player::VENUE

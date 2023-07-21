@@ -57,7 +57,6 @@ class CreateTables < ActiveRecord::Migration[7.0]
       t.integer :csl_team_id
       t.integer :ipl_team_id
       t.integer :born_team_id
-      # matches
       t.timestamps
     end
 
@@ -221,6 +220,7 @@ class CreateTables < ActiveRecord::Migration[7.0]
 
     create_table :bat_stats do |t|
       t.string :sub_type
+      t.integer :matches
       t.integer :innings
       t.integer :runs
       t.integer :balls
@@ -246,6 +246,7 @@ class CreateTables < ActiveRecord::Migration[7.0]
 
     create_table :ball_stats do |t|
       t.string :sub_type
+      t.integer :matches
       t.integer :innings
       t.float :overs
       t.integer :maidens

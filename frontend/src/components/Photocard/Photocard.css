@@ -2,6 +2,13 @@
     border-radius: 50%;
     background-color: aqua;
 } */
+.img_wrapper {
+    cursor: default;
+    border-radius: 50%;
+}
+.img_wrapper:hover {
+    opacity: 0.8;
+}
 
 .photocard_outline {
     border-radius: 50%;

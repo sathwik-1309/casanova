@@ -169,11 +169,11 @@ class PlayerController < ApplicationController
     else
       case type
       when Player::VENUE
-        scores = player.scores.select{|s| s.match.venue == value}
+        scores = player.scores.select{|s| s.match.venue == value and s.batted == true}
       when Player::VS_TEAM
-        scores = player.scores.select{|s| s.inning.bow_team.abbrevation == value}
+        scores = player.scores.select{|s| s.inning.bow_team.abbrevation == value and s.batted == true}
       end
-      hash['bat_stats'] = Helper.construct_bat_stats_hash(scores)
+      hash['bat_stats'] = Helper.construct_bat_stats_hash(scores)[0]
     end
     render(:json => Oj.dump(hash))
   end
@@ -198,7 +198,7 @@ class PlayerController < ApplicationController
       when Player::VS_TEAM
         spells = player.spells.select{|s| s.inning.bat_team.abbrevation == value}
       end
-      hash['ball_stats'] = Helper.construct_ball_stats_hash(spells)
+      hash['ball_stats'] = Helper.construct_ball_stats_hash(spells)[0]
     end
     render(:json => Oj.dump(hash))
   end

@@ -1,0 +1,4 @@
+.tournament_bat_stats{
+    display: flex;
+    flex-direction: column;
+}

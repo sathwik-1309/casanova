@@ -1,9 +1,11 @@
 import Photocard from "../../Photocard/Photocard";
 import React from "react";
 import './PlayerCard.css'
+import {BACKEND_API_URL} from "../../../my_constants";
+import {useParams} from "react-router-dom";
 
 function PlayerCard(props){
-    console.log(props)
+    let { t_id } = useParams();
     let player = props.player
     let content = <div className={`empty_pic ${player.color}1`}></div>
     let pic_height = '0px'
@@ -18,14 +20,14 @@ function PlayerCard(props){
     return (
         <div className='lci'>
             {content}
-            <div className={`lci__data ${player.color}1`}>
+            <div className={`lci__data ${player.color}1`} onClick={() => props.func(player.p_id)}>
                 <div className='lci_row1'>
                     <div className='lci_name font-600 font-1'>{player.name}</div>
-                    <div className={`lci_data1 ${player.color}2`}>{player.data1}</div>
+                    <div className={`lci_data1 flex-centered ${player.color}2`}>{player.data1}</div>
                 </div>
                 <div className='lci_row2'>
                     <div className='lci_teamname'>{player.teamname}</div>
-                    <div className='lci_data2'>{player.data2}</div>
+                    <div className='lci_data2 flex-centered'>{player.data2}</div>
                 </div>
             </div>
         </div>

@@ -1,16 +1,13 @@
 import './SummaryFooter.css'
 import React, { useState, useEffect } from 'react';
 import {images} from '../images/images.js';
+import Photocard from "../Photocard/Photocard";
 
 function Motm(props) {
     console.log(props)
     let motm = props.motm
     let class1 = "summary_motm "+props.color+"1"
     let img = images[motm.pid]
-    // if (motm.pid > 195) {
-    //     img = images[0]
-    // }
-
 
     let motm_stats = "NA"
     if (motm.bat && motm.ball) {
@@ -45,7 +42,7 @@ function Motm(props) {
 
     return (
         <div className={class1}>
-            <img src={img} className='mom_photo' />
+            <Photocard p_id={motm.pid}/>
             <div className='mom_stats'>
                 <div className='mom_stats1'>
                     {/* {props.motm_name} */}

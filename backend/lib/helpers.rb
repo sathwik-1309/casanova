@@ -24,7 +24,6 @@ module Helper
             hash["best_runs_with_notout"] = score.get_runs_with_notout
             hash["best_balls"] = score.balls
         end
-
         return hash
     end
 

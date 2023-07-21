@@ -213,9 +213,9 @@ class Player < ApplicationRecord
         squads_p = SquadPlayer.where(player_id: self.id)
         h[TOUR_CLASS] = Tournament.where(id: squads_p.pluck(:tournament_id)).map{|t| t.name}.uniq
         h[TEAM] = Squad.where(id: squads_p.pluck(:squad_id)).map{|s| s.team.abbrevation}.uniq
-        h[TOUR] = squads_p.pluck(:tournament_id)
-        h[VENUE] = self.scores.map{|s| s.match.venue}.uniq
-        h[VS_TEAM] = self.scores.map{|s| s.inning.bow_team.abbrevation}.uniq
+        h[TOUR] = squads_p.pluck(:tournament_id).map{|t_id| t_id.to_s}
+        h[VENUE] = self.scores.select{|s| s.batted == true}.map{|s| s.match.venue}.uniq
+        h[VS_TEAM] = self.scores.select{|s| s.batted == true}.map{|s| s.inning.bow_team.abbrevation}.uniq
         return h
     end
 

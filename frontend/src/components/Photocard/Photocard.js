@@ -1,7 +1,5 @@
 import './Photocard.css'
-import '../css/teams.css'
 import {images} from '../images/images.js';
-
 function Photocard(props){
     let img1 = images[props.p_id]
     // if (props.p_id > 400) {
@@ -28,8 +26,10 @@ function Photocard(props){
 
     return (
         <div style = {height_style} className={class1}>
-        <img src={img1} style={img_style}className='photo_card_pic' />
-    </div>
+            <a href={`http://localhost:3000/player/${props.p_id}`} className='fit-content img_wrapper'>
+                <img src={img1} style={img_style}className='photo_card_pic'/>
+            </a>
+        </div>
     );
 }
 

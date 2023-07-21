@@ -5,6 +5,7 @@ class BatStat < ApplicationRecord
         b = BatStat.new
         b.player_id = p_id
         b.sub_type = sub_type
+        b.matches = 0
         b.innings = 0
         b.runs = 0
         b.balls = 0
@@ -36,7 +37,7 @@ class BatStat < ApplicationRecord
     def get_hash
         h = {}
         # self.player.matches
-        h['matches'] = 0
+        h['matches'] = self.matches
         h['innings'] = self.innings
         h['runs'] = self.runs
         h['sr'] = self.sr

@@ -39,7 +39,7 @@ class BallStat < ApplicationRecord
     def get_hash
         h = {}
         # self.player.matches
-        h['matches'] = 0
+        h['matches'] = self.matches
         h['innings'] = self.innings
         h['overs'] = self.overs
         h['wickets'] = self.wickets

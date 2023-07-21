@@ -1,10 +1,6 @@
 import React from "react";
 import Playerbox from "./PlayerBox/Playerbox";
 import './PlayersBox.css'
-import Pointstable from "../../Pointstable/Pointstable";
-import BatStats from "../../Tournament/BatStats/BatStats";
-import BallStats from "../../Tournament/BallStats/BallStats";
-import Stats from "../../Tournament/Stats/Stats";
 
 function PlayersBox(props) {
     let data = props.data

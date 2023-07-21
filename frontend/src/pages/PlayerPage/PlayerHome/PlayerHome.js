@@ -99,8 +99,8 @@ function PlayerHome(props) {
                 <TrophyCabinet data={data.trophy_cabinet}/>
             </div>
             <div className='flex-row wrap gap-60'>
-                <ControlBox p_id={p_id} stat_type='bat_stats'/>
-                <ControlBox p_id={p_id} stat_type='ball_stats'/>
+                <ControlBox p_id={p_id} stat_type='bat_stats' stat_options={data.stat_options}/>
+                <ControlBox p_id={p_id} stat_type='ball_stats' stat_options={data.stat_options}/>
             </div>
         </div>
     );

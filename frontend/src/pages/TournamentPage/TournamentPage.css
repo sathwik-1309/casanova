@@ -1,8 +1,8 @@
 #tournament_page {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    width: 100%;
+    width: fit-content;
+    padding: 0 50px;
 }
 
 #tournament_page_item1 {
@@ -13,8 +13,6 @@
 
 #tournament_page_item2 {
     height: 92%;
-    margin-top: 8%;
     width: 100%;
-    padding: 0 5px;
-    padding-left: 100px;
+    padding: 20px 5px;
 }

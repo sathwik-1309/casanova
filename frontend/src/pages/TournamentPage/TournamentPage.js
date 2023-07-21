@@ -2,9 +2,8 @@ import { useParams } from 'react-router-dom';
 import Topbar from './Topbar/Topbar';
 import './TournamentPage.css'
 import Pointstable from "../../components/Pointstable/Pointstable";
-import BatStats from "../../components/Tournament/BatStats/BatStats";
-import BallStats from "../../components/Tournament/BallStats/BallStats";
-import Stats from "../../components/Tournament/Stats/Stats";
+import BatStats from "../../components/Tournament/TBatStats/TBatStats";
+import BallStats from "../../components/Tournament/TBallStats/TBallStats";
 
 
 function TournamentPage() {
@@ -20,9 +19,6 @@ function TournamentPage() {
           break;
         case "ball_stats":
             component = <BallStats t_id={t_id}/>
-          break;
-        case "stats":
-            component = <Stats t_id={t_id}/>
           break;
         // case "partnerships":
         //     component = <Partnerships m_id = {m_id} inn_no={inn_no}/>

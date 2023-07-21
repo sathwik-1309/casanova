@@ -1,9 +1,0 @@
-.tournament_stats{
-    display: flex;
-    flex-direction: row;
-}
-
-.tournament_bat_stats_window,
-.tournament_ball_stats_window{
-    width: 50%;
-}

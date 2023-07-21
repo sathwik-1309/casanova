@@ -233,6 +233,7 @@ module Seed
                 p.csl_team_id = player["csl"]
                 p.ipl_team_id = player["ipl"]
                 p.born_team_id = player["born"]
+                p.matches = 0
                 unless p.save
                     puts "Player add error ❌"
                 end

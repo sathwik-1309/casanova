@@ -1,14 +1,42 @@
 import './BatStats.css'
 import InfoLine from "../Infoline/InfoLine";
+import {BACKEND_API_URL} from "../../../../my_constants";
+import React, {useEffect, useState} from "react";
+import Photocard from "../../../Photocard/Photocard";
 
 function BatStats(props) {
-    let data = props.data
+    let url = props.url
+    const [data, setData] = useState(null);
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await fetch(url);
+            const jsonData = await response.json();
+            setData(jsonData);
+        };
+
+        fetchData();
+    }, [url]);
+    if (!data) {
+        return <div>Loading...</div>;
+    }
     let bat = data.bat_stats
+    let stat_header = <></>
+    let photocard = <></>
+    if (props.header) {
+        stat_header = <div className='h-35 font-600 flex-centered font-1'>BATTING STATS</div>
+        photocard = <Photocard p_id={data.p_id} height='85px'/>
+    }
     return (
         <div className='bat_stats flex-col w-507 default-font bg-white p-3 font-500 font-1'>
-            <div className={`bs_headers flex-col lp-20 ${data.color}1`}>
-                <div className='bs_header1 h-45 font-1_2 flex vert-align'>{data.name}</div>
-                <div className='bs_header2 h-40 flex vert-align'>{data.teamname}</div>
+            {stat_header}
+            <div className={`bs_headers flex-col h-85 lp-20 ${data.color}1`}>
+                <div className='flex-row'>
+                    {photocard}
+                    <div className='flex-col'>
+                        <div className='bs_header1 h-45 font-1_2 flex vert-align font-600'>{data.name}</div>
+                        <div className='bs_header2 h-40 font-0_9 flex vert-align'>{data.teamname}</div>
+                    </div>
+                </div>
             </div>
             <div className='bs_info flex-row'>
                 <div className='bs_info_left_box flex-col'>

@@ -29,3 +29,7 @@
 - match page cleaned
 - innings phase progression
 - player search bar added (lower stage)
+
+# v.1.7
+- player page added
+- tbat_stats and tball_stats refactored

@@ -194,6 +194,17 @@ module Util
         end
     end
 
+    def self.get_role(role)
+        case role
+        when 'all'
+            return 'All-rounder'
+        when 'bow'
+            return 'Bowler'
+        when 'bat'
+            return 'Batsman'
+        end
+    end
+
 
 end
 

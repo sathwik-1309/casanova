@@ -23,8 +23,8 @@ module Helper
             hash["best_runs"] = score.runs
             hash["best_runs_with_notout"] = score.get_runs_with_notout
             hash["best_balls"] = score.balls
+            hash["best_id"] = score.id
         end
-
         return hash
     end
 
@@ -94,13 +94,13 @@ module Helper
     def self.construct_lci_info(attribute, value)
         case attribute
         when "innings"
-            return "M : #{value}"
+            return "Matches : #{value}"
         when "runs"
-            return "R : #{value}"
+            return "Runs : #{value}"
         when "wickets"
-            return "W : #{value}"
+            return "Wickets : #{value}"
         when "eco"
-            return "E : #{value}"
+            return "Economy : #{value}"
         end
         return "not known: #{attribute}"
 
@@ -150,6 +150,7 @@ module Helper
             hash["best_overs"] = spell.overs
             hash["best_wickets"] = spell.wickets
             hash["best_runs"] = spell.runs
+            hash["best_id"] = spell.id
         end
         return hash
     end
@@ -363,6 +364,7 @@ module Helper
             hash['color'] = squad.abbrevation
             hash['pos'] = count
             hash['data1'] = stats.send(sort_key.to_sym)
+            hash['data2'] = "Innings: #{stats.innings}"
             arr << hash
         end
         return arr
@@ -386,6 +388,89 @@ module Helper
         else
             raise StandardError.new("Helpers#get_tour_class_ids: no tour_class for t_id #{t_id}")
         end
+    end
+
+    def self.construct_ball_stats_hash2(spells)
+        balls = 0
+        runs = 0
+        dots = 0
+        boundaries = 0
+        best_spell = nil
+        h = {
+          'innings' => 0,
+          'wickets' => 0,
+          'maidens' => 0,
+          'three_wickets' => 0,
+          'five_wickets' => 0,
+        }
+        spells.each do |spell|
+            h['innings'] += 1
+            balls += Util.overs_to_balls(spell.overs)
+            h['wickets'] += spell.wickets
+            runs += spell.runs
+            h['maidens'] += spell.maidens
+            h['three_wickets'] += 1 if spell.wickets >= 3
+            h['five_wickets'] += 1 if spell.wickets >= 5
+            dots += spell.dots
+            boundaries += (spell.c4 + spell.c6)
+            best_spell = Spell.get_better_spell(best_spell, spell) if spell.wickets >= 1
+        end
+        h['overs'] = Util.balls_to_overs(balls)
+        h['economy'] = Util.get_rr(runs, balls)
+        h['avg'] = (runs.to_f/h['wickets']).round(2)
+        h['sr'] = (runs.to_f/balls).round(2)
+        h['dot_p'] = (dots.to_f/balls).round(2)
+        h['boundary_p'] = (boundaries.to_f/balls).round(2)
+        h['best_spell'] = nil
+        unless best_spell.nil?
+            h['best_spell'] = best_spell.spell_box
+        end
+        return h
+    end
+
+    def self.construct_bat_stats_hash2(scores)
+        balls = 0
+        not_outs = 0
+        dots = 0
+        boundaries = 0
+        best_score = nil
+        h = {
+          'innings' => 0,
+          'runs' => 0,
+          'fours' => 0,
+          'sixes' => 0,
+          'thirties' => 0,
+          'fifties' => 0,
+          'hundreds' => 0,
+        }
+        scores.each do |score|
+            h['innings'] += 1
+            balls += score.balls
+            h['runs'] += score.runs
+            not_outs += 1 if score.not_out
+            h['fours'] += score.c4
+            h['sixes'] += score.c6
+            h['thirties'] += 1 if score.runs >= 30
+            h['fifties'] += 1 if score.runs >= 50
+            h['hundreds'] += 1 if score.runs >= 100
+            dots += score.dots
+            boundaries += (score.c4 + score.c6)
+            best_score = Score.get_better_score(best_score, score) if score.runs > 0
+        end
+        h['sr'] = Util.get_sr(h['runs'], balls)
+        outs = h['innings']-not_outs
+        if outs > 0
+            h['avg'] = (h['runs'].to_f/outs).round(2)
+        else
+            h['avg'] = '-'
+        end
+        h['dot_p'] = (dots.to_f/balls).round(2)
+        h['boundary_p'] = (boundaries.to_f/balls).round(2)
+        h['best_score'] = nil
+        unless best_score.nil?
+            h['best_score'] = best_score.score_box
+        end
+        return h
     end
 
 end

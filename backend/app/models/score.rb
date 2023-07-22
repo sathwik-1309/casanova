@@ -17,13 +17,10 @@ class Score < ApplicationRecord
     end
 
     def score_box
-        m_id = self.match_id
-        p_id = self.player_id
         hash = {}
-        match = Match.find(m_id)
         hash["type"] = 'score'
-        hash["tour"] = match.get_tour_font
-        hash["name"] = Util.case(self.player.fullname, match.tournament_id)
+        hash["tour"] = self.match.get_tour_font
+        hash["name"] = Util.case(self.player.fullname, self.match.tournament_id)
         hash["score"] = self.get_runs_with_notout
         hash["balls"] = self.balls
         hash["dots"] = self.dots
@@ -34,7 +31,9 @@ class Score < ApplicationRecord
         hash["sixes"] = self.c6
         hash["sr"] = self.sr
         hash["color"] = self.squad.abbrevation
-        hash["p_id"] = p_id
+        hash["vs_team"] = self.inning.bow_team.get_abb
+        hash["venue"] = self.match.venue.upcase
+        hash["p_id"] = self.player_id
         return hash
     end
 
@@ -46,6 +45,15 @@ class Score < ApplicationRecord
         rel_sr = self.sr.nil? ? 0 : (self.sr/match_sr).round(2)
         points = (self.runs + not_out) * rel_sr
         return points.round(2)
+    end
+
+    def self.get_better_score(score1, score2)
+        return score2 if score1.nil?
+        return score1 if score1.runs > score2.runs
+        return score2 if score1.runs < score2.runs
+        return score1 if score1.balls < score2.balls
+        return score2 if score1.balls > score2.balls
+        return score1
     end
 
 end

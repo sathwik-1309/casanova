@@ -1,0 +1,8 @@
+.bs_info_line {
+    margin-top: 1px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.bs_info {
+    justify-content: space-between;
+}

@@ -19,6 +19,7 @@ import VenuesPage from "./pages/VenuesPage/VenuesPage";
 import TournamentHome from "./pages/TournamentPage/TournamentHome/TournamentHome";
 import Meta from "./components/Meta/Meta";
 import CreateTournament from "./pages/Create/Tournament/CreateTournament";
+import PlayerHome from "./pages/PlayerPage/PlayerHome/PlayerHome";
 
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
 
       <Route path="/match/:m_id/:inn_no/:graphic" element={<WebPage page={<MatchPage/>} s_id='match'/>}/>
 
+      <Route path="/player/:p_id" element={<WebPage page={<PlayerHome/>}/>} />
       <Route path="/player/:p_id/:page" element={<WebPage page={<PlayerPage/>}/>} />
 
       <Route path="/players" element={<WebPage page={<PlayersPage/>} s_id='players_page'/>} />

@@ -421,7 +421,7 @@ module Uploader
     end
 
     def self.update_bat_stats(match)
-        scores = match.scores.where(batted: true)
+        scores = match.scores
         scores.each do|score|
             sub_types = ["overall", "#{score.tournament.name}", "tour_#{score.tournament.id}", "#{score.squad.team.abbrevation}"]
             sub_types.each do|sub_type|
@@ -430,8 +430,12 @@ module Uploader
                     b = BatStat.create_db_entry(score.player_id, sub_type)
                     raise StandardError if b.nil?
                 end
-                status = Uploader.update_bat_stats_entry(b, score)
-                raise StandardError unless status
+                if score.batted
+                    status = Uploader.update_bat_stats_entry(b, score)
+                    raise StandardError unless status
+                end
+                b.matches += 1
+                b.save!
             end
         end
         return true
@@ -447,7 +451,7 @@ module Uploader
                     b = BallStat.create_db_entry(spell.player_id, sub_type)
                     raise StandardError if b.nil?
                 end
-                status = Uploader.update_ball_stats_entry(b, spell)
+                status = Uploader.update_ball_stats_entry(b, spell, sub_type)
                 raise StandardError unless status
             end
         end
@@ -676,7 +680,11 @@ module Uploader
         return true
     end
 
-    def self.update_ball_stats_entry(b, spell)
+    def self.update_ball_stats_entry(b, spell, sub_type)
+        bat_stat = BatStat.find_by(player_id: b.player_id, sub_type: sub_type)
+        raise StandardError if bat_stat.nil?
+        bat_stat.reload
+        b.matches = bat_stat.matches
         b.innings += 1
         b.overs = Util.balls_to_overs(Util.overs_to_balls(spell.overs)+Util.overs_to_balls(b.overs))
         b.maidens += spell.maidens
@@ -740,6 +748,15 @@ module Uploader
             player.save!
         end
     end
+
+    # def self.update_player_matches(match)
+    #     scores = match.scores
+    #     scores.each do |score|
+    #         p = score.player
+    #         p.matches += 1
+    #         p.save!
+    #     end
+    # end
 
     # def self.update_milestones(match, prev_image, new_image)
     #

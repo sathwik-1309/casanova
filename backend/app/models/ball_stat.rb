@@ -35,4 +35,25 @@ class BallStat < ApplicationRecord
     def best
         return Spell.find_by(player_id: self.player_id, inning_id: self.best_id)
     end
+
+    def get_hash
+        h = {}
+        # self.player.matches
+        h['matches'] = self.matches
+        h['innings'] = self.innings
+        h['overs'] = self.overs
+        h['wickets'] = self.wickets
+        h['economy'] = self.economy
+        h['maidens'] = self.maidens
+        h['sr'] = self.sr
+        h['avg'] = self.avg
+        h['dot_p'] = self.dot_p
+        h['boundary_p'] = self.boundary_p
+        h['fours'] = self.c4
+        h['sixes'] = self.c6
+        h['three_wickets'] = self.three_wickets
+        h['five_wickets'] = self.five_wickets
+        h['best_spell'] = self.best_id.nil? ? nil : Spell.find_by(player_id: self.player_id, inning_id: self.best_id).spell_box
+        return h
+    end
 end

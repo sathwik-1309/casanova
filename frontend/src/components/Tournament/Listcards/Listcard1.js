@@ -19,7 +19,7 @@ function Listcard1(props){
     return(
         <div className='listcard_item'>
             <div style={height_style} className='listcard_item_sl_no'>{player.pos}</div>
-            <PlayerCard player = {player} pic={pic}/>
+            <PlayerCard player = {player} pic={pic} func={props.func}/>
         </div>
     );
 }

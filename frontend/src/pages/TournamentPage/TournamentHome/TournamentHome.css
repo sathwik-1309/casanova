@@ -34,6 +34,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 0.8;
 }
 .th_box1_winner_label {
     height: 30px;
@@ -45,10 +46,12 @@
 .th_box_runners {
     display: flex;
     flex-direction: column;
-    margin: 10px;
     border-radius: 1px;
     box-shadow: var(--shadow-border);
     margin: 0 20px;
+    border-radius: 3px;
+    overflow: hidden;
+
 }
 .th_box_champions {
     background-color: gold;

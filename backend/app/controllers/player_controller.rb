@@ -205,7 +205,7 @@ class PlayerController < ApplicationController
         matches = player.scores.select{|s| s.match.venue == value}.length
       when Player::VS_TEAM
         spells = player.spells.select{|s| s.inning.bat_team.abbrevation == value}
-        matches = player.scores.select{|s| s.inning.bat_team.abbrevation == value}.length
+        matches = player.scores.select{|s| s.inning.bow_team.abbrevation == value}.length
       end
       if spells.length >= 1
         hash['ball_stats'] = Helper.construct_ball_stats_hash2(spells)

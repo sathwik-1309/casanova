@@ -19,38 +19,28 @@
 .lci_row1{
     display: flex;
     flex-direction: row;
-    height: 30px;
     font-size: 1rem;
     font-weight: 600;
 }
 .lci_row2{
     display: flex;
     flex-direction: row;
-    height: 30px;
     font-size: 0.8rem;
-    font-weight: 400;
+    font-weight: 600;
+    opacity: 0.9;
 }
 
 .lci_name{
     width: 200px;
-    padding-top: 0.2rem;
-    text-align: center;
 }
 .lci_data1 {
     width: 80px;
-    font-size: 1rem;
 }
 
 .lci_teamname {
-    width: 200px;
-    padding-top: 0.3rem;
-    padding-left: 10px;
+    width: 180px;
 }
 .lci_data2 {
-    width: 80px;
+    width: 100px;
 }
 
-.empty_pic {
-    height: 60px;
-    width: 20px;
-}

@@ -94,13 +94,13 @@ module Helper
     def self.construct_lci_info(attribute, value)
         case attribute
         when "innings"
-            return "M : #{value}"
+            return "Matches : #{value}"
         when "runs"
-            return "R : #{value}"
+            return "Runs : #{value}"
         when "wickets"
-            return "W : #{value}"
+            return "Wickets : #{value}"
         when "eco"
-            return "E : #{value}"
+            return "Economy : #{value}"
         end
         return "not known: #{attribute}"
 
@@ -364,6 +364,7 @@ module Helper
             hash['color'] = squad.abbrevation
             hash['pos'] = count
             hash['data1'] = stats.send(sort_key.to_sym)
+            hash['data2'] = "Innings: #{stats.innings}"
             arr << hash
         end
         return arr

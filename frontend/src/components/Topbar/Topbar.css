@@ -9,6 +9,7 @@
     position: fixed;
     width: 92%;
     border-bottom: 1px solid lightgray;
+    z-index: 20;
     /*box-shadow: var(--shadow-border);*/
 }
 .topbar_item {

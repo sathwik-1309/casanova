@@ -3,6 +3,7 @@ import InfoLine from "../Infoline/InfoLine";
 import {BACKEND_API_URL} from "../../../../my_constants";
 import React, {useEffect, useState} from "react";
 import Photocard from "../../../Photocard/Photocard";
+import BestBox from "../BestBox/BestBox";
 
 function BatStats(props) {
     let url = props.url
@@ -54,6 +55,7 @@ function BatStats(props) {
                     <InfoLine color={data.color} label='30 +' value={bat.thirties}/>
                     <InfoLine color={data.color} label='50 +' value={bat.fifties} bold={true}/>
                     <InfoLine color={data.color} label='100 +' value={bat.hundreds}/>
+                    <BestBox data={bat.best_score} type='score'/>
                 </div>
             </div>
         </div>

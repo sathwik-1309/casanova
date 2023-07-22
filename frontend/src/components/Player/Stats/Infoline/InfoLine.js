@@ -1,5 +1,5 @@
 function InfoLine(props) {
-    let class1 = `bs_info_line_label flex vert-align lp-15 ${props.color}2 w-100`
+    let class1 = `bs_info_line_label flex-centered ${props.color}2 w-100`
     if (props.bold) {
         class1 = class1 + ' font-600'
     }

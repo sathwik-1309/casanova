@@ -3,6 +3,7 @@ import InfoLine from "../Infoline/InfoLine";
 import React, {useEffect, useState} from "react";
 import Photocard from "../../../Photocard/Photocard";
 import photocard from "../../../Photocard/Photocard";
+import BestBox from "../BestBox/BestBox";
 
 function BallStats(props) {
     let url = props.url
@@ -20,6 +21,7 @@ function BallStats(props) {
         return <div>Loading...</div>;
     }
     let bat = data.ball_stats
+    if (!bat) return <></>
     let stat_header = <></>
     let photocard = <></>
     if (props.header) {
@@ -54,6 +56,7 @@ function BallStats(props) {
                     <InfoLine color={data.color} label='Strike-Rate' value={bat.sr}/>
                     <InfoLine color={data.color} label='3W +' value={bat.three_wickets} bold={true}/>
                     <InfoLine color={data.color} label='5W +' value={bat.five_wickets}/>
+                    <BestBox data={bat.best_spell} type={'spell'}/>
                 </div>
             </div>
         </div>

@@ -38,7 +38,7 @@ function TBallStats(props) {
     return (
 
         <div className={`tournament_ball_stats flex-col ${data.tour}`}>
-            <div className='flex-row gap-60'>
+            <div className='flex-row gap-140'>
                 {data.ball_stats.boxes.map((lists, index) => (
                     <Listcards key={index} data={lists} func={handleclick}/>
                 ))}

@@ -14,6 +14,7 @@
 .lci_data{
     display: flex;
     flex-direction: column;
+    height: fit-content;
 }
 .lci_row1{
     display: flex;

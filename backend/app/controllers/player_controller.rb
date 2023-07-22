@@ -170,10 +170,17 @@ class PlayerController < ApplicationController
       case type
       when Player::VENUE
         scores = player.scores.select{|s| s.match.venue == value and s.batted == true}
+        matches = player.scores.select{|s| s.match.venue == value}.length
       when Player::VS_TEAM
         scores = player.scores.select{|s| s.inning.bow_team.abbrevation == value and s.batted == true}
+        matches = player.scores.select{|s| s.inning.bow_team.abbrevation == value }.length
       end
-      hash['bat_stats'] = Helper.construct_bat_stats_hash(scores)[0]
+      if scores.length >= 1
+        hash['bat_stats'] = Helper.construct_bat_stats_hash2(scores)
+        hash['bat_stats']['matches'] = matches
+      else
+        hash['bat_stats'] = {}
+      end
     end
     render(:json => Oj.dump(hash))
   end
@@ -195,10 +202,18 @@ class PlayerController < ApplicationController
       case type
       when Player::VENUE
         spells = player.spells.select{|s| s.match.venue == value}
+        matches = player.scores.select{|s| s.match.venue == value}.length
       when Player::VS_TEAM
         spells = player.spells.select{|s| s.inning.bat_team.abbrevation == value}
+        matches = player.scores.select{|s| s.inning.bat_team.abbrevation == value}.length
       end
-      hash['ball_stats'] = Helper.construct_ball_stats_hash(spells)[0]
+      if spells.length >= 1
+        hash['ball_stats'] = Helper.construct_ball_stats_hash2(spells)
+        hash['ball_stats']['matches'] = matches
+      else
+        hash['ball_stats'] = {}
+      end
+
     end
     render(:json => Oj.dump(hash))
   end

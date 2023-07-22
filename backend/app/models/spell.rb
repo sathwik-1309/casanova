@@ -13,13 +13,10 @@ class Spell < ApplicationRecord
     end
 
     def spell_box
-        m_id = self.match_id
-        p_id = self.player_id
         hash = {}
-        match = Match.find(m_id)
         hash["type"] = 'spell'
-        hash["tour"] = match.get_tour_font
-        hash["name"] = Util.case(self.player.fullname, match.tournament_id)
+        hash["tour"] = self.match.get_tour_font
+        hash["name"] = Util.case(self.player.fullname, self.match.tournament_id)
         hash["fig"] = self.get_fig
         hash["overs"] = self.overs
         hash["dots"] = self.dots
@@ -29,7 +26,9 @@ class Spell < ApplicationRecord
         hash["economy"] = self.economy
         hash["maidens"] = self.maidens
         hash["color"] = self.squad.abbrevation
-        hash["p_id"] = p_id
+        hash["p_id"] = self.player_id
+        hash["vs_team"] = self.inning.bat_team.get_abb
+        hash["venue"] = self.match.venue.upcase
         return hash
     end
 
@@ -40,5 +39,14 @@ class Spell < ApplicationRecord
         rel_eco = 0 if rel_eco < 0.85
         points = (Util.overs_to_balls(self.overs) * rel_eco * 0.8) + (self.wickets * rel_sr)
         return points.round(2)
+    end
+
+    def self.get_better_spell(spell1, spell2)
+        return spell2 if spell1.nil?
+        return spell1 if spell1.wickets > spell2.wickets
+        return spell2 if spell1.wickets < spell2.wickets
+        return spell1 if spell1.runs < spell2.runs
+        return spell2 if spell1.runs > spell2.runs
+        return spell1
     end
 end

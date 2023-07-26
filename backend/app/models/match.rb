@@ -43,36 +43,35 @@ class Match < ApplicationRecord
         return "#{Tournament.find(self.tournament_id).name}_#{self.tournament_id}"
     end
 
-    def self.match_box(m_id)
-        match = Match.find(m_id)
+    def match_box
         hash = {}
-        inn1 = match.inn1
-        inn2 = match.inn2
+        inn1 = self.inn1
+        inn2 = self.inn2
         hash["inn1"] = {}
         hash["inn1"]["teamname"] = inn1.bat_team.get_abb
-        hash["inn1"]["won"] = match.winner_id == inn1.bat_team_id
-        if match.winner_id == inn1.bat_team_id
+        hash["inn1"]["won"] = self.winner_id == inn1.bat_team_id
+        if self.winner_id == inn1.bat_team_id
             hash["inn1"]["score"] = "⭐️ #{Util.get_score(inn1.score, inn1.for)}"
         else
             hash["inn1"]["score"] = "#{Util.get_score(inn1.score, inn1.for)}"
         end
 
 
-        hash["inn1"]["color"] = inn1.bat_team.abbrevation
+        hash["inn1"]["color"] = Util.get_team_color(self.tournament_id, inn1.bat_team.abbrevation)
         hash["inn2"] = {}
         hash["inn2"]["teamname"] = inn2.bat_team.get_abb
-        hash["inn2"]["won"] = match.winner_id == inn2.bat_team_id
-        if match.winner_id == inn2.bat_team_id
+        hash["inn2"]["won"] = self.winner_id == inn2.bat_team_id
+        if self.winner_id == inn2.bat_team_id
             hash["inn2"]["score"] = "⭐️ #{Util.get_score(inn2.score, inn2.for)}"
         else
             hash["inn2"]["score"] = "#{Util.get_score(inn2.score, inn2.for)}"
         end
-        hash["inn2"]["color"] = inn2.bat_team.abbrevation
+        hash["inn2"]["color"] = Util.get_team_color(self.tournament_id, inn2.bat_team.abbrevation)
 
-        hash["tour"] = match.get_tour_font
-        hash["tour_name"] = "#{Tournament.find(match.tournament_id).name.upcase}"
-        hash["venue"] = match.venue.titleize
-        hash["m_id"] = m_id
+        hash["tour"] = self.get_tour_font
+        hash["tour_name"] = "#{Tournament.find(self.tournament_id).name.upcase}"
+        hash["venue"] = self.venue.titleize
+        hash["m_id"] = self.id
         return hash
     end
 
@@ -156,7 +155,7 @@ class Match < ApplicationRecord
                   "runs" => 0,
                   "balls" => 0,
                   "out" => false,
-                  "color" => innings.bat_team.abbrevation
+                  "color" => Util.get_team_color(innings.tournament_id, innings.bat_team.abbrevation)
                 }
             end
             unless bowlers.has_key? ball.bowler_id.to_s
@@ -167,7 +166,7 @@ class Match < ApplicationRecord
                   "balls" => 0,
                   "runs" => 0,
                   "wickets" => 0,
-                  "color" => innings.bow_team.abbrevation
+                  "color" => Util.get_team_color(innings.tournament_id, innings.bow_team.abbrevation)
                 }
             end
             batsmen, bowlers = Match.update_player_hashes(ball, batsmen, bowlers)
@@ -210,7 +209,7 @@ class Match < ApplicationRecord
     def get_highlights_hash_spell(spell, spell_ss, spell_type)
         temp = {}
         team = spell.squad.team
-        temp['color'] = team.abbrevation
+        temp['color'] = Util.get_team_color(self.tournament_id, team.abbrevation)
         p_id = spell.player_id
         tour_class_ids = Tournament.where(name: self.tournament.name).pluck(:id)
         p_spells = Spell.where(player_id: p_id, match_id: 1..self.id, wickets: spell_ss..Float::INFINITY)
@@ -230,7 +229,7 @@ class Match < ApplicationRecord
     def get_highlights_hash_score(score, score_ss, score_type)
         temp = {}
         team = score.squad.team
-        temp['color'] = team.abbrevation
+        temp['color'] = Util.get_team_color(self.tournament_id, team.abbrevation)
         p_id = score.player_id
         tour_class_ids = Tournament.where(name: self.tournament.name).pluck(:id)
         p_scores = Score.where(player_id: p_id, match_id: 1..self.id, runs: score_ss..Float::INFINITY)
@@ -250,7 +249,7 @@ class Match < ApplicationRecord
     def self.get_inn_hash_for_phase_performers(inn, innings_progression)
         inn1 = {}
         inn1['teamname'] = inn.bat_team.get_teamname
-        inn1['color'] = inn.bat_team.abbrevation
+        inn1['color'] = Util.get_team_color(inn.tournament_id, inn.bat_team.abbrevation)
         inn1['score'] = inn.get_score
         inn1['overs'] = inn.overs
         ['powerplay', 'middle', 'death'].each do|phase|
@@ -308,7 +307,7 @@ class Match < ApplicationRecord
         total_score = "#{total_runs}-#{total_wickets}" unless total_runs.nil?
         return {
           "score" => "#{runs}-#{wickets}",
-          "color" => innings.bat_team.abbrevation,
+          "color" => Util.get_team_color(innings.tournament_id, innings.bat_team.abbrevation),
           "teamname" =>  innings.bat_team.abbrevation.upcase,
           "height" => [runs*4, 400].min,
           "total_score" => total_score,

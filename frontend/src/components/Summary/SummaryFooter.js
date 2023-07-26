@@ -4,7 +4,6 @@ import {images} from '../images/images.js';
 import Photocard from "../Photocard/Photocard";
 
 function Motm(props) {
-    console.log(props)
     let motm = props.motm
     let class1 = "summary_motm "+props.color+"1"
     let img = images[motm.pid]

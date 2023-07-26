@@ -3,11 +3,8 @@ import Scoreline from './Scoreline';
 import Wrapper1 from './Wrapper1';
 
 function SummaryInnings(props) {
-    console.log(props)
     let inn = props.inn
     let tour = props.tour
-
-    
     return (
         <div className="summary_innings">
             <Scoreline team={inn.bat_team} score={inn.score} overs={inn.overs} tour={tour} teamname={inn.teamname}/>

@@ -1,0 +1,363 @@
+{
+  "matches": [
+  {
+    "teams": [
+      "aus",
+      "nz"
+    ],
+    "venue": "Delhi"
+  },
+  {
+    "teams": [
+      "ind",
+      "sa"
+    ],
+    "venue": "Dharamshala"
+  },
+  {
+    "teams": [
+      "sl",
+      "eng"
+    ],
+    "venue": "Mumbai"
+  },
+  {
+    "teams": [
+      "pak",
+      "ban"
+    ],
+    "venue": "Kolkata"
+  },
+
+
+  {
+    "teams": [
+      "ind",
+      "afg"
+    ],
+    "venue": "Pune"
+  },
+  {
+    "teams": [
+      "pak",
+      "sl"
+    ],
+    "venue": "Hyderabad"
+  },
+  {
+    "teams": [
+      "sa",
+      "ban"
+    ],
+    "venue": "Chennai"
+  },
+  {
+    "teams": [
+      "aus",
+      "eng"
+    ],
+    "venue": "Kolkata"
+  },
+
+
+  {
+    "teams": [
+      "sl",
+      "ban"
+    ],
+    "venue": "Pune"
+  },
+  {
+    "teams": [
+      "nz",
+      "afg"
+    ],
+    "venue": "Chennai"
+  },
+  {
+    "teams": [
+      "pak",
+      "sa"
+    ],
+    "venue": "Mumbai"
+  },
+  {
+    "teams": [
+      "ind",
+      "aus"
+    ],
+    "venue": "Delhi"
+  },
+
+
+  {
+    "teams": [
+      "pak",
+      "afg"
+    ],
+    "venue": "Lucknow"
+  },
+  {
+    "teams": [
+      "sa",
+      "eng"
+    ],
+    "venue": "Delhi"
+  },
+  {
+    "teams": [
+      "sl",
+      "aus"
+    ],
+    "venue": "Bengaluru"
+  },
+  {
+    "teams": [
+      "nz",
+      "ban"
+    ],
+    "venue": "Lucknow"
+  },
+
+
+  {
+    "teams": [
+      "ind",
+      "pak"
+    ],
+    "venue": "Ahmedabad"
+  },
+  {
+    "teams": [
+      "afg",
+      "eng"
+    ],
+    "venue": "Lucknow"
+  },
+  {
+    "teams": [
+      "nz",
+      "sa"
+    ],
+    "venue": "Pune"
+  },
+  {
+    "teams": [
+      "aus",
+      "ban"
+    ],
+    "venue": "Dharamshala"
+  },
+
+
+  {
+    "teams": [
+      "ind",
+      "eng"
+    ],
+    "venue": "Mumbai"
+  },
+  {
+    "teams": [
+      "sl",
+      "sa"
+    ],
+    "venue": "Ahmedabad"
+  },
+  {
+    "teams": [
+      "pak",
+      "nz"
+    ],
+    "venue": "Hyderabad"
+  },
+  {
+    "teams": [
+      "aus",
+      "afg"
+    ],
+    "venue": "Pune"
+  },
+
+
+  {
+    "teams": [
+      "ind",
+      "sl"
+    ],
+    "venue": "Kolkata"
+  },
+  {
+    "teams": [
+      "nz",
+      "eng"
+    ],
+    "venue": "Ahmedabad"
+  },
+  {
+    "teams": [
+      "afg",
+      "ban"
+    ],
+    "venue": "Bengaluru"
+  },
+  {
+    "teams": [
+      "aus",
+      "sa"
+    ],
+    "venue": "Dharamshala"
+  },
+
+
+  {
+    "teams": [
+      "ind",
+      "nz"
+    ],
+    "venue": "Chennai"
+  },
+  {
+    "teams": [
+      "pak",
+      "aus"
+    ],
+    "venue": "Ahmedabad"
+  },
+  {
+    "teams": [
+      "sl",
+      "afg"
+    ],
+    "venue": "Dharamshala"
+  },
+  {
+    "teams": [
+      "ban",
+      "eng"
+    ],
+    "venue": "Hyderabad"
+  },
+
+
+  {
+    "teams": [
+      "ind",
+      "ban"
+    ],
+    "venue": "Bengaluru"
+  },
+  {
+    "teams": [
+      "pak",
+      "eng"
+    ],
+    "venue": "Chennai"
+  },
+  {
+    "teams": [
+      "sl",
+      "nz"
+    ],
+    "venue": "Bengaluru"
+  },
+  {
+    "teams": [
+      "sa",
+      "afg"
+    ],
+    "venue": "Delhi"
+  }
+],
+  "venue_split": {
+    "ind": {
+      "Ahmedabad": 1,
+      "Bengaluru": 1,
+      "Mumbai": 1,
+      "Kolkata": 1,
+      "Delhi": 1,
+      "Chennai": 1,
+      "Pune": 1,
+      "Dharamshala": 1
+    },
+    "aus": {
+      "Kolkata": 1,
+      "Dharamshala": 2,
+      "Bengaluru": 1,
+      "Pune": 1,
+      "Ahmedabad": 1,
+      "Delhi": 2
+    },
+    "pak": {
+      "Kolkata": 1,
+      "Mumbai": 1,
+      "Ahmedabad": 2,
+      "Lucknow": 1,
+      "Hyderabad": 2,
+      "Chennai": 1
+    },
+    "sl": {
+      "Mumbai": 1,
+      "Bengaluru": 2,
+      "Ahmedabad": 1,
+      "Dharamshala": 1,
+      "Pune": 1,
+      "Hyderabad": 1,
+      "Kolkata": 1
+    },
+    "afg": {
+      "Chennai": 1,
+      "Pune": 2,
+      "Bengaluru": 1,
+      "Lucknow": 2,
+      "Dharamshala": 1,
+      "Delhi": 1
+    },
+    "sa": {
+      "Dharamshala": 2,
+      "Mumbai": 1,
+      "Pune": 1,
+      "Ahmedabad": 1,
+      "Delhi": 2,
+      "Chennai": 1
+    },
+    "nz": {
+      "Delhi": 1,
+      "Chennai": 2,
+      "Ahmedabad": 1,
+      "Bengaluru": 1,
+      "Pune": 1,
+      "Lucknow": 1,
+      "Hyderabad": 1
+    },
+    "eng": {
+      "Mumbai": 2,
+      "Ahmedabad": 1,
+      "Hyderabad": 1,
+      "Lucknow": 1,
+      "Delhi": 1,
+      "Chennai": 1,
+      "Kolkata": 1
+    },
+    "ban": {
+      "Kolkata": 1,
+      "Hyderabad": 1,
+      "Bengaluru": 2,
+      "Lucknow": 1,
+      "Chennai": 1,
+      "Pune": 1,
+      "Dharamshala": 1
+    }
+  },
+  "number_of_venues": {
+    "ind": 8,
+    "aus": 6,
+    "pak": 6,
+    "sl": 7,
+    "afg": 6,
+    "sa": 6,
+    "nz": 7,
+    "eng": 6,
+    "ban": 7
+  }
+}

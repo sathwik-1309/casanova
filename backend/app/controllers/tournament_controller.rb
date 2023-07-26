@@ -1,6 +1,6 @@
 class TournamentController < ApplicationController
   def points_table
-    t_id = params[:t_id]
+    t_id = params[:t_id].to_i
     hash = {}
 
     tour = Util.get_tournament_json(t_id.to_i)
@@ -14,7 +14,7 @@ class TournamentController < ApplicationController
         squad = Squad.find_by(team_id: team_id, tournament_id: t_id.to_i)
         print [team_id, t_id]
         pt["team"] = "#{Util.get_flag(team_id)} #{squad.abbrevation.upcase}"
-        pt["color"] = squad.abbrevation
+        pt["color"] = Util.get_team_color(t_id, squad.abbrevation)
         pt["won"] = Match.where(stage: ['league','group'],winner_id: squad.id).length
         pt["lost"] = Match.where(stage: ['league','group'],loser_id: squad.id).length
         pt["played"] = pt["won"] + pt["lost"]
@@ -32,7 +32,7 @@ class TournamentController < ApplicationController
         end
         journey["#{team_id}"] = {
           "teamname" => "#{Util.get_flag(team_id)} #{squad.abbrevation.upcase}",
-          "color" => squad.abbrevation,
+          "color" => Util.get_team_color(t_id, squad.abbrevation),
           "journey" => journey_team}
         temp << pt
       end
@@ -62,7 +62,7 @@ class TournamentController < ApplicationController
   end
 
   def bat_stats
-    t_id = params[:t_id]
+    t_id = params[:t_id].to_i
     hash = {}
 
     bat_stats = {}
@@ -163,7 +163,7 @@ class TournamentController < ApplicationController
   end
 
   def ball_stats
-    t_id = params[:t_id]
+    t_id = params[:t_id].to_i
     hash = {}
 
     ball_stats = {}
@@ -240,7 +240,7 @@ class TournamentController < ApplicationController
   end
 
   def tournament_home
-    t_id = params[:t_id]
+    t_id = params[:t_id].to_i
     hash = {}
     box1 = {}
     box2 = {}
@@ -252,13 +252,13 @@ class TournamentController < ApplicationController
       runner = Squad.find(final.loser_id)
       box1["winners"] = {
         "teamname" => winner.get_teamname,
-        "color" => winner.abbrevation
+        "color" => Util.get_team_color(t_id, winner.abbrevation)
       }
       box1["runners"] = {
         "teamname" => runner.get_teamname,
-        "color" => runner.abbrevation
+        "color" => Util.get_team_color(t_id, runner.abbrevation)
       }
-      box1["final"] = Match.match_box(final.id)
+      box1["final"] = final.match_box
       gem = Player.find(final.motm_id)
       box1["gem"] = gem.tour_individual_awards_to_hash(t_id, "gem")
       box1["gem"]["data"] = gem.match_performance_string(final.id)

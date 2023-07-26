@@ -6,6 +6,22 @@
     background-color: rgb(19,39,112);
     color: #fefefe;
 }
+.ind1_1 {
+    background-color: rgb(34,106,191);
+    color: #fefefe;
+}
+.ind1_2 {
+    background-color: #faab43;
+    color: black;
+}
+.ind4_1 {
+    background-color: rgb(34,106,191);
+    color: #fefefe;
+}
+.ind4_2 {
+    background-color: #faab43;
+    color: black;
+}
 .ind3,
 .ind4 {
     border: 1px solid white;
@@ -19,6 +35,23 @@
     background-color: rgb(133, 188, 75);
     color: rgb(0,0,0);
 }
+
+.pak1_1 {
+    background-color: #005f00;
+    color: #ffffff;
+}
+.pak1_2 {
+    background-color: #eeeeee;
+    color: #005f00;
+}
+.pak4_1 {
+    background-color: #005f00;
+    color: #ffffff;
+}
+.pak4_2 {
+    background-color: #eeeeee;
+    color: #005f00;
+}
 .pak4 {
     border: 1px solid rgb(0,0,0);
 }
@@ -27,10 +60,18 @@
 }
 
 .aus1 {
+    background-color: #ffcd00;
+    color: black;
+}
+.aus2 {
+    background-color: #00843d;
+    color: white;
+}
+.aus5_1 {
     background-color: rgb(13,13,13);
     color: rgb(255,255,255);
 }
-.aus2 {
+.aus5_2 {
     background-color: rgb(255, 232, 34);
     color: rgb(0,0,0);
 }
@@ -42,10 +83,18 @@
 }
 
 .nz1 {
-    background-color: rgb(128, 125, 133);
+    background-color: rgb(13,13,13);
     color: #fefefe;
 }
 .nz2 {
+    background-color: #eeeeee;
+    color: black;
+}
+.nz5_1 {
+    background-color: rgb(128, 125, 133);
+    color: #fefefe;
+}
+.nz5_2 {
     background-color: rgb(13,13,13);
     color: #fefefe;
 }
@@ -59,7 +108,23 @@
     color: #fefefe;
 }
 .wi2 {
+    background-color: #ffd75f;
+    color: rgb(0,0,0);
+}
+.wi5_1 {
+    background-color: rgb(126, 41, 60);
+    color: #fefefe;
+}
+.wi5_2 {
     background-color: rgb(255, 232, 34);
+    color: rgb(0,0,0);
+}
+.wi1_1 {
+    background-color: #af0000;
+    color: #fefefe;
+}
+.wi1_2 {
+    background-color: #ffd700;
     color: rgb(0,0,0);
 }
 .wi3 {
@@ -77,6 +142,14 @@
     background-color: rgb(33, 48, 85);
     color: #fefefe;
 }
+.eng1_1 {
+    background-color: #d70000;
+    color: #fefefe;
+}
+.eng1_2 {
+    background-color: #eeeeee;
+    color: #000087;
+}
 .eng3,
 .eng4 {
     border: 1px solid white;
@@ -88,6 +161,14 @@
 }
 .sa2 {
     background-color: rgb(253, 188, 53);
+    color: rgb(0,0,0);
+}
+.sa1_1 {
+    background-color: #008700;
+    color: #fefefe;
+}
+.sa1_2 {
+    background-color: #ffd700;
     color: rgb(0,0,0);
 }
 .sa3 {
@@ -465,21 +546,19 @@
 .wt20_4,
 .wt20_5 {
     /* font-family:Arial Rounded MT Bold; */
-    /* font-family: "Audiowide", sans-serif; */
-    /* font-family: 'Varela Round', sans-serif; */
+    /*font-family: 'Varela Round', sans-serif; */
     /* font-family: 'Roboto Slab', serif; */
     /* font-family: 'Rokkitt', serif ;*/
-    /* font-style: italic; */
     /* font-family: 'Audiowide', cursive; */
     /*font-family: 'Lato', sans-serif;*/
     /*font-family: 'Poppins', sans-serif;*/
     /*font-family: 'Montserrat', sans-serif;*/
-    /*font-style: italic;*/
     /*font-family: 'Noto Sans JP', sans-serif;*/
     /*font-family: 'Karla', sans-serif;*/
     /*font-family: 'Lexend', sans-serif;*/
     font-family: 'Wix Madefor Text', sans-serif;
     font-style: normal;
+    /*font-style: italic;*/
     font-size: 20px;
 }
 

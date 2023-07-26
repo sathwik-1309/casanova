@@ -25,7 +25,7 @@ class Player < ApplicationRecord
         hash["name"] = self.fullname.upcase
         hash["p_id"] = self.id
         squad = Squad.find(Score.find_by(tournament_id: t_id, player_id: self.id).squad_id)
-        hash["color"] = squad.abbrevation
+        hash["color"] = Util.get_team_color(t_id, squad.abbrevation)
         hash["teamname"] = squad.get_abb
         hash["data2"] = "Mat: #{Score.where(tournament_id: t_id, player_id: self.id).count}"
         case award
@@ -226,7 +226,7 @@ class Player < ApplicationRecord
             return team.get_teamname, team.abbrevation
         when TOUR
             team = SquadPlayer.find_by(player_id: self.id, tournament_id: sub_type).squad.team
-            return team.get_teamname, team.abbrevation
+            return team.get_teamname, Util.get_team_color(sub_type.to_i, team.abbrevation)
         when TEAM
             team = Team.find_by(abbrevation: sub_type)
             return team.get_teamname, team.abbrevation

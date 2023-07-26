@@ -1,6 +1,6 @@
 import './Partnerships.css'
 import '../css/teams.css'
-import React, { useState, useEffect } from 'react'; 
+import React, { useState, useEffect } from 'react';
 import { BACKEND_API_URL } from './../../my_constants'
 
 function Header(props) {
@@ -43,8 +43,7 @@ function Graphics(x) {
     let b2s = x.x.b2s
     let b1p = Math.round((b1s/80)*47)
     let b2p = Math.round((b2s/80)*47)
-    console.log(b1p)
-    console.log(b2p)
+
     const b1_width = `${b1p}%`;
     const b1_remaining = `${47 - b1p}%`;
     const b2_width = `${b2p}%`;
@@ -53,14 +52,14 @@ function Graphics(x) {
     const b1_1 = {
         width: b1_remaining
       };
-    
+
     const b1_2 = {
         width: b1_width
       };
     const b2_1 = {
         width: b2_width
       };
-    
+
     const b2_2 = {
         width: b2_remaining
       };
@@ -127,8 +126,6 @@ function Partnerships(props) {
     if (!data) {
         return <div>Loading...bowling_card</div>;
       }
-
-    console.log(data)
 
     let class1 = "partnerships bg-white bg-shadow "+data.tour
     return (

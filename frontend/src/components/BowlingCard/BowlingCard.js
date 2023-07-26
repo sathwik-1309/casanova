@@ -97,7 +97,6 @@ function BowlingCard(props) {
         return <div>Loading...bowling_card</div>;
       }
 
-    console.log(data)
     let class1 = 'bowling_card bg-white bg-shadow ' + data.tour
     return (
         <div className='bowling_card_parent'>

@@ -21,15 +21,18 @@
     width: 235px;
     font-weight: 600;
     font-size: 1.1rem;
-    padding-top: 0.3rem;
+    display: flex;
+    align-items: center;
     padding-left: 10px;
 }
 .spellbox_fig{
     width: 90px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-weight: 600;
     font-size: 1.1rem;
-    padding-top: 0.3rem;
+
 }
 .spellbox_balls {
     width: 45px;
@@ -69,6 +72,7 @@
     font-size: 0.7rem;
     font-weight: 500;
     padding-top: 0.3rem;
+    opacity: 0.9;
     /*border-top: 1px solid white;*/
 }
 .spellbox_data {

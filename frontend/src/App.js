@@ -20,6 +20,7 @@ import TournamentHome from "./pages/TournamentPage/TournamentHome/TournamentHome
 import Meta from "./components/Meta/Meta";
 import CreateTournament from "./pages/Create/Tournament/CreateTournament";
 import PlayerHome from "./pages/PlayerPage/PlayerHome/PlayerHome";
+import PlayerScores from "./pages/PlayerPage/PlayerScores/PlayerScores";
 
 
 function App() {
@@ -56,8 +57,10 @@ function App() {
 
       <Route path="/match/:m_id/:inn_no/:graphic" element={<WebPage page={<MatchPage/>} s_id='match'/>}/>
 
-      <Route path="/player/:p_id" element={<WebPage page={<PlayerHome/>}/>} />
-      <Route path="/player/:p_id/:page" element={<WebPage page={<PlayerPage/>}/>} />
+      <Route path="/player/:p_id" element={<WebPage page={<PlayerHome/>} s_id='player'/>} />
+      <Route path="/player/:p_id/matches" element={<WebPage page={<MatchesPage p_id={true}/>} s_id='player' />}  />
+      <Route path="/player/:p_id/scores" element={<WebPage page={<PlayerScores/>} s_id='player' />}  />
+      {/*<Route path="/player/:p_id/:page" element={<WebPage page={<PlayerPage/>} s_id='player' />} />*/}
 
       <Route path="/players" element={<WebPage page={<PlayersPage/>} s_id='players_page'/>} />
 

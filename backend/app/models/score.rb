@@ -19,8 +19,14 @@ class Score < ApplicationRecord
     def score_box
         hash = {}
         hash["type"] = 'score'
+        hash["color"] = self.squad.abbrevation
+        hash["vs_team"] = self.inning.bow_team.get_abb
+        hash["venue"] = self.match.venue.upcase
+        hash["p_id"] = self.player_id
         hash["tour"] = self.match.get_tour_font
         hash["name"] = Util.case(self.player.fullname, self.match.tournament_id)
+        hash["batted"] = self.batted
+        return hash unless self.batted
         hash["score"] = self.get_runs_with_notout
         hash["balls"] = self.balls
         hash["dots"] = self.dots
@@ -30,10 +36,6 @@ class Score < ApplicationRecord
         hash["fours"] = self.c4
         hash["sixes"] = self.c6
         hash["sr"] = self.sr
-        hash["color"] = self.squad.abbrevation
-        hash["vs_team"] = self.inning.bow_team.get_abb
-        hash["venue"] = self.match.venue.upcase
-        hash["p_id"] = self.player_id
         return hash
     end
 

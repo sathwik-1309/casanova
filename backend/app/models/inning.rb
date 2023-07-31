@@ -59,7 +59,8 @@ class Inning < ApplicationRecord
         wicket_overs = Over.where(id: Wicket.where(inning_id: self.id).pluck(:over_id)).pluck(:over_no)
         inn['scores'] = [0] + team_scores
         inn['wickets'] = wicket_overs.uniq
-        inn['color'] = bat_team.abbrevation
+        inn['color'] = Util.get_team_color(self.tournament_id, bat_team.abbrevation)
+        inn['worm_color'] = WORM_COLORS[Util.get_team_color(self.tournament_id, bat_team.abbrevation)]
         inn['rr'] = self.get_rr
         inn['score'] = Util.get_score(self.score, self.for)
         inn['overs'] = self.overs

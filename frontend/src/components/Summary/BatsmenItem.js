@@ -8,7 +8,6 @@ function BatsmenItem(props) {
     let class2 = "summary_batsman_score " + props.team + "2"
     // let character = props.runs.charAt(props.runs.length)
     const [selected, setSelected] = useState("career");
-    console.log(props)
 
     return (
         <div onClick={() => props.func(props.scorebox)} id="summary_batsmen_item">

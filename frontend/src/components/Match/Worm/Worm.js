@@ -33,8 +33,8 @@ function Worm(props) {
                 label2 = {data.inn2.teamname}
                 highlightPoints1={data.inn1.wickets}
                 highlightPoints2={data.inn2.wickets}
-                team1 = {data.inn1.team_id}
-                team2 = {data.inn2.team_id}
+                color1 = {data.inn1.worm_color}
+                color2 = {data.inn2.worm_color}
                 />
                 <div className={`worm_line ${data.inn1.color}1`}>
                     <div className='worm_line_teamname'>{data.inn1.teamname}</div>

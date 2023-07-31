@@ -205,7 +205,7 @@ class Milestone < ApplicationRecord
   def get_message_hash
     hash = {}
     squad = Score.find_by(player_id: self.value['p_id'], match_id: self.match_id).squad
-    hash['color'] = squad.abbrevation
+    hash['color'] = Util.get_team_color(self.tournament_id, squad.abbrevation)
     hash['type_class'] = Milestone.get_type_class(self.ml_type)
     tour = Tournament.find(self.tournament_id)
     hash['message'], hash['previous'] = self.get_player_messasge_hash(tour, squad.get_abb, hash['type_class'])

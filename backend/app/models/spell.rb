@@ -25,7 +25,7 @@ class Spell < ApplicationRecord
         hash["sixes"] = self.c6
         hash["economy"] = self.economy
         hash["maidens"] = self.maidens
-        hash["color"] = self.squad.abbrevation
+        hash["color"] = Util.get_team_color(self.tournament_id, self.squad.abbrevation)
         hash["p_id"] = self.player_id
         hash["vs_team"] = self.inning.bat_team.get_abb
         hash["venue"] = self.match.venue.upcase

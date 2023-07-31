@@ -2,7 +2,6 @@ import './BestBox.css'
 
 function BestBox(props) {
     if (!props.data) {
-        console.log("no spell")
         return <></>
     }
     let data = props.data

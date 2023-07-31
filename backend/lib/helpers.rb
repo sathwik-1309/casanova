@@ -84,7 +84,7 @@ module Helper
             temp["p_id"] = player["p_id"]
             squad = Squad.find(player["squad_id"])
             temp["teamname"] = "#{Util.get_flag(squad.team_id)} #{squad.abbrevation.upcase}"
-            temp["color"] = squad.abbrevation
+            temp["color"] = Util.get_team_color(t_id, squad.abbrevation)
             temp["pos"] = count
             list << temp
         end
@@ -361,7 +361,7 @@ module Helper
             hash['p_id'] = player.id
             squad = Squad.find(Score.find_by(tournament_id: t_id, player_id: player.id).squad_id)
             hash['teamname'] = squad.get_abb
-            hash['color'] = squad.abbrevation
+            hash['color'] = Util.get_team_color(t_id, squad.abbrevation)
             hash['pos'] = count
             hash['data1'] = stats.send(sort_key.to_sym)
             hash['data2'] = "Innings: #{stats.innings}"

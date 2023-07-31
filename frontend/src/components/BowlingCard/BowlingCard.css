@@ -54,7 +54,8 @@
 }
 
 .bowling_card_bowleritem:hover {
-    border: 1px solid white;
+    /*border: 1px solid white;*/
+    opacity: 0.8;
 }
 
 #bowling_card_bowleritem_name {

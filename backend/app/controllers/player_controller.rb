@@ -215,12 +215,12 @@ class PlayerController < ApplicationController
     p_id = params[:p_id]
     player = Player.find(p_id)
     hash = {}
-    scores = player.scores
+    scores = player.scores.where(batted: true)
     if params[:tour_class]
       tour_class_ids = Helper.get_tour_class_ids2(params[:tour_class])
       scores = scores.where(tournament_id: tour_class_ids)
-    elsif params[:t_id]
-      scores = scores.where(tournament_id: params[:t_id])
+    elsif params[:tour]
+      scores = scores.where(tournament_id: params[:tour])
     elsif params[:team]
       scores = scores.select{|s| s.inning.bat_team.abbrevation == params[:team]}
     elsif params[:venue]
@@ -245,8 +245,8 @@ class PlayerController < ApplicationController
     if params[:tour_class]
       tour_class_ids = Helper.get_tour_class_ids2(params[:tour_class])
       spells = spells.where(tournament_id: tour_class_ids)
-    elsif params[:t_id]
-      spells = spells.where(tournament_id: params[:t_id])
+    elsif params[:tour]
+      spells = spells.where(tournament_id: params[:tour])
     elsif params[:team]
       spells = spells.select{|s| s.inning.bow_team.abbrevation == params[:team]}
     elsif params[:venue]

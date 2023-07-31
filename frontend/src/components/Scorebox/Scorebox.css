@@ -1,10 +1,10 @@
 .scorebox {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     height: fit-content;
     width: fit-content;
     padding: 3px;
-    border: 1px dotted black;
+    /*border: 1px dotted black;*/
     border-radius: 2px;
     cursor: default;
 }
@@ -97,10 +97,10 @@
     padding-top: 0.4rem;
 }
 .scorebox_label_item_sr {
-    width: 70px;
+    width: 85px;
 }
 .scorebox_data_item_sr {
-    width: 70px;
+    width: 85px;
     padding-top: 0.4rem;
 }
 .scorebox_bold {
@@ -115,4 +115,17 @@
 .scorebox_info {
     display: flex;
     flex-direction: column;
+}
+.scorebox_footer {
+    opacity: 0.9;
+}
+.scorebox_venue {
+    padding-left: 10px;
+}
+.scorebox_pos {
+    padding-left: 10px;
+}
+.scorebox_vs_team {
+    justify-content: flex-end;
+    padding-right: 20px;
 }

@@ -1,10 +1,10 @@
 .spellbox {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     height: fit-content;
     width: fit-content;
     padding: 3px;
-    border: 1px dotted black;
+    /*border: 1px dotted black;*/
     border-radius: 2px;
     cursor: default;
 }
@@ -32,8 +32,8 @@
     justify-content: center;
     font-weight: 600;
     font-size: 1.1rem;
-
 }
+
 .spellbox_balls {
     width: 45px;
     font-size: 0.7rem;
@@ -92,10 +92,10 @@
     padding-top: 0.4rem;
 }
 .spellbox_label_item_sr {
-    width: 70px;
+    width: 85px;
 }
 .spellbox_data_item_sr {
-    width: 70px;
+    width: 85px;
     padding-top: 0.4rem;
 }
 .spellbox_bold {
@@ -110,4 +110,17 @@
 .spellbox_info {
     display: flex;
     flex-direction: column;
+}
+.scorebox_footer {
+    opacity: 0.9;
+}
+.scorebox_venue {
+    padding-left: 10px;
+}
+.scorebox_pos {
+    padding-left: 10px;
+}
+.scorebox_vs_team {
+    justify-content: flex-end;
+    padding-right: 20px;
 }

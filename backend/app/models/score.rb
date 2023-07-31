@@ -36,6 +36,8 @@ class Score < ApplicationRecord
         hash["fours"] = self.c4
         hash["sixes"] = self.c6
         hash["sr"] = self.sr
+        hash["position"] = self.position
+        hash["id"] = self.id
         return hash
     end
 

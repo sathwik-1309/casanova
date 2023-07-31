@@ -1,8 +1,10 @@
 import './PlayerPerfBox.css'
+import Scorebox from "../../Scorebox/Scorebox";
+import SpellBox from "../../SpellBox/SpellBox";
 
-function PlayerPerfBox(props) {
+function Perfbox1(props) {
     let data = props.data
-    let data1, data2, label, width1, width2;
+    let data1, data2, width1, width2;
     if (props.type === 'scores') {
         data1 = data.batted? data.score : 'DNB'
         data2 = data.balls
@@ -28,6 +30,23 @@ function PlayerPerfBox(props) {
             </div>
         </div>
     );
+}
+
+function PlayerPerfBox(props) {
+    let perfbox = <Perfbox1 data={props.data} type={props.type}/>
+    switch (props.sub_type) {
+        case "1":
+            perfbox = <Perfbox1 data={props.data} type={props.type}/>
+            break;
+        case "2":
+            perfbox = props.type === 'scores'? <Scorebox data={props.data} detailed={true}/> : <SpellBox data={props.data} detailed={true}/>
+    }
+    return (
+        <>
+        {perfbox}
+        </>
+    );
+
 }
 
 export default PlayerPerfBox

@@ -63,6 +63,10 @@ Rails.application.routes.draw do
     get '' => 'venue#venues'
   end
 
+  scope :score do
+    get '/:id' => 'score#score'
+  end
+
   get 'home_page' => 'tournament#home_page'
 
 

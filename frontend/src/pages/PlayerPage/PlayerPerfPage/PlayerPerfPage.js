@@ -32,7 +32,7 @@ function PlayerPerfPage(props) {
         <div className='player_scores_page flex-col gap-60 default-font'>
             <ControlBox base_url={base_url} stat_options={data.stat_options} func={change_url}/>
             {data[props.type].map((player, index) => (
-                <PlayerPerfBox data={player} type={props.type} />
+                <PlayerPerfBox data={player} type={props.type} sub_type='2'/>
                 ))}
         </div>
     );

@@ -32,8 +32,10 @@
 }
 .teambox_tournaments {
     height: 40px;
-    font-size: 1rem;
-    font-weight: 400;
+    font-size: 0.9rem;
+    font-weight: 500;
     padding-left: 10px;
+    display: flex;
+    align-items: center;
 }
 

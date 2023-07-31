@@ -29,7 +29,7 @@ function ProgressBar(props) {
         paddingRight: '2px',
         fontSize: '0.9rem',
         fontWeight: 500,
-        color: `${color1}`,
+        color: 'black',
     };
 
     return (

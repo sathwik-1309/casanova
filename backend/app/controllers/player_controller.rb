@@ -214,6 +214,7 @@ class PlayerController < ApplicationController
   def scores
     p_id = params[:p_id]
     player = Player.find(p_id)
+    hash = {}
     scores = player.scores
     if params[:tour_class]
       tour_class_ids = Helper.get_tour_class_ids2(params[:tour_class])
@@ -231,12 +232,15 @@ class PlayerController < ApplicationController
     scores.each do |score|
       total_scores << score.score_box
     end
-    render json: total_scores
+    hash['scores'] = total_scores
+    hash['stat_options'] = player.get_stat_options
+    render(:json => Oj.dump(hash))
   end
 
   def spells
     p_id = params[:p_id]
     player = Player.find(p_id)
+    hash = {}
     spells = player.spells
     if params[:tour_class]
       tour_class_ids = Helper.get_tour_class_ids2(params[:tour_class])
@@ -254,7 +258,9 @@ class PlayerController < ApplicationController
     spells.each do |spell|
       total_spells << spell.spell_box
     end
-    render json: total_spells
+    hash['spells'] = total_spells
+    hash['stat_options'] = player.get_stat_options
+    render(:json => Oj.dump(hash))
   end
 
 end

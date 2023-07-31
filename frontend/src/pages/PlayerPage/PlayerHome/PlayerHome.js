@@ -4,6 +4,8 @@ import {useParams} from "react-router-dom";
 import {BACKEND_API_URL} from "../../../my_constants";
 import './PlayerHome.css'
 import ControlBox from "../../../components/Player/Stats/ControlBox/ControlBox";
+import BatStats from "../../../components/Player/Stats/BatStats/BatStats";
+import BallStats from "../../../components/Player/Stats/BallStats/BallStats";
 
 function Label(props) {
     return (
@@ -78,6 +80,10 @@ function PlayerHome(props) {
     let { p_id } = useParams();
     let url = `${BACKEND_API_URL}/player/${p_id}`
     const [data, setData] = useState(null);
+    const baseBatUrl = `${BACKEND_API_URL}/player/${p_id}/bat_stats2`
+    const baseBallUrl = `${BACKEND_API_URL}/player/${p_id}/ball_stats2`
+    const [batStatUrl, setBatStatUrl] = useState(baseBatUrl);
+    const [ballStatUrl, setBallStatUrl] = useState(baseBallUrl);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -89,6 +95,13 @@ function PlayerHome(props) {
         fetchData();
     }, []);
 
+    const change_bat_stat_url = (url) => {
+        setBatStatUrl(url)
+    };
+    const change_ball_stat_url = (url) => {
+        setBallStatUrl(url)
+    };
+
     if (!data) {
         return <div>Loading...</div>;
     }
@@ -99,8 +112,16 @@ function PlayerHome(props) {
                 <TrophyCabinet data={data.trophy_cabinet}/>
             </div>
             <div className='flex-row wrap gap-60'>
-                <ControlBox p_id={p_id} stat_type='bat_stats' stat_options={data.stat_options}/>
-                <ControlBox p_id={p_id} stat_type='ball_stats' stat_options={data.stat_options}/>
+                <div className='flex-col bg-shadow'>
+                    <div className='bg-white flex-centered h-40 default-font font-600 font-1'>BATTING STATS</div>
+                    <ControlBox p_id={p_id} stat_options={data.stat_options} base_url={baseBatUrl} func={change_bat_stat_url}/>
+                    <BatStats url={batStatUrl}/>
+                </div>
+                <div className='flex-col bg-shadow'>
+                    <div className='bg-white flex-centered h-40 default-font font-600 font-1'>BOWLING STATS</div>
+                    <ControlBox p_id={p_id} stat_options={data.stat_options} base_url={baseBallUrl} func={change_ball_stat_url}/>
+                    <BallStats url={ballStatUrl}/>
+                </div>
             </div>
         </div>
     );

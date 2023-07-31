@@ -1,23 +1,23 @@
-.best_box {
+.player_perf_box {
     margin-top: 1px;
     border-radius: 3px;
     overflow: hidden;
 }
-.bb_row1_label {
+.ppb_row1_label {
 
 }
-.bb_row1_data1 {
+.ppb_row1_data1 {
     justify-content: flex-end;
     padding-right: 10px;
 }
-.bb_row1_data2 {
+.ppb_row1_data2 {
     padding-top: 3px;
 
 }
-.best_box_row2 {
+.player_perf_box_row2 {
     opacity: 0.9;
 }
-.best_box_venue {
+.player_perf_box_venue {
     justify-content: flex-end;
     padding-right: 10px;
 }

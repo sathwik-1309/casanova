@@ -40,7 +40,6 @@ const DropDownBox = (props) => {
 
 
 function ControlBox(props) {
-    const [url, setUrl] = useState(`${BACKEND_API_URL}/player/${props.p_id}/${props.stat_type}2`);
     const [type, setType] = useState('OVERALL')
     const [subtype, setSubtype] = useState('-')
     const handle_type = (option) => {
@@ -50,23 +49,16 @@ function ControlBox(props) {
         setSubtype(option)
     };
 
-    const update_stats = (type,subtype) => {
-        setUrl(`${BACKEND_API_URL}/player/${props.p_id}/${props.stat_type}2?${type}=${subtype}`)
+    const update_url = (type,subtype) => {
+        props.func(`${props.base_url}?${type}=${subtype}`)
     };
 
-
-    let stat_box = props.stat_type === 'bat_stats'? <BatStats url={url}/> : <BallStats url={url}/>
-    let stat_box_header = props.stat_type === 'bat_stats'? 'BATTING STATS' : 'BOWLING STATS'
     return (
-        <div className='stat_control_box_parent flex-col fit-content bg-white bg-shadow default-font'>
-            <div className='h-35 font-600 flex-centered font-1'>{stat_box_header}</div>
-            <div className='stat_control_box h-50 font-500 flex-row w-507'>
+            <div className='stat_control_box h-50 font-500 flex-row w-507 default-font bg-white vert-align'>
                 <DropDownBox selected={type} func={handle_type} options={Object.keys(props.stat_options)}/>
                 <DropDownBox selected={subtype} func={handle_subtype} options={props.stat_options[type.toLowerCase()]}/>
-                <div className='cb_submit h-35 w-80 font-0_8 flex-centered' onClick={()=>update_stats(type,subtype)}>SUBMIT</div>
+                <div className='cb_submit h-35 w-80 font-0_8 flex-centered' onClick={()=>update_url(type,subtype)}>SUBMIT</div>
             </div>
-            {stat_box}
-        </div>
     );
 }
 

@@ -37,3 +37,46 @@ PLAYER_TROPHIES_INIT = {
   "bronze" => 0,
   "gem" => 0,
 }
+TC_TOUR_1 = ["ind", "pak", "wi", "sa", "eng"]
+TC_TOUR_2 = []
+TC_TOUR_3 = []
+TC_TOUR_4 = ["ind", "pak"]
+TC_TOUR_5 = ["aus", "nz", "wi"]
+TC_TOUR_6 = []
+
+WORM_COLORS = {
+  'ind' => '#226bbf',
+  'pak' => '#295f2c',
+  'aus' => '#ffcd00',
+  'nz' => '#0d0d0d',
+  'wi' => '#7e293b',
+  'sa' => '#00934c',
+  'eng' => '#de142c',
+  'ban' => '#037145',
+  'afg' => '#264dc3',
+  'sl' => '#223d64',
+  'srh' => '#EE7429',
+  'csk' => '#F9CD05',
+  'rcb' => '#db0202',
+  'mi' => '#004b8d',
+  'rr' => '#e73895',
+  'pbks' => '#dd1f2c',
+  'kxip' => '#dd1f2c',
+  'dc' => '#1b93de',
+  'kkr' => '#3a225d',
+  'jan' => '#db0007',
+  'feb' => '#7d0c94',
+  'mar' => '#ffd000',
+  'apr' => '#ff1491',
+  'may' => '#436e1b',
+  'june' => '#704504',
+  'july' => '#e39df5',
+  'aug' => '#125b34',
+  'sept' => '#0076b6',
+  'oct' => '#a80554',
+  'nov' => '#f5970a',
+  'dec' => '#21304d',
+  "analysis1" => '#4a3754',
+  "analysis2" => '#d1b1e0',
+}
+

@@ -6,8 +6,8 @@ class MatchController < ApplicationController
         match = Match.find(m_id)
         hash = {}
         toss = match.toss_id
-        hash["inn1"] = get_innings_summary((2*m_id.to_i)-1, toss)
-        hash["inn2"] = get_innings_summary(2*m_id.to_i, toss)
+        hash["inn1"] = get_innings_summary(match.inn1, toss)
+        hash["inn2"] = get_innings_summary(match.inn2, toss)
         hash["tour"] = match.get_tour_font
         hash["venue"] = match.venue
         hash["stage"] = match.stage
@@ -28,7 +28,7 @@ class MatchController < ApplicationController
         end
         result = "#{Util.get_flag(Squad.find(match.winner_id).team_id)} #{Squad.find(match.winner_id).abbrevation.upcase} #{result}"
         footer["result"] = result
-        footer["result_color"] = "#{Squad.find(match.winner_id).abbrevation}"
+        footer["result_color"] = Util.get_team_color(match.tournament_id, Squad.find(match.winner_id).abbrevation)
 
         motm = {}
         motm["name"] = Util.case(match.motm.fullname, match.tournament_id)
@@ -57,20 +57,19 @@ class MatchController < ApplicationController
             ml_messages << ml.get_message_hash
         end
         ml_messages = ml_messages.group_by {|ml_hash| ml_hash['color'] }
-        arr1 = ml_messages[match.inn1.bat_team.abbrevation] || []
-        arr2 = ml_messages[match.inn1.bow_team.abbrevation] || []
+        arr1 = ml_messages[Util.get_team_color(match.tournament_id, match.inn1.bat_team.abbrevation)] || []
+        arr2 = ml_messages[Util.get_team_color(match.tournament_id, match.inn1.bow_team.abbrevation)] || []
         hash["milestones"] =  arr1 + arr2
         hash['highlights'] = match.get_highlights_hash
         render(:json => Oj.dump(hash))
     end
 
-    def get_innings_summary(inn_id, toss)
+    def get_innings_summary(inn, toss)
         hash = {}
-        inn = Inning.find(inn_id)
         m_id = inn.match_id
         hash["teamname"] = inn.bat_team_id == toss ? "#{inn.bat_team.get_teamname} 🪙" : inn.bat_team.get_teamname
-        hash["bat_team"] = Squad.find(inn.bat_team_id).abbrevation
-        hash["bow_team"] = Squad.find(inn.bow_team_id).abbrevation
+        hash["bat_team"] = Util.get_team_color(inn.tournament_id, Squad.find(inn.bat_team_id).abbrevation)
+        hash["bow_team"] = Util.get_team_color(inn.tournament_id, Squad.find(inn.bow_team_id).abbrevation)
         hash["score"] = Util.get_score(inn.score, inn.for)
         hash["overs"] = Util.format_overs(inn.overs)
         hash["bat"] = []
@@ -112,7 +111,7 @@ class MatchController < ApplicationController
         team = inn.bat_team
 
         header["teamname"] = team.get_teamname
-        header["color"] = team.abbrevation
+        header["color"] = Util.get_team_color(t_id, team.abbrevation)
         header["score"] = Util.get_score(inn.score, inn.for)
         header["overs"] = Util.format_overs(inn.overs)
         header["fours"] = inn.c4
@@ -175,7 +174,7 @@ class MatchController < ApplicationController
 
         hash["fow"] = fow
         hash["tour"] = Match.find(m_id).get_tour_font
-        hash["color"] = "#{team.abbrevation}"
+        hash["color"] = Util.get_team_color(t_id, team.abbrevation)
         hash["teamname"] = team.get_teamname
         render(:json => Oj.dump(hash))
     end
@@ -205,7 +204,7 @@ class MatchController < ApplicationController
         end
 
         hash["tour"] = Match.find(m_id).get_tour_font
-        hash["color"] = "#{team.abbrevation}"
+        hash["color"] = Util.get_team_color(t_id, team.abbrevation)
         hash["teamname"] = team.get_teamname
         hash["bowlers"] = bowlers
         render(:json => Oj.dump(hash))
@@ -233,7 +232,7 @@ class MatchController < ApplicationController
         end
 
         hash["tour"] = Match.find(m_id).get_tour_font
-        hash["color"] = "#{team.abbrevation}"
+        hash["color"] = Util.get_team_color(t_id, team.abbrevation)
         hash["teamname"] = team.get_teamname
         hash["overs"] = overs_list
         render(:json => Oj.dump(hash))
@@ -263,7 +262,7 @@ class MatchController < ApplicationController
             list << temp
         end
         hash["tour"] = Match.find(m_id).get_tour_font
-        hash["color"] = "#{team.abbrevation}"
+        hash["color"] = Util.get_team_color(t_id, team.abbrevation)
         hash["teamname"] = team.get_teamname
         hash["partnerships"] = list
         render(:json => Oj.dump(hash))
@@ -277,18 +276,18 @@ class MatchController < ApplicationController
         array = []
         if tour_class
             t_ids = Tournament.where(name: tour_class).pluck(:id)
-            m_ids = Match.where(tournament_id: t_ids).order(id: :desc).pluck(:id)
+            matches = Match.where(tournament_id: t_ids).order(id: :desc)
         elsif t_id
-            m_ids = Match.where(tournament_id: t_id).order(id: :desc).pluck(:id)
+            matches = Match.where(tournament_id: t_id).order(id: :desc)
         elsif p_id
-            m_ids = Performance.where(player_id: p_id).order(id: :desc).pluck(:match_id)
+            matches = Performance.where(player_id: p_id).order(id: :desc)
         elsif venue
-            m_ids = Match.where(venue: venue).order(id: :desc).pluck(:id)
+            matches = Match.where(venue: venue).order(id: :desc)
         else
-            m_ids = Match.all.order(id: :desc).pluck(:id)
+            matches = Match.all.order(id: :desc)
         end
-        m_ids.each do|m_id|
-            array << Match.match_box(m_id)
+        matches.each do|match|
+            array << match.match_box
         end
         render(:json => Oj.dump(array))
     end
@@ -318,8 +317,8 @@ class MatchController < ApplicationController
         inn = Inning.find(inn_id)
         t_id = inn.tournament_id
         overs = Over.where(inning_id: inn_id)
-        ret_hash['bat_team_color'] = inn.bat_team.abbrevation
-        ret_hash['bow_team_color'] = inn.bow_team.abbrevation
+        ret_hash['bat_team_color'] = Util.get_team_color(t_id, inn.bat_team.abbrevation)
+        ret_hash['bow_team_color'] = Util.get_team_color(t_id, inn.bow_team.abbrevation)
         if inn_no == 2
             target = Inning.find(inn_id-1).score + 1
             inn1_over_scores = Over.where(inning_id: inn_id-1).pluck(:score)

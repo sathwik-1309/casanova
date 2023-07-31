@@ -205,6 +205,28 @@ module Util
         end
     end
 
+    def self.get_team_color(t_id, abbrevation)
+        case t_id
+        when 1
+            return "#{abbrevation}#{t_id}_" if TC_TOUR_1.include? abbrevation
+        when 2
+            return "#{abbrevation}#{t_id}_" if TC_TOUR_2.include? abbrevation
+        when 3
+            return "#{abbrevation}#{t_id}_" if TC_TOUR_3.include? abbrevation
+        when 4
+            return "#{abbrevation}#{t_id}_" if TC_TOUR_4.include? abbrevation
+        when 5
+            return "#{abbrevation}#{t_id}_" if TC_TOUR_5.include? abbrevation
+        when 6
+            return "#{abbrevation}#{t_id}_" if TC_TOUR_6.include? abbrevation
+        end
+        return abbrevation
+    end
+
+    def self.get_worm_color(team_code)
+
+    end
+
 
 end
 

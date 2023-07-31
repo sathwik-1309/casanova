@@ -3,14 +3,12 @@ import { Chart } from 'react-chartjs-2';
 import React, { useRef, useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
 import './Graph.css';
-import { team_colors } from "./team_colors.js";
-
 function Graph(props) {
     const chartRef = useRef(null);
     const data1 = props.data1;
     const data2 = props.data2;
-    const color1 = team_colors[props.team1] || 'red';
-    const color2 = team_colors[props.team2] || 'blue';
+    const color1 = props.color1 || 'red';
+    const color2 = props.color2 || 'blue';
     const highlightPoints1 = props.highlightPoints1 || [];
     const highlightPoints2 = props.highlightPoints2 || [];
 

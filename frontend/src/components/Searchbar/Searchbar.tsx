@@ -20,7 +20,6 @@ function Searchbar(props) {
         const response = await fetch(`${BACKEND_API_URL}/search/player?pattern=${seachtext}`);
         const result = await response.json();
         setSuggestions(result);
-        console.log(result);
     }
 
     let sbox = <></>

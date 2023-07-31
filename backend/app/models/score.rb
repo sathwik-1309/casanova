@@ -30,7 +30,7 @@ class Score < ApplicationRecord
         hash["fours"] = self.c4
         hash["sixes"] = self.c6
         hash["sr"] = self.sr
-        hash["color"] = self.squad.abbrevation
+        hash["color"] = Util.get_team_color(self.tournament_id, self.squad.abbrevation)
         hash["vs_team"] = self.inning.bow_team.get_abb
         hash["venue"] = self.match.venue.upcase
         hash["p_id"] = self.player_id

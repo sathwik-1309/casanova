@@ -67,6 +67,10 @@ Rails.application.routes.draw do
     get '/:id' => 'score#score'
   end
 
+  scope :spell do
+    get '/:id' => 'spell#spell'
+  end
+
   get 'home_page' => 'tournament#home_page'
 
 

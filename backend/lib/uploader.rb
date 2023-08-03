@@ -671,12 +671,7 @@ module Uploader
             b.best_id = score.inning_id if b.best.runs < score.runs
             b.best_id = score.inning_id if (b.best.runs == score.runs and b.best.balls > score.balls)
         end
-        unless b.save
-            puts "bat_stats update error ❌"
-            puts b.errors.full_messages
-            puts "bat_stats update error end ❌"
-            return false
-        end
+        b.save!
         return true
     end
 

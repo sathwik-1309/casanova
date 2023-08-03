@@ -4,6 +4,11 @@ FROM ruby:2.7.6-alpine as base
 
 RUN apk update && \
     apk add bash
+
+RUN apk add --no-cache mariadb-connector-c-dev
+
+RUN apk add --no-cache build-base
+
 # Set working directory
 WORKDIR backend
 
@@ -14,9 +19,9 @@ COPY Gemfile /backend
 COPY Gemfile.lock /backend
 
 # General utilities
-RUN apk add --no-cache build-base git && \
-    gem install bundler -v 2.3.5 && \
-     bundle install
+RUN gem install bundler -v 2.3.5 && \
+    bundle install
+
 
 FROM base
 
@@ -24,4 +29,4 @@ COPY --from=gem-cache /usr/local/bundle /usr/local/bundle
 COPY . /backend
 
 # Set the entrypoint
-ENTRYPOINT ["puma", "-C", "config/puma.rb"]
+CMD ["bash", "init.sh"]

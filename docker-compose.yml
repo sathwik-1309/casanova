@@ -21,6 +21,8 @@ services:
       - MYSQL_ROOT_PASSWORD=amagi123
     volumes:
       - mysql-data:/var/lib/mysql
+    ports:
+      - "3306:3306" # Add this line to expose the MySQL container's port.
 
 volumes:
   mysql-data:

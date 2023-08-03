@@ -1,10 +1,10 @@
 .scorebox {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     height: fit-content;
     width: fit-content;
     padding: 3px;
-    border: 1px dotted black;
+    /*border: 1px dotted black;*/
     border-radius: 2px;
     cursor: default;
 }
@@ -30,18 +30,21 @@
     flex-direction: row;
 }
 .scorebox_runs {
-    width: 45px;
+    width: 50px;
     font-size: 1.1rem;
     font-weight: 600;
-    padding-top: 5px;
-    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 .scorebox_balls {
-    width: 45px;
-    font-size: 0.7rem;
-    font-weight: 300;
-    padding-top: 10px;
-    padding-left: 15px;
+    width: 40px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    padding-top: 3px;
+    display: flex;
+    padding-left: 6px;
+    align-items: center;
 }
 .scorebox_header2 {
     height: 25px;
@@ -74,6 +77,7 @@
     font-size: 0.7rem;
     font-weight: 500;
     padding-top: 0.3rem;
+    opacity: 0.9;
     /*border-top: 1px solid white;*/
 }
 .scorebox_data {
@@ -93,10 +97,10 @@
     padding-top: 0.4rem;
 }
 .scorebox_label_item_sr {
-    width: 70px;
+    width: 85px;
 }
 .scorebox_data_item_sr {
-    width: 70px;
+    width: 85px;
     padding-top: 0.4rem;
 }
 .scorebox_bold {
@@ -111,4 +115,17 @@
 .scorebox_info {
     display: flex;
     flex-direction: column;
+}
+.scorebox_footer {
+    opacity: 0.9;
+}
+.scorebox_venue {
+    padding-left: 10px;
+}
+.scorebox_pos {
+    padding-left: 10px;
+}
+.scorebox_vs_team {
+    justify-content: flex-end;
+    padding-right: 20px;
 }

@@ -81,10 +81,6 @@ module Util
         end
     end
 
-    def self.get_sr(runs, balls)
-        return ((runs.to_f*100)/balls.to_f).round(2)
-    end
-
     def self.get_avg(runs, outs)
         if outs == 0
             return nil

@@ -9,12 +9,16 @@ function MatchesPage(props){
     let url = `${BACKEND_API_URL}/matches`
     let { tour_class } = useParams()
     let { t_id } = useParams()
+    let { p_id } = useParams()
 
     if (props.tour_class) {
         url = url + `?tour_class=${tour_class}`
     }
     else if (props.t_id) {
         url = url + `?t_id=${t_id}`
+    }
+    else if (props.p_id) {
+        url = url + `?p_id=${p_id}`
     }
 
     const [data, setData] = useState(null);

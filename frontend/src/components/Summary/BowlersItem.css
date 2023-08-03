@@ -9,7 +9,8 @@
 }
 
 #bowlers_item:hover {
-    border: 0.5px solid white;
+    /*border: 0.5px solid white;*/
+    opacity: 0.8;
 }
 
 .bowler_name{

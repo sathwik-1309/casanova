@@ -119,6 +119,7 @@ GEM
     mini_portile2 (2.8.2)
     minitest (5.18.0)
     msgpack (1.7.0)
+    mysql2 (0.5.5)
     net-imap (0.3.4)
       date
       net-protocol
@@ -234,6 +235,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   json
+  mysql2
   oj
   puma (~> 5.0)
   rack-cors

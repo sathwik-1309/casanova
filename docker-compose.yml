@@ -6,21 +6,9 @@ services:
       dockerfile: Dockerfile
     ports:
       - 3001:3001
-    depends_on:
-      - db
   frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
     ports:
       - 3000:3000
-
-  db:
-    image: arm64v8/mysql:8.0.31
-    environment:
-      - MYSQL_ROOT_PASSWORD=amagi123
-    volumes:
-      - mysql-data:/var/lib/mysql
-
-volumes:
-  mysql-data:

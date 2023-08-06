@@ -1,4 +1,5 @@
-import './Topbar.css'
+import './Topbar.css';
+import {FRONTEND_API_URL} from "../../../my_constants";
 
 function Topbar(props) {
     const inn_no = props.inn_no
@@ -13,7 +14,7 @@ function Topbar(props) {
         class1 = temp + temp2
         class2 = temp + temp1
     }
-    
+
     const temp3 = "match_topbar_item2_items"
     const temp4 = " match_topbar_item2_white"
     let class3 = temp3
@@ -45,14 +46,14 @@ function Topbar(props) {
             class3 = temp3 + temp4
       }
 
-      const url1 = `http://localhost:3000/match/${m_id}/1/${graphic}`
-      const url2 = `http://localhost:3000/match/${m_id}/2/${graphic}`
-      const url3 = `http://localhost:3000/match/${m_id}/${inn_no}/summary`
-      const url4 = `http://localhost:3000/match/${m_id}/${inn_no}/scorecard`
-      const url5 = `http://localhost:3000/match/${m_id}/${inn_no}/fow`
-      const url6 = `http://localhost:3000/match/${m_id}/${inn_no}/bowling_card`
-      const url7 = `http://localhost:3000/match/${m_id}/${inn_no}/partnerships`
-      const url8 = `http://localhost:3000/match/${m_id}/${inn_no}/manhatten`
+      const url1 = `${FRONTEND_API_URL}/match/${m_id}/1/${graphic}`
+      const url2 = `${FRONTEND_API_URL}/match/${m_id}/2/${graphic}`
+      const url3 = `${FRONTEND_API_URL}/match/${m_id}/${inn_no}/summary`
+      const url4 = `${FRONTEND_API_URL}/match/${m_id}/${inn_no}/scorecard`
+      const url5 = `${FRONTEND_API_URL}/match/${m_id}/${inn_no}/fow`
+      const url6 = `${FRONTEND_API_URL}/match/${m_id}/${inn_no}/bowling_card`
+      const url7 = `${FRONTEND_API_URL}/match/${m_id}/${inn_no}/partnerships`
+      const url8 = `${FRONTEND_API_URL}/match/${m_id}/${inn_no}/manhatten`
 
     return (
         <div id="tournament_topbar">
@@ -74,7 +75,7 @@ function Topbar(props) {
             <a className={class8} href={url8}>
                 Tour Stats
             </a>
-            
+
         </div>
     )
 

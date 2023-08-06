@@ -1,4 +1,4 @@
-
+import {FRONTEND_API_URL} from "../../../my_constants";
 import './MatchBox.css'
 
 function MatchBoxItem(props) {
@@ -17,7 +17,7 @@ function MatchBox(props){
     let p = props.data
 
     return(
-        <a className={`matchbox ${p.tour}`} href={`http://localhost:3000/match/${p.m_id}/1/summary`}>
+        <a className={`matchbox ${p.tour}`} href={`${FRONTEND_API_URL}/match/${p.m_id}/1/summary`}>
             <div className='matchbox_header'>
                 {p.tour_name}
             </div>

@@ -1,5 +1,7 @@
 import './Photocard.css'
 import {images} from '../images/images.js';
+import {FRONTEND_API_URL} from "../../my_constants";
+
 function Photocard(props){
     let img1 = images[props.p_id]
     // if (props.p_id > 400) {
@@ -26,7 +28,7 @@ function Photocard(props){
 
     return (
         <div style = {height_style} className={class1}>
-            <a href={`http://localhost:3000/player/${props.p_id}`} className='fit-content img_wrapper'>
+            <a href={`${FRONTEND_API_URL}/player/${props.p_id}`} className='fit-content img_wrapper'>
                 <img src={img1} style={img_style}className='photo_card_pic'/>
             </a>
         </div>

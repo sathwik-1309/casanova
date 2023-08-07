@@ -115,12 +115,12 @@ function PlayerHome(props) {
                 <div className='flex-col bg-shadow'>
                     <div className='bg-white flex-centered h-40 default-font font-600 font-1'>BATTING STATS</div>
                     <ControlBox p_id={p_id} stat_options={data.stat_options} base_url={baseBatUrl} func={change_bat_stat_url}/>
-                    <BatStats url={batStatUrl}/>
+                    <BatStats url={batStatUrl} pic={true}/>
                 </div>
                 <div className='flex-col bg-shadow'>
                     <div className='bg-white flex-centered h-40 default-font font-600 font-1'>BOWLING STATS</div>
                     <ControlBox p_id={p_id} stat_options={data.stat_options} base_url={baseBallUrl} func={change_ball_stat_url}/>
-                    <BallStats url={ballStatUrl}/>
+                    <BallStats url={ballStatUrl} pic={true}/>
                 </div>
             </div>
         </div>

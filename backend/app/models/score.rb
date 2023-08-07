@@ -38,6 +38,7 @@ class Score < ApplicationRecord
         hash["sr"] = self.sr
         hash["position"] = self.position
         hash["id"] = self.id
+        hash["match_id"] = self.match_id
         return hash
     end
 

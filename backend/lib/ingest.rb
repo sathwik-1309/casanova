@@ -493,6 +493,7 @@ class Ingest
                 @parent.update_part(runs, extras, extra_type)
             end
             @parent.score += runs + extras
+            @parent.for += 1 if wicket_ball
             ball_csv = [@parent.b_id, runs, extras, extra_type, @parent.overs, wicket_ball, @parent.score, @parent.for, category, bow_runs, @parent.ball_color, @parent.sr, @parent.current_bowler, @parent.o_id, @parent.inn_id, @parent.m_id, @parent.args["t_id"] ]
             @parent.balls_csv << ball_csv
             Ingest::Wicket_.new(@parent) if wicket_ball
@@ -514,7 +515,6 @@ class Ingest
             @batsman_out["bowler"] = @parent.current_bowler
             @parent.scores_hash << @batsman_out
             @parent.wicket_id += 1
-            @parent.for += 1
             self.create_hash
         end
 

@@ -44,7 +44,7 @@ function TBatStats(props) {
             </div>
             <div className='flex-row gap-40'>
                 {selected.map((p_id, index) => (
-                <BatStats url={`${BACKEND_API_URL}/player/${p_id}/bat_stats2?tour=${t_id}`} header={true}/>
+                <BatStats url={`${BACKEND_API_URL}/player/${p_id}/bat_stats2?tour=${t_id}`} header={true} pic={true}/>
                 ))}
             </div>
         </div>

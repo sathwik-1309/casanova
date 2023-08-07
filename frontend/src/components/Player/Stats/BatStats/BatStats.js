@@ -21,12 +21,9 @@ function BatStats(props) {
         return <div>Loading...</div>;
     }
     let bat = data.bat_stats
-    let stat_header = <></>
-    let photocard = <></>
-    if (props.header) {
-        stat_header = <div className='h-35 font-600 flex-centered font-1'>BATTING STATS</div>
-        photocard = <Photocard p_id={data.p_id} height='85px'/>
-    }
+    let stat_header = (props.header === true)? <div className='h-35 font-600 flex-centered font-1'>BATTING STATS</div> : <></>
+    let photocard = (props.pic === true)? <Photocard p_id={data.p_id} height='85px'/>: <></>
+
     return (
         <div className='bat_stats flex-col w-507 default-font bg-white p-3 font-500 font-1'>
             {stat_header}

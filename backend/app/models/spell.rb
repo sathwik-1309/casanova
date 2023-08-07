@@ -30,6 +30,7 @@ class Spell < ApplicationRecord
         hash["vs_team"] = self.inning.bat_team.get_abb
         hash["venue"] = self.match.venue.upcase
         hash["id"] = self.id
+        hash["match_id"] = self.match_id
         return hash
     end
 

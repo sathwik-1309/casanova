@@ -12,3 +12,6 @@
     background-color: grey;
     color: white;
 }
+.searchbar_main::placeholder {
+    color: grey;
+}

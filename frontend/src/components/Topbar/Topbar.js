@@ -2,6 +2,7 @@ import './Topbar.css'
 import {useParams} from "react-router-dom";
 import ToggleInnings from "../ToggleInnings/ToggleInnings";
 import Searchbar from '../Searchbar/Searchbar.tsx';
+import {FRONTEND_API_URL} from "../../my_constants";
 
 function TopbarItem(props) {
     let name;
@@ -105,23 +106,23 @@ function Topbar(props) {
     switch (props.s_id) {
         case 'tour':
             topbar = <>
-                <TopbarItem name='home' link={`http://localhost:3000/tournament/${t_id}`}/>
-                <TopbarItem name='points_table' link={`http://localhost:3000/tournament/${t_id}/points_table`}/>
-                <TopbarItem name='bat_stats' link={`http://localhost:3000/tournament/${t_id}/bat_stats`}/>
-                <TopbarItem name='ball_stats' link={`http://localhost:3000/tournament/${t_id}/ball_stats`}/>
+                <TopbarItem name='home' link={`${FRONTEND_API_URL}/tournament/${t_id}`}/>
+                <TopbarItem name='points_table' link={`${FRONTEND_API_URL}/tournament/${t_id}/points_table`}/>
+                <TopbarItem name='bat_stats' link={`${FRONTEND_API_URL}/tournament/${t_id}/bat_stats`}/>
+                <TopbarItem name='ball_stats' link={`${FRONTEND_API_URL}/tournament/${t_id}/ball_stats`}/>
             </>
             break;
         case 'match':
             toggle = <ToggleInnings inn_no={inn_no}/>
             topbar = <>
-                <TopbarItem name='summary' link={`http://localhost:3000/match/${m_id}/${inn_no}/summary`}/>
-                <TopbarItem name='scorecard' link={`http://localhost:3000/match/${m_id}/${inn_no}/scorecard`}/>
-                {/* <TopbarItem name='fow' link={`http://localhost:3000/match/${m_id}/${inn_no}/fow`}/> */}
-                <TopbarItem name='phase' link={`http://localhost:3000/match/${m_id}/${inn_no}/phase`}/>
-                <TopbarItem name='partnerships' link={`http://localhost:3000/match/${m_id}/${inn_no}/partnerships`}/>
-                <TopbarItem name='manhatten' link={`http://localhost:3000/match/${m_id}/${inn_no}/manhatten`}/>
-                <TopbarItem name='worm' link={`http://localhost:3000/match/${m_id}/${inn_no}/worm`}/>
-                <TopbarItem name='commentry' link={`http://localhost:3000/match/${m_id}/${inn_no}/commentry`}/>
+                <TopbarItem name='summary' link={`${FRONTEND_API_URL}/match/${m_id}/${inn_no}/summary`}/>
+                <TopbarItem name='scorecard' link={`${FRONTEND_API_URL}/match/${m_id}/${inn_no}/scorecard`}/>
+                {/* <TopbarItem name='fow' link={`${FRONTEND_API_URL}/match/${m_id}/${inn_no}/fow`}/> */}
+                <TopbarItem name='phase' link={`${FRONTEND_API_URL}/match/${m_id}/${inn_no}/phase`}/>
+                <TopbarItem name='partnerships' link={`${FRONTEND_API_URL}/match/${m_id}/${inn_no}/partnerships`}/>
+                <TopbarItem name='manhatten' link={`${FRONTEND_API_URL}/match/${m_id}/${inn_no}/manhatten`}/>
+                <TopbarItem name='worm' link={`${FRONTEND_API_URL}/match/${m_id}/${inn_no}/worm`}/>
+                <TopbarItem name='commentry' link={`${FRONTEND_API_URL}/match/${m_id}/${inn_no}/commentry`}/>
             </>
             break;
         case 'players_page':

@@ -1,6 +1,7 @@
 import SidebarItem from "./SidebarItem";
 import './Sidebar.css'
 import {useParams} from "react-router-dom";
+import { FRONTEND_API_URL } from './../../my_constants';
 
 function Sidebar(props){
     const s_id = props.s_id
@@ -9,40 +10,40 @@ function Sidebar(props){
     if (s_id === 'home') {
         return(
             <div className="sidebar">
-                <SidebarItem name="Home" url='http://localhost:3000/'/>
-                <SidebarItem name="Teams" url='http://localhost:3000/teams'/>
-                <SidebarItem name="Matches" url='http://localhost:3000/matches'/>
-                <SidebarItem name="Venues" url='http://localhost:3000/venues'/>
-                <SidebarItem name="Players" url='http://localhost:3000/players'/>
+                <SidebarItem name="Home" url={`${FRONTEND_API_URL}/`}/>
+                <SidebarItem name="Teams" url={`${FRONTEND_API_URL}/teams`}/>
+                <SidebarItem name="Matches" url={`${FRONTEND_API_URL}/matches`}/>
+                <SidebarItem name="Venues" url={`${FRONTEND_API_URL}/venues`}/>
+                <SidebarItem name="Players" url={`${FRONTEND_API_URL}/players`}/>
             </div>
         );
     }
     else if (s_id === 'tour_class') {
         return(
             <div className="sidebar">
-                <SidebarItem name="Home" url='http://localhost:3000/'/>
-                <SidebarItem name="Teams" url={`http://localhost:3000/tournaments/${tour_class}/teams`}/>
-                <SidebarItem name="Matches" url={`http://localhost:3000/tournaments/${tour_class}/matches`}/>
-                <SidebarItem name="Venues" url={`http://localhost:3000/tournaments/${tour_class}/venues`}/>
-                <SidebarItem name="Players" url={`http://localhost:3000/tournaments/${tour_class}/players`}/>
+                <SidebarItem name="Home" url={`${FRONTEND_API_URL}/`}/>
+                <SidebarItem name="Teams" url={`${FRONTEND_API_URL}/tournaments/${tour_class}/teams`}/>
+                <SidebarItem name="Matches" url={`${FRONTEND_API_URL}/tournaments/${tour_class}/matches`}/>
+                <SidebarItem name="Venues" url={`${FRONTEND_API_URL}/tournaments/${tour_class}/venues`}/>
+                <SidebarItem name="Players" url={`${FRONTEND_API_URL}/tournaments/${tour_class}/players`}/>
             </div>
         );
     }
     else if (s_id === 'tour') {
         return(
             <div className="sidebar">
-                <SidebarItem name="Home" url='http://localhost:3000/'/>
-                <SidebarItem name="Teams" url={`http://localhost:3000/tournament/${t_id}/teams`}/>
-                <SidebarItem name="Matches" url={`http://localhost:3000/tournament/${t_id}/matches`}/>
-                <SidebarItem name="Venues" url={`http://localhost:3000/tournament/${t_id}/venues`}/>
-                <SidebarItem name="Players" url={`http://localhost:3000/tournament/${t_id}/players`}/>
+                <SidebarItem name="Home" url={`${FRONTEND_API_URL}/`}/>
+                <SidebarItem name="Teams" url={`${FRONTEND_API_URL}/tournament/${t_id}/teams`}/>
+                <SidebarItem name="Matches" url={`${FRONTEND_API_URL}/tournament/${t_id}/matches`}/>
+                <SidebarItem name="Venues" url={`${FRONTEND_API_URL}/tournament/${t_id}/venues`}/>
+                <SidebarItem name="Players" url={`${FRONTEND_API_URL}/tournament/${t_id}/players`}/>
             </div>
         );
     }
     else {return (
         <div className="sidebar">
             <SidebarItem name="not configured" url='#'/>
-            <SidebarItem name="Home" url='http://localhost:3000/'/>
+            <SidebarItem name="Home" url={`${FRONTEND_API_URL}/`}/>
         </div>
     );
 

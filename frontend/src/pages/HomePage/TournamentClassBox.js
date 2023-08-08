@@ -1,9 +1,10 @@
 import './TournamentClassBox.css'
+import { FRONTEND_API_URL } from './../../my_constants';
 
 function TournamentClassBox(props) {
     const data = props.data
     return (
-        <a className={`home_navbar_item default-font`} href={`http://localhost:3000/tournaments/${data.tour_name.toLowerCase()}`}>
+        <a className={`home_navbar_item default-font`} href={`${FRONTEND_API_URL}/tournaments/${data.tour_name.toLowerCase()}`}>
             <div className="tc_box_tourname">
                 {data.tour_name}
             </div>

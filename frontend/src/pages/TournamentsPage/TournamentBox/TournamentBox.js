@@ -1,10 +1,11 @@
 import React from "react";
-import './TournamentBox.css'
+import './TournamentBox.css';
+import {FRONTEND_API_URL} from "../../../my_constants";
 
 function TournamentBox(props) {
     let data = props.data
     return (
-        <a className='tournament_box' href={`http://localhost:3000/tournament/${data.t_id}`}>
+        <a className='tournament_box' href={`${FRONTEND_API_URL}/tournament/${data.t_id}`}>
             <div className='tournament_box_header'>{data.tour_class}</div>
             <div className={`tournament_box_winner`}>
                 <div className='t_box_label'>🏆 WINNERS 🏆</div>

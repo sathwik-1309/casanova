@@ -44,6 +44,8 @@ Rails.application.routes.draw do
     get '/:p_id/bat_stats2' => 'player#bat_stats2'
     get '/:p_id/ball_stats' => 'player#ball_stats'
     get '/:p_id/ball_stats2' => 'player#ball_stats2'
+    get '/:p_id/scores' => 'player#scores'
+    get '/:p_id/spells' => 'player#spells'
     get '/:p_id' => 'player#home_page'
   end
 
@@ -59,6 +61,14 @@ Rails.application.routes.draw do
 
   scope :venues do
     get '' => 'venue#venues'
+  end
+
+  scope :score do
+    get '/:id' => 'score#score'
+  end
+
+  scope :spell do
+    get '/:id' => 'spell#spell'
   end
 
   get 'home_page' => 'tournament#home_page'

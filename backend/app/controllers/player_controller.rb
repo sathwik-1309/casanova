@@ -109,14 +109,7 @@ class PlayerController < ApplicationController
     array = []
     players = Player.all
     if params[:tour_class]
-      case params[:tour_class]
-      when 'wt20'
-        tour_ids = WT20_IDS
-      when 'ipl'
-        tour_ids = IPL_IDS
-      when 'csl'
-        tour_ids = CSL_IDS
-      end
+      tour_ids = Helper.get_tour_class_ids2(params[:tour_class])
       array = Helper.construct_players_hash_for_tour(tour_ids, players)
     elsif params[:t_id]
       tour_ids = params[:t_id]
@@ -215,6 +208,58 @@ class PlayerController < ApplicationController
       end
 
     end
+    render(:json => Oj.dump(hash))
+  end
+
+  def scores
+    p_id = params[:p_id]
+    player = Player.find(p_id)
+    hash = {}
+    scores = player.scores.where(batted: true)
+    if params[:tour_class]
+      tour_class_ids = Helper.get_tour_class_ids2(params[:tour_class])
+      scores = scores.where(tournament_id: tour_class_ids)
+    elsif params[:tour]
+      scores = scores.where(tournament_id: params[:tour])
+    elsif params[:team]
+      scores = scores.select{|s| s.inning.bat_team.abbrevation == params[:team]}
+    elsif params[:venue]
+      scores = scores.select{|s| s.match.venue == params[:venue]}
+    elsif params[:vs_team]
+      scores = scores.select{|s| s.inning.bow_team.abbrevation == params[:vs_team]}
+    end
+    total_scores = []
+    scores.each do |score|
+      total_scores << score.score_box
+    end
+    hash['scores'] = total_scores
+    hash['stat_options'] = player.get_stat_options
+    render(:json => Oj.dump(hash))
+  end
+
+  def spells
+    p_id = params[:p_id]
+    player = Player.find(p_id)
+    hash = {}
+    spells = player.spells
+    if params[:tour_class]
+      tour_class_ids = Helper.get_tour_class_ids2(params[:tour_class])
+      spells = spells.where(tournament_id: tour_class_ids)
+    elsif params[:tour]
+      spells = spells.where(tournament_id: params[:tour])
+    elsif params[:team]
+      spells = spells.select{|s| s.inning.bow_team.abbrevation == params[:team]}
+    elsif params[:venue]
+      spells = spells.select{|s| s.match.venue == params[:venue]}
+    elsif params[:vs_team]
+      spells = spells.select{|s| s.inning.bat_team.abbrevation == params[:vs_team]}
+    end
+    total_spells = []
+    spells.each do |spell|
+      total_spells << spell.spell_box
+    end
+    hash['spells'] = total_spells
+    hash['stat_options'] = player.get_stat_options
     render(:json => Oj.dump(hash))
   end
 

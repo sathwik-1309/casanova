@@ -1,0 +1,23 @@
+.player_perf_box {
+    margin-top: 1px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.ppb_row1_label {
+
+}
+.ppb_row1_data1 {
+    justify-content: flex-end;
+    padding-right: 10px;
+}
+.ppb_row1_data2 {
+    padding-top: 3px;
+
+}
+.player_perf_box_row2 {
+    opacity: 0.9;
+}
+.player_perf_box_venue {
+    justify-content: flex-end;
+    padding-right: 10px;
+}

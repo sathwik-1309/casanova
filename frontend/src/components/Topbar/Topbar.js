@@ -88,6 +88,18 @@ function TopbarItem(props) {
                 classname1 = classname1 + ' topbar_selected'
             }
             break;
+        case "scores":
+            name = "SCORES"
+            if (selected === props.name) {
+                classname1 = classname1 + ' topbar_selected'
+            }
+            break;
+        case "spells":
+            name = "SPELLS"
+            if (selected === props.name) {
+                classname1 = classname1 + ' topbar_selected'
+            }
+            break;
     }
     return (
         <a className={classname1} href={link}>
@@ -100,6 +112,7 @@ function TopbarItem(props) {
 function Topbar(props) {
     let { t_id } = useParams();
     let { m_id } = useParams();
+    let { p_id } = useParams();
     let { inn_no } = useParams();
     let topbar = <></>
     let toggle = <></>
@@ -129,6 +142,14 @@ function Topbar(props) {
             topbar = <>
             <Searchbar type='players'/>
             </>
+            break;
+        case 'player':
+            topbar = <>
+                <TopbarItem name='home' link={`http://localhost:3000/player/${p_id}`}/>
+                <TopbarItem name='scores' link={`http://localhost:3000/player/${p_id}/scores`}/>
+                <TopbarItem name='spells' link={`http://localhost:3000/player/${p_id}/spells`}/>
+            </>
+            break;
     }
     return (
         <div className='topbar default-font'>

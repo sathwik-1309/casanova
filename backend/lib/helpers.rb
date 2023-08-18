@@ -390,6 +390,17 @@ module Helper
         end
     end
 
+    def self.get_tour_class_ids2(type)
+        case type
+        when 'wt20'
+            return WT20_IDS
+        when 'ipl'
+            return IPL_IDS
+        when 'csl'
+            return CSL_IDS
+        end
+    end
+
     def self.construct_ball_stats_hash2(spells)
         balls = 0
         runs = 0

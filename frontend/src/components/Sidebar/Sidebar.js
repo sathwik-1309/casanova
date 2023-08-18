@@ -7,6 +7,7 @@ function Sidebar(props){
     const s_id = props.s_id
     let { tour_class } = useParams();
     let { t_id } = useParams();
+    let { p_id } = useParams();
     if (s_id === 'home') {
         return(
             <div className="sidebar">
@@ -37,6 +38,16 @@ function Sidebar(props){
                 <SidebarItem name="Matches" url={`${FRONTEND_API_URL}/tournament/${t_id}/matches`}/>
                 <SidebarItem name="Venues" url={`${FRONTEND_API_URL}/tournament/${t_id}/venues`}/>
                 <SidebarItem name="Players" url={`${FRONTEND_API_URL}/tournament/${t_id}/players`}/>
+            </div>
+        );
+    }
+    else if (s_id === 'player') {
+        return(
+            <div className="sidebar">
+                <SidebarItem name="Home" url='http://localhost:3000/'/>
+                <SidebarItem name="Teams" url={`http://localhost:3000/player/${p_id}/teams`}/>
+                <SidebarItem name="Matches" url={`http://localhost:3000/player/${p_id}/matches`}/>
+                <SidebarItem name="Venues" url={`http://localhost:3000/player/${p_id}/venues`}/>
             </div>
         );
     }

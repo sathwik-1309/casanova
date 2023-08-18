@@ -280,7 +280,7 @@ class MatchController < ApplicationController
         elsif t_id
             matches = Match.where(tournament_id: t_id).order(id: :desc)
         elsif p_id
-            matches = Performance.where(player_id: p_id).order(id: :desc)
+            matches = Match.where(id: Performance.where(player_id: p_id).order(id: :desc).pluck(:match_id))
         elsif venue
             matches = Match.where(venue: venue).order(id: :desc)
         else

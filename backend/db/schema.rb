@@ -11,6 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "ball_stats", force: :cascade do |t|
     t.string "sub_type"
     t.integer "matches"
@@ -34,7 +37,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
     t.integer "five_wickets"
     t.float "boundary_p"
     t.float "dot_p"
-    t.integer "player_id"
+    t.bigint "player_id"
     t.integer "best_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -54,10 +57,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
     t.integer "for"
     t.string "category"
     t.string "ball_color"
-    t.integer "over_id"
-    t.integer "inning_id"
-    t.integer "match_id"
-    t.integer "tournament_id"
+    t.bigint "over_id"
+    t.bigint "inning_id"
+    t.bigint "match_id"
+    t.bigint "tournament_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["inning_id"], name: "index_balls_on_inning_id"
@@ -86,7 +89,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
     t.integer "hundreds"
     t.float "boundary_p"
     t.float "dot_p"
-    t.integer "player_id"
+    t.bigint "player_id"
     t.integer "best_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -109,8 +112,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
     t.integer "c6"
     t.string "ball_color1"
     t.string "ball_color2"
-    t.integer "match_id"
-    t.integer "tournament_id"
+    t.bigint "match_id"
+    t.bigint "tournament_id"
     t.integer "bat_team_id"
     t.integer "bow_team_id"
     t.datetime "created_at", null: false
@@ -138,7 +141,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
     t.integer "extras"
     t.integer "runs"
     t.integer "wickets"
-    t.integer "tournament_id"
+    t.bigint "tournament_id"
     t.integer "inn1_id"
     t.integer "inn2_id"
     t.integer "winner_id"
@@ -152,8 +155,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
 
   create_table "milestone_images", force: :cascade do |t|
     t.json "image"
-    t.integer "match_id"
-    t.integer "tournament_id"
+    t.bigint "match_id"
+    t.bigint "tournament_id"
     t.index ["match_id"], name: "index_milestone_images_on_match_id"
     t.index ["tournament_id"], name: "index_milestone_images_on_tournament_id"
   end
@@ -165,8 +168,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
     t.json "value"
     t.json "previous_value"
     t.json "tags"
-    t.integer "match_id"
-    t.integer "tournament_id"
+    t.bigint "match_id"
+    t.bigint "tournament_id"
     t.index ["match_id"], name: "index_milestones_on_match_id"
     t.index ["tournament_id"], name: "index_milestones_on_tournament_id"
   end
@@ -190,9 +193,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
     t.integer "c6"
     t.string "ball_color"
     t.integer "bowler_id"
-    t.integer "inning_id"
-    t.integer "match_id"
-    t.integer "tournament_id"
+    t.bigint "inning_id"
+    t.bigint "match_id"
+    t.bigint "tournament_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["inning_id"], name: "index_overs_on_inning_id"
@@ -216,9 +219,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
     t.integer "b2s"
     t.integer "b1b"
     t.integer "b2b"
-    t.integer "inning_id"
-    t.integer "match_id"
-    t.integer "tournament_id"
+    t.bigint "inning_id"
+    t.bigint "match_id"
+    t.bigint "tournament_id"
     t.integer "batsman1_id"
     t.integer "batsman2_id"
     t.integer "bat_team_id"
@@ -234,10 +237,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
     t.boolean "won"
     t.boolean "captain"
     t.boolean "keeper"
-    t.integer "match_id"
-    t.integer "tournament_id"
-    t.integer "player_id"
-    t.integer "squad_id"
+    t.bigint "match_id"
+    t.bigint "tournament_id"
+    t.bigint "player_id"
+    t.bigint "squad_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["match_id"], name: "index_performances_on_match_id"
@@ -259,7 +262,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
     t.integer "csl_team_id"
     t.integer "ipl_team_id"
     t.integer "born_team_id"
-    t.integer "matches"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -270,7 +272,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
     t.string "venue"
     t.string "stage"
     t.boolean "completed"
-    t.integer "tournament_id"
+    t.bigint "tournament_id"
     t.index ["tournament_id"], name: "index_schedules_on_tournament_id"
   end
 
@@ -287,11 +289,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
     t.integer "c3"
     t.integer "c4"
     t.integer "c6"
-    t.integer "player_id"
-    t.integer "squad_id"
-    t.integer "inning_id"
-    t.integer "match_id"
-    t.integer "tournament_id"
+    t.bigint "player_id"
+    t.bigint "squad_id"
+    t.bigint "inning_id"
+    t.bigint "match_id"
+    t.bigint "tournament_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["inning_id"], name: "index_scores_on_inning_id"
@@ -317,11 +319,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
     t.integer "c3"
     t.integer "c4"
     t.integer "c6"
-    t.integer "player_id"
-    t.integer "squad_id"
-    t.integer "inning_id"
-    t.integer "match_id"
-    t.integer "tournament_id"
+    t.bigint "player_id"
+    t.bigint "squad_id"
+    t.bigint "inning_id"
+    t.bigint "match_id"
+    t.bigint "tournament_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["inning_id"], name: "index_spells_on_inning_id"
@@ -332,10 +334,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
   end
 
   create_table "squad_players", force: :cascade do |t|
-    t.integer "player_id"
-    t.integer "squad_id"
-    t.integer "team_id"
-    t.integer "tournament_id"
+    t.bigint "player_id"
+    t.bigint "squad_id"
+    t.bigint "team_id"
+    t.bigint "tournament_id"
     t.index ["player_id"], name: "index_squad_players_on_player_id"
     t.index ["squad_id"], name: "index_squad_players_on_squad_id"
     t.index ["team_id"], name: "index_squad_players_on_team_id"
@@ -352,8 +354,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
     t.integer "wickets"
     t.integer "runs_conceded"
     t.integer "wickets_lost"
-    t.integer "tournament_id"
-    t.integer "team_id"
+    t.bigint "tournament_id"
+    t.bigint "team_id"
     t.integer "captain_id"
     t.integer "keeper_id"
     t.float "nrr"
@@ -392,11 +394,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
 
   create_table "wickets", force: :cascade do |t|
     t.string "method"
-    t.integer "ball_id"
-    t.integer "over_id"
-    t.integer "inning_id"
-    t.integer "match_id"
-    t.integer "tournament_id"
+    t.bigint "ball_id"
+    t.bigint "over_id"
+    t.bigint "inning_id"
+    t.bigint "match_id"
+    t.bigint "tournament_id"
     t.integer "batsman_id"
     t.integer "bowler_id"
     t.integer "fielder_id"

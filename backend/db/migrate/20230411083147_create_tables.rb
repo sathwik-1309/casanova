@@ -60,23 +60,56 @@ class CreateTables < ActiveRecord::Migration[7.0]
       t.timestamps
     end
 
-    create_table :balls do |t|
-      t.integer :batsman_id
-      t.integer :bowler_id
-      t.integer :runs
-      t.integer :bow_runs
+    create_table :matches do |t|
+      t.string :stage
+      t.string :venue
+      t.integer :win_by_wickets
+      t.integer :win_by_runs
+      t.string :ball_color1
+      t.string :ball_color2
+      t.float :pitch
+      t.integer :dots
+      t.integer :c1
+      t.integer :c2
+      t.integer :c3
+      t.integer :c4
+      t.integer :c6
+      t.integer :wides
+      t.integer :no_balls
       t.integer :extras
-      t.string :extra_type
-      t.float :delivery
-      t.boolean :wicket_ball
+      t.integer :runs
+      t.integer :wickets
+      t.belongs_to :tournament, foreign_key: true
+      t.integer :inn1_id
+      t.integer :inn2_id
+      t.integer :winner_id
+      t.integer :loser_id
+      t.integer :motm_id
+      t.integer :toss_id
+
+      t.timestamps
+    end
+
+    create_table :innings do |t|
+      t.integer :inn_no
+      t.float :overs
       t.integer :score
       t.integer :for
-      t.string :category
-      t.string :ball_color
-      t.belongs_to :over, foreign_key: true
-      t.belongs_to :inning, foreign_key: true
+      t.integer :wides
+      t.integer :no_balls
+      t.integer :extras
+      t.integer :dots
+      t.integer :c1
+      t.integer :c2
+      t.integer :c3
+      t.integer :c4
+      t.integer :c6
+      t.string :ball_color1
+      t.string :ball_color2
       t.belongs_to :match, foreign_key: true
       t.belongs_to :tournament, foreign_key: true
+      t.integer :bat_team_id
+      t.integer :bow_team_id
       t.timestamps
     end
 
@@ -105,56 +138,23 @@ class CreateTables < ActiveRecord::Migration[7.0]
       t.timestamps
     end
 
-    create_table :innings do |t|
-      t.integer :inn_no
-      t.float :overs
+    create_table :balls do |t|
+      t.integer :batsman_id
+      t.integer :bowler_id
+      t.integer :runs
+      t.integer :bow_runs
+      t.integer :extras
+      t.string :extra_type
+      t.float :delivery
+      t.boolean :wicket_ball
       t.integer :score
       t.integer :for
-      t.integer :wides
-      t.integer :no_balls
-      t.integer :extras
-      t.integer :dots
-      t.integer :c1
-      t.integer :c2
-      t.integer :c3
-      t.integer :c4
-      t.integer :c6
-      t.string :ball_color1
-      t.string :ball_color2
+      t.string :category
+      t.string :ball_color
+      t.belongs_to :over, foreign_key: true
+      t.belongs_to :inning, foreign_key: true
       t.belongs_to :match, foreign_key: true
       t.belongs_to :tournament, foreign_key: true
-      t.integer :bat_team_id
-      t.integer :bow_team_id
-      t.timestamps
-    end
-
-    create_table :matches do |t|
-      t.string :stage
-      t.string :venue
-      t.integer :win_by_wickets
-      t.integer :win_by_runs
-      t.string :ball_color1
-      t.string :ball_color2
-      t.float :pitch
-      t.integer :dots
-      t.integer :c1
-      t.integer :c2
-      t.integer :c3
-      t.integer :c4
-      t.integer :c6
-      t.integer :wides
-      t.integer :no_balls
-      t.integer :extras
-      t.integer :runs
-      t.integer :wickets
-      t.belongs_to :tournament, foreign_key: true
-      t.integer :inn1_id
-      t.integer :inn2_id
-      t.integer :winner_id
-      t.integer :loser_id
-      t.integer :motm_id
-      t.integer :toss_id
-
       t.timestamps
     end
 

@@ -345,7 +345,7 @@ class Milestone < ApplicationRecord
       when BEST_SCORE
         player_ids = bat_stats.pluck(:player_id)
         best_ids = bat_stats.pluck(:best_id)
-        query = Score.where(player_id: player_ids, inning_id: best_ids).order(runs: :desc, balls: :asc).limit(1)
+        query = Score.where(batted: true).where(player_id: player_ids, inning_id: best_ids).order(runs: :desc, balls: :asc).limit(1)
         field = 'runs'
         args = BEST_SCORE
         # ball_stats

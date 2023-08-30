@@ -44,10 +44,10 @@ function Sidebar(props){
     else if (s_id === 'player') {
         return(
             <div className="sidebar">
-                <SidebarItem name="Home" url='http://localhost:3000/'/>
-                <SidebarItem name="Teams" url={`http://localhost:3000/player/${p_id}/teams`}/>
-                <SidebarItem name="Matches" url={`http://localhost:3000/player/${p_id}/matches`}/>
-                <SidebarItem name="Venues" url={`http://localhost:3000/player/${p_id}/venues`}/>
+                <SidebarItem name="Home" url={`${FRONTEND_API_URL}/`}/>
+                <SidebarItem name="Teams" url={`http://${FRONTEND_API_URL}:3000/player/${p_id}/teams`}/>
+                <SidebarItem name="Matches" url={`http://${FRONTEND_API_URL}:3000/player/${p_id}/matches`}/>
+                <SidebarItem name="Venues" url={`http://${FRONTEND_API_URL}:3000/player/${p_id}/venues`}/>
             </div>
         );
     }

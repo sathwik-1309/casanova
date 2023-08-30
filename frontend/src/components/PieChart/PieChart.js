@@ -15,10 +15,10 @@ import Slice from './Slice';
 
 export default class PieChart extends Component {
     render() {
-        let {colors, labels, hole, radius, data, percent, stroke, strokeWidth} = this.props;
+        let {colors, labels, hole, radius, data, stroke, strokeWidth} = this.props;
         let colorsLength = colors.length;
         let diameter = radius * 2;
-        let sum, startAngle, d = null;
+        let sum, startAngle = null;
         sum = data.reduce((carry, current) => (
             carry +current
         ), 0);

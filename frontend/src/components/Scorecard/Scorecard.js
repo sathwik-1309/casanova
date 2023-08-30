@@ -41,10 +41,8 @@ function ScoreItem(props) {
     let i = props.item
     let temp1 = "scorecard_out"
     let c1 = "1"
-    let c2 = "1"
     if (i.batted && i.not_out) {
         c1 = "2"
-        c2 = "1"
         temp1="scorecard_not_out"
     }
 
@@ -99,7 +97,7 @@ function Scorecard(props) {
         };
 
         fetchScorecard();
-    }, []);
+    });
     const [boxes, setBoxes] = useState([]);
 
     const handleBox = (box) => {

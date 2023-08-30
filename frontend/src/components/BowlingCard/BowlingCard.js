@@ -80,7 +80,7 @@ function BowlingCard(props) {
         };
 
         fetchData();
-    }, []);
+    });
     const [boxes, setBoxes] = useState([]);
 
     const handleBox = (box) => {

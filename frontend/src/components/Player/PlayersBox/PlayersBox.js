@@ -21,6 +21,8 @@ function PlayersBox(props) {
         case "bow":
             label = "BOWLERS"
             break;
+        default:
+            break;
     }
 
     return (

@@ -1,5 +1,4 @@
 import './BestBox.css'
-import {BACKEND_API_URL} from "../../../../my_constants";
 
 function BestBox(props) {
     if (!props.data) {

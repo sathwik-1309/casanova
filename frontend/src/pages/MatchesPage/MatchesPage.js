@@ -31,7 +31,7 @@ function MatchesPage(props){
         };
 
         fetchData();
-    }, []);
+    });
     if (!data) {
         return <div>Loading...</div>;
     }

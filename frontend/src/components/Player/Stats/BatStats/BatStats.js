@@ -1,6 +1,5 @@
 import './BatStats.css'
 import InfoLine from "../Infoline/InfoLine";
-import {BACKEND_API_URL} from "../../../../my_constants";
 import React, {useEffect, useState} from "react";
 import Photocard from "../../../Photocard/Photocard";
 import BestBox from "../BestBox/BestBox";

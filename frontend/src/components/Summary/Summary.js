@@ -21,7 +21,7 @@ function Summary(props) {
         };
 
         fetchData();
-    }, []);
+    });
     const [boxes, setBoxes] = useState([]);
 
     const handleBox = (box) => {

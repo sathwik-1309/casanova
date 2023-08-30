@@ -1,5 +1,4 @@
 import { useParams } from 'react-router-dom';
-import Topbar from './Topbar/Topbar';
 import './TournamentPage.css'
 import Pointstable from "../../components/Pointstable/Pointstable";
 import BatStats from "../../components/Tournament/TBatStats/TBatStats";
@@ -27,7 +26,7 @@ function TournamentPage() {
         //     component = <Manhatten m_id = {m_id} inn_no={inn_no}/>
         //   break;
         default:
-            component = component
+            break;
       }
     return (
         <div id="tournament_page">

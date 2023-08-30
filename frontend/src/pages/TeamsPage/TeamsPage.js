@@ -34,7 +34,7 @@ function TeamsPage(props) {
         };
 
         fetchData();
-    }, []);
+    });
 
 
     if (!data) {
@@ -45,9 +45,9 @@ function TeamsPage(props) {
             {!tour_class && (
                 <div>
                     <div className='teams_page_buttons'>
-                        <div className={`teams_page_button_item ${tourclass == 'wt20' ? 'selected' : ''}`} onClick={() => handleOptionSelect('wt20')}>WT20</div>
-                        <div className={`teams_page_button_item ${tourclass == 'ipl' ? 'selected' : ''}`} onClick={() => handleOptionSelect('ipl')}>IPL</div>
-                        <div className={`teams_page_button_item ${tourclass == 'csl' ? 'selected' : ''}`} onClick={() => handleOptionSelect('csl')}>CSL</div>
+                        <div className={`teams_page_button_item ${tourclass === 'wt20' ? 'selected' : ''}`} onClick={() => handleOptionSelect('wt20')}>WT20</div>
+                        <div className={`teams_page_button_item ${tourclass === 'ipl' ? 'selected' : ''}`} onClick={() => handleOptionSelect('ipl')}>IPL</div>
+                        <div className={`teams_page_button_item ${tourclass === 'csl' ? 'selected' : ''}`} onClick={() => handleOptionSelect('csl')}>CSL</div>
                     </div>
                 </div>
             )}

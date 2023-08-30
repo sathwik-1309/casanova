@@ -58,8 +58,8 @@ function SortButton(props) {
     let sort_info = props.sort_info
     let key = props.keys
     let button_class = "button1"
-    if (sort_info.state == key) {
-        if (sort_info.order == "highest") {
+    if (sort_info.state === key) {
+        if (sort_info.order === "highest") {
             button_class = "button_highest"
         }
         else {
@@ -95,7 +95,7 @@ function Meta(props) {
         };
 
         fetchData();
-    }, []);
+    });
 
     const sortByKey = (key) => {
         let sortedData = []

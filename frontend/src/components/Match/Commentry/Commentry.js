@@ -101,6 +101,8 @@ function BallBox(props) {
         case "tag_6":
             result += ' co_tag_6'
             break;
+        default:
+            break;
     }
     return (
         <div className='commentry_ballbox'>
@@ -126,7 +128,7 @@ function Commentry(props) {
         };
 
         fetchData();
-    }, []);
+    });
 
 
     if (!data) {

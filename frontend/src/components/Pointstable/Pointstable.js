@@ -64,7 +64,7 @@ function Pointstable(props) {
         };
 
         fetchData();
-    }, []);
+    });
 
 
     if (!data) {

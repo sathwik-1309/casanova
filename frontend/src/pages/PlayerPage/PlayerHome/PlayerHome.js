@@ -93,7 +93,7 @@ function PlayerHome(props) {
         };
 
         fetchData();
-    }, []);
+    });
 
     const change_bat_stat_url = (url) => {
         setBatStatUrl(url)

@@ -1,10 +1,8 @@
 import Photocard from "../../Photocard/Photocard";
 import React from "react";
 import './PlayerCard.css'
-import {useParams} from "react-router-dom";
 
 function PlayerCard(props){
-    let { t_id } = useParams();
     let player = props.player
     let content = <div></div>
     let pic_height = '0px'

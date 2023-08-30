@@ -3,7 +3,6 @@ import React, {useEffect, useState} from "react";
 import './TournamentHome.css'
 import { team_colors } from '../../../components/Graph/team_colors';
 import MatchBox from "../../../components/Match/MatchBox/MatchBox";
-import PlayerCard from "../../../components/Player/PlayerCard/PlayerCard";
 import AwardBox from "../../../components/Player/AwardBox/AwardBox";
 import PieChart from "../../../components/PieChart/PieChart";
 import ProgressBar from "../../../components/ProgressBar/ProgressBar";
@@ -96,7 +95,7 @@ function TournamentHome() {
         };
 
         fetchData();
-    }, []);
+    });
 
     if (!data) {
         return <div>Loading...</div>;

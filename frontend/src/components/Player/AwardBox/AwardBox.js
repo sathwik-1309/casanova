@@ -1,7 +1,6 @@
 import Photocard from "../../Photocard/Photocard";
 import React from "react";
 import './AwardBox.css'
-import Summary from "../../Summary/Summary";
 
 function AwardBox(props){
     let player = props.player
@@ -23,6 +22,8 @@ function AwardBox(props){
             break;
         case "gem":
             logo = '💎'
+            break;
+        default:
             break;
     }
 

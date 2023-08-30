@@ -40,6 +40,9 @@ function PlayerPerfBox(props) {
             break;
         case "2":
             perfbox = props.type === 'scores'? <Scorebox data={props.data} detailed={true}/> : <SpellBox data={props.data} detailed={true}/>
+            break;
+        default:
+            break;
     }
     return (
         <>

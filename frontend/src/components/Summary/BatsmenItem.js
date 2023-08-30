@@ -1,13 +1,12 @@
 import './BatsmenItem.css'
 import '../css/teams.css'
-import {useState} from "react";
 
 function BatsmenItem(props) {
 
     let class1 = "summary_batsman_playername "+ props.team + "1"
     let class2 = "summary_batsman_score " + props.team + "2"
     // let character = props.runs.charAt(props.runs.length)
-    const [selected, setSelected] = useState("career");
+    // const [selected, setSelected] = useState("career");
 
     return (
         <div onClick={() => props.func(props.scorebox)} id="summary_batsmen_item">

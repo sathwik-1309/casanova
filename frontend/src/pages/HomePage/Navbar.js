@@ -15,7 +15,7 @@ function Navbar(props) {
         };
 
         fetchData();
-    }, []);
+    });
 
     if (!data) {
         return <div>Loading...</div>;

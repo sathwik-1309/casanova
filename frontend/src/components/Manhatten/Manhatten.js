@@ -112,7 +112,7 @@ function Manhatten(props) {
         };
 
         fetchData();
-    }, []);
+    });
 
 
     if (!data) {

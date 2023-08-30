@@ -29,7 +29,7 @@ function Photocard(props){
     return (
         <div style = {height_style} className={class1}>
             <a href={`${FRONTEND_API_URL}/player/${props.p_id}`} className='fit-content img_wrapper'>
-                <img src={img1} style={img_style}className='photo_card_pic'/>
+                <img src={img1} style={img_style}className='photo_card_pic' alt=''/>
             </a>
         </div>
     );

@@ -15,7 +15,7 @@ function InningsProgression(props) {
         };
 
         fetchData();
-    }, []);
+    });
 
 
     if (!data) {

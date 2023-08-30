@@ -1,12 +1,10 @@
 import './SummaryFooter.css'
-import React, { useState, useEffect } from 'react';
-import {images} from '../images/images.js';
 import Photocard from "../Photocard/Photocard";
 
 function Motm(props) {
     let motm = props.motm
     let class1 = "summary_motm "+props.color+"1"
-    let img = images[motm.pid]
+    // let img = images[motm.pid]
 
     let motm_stats = "NA"
     if (motm.bat && motm.ball) {

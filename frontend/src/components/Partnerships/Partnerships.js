@@ -120,7 +120,7 @@ function Partnerships(props) {
         };
 
         fetchData();
-    }, []);
+    });
 
 
     if (!data) {

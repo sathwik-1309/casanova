@@ -61,7 +61,7 @@ function Fow(props) {
         };
 
         fetchData();
-    }, []);
+    });
 
 
     if (!data) {

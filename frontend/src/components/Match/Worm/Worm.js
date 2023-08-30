@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import './Worm.css'
 import Graph from "../../Graph/Graph";
 import { BACKEND_API_URL } from './../../../my_constants'
-import InningsProgression from '../InningsProgression/InningsProgression';
 
 function Worm(props) {
     let url = `${BACKEND_API_URL}/match/${props.m_id}/worm`
@@ -16,7 +15,7 @@ function Worm(props) {
         };
 
         fetchData();
-    }, []);
+    });
 
 
     if (!data) {

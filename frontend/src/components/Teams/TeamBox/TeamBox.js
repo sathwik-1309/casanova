@@ -1,4 +1,3 @@
-import React, {useEffect, useState} from 'react';
 import './TeamBox.css'
 function TeamBox(props) {
     let data = props.data

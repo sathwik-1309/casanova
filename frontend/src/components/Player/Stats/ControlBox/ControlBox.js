@@ -1,9 +1,4 @@
-
-// props - stat_type, p_id (url)
-import React, {useEffect, useState} from "react";
-import BatStats from "../BatStats/BatStats";
-import {BACKEND_API_URL} from "../../../../my_constants";
-import BallStats from "../BallStats/BallStats";
+import React, {useState} from "react";
 import './ControlBox.css'
 
 const DropDownBox = (props) => {

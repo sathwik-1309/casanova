@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Listcards from "../Listcards/Listcards";
 import { BACKEND_API_URL } from './../../../my_constants'
-import BatStats from "../../Player/Stats/BatStats/BatStats";
 import BallStats from "../../Player/Stats/BallStats/BallStats";
 
 function TBallStats(props) {
@@ -19,7 +18,7 @@ function TBallStats(props) {
         };
 
         fetchData();
-    }, []);
+    });
 
     const [selected, setSelected] = useState([]);
     const handleclick = (p_id) => {

@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState, useEffect} from "react";
+import React, { ChangeEvent, useState } from "react";
 import './Searchbar.css'
 import { BACKEND_API_URL, FRONTEND_API_URL } from './../../my_constants'
 

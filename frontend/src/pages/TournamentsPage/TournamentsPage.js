@@ -17,7 +17,7 @@ function TournamentsPage(props) {
         };
 
         fetchData();
-    }, []);
+    });
     if (!data) {
         return <div>Loading...</div>;
     }

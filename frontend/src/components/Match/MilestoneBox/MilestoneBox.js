@@ -1,5 +1,5 @@
 import './MilestoneBox.css'
-import React, {useEffect, useState} from "react";
+import React, { useState} from "react";
 
 function Milestone(props) {
     let data = props.data

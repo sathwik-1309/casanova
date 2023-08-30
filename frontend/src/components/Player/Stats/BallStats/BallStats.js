@@ -2,7 +2,6 @@ import './BallStats.css'
 import InfoLine from "../Infoline/InfoLine";
 import React, {useEffect, useState} from "react";
 import Photocard from "../../../Photocard/Photocard";
-import photocard from "../../../Photocard/Photocard";
 import BestBox from "../BestBox/BestBox";
 
 function BallStats(props) {

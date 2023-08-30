@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import './PlayersPage.css'
 import PlayersBox from "../../components/Player/PlayersBox/PlayersBox";
 import {useParams} from "react-router-dom";
-import Worm from "../../components/Match/Worm/Worm";
 import { BACKEND_API_URL } from './../../my_constants'
 
 function DropdownMenu(props) {
@@ -68,13 +67,11 @@ function PlayersPage(props) {
         };
 
         fetchData();
-    }, []);
+    });
     if (!data) {
         return <div>Loading...</div>;
     }
     let teams = Object.keys(data)
-    let data1 = [[10,1], [14,2], [19,3], [28,4]]
-    let data2 = [[8,1], [15,2], [19,3], [27,4]]
     return(
         <div className='players_page'>
             <div className='players_page_drop_down'>
@@ -93,30 +90,5 @@ function PlayersPage(props) {
     );
 
 }
-
-const App = () => {
-    const data1 = [
-        { x: 1, y: 10 },
-        { x: 2, y: 15 },
-        { x: 3, y: 8 },
-        // Add more data points for data1 as needed
-    ];
-
-    const data2 = [
-        { x: 1, y: 20 },
-        { x: 2, y: 12 },
-        { x: 3, y: 18 },
-        // Add more data points for data2 as needed
-    ];
-
-    return (
-        <div>
-            <h1>Dual Line Chart Example</h1>
-            <Worm data1={data1} data2={data2} color1="green" color2="orange" />
-        </div>
-    );
-};
-
-
 
 export default PlayersPage;

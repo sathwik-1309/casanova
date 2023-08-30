@@ -100,6 +100,8 @@ function TopbarItem(props) {
                 classname1 = classname1 + ' topbar_selected'
             }
             break;
+        default:
+            break;
     }
     return (
         <a className={classname1} href={link}>
@@ -149,6 +151,8 @@ function Topbar(props) {
                 <TopbarItem name='scores' link={`http://localhost:3000/player/${p_id}/scores`}/>
                 <TopbarItem name='spells' link={`http://localhost:3000/player/${p_id}/spells`}/>
             </>
+            break;
+        default:
             break;
     }
     return (

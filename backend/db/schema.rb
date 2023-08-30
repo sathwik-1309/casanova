@@ -259,7 +259,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
     t.integer "csl_team_id"
     t.integer "ipl_team_id"
     t.integer "born_team_id"
-    t.integer "matches"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

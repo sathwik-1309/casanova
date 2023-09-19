@@ -118,6 +118,7 @@
 }
 .scorebox_footer {
     opacity: 0.9;
+    text-decoration: none;
 }
 .scorebox_venue {
     padding-left: 10px;

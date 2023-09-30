@@ -5,7 +5,7 @@ import { BACKEND_API_URL, FRONTEND_API_URL } from './../../my_constants'
 function SearchbarSuggestion(props) {
     let data = props.data
     return (
-        <a className='sb_suggestion h-30 flex vert-align' href={`${FRONTEND_API_URL}/player/${data.id}`}>{data.name}</a>
+        <a className='sb_suggestion h-30 flex vert-align' href={`${FRONTEND_API_URL}/player/${data.p_id}`}>{data.name}</a>
     );
 }
 
@@ -35,7 +35,7 @@ function Searchbar(props) {
 
     return (
         <div className='searchbar w-320 font-400 relative'>
-            <input type="text" className='searchbar_main h-35 font-1' onChange={handleChange} placeholder='search players ...'></input>
+            <input type="search" className='searchbar_main h-35 font-1' onChange={handleChange} placeholder='Player name'></input>
             <div className='searchbar_suggestions font-0_9 absolute bg-white w-300'>
                 {sbox}
             </div>

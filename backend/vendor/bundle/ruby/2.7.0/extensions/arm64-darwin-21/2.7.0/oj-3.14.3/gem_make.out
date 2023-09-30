@@ -1,5 +1,5 @@
-current directory: /Users/sathwikanil/Desktop/casanova/backend/vendor/bundle/ruby/2.7.0/gems/oj-3.14.3/ext/oj
-/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/bin/ruby -I /Users/sathwikanil/.rvm/rubies/ruby-2.7.6/lib/ruby/2.7.0 -r ./siteconf20230615-3699-541epq.rb extconf.rb
+current directory: /Users/sathwik/Desktop/projects/casanova/backend/vendor/bundle/ruby/2.7.0/gems/oj-3.14.3/ext/oj
+/Users/sathwik/.rvm/rubies/ruby-2.7.6/bin/ruby -I /Users/sathwik/.rvm/rubies/ruby-2.7.6/lib/ruby/2.7.0 -r ./siteconf20230919-63365-1dsjdky.rb extconf.rb
 >>>>> Creating Makefile for ruby version 2.7.6 on arm64-darwin21 <<<<<
 checking for rb_gc_mark_movable()... yes
 checking for stpcpy()... yes
@@ -9,10 +9,10 @@ checking for rb_ext_ractor_safe() in ruby.h... no
 checking for rb_hash_bulk_insert() in ruby.h... yes
 creating Makefile
 
-current directory: /Users/sathwikanil/Desktop/casanova/backend/vendor/bundle/ruby/2.7.0/gems/oj-3.14.3/ext/oj
+current directory: /Users/sathwik/Desktop/projects/casanova/backend/vendor/bundle/ruby/2.7.0/gems/oj-3.14.3/ext/oj
 make "DESTDIR=" clean
 
-current directory: /Users/sathwikanil/Desktop/casanova/backend/vendor/bundle/ruby/2.7.0/gems/oj-3.14.3/ext/oj
+current directory: /Users/sathwik/Desktop/projects/casanova/backend/vendor/bundle/ruby/2.7.0/gems/oj-3.14.3/ext/oj
 make "DESTDIR="
 compiling cache.c
 compiling cache8.c
@@ -56,6 +56,6 @@ compiling validate.c
 compiling wab.c
 linking shared-object oj/oj.bundle
 
-current directory: /Users/sathwikanil/Desktop/casanova/backend/vendor/bundle/ruby/2.7.0/gems/oj-3.14.3/ext/oj
+current directory: /Users/sathwik/Desktop/projects/casanova/backend/vendor/bundle/ruby/2.7.0/gems/oj-3.14.3/ext/oj
 make "DESTDIR=" install
-/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 oj.bundle ./.gem.20230615-3699-8vmwjo/oj
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 oj.bundle ./.gem.20230919-63365-6g5ald/oj

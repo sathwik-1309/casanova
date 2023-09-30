@@ -1,15 +1,15 @@
-current directory: /Users/sathwikanil/Desktop/casanova/backend/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
-/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/bin/ruby -I /Users/sathwikanil/.rvm/rubies/ruby-2.7.6/lib/ruby/2.7.0 -r ./siteconf20230615-3699-16qwj3x.rb extconf.rb
+current directory: /Users/sathwik/Desktop/projects/casanova/backend/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/sathwik/.rvm/rubies/ruby-2.7.6/bin/ruby -I /Users/sathwik/.rvm/rubies/ruby-2.7.6/lib/ruby/2.7.0 -r ./siteconf20230919-63365-1t0rpmw.rb extconf.rb
 creating Makefile
 
-current directory: /Users/sathwikanil/Desktop/casanova/backend/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
+current directory: /Users/sathwik/Desktop/projects/casanova/backend/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
 make "DESTDIR=" clean
 
-current directory: /Users/sathwikanil/Desktop/casanova/backend/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
+current directory: /Users/sathwik/Desktop/projects/casanova/backend/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
 make "DESTDIR="
 compiling cruby.c
 linking shared-object skiptrace/internal/cruby.bundle
 
-current directory: /Users/sathwikanil/Desktop/casanova/backend/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
+current directory: /Users/sathwik/Desktop/projects/casanova/backend/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
 make "DESTDIR=" install
-/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 cruby.bundle ./.gem.20230615-3699-r14e9i/skiptrace/internal
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 cruby.bundle ./.gem.20230919-63365-eydq5d/skiptrace/internal

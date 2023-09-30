@@ -1,5 +1,5 @@
 import './BestBox.css'
-import {BACKEND_API_URL} from "../../../../my_constants";
+import {FRONTEND_API_URL} from "../../../../my_constants";
 
 function BestBox(props) {
     if (!props.data) {
@@ -28,7 +28,7 @@ function BestBox(props) {
                 <div className={`bb_row1_data1 ${width1} font-1 font-600 ${data.color}2 flex vert-align`}>{data1}</div>
                 <div className={`bb_row1_data2 ${width2} font-0_8 font-400 ${data.color}2 flex vert-align`}>{data2}</div>
             </div>
-            <a className={`best_box_row2 flex-row ${data.color}1 h-35 font-0_8`} href={`http://localhost:3000/match/${data.match_id}/1/summary`}>
+            <a className={`best_box_row2 flex-row ${data.color}1 h-35 font-0_8`} href={`${FRONTEND_API_URL}/match/${data.match_id}/1/summary`}>
                 <div className='best_box_vs_team w-90 flex vert-align lp-10'>vs {data.vs_team}</div>
                 <div className='best_box_venue w-140 flex vert-align'>at {data.venue}</div>
             </a>

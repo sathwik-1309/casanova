@@ -1,14 +1,13 @@
 .sidebar {
+    height: 3rem;
     width: 100%;
-    height: 100%;
     display: flex;
-    flex-direction: column;
-    /*background-color: #29487d;*/
     background-color: var(--dark);
     color: var(--white);
-    /*border-right: 1px solid var(--white);*/
     font-family: Poppins, Sans-Serif;
-    /*box-shadow: var(--shadow-border);*/
     font-size: 14px;
     font-weight: 500;
+    justify-content: center;
+    position: fixed;
+    z-index: 3;
 }

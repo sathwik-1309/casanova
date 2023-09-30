@@ -1,16 +1,16 @@
 .topbar {
     display: flex;
-    height: 45px;
+    height: 3rem;
+    width: 100%;
     align-items: center;
     justify-content: center;
     background-color: var(--analysis1);
     font-size: 0.9rem;
     font-weight: 600;
     position: fixed;
-    width: 92%;
     border-bottom: 1px solid lightgray;
-    z-index: 20;
-    /*box-shadow: var(--shadow-border);*/
+    margin-top: 3rem;
+    z-index: 3;
 }
 .topbar_item {
     display: flex;

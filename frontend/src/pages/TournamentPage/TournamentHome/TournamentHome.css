@@ -3,9 +3,8 @@
     flex-direction: column;
     height: fit-content;
     margin: 10px;
-    padding-left: 20px;
-    /*align-items: center;*/
-    /*justify-content: center;*/
+    align-items: center;
+    justify-content: center;
 }
 .tournament_home_box1 {
     display: flex;

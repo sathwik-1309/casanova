@@ -29,7 +29,9 @@ class TeamController < ApplicationController
     teams.each do|team|
       temp = {}
       temp["teamname"] = team.get_teamname
+      temp["abbrevation"] = team.get_abb
       temp["squads"] = team.squads.count
+      team["id"] = team.id
       if temp["squads"] > 0
         temp["color"] = team.abbrevation
         temp["trophies"] = team_medals[team.id.to_s]
@@ -51,4 +53,63 @@ class TeamController < ApplicationController
 
     render(:json => Oj.dump(hash))
   end
+
+  def squads
+    json = []
+    squads = Tournament.where(name: params[:tour_class]).last.squads
+    squads.each do |squad|
+      temp = {}
+      temp['name'] = squad.get_teamname
+      temp['color'] = squad.abbrevation
+      temp['abbrevation'] = squad.get_abb
+      players_hash = {}
+      players_hash['batsmen'], players_hash['all_rounders'], players_hash['bowlers'] = [], [], []
+      players = Player.where(id: SquadPlayer.where(squad_id: squad.id).pluck(:player_id))
+      players.each do |player|
+        case player.skill
+        when "bat"
+          players_hash['batsmen'] << Helper.construct_player_details(player)
+        when "bow"
+          players_hash['bowlers'] << Helper.construct_player_details(player)
+        when "all"
+          players_hash['all_rounders'] << Helper.construct_player_details(player)
+        end
+      end
+      temp['players'] = players_hash
+      json << temp
+    end
+    render(:json => Oj.dump(json))
+  end
+
+  def player_create
+    json = {}
+    json['countries'] = get_teams('wt20')
+    json['ipl_teams'] = get_teams('ipl')
+    json['csl_teams'] = get_teams('csl')
+    json['born_teams'] = json['csl_teams']
+    render(:json => Oj.dump(json))
+  end
+
+  private
+
+  def get_teams(tour_class)
+    teams = []
+    team_ids = []
+    tours = Tournament.where(name: tour_class)
+    tours.each do |tour|
+      squads = tour.squads
+      squads.each do |squad|
+        if team_ids.exclude? squad.team_id
+          teams << {
+            "id" => squad.team_id,
+            "name" => squad.team.get_abb,
+            "value" => squad.team.abbrevation
+          }
+          team_ids << squad.team_id
+        end
+      end
+    end
+    teams
+  end
+
 end

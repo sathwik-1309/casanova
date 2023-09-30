@@ -295,3 +295,9 @@
     height: fit-content;
     width: fit-content;
 }
+
+.red-error {
+    color: red;
+    font-size: medium;
+    font-weight: bold;
+}

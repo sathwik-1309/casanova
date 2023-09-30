@@ -31,15 +31,7 @@ function TournamentPage() {
       }
     return (
         <div id="tournament_page">
-            {/*<div id="tournament_page_item1">*/}
-            {/*    <Topbar page={page} t_id={t_id}/>*/}
-            {/*</div>*/}
-            <div id="tournament_page_item2">
-                <div>
-                    {component}
-                </div>
-            </div>
-
+            {component}
         </div>
         )
 

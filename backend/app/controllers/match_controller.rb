@@ -148,6 +148,7 @@ class MatchController < ApplicationController
         hash["header"] = header
         hash["body"] = body
         hash["tour"] = Match.find(m_id).get_tour_font
+        hash["pick"] = scores.order(runs: :desc, balls: :asc).first.score_box
         render(:json => Oj.dump(hash))
     end
 
@@ -190,6 +191,7 @@ class MatchController < ApplicationController
         hash = {}
         bowlers = []
         spells = inn.spells
+        pick = spells[0]
         spells.each do |spell|
             temp = {}
             temp["name"] = Util.case(spell.player.name, t_id)
@@ -201,12 +203,18 @@ class MatchController < ApplicationController
             temp["dots"] = spell.dots
             temp["spellbox"] = spell.spell_box
             bowlers << temp
+            if pick.wickets < spell.wickets
+                pick = spell
+            elsif pick.wickets == spell.wickets and pick.runs > spell.runs
+                pick = spell
+            end
         end
 
         hash["tour"] = Match.find(m_id).get_tour_font
         hash["color"] = Util.get_team_color(t_id, team.abbrevation)
         hash["teamname"] = team.get_teamname
         hash["bowlers"] = bowlers
+        hash["pick"] = pick.spell_box
         render(:json => Oj.dump(hash))
     end
 

@@ -1,0 +1,91 @@
+/* form {
+    display: flex;
+    flex-direction: column;
+}
+
+.select-country {
+    width: 80px;
+    height: 30px;
+}
+#select-skill, #select-bowling-style {
+    width: 120px;
+    height: 30px;
+}
+#batting-hand > input {
+    width: 20px;
+}
+#bowling-hand, #keeper > input {
+    width: 20px;
+} */
+
+#batting-hand > input, #bowling-hand > input, #keeper > input {
+    width: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 400px; /* Adjust the width as needed */
+    margin: 20px auto; /* Center the form horizontally */
+    margin-bottom: 50px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  form > div {
+    margin: 6px 0;
+  }
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  input[type="text"],
+  .select-country,
+  #select-skill,
+  #select-bowling-style {
+    width: 90%;
+    height: 30px;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  input[type="radio"],
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  .select-country,
+  #select-skill,
+  #select-bowling-style,
+  #upload-player-pic {
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  #upload-player-pic {
+    height: 40px;
+  }
+  
+  button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  

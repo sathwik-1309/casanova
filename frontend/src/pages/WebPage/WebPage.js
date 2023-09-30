@@ -25,14 +25,10 @@ function WebPage(props) {
     }
     return (
     <div id="webpage_layout">
-        <div id="webpage_layout_item1">
-            <Sidebar s_id={props.s_id} />
-        </div>
-        <div id="webpage_layout2">
-            {topbar}
-            <div className={classname1}>
-                {props.page}
-            </div>
+        <Sidebar s_id={props.s_id} />
+        {topbar}
+        <div className={classname1}>
+            {props.page}
         </div>
     </div>
 

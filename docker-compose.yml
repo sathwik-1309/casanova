@@ -1,16 +1,16 @@
 version: '3.9'
 services:
   backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
+    image: casanova:rails-v1
+    environment:
+      RAILS_ENV: production
     ports:
       - 3001:3001
 
   frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
+    image: casanova:react-v1
+    environment:
+      REACT_APP_HOST: localhost
     ports:
       - 3000:3000
 

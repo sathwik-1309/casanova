@@ -2,16 +2,17 @@ import React from "react";
 import './SpellBox.css'
 import '../css/teams.css'
 import Photocard from "../Photocard/Photocard";
+import { FRONTEND_API_URL } from "../../my_constants";
 
 function SpellBox(props) {
     const p = props.data
     let extra_details = <></>
     if (props.detailed) {
-        extra_details = <div className={`scorebox_footer h-30 ${p.color}1 flex-row default-font font-0_8 font-600`}>
+        extra_details = <a className={`scorebox_footer h-30 ${p.color}1 flex-row default-font font-0_8 font-600`} href={`${FRONTEND_API_URL}/match/${p.match_id}/1/summary`}>
             <div className='scorebox_pos w-110 flex vert-align' ></div>
             <div className='scorebox_venue w-200 flex vert-align'>at {p.venue}</div>
             <div className='scorebox_vs_team w-100 flex vert-align'>vs {p.vs_team}</div>
-        </div>
+        </a>
     }
     return (
         <div className={`spellbox ${p.tour} bg-white bg-shadow`}>

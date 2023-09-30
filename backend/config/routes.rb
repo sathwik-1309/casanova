@@ -47,6 +47,7 @@ Rails.application.routes.draw do
     get '/:p_id/scores' => 'player#scores'
     get '/:p_id/spells' => 'player#spells'
     get '/:p_id' => 'player#home_page'
+    post '/create' => 'player#create'
   end
 
   scope :players do
@@ -57,6 +58,7 @@ Rails.application.routes.draw do
 
   scope :teams do
     get '' => 'team#teams'
+    get '/player_create' => 'team#player_create'
   end
 
   scope :venues do
@@ -71,7 +73,12 @@ Rails.application.routes.draw do
     get '/:id' => 'spell#spell'
   end
 
+  scope :squads do
+    get '' => 'team#squads'
+  end
+
   get 'home_page' => 'tournament#home_page'
+  get 'images/:filename', to: 'image#show', as: :uploaded_image
 
 
 end

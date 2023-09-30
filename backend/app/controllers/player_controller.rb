@@ -1,4 +1,23 @@
 class PlayerController < ApplicationController
+
+  
+  def create
+    attributes = filter_params
+    attributes[:fullname] = attributes[:fullname].downcase
+    attributes[:name] = attributes[:name].downcase
+    attributes[:bowling_hand], attributes[:bowling_style] = convert_to_nil(attributes[:bowling_hand], attributes[:bowling_style])
+    attributes[:csl_team_id], attributes[:ipl_team_id] = convert_to_nil(attributes[:csl_team_id], attributes[:ipl_team_id])
+    attributes[:trophies] = PLAYER_TROPHIES_INIT
+    player = Player.new(attributes)
+    begin
+      player.validate
+      player.save!
+      msg = player.attributes
+      render_200("Player created", msg)
+    rescue StandardError => ex
+      render_202(ex.message)
+    end
+  end
   def bat_stats
     p_id = params[:p_id]
     hash = {}
@@ -130,7 +149,11 @@ class PlayerController < ApplicationController
     pattern = params[:pattern]
 
     players = Player.where("fullname LIKE ?", "%#{pattern}%")
-    result = players.map { |player| { id: player.id, name: player.fullname.titleize } }[..9]
+    players = players[..9]
+    result = []
+    players.each do |player|
+      result << hash = Helper.construct_player_details(player)
+    end
 
     render json: result
   end
@@ -261,6 +284,18 @@ class PlayerController < ApplicationController
     hash['spells'] = total_spells
     hash['stat_options'] = player.get_stat_options
     render(:json => Oj.dump(hash))
+  end
+
+  private
+
+  def filter_params
+    params.permit(:fullname, :name, :skill, :batting_hand, :bowling_hand, :bowling_style, :keeper, :country_team_id, :csl_team_id, :ipl_team_id, :born_team_id)
+  end
+
+  def convert_to_nil(a, b)
+    a = nil if a == 'n/a'
+    b = nil if b == 'n/a'
+    return a,b
   end
 
 end

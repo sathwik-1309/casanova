@@ -1,4 +1,4 @@
-"gcc -o conftest -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I. -I/opt/homebrew/opt/mysql@5.7/include -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe conftest.c  -L. -L/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/lib -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -L. -L/opt/homebrew/opt/mysql@5.7/lib -fstack-protector-strong -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib  -m64   -lruby.2.7   "
+"gcc -o conftest -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I.  -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe conftest.c  -L. -L/Users/sathwik/.rvm/rubies/ruby-2.7.6/lib -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -L. -fstack-protector-strong -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib  -m64   -lruby.2.7   "
 checked program was:
 /* begin */
 1: #include "ruby.h"
@@ -9,7 +9,7 @@ checked program was:
 6: }
 /* end */
 
-"gcc -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I. -I/opt/homebrew/opt/mysql@5.7/include -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe -m64  -c conftest.c"
+"gcc -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I.  -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe -m64  -c conftest.c"
 conftest.c:5:3: error: 
 # error
   ^
@@ -30,7 +30,7 @@ checked program was:
 
 have_header: checking for termios.h... -------------------- yes
 
-"gcc -E -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I. -I/opt/homebrew/opt/mysql@5.7/include -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe  conftest.c -o conftest.i"
+"gcc -E -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I.  -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe  conftest.c -o conftest.i"
 checked program was:
 /* begin */
 1: #include "ruby.h"
@@ -42,7 +42,7 @@ checked program was:
 
 have_func: checking for cfmakeraw() in termios.h... -------------------- yes
 
-"gcc -o conftest -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I. -I/opt/homebrew/opt/mysql@5.7/include -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe conftest.c  -L. -L/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/lib -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -L. -L/opt/homebrew/opt/mysql@5.7/lib -fstack-protector-strong -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib  -m64   -lruby.2.7   "
+"gcc -o conftest -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I.  -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe conftest.c  -L. -L/Users/sathwik/.rvm/rubies/ruby-2.7.6/lib -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -L. -fstack-protector-strong -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib  -m64   -lruby.2.7   "
 checked program was:
 /* begin */
  1: #include "ruby.h"
@@ -67,7 +67,7 @@ checked program was:
 
 have_header: checking for sys/ioctl.h... -------------------- yes
 
-"gcc -E -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I. -I/opt/homebrew/opt/mysql@5.7/include -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe  conftest.c -o conftest.i"
+"gcc -E -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I.  -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe  conftest.c -o conftest.i"
 checked program was:
 /* begin */
 1: #include "ruby.h"
@@ -79,7 +79,7 @@ checked program was:
 
 have_macro: checking for HAVE_RUBY_FIBER_SCHEDULER_H... -------------------- no
 
-"gcc -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I. -I/opt/homebrew/opt/mysql@5.7/include -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe -m64  -c conftest.c"
+"gcc -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I.  -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe -m64  -c conftest.c"
 conftest.c:5:3: error: 
 # error
   ^
@@ -102,7 +102,7 @@ checked program was:
 
 have_func: checking for rb_scheduler_timeout()... -------------------- no
 
-"gcc -o conftest -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I. -I/opt/homebrew/opt/mysql@5.7/include -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe conftest.c  -L. -L/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/lib -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -L. -L/opt/homebrew/opt/mysql@5.7/lib -fstack-protector-strong -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib  -m64   -lruby.2.7   "
+"gcc -o conftest -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I.  -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe conftest.c  -L. -L/Users/sathwik/.rvm/rubies/ruby-2.7.6/lib -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -L. -fstack-protector-strong -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib  -m64   -lruby.2.7   "
 conftest.c:14:57: error: use of undeclared identifier 'rb_scheduler_timeout'
 int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_scheduler_timeout; return !p; }
                                                         ^
@@ -125,10 +125,10 @@ checked program was:
 14: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_scheduler_timeout; return !p; }
 /* end */
 
-"gcc -o conftest -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I. -I/opt/homebrew/opt/mysql@5.7/include -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe conftest.c  -L. -L/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/lib -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -L. -L/opt/homebrew/opt/mysql@5.7/lib -fstack-protector-strong -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib  -m64   -lruby.2.7   "
+"gcc -o conftest -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I.  -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe conftest.c  -L. -L/Users/sathwik/.rvm/rubies/ruby-2.7.6/lib -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -L. -fstack-protector-strong -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib  -m64   -lruby.2.7   "
 Undefined symbols for architecture arm64:
   "_rb_scheduler_timeout", referenced from:
-      _t in conftest-751ab0.o
+      _t in conftest-79c943.o
 ld: symbol(s) not found for architecture arm64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 checked program was:

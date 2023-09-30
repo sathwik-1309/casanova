@@ -85,7 +85,7 @@ GEM
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     csv (3.2.6)
-    date (3.3.3)
+    date (3.0.3)
     debug (1.7.2)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
@@ -237,7 +237,7 @@ DEPENDENCIES
   oj
   puma (~> 5.0)
   rack-cors
-  rails (~> 7.0.4)
+  rails (~> 7.0.4, >= 7.0.4.3)
   redis (~> 4.0)
   selenium-webdriver
   sprockets-rails

@@ -71,17 +71,19 @@ function BowlerItem(x) {
 function BowlingCard(props) {
     let url = `${BACKEND_API_URL}/match/${props.m_id}/${props.inn_no}/bowling_card`
     const [data, setData] = useState(null);
+    const [boxes, setBoxes] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
         const response = await fetch(url);
         const jsonData = await response.json();
         setData(jsonData);
+        setBoxes([jsonData.pick]);
         };
 
         fetchData();
     }, []);
-    const [boxes, setBoxes] = useState([]);
+    
 
     const handleBox = (box) => {
         if (boxes.includes(box)){

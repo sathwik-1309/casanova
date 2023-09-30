@@ -16,6 +16,7 @@ function Sidebar(props){
                 <SidebarItem name="Matches" url={`${FRONTEND_API_URL}/matches`}/>
                 <SidebarItem name="Venues" url={`${FRONTEND_API_URL}/venues`}/>
                 <SidebarItem name="Players" url={`${FRONTEND_API_URL}/players`}/>
+                <SidebarItem name="Create" url={`${FRONTEND_API_URL}/create`}/>
             </div>
         );
     }
@@ -45,9 +46,9 @@ function Sidebar(props){
         return(
             <div className="sidebar">
                 <SidebarItem name="Home" url={`${FRONTEND_API_URL}/`}/>
-                <SidebarItem name="Teams" url={`http://${FRONTEND_API_URL}:3000/player/${p_id}/teams`}/>
-                <SidebarItem name="Matches" url={`http://${FRONTEND_API_URL}:3000/player/${p_id}/matches`}/>
-                <SidebarItem name="Venues" url={`http://${FRONTEND_API_URL}:3000/player/${p_id}/venues`}/>
+                <SidebarItem name="Teams" url={`${FRONTEND_API_URL}/player/${p_id}/teams`}/>
+                <SidebarItem name="Matches" url={`${FRONTEND_API_URL}/player/${p_id}/matches`}/>
+                <SidebarItem name="Venues" url={`${FRONTEND_API_URL}/player/${p_id}/venues`}/>
             </div>
         );
     }

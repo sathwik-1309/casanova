@@ -1,16 +1,16 @@
 .sidebar-item {
-    padding: 20px;
+    width: 12rem;
+    border-radius: 2px;
     text-decoration: none;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: var(--white);
-    transition: all 0.4ms ease;
-    /*border-bottom: 1px solid var(--white);*/
-    /* border-radius: 2px; */
-
+    margin: 0.3rem;
+    /* transition: all 0.4ms ease; */
 }
 
 .sidebar-item:hover {
     color: var(--dark);
     background-color: var(--white);
-    cursor: default;
 }

@@ -145,9 +145,9 @@ function Topbar(props) {
             break;
         case 'player':
             topbar = <>
-                <TopbarItem name='home' link={`http://localhost:3000/player/${p_id}`}/>
-                <TopbarItem name='scores' link={`http://localhost:3000/player/${p_id}/scores`}/>
-                <TopbarItem name='spells' link={`http://localhost:3000/player/${p_id}/spells`}/>
+                <TopbarItem name='home' link={`${FRONTEND_API_URL}/player/${p_id}`}/>
+                <TopbarItem name='scores' link={`${FRONTEND_API_URL}/player/${p_id}/scores`}/>
+                <TopbarItem name='spells' link={`${FRONTEND_API_URL}/player/${p_id}/spells`}/>
             </>
             break;
     }

@@ -1,6 +1,6 @@
 have_header: checking for unistd.h... -------------------- yes
 
-"gcc -o conftest -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I. -I/opt/homebrew/opt/mysql@5.7/include -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe conftest.c  -L. -L/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/lib -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -L. -L/opt/homebrew/opt/mysql@5.7/lib -fstack-protector-strong -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib  -m64   -lruby.2.7   "
+"gcc -o conftest -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I.  -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe conftest.c  -L. -L/Users/sathwik/.rvm/rubies/ruby-2.7.6/lib -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -L. -fstack-protector-strong -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib  -m64   -lruby.2.7   "
 checked program was:
 /* begin */
 1: #include "ruby.h"
@@ -11,7 +11,7 @@ checked program was:
 6: }
 /* end */
 
-"gcc -E -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I. -I/opt/homebrew/opt/mysql@5.7/include -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe  conftest.c -o conftest.i"
+"gcc -E -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I.  -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe  conftest.c -o conftest.i"
 checked program was:
 /* begin */
 1: #include "ruby.h"
@@ -23,7 +23,7 @@ checked program was:
 
 have_header: checking for linux/aio_abi.h... -------------------- no
 
-"gcc -E -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I. -I/opt/homebrew/opt/mysql@5.7/include -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe  conftest.c -o conftest.i"
+"gcc -E -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I.  -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe  conftest.c -o conftest.i"
 conftest.c:3:10: fatal error: 'linux/aio_abi.h' file not found
 #include <linux/aio_abi.h>
          ^~~~~~~~~~~~~~~~~
@@ -39,7 +39,7 @@ checked program was:
 
 have_header: checking for linux/io_uring.h... -------------------- no
 
-"gcc -E -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I. -I/opt/homebrew/opt/mysql@5.7/include -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe  conftest.c -o conftest.i"
+"gcc -E -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I.  -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe  conftest.c -o conftest.i"
 conftest.c:3:10: fatal error: 'linux/io_uring.h' file not found
 #include <linux/io_uring.h>
          ^~~~~~~~~~~~~~~~~~
@@ -55,7 +55,7 @@ checked program was:
 
 have_header: checking for sys/select.h... -------------------- yes
 
-"gcc -E -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I. -I/opt/homebrew/opt/mysql@5.7/include -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe  conftest.c -o conftest.i"
+"gcc -E -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I.  -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe  conftest.c -o conftest.i"
 checked program was:
 /* begin */
 1: #include "ruby.h"
@@ -67,7 +67,7 @@ checked program was:
 
 have_type: checking for port_event_t in poll.h... -------------------- no
 
-"gcc -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I. -I/opt/homebrew/opt/mysql@5.7/include -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe -m64  -c conftest.c"
+"gcc -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I.  -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe -m64  -c conftest.c"
 conftest.c:6:9: error: unknown type name 'port_event_t'
 typedef port_event_t conftest_type;
         ^
@@ -87,7 +87,7 @@ checked program was:
 
 have_header: checking for sys/epoll.h... -------------------- no
 
-"gcc -E -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I. -I/opt/homebrew/opt/mysql@5.7/include -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe  conftest.c -o conftest.i"
+"gcc -E -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I.  -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe  conftest.c -o conftest.i"
 conftest.c:3:10: fatal error: 'sys/epoll.h' file not found
 #include <sys/epoll.h>
          ^~~~~~~~~~~~~
@@ -103,7 +103,7 @@ checked program was:
 
 have_header: checking for sys/event.h... -------------------- yes
 
-"gcc -E -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I. -I/opt/homebrew/opt/mysql@5.7/include -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe  conftest.c -o conftest.i"
+"gcc -E -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I.  -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe  conftest.c -o conftest.i"
 checked program was:
 /* begin */
 1: #include "ruby.h"
@@ -115,7 +115,7 @@ checked program was:
 
 have_header: checking for sys/queue.h... -------------------- yes
 
-"gcc -E -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I. -I/opt/homebrew/opt/mysql@5.7/include -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe  conftest.c -o conftest.i"
+"gcc -E -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I.  -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe  conftest.c -o conftest.i"
 checked program was:
 /* begin */
 1: #include "ruby.h"
@@ -127,7 +127,7 @@ checked program was:
 
 have_type: checking for port_event_t in port.h... -------------------- no
 
-"gcc -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I. -I/opt/homebrew/opt/mysql@5.7/include -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe -m64  -c conftest.c"
+"gcc -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I.  -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe -m64  -c conftest.c"
 conftest.c:3:10: fatal error: 'port.h' file not found
 #include <port.h>
          ^~~~~~~~
@@ -147,7 +147,7 @@ checked program was:
 
 have_header: checking for sys/resource.h... -------------------- yes
 
-"gcc -E -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I. -I/opt/homebrew/opt/mysql@5.7/include -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe  conftest.c -o conftest.i"
+"gcc -E -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I.  -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe  conftest.c -o conftest.i"
 checked program was:
 /* begin */
 1: #include "ruby.h"

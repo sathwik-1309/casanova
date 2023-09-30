@@ -1,8 +1,8 @@
 .innings_progression_parent {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 70px;
 }
 .innings_progression {
     display: flex;

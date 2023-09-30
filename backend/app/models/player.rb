@@ -16,6 +16,16 @@ class Player < ApplicationRecord
     # player type classes
     TYPE_CLASSES = [OVERALL, TOUR_CLASS, TOUR, TEAM, VENUE]
 
+    def validate
+        if self.bowling_style!=nil and self.bowling_hand==nil
+            raise StandardError.new("Bowling style has to be nil if bowling hand is nil")
+        elsif self.bowling_hand!=nil and self.bowling_style==nil
+            raise StandardError.new("Please provide bolwing style if bowling hand is not nil")
+        elsif self.skill != 'bat' and self.bowling_hand == nil
+            raise StandardError.new("Please provide bowling hand if player is not a batsman")
+        end
+    end
+
     def country
         return Team.find_by(id: self.country_team_id)
     end

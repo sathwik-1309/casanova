@@ -1,6 +1,6 @@
 have_header: checking for ruby/st.h... -------------------- yes
 
-"gcc -o conftest -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I. -I/opt/homebrew/opt/mysql@5.7/include -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe conftest.c  -L. -L/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/lib -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -L. -L/opt/homebrew/opt/mysql@5.7/lib -fstack-protector-strong -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib  -m64   -lruby.2.7   "
+"gcc -o conftest -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I.  -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe conftest.c  -L. -L/Users/sathwik/.rvm/rubies/ruby-2.7.6/lib -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -L. -fstack-protector-strong -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib  -m64   -lruby.2.7   "
 checked program was:
 /* begin */
 1: #include "ruby.h"
@@ -11,7 +11,7 @@ checked program was:
 6: }
 /* end */
 
-"gcc -E -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I. -I/opt/homebrew/opt/mysql@5.7/include -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe  conftest.c -o conftest.i"
+"gcc -E -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I.  -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe  conftest.c -o conftest.i"
 checked program was:
 /* begin */
 1: #include "ruby.h"
@@ -23,9 +23,9 @@ checked program was:
 
 have_header: checking for st.h... -------------------- yes
 
-"gcc -E -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I. -I/opt/homebrew/opt/mysql@5.7/include -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe  conftest.c -o conftest.i"
+"gcc -E -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I.  -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe  conftest.c -o conftest.i"
 In file included from conftest.c:3:
-/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward/st.h:2:2: warning: use "ruby/st.h" instead of bare "st.h" [-W#warnings]
+/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward/st.h:2:2: warning: use "ruby/st.h" instead of bare "st.h" [-W#warnings]
 #warning use "ruby/st.h" instead of bare "st.h"
  ^
 1 warning generated.
@@ -40,7 +40,7 @@ checked program was:
 
 have_func: checking for rb_enc_interned_str() in ruby.h... -------------------- no
 
-"gcc -o conftest -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I. -I/opt/homebrew/opt/mysql@5.7/include -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe conftest.c  -L. -L/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/lib -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -L. -L/opt/homebrew/opt/mysql@5.7/lib -fstack-protector-strong -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib  -m64   -lruby.2.7   "
+"gcc -o conftest -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I.  -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe conftest.c  -L. -L/Users/sathwik/.rvm/rubies/ruby-2.7.6/lib -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -L. -fstack-protector-strong -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib  -m64   -lruby.2.7   "
 conftest.c:16:57: error: use of undeclared identifier 'rb_enc_interned_str'
 int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_enc_interned_str; return !p; }
                                                         ^
@@ -65,10 +65,10 @@ checked program was:
 16: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_enc_interned_str; return !p; }
 /* end */
 
-"gcc -o conftest -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I. -I/opt/homebrew/opt/mysql@5.7/include -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe conftest.c  -L. -L/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/lib -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -L. -L/opt/homebrew/opt/mysql@5.7/lib -fstack-protector-strong -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib  -m64   -lruby.2.7   "
+"gcc -o conftest -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I.  -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe conftest.c  -L. -L/Users/sathwik/.rvm/rubies/ruby-2.7.6/lib -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -L. -fstack-protector-strong -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib  -m64   -lruby.2.7   "
 Undefined symbols for architecture arm64:
   "_rb_enc_interned_str", referenced from:
-      _t in conftest-d6744b.o
+      _t in conftest-1e7f72.o
 ld: symbol(s) not found for architecture arm64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 checked program was:
@@ -96,7 +96,7 @@ checked program was:
 
 have_func: checking for rb_hash_new_capa() in ruby.h... -------------------- no
 
-"gcc -o conftest -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I. -I/opt/homebrew/opt/mysql@5.7/include -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe conftest.c  -L. -L/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/lib -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -L. -L/opt/homebrew/opt/mysql@5.7/lib -fstack-protector-strong -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib  -m64   -lruby.2.7   "
+"gcc -o conftest -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I.  -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe conftest.c  -L. -L/Users/sathwik/.rvm/rubies/ruby-2.7.6/lib -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -L. -fstack-protector-strong -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib  -m64   -lruby.2.7   "
 conftest.c:16:57: error: use of undeclared identifier 'rb_hash_new_capa'
 int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_hash_new_capa; return !p; }
                                                         ^
@@ -121,10 +121,10 @@ checked program was:
 16: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_hash_new_capa; return !p; }
 /* end */
 
-"gcc -o conftest -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I. -I/opt/homebrew/opt/mysql@5.7/include -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe conftest.c  -L. -L/Users/sathwikanil/.rvm/rubies/ruby-2.7.6/lib -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -L. -L/opt/homebrew/opt/mysql@5.7/lib -fstack-protector-strong -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib  -m64   -lruby.2.7   "
+"gcc -o conftest -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/arm64-darwin21 -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0/ruby/backward -I/Users/sathwik/.rvm/rubies/ruby-2.7.6/include/ruby-2.7.0 -I.  -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe conftest.c  -L. -L/Users/sathwik/.rvm/rubies/ruby-2.7.6/lib -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -L. -fstack-protector-strong -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib  -m64   -lruby.2.7   "
 Undefined symbols for architecture arm64:
   "_rb_hash_new_capa", referenced from:
-      _t in conftest-060668.o
+      _t in conftest-9645f1.o
 ld: symbol(s) not found for architecture arm64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 checked program was:

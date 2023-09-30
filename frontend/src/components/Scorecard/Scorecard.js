@@ -90,17 +90,18 @@ function Scorecard(props) {
     let url = `${BACKEND_API_URL}/match/${props.m_id}/${props.inn_no}/scorecard`
 
     const [scorecard, setscorecard] = useState(null);
+    const [boxes, setBoxes] = useState([]);
 
     useEffect(() => {
         const fetchScorecard = async () => {
         const response1 = await fetch(url);
         const jsonscorecard = await response1.json();
         setscorecard(jsonscorecard);
+        setBoxes([jsonscorecard.pick]);
         };
 
         fetchScorecard();
     }, []);
-    const [boxes, setBoxes] = useState([]);
 
     const handleBox = (box) => {
         if (boxes.includes(box)){
@@ -109,6 +110,7 @@ function Scorecard(props) {
         else {
             setBoxes([...boxes, box]);
         }
+        console.log(boxes);
     };
 
 

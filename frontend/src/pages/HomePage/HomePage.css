@@ -1,10 +1,6 @@
 #home_page {
     display: flex;
     flex-direction: column;
-    height: fit-content;
-    width: fit-content;
-}
-
-#home_page_item2 {
-
+    padding: 10px;
+    justify-content: center;
 }

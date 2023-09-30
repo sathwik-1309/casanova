@@ -1,9 +1,8 @@
-# This dockerfile is used to make an alpine image with ruby:2.7.6.
-# This is used as base image for staging and production
 FROM ruby:2.7.6-alpine as base
 
 RUN apk update && \
-    apk add bash
+    apk add bash \
+    postgresql-dev
 # Set working directory
 WORKDIR backend
 
@@ -23,5 +22,6 @@ FROM base
 COPY --from=gem-cache /usr/local/bundle /usr/local/bundle
 COPY . /backend
 
+EXPOSE 3001
 # Set the entrypoint
-ENTRYPOINT ["puma", "-C", "config/puma.rb"]
+# ENTRYPOINT ["puma", "-C", "config/puma.rb"]

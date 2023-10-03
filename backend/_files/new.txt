@@ -1,13 +1,13 @@
-CSL
+WT20 2
 
-OCT VS APR
-Pune 23-May-2023
+NZ VS PAK
+Melbourne 28-Nov-2022
 
-OCT:183/4
+NZ:168/4
 
 First Innings-Batting
 Overs:20.0
-EXTRAS: 3(B:0 LB:0 NB:1 WD:2)
+EXTRAS: 2(B:0 LB:0 NB:2 WD:0)
 
 Batsman
 
@@ -23,104 +23,103 @@ B
 
 SR
 
-David Warner
+Finn Allen
 
-b Joffra Archer
+b Naseem
 
-54
-
-39
-
-8
-
-8
-
-0
-
-138.5
-
-Babar Azam
-
-c Joffra Archer b Taskin
-
-3
+2
 
 7
 
-3
+4
 
 0
 
 0
 
-42.9
+28.6
 
-Markram
+Conway
 
-c Deepak Hooda b
-Andre Russell
+b Haris Rauf
 
-104
-
-61
+7
 
 15
 
-11
-
-5
-
-170.5
-
-Glenn Maxwell
-
-b Shaheen Afridi
-
-5
-
-6
-
-4
-
-1
+8
 
 0
 
-83.3
+0
 
-Nicolas Pooran
+46.7
 
-not out
+Williamson
 
-14
+b Shadab
 
-8
+45
 
-4
+29
+
+10
+
+5
+
+2
+
+155.2
+
+Daryl Mitchell
+
+b Naseem
+
+47
+
+37
+
+12
 
 3
 
-0
+2
 
-175.0
+127.0
 
-Shadab Khan
+Phillips
 
 not out
 
-0
+49
 
-0
+23
+
+7
+
+7
+
+2
+
+213.0
+
+Neesham
+
+not out
+
+17
+
+10
+
+5
+
+2
 
 1
 
-0
+170.0
 
-0
-
-0.0
-
-Hardik Pandya
+Santner
 
 Did not Bat
 
@@ -136,7 +135,7 @@ Did not Bat
 
 0.0
 
-Chris Jordan
+Southee
 
 Did not Bat
 
@@ -152,7 +151,7 @@ Did not Bat
 
 0.0
 
-Agar
+Sodhi
 
 Did not Bat
 
@@ -168,7 +167,7 @@ Did not Bat
 
 0.0
 
-Pant
+Boult
 
 Did not Bat
 
@@ -184,7 +183,7 @@ Did not Bat
 
 0.0
 
-Topley
+Ferguson
 
 Did not Bat
 
@@ -219,19 +218,19 @@ WD NB 4s
 
 6s
 
-Shaheen Afridi
+Shaheen
 
 4.0
 
 24
 
-1
+0
 
 0
 
 6.0
 
-8
+10
 
 0
 
@@ -241,17 +240,39 @@ Shaheen Afridi
 
 0
 
-Taskin
+Naseem
 
 4.0
 
-41
+26
+
+2
+
+0
+
+6.5
+
+13
+
+0
+
+0
+
+2
+
+2
+
+Haris Rauf
+
+4.0
+
+38
 
 1
 
 0
 
-10.3
+9.5
 
 7
 
@@ -261,95 +282,73 @@ Taskin
 
 5
 
-2
+1
 
-Joffra Archer
+Nawaz
 
-4.0
+1.0
 
-34
+13
+
+0
+
+0
+
+13.0
 
 1
 
 0
 
-8.5
+1
 
-7
+2
+
+0
+
+Shadab
+
+4.0
+
+27
+
+1
+
+0
+
+6.8
+
+5
 
 0
 
 0
+
+3
+
+0
+
+Wasim Jr
+
+3.0
+
+40
+
+0
+
+0
+
+13.3
 
 6
 
 0
 
-Akeal
-
-3.0
-
-34
-
 0
-
-0
-
-11.3
-
-3
-
-1
-
-1
-
-4
-
-1
-
-Raza
-
-2.0
-
-19
-
-0
-
-0
-
-9.5
 
 2
 
-1
-
-0
-
-1
-
-1
-
-Andre Russell
-
-3.0
-
-31
-
-1
-
-0
-
-10.3
-
-3
-
-0
-
-0
-
 4
-
-1
 
 First Innings-Fall of Wickets
 No
@@ -364,43 +363,43 @@ Bowler
 
 1
 
-6
+3
 
-1.5
+1.2
 
-Babar Azam
+Finn Allen
 
-Taskin
+Naseem
 
 2
 
-134
+24
 
-15.2
+5.5
 
-David Warner
+Conway
 
-Joffra Archer
+Haris Rauf
 
 3
 
-141
+78
 
-16.5
+11.5
 
-Glenn Maxwell
+Williamson
 
-Shaheen Afridi
+Shadab
 
 4
 
-183
+133
 
-19.6
+17.1
 
-Markram
+Daryl Mitchell
 
-Andre Russell
+Naseem
 
 First Innings-OVERS
 No
@@ -430,152 +429,152 @@ Runs Wkts Per Ball Score
 19
 20
 
-S Afridi
+Shaheen
+
+3
+
+0
+
+Naseem
+
+4
+
+1
+
+Shaheen
+
+3
+
+0
+
+Naseem
+
+7
+
+0
+
+Shaheen
 
 4
 
 0
 
-Taskin
-
-2
-
-1
-
-S Afridi
-
-7
-
-0
-
-Taskin
-
-7
-
-0
-
-S Afridi
-
-10
-
-0
-
-J Archer
-
-9
-
-0
-
-Akeal
-
-9
-
-0
-
-Raza
-
-8
-
-0
-
-Akeal
-
-10
-
-0
-
-A Russell
-
-7
-
-0
-
-Taskin
-
-11
-
-0
-
-Raza
-
-11
-
-0
-
-A Russell
-
-14
-
-0
-
-J Archer
-
-9
-
-0
-
-Akeal
-
-15
-
-0
-
-J Archer
-
-5
-
-1
-
-S Afridi
+H Rauf
 
 3
 
 1
 
-Taskin
+Nawaz
 
-21
+13
 
 0
 
-J Archer
+Shadab
+
+5
+
+0
+
+W Jr
 
 11
 
 0
 
-A Russell
+Shadab
 
-10
+9
+
+0
+
+H Rauf
+
+13
+
+0
+
+Shadab
+
+3
 
 1
 
-010111
-0110W0
-041101
-110140
-410401
-000441
-0 0wd 0 1 1 1 0nb 4
-011141
-111601
-140011
-114041
-1 1 6 1 0wd 0 1
-114161
-111114
-441114
-1W0004
-1101W0
-640614
-104141
-41401W
+W Jr
 
-APR:186/4
+14
+
+0
+
+Shadab
+
+10
+
+0
+
+Naseem
+
+8
+
+0
+
+H Rauf
+
+8
+
+0
+
+W Jr
+
+15
+
+0
+
+Naseem
+
+7
+
+1
+
+Shaheen
+
+14
+
+0
+
+H Rauf
+
+14
+
+0
+
+000111
+0W0004
+010101
+000106
+000211
+2001W0
+4 0 1 1 1 1nb 4
+101111
+004601
+141111
+014116
+1101W0
+010661
+101440
+002411
+104102
+101634
+W00601
+044141
+440114
+
+PAK:170/6
 
 Second Innings-Batting
-Overs:18.5
-EXTRAS: 3(B:0 LB:0 NB:0 WD:3)
+Overs:18.0
+EXTRAS: 1(B:0 LB:0 NB:0 WD:1)
 
 Batsman
 
@@ -591,42 +590,123 @@ B
 
 SR
 
-Rohit Sharma
+Rizwan
 
-c Babar Azam b Chris
-Jordan
+b Ferguson
 
-81
-
-47
-
-9
-
-9
-
-3
-
-172.3
-
-KL Rahul
-
-c Shadab Khan b Topley
+19
 
 11
 
-9
+4
+
+1
+
+2
+
+172.7
+
+Babar
+
+lbw b Southee
+
+19
+
+11
+
+4
+
+1
+
+2
+
+172.7
+
+Shan Masood
+
+b Boult
+
+0
+
+6
+
+6
+
+0
+
+0
+
+0.0
+
+Iftikhar
+
+not out
+
+62
+
+41
+
+13
+
+6
 
 3
+
+151.2
+
+Nawaz
+
+c Conway b Sodhi
+
+11
+
+5
+
+2
+
+1
+
+1
+
+220.0
+
+Shadab
+
+c Phillips b Sodhi
+
+8
+
+5
 
 2
 
 0
 
-122.2
+1
 
-Fakhar Zaman
+160.0
 
-lbw b Hardik Pandya
+Asif Ali
+
+b Ferguson
+
+38
+
+23
+
+6
+
+7
+
+0
+
+165.2
+
+Wasim Jr
+
+not out
+
+12
 
 6
 
@@ -636,60 +716,9 @@ lbw b Hardik Pandya
 
 1
 
-0
+200.0
 
-150.0
-
-Brewis
-
-c Markram b Hardik
-Pandya
-
-3
-
-5
-
-2
-
-0
-
-0
-
-60.0
-
-Deepak Hooda
-
-not out
-
-73
-
-42
-
-11
-
-12
-
-1
-
-173.8
-
-Andre Russell
-
-not out
-
-9
-
-6
-
-3
-
-1
-
-0
-
-150.0
-
-Joffra Archer
+Haris Rauf
 
 Did not Bat
 
@@ -705,7 +734,7 @@ Did not Bat
 
 0.0
 
-Shaheen Afridi
+Shaheen
 
 Did not Bat
 
@@ -721,39 +750,7 @@ Did not Bat
 
 0.0
 
-Raza
-
-Did not Bat
-
-0
-
-0
-
-0
-
-0
-
-0
-
-0.0
-
-Akeal
-
-Did not Bat
-
-0
-
-0
-
-0
-
-0
-
-0
-
-0.0
-
-Taskin
+Naseem
 
 Did not Bat
 
@@ -788,17 +785,17 @@ WD NB 4s
 
 6s
 
-Topley
+Southee
 
-3.5
+3.0
 
-40
+29
 
 1
 
 0
 
-10.4
+9.7
 
 7
 
@@ -806,119 +803,119 @@ Topley
 
 0
 
-4
+3
 
 2
 
-Hardik Pandya
+Boult
 
 4.0
 
-38
+37
+
+1
+
+0
+
+9.3
+
+10
+
+0
+
+0
+
+3
+
+3
+
+Ferguson
+
+3.0
+
+20
 
 2
 
 0
 
-9.5
+6.7
 
-5
-
-0
+9
 
 0
 
-7
-
 0
 
-Agar
+1
+
+2
+
+Sodhi
 
 4.0
 
-33
+28
+
+2
 
 0
 
-0
-
-8.3
-
-6
-
-1
-
-0
-
-3
-
-1
-
-Chris Jordan
-
-3.0
-
-27
-
-1
-
-0
-
-9.0
-
-3
-
-1
-
-0
+7.0
 
 4
 
-0
-
-Shadab Khan
-
-3.0
-
-40
+1
 
 0
-
-0
-
-13.3
 
 3
 
-1
+0
+
+Santner
+
+3.0
+
+43
+
+0
+
+0
+
+14.3
+
+3
+
+0
 
 0
 
 6
 
-1
+2
 
-Glenn Maxwell
+Neesham
 
 1.0
 
-8
+13
 
 0
 
 0
 
-8.0
+13.0
+
+2
+
+0
+
+0
 
 1
 
-0
-
-0
-
 1
-
-0
 
 Second Innings-Fall of Wickets
 No
@@ -933,47 +930,67 @@ Bowler
 
 1
 
-15
+25
 
-2.1
+2.3
 
-KL Rahul
+Babar
 
-Topley
+Southee
 
 2
 
-28
+26
 
 3.5
 
-Fakhar Zaman
+Shan Masood
 
-Hardik Pandya
+Boult
 
 3
 
-36
+38
 
-5.2
+4.5
 
-Brewis
+Rizwan
 
-Hardik Pandya
+Ferguson
 
 4
 
-168
+58
 
-17.1
+6.5
 
-Rohit Sharma
+Nawaz
 
-Chris Jordan
+Sodhi
+
+5
+
+76
+
+8.4
+
+Shadab
+
+Sodhi
+
+6
+
+157
+
+16.4
+
+Asif Ali
+
+Ferguson
 
 Second Innings-OVERS
 
-No
+No
 
 Bowler
 
@@ -997,143 +1014,133 @@ Runs Wkts Per Ball Score
 16
 17
 18
-19
 
-Topley
+Southee
+
+6
+
+0
+
+Boult
 
 7
 
 0
 
-H Pandya
+Southee
 
-8
-
-0
-
-Topley
-
-7
+12
 
 1
 
-H Pandya
-
-7
+Boult
 
 1
 
-Agar
+1
 
-7
+Ferguson
 
-0
-
-H Pandya
-
-9
+12
 
 1
 
-Agar
-
-5
-
-0
-
-C Jordan
-
-8
-
-0
-
-S Khan
+Boult
 
 17
 
 0
 
-Agar
+Sodhi
+
+3
+
+1
+
+Santner
+
+15
+
+0
+
+Sodhi
+
+8
+
+1
+
+Santner
+
+17
+
+0
+
+Sodhi
+
+13
+
+0
+
+Ferguson
+
+7
+
+0
+
+Southee
+
+11
+
+0
+
+Santner
+
+11
+
+0
+
+Sodhi
+
+4
+
+0
+
+Boult
 
 12
 
 0
 
-S Khan
-
-9
-
-0
-
-G Maxwell
-
-8
-
-0
-
-Agar
-
-9
-
-0
-
-C Jordan
-
-10
-
-0
-
-S Khan
-
-14
-
-0
-
-Topley
-
-17
-
-0
-
-H Pandya
-
-14
-
-0
-
-C Jordan
-
-9
+Ferguson
 
 1
 
-Topley
+1
 
-9
+Neesham
+
+13
 
 0
 
-100114
-101141
-W16000
-4101W1
-101104
-0W1404
-011111
-011114
-1 0 4 0wd 4 1 6
-601410
-411021
-101141
-1 1 0 0wd 1 4 1
-1 4 1 1 1 0wd 1
-401414
-041246
-401144
-W01404
-11403
+100140
+004111
+66W000
+0100W0
+0066W0
+600146
+0111W0
+011616
+111W41
+404441
+1 0wd 4 1 1 1 4
+010141
+044111
+401141
+011101
+016140
+001W00
+010264
 
-Result: APR won the match by 6 wickets
+Result: PAK won the match by 4 wickets
 Generated by Cricket Scorer
-
-

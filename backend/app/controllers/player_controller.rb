@@ -28,20 +28,20 @@ class PlayerController < ApplicationController
     hash["career"] = Helper.repeat2(scores, p_id, 1, player, team, 'wt20_1')
 
 
-    scores = Score.where(player_id: p_id, tournament_id: WT20_IDS)
+    scores = Score.where(player_id: p_id, tournament_id: Tournament.wt20_ids)
     if scores.length > 0
       team = Team.find(player.country_team_id)
       hash["int"] = Helper.repeat2(scores, p_id, 1, player, team, 'wt20_1')
     end
 
 
-    scores = Score.where(player_id: p_id, tournament_id: IPL_IDS)
+    scores = Score.where(player_id: p_id, tournament_id: Tournament.ipl_ids)
     if scores.length > 0
       team = Team.find(player.ipl_team_id)
       hash["ipl"] = Helper.repeat2(scores, p_id, 2, player, team, 'ipl_2')
     end
 
-    scores = Score.where(player_id: p_id, tournament_id: CSL_IDS)
+    scores = Score.where(player_id: p_id, tournament_id: Tournament.csl_ids)
     if scores.length > 0
       team = Team.find(player.csl_team_id)
       hash["csl"] = Helper.repeat2(scores, p_id, 3, player, team, 'csl_3')
@@ -60,22 +60,22 @@ class PlayerController < ApplicationController
     matches = Score.where(player_id: p_id).count
     hash["career"] = Helper.repeat1(spells, p_id, 1, player, team, 'wt20_1', matches)
 
-    spells = Spell.where(player_id: p_id, tournament_id: WT20_IDS)
-    matches = Score.where(player_id: p_id, tournament_id: WT20_IDS).count
+    spells = Spell.where(player_id: p_id, tournament_id: Tournament.wt20_ids)
+    matches = Score.where(player_id: p_id, tournament_id: Tournament.wt20_ids).count
     if matches > 0
       team = Team.find(player.country_team_id)
       hash["int"] = Helper.repeat1(spells, p_id, 1, player, team, 'wt20_1', matches)
     end
 
-    spells = Spell.where(player_id: p_id, tournament_id: IPL_IDS)
-    matches = Score.where(player_id: p_id, tournament_id: IPL_IDS).count
+    spells = Spell.where(player_id: p_id, tournament_id: Tournament.ipl_ids)
+    matches = Score.where(player_id: p_id, tournament_id: Tournament.ipl_ids).count
     if matches > 0
       team = Team.find(player.ipl_team_id)
       hash["ipl"] = Helper.repeat1(spells, p_id, 2, player, team, 'ipl_2', matches)
     end
 
-    spells = Spell.where(player_id: p_id, tournament_id: CSL_IDS)
-    matches = Score.where(player_id: p_id, tournament_id: CSL_IDS).count
+    spells = Spell.where(player_id: p_id, tournament_id: Tournament.csl_ids)
+    matches = Score.where(player_id: p_id, tournament_id: Tournament.csl_ids).count
     if matches > 0
       team = Team.find(player.csl_team_id)
       hash["csl"] = Helper.repeat1(spells, p_id, 3, player, team, 'csl_3', matches)

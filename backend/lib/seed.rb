@@ -828,9 +828,7 @@ module Seed
                 s.stage = match['stage']
                 s.tournament_id = t_id
                 s.completed = Match.where(id: match['m_id']).present? ? true : false
-                unless s.save
-                    puts "❌ ERROR in preload schedules in match #{m_id}"
-                end
+                s.save!
             end
         end
         puts "Schedules preloaded"

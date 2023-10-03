@@ -9,7 +9,7 @@ tours.each do|tour|
   matches.each do|match|
     hash = {}
     hash['m_id'] = match.id
-    if IPL_IDS.include? t_id and match.stage == 'league'
+    if Tournament.ipl_ids.include? t_id and match.stage == 'league'
       venue_dict = {
         "bengaluru" => 23,
         "mumbai" => 24,

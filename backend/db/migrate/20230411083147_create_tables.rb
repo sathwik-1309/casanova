@@ -2,13 +2,14 @@ class CreateTables < ActiveRecord::Migration[7.0]
   def change
     create_table :tournaments do |t|
       t.string :name
-      t.json :medals
+      t.json :medals, default: {}
       t.integer :pots_id
       t.integer :mvp_id
       t.integer :most_runs_id
       t.integer :most_wickets_id
       t.integer :season
-      t.boolean :ongoing
+      t.json :groups, default: []
+      t.boolean :ongoing, default: false
 
       t.timestamps
     end
@@ -16,31 +17,31 @@ class CreateTables < ActiveRecord::Migration[7.0]
     create_table :teams do |t|
       t.string :name
       t.string :abbrevation
-      t.integer :matches
-      t.integer :won
-      t.integer :lost
-      t.integer :runs
-      t.integer :wickets
-      t.integer :runs_conceded
-      t.integer :wickets_lost
+      t.integer :matches, default: 0
+      t.integer :won, default: 0
+      t.integer :lost, default: 0
+      t.integer :runs, default: 0
+      t.integer :wickets, default: 0
+      t.integer :runs_conceded, default: 0
+      t.integer :wickets_lost, default: 0
       t.timestamps
     end
 
     create_table :squads do |t|
       t.string :name
       t.string :abbrevation
-      t.integer :matches
-      t.integer :won
-      t.integer :lost
-      t.integer :runs
-      t.integer :wickets
-      t.integer :runs_conceded
-      t.integer :wickets_lost
+      t.integer :matches, default: 0
+      t.integer :won, default: 0
+      t.integer :lost, default: 0
+      t.integer :runs, default: 0
+      t.integer :wickets, default: 0
+      t.integer :runs_conceded, default: 0
+      t.integer :wickets_lost, default: 0
       t.belongs_to :tournament, foreign_key: true
       t.belongs_to :team, foreign_key: true
       t.integer :captain_id
       t.integer :keeper_id
-      t.float :nrr
+      t.float :nrr, default: 0
       t.timestamps
     end
 
@@ -316,6 +317,7 @@ class CreateTables < ActiveRecord::Migration[7.0]
       t.string :venue
       t.string :stage
       t.boolean :completed
+      t.integer :order
       t.belongs_to :tournament, foreign_key: true
     end
 

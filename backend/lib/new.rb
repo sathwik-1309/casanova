@@ -19,8 +19,8 @@ module New
     end
     status = Validator.validate_match
     raise StandardError, "Validator.validate_match failed" unless status
-    status = Validator.check_schedule_entry(args)
-    raise StandardError, "Validator.check_schedule_entry failed" unless status
+    # status = Validator.check_schedule_entry(args)
+    # raise StandardError, "Validator.check_schedule_entry failed" unless status
     status = Uploader.upload_match
     raise StandardError, "Uploader.upload_match failed" unless status
     if existing

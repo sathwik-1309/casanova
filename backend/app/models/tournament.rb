@@ -10,6 +10,15 @@ class Tournament < ApplicationRecord
     has_many :partnerships
     has_many :performances
 
+    after_create :populate_groups_in_seeding
+
+    def populate_groups_in_seeding
+        return if self.groups != []
+        groups = Util.get_tournament_json(self.id)
+        self.groups = groups["groups"]
+        self.save!
+    end
+
     def winners
         return nil unless self.medals['gold']
         return Squad.find(self.medals['gold'])
@@ -43,7 +52,7 @@ class Tournament < ApplicationRecord
         hash = {}
         hash["tour_class"] = "#{self.name.upcase}-#{self.season}"
         hash["t_id"] = self.id
-        if self.medals != nil
+        if self.medals != {}
             hash["w_teamname"] = self.winners.get_teamname
             hash["w_color"] = self.winners.abbrevation
             hash["pots"] = self.pots.fullname.titleize
@@ -66,5 +75,66 @@ class Tournament < ApplicationRecord
             end
         end
         points_hash
+    end
+
+    def self.wt20_ids
+        Tournament.where(name: 'wt20').pluck(:id)
+    end
+
+    def self.ipl_ids
+        Tournament.where(name: 'ipl').pluck(:id)
+    end
+
+    def self.csl_ids
+        Tournament.where(name: 'csl').pluck(:id)
+    end
+
+    def self.validate_tournament_json(json)
+        if TOURNAMENT_NAMES.exclude? json['name']
+            raise StandardError.new("Cannot create Tour with name #{json['name']}")
+        end
+        teams = []
+        teams_per_group = json['groups'][0].length
+        json['groups'].each do |group|
+            if group.length != teams_per_group
+                raise StandardError.new("Groups unequal")
+            end
+            group.each do|team|
+                if teams.include? team
+                    raise StandardError.new("team #{team} duplicated")
+                end
+                teams << team
+            end
+        end
+        if teams.sort != json['squads'].keys.sort
+            raise StandardError.new("Teams not matching with squads")
+        end
+    end
+
+    def self.create_using_json(json)
+        t = Tournament.new(name: json['name'])
+        t.season = Tournament.where(name: json['name']).last.season + 1
+        t.id = Tournament.last.id + 1
+        t.ongoing = true
+        groups = []
+        json['groups'].each do |group|
+            temp = []
+            group.each do |team_abb|
+                temp << Team.find_by_abbrevation(team_abb).id
+            end
+            groups << temp
+        end
+        t.groups = groups
+        t.save!
+        json['squads'].each do |key, val|
+            team = Team.find_by_abbrevation(key)
+            s = Squad.new(name: team.name, abbrevation: team.abbrevation, tournament_id: t.id,
+                          captain_id: val['captain_id'], keeper_id: val['keeper_id'], team_id: team.id)
+            s.save!
+            val['players'].each do |p_id|
+                sp = SquadPlayer.new(player_id: p_id, squad_id: s.id, team_id: t.id, tournament_id: t.id)
+                sp.save!
+            end
+        end
     end
 end

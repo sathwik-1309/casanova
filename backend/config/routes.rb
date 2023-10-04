@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
   scope :tournament do
     post '/create' => 'tournament#create'
+    post '/create_file' => 'tournament#create_file'
     get '/list' => 'tournament#list'
     delete '/delete' => 'tournament#delete'
     get '/:t_id/points_table' => 'tournament#points_table'
@@ -75,6 +76,10 @@ Rails.application.routes.draw do
 
   scope :squads do
     get '' => 'team#squads'
+  end
+
+  scope :schedule do
+    post '/upload_file' => 'schedule#upload_file'
   end
 
   get 'home_page' => 'tournament#home_page'

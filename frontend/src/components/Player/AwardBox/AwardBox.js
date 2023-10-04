@@ -6,6 +6,7 @@ import Summary from "../../Summary/Summary";
 function AwardBox(props){
     let player = props.player
     const pic_height = '70px';
+    if (!player) return
     let content = <Photocard p_id = {player.p_id} color={player.color} height={pic_height}/>
     let logo = ''
     switch (props.award) {

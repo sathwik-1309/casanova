@@ -819,18 +819,19 @@ module Seed
         data.each do|tour|
             t_id = tour['t_id']
             matches = tour['matches']
+            order = 1
             matches.each do|match|
                 s = Schedule.new
-                s.id = match['m_id']
+                s.match_id = match['m_id']
                 s.squad1_id = Squad.find_by(tournament_id: t_id, team_id: Team.find_by(abbrevation: match['squad1']))&.id
                 s.squad2_id = Squad.find_by(tournament_id: t_id, team_id: Team.find_by(abbrevation: match['squad2']))&.id
                 s.venue = match['venue']
                 s.stage = match['stage']
                 s.tournament_id = t_id
+                s.order = order
                 s.completed = Match.where(id: match['m_id']).present? ? true : false
-                unless s.save
-                    puts "❌ ERROR in preload schedules in match #{m_id}"
-                end
+                s.save!
+                order += 1
             end
         end
         puts "Schedules preloaded"

@@ -17,6 +17,7 @@ class Match < ApplicationRecord
             self.update_tournament
             self.update_player_trophies
             Uploader.update_milestone_image(self)
+            self.create_schedule
         end
     end
 
@@ -39,8 +40,42 @@ class Match < ApplicationRecord
         return Player.find(self.motm_id)
     end
 
+    def schedule
+        query1 = Schedule.find_by(venue: self.venue, squad1_id: self.winner_id, squad2_id: loser_id, stage: self.stage)
+        query2 = Schedule.find_by(venue: self.venue, squad2_id: self.winner_id, squad1_id: loser_id, stage: self.stage)
+        query1 or query2
+    end
+
     def get_tour_font
         return "#{Tournament.find(self.tournament_id).name}_#{self.tournament_id}"
+    end
+
+    def create_schedule
+        last_match = self.tournament.schedules.order(order: :desc).limit(1)
+        if self.schedule.nil?
+            schedule = Schedule.new
+            schedule.squad1_id = self.winner_id
+            schedule.squad2_id = self.loser_id
+            schedule.venue = self.venue
+            schedule.stage = self.stage
+            schedule.completed = true
+            schedule.match_id = self.id
+            schedule.tournament_id = self.tournament_id
+            schedule.order = last_match.present? ? last_match.first.order+1 : 1
+        else
+            schedule = self.schedule
+            schedule.completed = true
+            order = last_match.present? ? last_match.first.order+1 : 1
+            unless schedule.order == order
+                to_update = self.tournament.schedules.where("order >= ?", order).where("order < ?", schedule.order)
+                to_update.each do |s|
+                    s.order = s.order + 1
+                    s.save!
+                end
+            end
+            schedule.order = order
+        end
+        schedule.save!
     end
 
     def match_box

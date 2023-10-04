@@ -1,8 +1,8 @@
 {
-  "m_id": 154,
-  "batted_first": "oct",
-  "batted_second": "apr",
-  "toss": "apr",
+  "m_id": 166,
+  "batted_first": "nz",
+  "batted_second": "pak",
+  "toss": "pak",
   "pitch": 3,
   "ball_color": [
     "y",
@@ -10,14 +10,14 @@
     "y",
     "y"
   ],
-  "cap1": "babar",
-  "cap2": "rohit",
-  "keeper1": "pooran",
-  "keeper2": "kl rahul",
-  "winner": "apr",
+  "cap1": "williamson",
+  "cap2": "babar",
+  "keeper1": "finn allen",
+  "keeper2": "rizwan",
+  "winner": "pak",
   "stage": "group",
-  "venue": "pune",
-  "motm_player": "rohit sharma",
-  "motm_team": "apr",
-  "t_id": 6
+  "venue": "melbourne",
+  "motm_player": "haris rauf",
+  "motm_team": "pak",
+  "t_id": 7
 }

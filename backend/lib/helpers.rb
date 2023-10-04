@@ -379,12 +379,12 @@ module Helper
     end
 
     def self.get_tour_class_ids(t_id)
-        if WT20_IDS.include? t_id
-            return WT20_IDS
-        elsif IPL_IDS.include? t_id
-            return IPL_IDS
-        elsif CSL_IDS.include? t_id
-            return CSL_IDS
+        if Tournament.wt20_ids.include? t_id
+            return Tournament.wt20_ids
+        elsif Tournament.ipl_ids.include? t_id
+            return Tournament.ipl_ids
+        elsif Tournament.csl_ids.include? t_id
+            return Tournament.csl_ids
         else
             raise StandardError.new("Helpers#get_tour_class_ids: no tour_class for t_id #{t_id}")
         end
@@ -393,11 +393,11 @@ module Helper
     def self.get_tour_class_ids2(type)
         case type
         when 'wt20'
-            return WT20_IDS
+            return Tournament.wt20_ids
         when 'ipl'
-            return IPL_IDS
+            return Tournament.ipl_ids
         when 'csl'
-            return CSL_IDS
+            return Tournament.csl_ids
         end
     end
 

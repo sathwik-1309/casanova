@@ -106,10 +106,10 @@ function TournamentHome() {
     let box3 = data.tour_stats
     const analysis1 = team_colors.analysis1
     const analysis2 = team_colors.analysis2
-    let component1;
-    let component2;
+    let component1 = <></>
+    let component2 = <></>
 
-    if (data.ongoing === true) {
+    if (data.ongoing === true && box1 !== {} && box2 !== {} ) {
         component1 = <ScheduleBox box={box1.upcoming_matches}/>
         component2 = <ThBox2 box={box2} ongoing={true}/>
     }

@@ -22,9 +22,6 @@ MATCH_TEXT_FILE_PATH = "#{Dir.pwd}/_files/static/txt"
 
 # vars
 NILL = nil
-WT20_IDS = [1,4,5]
-IPL_IDS = [2]
-CSL_IDS = [3,6]
 TEAM_NAMES = %w[ind pak aus nz wi sa eng ban afg sl nep zim ire srh csk rcb mi rr pbks dc kkr jan feb mar apr may june july aug sept oct nov dec]
 PLAYER_TROPHIES_INIT = {
   "motm" => 0,

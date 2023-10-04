@@ -2,9 +2,9 @@ class TournamentController < ApplicationController
   def points_table
     t_id = params[:t_id].to_i
     hash = {}
+    tour = Tournament.find_by_id(t_id)
+    groups = tour.groups
 
-    tour = Util.get_tournament_json(t_id.to_i)
-    groups = tour["groups"]
     points_table = []
     journey = {}
     groups.each do |group|
@@ -274,13 +274,12 @@ class TournamentController < ApplicationController
 
       most_wickets_player = Player.find(tour.most_wickets_id)
       box2["most_wickets"] = most_wickets_player.tour_individual_awards_to_hash(t_id, "most_wickets")
-
     else
       hash['ongoing'] = true
-      upcoming_matches = []
       latest_mid = Match.last.id
       schedules = Schedule.where(tournament_id: t_id).where("id > #{latest_mid}").order(id: :asc).limit(3)
       tourname = Tournament.find(t_id).get_tour_with_season
+      upcoming_matches = []
       schedules.each do|schedule|
         temp = {}
         temp['tourname'] = tourname
@@ -290,29 +289,32 @@ class TournamentController < ApplicationController
         upcoming_matches << temp
       end
       box1['upcoming_matches'] = upcoming_matches
-      points = tour.get_mvp_sorted_hash
-      points = points.sort_by { |key, value| -value }
-      mvp_pid = points[0][0]
-      mvp = Player.find(mvp_pid)
-      box2["mvp"] = mvp.tour_individual_awards_to_hash(t_id, "mvp", {"points" => points[0][1]})
+      unless tour.matches.length == 0
+        points = tour.get_mvp_sorted_hash
+        points = points.sort_by { |key, value| -value }
+        mvp_pid = points[0][0]
+        mvp = Player.find(mvp_pid)
+        box2["mvp"] = mvp.tour_individual_awards_to_hash(t_id, "mvp", {"points" => points[0][1]})
 
-      most_runs = BatStat.where(sub_type: "tour_#{t_id}").order(runs: :desc).limit(1).first
-      most_runs_player = Player.find(most_runs.player_id)
-      box2["most_runs"] = most_runs_player.tour_individual_awards_to_hash(t_id, "most_runs", {"runs" => most_runs.runs})
+        most_runs = BatStat.where(sub_type: "tour_#{t_id}").order(runs: :desc).limit(1).first
+        most_runs_player = Player.find(most_runs.player_id)
+        box2["most_runs"] = most_runs_player.tour_individual_awards_to_hash(t_id, "most_runs", {"runs" => most_runs.runs})
 
-      most_wickets = BallStat.where(sub_type: "tour_#{t_id}").order(wickets: :desc).limit(1).first
-      most_wickets_player = Player.find(most_wickets.player_id)
-      box2["most_wickets"] = most_wickets_player.tour_individual_awards_to_hash(t_id, "most_wickets", {"wickets" => most_wickets.wickets})
+        most_wickets = BallStat.where(sub_type: "tour_#{t_id}").order(wickets: :desc).limit(1).first
+        most_wickets_player = Player.find(most_wickets.player_id)
+        box2["most_wickets"] = most_wickets_player.tour_individual_awards_to_hash(t_id, "most_wickets", {"wickets" => most_wickets.wickets})
+      end
     end
-
     tour_stats = {}
-    matches = Match.where(tournament_id: t_id)
-    tour_stats["matches"] = matches.count
-    tour_stats["defended"] = matches.where('win_by_runs > 0').length
-    tour_stats["chased"] = matches.where('win_by_wickets > 0').length
-    inn1 = Inning.where(tournament_id: t_id, inn_no: 1)
-    tour_stats["avg_score"] = (inn1.pluck(:score).sum.to_f/inn1.length).round(0)
-    tour_stats["avg_wickets"] = (inn1.pluck(:for).sum.to_f/inn1.length).round(1)
+    if tour.matches.count > 0
+      matches = Match.where(tournament_id: t_id)
+      tour_stats["matches"] = matches.count
+      tour_stats["defended"] = matches.where('win_by_runs > 0').length
+      tour_stats["chased"] = matches.where('win_by_wickets > 0').length
+      inn1 = Inning.where(tournament_id: t_id, inn_no: 1)
+      tour_stats["avg_score"] = (inn1.pluck(:score).sum.to_f/inn1.length).round(0)
+      tour_stats["avg_wickets"] = (inn1.pluck(:for).sum.to_f/inn1.length).round(1)
+    end
     hash["box1"] = box1
     hash["box2"] = box2
     hash["tour_stats"] = tour_stats
@@ -320,21 +322,22 @@ class TournamentController < ApplicationController
   end
 
   def create
-    if TOURNAMENT_NAMES.exclude? params[:name]
+    if TOURNAMENT_NAMES.exclude? filter_params[:name]
       error_msg = 'Tournament name not found'
-      render_404(error_msg, {"error"=>error_msg})
-      return
+      render_400(error_msg, {"error"=>error_msg}) and return
     end
+    squads = params[:squads]
+    squads.each
     t = Tournament.new
     t.id = Tournament.last.id + 1
     t.name = params[:name]
-    t.season = Tournament.where(name: params[:name]).last.season + 1
-    unless t.save
-      error_msg = t.errors.full_messages
-      render_404(error_msg, {"error"=>error_msg})
-      return
+    t.season = Tournament.where(filter_params: params[:name]).last.season + 1
+    begin
+      t.save!
+      render_200("Tournament created")
+    rescue StandardError => e
+      render_400(e.message)
     end
-    render_200
   end
 
   def list
@@ -364,4 +367,33 @@ class TournamentController < ApplicationController
     render_404(msg, {"error"=>msg}) unless status
     render_200(msg,{"error"=>msg})
   end
+
+  def create_file
+    uploaded_file = params[:tournament_json]
+    if uploaded_file.present?
+      # Check the file type if necessary (e.g., to ensure it's JSON)
+      if File.extname(uploaded_file.original_filename).downcase == '.json'
+        # Save the file or process it as needed
+        t_json = JSON.parse(uploaded_file.read)
+        begin
+          Tournament.validate_tournament_json(t_json)
+          Tournament.create_using_json(t_json)
+          render_200("Tournament created")
+        rescue StandardError => ex
+          render_202(ex.message)
+        end
+      else
+        render_202("Please upload a json file")
+      end
+    else
+      render_202("Please select a file to upload")
+    end
+  end
+
+  private
+
+  def filter_params
+    params.permit(:name, :tournament_json)
+  end
+
 end

@@ -136,11 +136,11 @@ module Util
     end
 
     def self.case(name, t_id)
-        if [1,4,5].include? t_id
+        if Tournament.wt20_ids.include? t_id
             return name.titleize
-        elsif [3,6].include? t_id
+        elsif Tournament.csl_ids.include? t_id
             return  name.titleize
-        elsif [2].include? t_id
+        elsif Tournament.ipl_ids.include? t_id
             return  name.upcase
         end
     end

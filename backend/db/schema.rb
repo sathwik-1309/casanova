@@ -269,6 +269,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
     t.string "venue"
     t.string "stage"
     t.boolean "completed"
+    t.integer "order"
+    t.integer "match_id"
     t.integer "tournament_id"
     t.index ["tournament_id"], name: "index_schedules_on_tournament_id"
   end
@@ -344,18 +346,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
   create_table "squads", force: :cascade do |t|
     t.string "name"
     t.string "abbrevation"
-    t.integer "matches"
-    t.integer "won"
-    t.integer "lost"
-    t.integer "runs"
-    t.integer "wickets"
-    t.integer "runs_conceded"
-    t.integer "wickets_lost"
+    t.integer "matches", default: 0
+    t.integer "won", default: 0
+    t.integer "lost", default: 0
+    t.integer "runs", default: 0
+    t.integer "wickets", default: 0
+    t.integer "runs_conceded", default: 0
+    t.integer "wickets_lost", default: 0
     t.integer "tournament_id"
     t.integer "team_id"
     t.integer "captain_id"
     t.integer "keeper_id"
-    t.float "nrr"
+    t.float "nrr", default: 0.0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["team_id"], name: "index_squads_on_team_id"
@@ -365,26 +367,27 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
   create_table "teams", force: :cascade do |t|
     t.string "name"
     t.string "abbrevation"
-    t.integer "matches"
-    t.integer "won"
-    t.integer "lost"
-    t.integer "runs"
-    t.integer "wickets"
-    t.integer "runs_conceded"
-    t.integer "wickets_lost"
+    t.integer "matches", default: 0
+    t.integer "won", default: 0
+    t.integer "lost", default: 0
+    t.integer "runs", default: 0
+    t.integer "wickets", default: 0
+    t.integer "runs_conceded", default: 0
+    t.integer "wickets_lost", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "tournaments", force: :cascade do |t|
     t.string "name"
-    t.json "medals"
+    t.json "medals", default: {}
     t.integer "pots_id"
     t.integer "mvp_id"
     t.integer "most_runs_id"
     t.integer "most_wickets_id"
     t.integer "season"
-    t.boolean "ongoing"
+    t.json "groups", default: []
+    t.boolean "ongoing", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

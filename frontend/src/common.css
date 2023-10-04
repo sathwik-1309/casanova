@@ -281,6 +281,15 @@
 .lp-20 {
     padding-left: 20px;
 }
+
+/* margin */
+.mt-10{
+    margin-top: 10px;
+}
+.m-10{
+    margin: 10px;
+
+}
 /* position */
 .relative {
     position: relative;

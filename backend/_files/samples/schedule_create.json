@@ -1,0 +1,21 @@
+{
+  "t_id": 7,
+  "default_stage": "league",
+  "matches": [
+    {
+      "team1": "ind",
+      "team2": "pak",
+      "venue": "bengaluru"
+    },
+    {
+      "team1": "aus",
+      "team2": "nz",
+      "venue": "kolkata"
+    },
+    {
+      "team1": "eng",
+      "team2": "sl",
+      "venue": "delhi"
+    }
+  ]
+}

@@ -161,9 +161,9 @@ module Validator
         if schedule.stage != args['stage']
             status = false
         end
-        if schedule.completed != false
-            status = false
-        end
+        # if schedule.completed != false
+        #     status = false
+        # end
         if [team1.id, team2.id].exclude? schedule.squad1_id
             status = false
         end

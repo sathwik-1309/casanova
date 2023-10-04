@@ -318,6 +318,7 @@ class CreateTables < ActiveRecord::Migration[7.0]
       t.string :stage
       t.boolean :completed
       t.integer :order
+      t.integer :match_id
       t.belongs_to :tournament, foreign_key: true
     end
 

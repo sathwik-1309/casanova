@@ -43,7 +43,7 @@ Seed.add_playing_11_performances
 # Seed.update_tournaments
 
 Seed.preload_squad_players
-Seed.preload_schedules
+# Seed.preload_schedules
 
 Seed.update_matches
 

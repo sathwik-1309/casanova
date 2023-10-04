@@ -1,6 +1,5 @@
 class PlayerController < ApplicationController
 
-  
   def create
     attributes = filter_params
     attributes[:fullname] = attributes[:fullname].downcase

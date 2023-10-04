@@ -78,6 +78,10 @@ Rails.application.routes.draw do
     get '' => 'team#squads'
   end
 
+  scope :schedule do
+    post '/upload_file' => 'schedule#upload_file'
+  end
+
   get 'home_page' => 'tournament#home_page'
   get 'images/:filename', to: 'image#show', as: :uploaded_image
 

@@ -2,8 +2,9 @@ import React, {useEffect, useState} from "react";
 import './CreateTour.css';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { BACKEND_API_URL } from "../../my_constants";
+import { BACKEND_API_URL, FRONTEND_API_URL } from "../../my_constants";
 import Photocard from "../../components/Photocard/Photocard";
+import axios from "axios";
 
 function TourName(props) {
     return (
@@ -16,7 +17,7 @@ function TourName(props) {
 function TeamName(props) {
     const team = props.team
     return (
-        <div className={`team-name flex flex-centered font-500 font-0_8 ${props.deselected.includes(team.abbrevation) ? 'team-deselected' : 'tour-selected' }`} onClick={()=> props.click(team.abbrevation, props.deselected)}>
+        <div className={`team-name flex flex-centered font-500 font-0_8 ${props.selected.includes(team) ? 'tour-selected' : 'team-deselected' }`} onClick={()=> props.click(team)}>
             {team.abbrevation}
         </div>
     )
@@ -41,7 +42,7 @@ function Squads(props) {
     
     return (
         data.map((squad, index) => {
-            return (<SquadSelection squad={squad} deselected={props.deselected} />)
+            return (<SquadSelection squad={squad} selected={props.selected} players={props.selectedPlayers} setPlayers={props.setPlayers}/>)
         })
     );
 }
@@ -63,9 +64,18 @@ function SquadSelection(props) {
     const [playername, setPlayername] = useState('')
     const [suggestions, setSuggestions] = useState([])
 
-    if (props.deselected.includes(props.squad.abbrevation)) {
-        return
-    }
+    const selected_teams = props.selected.map((team)=>{return team.abbrevation})
+
+    useEffect(() => {
+        props.setPlayers((prevState) => ({
+          ...prevState,
+          [props.squad.abbrevation]: batsmen.concat(allrounders).concat(bowlers),
+        }));
+      }, [batsmen, bowlers, allrounders, props.squad.abbrevation]);
+
+    if (selected_teams.includes(props.squad.abbrevation)) {
+        
+    }else return
     const removeBatsman = (player) => {
         setBatsmen(batsmen.filter(e => e !== player));
         setCount(count-1);
@@ -157,19 +167,38 @@ function SquadSelection(props) {
 function CreateTour(props) {
     const [selectedTour, setselectedTour] = useState(null);
     const [deselectedTeams, setDeselectedTeams] = useState([]);
+    const [selectedTeams, setSelectedTeams] = useState([])
     const [stage, setStage] = useState(1);
     const [groupnumber, setGroupnumber] = useState(1);
+    const [selectedPlayers, setSelectedPlayers] = useState({});
+    const [error, setError] = useState('')
 
-    const deselectTeam = (team, deselectedTeams) => {
-        if (deselectedTeams.includes(team)) {
-            setDeselectedTeams(deselectedTeams.filter(e => e !== team));
+    const selectTeam = (team) => {
+        if (selectedTeams.includes(team)) {
+            setSelectedTeams(selectedTeams.filter((obj) => obj !== team));
         }else {
-            setDeselectedTeams([...deselectedTeams, team]);
+            setSelectedTeams([...selectedTeams, team]);
         }
     }
 
     const selectTour = (tour) => {
         setselectedTour(tour);
+    }
+
+    async function handleSubmit() {
+        const payload = {
+            players: selectedPlayers,
+            squads: selectedTeams,
+            name: selectedTour
+        }
+        const response = await axios.post(`${BACKEND_API_URL}/tournament/create`,payload)
+        if (response.status === 202) {
+            console.log(response.data.message);
+            setError(response.data.message);
+        }else if (response.status === 200) {
+            setError('');
+            window.location.replace(`${FRONTEND_API_URL}/`);
+        }
     }
 
     const [teams, setTeams] = useState(null);
@@ -180,6 +209,7 @@ function CreateTour(props) {
             const response = await fetch(`${BACKEND_API_URL}/teams?tour_class=${selectedTour.toLowerCase()}`);
             const jsonData = await response.json();
             setTeams(jsonData[selectedTour.toLowerCase()]);
+            setSelectedTeams(jsonData[selectedTour.toLowerCase()])
         };
 
         fetchData();
@@ -201,19 +231,11 @@ function CreateTour(props) {
                 {
                     teams &&
                     teams.map((team,index)=> {
-                        return (<TeamName team={team} click={deselectTeam} deselected={deselectedTeams}/>)
+                        return (<TeamName team={team} click={selectTeam} selected={selectedTeams}/>)
                     })
                 }
             </div>
         </div>
-        <h1>
-        <select>
-            <option>option1</option>
-            <option>option2</option>
-            <option>option3</option>
-            <option>option4</option>
-        </select>
-        </h1>
         <div className="done_button flex flex-centered font-1 font-500" onClick={()=> setStage(2)}>
             Next
         </div>
@@ -222,41 +244,29 @@ function CreateTour(props) {
     let stage2 = <div className="flex-col flex-centered stage1_box">
         <div className="font-500 font-1 flex-centered">Select number of groups</div>
         <div className="flex-row">
-            <div className={`group-number flex-centered ${groupnumber === 1 ? 'group-number-selected' : ''}`} onClick={()=>changeGroupnumber(1)}>1</div>
-            <div className={`group-number flex-centered ${groupnumber === 2 ? 'group-number-selected' : ''}`} onClick={()=>changeGroupnumber(2)}>2</div>
-            <div className={`group-number flex-centered ${groupnumber === 3 ? 'group-number-selected' : ''}`} onClick={()=>changeGroupnumber(3)}>3</div>
-            <div className={`group-number flex-centered ${groupnumber === 4 ? 'group-number-selected' : ''}`} onClick={()=>changeGroupnumber(4)}>4</div>
-        </div>
-        <div className="done_button flex flex-centered font-1 font-500" onClick={()=> setStage(3)}>
-            Next
-        </div>
-    </div>
-
-    let group_arr = Array.from({ length: groupnumber }, (_, index) => index);
-    let stage3 = <div className="flex-col flex-centered stage1_box">
-        <div className="flex-row flex-centered">
             {
-                teams &&
-                teams.map((team,index)=> {
-                    return (<TeamName team={team} deselected={deselectedTeams}/>)
+                [1,2,3,4].map((number, index)=>{
+                    if (selectedTeams.length % number == 0){
+                        return (<div className={`group-number flex-centered ${groupnumber === number ? 'group-number-selected' : ''}`} onClick={()=>changeGroupnumber(number)}>{number}</div>)
+                    }
                 })
             }
         </div>
-        <div className="flex-row">
-                {
-                    group_arr.map((n)=>{
-                        return (
-                            <div>hello</div>
-                        )
-                    })
-                }
-            </div>
+        <div className="done_button flex flex-centered font-1 font-500" onClick={()=> setStage(4)}>
+            Next
+        </div>
+    </div>
+
+    let stage3 = <div className="flex-col flex-centered stage1_box">
+        <div className="flex-row flex-centered">
+        </div>
     </div>
 
     let stage4 = <div className="flex flex-col flex-centered">
-        <Squads tour={selectedTour} deselected={deselectedTeams} />
-        <div className="done_button flex flex-centered font-1 font-500" onClick={()=> setStage(4)}>
-            Next
+        <div className="red-error">{error}</div>
+        <Squads tour={selectedTour} selected={selectedTeams} selectedPlayers={selectedPlayers} setPlayers={setSelectedPlayers} />
+        <div className="done_button flex flex-centered font-1 font-500" onClick={handleSubmit}>
+            Create
         </div>
     </div>
 

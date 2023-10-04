@@ -9,6 +9,7 @@ class Tournament < ApplicationRecord
     has_many :spells
     has_many :partnerships
     has_many :performances
+    has_many :schedules
 
     after_create :populate_groups_in_seeding
 

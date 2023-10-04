@@ -22,6 +22,7 @@ import PlayerHome from "./pages/PlayerPage/PlayerHome/PlayerHome";
 import PlayerPerfPage from "./pages/PlayerPage/PlayerPerfPage/PlayerPerfPage";
 import CreateTour from "./pages/Create/CreateTour";
 import CreatePlayer from "./pages/Create/Player/CreatePlayer";
+import Create from "./pages/Create/Create";
 
 
 function App() {
@@ -69,7 +70,7 @@ function App() {
 
       <Route path="/create/tournament" element={<WebPage page={<CreateTournament/>}/>}  />
       <Route path="/create/player" element={<WebPage page={<CreatePlayer/>}/>}  />
-      <Route path="/create" element={<WebPage page={<CreateTour/>}/>}  />
+      <Route path="/create" element={<WebPage page={<Create/>}/>}  />
 
 
 

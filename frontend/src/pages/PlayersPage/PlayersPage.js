@@ -27,7 +27,7 @@ function DropdownMenu(props) {
                 <span className={`arrow ${isOpen ? 'open' : ''}`}></span>
             </button>
             {isOpen && (
-                <ul className="dropdown-menu">
+                <ul className="dropdown-menu-teams">
                     {options.map((option) => (
                         <li
                             key={option}

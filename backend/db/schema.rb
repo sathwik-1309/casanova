@@ -270,6 +270,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
     t.string "stage"
     t.boolean "completed"
     t.integer "order"
+    t.integer "match_id"
     t.integer "tournament_id"
     t.index ["tournament_id"], name: "index_schedules_on_tournament_id"
   end

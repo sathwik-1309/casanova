@@ -100,6 +100,12 @@ function TopbarItem(props) {
                 classname1 = classname1 + ' topbar_selected'
             }
             break;
+        case "schedule":
+            name = "SCHEDULE"
+            if (selected === props.name) {
+                classname1 = classname1 + ' topbar_selected'
+            }
+            break;
     }
     return (
         <a className={classname1} href={link}>
@@ -123,6 +129,7 @@ function Topbar(props) {
                 <TopbarItem name='points_table' link={`${FRONTEND_API_URL}/tournament/${t_id}/points_table`}/>
                 <TopbarItem name='bat_stats' link={`${FRONTEND_API_URL}/tournament/${t_id}/bat_stats`}/>
                 <TopbarItem name='ball_stats' link={`${FRONTEND_API_URL}/tournament/${t_id}/ball_stats`}/>
+                <TopbarItem name='schedule' link={`${FRONTEND_API_URL}/tournament/${t_id}/schedule`}/>
             </>
             break;
         case 'match':

@@ -72,8 +72,6 @@ function App() {
       <Route path="/create/player" element={<WebPage page={<CreatePlayer/>}/>}  />
       <Route path="/create" element={<WebPage page={<Create/>}/>}  />
 
-
-
     </Routes>
   </Router>
   );

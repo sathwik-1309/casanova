@@ -390,6 +390,25 @@ class TournamentController < ApplicationController
     end
   end
 
+  def schedule
+    arr = []
+    tour = Tournament.find_by_id(params[:t_id])
+    tour.schedules.order(order: :asc).each do |schedule|
+      temp = schedule.attributes.slice('order', 'completed', 'match_id')
+      temp['venue'] = schedule.venue.titleize
+      temp['stage'] = schedule.stage.titleize
+      temp['squad1'] = schedule.squad1.squad_box
+      temp['squad2'] = schedule.squad2.squad_box
+      temp['font'] = tour.get_tour_font
+      if schedule.completed
+        temp['result'] = schedule.match.result_statement
+        temp['result_color'] = schedule.match.winner.abbrevation
+      end
+      arr << temp
+    end
+    render(:json => Oj.dump(arr))
+  end
+
   private
 
   def filter_params

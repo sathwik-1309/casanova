@@ -33,4 +33,8 @@ class Schedule < ApplicationRecord
     end
   end
 
+  def match
+    Match.find_by_id(self.match_id)
+  end
+
 end

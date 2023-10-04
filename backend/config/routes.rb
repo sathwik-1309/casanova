@@ -29,6 +29,7 @@ Rails.application.routes.draw do
     get '/:t_id/bat_stats' => 'tournament#bat_stats'
     get '/:t_id/ball_stats' => 'tournament#ball_stats'
     get '/:t_id' => 'tournament#tournament_home'
+    get '/:t_id/schedule' => 'tournament#schedule'
   end
 
   scope :tournaments do

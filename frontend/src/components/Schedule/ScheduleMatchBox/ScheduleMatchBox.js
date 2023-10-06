@@ -14,20 +14,15 @@ function Teambox(props) {
 function ScheduleMatchBox(props) {
   const data = props.data
   return(
-    <a className={`schedule-matchbox flex-col font-1 font-400 bg-shadow ${data.font}`} href={`${FRONTEND_API_URL}/match/${data.match_id}/1/summary`}>
-      <div className="flex-row schedule-header">
+    <a className={`schedule-matchbox flex-row font-1 font-400 bg-shadow ${data.font}`} href={`${FRONTEND_API_URL}/match/${data.match_id}/1/summary`}>
+      <div className="flex-col schedule-header">
         <div className="font-0_7 font-600 schedule-title">MATCH {data.order}</div>
         <div className="schedule-stage font-0_7 font-600">{data.stage}</div>
       </div>
-      <div className="flex-row">
-        <Teambox data={data.squad1}/>
-        <Teambox data={data.squad2}/>
-      </div>
+      <Teambox data={data.squad1}/>
+      <Teambox data={data.squad2}/>
       <div className="flex-centered schedule-venue">{data.venue}</div>
-      {
-        data.result &&
-        <div className={`schedule-result flex-centered ${data.result_color}1`}>{data.result}</div>
-      }
+      <div className={`schedule-result flex-centered ${data.result_color}1`}>{data.result}</div>
     </a>
   )
 }

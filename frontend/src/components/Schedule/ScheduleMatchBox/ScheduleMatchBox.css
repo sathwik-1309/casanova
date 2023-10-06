@@ -2,44 +2,51 @@
   border-radius: 4px;
   background-color: white;
   padding: 4px;
-  margin: 10px;
+  margin: 6px;
   display: flex;
-  justify-content: center;
   align-items: center;
   text-decoration: none;
 }
 .schedule-header {
   display: flex;
   justify-content: flex-start;
-  width: 100%;
+  width: 80px;
+  height: 66px;
 }
 .schedule-title {
   color: gray;
-  height: 20px;
-  padding-left: 10px;
-  width: 50%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .schedule-stage {
   height: 20px;
-  padding-right: 10px;
   color: black;
-  width: 48%;
+  height: 50%;
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
 }
 .schedule-result {
   font-size: 0.8rem;
   font-weight: 600;
   padding-left: 10px;
-  width: 280px;
-  height: 30px;
+  width: 300px;
+  display: flex;
+  height: 35px;
+  align-items: center;
+  justify-content: center;
   border-radius: 4px;
 }
 .schedule-venue {
-  height: 25px;
+  width: 100px;
   font-weight: 600;
   font-size: 0.8rem;
   color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .schedule-teambox {
   height: 60px;

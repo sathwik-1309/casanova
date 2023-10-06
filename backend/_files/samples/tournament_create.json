@@ -1,6 +1,6 @@
 {
   "name": "wt20",
-  "groups": [["ind", "pak", "aus", "nz", "wi"], [ "sa", "eng", "ban", "sl", "afg"]],
+  "groups": [["ind", "pak", "aus", "nz", "sa", "eng", "ban", "sl", "afg"]],
   "squads": {
     "ind": {
       "captain_id": 2,
@@ -21,11 +21,6 @@
       "captain_id": 45,
       "keeper_id": 245,
       "players": [45, 48, 50, 52, 53, 54, 55, 231, 245, 246, 276]
-    },
-    "wi": {
-      "captain_id": 59,
-      "keeper_id": 59,
-      "players": [57, 59, 60, 62, 146, 204, 234, 249, 283, 284, 285, 286]
     },
     "sa": {
       "captain_id": 237,

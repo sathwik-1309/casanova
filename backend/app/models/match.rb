@@ -176,6 +176,15 @@ class Match < ApplicationRecord
         end
     end
 
+    def result_statement
+        if self.win_by_runs.nil?
+            info = "#{self.win_by_wickets} WICKETS"
+        else
+            info = "#{self.win_by_runs} RUNS"
+        end
+        "#{self.winner.get_abb} BEAT #{self.loser.get_abb} BY #{info}"
+    end
+
     private
 
     def self.get_phase_performers(balls, innings)

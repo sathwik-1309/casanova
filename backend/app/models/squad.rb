@@ -68,4 +68,10 @@ class Squad < ApplicationRecord
     def get_abb
         return "#{Util.get_flag(self.team_id)} #{self.abbrevation.upcase}"
     end
+
+    def squad_box
+        temp = self.attributes.slice('abbrevation')
+        temp['name'] = self.get_teamname
+        temp
+    end
 end

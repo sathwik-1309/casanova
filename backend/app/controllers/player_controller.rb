@@ -124,11 +124,36 @@ class PlayerController < ApplicationController
   end
 
   def players
+    # array = []
+    # players = Player.all
+    # if params[:tour_class]
+    #   tour_ids = Helper.get_tour_class_ids2(params[:tour_class])
+    #   array = Helper.construct_players_hash_for_tour(tour_ids, players)
+    # elsif params[:t_id]
+    #   tour_ids = params[:t_id]
+    #   array = Helper.construct_players_hash_for_tour(tour_ids, players)
+    # else
+    #   players.each do |player|
+    #     hash = Helper.construct_player_details(player)
+    #     hash["color"] = player.country.abbrevation || nil
+    #     hash["teamname"] = player.country.get_teamname || nil
+    #     array << hash
+    #   end
+    # end
     array = []
     players = Player.all
     if params[:tour_class]
       tour_ids = Helper.get_tour_class_ids2(params[:tour_class])
-      array = Helper.construct_players_hash_for_tour(tour_ids, players)
+      sp = SquadPlayer.where(tournament_id: tour_ids)
+      sp.each do |s|
+        hash = s.player.attributes.slice('p_id', 'batting_hand', 'bowling_hand', 'bowling_style')
+        hash["p_id"] = s.player.id
+        hash["name"] = s.player.fullname.length > 13 ? s.player.name.titleize : s.player.fullname.titleize
+        hash["color"] = s.squad.abbrevation || nil
+        hash["teamname"] = s.squad.get_teamname || nil
+        hash["skill"] = s.player.keeper ? 'WK' : s.player.skill.upcase
+        array << hash
+      end
     elsif params[:t_id]
       tour_ids = params[:t_id]
       array = Helper.construct_players_hash_for_tour(tour_ids, players)

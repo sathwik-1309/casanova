@@ -16,7 +16,7 @@ function TeamsPage(props) {
     }
     if (props.t_id) {
         url = url + `?t_id=${t_id}`
-        initial_state = `${t_id}`
+        initial_state = `teams`
     }
 
     const [data, setData] = useState(null);
@@ -42,7 +42,7 @@ function TeamsPage(props) {
       }
     return (
         <div className={`teams_page default-font`}>
-            {!tour_class && (
+            {!tour_class && !t_id  && (
                 <div>
                     <div className='teams_page_buttons'>
                         <div className={`teams_page_button_item ${tourclass == 'wt20' ? 'selected' : ''}`} onClick={() => handleOptionSelect('wt20')}>WT20</div>

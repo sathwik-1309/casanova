@@ -74,4 +74,11 @@ class Squad < ApplicationRecord
         temp['name'] = self.get_teamname
         temp
     end
+
+    def get_won_lost
+        squad_ids = self.id
+        won = Match.where(winner_id: squad_ids).count
+        lost = Match.where(loser_id: squad_ids).count
+        return won, won+lost
+    end
 end

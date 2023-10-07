@@ -17,8 +17,8 @@ class TeamController < ApplicationController
       end
     elsif params[:t_id]
       tour = Tournament.find(params[:t_id])
-      hash[tour.name] = []
-      teams = Team.where(id: Squad.where(tournament_id: params[:t_id]).pluck(:team_id))
+      hash['teams'] = []
+      teams = Squad.where(tournament_id: params[:t_id])
     else
       hash["wt20"] = []
       hash["ipl"] = []
@@ -30,15 +30,23 @@ class TeamController < ApplicationController
       temp = {}
       temp["teamname"] = team.get_teamname
       temp["abbrevation"] = team.get_abb
-      temp["squads"] = team.squads.count
+      if team.class == Team
+        temp["is_team"] = true
+        temp["squads"] = team.squads.count
+      else
+        temp["squads"] = 1
+        temp["players"] = SquadPlayer.where(squad_id: team.id).count
+      end
       team["id"] = team.id
       if temp["squads"] > 0
         temp["color"] = team.abbrevation
         temp["trophies"] = team_medals[team.id.to_s]
         temp["won"], temp["played"] = team.get_won_lost
-        temp["win_p"] = (temp["won"]*100/temp["played"]).round(1)
+        temp["win_p"] = temp["played"] > 0 ? (temp["won"]*100/temp["played"]).round(1) : 0
         if params[:tour_class]
           hash[params[:tour_class]] << temp
+        elsif params[:t_id]
+          hash["teams"] << temp
         else
           if team.id <= 10
             hash["wt20"] << temp

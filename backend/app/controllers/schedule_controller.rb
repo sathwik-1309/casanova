@@ -27,7 +27,6 @@ class ScheduleController < ApplicationController
     games = Schedule.where("squad1_id = ? or squad2_id =?", squad.id, squad.id)
     games.each do |schedule|
       temp = schedule.schedule_box
-      byebug
       if temp['squad1']['abbrevation'] != squad.abbrevation
         temp['squad1'], temp['squad2'] = temp['squad2'], temp['squad1']
       end

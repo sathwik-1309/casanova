@@ -1,14 +1,13 @@
 import { useParams } from 'react-router-dom';
 import React, {useEffect, useState} from "react";
 import './TournamentHome.css'
-import { team_colors } from '../../../components/Match/Graph/team_colors';
-import MatchBox from "../../../components/Match/MatchBox/MatchBox";
-import PlayerCard from "../../../components/Player/PlayerCard/PlayerCard";
-import AwardBox from "../../../components/Player/AwardBox/AwardBox";
-import PieChart from "../../../components/PieChart/PieChart";
-import ProgressBar from "../../../components/ProgressBar/ProgressBar";
-import { BACKEND_API_URL } from '../../../my_constants';
-import UpcomingMatch from '../../../components/Tournament/Schedule/UpcomingMatch/UpcomingMatch';
+import { team_colors } from '../../../../components/Match/Graph/team_colors';
+import MatchBox from "../../../../components/Match/MatchBox/MatchBox";
+import AwardBox from "../../../../components/Player/AwardBox/AwardBox";
+import PieChart from "../../../../components/PieChart/PieChart";
+import ProgressBar from "../../../../components/ProgressBar/ProgressBar";
+import { BACKEND_API_URL } from '../../../../my_constants';
+import UpcomingMatch from '../../../../components/Tournament/Schedule/UpcomingMatch/UpcomingMatch';
 
 function ScheduleBox(props) {
     const matches = props.box

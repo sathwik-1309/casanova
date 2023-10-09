@@ -77,6 +77,7 @@ Rails.application.routes.draw do
 
   scope :squads do
     get '' => 'team#squads'
+    get '/:squad_id/schedule' => 'schedule#squad_schedule'
   end
 
   scope :schedule do

@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import './PlayersPage.css'
-import PlayersBox from "../../components/Player/PlayersBox/PlayersBox";
+import PlayersBox from '../../../components/Player/PlayersBox/PlayersBox'
 import {useParams} from "react-router-dom";
-import Worm from "../../components/Match/Worm/Worm";
-import { BACKEND_API_URL } from './../../my_constants'
+import Worm from '../../../components/Match/Worm/Worm';
+import { BACKEND_API_URL } from '../../../my_constants';
 
 function DropdownMenu(props) {
     const options = props.teams

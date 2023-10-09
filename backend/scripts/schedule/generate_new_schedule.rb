@@ -77,7 +77,6 @@ def generate_new_schedule(matches, decided, venues, teams, max_per_venue, min_nu
     new[team] = ans[team].keys.length
   end
   puts new
-  byebug
 end
 
 def get_venue(invalid, i, venues_list)

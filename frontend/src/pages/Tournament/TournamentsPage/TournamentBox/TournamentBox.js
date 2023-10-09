@@ -1,6 +1,6 @@
 import React from "react";
 import './TournamentBox.css';
-import {FRONTEND_API_URL} from "../../../my_constants";
+import {FRONTEND_API_URL} from "../../../../my_constants";
 
 function TournamentBox(props) {
     let data = props.data

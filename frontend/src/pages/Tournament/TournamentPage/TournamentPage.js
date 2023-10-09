@@ -1,9 +1,9 @@
 import { useParams } from 'react-router-dom';
 import './TournamentPage.css'
-import Pointstable from '../../components/Tournament/Pointstable/Pointstable';
-import BatStats from "../../components/Tournament/TBatStats/TBatStats";
-import BallStats from "../../components/Tournament/TBallStats/TBallStats";
-import Schedules from '../../components/Tournament/Schedules/Schedules';
+import Pointstable from '../../../components/Tournament/Pointstable/Pointstable';
+import BatStats from "../../../components/Tournament/TBatStats/TBatStats";
+import BallStats from "../../../components/Tournament/TBallStats/TBallStats";
+import Schedules from '../../../components/Tournament/Schedules/Schedules';
 
 
 function TournamentPage() {

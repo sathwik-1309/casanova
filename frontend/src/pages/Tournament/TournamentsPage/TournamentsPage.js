@@ -2,7 +2,7 @@ import {useParams} from "react-router-dom";
 import './TournamentsPage.css'
 import React, {useEffect, useState} from "react";
 import TournamentsNavbar from "./TournamentsNavbar/TournamentsNavbar";
-import { BACKEND_API_URL } from './../../my_constants'
+import { BACKEND_API_URL } from '../../../my_constants'
 
 function TournamentsPage(props) {
     let { tour_class } = useParams();

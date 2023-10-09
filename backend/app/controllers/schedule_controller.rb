@@ -21,9 +21,24 @@ class ScheduleController < ApplicationController
     end
   end
 
+  def squad_schedule
+    arr = []
+    squad = Squad.find_by_id(filter_params[:squad_id])
+    games = Schedule.where("squad1_id = ? or squad2_id =?", squad.id, squad.id)
+    games.each do |schedule|
+      temp = schedule.schedule_box
+      byebug
+      if temp['squad1']['abbrevation'] != squad.abbrevation
+        temp['squad1'], temp['squad2'] = temp['squad2'], temp['squad1']
+      end
+      arr << temp
+    end
+    render(:json => Oj.dump(arr))
+  end
+
   private
 
   def filter_params
-    params.permit(:tournament_id, :schedule_json)
+    params.permit(:tournament_id, :schedule_json, :squad_id)
   end
 end

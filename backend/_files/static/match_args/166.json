@@ -1,0 +1,23 @@
+{
+  "m_id": 166,
+  "batted_first": "ind",
+  "batted_second": "sl",
+  "toss": "sl",
+  "pitch": 3,
+  "ball_color": [
+    "r",
+    "y",
+    "r",
+    "y"
+  ],
+  "cap1": "rohit sharma",
+  "cap2": "shanaka",
+  "keeper1": "kl rahul",
+  "keeper2": "kusal mendis",
+  "winner": "ind",
+  "stage": "league",
+  "venue": "mumbai",
+  "motm_player": "nissanka",
+  "motm_team": "sl",
+  "t_id": 7
+}

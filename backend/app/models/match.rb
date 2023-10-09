@@ -51,7 +51,7 @@ class Match < ApplicationRecord
     end
 
     def create_schedule
-        last_match = self.tournament.schedules.order(order: :desc).limit(1)
+        last_match = self.tournament.schedules.where(completed: true).order(order: :desc).limit(1)
         if self.schedule.nil?
             schedule = Schedule.new
             schedule.squad1_id = self.winner_id
@@ -74,6 +74,7 @@ class Match < ApplicationRecord
                 end
             end
             schedule.order = order
+            schedule.match_id = self.id
         end
         schedule.save!
     end

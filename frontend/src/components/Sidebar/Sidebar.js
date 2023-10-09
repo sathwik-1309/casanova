@@ -35,7 +35,7 @@ function Sidebar(props){
         return(
             <div className="sidebar">
                 <SidebarItem name="Home" url={`${FRONTEND_API_URL}/`}/>
-                <SidebarItem name="Teams" url={`${FRONTEND_API_URL}/tournament/${t_id}/teams`}/>
+                <SidebarItem name="Squads" url={`${FRONTEND_API_URL}/tournament/${t_id}/squads`}/>
                 <SidebarItem name="Matches" url={`${FRONTEND_API_URL}/tournament/${t_id}/matches`}/>
                 <SidebarItem name="Venues" url={`${FRONTEND_API_URL}/tournament/${t_id}/venues`}/>
                 <SidebarItem name="Players" url={`${FRONTEND_API_URL}/tournament/${t_id}/players`}/>

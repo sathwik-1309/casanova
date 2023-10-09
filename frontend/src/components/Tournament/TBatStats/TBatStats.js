@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Listcards from "../Listcards/Listcards";
 import { BACKEND_API_URL } from './../../../my_constants'
-import RoleIcon from "../../RoleIcon/RoleIcon";
 import BatStats from "../../Player/Stats/BatStats/BatStats";
 
 function TBatStats(props) {

@@ -1,4 +1,4 @@
-import Photocard from "../../../Photocard/Photocard";
+import Photocard from "../../Photocard/Photocard";
 import React from "react";
 import './Playerbox.css'
 import {FRONTEND_API_URL} from "../../../../my_constants";

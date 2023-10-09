@@ -37,4 +37,18 @@ class Schedule < ApplicationRecord
     Match.find_by_id(self.match_id)
   end
 
+  def schedule_box
+    temp = self.attributes.slice('order', 'completed', 'match_id')
+    temp['venue'] = self.venue.titleize
+    temp['stage'] = self.stage.titleize
+    temp['squad1'] = self.squad1.squad_box
+    temp['squad2'] = self.squad2.squad_box
+    temp['font'] = self.tournament.get_tour_font
+    if self.completed
+      temp['result'] = self.match.result_statement
+      temp['result_color'] = self.match.winner.abbrevation
+    end
+    temp
+  end
+
 end

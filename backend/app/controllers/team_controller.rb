@@ -37,7 +37,7 @@ class TeamController < ApplicationController
         temp["squads"] = 1
         temp["players"] = SquadPlayer.where(squad_id: team.id).count
       end
-      team["id"] = team.id
+      temp["id"] = team.id
       if temp["squads"] > 0
         temp["color"] = team.abbrevation
         temp["trophies"] = team_medals[team.id.to_s]

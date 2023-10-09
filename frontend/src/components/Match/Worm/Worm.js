@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import './Worm.css'
-import Graph from "../../Graph/Graph";
+import Graph from "../Graph/Graph";
 import { BACKEND_API_URL } from './../../../my_constants'
 import InningsProgression from '../InningsProgression/InningsProgression';
 

@@ -1,0 +1,280 @@
+.tournament_home {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  margin: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.tournament_home_box1 {
+  display: flex;
+  background-color: white;
+  box-shadow: var(--shadow-border);
+  height: fit-content;
+  width: fit-content;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+.th_box1_medals {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  padding: 10px;
+  /*margin-top: 25px;*/
+}
+.th_box1_winner_label,
+.th_box1_runner_label {
+  color: black;
+  font-weight: 500;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.8;
+}
+.th_box1_winner_label {
+  height: 30px;
+}
+.th_box1_runner_label {
+  height: 25px;
+}
+.th_box_champions,
+.th_box_runners {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1px;
+  box-shadow: var(--shadow-border);
+  margin: 0 20px;
+  border-radius: 3px;
+  overflow: hidden;
+
+}
+.th_box_champions {
+  background-color: gold;
+}
+.th_box_runners {
+  background-color: silver;
+}
+
+
+.th_box1_winner_team {
+  height: 80px;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.th_box1_runner_team {
+  height: 35px;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.th_box_final {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+}
+.th_box1_gembox {
+  margin: 0 20px;
+}
+.th_box_final_label {
+  width: 150px;
+  height: 30px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.tournament_home_box2 {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  box-shadow: var(--shadow-border);
+  margin: 20px 0;
+  width: fit-content;
+}
+.th_box_awards_item {
+  display: flex;
+  flex-direction: column;
+}
+.th_box_awards_item_row1,
+.th_box_awards_item_row2 {
+  display: flex;
+  padding: 15px;
+}
+.th_box_awards_item_parent {
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  font-weight: 600;
+  align-items: center;
+  justify-content: center;
+}
+
+.tournament_home_box3 {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  width: 650px;
+  box-shadow: var(--shadow-border);
+  font-size: 1rem;
+  font-weight: 500;
+}
+.th_box3_row1_lhs {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  align-items: center;
+  justify-content: center;
+}
+.th_box3_row1_rhs {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  padding-top: 20px;
+}
+.th_box3_matches {
+  background-color: var(--dark);
+  width: 200px;
+  color: white;
+  margin: 10px 0;
+  box-shadow: var(--shadow-border);
+  height: 40px;
+  display: flex;
+}
+.th_box3_matches_label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+}
+.th_box3_matches_value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  width: 60px;
+}
+.th_box3_defended {
+  background-color: var(--analysis1);
+  color: white;
+  width: 150px;
+  padding: 4px;
+  border-radius: 2px;
+  margin: 2px 0;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.th_box3_defended_label,
+.th_box3_chased_label {
+  width: 115px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.th_box3_defended_value,
+.th_box3_chased_value {
+  width: 35px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.th_box3_chased {
+  background-color: var(--analysis2);
+  color: white;
+  width: 150px;
+  padding: 4px;
+  border-radius: 2px;
+  margin: 2px 0;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.th_box3_row1 {
+  display: flex;
+  padding: 10px 0;
+}
+.th_box3_chased_defended_lhs {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.th_box3_row2 {
+  display: flex;
+  font-size: 1rem;
+  width: 600px;
+  padding: 10px 0;
+}
+.th_box3_row2_lhs {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark);
+  color: white;
+  margin: 0 50px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  box-shadow: var(--shadow-border);
+}
+.th_box3_row2_lhs_label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+}
+.th_box3_row2_lhs_value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  width: 60px;
+}
+.th_box3_row2_rhs {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.th_schedulebox {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  height: fit-content;
+  background-color: white;
+  box-shadow: var(--shadow-border);
+  padding: 10px;
+}
+.th_schedulebox_label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.th_schedulebox_matches {
+  display: flex;
+}

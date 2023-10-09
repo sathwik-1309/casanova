@@ -5,24 +5,25 @@ import {
 } from "react-router-dom";
 import React from 'react';
 import HomePage from "./pages/HomePage/HomePage";
-import MatchPage from "./pages/MatchPage/MatchPage";
+import MatchPage from "./pages/Match/MatchPage/MatchPage";
 import WebPage from "./pages/WebPage/WebPage";
-import TournamentPage from "./pages/TournamentPage/TournamentPage";
-import MatchesPage from "./pages/MatchesPage/MatchesPage";
+import TournamentPage from "./pages/Tournament/TournamentPage/TournamentPage";
+import MatchesPage from "./pages/Match/MatchesPage/MatchesPage";
 import './components/css/teams.css'
 import './common.css'
-import TournamentsPage from "./pages/TournamentsPage/TournamentsPage";
-import PlayersPage from "./pages/PlayersPage/PlayersPage";
+import TournamentsPage from "./pages/Tournament/TournamentsPage/TournamentsPage";
+import PlayersPage from "./pages/Player/PlayersPage/PlayersPage";
 import TeamsPage from "./pages/TeamsPage/TeamsPage";
 import VenuesPage from "./pages/VenuesPage/VenuesPage";
-import TournamentHome from "./pages/TournamentPage/TournamentHome/TournamentHome";
 import Meta from "./components/Meta/Meta";
+import TournamentHome from "./pages/Tournament/TournamentPage/TournamentHome/TournamentHome"
 import CreateTournament from "./pages/Create/Tournament/CreateTournament";
-import PlayerHome from "./pages/PlayerPage/PlayerHome/PlayerHome";
-import PlayerPerfPage from "./pages/PlayerPage/PlayerPerfPage/PlayerPerfPage";
-import CreateTour from "./pages/Create/CreateTour";
+import PlayerHome from "./pages/Player/PlayerHome/PlayerHome";
+import PlayerPerfPage from "./pages/Player/PlayerPerfPage/PlayerPerfPage"
 import CreatePlayer from "./pages/Create/Player/CreatePlayer";
 import Create from "./pages/Create/Create";
+import SquadPage from "./pages/Squad/SquadPage/SquadPage";
+import SquadsPage from "./pages/SquadsPage/SquadsPage";
 
 
 function App() {
@@ -43,9 +44,10 @@ function App() {
       <Route path="/tournament/:t_id" element={<WebPage page={<TournamentHome/>} s_id='tour' />}/>
       <Route path="/tournament/:t_id/matches" element={<WebPage page={<MatchesPage t_id={true}/>} s_id='tour' />}/>
       <Route path="/tournament/:t_id/venues" element={<WebPage page={<VenuesPage t_id={true}/>} s_id='tour' />}/>
-      <Route path="/tournament/:t_id/teams" element={<WebPage page={<TeamsPage t_id={true}/>} s_id='tour' />}/>
+      <Route path="/tournament/:t_id/squads" element={<WebPage page={<SquadsPage t_id={true}/>} s_id='tour' />}/>
       <Route path="/tournament/:t_id/players" element={<WebPage page={<PlayersPage t_id={true}/>} s_id='tour' />}/>
       <Route path="/tournament/:t_id/:page" element={<WebPage page={<TournamentPage/>} s_id={'tour'}/>} />
+      <Route path="/tournament/:t_id/squads/:squad_id" element={<WebPage page={<SquadPage/>} s_id={'tour'}/>} />
 
       <Route path="/tournaments/:tour_class" element={<WebPage page={<TournamentsPage/>} s_id='tour_class'/>} />
       <Route path="/tournaments/:tour_class/matches" element={<WebPage page={<MatchesPage tour_class={true}/>} s_id='tour_class' />}  />

@@ -1,4 +1,4 @@
-import Photocard from "../../../Photocard/Photocard";
+import Photocard from '../../../Player/Photocard/Photocard';
 import './IPPerformers.css'
 
 function PlayerBox(props) {
@@ -18,7 +18,7 @@ function PlayerBox(props) {
     }
     return (
         <div className={`flex-row ip_player_box flex vert-align font-0_9 b-radius-3 ${data.color}1`}>
-            < Photocard p_id = {data.p_id} color={'no-color'} height={'48px'}/>
+            <Photocard p_id = {data.p_id} color={'no-color'} height={'48px'}/>
             <div className='ip_player_box_name'>{data.name}</div>
             {player_perf}
         </div>

@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from 'react'
 import { BACKEND_API_URL, FRONTEND_API_URL } from '../../../my_constants';
 import { useParams } from 'react-router-dom';
-import ScheduleMatchBox from '../../Schedule/ScheduleMatchBox/ScheduleMatchBox';
+import ScheduleMatchBox from '../../Tournament/Schedule/ScheduleMatchBox/ScheduleMatchBox';
 import './Schedules.css'
 
 function Schedules() {

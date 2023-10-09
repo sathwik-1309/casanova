@@ -3,7 +3,7 @@ import './CreateTour.css';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { BACKEND_API_URL, FRONTEND_API_URL } from "../../my_constants";
-import Photocard from "../../components/Photocard/Photocard";
+import Photocard from "../../components/Player/Photocard/Photocard";
 import axios from "axios";
 
 function TourName(props) {

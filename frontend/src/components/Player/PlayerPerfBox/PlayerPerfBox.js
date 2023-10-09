@@ -1,6 +1,6 @@
 import './PlayerPerfBox.css'
-import Scorebox from "../../Scorebox/Scorebox";
-import SpellBox from "../../SpellBox/SpellBox";
+import Scorebox from "../Scorebox/Scorebox";
+import SpellBox from '../SpellBox/SpellBox';
 
 function Perfbox1(props) {
     let data = props.data

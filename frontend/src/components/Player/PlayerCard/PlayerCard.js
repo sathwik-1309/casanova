@@ -1,4 +1,4 @@
-import Photocard from "../../Photocard/Photocard";
+import Photocard from "../Photocard/Photocard";
 import React from "react";
 import './PlayerCard.css'
 import {useParams} from "react-router-dom";

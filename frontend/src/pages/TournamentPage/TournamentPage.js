@@ -1,7 +1,6 @@
 import { useParams } from 'react-router-dom';
-import Topbar from './Topbar/Topbar';
 import './TournamentPage.css'
-import Pointstable from "../../components/Pointstable/Pointstable";
+import Pointstable from '../../components/Tournament/Pointstable/Pointstable';
 import BatStats from "../../components/Tournament/TBatStats/TBatStats";
 import BallStats from "../../components/Tournament/TBallStats/TBallStats";
 import Schedules from '../../components/Tournament/Schedules/Schedules';

@@ -159,7 +159,7 @@ function Topbar(props) {
             break;
     }
     return (
-        <div className='topbar default-font'>
+        <div className='topbar default-font font-0_9'>
             {toggle}
             {topbar}
         </div>

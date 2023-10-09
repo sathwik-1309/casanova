@@ -1,23 +1,16 @@
 import React, {useEffect, useState} from 'react';
-import './TeamsPage.css'
+import './SquadsPage.css'
 import TeamBox from "../../components/Team/TeamBox/TeamBox";
 import {useParams} from "react-router-dom";
-import { BACKEND_API_URL } from './../../my_constants'
+import { BACKEND_API_URL } from '../../my_constants'
+import SquadBox from '../../components/Squad/SquadBox/SquadBox';
 
-function TeamsPage(props) {
-    let {tour_class} = useParams()
+function SquadsPage(props) {
     let {t_id} = useParams()
     let url = `${BACKEND_API_URL}/teams`
+    url = url + `?t_id=${t_id}`
+    const initial_state = `teams`
 
-    let initial_state = "wt20"
-    if (props.tour_class) {
-        url = url + `?tour_class=${tour_class}`
-        initial_state = `${tour_class}`
-    }
-    if (props.t_id) {
-        url = url + `?t_id=${t_id}`
-        initial_state = `teams`
-    }
 
     const [data, setData] = useState(null);
     const [tourclass, settourclass] = useState(initial_state);
@@ -42,7 +35,7 @@ function TeamsPage(props) {
       }
     return (
         <div className={`teams_page default-font`}>
-            {!tour_class && !t_id  && (
+            {!t_id  && (
                 <div>
                     <div className='teams_page_buttons'>
                         <div className={`teams_page_button_item ${tourclass == 'wt20' ? 'selected' : ''}`} onClick={() => handleOptionSelect('wt20')}>WT20</div>
@@ -54,11 +47,11 @@ function TeamsPage(props) {
 
             <div className='teams_page_teams'>
                 {data[tourclass].map((team, index) => (
-                    <TeamBox data={team} t_id={t_id}/>
+                    <SquadBox data={team} t_id={t_id}/>
                 ))}
             </div>
         </div>
     );
 
 }
-export default TeamsPage;
+export default SquadsPage;

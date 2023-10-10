@@ -70,8 +70,11 @@ class Squad < ApplicationRecord
     end
 
     def squad_box
-        temp = self.attributes.slice('abbrevation')
+        temp = {}
         temp['name'] = self.get_teamname
+        temp['abbrevation'] = self.get_abb
+        temp['color'] = self.abbrevation
+        temp['id'] = self.id
         temp
     end
 
@@ -81,4 +84,63 @@ class Squad < ApplicationRecord
         lost = Match.where(loser_id: squad_ids).count
         return won, won+lost
     end
+
+    def schedule
+        arr = []
+        squad = self
+        games = Schedule.where("squad1_id = ? or squad2_id =?", squad.id, squad.id)
+        games.each do |schedule|
+            temp = schedule.schedule_box
+            if temp['squad1']['color'] != squad.abbrevation
+                temp['squad1'], temp['squad2'] = temp['squad2'], temp['squad1']
+            end
+            arr << temp
+        end
+        arr
+    end
+
+    def top_players
+        hash = {}
+        bat_stats = self.bat_stats
+        hash['most_runs'] = bat_stats[0].slice("player", "runs", "innings")
+        hash['best_score'] = bat_stats.sort_by{|stat| [-stat['best']['score'].to_i, stat['best']['balls']]}[0].slice("best", "player")
+        hash['best_sr'] = bat_stats.filter{|stat| stat['runs'] > 50 }.sort_by{|stat| -stat['sr']} [0].slice("player", "sr", "runs")
+        ball_stats = self.ball_stats
+        hash['most_wickets'] = ball_stats[0].slice("player", "wickets", "innings")
+        hash['best_spell'] = ball_stats.sort_by{|stat| [-stat['best']['wickets'].to_i, stat['best']['runs']] }[0].slice("best", "player")
+        hash['best_economy'] = ball_stats.filter{|stat| stat['overs'] > 8}.sort_by{|stat| stat['economy']}[0].slice("player", "economy", "wickets")
+        
+        hash
+    end
+
+    def bat_stats
+        arr = []
+        players = self.players
+        stats = BatStat.where(sub_type: "tour_#{self.tournament_id}", player_id: players.pluck(:id))
+                .where("runs > 0").order(runs: :desc)
+        stats.each do |stat|
+            temp = stat.attributes.slice('matches', 'innings', 'runs', 'sr', 'avg', 'c4', 'c6', 'thirties', 'fifties', 'hundreds', 'boundary_p', 'dot_p')
+            temp['player'] = stat.player.attributes.slice('id', 'name', 'fullname')
+            best = Inning.find_by_id(stat.best_id).scores.find_by(player_id: stat.player_id)
+            temp['best'] = best.score_box
+            arr << temp
+        end
+        arr
+    end
+
+    def ball_stats
+        arr = []
+        players = self.players
+        stats = BallStat.where(sub_type: "tour_#{self.tournament_id}", player_id: players.pluck(:id))
+                .where("overs > 0").order(wickets: :desc)
+        stats.each do |stat|
+            temp = stat.attributes.slice('matches', 'innings', 'overs', 'maidens', 'wickets', 'economy', 'sr', 'avg', 'three_wickets', 'five_wickets', 'boundary_p', 'dot_p')
+            temp['player'] = stat.player.attributes.slice('id', 'name', 'fullname')
+            best = Inning.find_by_id(stat.best_id).spells.find_by(player_id: stat.player_id)
+            temp['best'] = best.spell_box
+            arr << temp
+        end
+        arr
+    end
+
 end

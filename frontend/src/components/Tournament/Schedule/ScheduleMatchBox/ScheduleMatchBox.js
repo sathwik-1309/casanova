@@ -5,7 +5,7 @@ import { FRONTEND_API_URL } from "../../../../my_constants";
 function Teambox(props) {
   const data = props.data
   return (
-    <div className={`${data.abbrevation}1 font-600 font-1_1 schedule-teambox flex-centered`}>
+    <div className={`${data.color}1 font-600 font-1_1 schedule-teambox flex-centered`}>
       {data.name}
     </div>
   )

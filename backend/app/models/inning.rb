@@ -17,30 +17,30 @@ class Inning < ApplicationRecord
     def scores
         return Score.where(inning_id: self.id).order(score_id: :asc)
     end
-    def spells
-        spells = Spell.where(inning_id: self.id)
-        overs = Over.where(inning_id: self.id)
-        bowlers = []
-        overs.each do |over|
-            if bowlers.exclude? over.bowler_id
-                bowlers << over.bowler_id
-            end
-        end
-        ret_spells = []
-        l = spells.length
-        bowlers.each do |bowler|
-            i = 0
-            flag = true
-            while i<l and flag
-                if spells[i].player_id == bowler
-                    flag = false
-                    ret_spells << spells[i]
-                end
-                i+=1
-            end
-        end
-        return ret_spells
-    end
+    # def spells
+    #     spells = Spell.where(inning_id: self.id)
+    #     overs = Over.where(inning_id: self.id)
+    #     bowlers = []
+    #     overs.each do |over|
+    #         if bowlers.exclude? over.bowler_id
+    #             bowlers << over.bowler_id
+    #         end
+    #     end
+    #     ret_spells = []
+    #     l = spells.length
+    #     bowlers.each do |bowler|
+    #         i = 0
+    #         flag = true
+    #         while i<l and flag
+    #             if spells[i].player_id == bowler
+    #                 flag = false
+    #                 ret_spells << spells[i]
+    #             end
+    #             i+=1
+    #         end
+    #     end
+    #     return ret_spells
+    # end
     def get_overs
         return Over.where(inning_id: self.id)
     end

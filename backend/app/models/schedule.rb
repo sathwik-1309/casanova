@@ -47,6 +47,13 @@ class Schedule < ApplicationRecord
     if self.completed
       temp['result'] = self.match.result_statement
       temp['result_color'] = self.match.winner.abbrevation
+      if self.match.winner_id == temp['squad1']['id']
+        temp['squad1']['result'] = 'won'
+        temp['squad2']['result'] = 'lost'
+      else
+        temp['squad1']['result'] = 'lost'
+        temp['squad2']['result'] = 'won'
+      end
     end
     temp
   end

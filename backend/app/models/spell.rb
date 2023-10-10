@@ -18,6 +18,8 @@ class Spell < ApplicationRecord
         hash["tour"] = self.match.get_tour_font
         hash["name"] = Util.case(self.player.fullname, self.match.tournament_id)
         hash["fig"] = self.get_fig
+        hash["wickets"] = self.wickets
+        hash["runs"] = self.runs
         hash["overs"] = self.overs
         hash["dots"] = self.dots
         hash["ones"] = self.c1

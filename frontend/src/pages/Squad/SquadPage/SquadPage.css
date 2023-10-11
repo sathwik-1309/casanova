@@ -3,10 +3,44 @@
 }
 .squad-page {
   display: flex;
-  justify-content: space-around;
+  align-items: center;
 }
 .squad-schedule-header {
   background-color: var(--dark);
   color: white;
   height: 40px;
+}
+.squad-header{
+  margin: 20px;
+  border-radius: 4px;
+}
+.squad-header-line1 {
+  height: 50px;
+}
+.squad-header-line2 {
+  height: 30px;
+}
+.squad-page-row2 {
+  width: 100%;
+  justify-content: space-evenly;
+}
+.squad-performers {
+  padding: 10px;
+  height: fit-content;
+}
+.captain-box {
+  margin-bottom: 20px;
+  width: fit-content;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.performer-box {
+  margin-bottom: 20px;
+  width: fit-content;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.squad-performers-rows {
+  justify-content: space-evenly;
+  width: 800px;
 }

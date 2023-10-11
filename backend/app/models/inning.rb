@@ -70,4 +70,13 @@ class Inning < ApplicationRecord
     def get_score
         return Util.get_score(self.score, self.for)
     end
+
+    def squad_stats
+        hash = {}
+        hash['score'] = self.get_score
+        hash['vs_team'] = self.bow_team.get_abb
+        hash['match_id'] = self.match_id
+        hash
+    end
 end
+

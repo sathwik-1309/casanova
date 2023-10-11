@@ -143,4 +143,36 @@ class Squad < ApplicationRecord
         arr
     end
 
+    def squad_stats
+        hash = {}
+        matches = Match.where("winner_id = ? or loser_id = ?", self.id, self.id)
+        matches_won = matches.select{ |m| m.winner_id == self.id }.length
+        hash['result_stats'] = {
+            "total_matches" => matches.length,
+            "won" => matches_won,
+            "lost" => matches.length - matches_won
+        }
+        innings = Inning.where(bat_team_id: self.id)
+        highest_total = innings.order(score: :desc).limit(1)&.first
+        lowest_total = innings.where("overs >= 20 or for == 10").order(score: :asc).limit(1)&.first
+        rr_array = innings.map{|i| i.get_rr.to_f }
+        avg_rr = rr_array.length != 0 ? (rr_array.sum/rr_array.length).round(2) : nil
+        hash['total_stats'] = {
+            "highest_total" => highest_total&.squad_stats,
+            "lowest_total" => lowest_total&.squad_stats,
+            "avg_total" => avg_rr.nil? ? nil : (avg_rr*20).round(2)
+        }
+        hash
+    end
+
+    def meta
+        meta = {
+            "id" => self.id,
+            "color" => self.abbrevation,
+            "abbrevation" => self.get_abb,
+            "teamname" => self.get_teamname,
+            "tour" => self.tournament.get_tour_with_season
+        }
+    end
+
 end

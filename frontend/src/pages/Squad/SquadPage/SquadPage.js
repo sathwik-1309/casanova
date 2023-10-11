@@ -2,7 +2,6 @@
 import { React, useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom';
 import { BACKEND_API_URL } from '../../../my_constants';
-import ScheduleMatchBox from '../../../components/Tournament/Schedule/ScheduleMatchBox/ScheduleMatchBox';
 import './SquadPage.css'
 import ScheduleMatchBox2 from '../../../components/Tournament/Schedule/ScheduleMatchBox2/ScheduleMatchBox2';
 import Photocard from '../../../components/Player/Photocard/Photocard';
@@ -43,12 +42,16 @@ function CaptainBox(props) {
   )
 }
 
-function PerformerBox({header, player, info, meta, label}) {
+function PerformerBox({header, player, info, meta, label, size}) {
+  let height = '60px'
+  if (size){
+    height = '70px'
+  }
   return (
     <div className='flex-col performer-box'>
       <div className={`font-600 font-0_7 flex-centered pt-3 ${meta.color}2`}>{header}</div>
       <div className={`flex-row ${meta.color}1 font-600 font-1 flex-centered`}>
-        <Photocard p_id={player.id} color={meta.color} height='60px' />
+        <Photocard p_id={player.id} color={meta.color} height={height} />
         <div className='w-180 lp-10'>{player.fullname}</div>
         <div className='w-100 flex-centered'>{info} <span className='font-500 font-0_7 pt-3 pl-5'> {label}</span></div>
       </div>
@@ -63,8 +66,8 @@ function SquadPerformers(props) {
     <div className='flex-col bg-white bg-shadow squad-performers flex-centered'>
       <CaptainBox data={data.captain} meta={props.meta}/>
       <div className='flex-row squad-performers-rows'>
-        <PerformerBox header='MOST RUNS' meta={props.meta} player={data.most_runs.player} info={data.most_runs.runs} label='RUNS'/>
-        <PerformerBox header='MOST WICKETS' meta={props.meta} player={data.most_wickets.player} info={data.most_wickets.wickets} label='WICKETS'/>
+        <PerformerBox header='MOST RUNS' meta={props.meta} player={data.most_runs.player} info={data.most_runs.runs} label='RUNS' size={true}/>
+        <PerformerBox header='MOST WICKETS' meta={props.meta} player={data.most_wickets.player} info={data.most_wickets.wickets} label='WICKETS' size={true}/>
       </div>
       <div className='flex-row squad-performers-rows'>
         <PerformerBox header='BEST STRIKE-RATE' meta={props.meta} player={data.best_sr.player} info={data.best_sr.sr} label='SR'/>

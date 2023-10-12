@@ -1,0 +1,23 @@
+.squad-performers {
+  padding: 10px;
+  height: fit-content;
+}
+
+.performer-box {
+  margin-bottom: 20px;
+  width: fit-content;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.squad-performers-rows {
+  justify-content: space-evenly;
+  width: 800px;
+}
+
+.captain-box {
+  margin-bottom: 20px;
+  width: fit-content;
+  border-radius: 2px;
+  overflow: hidden;
+}

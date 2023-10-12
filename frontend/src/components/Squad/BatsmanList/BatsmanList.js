@@ -25,7 +25,7 @@ function BatsmanListItem (props) {
 
 function BatsmanList (props) {
   return (
-    <div className='flex-col batsman-list bg-white'>
+    <div className='flex-col batsman-list bg-white bg-shadow'>
       <div className='bg-dark c-white font-600 font-1 flex-centered h-40 mb-2'>BATSMEN</div>
       <div className={`flex-row font-0_9 font-600 ${props.meta.color}2 h-50`}>
         <div className='w-40 flex-centered'> #</div>

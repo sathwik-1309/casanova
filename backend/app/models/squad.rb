@@ -147,12 +147,37 @@ class Squad < ApplicationRecord
         hash = {}
         matches = Match.where("winner_id = ? or loser_id = ?", self.id, self.id)
         matches_won = matches.select{ |m| m.winner_id == self.id }.length
+        win_p = (matches_won*100/matches.length).to_i
         hash['result_stats'] = {
             "total_matches" => matches.length,
             "won" => matches_won,
-            "lost" => matches.length - matches_won
+            "lost" => matches.length - matches_won,
+            "win_p" => win_p,
+            "loss_p" => 100-win_p
         }
+
         innings = Inning.where(bat_team_id: self.id)
+
+        matches_defended = innings.where(inn_no: 1).map{|i| i.match }
+        matches_won = matches_defended.select{ |m| m.winner_id == self.id }.length
+        win_p = (matches_won*100/matches_defended.length).to_i
+        hash['defended'] = {
+            "total_matches" => matches_defended.length,
+            "won" => matches_won,
+            "win_p" => win_p,
+            "loss_p" => 100-win_p
+        }
+
+        matches_chased = matches - matches_defended
+        matches_won = matches_chased.select{ |m| m.winner_id == self.id }.length
+        win_p = (matches_won*100/matches_chased.length).to_i
+        hash['chased'] = {
+            "total_matches" => matches_chased.length,
+            "won" => matches_won,
+            "win_p" => win_p,
+            "loss_p" => 100-win_p
+        }
+
         highest_total = innings.order(score: :desc).limit(1)&.first
         lowest_total = innings.where("overs >= 20 or for == 10").order(score: :asc).limit(1)&.first
         rr_array = innings.map{|i| i.get_rr.to_f }

@@ -1,0 +1,9 @@
+.team-totals {
+  width: fit-content;
+  padding: 2px;
+}
+.total-box {
+  margin: 5px;
+  border-radius: 2px;
+  overflow: hidden;
+}

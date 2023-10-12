@@ -16,7 +16,7 @@ function BowlerListItem (props) {
       <div className='w-40 flex-centered'>{data.innings}</div>
       <div className='w-60 flex-centered font-600 font-1_1'>{data.wickets}</div>
       <div className='w-40 flex-centered'>{data.maidens}</div>
-      <div className='w-60 flex-centered'>{data.sr}</div>
+      <div className='w-60 flex-centered'>{data.economy}</div>
       <div className='w-40 flex-centered'>{data.three_wickets}</div>
       <div className='w-100 flex-centered font-600'>{data.best.fig}<span className='font-0_7 font-400 pt-3 pl-8'>{data.best.overs}</span></div>
     </div>
@@ -25,7 +25,7 @@ function BowlerListItem (props) {
 
 function BowlerList (props) {
   return (
-    <div className='flex-col bowler-list bg-white'>
+    <div className='flex-col bowler-list bg-white bg-shadow'>
       <div className='bg-dark c-white font-600 font-1 flex-centered h-40 mb-2'>BOWLERS</div>
       <div className={`flex-row font-0_9 font-600 ${props.meta.color}2 h-50`}>
       <div className='w-40 flex-centered'> #</div>
@@ -34,7 +34,7 @@ function BowlerList (props) {
         <div className='w-40 flex-centered'>INN</div>
         <div className='w-60 flex-centered'>W</div>
         <div className='w-40 flex-centered'>M</div>
-        <div className='w-60 flex-centered'>SR</div>
+        <div className='w-60 flex-centered'>ECO</div>
         <div className='w-40 flex-centered'>3+</div>
         <div className='w-100 flex-centered'>BEST</div>
       </div>

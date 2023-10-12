@@ -108,7 +108,7 @@ function BallBox(props) {
                 <div className={result}>{ball.result}</div>
             </div>
             <div className='co_delivery'>{ball.delivery}</div>
-            <div className={`co_ball_commentry ${props.bat_color}1`}>{`${ball.bowler} to ${ball.batsman}`}</div>
+            <div className={`co_ball_commentry ${props.bat_color}1 bg-shadow`}>{`${ball.bowler} to ${ball.batsman}`}</div>
         </div>
     );
 }

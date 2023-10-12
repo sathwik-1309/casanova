@@ -157,6 +157,11 @@ function Topbar(props) {
                 <TopbarItem name='spells' link={`${FRONTEND_API_URL}/player/${p_id}/spells`}/>
             </>
             break;
+        case 'squad':
+            topbar = <>
+                <TopbarItem name='home' link={`${FRONTEND_API_URL}/tournament/${t_id}`}/>
+                
+            </>
     }
     return (
         <div className='topbar default-font font-0_9'>

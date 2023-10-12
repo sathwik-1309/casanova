@@ -5,6 +5,8 @@ import { BACKEND_API_URL } from '../../../my_constants';
 import './SquadPage.css'
 import ScheduleMatchBox2 from '../../../components/Tournament/Schedule/ScheduleMatchBox2/ScheduleMatchBox2';
 import Photocard from '../../../components/Player/Photocard/Photocard';
+import BatsmanList from '../../../components/Squad/BatsmanList/BatsmanList';
+import BowlerList from '../../../components/Squad/BowlerList/BowlerList';
 
 function SquadSchedules(props) {
   const data = props.data
@@ -106,6 +108,10 @@ function SquadPage(props) {
       <div className='flex-row squad-page-row2'>
         <SquadSchedules data={data.schedule} />
         <SquadPerformers data={data.top_players} meta={data.meta}/>
+      </div>
+      <div className='flex-row squad-page-row3'>
+        <BatsmanList meta={data.meta} bat_stats={data.bat_stats}/>
+        <BowlerList meta={data.meta} ball_stats={data.ball_stats}/>
       </div>
       
     </div>

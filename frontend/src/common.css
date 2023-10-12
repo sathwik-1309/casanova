@@ -71,6 +71,9 @@
 .bg-shadow {
     box-shadow: var(--shadow-border);
 }
+.bg-dark {
+    background-color: var(--dark);
+}
 
 /* color */
 .c-white {
@@ -290,11 +293,20 @@
 .pt-3{
     padding-top: 3px;
 }
+.pl-2{
+    padding-left: 2px;
+}
 .pl-3{
     padding-left: 3px;
 }
 .pl-5{
     padding-left: 5px;
+}
+.pl-8{
+    padding-left: 8px;
+}
+.pl-10{
+    padding-left: 10px;
 }
 
 .lp-10 {
@@ -323,6 +335,12 @@
 .m-10{
     margin: 10px;
 
+}
+.mb-1 {
+    margin-bottom: 1px;
+}
+.mb-2 {
+    margin-bottom: 2px;
 }
 /* position */
 .relative {

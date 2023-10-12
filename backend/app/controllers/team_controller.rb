@@ -98,6 +98,24 @@ class TeamController < ApplicationController
     render(:json => Oj.dump(json))
   end
 
+  def team_page
+    team = Team.find_by_id(filter_params[:team_id])
+    hash = {}
+    hash['tournaments'] = team.squads.count
+    hash['bat_stats'] = team.bat_stats
+    hash['ball_stats'] = team.ball_stats
+    hash['top_players'] = team.top_players
+    captain = team.squads.last.captain.attributes.slice('id', 'name', 'fullname')
+    captain['fullname'] = captain['fullname'].titleize
+    hash['top_players'].each do|key, value|
+      value['player']['fullname'] = value['player']['fullname'].titleize
+    end
+    hash['top_players']['captain'] = captain
+    hash['team_stats'] = team.team_stats
+    hash['meta'] = team.meta
+    render(:json => Oj.dump(hash))
+  end
+
   private
 
   def get_teams(tour_class)
@@ -118,6 +136,10 @@ class TeamController < ApplicationController
       end
     end
     teams
+  end
+
+  def filter_params
+    params.permit(:team_id)
   end
 
 end

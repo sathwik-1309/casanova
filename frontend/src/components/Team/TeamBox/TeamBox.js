@@ -11,7 +11,7 @@ function TeamBox(props) {
     const analysis1 = team_colors.analysis1
     const analysis2 = team_colors.analysis2
     return (
-        <Link className= 'teambox_parent' to={``}>
+        <Link className= 'teambox_parent' to={`${data.id}`}>
             <div className={`teambox`}>
                 <div className={`teambox_trophies `}>{data.trophies}</div>
                 <div className={`teambox_teamname ${data.color}1`}>{data.teamname}</div>

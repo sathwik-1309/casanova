@@ -281,6 +281,7 @@ class MatchController < ApplicationController
         p_id = params[:p_id]
         venue = params[:venue]
         tour_class = params[:tour_class]
+        team_id = params[:team_id]
         array = []
         if tour_class
             t_ids = Tournament.where(name: tour_class).pluck(:id)
@@ -291,6 +292,10 @@ class MatchController < ApplicationController
             matches = Match.where(id: Performance.where(player_id: p_id).order(id: :desc).pluck(:match_id))
         elsif venue
             matches = Match.where(venue: venue).order(id: :desc)
+        elsif team_id
+            squad_ids = Team.find_by_id(team_id).squads.pluck(:id)
+            matches = Match.where(winner_id: squad_ids) + Match.where(loser_id: squad_ids)
+            matches = matches.sort_by{|m| -m.id }
         else
             matches = Match.all.order(id: :desc)
         end

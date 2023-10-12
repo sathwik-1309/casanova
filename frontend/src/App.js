@@ -57,6 +57,7 @@ function App() {
       <Route path="/tournaments/:tour_class/players" element={<WebPage page={<PlayersPage tour_class={true}/>} s_id='tour_class' />}  />
 
       <Route path="/teams" element={<WebPage page={<TeamsPage/>}/>}  />
+      <Route path="/teams/:team_id/matches" element={<WebPage page={<MatchesPage team_id={true}/>} s_id='team' />}  />
       <Route path="/teams/:team_id" element={<WebPage page={<TeamPage/>} s_id={'team'}/>} />
 
       <Route path="/venues" element={<WebPage page={<VenuesPage/>}/>}  />

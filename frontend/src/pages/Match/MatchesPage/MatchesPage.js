@@ -6,10 +6,12 @@ import {useParams} from "react-router-dom";
 import { BACKEND_API_URL } from '../../../my_constants';
 
 function MatchesPage(props){
+    console.log(props)
     let url = `${BACKEND_API_URL}/matches`
     let { tour_class } = useParams()
     let { t_id } = useParams()
     let { p_id } = useParams()
+    let { team_id } = useParams()
 
     if (props.tour_class) {
         url = url + `?tour_class=${tour_class}`
@@ -19,6 +21,8 @@ function MatchesPage(props){
     }
     else if (props.p_id) {
         url = url + `?p_id=${p_id}`
+    }else if (props.team_id) {
+        url = url + `?team_id=${team_id}`
     }
 
     const [data, setData] = useState(null);

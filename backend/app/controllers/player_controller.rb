@@ -155,8 +155,16 @@ class PlayerController < ApplicationController
         array << hash
       end
     elsif params[:t_id]
-      tour_ids = params[:t_id]
-      array = Helper.construct_players_hash_for_tour(tour_ids, players)
+      sp = SquadPlayer.where(tournament_id: params[:t_id])
+      sp.each do |s|
+        hash = s.player.attributes.slice('p_id', 'batting_hand', 'bowling_hand', 'bowling_style')
+        hash["p_id"] = s.player.id
+        hash["name"] = s.player.fullname.length > 13 ? s.player.name.titleize : s.player.fullname.titleize
+        hash["color"] = Util.get_team_color(s.squad.tournament_id ,s.squad.abbrevation) || nil
+        hash["teamname"] = s.squad.get_teamname || nil
+        hash["skill"] = s.player.keeper ? 'WK' : s.player.skill.upcase
+        array << hash
+      end
     elsif params[:team_id]
       team = Team.find_by_id(params[:team_id])
       squad_ids = team.squads.pluck(:id)
@@ -172,7 +180,7 @@ class PlayerController < ApplicationController
       players = SquadPlayer.where(squad_id: squad.id).map{|s| s.player }
       players.each do |player|
         temp = Helper.construct_player_details(player)
-        temp["color"] = squad.abbrevation
+        temp["color"] = Util.get_team_color(squad.tournament_id ,squad.abbrevation)
         temp["teamname"] = squad.get_teamname
         array << temp
       end

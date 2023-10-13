@@ -33,13 +33,14 @@ class TeamController < ApplicationController
       if team.class == Team
         temp["is_team"] = true
         temp["squads"] = team.squads.count
+        temp["color"] = team.abbrevation
       else
         temp["squads"] = 1
         temp["players"] = SquadPlayer.where(squad_id: team.id).count
+        temp["color"] = Util.get_team_color(team.tournament_id, team.abbrevation)
       end
       temp["id"] = team.id
       if temp["squads"] > 0
-        temp["color"] = team.abbrevation
         temp["trophies"] = team_medals[team.id.to_s]
         temp["won"], temp["played"] = team.get_won_lost
         temp["win_p"] = temp["played"] > 0 ? (temp["won"]*100/temp["played"]).round(1) : 0

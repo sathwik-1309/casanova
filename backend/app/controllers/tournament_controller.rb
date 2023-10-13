@@ -276,8 +276,8 @@ class TournamentController < ApplicationController
       box2["most_wickets"] = most_wickets_player.tour_individual_awards_to_hash(t_id, "most_wickets")
     else
       hash['ongoing'] = true
-      latest_mid = Match.last.id
-      schedules = Schedule.where(tournament_id: t_id).where("id > #{latest_mid}").order(id: :asc).limit(3)
+      latest_match = tour.matches.last
+      schedules = Schedule.where(tournament_id: t_id).where("`order` > #{latest_match.schedule.order}").order(id: :asc).limit(3)
       tourname = Tournament.find(t_id).get_tour_with_season
       upcoming_matches = []
       schedules.each do|schedule|

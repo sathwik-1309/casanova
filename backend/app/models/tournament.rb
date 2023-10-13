@@ -133,7 +133,7 @@ class Tournament < ApplicationRecord
                           captain_id: val['captain_id'], keeper_id: val['keeper_id'], team_id: team.id)
             s.save!
             val['players'].each do |p_id|
-                sp = SquadPlayer.new(player_id: p_id, squad_id: s.id, team_id: t.id, tournament_id: t.id)
+                sp = SquadPlayer.new(player_id: p_id, squad_id: s.id, team_id: s.team_id, tournament_id: t.id)
                 sp.save!
             end
         end

@@ -1,0 +1,23 @@
+{
+  "m_id": 167,
+  "batted_first": "pak",
+  "batted_second": "ban",
+  "toss": "ban",
+  "pitch": 2,
+  "ball_color": [
+    "g",
+    "y",
+    "g",
+    "y"
+  ],
+  "cap1": "babar azam",
+  "cap2": "shakib",
+  "keeper1": "rizwan",
+  "keeper2": "mushfiqur",
+  "winner": "pak",
+  "stage": "league",
+  "venue": "kolkata",
+  "motm_player": "imam-ul-haq",
+  "motm_team": "pak",
+  "t_id": 7
+}

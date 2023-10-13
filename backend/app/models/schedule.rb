@@ -46,7 +46,7 @@ class Schedule < ApplicationRecord
     temp['font'] = self.tournament.get_tour_font
     if self.completed
       temp['result'] = self.match.result_statement
-      temp['result_color'] = self.match.winner.abbrevation
+      temp['result_color'] = Util.get_team_color(self.tournament_id, self.match.winner.abbrevation)
       if self.match.winner_id == temp['squad1']['id']
         temp['squad1']['result'] = 'won'
         temp['squad2']['result'] = 'lost'

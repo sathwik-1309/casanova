@@ -39,16 +39,16 @@ function TeamPerformers(props) {
     <div className='flex-col bg-white bg-shadow squad-performers flex-centered'>
       <CaptainBox data={data.captain} meta={props.meta}/>
       <div className='flex-row squad-performers-rows'>
-        <PerformerBox header='MOST RUNS' meta={props.meta} player={data.most_runs.player} info={data.most_runs.runs} label='RUNS' size={true}/>
-        <PerformerBox header='MOST WICKETS' meta={props.meta} player={data.most_wickets.player} info={data.most_wickets.wickets} label='WICKETS' size={true}/>
+        {data.most_runs && <PerformerBox header='MOST RUNS' meta={props.meta} player={data.most_runs.player} info={data.most_runs.runs} label='RUNS' size={true}/>}
+        {data.most_wickets && <PerformerBox header='MOST WICKETS' meta={props.meta} player={data.most_wickets.player} info={data.most_wickets.wickets} label='WICKETS' size={true}/>}
       </div>
       <div className='flex-row squad-performers-rows'>
-        <PerformerBox header='BEST STRIKE-RATE' meta={props.meta} player={data.best_sr.player} info={data.best_sr.sr} label='SR'/>
-        <PerformerBox header='BEST ECONOMY' meta={props.meta} player={data.best_economy.player} info={data.best_economy.economy} label='RPO'/>
+        {data.best_sr && <PerformerBox header='BEST STRIKE-RATE' meta={props.meta} player={data.best_sr.player} info={data.best_sr.sr} label='SR'/>}
+        {data.best_economy && <PerformerBox header='BEST ECONOMY' meta={props.meta} player={data.best_economy.player} info={data.best_economy.economy} label='RPO'/>}
       </div>
       <div className='flex-row squad-performers-rows'>
-        <PerformerBox header='BEST SCORE' meta={props.meta} player={data.best_score.player} info={data.best_score.best.score} label={data.best_score.best.balls}/>
-        <PerformerBox header='BEST SPELL' meta={props.meta} player={data.best_spell.player} info={data.best_spell.best.fig} label={data.best_spell.best.overs}/>
+        {data.best_score && <PerformerBox header='BEST SCORE' meta={props.meta} player={data.best_score.player} info={data.best_score.best.score} label={data.best_score.best.balls}/>}
+        {data.best_spell && <PerformerBox header='BEST SPELL' meta={props.meta} player={data.best_spell.player} info={data.best_spell.best.fig} label={data.best_spell.best.overs}/>}
       </div>
     </div>
   )

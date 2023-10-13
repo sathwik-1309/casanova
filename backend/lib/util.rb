@@ -215,6 +215,8 @@ module Util
             return "#{abbrevation}#{t_id}_" if TC_TOUR_5.include? abbrevation
         when 6
             return "#{abbrevation}#{t_id}_" if TC_TOUR_6.include? abbrevation
+        when 7
+            return "#{abbrevation}#{t_id}_" if TC_TOUR_7.include? abbrevation
         end
         return abbrevation
     end

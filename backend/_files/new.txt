@@ -1,13 +1,13 @@
 WT20 3
 
-IND VS SL
-Mumbai 09-Oct-2023
+PAK VS BAN
+Kolkata 13-Oct-2023
 
-IND:217/4
+PAK:200/7
 
 First Innings-Batting
 Overs:20.0
-EXTRAS: 3(B:0 LB:0 NB:3 WD:0)
+EXTRAS: 0(B:0 LB:0 NB:0 WD:0)
 
 Batsman
 
@@ -23,92 +23,75 @@ B
 
 SR
 
-Rohit
+Imam-ul-Haq
 
-b Pathirana
+b Mustafizur
 
-29
+109
 
-20
+54
 
-5
+17
 
-3
+6
 
-1
+11
 
-145.0
+201.9
 
-Shubman Gill
+A Shafique
 
-c Asalanka b
-Theekshana
+b Shoriful
 
-48
+24
 
-27
-
-5
-
-5
-
-2
-
-177.8
-
-Kohli
-
-lbw b Dhananjaya
-
-32
-
-19
-
-4
-
-4
-
-1
-
-168.4
-
-KL Rahul
-
-not out
-
-58
-
-33
+21
 
 10
 
-7
-
 2
 
-175.8
+1
 
-Ishan Kishan
+114.3
 
-c Nissanka b Pathirana
+Babar
 
-42
+b Taskin
 
-19
+31
 
-6
+21
 
-3
+7
 
 4
 
-221.1
+1
 
-Hardik
+147.6
 
-not out
+Rizwan
 
-6
+b Taskin
+
+0
+
+1
+
+1
+
+0
+
+0
+
+0.0
+
+Iftikhar
+
+lbw b Mustafizur
+
+5
 
 4
 
@@ -118,9 +101,73 @@ not out
 
 0
 
-150.0
+125.0
 
-Jadeja
+Saud Shakeel
+
+lbw b Taskin
+
+3
+
+5
+
+4
+
+0
+
+0
+
+60.0
+
+Shadab
+
+not out
+
+14
+
+4
+
+2
+
+2
+
+1
+
+350.0
+
+Nawaz
+
+b Mustafizur
+
+0
+
+2
+
+2
+
+0
+
+0
+
+0.0
+
+Hassan Ali
+
+not out
+
+14
+
+8
+
+4
+
+1
+
+1
+
+175.0
+
+Haris Rauf
 
 Did not Bat
 
@@ -136,55 +183,7 @@ Did not Bat
 
 0.0
 
-Bumrah
-
-Did not Bat
-
-0
-
-0
-
-0
-
-0
-
-0
-
-0.0
-
-Shami
-
-Did not Bat
-
-0
-
-0
-
-0
-
-0
-
-0
-
-0.0
-
-Kuldeep
-
-Did not Bat
-
-0
-
-0
-
-0
-
-0
-
-0
-
-0.0
-
-Siraj
+Shaheen
 
 Did not Bat
 
@@ -219,63 +218,63 @@ WD NB 4s
 
 6s
 
-Rajitha
+Taskin
 
 4.0
-
-41
-
-0
-
-0
-
-10.3
-
-6
-
-0
-
-1
-
-7
-
-0
-
-Theekshana
-
-3.0
 
 33
 
-1
+3
 
 0
 
-11.0
+8.3
 
-4
+10
 
 0
 
-1
+0
 
 4
 
-1
+2
 
-Madushanka
+Mehidy
 
 4.0
 
-60
+58
 
 0
 
 0
 
-15.0
+14.5
+
+4
+
+0
+
+0
+
+4
 
 5
+
+Shakib
+
+4.0
+
+38
+
+0
+
+0
+
+9.5
+
+7
 
 0
 
@@ -283,73 +282,51 @@ Madushanka
 
 3
 
-6
+2
 
-Shanaka
+Shoriful
 
 4.0
 
-29
-
-0
-
-0
-
-7.3
-
-6
-
-0
-
-0
-
-2
+37
 
 1
 
-Pathirana
+0
+
+9.3
+
+11
+
+0
+
+0
+
+3
+
+3
+
+Mustafizur
 
 4.0
 
-46
+34
+
+3
+
+0
+
+8.5
+
+10
+
+0
+
+0
 
 2
 
-0
-
-11.5
-
-4
-
-0
-
-0
-
-7
-
-1
-
-Dhananjaya
-
-1.0
-
-8
-
-1
-
-0
-
-8.0
-
-2
-
-0
-
-0
-
-0
-
-1
+3
 
 First Innings-Fall of Wickets
 No
@@ -364,43 +341,73 @@ Bowler
 
 1
 
-51
+53
 
-5.4
+6.6
 
-Rohit
+A Shafique
 
-Pathirana
+Shoriful
 
-2
+2
 
-98
+154
 
-9.2
+15.2
 
-Shubman Gill
+Babar
 
-Theekshana
+Taskin
 
-3
+3
 
-135
+154
 
-13.1
+15.3
 
-Kohli
+Rizwan
 
-Dhananjaya
+Taskin
 
 4
 
-202
+159
 
-18.5
+16.1
 
-Ishan Kishan
+Iftikhar
 
-Pathirana
+Mustafizur
+
+5
+
+168
+
+17.2
+
+Saud Shakeel
+
+Taskin
+
+6
+
+186
+
+18.2
+
+Imam-ul-Haq
+
+Mustafizur
+
+7
+
+186
+
+18.4
+
+Nawaz
+
+Mustafizur
 
 First Innings-OVERS
 No
@@ -430,152 +437,152 @@ Runs Wkts Per Ball Score
 19
 20
 
-Rajitha
-
-7
-
-0
-
-Theekshana
+Taskin
 
 11
 
 0
 
-Rajitha
-
-9
-
-0
-
-Madushanka
-
-11
-
-0
-
-Shanaka
-
-4
-
-0
-
-Pathirana
-
-11
-
-1
-
-Madushanka
-
-17
-
-0
-
-Pathirana
-
-16
-
-0
-
-Shanaka
-
-11
-
-0
-
-Theekshana
-
-6
-
-1
-
-Rajitha
-
-11
-
-0
-
-Theekshana
-
-16
-
-0
-
-Shanaka
-
-5
-
-0
-
-Dhananjaya
-
-8
-
-1
-
-Shanaka
-
-9
-
-0
-
-Madushanka
+Mehidy
 
 14
 
 0
 
-Pathirana
+Taskin
+
+3
+
+0
+
+Shakib
 
 10
 
 0
 
-Madushanka
+Shoriful
+
+2
+
+0
+
+Mustafizur
+
+8
+
+0
+
+Shoriful
+
+5
+
+1
+
+Shakib
+
+9
+
+0
+
+Shoriful
+
+17
+
+0
+
+Mehidy
 
 18
 
 0
 
-Pathirana
-
-9
-
-1
-
-Rajitha
+Shakib
 
 14
 
 0
 
-110410
-1 0 1 1nb 2 4 1
-0 1 0 4 1 0nb 2
-011261
-001111
-414W11
-641006
-014164
-414101
-1W0014
-401411
-411640
-101111
-W60011
-016101
-642011
-110404
-401661
-0134W1
-144104
+Mustafizur
 
-SL:209/2
+12
+
+0
+
+Mehidy
+
+8
+
+0
+
+Shakib
+
+5
+
+0
+
+Mehidy
+
+18
+
+0
+
+Taskin
+
+5
+
+2
+
+Mustafizur
+
+9
+
+1
+
+Taskin
+
+14
+
+1
+
+Mustafizur
+
+5
+
+2
+
+Shoriful
+
+13
+
+0
+
+060410
+120416
+001011
+310006
+000101
+016001
+00140W
+061011
+601640
+610416
+441041
+061014
+014111
+011111
+604116
+0WW041
+W00360
+0W0446
+4W0W01
+600241
+
+BAN:191/2
 
 Second Innings-Batting
 Overs:20.0
-EXTRAS: 2(B:0 LB:0 NB:0 WD:2)
+EXTRAS: 0(B:0 LB:0 NB:0 WD:0)
 
 Batsman
 
@@ -591,71 +598,71 @@ B
 
 SR
 
-Nissanka
+Tanzid
 
 not out
 
-122
+98
 
-65
+61
 
-13
+14
 
-18
+10
 
-3
+4
 
-187.7
+160.7
 
-Kusal Perera
+Litton
 
-b Siraj
+b Nawaz
 
-19
+62
 
-7
-
-1
-
-1
-
-2
-
-271.4
-
-Kusal Mendis
-
-c KL Rahul b Kuldeep
-
-41
-
-29
+38
 
 9
 
-5
-
-1
-
-141.4
-
-Asalanka
-
-not out
-
-25
-
-19
-
-6
+8
 
 2
 
-1
+163.2
 
-131.6
+Shanto
 
-Dhananjaya
+b Haris Rauf
+
+21
+
+9
+
+3
+
+0
+
+3
+
+233.3
+
+Shakib
+
+not out
+
+10
+
+12
+
+6
+
+0
+
+0
+
+83.3
+
+Mushfiqur
 
 Did not Bat
 
@@ -671,7 +678,7 @@ Did not Bat
 
 0.0
 
-Shanaka
+Mahmudullah
 
 Did not Bat
 
@@ -687,7 +694,7 @@ Did not Bat
 
 0.0
 
-Theekshana
+Mehidy
 
 Did not Bat
 
@@ -703,7 +710,7 @@ Did not Bat
 
 0.0
 
-Samarawickrama
+Mustafizur
 
 Did not Bat
 
@@ -719,7 +726,7 @@ Did not Bat
 
 0.0
 
-Madushanka
+Shoriful
 
 Did not Bat
 
@@ -735,7 +742,7 @@ Did not Bat
 
 0.0
 
-Rajitha
+Taskin
 
 Did not Bat
 
@@ -751,7 +758,7 @@ Did not Bat
 
 0.0
 
-Pathirana
+Towhid Hridoy
 
 Did not Bat
 
@@ -786,19 +793,19 @@ WD NB 4s
 
 6s
 
-Bumrah
+Shaheen
 
 4.0
 
-40
+25
 
 0
 
 0
 
-10.0
+6.3
 
-6
+10
 
 0
 
@@ -806,21 +813,21 @@ Bumrah
 
 2
 
-3
+1
 
-Siraj
+Hassan Ali
 
 4.0
 
 44
 
-1
+0
 
 0
 
 11.0
 
-5
+6
 
 0
 
@@ -830,19 +837,19 @@ Siraj
 
 1
 
-Hardik
+Haris Rauf
 
-1.0
+4.0
 
-16
-
-0
-
-0
-
-16.0
+38
 
 1
+
+0
+
+9.5
+
+7
 
 0
 
@@ -850,73 +857,73 @@ Hardik
 
 2
 
-1
+3
 
-Jadeja
-
-4.0
-
-36
-
-0
-
-0
-
-9.0
-
-6
-
-1
-
-0
-
-5
-
-0
-
-Shami
+Nawaz
 
 3.0
 
-32
+45
+
+1
+
+0
+
+15.0
+
+2
 
 0
 
 0
-
-10.7
 
 4
 
-0
+3
 
-0
-
-6
-
-0
-
-Kuldeep
+Shadab
 
 4.0
 
-41
-
-1
+26
 
 0
 
-10.3
-
-5
-
-1
-
 0
+
+6.5
 
 4
 
+0
+
+0
+
 2
+
+0
+
+Iftikhar
+
+1.0
+
+13
+
+0
+
+0
+
+13.0
+
+1
+
+0
+
+0
+
+1
+
+1
 
 Second Innings-Fall of Wickets
 No
@@ -931,23 +938,23 @@ Bowler
 
 1
 
-24
+132
 
-1.4
+13.4
 
-Kusal Perera
+Litton
 
-Siraj
+Nawaz
 
 2
 
-136
+160
 
-12.5
+15.5
 
-Kusal Mendis
+Shanto
 
-Kuldeep
+Haris Rauf
 
 Second Innings-OVERS
 No
@@ -977,148 +984,147 @@ Runs Wkts Per Ball Score
 19
 20
 
-Bumrah
+Shaheen
 
-14
-
-0
-
-Siraj
-
-11
-
-1
-
-Bumrah
-
-3
+12
 
 0
 
-Siraj
-
-17
-
-0
-
-Hardik
-
-16
-
-0
-
-Jadeja
-
-5
-
-0
-
-Shami
-
-13
-
-0
-
-Jadeja
-
-9
-
-0
-
-Kuldeep
-
-11
-
-0
-
-Jadeja
-
-8
-
-0
-
-Kuldeep
-
-13
-
-0
-
-Shami
-
-8
-
-0
-
-Kuldeep
-
-8
-
-1
-
-Jadeja
-
-14
-
-0
-
-Kuldeep
-
-9
-
-0
-
-Shami
-
-11
-
-0
-
-Bumrah
-
-13
-
-0
-
-Siraj
-
-5
-
-0
-
-Bumrah
+H Ali
 
 10
 
 0
 
-Siraj
+Shaheen
+
+1
+
+0
+
+H Ali
+
+12
+
+0
+
+H Rauf
+
+7
+
+0
+
+Nawaz
+
+19
+
+0
+
+Shadab
+
+8
+
+0
+
+Iftikhar
+
+13
+
+0
+
+Shadab
+
+5
+
+0
+
+H Ali
+
+14
+
+0
+
+H Rauf
+
+18
+
+0
+
+Shaheen
+
+5
+
+0
+
+Shadab
+
+5
+
+0
+
+Nawaz
+
+15
+
+1
+
+Shadab
+
+8
+
+0
+
+H Rauf
+
+8
+
+1
+
+Shaheen
+
+7
+
+0
+
+H Rauf
+
+5
+
+0
+
+H Ali
+
+8
+
+0
+
+Nawaz
 
 11
 
 0
 
-016214
-046W10
-001101
-404414
-401641
-011102
-444001
-402111
-404111
-0 1 1 4 1 0wd 0
-401161
-110141
-6011W0
-041144
-4 0 0wd 1 1 1 1
-411041
-610114
-111011
-106111
-144110
+061041
+014041
+000100
+014061
+001141
+440146
+410111
+046111
+110111
+401441
+601641
+011111
+111101
+111W66
+410111
+0611W0
+041110
+120110
+410111
+113204
 
-Result: IND won the match by 8 runs
+Result: PAK won the match by 9 runs
 Generated by Cricket Scorer
 
-

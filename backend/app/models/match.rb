@@ -67,7 +67,7 @@ class Match < ApplicationRecord
             schedule.completed = true
             order = last_match.present? ? last_match.first.order+1 : 1
             unless schedule.order == order
-                to_update = self.tournament.schedules.where("order >= ?", order).where("order < ?", schedule.order)
+                to_update = self.tournament.schedules.where("`order` >= ?", order).where("`order` < ?", schedule.order)
                 to_update.each do |s|
                     s.order = s.order + 1
                     s.save!

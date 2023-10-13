@@ -14,4 +14,7 @@
     height: 40px;
     font-weight: 600;
     width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

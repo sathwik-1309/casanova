@@ -5,7 +5,9 @@
 
 .teams_page_buttons {
     display: flex;
+    justify-content: center;
     height: fit-content;
+    margin-top: 10px;
 }
 .teams_page_button_item {
     display: flex;

@@ -1,0 +1,18 @@
+.bowler-list {
+  padding: 2px;
+  height: fit-content;
+}
+
+.bowler-list-item{
+  width: fit-content;
+  height: fit-content;
+  padding: 2px;
+  padding-right: 5px;
+  align-items: center;
+  justify-content: center;
+  /* margin-bottom: 1px; */
+}
+
+.bowler-list-opacity {
+  opacity: 0.9;
+}

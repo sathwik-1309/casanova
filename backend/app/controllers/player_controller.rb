@@ -132,6 +132,25 @@ class PlayerController < ApplicationController
     elsif params[:t_id]
       tour_ids = params[:t_id]
       array = Helper.construct_players_hash_for_tour(tour_ids, players)
+    elsif params[:team_id]
+      team = Team.find_by_id(params[:team_id])
+      squad_ids = team.squads.pluck(:id)
+      players = Player.where(id: SquadPlayer.where(squad_id: squad_ids).map{|s| s.player_id}.uniq)
+      players.each do |player|
+        temp = Helper.construct_player_details(player)
+        temp["color"] = team.abbrevation
+        temp["teamname"] = team.get_teamname
+        array << temp
+      end
+    elsif params[:squad_id]
+      squad = Squad.find_by_id(params[:squad_id])
+      players = SquadPlayer.where(squad_id: squad.id).map{|s| s.player }
+      players.each do |player|
+        temp = Helper.construct_player_details(player)
+        temp["color"] = squad.abbrevation
+        temp["teamname"] = squad.get_teamname
+        array << temp
+      end
     else
       players.each do |player|
         hash = Helper.construct_player_details(player)

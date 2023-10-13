@@ -17,8 +17,8 @@ class TeamController < ApplicationController
       end
     elsif params[:t_id]
       tour = Tournament.find(params[:t_id])
-      hash[tour.name] = []
-      teams = Team.where(id: Squad.where(tournament_id: params[:t_id]).pluck(:team_id))
+      hash['teams'] = []
+      teams = Squad.where(tournament_id: params[:t_id])
     else
       hash["wt20"] = []
       hash["ipl"] = []
@@ -30,15 +30,23 @@ class TeamController < ApplicationController
       temp = {}
       temp["teamname"] = team.get_teamname
       temp["abbrevation"] = team.get_abb
-      temp["squads"] = team.squads.count
-      team["id"] = team.id
+      if team.class == Team
+        temp["is_team"] = true
+        temp["squads"] = team.squads.count
+      else
+        temp["squads"] = 1
+        temp["players"] = SquadPlayer.where(squad_id: team.id).count
+      end
+      temp["id"] = team.id
       if temp["squads"] > 0
         temp["color"] = team.abbrevation
         temp["trophies"] = team_medals[team.id.to_s]
         temp["won"], temp["played"] = team.get_won_lost
-        temp["win_p"] = (temp["won"]*100/temp["played"]).round(1)
+        temp["win_p"] = temp["played"] > 0 ? (temp["won"]*100/temp["played"]).round(1) : 0
         if params[:tour_class]
           hash[params[:tour_class]] << temp
+        elsif params[:t_id]
+          hash["teams"] << temp
         else
           if team.id <= 10
             hash["wt20"] << temp
@@ -90,6 +98,24 @@ class TeamController < ApplicationController
     render(:json => Oj.dump(json))
   end
 
+  def team_page
+    team = Team.find_by_id(filter_params[:team_id])
+    hash = {}
+    hash['tournaments'] = team.squads.count
+    hash['bat_stats'] = team.bat_stats
+    hash['ball_stats'] = team.ball_stats
+    hash['top_players'] = team.top_players
+    captain = team.squads.last.captain.attributes.slice('id', 'name', 'fullname')
+    captain['fullname'] = captain['fullname'].titleize
+    hash['top_players'].each do|key, value|
+      value['player']['fullname'] = value['player']['fullname'].titleize
+    end
+    hash['top_players']['captain'] = captain
+    hash['team_stats'] = team.team_stats
+    hash['meta'] = team.meta
+    render(:json => Oj.dump(hash))
+  end
+
   private
 
   def get_teams(tour_class)
@@ -110,6 +136,10 @@ class TeamController < ApplicationController
       end
     end
     teams
+  end
+
+  def filter_params
+    params.permit(:team_id)
   end
 
 end

@@ -12,6 +12,7 @@ function MatchesPage(props){
     let { t_id } = useParams()
     let { p_id } = useParams()
     let { team_id } = useParams()
+    let { squad_id } = useParams()
 
     if (props.tour_class) {
         url = url + `?tour_class=${tour_class}`
@@ -23,6 +24,9 @@ function MatchesPage(props){
         url = url + `?p_id=${p_id}`
     }else if (props.team_id) {
         url = url + `?team_id=${team_id}`
+    }
+    else if (props.squad_id) {
+        url = url + `?squad_id=${squad_id}`
     }
 
     const [data, setData] = useState(null);

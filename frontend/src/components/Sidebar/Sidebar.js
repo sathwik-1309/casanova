@@ -9,6 +9,7 @@ function Sidebar(props){
     let { t_id } = useParams();
     let { p_id } = useParams();
     let { team_id } = useParams();
+    let { squad_id } = useParams();
     if (s_id === 'home') {
         return(
             <div className="sidebar">
@@ -58,6 +59,16 @@ function Sidebar(props){
             <div className="sidebar">
                 <SidebarItem name="Home" url={`${FRONTEND_API_URL}/`}/>
                 <SidebarItem name="Matches" url={`${FRONTEND_API_URL}/teams/${team_id}/matches`}/>
+                <SidebarItem name="Players" url={`${FRONTEND_API_URL}/teams/${team_id}/players`}/>
+            </div>
+        );
+    }
+    else if (s_id === 'squad') {
+        return(
+            <div className="sidebar">
+                <SidebarItem name="Home" url={`${FRONTEND_API_URL}/`}/>
+                <SidebarItem name="Matches" url={`${squad_id}/matches`}/>
+                <SidebarItem name="Players" url={`${squad_id}/players`}/>
             </div>
         );
     }

@@ -48,7 +48,10 @@ function App() {
       <Route path="/tournament/:t_id/squads" element={<WebPage page={<SquadsPage t_id={true}/>} s_id='tour' />}/>
       <Route path="/tournament/:t_id/players" element={<WebPage page={<PlayersPage t_id={true}/>} s_id='tour' />}/>
       <Route path="/tournament/:t_id/:page" element={<WebPage page={<TournamentPage/>} s_id={'tour'}/>} />
+
       <Route path="/tournament/:t_id/squads/:squad_id" element={<WebPage page={<SquadPage/>} s_id={'squad'}/>} />
+      <Route path="/tournament/:t_id/squads/:squad_id/players" element={<WebPage page={<PlayersPage squad_id={true}/>} s_id={'squad'}/>} />
+      <Route path="/tournament/:t_id/squads/:squad_id/matches" element={<WebPage page={<MatchesPage squad_id={true}/>} s_id={'squad'}/>} />
 
       <Route path="/tournaments/:tour_class" element={<WebPage page={<TournamentsPage/>} s_id='tour_class'/>} />
       <Route path="/tournaments/:tour_class/matches" element={<WebPage page={<MatchesPage tour_class={true}/>} s_id='tour_class' />}  />
@@ -57,8 +60,9 @@ function App() {
       <Route path="/tournaments/:tour_class/players" element={<WebPage page={<PlayersPage tour_class={true}/>} s_id='tour_class' />}  />
 
       <Route path="/teams" element={<WebPage page={<TeamsPage/>}/>}  />
-      <Route path="/teams/:team_id/matches" element={<WebPage page={<MatchesPage team_id={true}/>} s_id='team' />}  />
       <Route path="/teams/:team_id" element={<WebPage page={<TeamPage/>} s_id={'team'}/>} />
+      <Route path="/teams/:team_id/matches" element={<WebPage page={<MatchesPage team_id={true}/>} s_id='team' />}  />
+      <Route path="/teams/:team_id/players" element={<WebPage page={<PlayersPage team_id={true}/>} s_id='team' />}  />
 
       <Route path="/venues" element={<WebPage page={<VenuesPage/>}/>}  />
 

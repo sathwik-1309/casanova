@@ -46,12 +46,19 @@ function DropdownMenu(props) {
 function PlayersPage(props) {
     let { tour_class } = useParams()
     let { t_id } = useParams()
+    let { team_id } = useParams()
+    let { squad_id } = useParams()
+
     let url = `${BACKEND_API_URL}/players`
     if (props.tour_class) {
         url = url + `?tour_class=${tour_class}`
     }
     else if (props.t_id) {
         url = url + `?t_id=${t_id}`
+    }else if (props.team_id){
+        url = url + `?team_id=${team_id}`
+    }else if (props.squad_id){
+        url = url + `?squad_id=${squad_id}`
     }
     const [data, setData] = useState(null);
     const [team, setTeam] = useState(null);

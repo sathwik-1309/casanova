@@ -67,8 +67,8 @@ function Sidebar(props){
         return(
             <div className="sidebar">
                 <SidebarItem name="Home" url={`${FRONTEND_API_URL}/`}/>
-                <SidebarItem name="Matches" url={`${squad_id}/matches`}/>
-                <SidebarItem name="Players" url={`${squad_id}/players`}/>
+                <SidebarItem name="Matches" url={`${FRONTEND_API_URL}/tournament/${t_id}/squads/${squad_id}/matches`}/>
+                <SidebarItem name="Players" url={`${FRONTEND_API_URL}/tournament/${t_id}/squads/${squad_id}/players`}/>
             </div>
         );
     }

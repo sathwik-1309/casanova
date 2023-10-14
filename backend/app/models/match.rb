@@ -159,6 +159,47 @@ class Match < ApplicationRecord
         arr
     end
 
+    def turning_point
+        # score,for, overs, req rr, crr, equation (runs, balls)
+        inn = self.inn2
+        target = self.inn1.score + 1
+        equation = {
+            'runs_left' => target,
+            'balls_left' => 120,
+            'crr' => 0,
+            'rrr' => Util.get_rr(target, 120).to_f,
+            'score' => 0,
+            'for' => 0,
+            'delivery' => 0.0,
+            'bat_team' => self.inn2.bat_team.get_abb,
+            'color' => Util.get_team_color(self.tournament_id, self.winner.abbrevation)
+        }
+        defended = self.inn1.bat_team_id == self.winner_id ? true : false
+        balls = inn.balls
+        temp = []
+        balls.each do |ball|
+            runs_left = target - ball.score
+            balls_bowled = Util.overs_to_balls(ball.delivery)
+            balls_left = 120 - balls_bowled
+            req_rate = Util.get_rr(runs_left, balls_left).to_f
+            temp << req_rate
+            check = defended ? equation['rrr'] > req_rate : equation['rrr'] < req_rate
+            if check and ball.delivery < 19.6
+                equation['runs_left'] = runs_left
+                equation['balls_left'] = balls_left
+                equation['crr'] = Util.get_rr(ball.score, balls_bowled)
+                equation['rrr'] = req_rate
+                equation['score'] = ball.score
+                equation['for'] = ball.for
+                equation['delivery'] = Util.point_6_fix(ball.delivery)
+            end
+        end
+        # byebug
+        equation['statement'] = "#{self.winner.get_abb} #{defended ? 'defended' : 'chased'} #{defended ? target-1 : target} with #{defended ? 'LOWEST RR' : 'HIGHEST RR'} of #{equation['rrr']}"
+        equation['font'] = self.tournament.get_tour_font
+        equation
+    end
+
     def self.innings_phase_performers_hash(innings, phase)
         case phase
         when 'powerplay'

@@ -7,6 +7,7 @@ import PerformanceBox from '../../Player/PerformanceBox/PerformanceBox';
 import { BACKEND_API_URL } from '../../../my_constants'
 import MilestoneBox from "../MilestoneBox/MilestoneBox";
 import HighlightsBox from '../HighlightsBox/HighlightsBox'
+import TurningPoint from '../TurningPoint/TurningPoint';
 
 function Summary(props) {
 
@@ -53,6 +54,7 @@ function Summary(props) {
                     ))}
                 </div>
             </div>
+            <TurningPoint data={data.turning_point}/>
             <HighlightsBox data={data.highlights} font={data.tour}/>
             <MilestoneBox data={data.milestones} font={data.tour}/>
         </div>

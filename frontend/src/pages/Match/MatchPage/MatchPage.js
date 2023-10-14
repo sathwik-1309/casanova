@@ -9,6 +9,7 @@ import './MatchPage.css'
 import Worm from "../../../components/Match/Worm/Worm";
 import Commentry from "../../../components/Match/Commentry/Commentry";
 import InningsProgression from '../../../components/Match/InningsProgression/InningsProgression';
+import TurningPoint from '../../../components/Match/TurningPoint/TurningPoint';
 
 function MatchPage() {
     let { m_id } = useParams();

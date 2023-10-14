@@ -1,0 +1,12 @@
+.turning-point {
+  margin: 20px 0;
+  padding: 3px;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.turning-point-boxes {
+  border-radius: 3px;
+}
+.turning-point-statement {
+  margin: 2px;
+}

@@ -61,6 +61,7 @@ class MatchController < ApplicationController
         arr2 = ml_messages[Util.get_team_color(match.tournament_id, match.inn1.bow_team.abbrevation)] || []
         hash["milestones"] =  arr1 + arr2
         hash['highlights'] = match.get_highlights_hash
+        hash['turning_point'] = match.turning_point
         render(:json => Oj.dump(hash))
     end
 

@@ -225,6 +225,15 @@ module Util
 
     end
 
+    def self.point_6_fix(overs)
+        o = overs.to_s.split(".")
+        if o[1] == "6"
+            return "#{o[0].to_i+1}.0"
+        else
+            return overs
+        end
+    end
+
 
 end
 

@@ -373,7 +373,7 @@ module Helper
     def self.upcoming_match_team_to_hash(squad)
         hash = {}
         hash['teamname'] = squad.get_abb
-        hash['color'] = squad.abbrevation
+        hash['color'] = Util.get_team_color(squad.tournament_id, squad.abbrevation)
         hash['captain_id'] = squad.captain_id
         hash
     end

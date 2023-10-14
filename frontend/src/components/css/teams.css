@@ -199,6 +199,14 @@
     background-color: rgb(33, 48, 85);
     color: #fefefe;
 }
+.eng7_2 {
+    background-color: #1b4fa0;
+    color: #fefefe;
+}
+.eng7_1 {
+    background-color: rgb(197, 48, 54);
+    color: #fefefe;
+}
 .eng1_1 {
     background-color: #d70000;
     color: #fefefe;
@@ -213,12 +221,12 @@
 }
 
 .sa1 {
-    background-color: rgb(0, 147, 76);
-    color: #fefefe;
+    background-color: #03674c;
+    color: white;
 }
 .sa2 {
-    background-color: rgb(253, 188, 53);
-    color: rgb(0,0,0);
+    background-color: #ecda36;
+    color: #03674c;
 }
 .sa1_1 {
     background-color: #008700;
@@ -226,6 +234,22 @@
 }
 .sa1_2 {
     background-color: #ffd700;
+    color: rgb(0,0,0);
+}
+.sa4_1 {
+    background-color: rgb(0, 147, 76);
+    color: #fefefe;
+}
+.sa4_2 {
+    background-color: rgb(253, 188, 53);
+    color: rgb(0,0,0);
+}
+.sa5_1 {
+    background-color: rgb(0, 147, 76);
+    color: #fefefe;
+}
+.sa5_2 {
+    background-color: rgb(253, 188, 53);
     color: rgb(0,0,0);
 }
 .sa3 {
@@ -244,6 +268,14 @@
     background-color: rgb(236, 46, 53);
     color: #fefefe;
 }
+.ban7_1 {
+    background-color: #0c6f39;
+    color: #fefefe;
+}
+.ban7_2 {
+    background-color: #e02e2c;
+    color: #fefefe;
+}
 .ban3,
 .ban4 {
     border: 1px solid white;
@@ -257,6 +289,15 @@
     background-color: rgb(197, 48, 54);
     color: #fefefe;
 }
+.afg7_1 {
+    background-color: #006bb0;
+    color: #fefefe;
+}
+.afg7_2 {
+    background-color: #be032a;
+    color: #fefefe;
+}
+
 .afg3,
 .afg4 {
     border: 1px solid white;

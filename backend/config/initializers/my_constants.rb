@@ -37,10 +37,10 @@ PLAYER_TROPHIES_INIT = {
 TC_TOUR_1 = ["ind", "pak", "wi", "sa", "eng", "aus"]
 TC_TOUR_2 = []
 TC_TOUR_3 = []
-TC_TOUR_4 = ["ind", "pak", "aus"]
-TC_TOUR_5 = ["ind", "pak", "aus", "nz", "wi"]
+TC_TOUR_4 = ["ind", "pak", "aus", "sa"]
+TC_TOUR_5 = ["ind", "pak", "aus", "nz", "wi", "sa"]
 TC_TOUR_6 = []
-TC_TOUR_7 = ["nz"]
+TC_TOUR_7 = ["nz", "ban", "eng", "afg"]
 
 WORM_COLORS = {
   'ind' => '#226bbf',

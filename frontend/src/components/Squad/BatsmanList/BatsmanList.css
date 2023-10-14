@@ -1,5 +1,6 @@
 .batsman-list {
   padding: 2px;
+  height: fit-content;
 }
 
 .batsman-list-item{

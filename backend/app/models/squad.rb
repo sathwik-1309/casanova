@@ -74,6 +74,7 @@ class Squad < ApplicationRecord
         temp['name'] = self.get_teamname
         temp['abbrevation'] = self.get_abb
         temp['color'] = Util.get_team_color(self.tournament_id, self.abbrevation)
+        temp['code'] = self.abbrevation
         temp['id'] = self.id
         temp
     end
@@ -91,7 +92,7 @@ class Squad < ApplicationRecord
         games = Schedule.where("squad1_id = ? or squad2_id =?", squad.id, squad.id)
         games.each do |schedule|
             temp = schedule.schedule_box
-            if temp['squad1']['color'] != squad.abbrevation
+            if temp['squad1']['code'] != squad.abbrevation
                 temp['squad1'], temp['squad2'] = temp['squad2'], temp['squad1']
             end
             arr << temp

@@ -60,7 +60,8 @@ class Inning < ApplicationRecord
         inn['scores'] = [0] + team_scores
         inn['wickets'] = wicket_overs.uniq
         inn['color'] = Util.get_team_color(self.tournament_id, bat_team.abbrevation)
-        inn['worm_color'] = WORM_COLORS[Util.get_team_color(self.tournament_id, bat_team.abbrevation)]
+        # inn['worm_color'] = WORM_COLORS[Util.get_team_color(self.tournament_id, bat_team.abbrevation)]
+        inn['worm_color'] = WORM_COLORS[bat_team.abbrevation]
         inn['rr'] = self.get_rr
         inn['score'] = Util.get_score(self.score, self.for)
         inn['overs'] = self.overs

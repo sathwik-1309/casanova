@@ -8,8 +8,18 @@ import BowlerList from '../../Squad/BowlerList/BowlerList';
 
 function TBallStats(props) {
     let { t_id } = useParams();
+    let {tour_class} = useParams();
 
-    let url = `${BACKEND_API_URL}/tournament/${t_id}/ball_stats`
+    let url;
+    let box_url;
+    if (props.t_id){
+        url = `${BACKEND_API_URL}/tournament/${t_id}/ball_stats`
+        box_url = `ball_stats2?tour=${t_id}`
+    }else {
+        url = `${BACKEND_API_URL}/tournaments/${tour_class}/ball_stats`
+        box_url = `ball_stats2?tour_class=${tour_class}`
+    } 
+
     const [data, setData] = useState(null);
 
     useEffect(() => {
@@ -46,7 +56,7 @@ function TBallStats(props) {
             </div>
             <div className='flex-row gap-40'>
                 {selected.map((p_id, index) => (
-                    <BallStats url={`${BACKEND_API_URL}/player/${p_id}/ball_stats2?tour=${t_id}`} header={true} pic={true}/>
+                    <BallStats url={`${BACKEND_API_URL}/player/${p_id}/${box_url}`} header={true} pic={true}/>
                 ))}
             </div>
             <div className='w-fit m-hort-500'>

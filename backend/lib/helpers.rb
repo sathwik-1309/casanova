@@ -401,7 +401,7 @@ module Helper
         end
     end
 
-    def self.construct_tour_class_bat_stats(stats, field, header, tour_class)
+    def self.construct_tour_class_bat_stats(stats, field, header, tour_class, field2='innings')
         box = {}
         box['header'] = header
         box['data'] = []
@@ -418,7 +418,7 @@ module Helper
             temp['pos'] = pos
             temp['teamname'] = team.get_abb
             temp['data1'] = stat.send(field.to_sym)
-            temp['data2'] = "Innings: #{stat.innings}"
+            temp['data2'] = "#{field2.titleize}: #{stat.send(field2.to_sym)}"
             box['data'] << temp
         end
         box

@@ -44,12 +44,16 @@ function BatsmanListItem (props) {
 function BatsmanList (props) {
   const color = props.meta ? props.meta.color : 'bg-white c-black '
   return (
-    <div className='flex-col batsman-list bg-white bg-shadow'>
+    <div className='flex-col batsman-list bg-white bg-shadow default-font'>
       <div className='bg-dark c-white font-600 font-1 flex-centered h-40 mb-2'>BATSMEN</div>
       <div className={`flex-row font-0_9 font-600 ${color}2 h-50`}>
         <div className='w-40 flex-centered'> #</div>
         <div className='w-60'></div>
-        <div className='w-150 flex-centered'>NAME</div>
+        {
+          !props.meta &&
+          <div className='w-60 flex-centered'>TEAM</div>
+        }
+        <div className='w-180 flex-centered'>NAME</div>
         <div className='w-40 flex-centered'>INN</div>
         <div className='w-60 flex-centered'>RUNS</div>
         <div className='w-80 flex-centered'>SR</div>

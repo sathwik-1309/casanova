@@ -10,10 +10,13 @@ function TBatStats(props) {
     let {tour_class} = useParams();
 
     let url;
+    let box_url;
     if (props.t_id){
         url = `${BACKEND_API_URL}/tournament/${t_id}/bat_stats`
+        box_url = `bat_stats2?tour=${t_id}`
     }else {
         url = `${BACKEND_API_URL}/tournaments/${tour_class}/bat_stats`
+        box_url = `bat_stats2?tour_class=${tour_class}`
     } 
     const [data, setData] = useState(null);
     // const [listcard, setListcard] = useState(null)
@@ -63,12 +66,12 @@ function TBatStats(props) {
             </div>
             <div className='flex-row gap-40'>
                 {selected.map((p_id, index) => (
-                <BatStats url={`${BACKEND_API_URL}/player/${p_id}/bat_stats2?tour=${t_id}`} header={true} pic={true}/>
+                <BatStats url={`${BACKEND_API_URL}/player/${p_id}/${box_url}`} header={true} pic={true}/>
                 ))}
             </div>
-            {/* <div className='w-fit m-hort-500'>
+            <div className='w-fit m-hort-500'>
                 <BatsmanList bat_stats={data.individual_bat_stats}/>
-            </div> */}
+            </div>
             
         </div>
     )

@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   scope :tournaments do
     get '/:tour_class' => 'tournament#tournaments_home'
     get '/:tour_class/bat_stats' => 'tournament#tour_class_bat_stats'
+    get '/:tour_class/ball_stats' => 'tournament#tour_class_ball_stats'
   end
 
   scope :search do

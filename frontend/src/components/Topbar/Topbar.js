@@ -120,6 +120,7 @@ function Topbar(props) {
     let { m_id } = useParams();
     let { p_id } = useParams();
     let { inn_no } = useParams();
+    let { tour_class } = useParams();
     let topbar = <></>
     let toggle = <></>
     switch (props.s_id) {
@@ -130,6 +131,13 @@ function Topbar(props) {
                 <TopbarItem name='bat_stats' link={`${FRONTEND_API_URL}/tournament/${t_id}/bat_stats`}/>
                 <TopbarItem name='ball_stats' link={`${FRONTEND_API_URL}/tournament/${t_id}/ball_stats`}/>
                 <TopbarItem name='schedule' link={`${FRONTEND_API_URL}/tournament/${t_id}/schedule`}/>
+            </>
+            break;
+        case 'tour_class':
+            topbar = <>
+                <TopbarItem name='home' link={`${FRONTEND_API_URL}/tournaments/${tour_class}`}/>
+                <TopbarItem name='bat_stats' link={`${FRONTEND_API_URL}/tournaments/${tour_class}/bat_stats`}/>
+                <TopbarItem name='ball_stats' link={`${FRONTEND_API_URL}/tournaments/${tour_class}/ball_stats`}/>
             </>
             break;
         case 'match':

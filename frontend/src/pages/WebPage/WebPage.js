@@ -10,6 +10,10 @@ function WebPage(props) {
             classname1 += " webpage_layout_item2_margin"
             topbar = <Topbar s_id='tour'/>
             break;
+        case "tour_class":
+            classname1 += " webpage_layout_item2_margin"
+            topbar = <Topbar s_id='tour_class'/>
+            break;
         case "match":
             classname1 += " webpage_layout_item2_margin"
             topbar = <Topbar s_id='match'/>

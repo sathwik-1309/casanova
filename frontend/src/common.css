@@ -53,6 +53,12 @@
 .justify-evenly {
     justify-content: space-evenly;
 }
+.justify-start {
+    justify-content: flex-start;
+}
+.justify-end {
+    justify-content: flex-end;
+}
 .flex {
     display: flex;
 }
@@ -159,6 +165,9 @@
 }
 .h-50 {
     height: 50px;
+}
+.h-60 {
+    height: 60px;
 }
 .h-70 {
     height: 70px;
@@ -282,6 +291,9 @@
 .w-33p {
     width: 33%;
 }
+.w-fit {
+    width: fit-content;
+}
 
 /*padding*/
 .p-3 {
@@ -335,6 +347,12 @@
 .m-10{
     margin: 10px;
 
+}
+.ml-200{
+    margin-left: 200px;
+}
+.m-hort-500{
+    margin: 0 400px;
 }
 .mb-1 {
     margin-bottom: 1px;

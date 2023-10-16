@@ -401,6 +401,29 @@ module Helper
         end
     end
 
+    def self.construct_tour_class_bat_stats(stats, field, header, tour_class)
+        box = {}
+        box['header'] = header
+        box['data'] = []
+        temp_stats = stats
+        pos = 0
+        temp_stats.each do|stat|
+            pos += 1
+            temp = {}
+            player = stat.player
+            temp['p_id'] = stat.player_id
+            temp['name'] = player.fullname.titleize
+            team = player.get_tour_class_team(tour_class)
+            temp['color'] = team.abbrevation
+            temp['pos'] = pos
+            temp['teamname'] = team.get_abb
+            temp['data1'] = stat.send(field.to_sym)
+            temp['data2'] = "Innings: #{stat.innings}"
+            box['data'] << temp
+        end
+        box
+    end
+
     def self.construct_ball_stats_hash2(spells)
         balls = 0
         runs = 0

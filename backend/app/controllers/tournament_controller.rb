@@ -157,8 +157,10 @@ class TournamentController < ApplicationController
     #   "header"=> "Highest Boundary %",
     #   "data"=>Helper.format_individual_stats(bat_stats_hash_bp[0..4], "boundary_p", "runs", t_id)}
 
-    hash["tour"] = Tournament.find(t_id).get_tour_font
+    tour = Tournament.find(t_id)
+    hash["tour"] = tour.get_tour_font
     hash["bat_stats"] = bat_stats
+    hash["individual_bat_stats"] = tour.individual_bat_stats
     render(:json => Oj.dump(hash))
   end
 
@@ -215,8 +217,10 @@ class TournamentController < ApplicationController
       "header"=> "Lowest Boundary %",
       "data"=> Helper.format_individual_stats(ball_stats_hash_bp[0..4], "boundary_p", "eco", t_id)}
 
-    hash["tour"] = Tournament.find(t_id).get_tour_font
+    tour = Tournament.find(t_id)
+    hash["tour"] = tour.get_tour_font
     hash["ball_stats"] = ball_stats
+    hash["individual_ball_stats"] = tour.individual_ball_stats
     render(:json => Oj.dump(hash))
   end
 
@@ -396,6 +400,22 @@ class TournamentController < ApplicationController
     tour.schedules.order(order: :asc).each do |schedule|
       arr << schedule.schedule_box
     end
+    render(:json => Oj.dump(arr))
+  end
+
+  def tour_class_home
+  end
+
+  def tour_class_bat_stats
+    tour_class = params[:tour_class]
+    stats = BatStat.where(sub_type: tour_class).where("runs > 0").order(runs: :desc)
+    arr = {}
+    boxes = []
+    boxes << Helper.construct_tour_class_bat_stats(stats[0..4], 'runs', "Most Runs", tour_class)
+    bat_stats = stats.where("runs > 100").order(sr: :desc)
+    boxes << Helper.construct_tour_class_bat_stats(bat_stats[0..4], 'sr', "Highest Strike-rate", tour_class)
+    arr['bat_stats'] = {}
+    arr['bat_stats']['boxes'] = boxes
     render(:json => Oj.dump(arr))
   end
 

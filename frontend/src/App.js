@@ -25,6 +25,7 @@ import Create from "./pages/Create/Create";
 import SquadPage from "./pages/Squad/SquadPage/SquadPage";
 import SquadsPage from "./pages/SquadsPage/SquadsPage";
 import TeamPage from "./pages/Team/TeamPage/TeamPage";
+import TournamentsHome from "./pages/Tournament/TournamentsPage/TournamentsHome/TournamentsHome";
 
 
 function App() {
@@ -53,11 +54,12 @@ function App() {
       <Route path="/tournament/:t_id/squads/:squad_id/players" element={<WebPage page={<PlayersPage squad_id={true}/>} s_id={'squad'}/>} />
       <Route path="/tournament/:t_id/squads/:squad_id/matches" element={<WebPage page={<MatchesPage squad_id={true}/>} s_id={'squad'}/>} />
 
-      <Route path="/tournaments/:tour_class" element={<WebPage page={<TournamentsPage/>} s_id='tour_class'/>} />
+      <Route path="/tournaments/:tour_class" element={<WebPage page={<TournamentsHome/>} s_id='tour_class'/>} />
       <Route path="/tournaments/:tour_class/matches" element={<WebPage page={<MatchesPage tour_class={true}/>} s_id='tour_class' />}  />
       <Route path="/tournaments/:tour_class/venues" element={<WebPage page={<VenuesPage tour_class={true}/>} s_id='tour_class' />}  />
       <Route path="/tournaments/:tour_class/teams" element={<WebPage page={<TeamsPage tour_class={true}/>} s_id='tour_class' />}  />
       <Route path="/tournaments/:tour_class/players" element={<WebPage page={<PlayersPage tour_class={true}/>} s_id='tour_class' />}  />
+      <Route path="/tournaments/:tour_class/:page" element={<WebPage page={<TournamentsPage/>} s_id={'tour_class'}/>} />
 
       <Route path="/teams" element={<WebPage page={<TeamsPage/>}/>}  />
       <Route path="/teams/:team_id" element={<WebPage page={<TeamPage/>} s_id={'team'}/>} />

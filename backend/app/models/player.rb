@@ -172,6 +172,17 @@ class Player < ApplicationRecord
         return h
     end
 
+    def get_tour_class_team(tour_class)
+        case tour_class
+        when 'wt20'
+            return Team.find_by_id(self.country_team_id)
+        when 'csl'
+            return Team.find_by_id(self.csl_team_id)
+        when 'ipl'
+            return Team.find_by_id(self.ipl_team_id)
+        end
+    end
+
     def trophy_cabinet_hash
         h = {}
         h['motm'] = "⭐️" * self.trophies['motm']

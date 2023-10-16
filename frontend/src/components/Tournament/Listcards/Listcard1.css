@@ -3,6 +3,7 @@
     flex-direction: row;
     height: fit-content;
     width: fit-content;
+    padding-right: 30px;
 }
 .listcard_item_sl_no{
     text-align: center;

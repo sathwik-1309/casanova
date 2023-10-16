@@ -4,6 +4,7 @@ import Listcards from "../Listcards/Listcards";
 import { BACKEND_API_URL } from './../../../my_constants'
 import BatStats from "../../Player/Stats/BatStats/BatStats";
 import BallStats from "../../Player/Stats/BallStats/BallStats";
+import BowlerList from '../../Squad/BowlerList/BowlerList';
 
 function TBallStats(props) {
     let { t_id } = useParams();
@@ -38,7 +39,7 @@ function TBallStats(props) {
     return (
 
         <div className={`tournament_ball_stats flex-col ${data.tour}`}>
-            <div className='flex-row gap-140'>
+            <div className='flex-row gap-140 ml-200'>
                 {data.ball_stats.boxes.map((lists, index) => (
                     <Listcards key={index} data={lists} func={handleclick}/>
                 ))}
@@ -47,6 +48,9 @@ function TBallStats(props) {
                 {selected.map((p_id, index) => (
                     <BallStats url={`${BACKEND_API_URL}/player/${p_id}/ball_stats2?tour=${t_id}`} header={true} pic={true}/>
                 ))}
+            </div>
+            <div className='w-fit m-hort-500'>
+                <BowlerList ball_stats={data.individual_ball_stats}/>
             </div>
         </div>
     )

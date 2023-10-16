@@ -5,14 +5,32 @@ import { TitleCase } from '../../../my_constants'
 
 function BatsmanListItem (props) {
   const data = props.data
-  const meta = props.meta
   const player = data.player
-  const opacity = props.index%2 == 0 ? '' : 'batsman-list-opacity'
-  return (
-    <div className={`batsman-list-item flex-row ${meta.color}1 font-1 font-500 ${opacity}`}>
-      <div className='w-40 flex-centered'>{props.index+1}</div>
+  let color;
+  let shadow;
+  let opacity_index;
+  let content;
+  if (props.meta){
+    color = props.meta.color
+    shadow = ''
+    opacity_index = 2
+    content = <Photocard p_id={player.id} height='60px'/>
+  }else {
+    color = data.color
+    shadow = 'bg-shadow'
+    opacity_index = 1
+    content = <div className='flex-row'>
       <Photocard p_id={player.id} height='60px'/>
-      <div className='w-150 pl-2 font-600'>{TitleCase(player.fullname)}</div>
+      <div className='w-60 font-0_8 font-400 flex-centered justify-center'>{data.teamname}</div>
+      </div>
+    // content = <div className='w-60 font-0_8 font-400 flex-centered justify-start'>{data.teamname}</div>
+  }
+  const opacity = props.index%opacity_index == 0 ? '' : 'batsman-list-opacity'
+  return (
+    <div className={`batsman-list-item flex-row ${color}1 font-1 h-60 font-500 ${opacity} ${shadow}`}>
+      <div className='w-40 flex-centered'>{props.index+1}</div>
+      {content}
+      <div className='w-180 pl-5 font-600'>{TitleCase(player.fullname)}</div>
       <div className='w-40 flex-centered'>{data.innings}</div>
       <div className='w-60 flex-centered font-600 font-1_1'>{data.runs}</div>
       <div className='w-80 flex-centered'>{data.sr}</div>
@@ -24,10 +42,11 @@ function BatsmanListItem (props) {
 }
 
 function BatsmanList (props) {
+  const color = props.meta ? props.meta.color : 'bg-white c-black '
   return (
     <div className='flex-col batsman-list bg-white bg-shadow'>
       <div className='bg-dark c-white font-600 font-1 flex-centered h-40 mb-2'>BATSMEN</div>
-      <div className={`flex-row font-0_9 font-600 ${props.meta.color}2 h-50`}>
+      <div className={`flex-row font-0_9 font-600 ${color}2 h-50`}>
         <div className='w-40 flex-centered'> #</div>
         <div className='w-60'></div>
         <div className='w-150 flex-centered'>NAME</div>

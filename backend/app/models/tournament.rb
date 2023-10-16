@@ -112,6 +112,38 @@ class Tournament < ApplicationRecord
         end
     end
 
+    def individual_bat_stats
+        arr = []
+        bat_stats = BatStat.where(sub_type: "tour_#{self.id}").where("runs > 0").order(runs: :desc)
+        bat_stats.each do |stat|
+            temp = stat.attributes.slice('matches', 'innings', 'runs', 'sr', 'avg', 'c4', 'c6', 'thirties', 'fifties', 'hundreds', 'boundary_p', 'dot_p')
+            temp['player'] = stat.player.attributes.slice('id', 'name', 'fullname')
+            best = Inning.find_by_id(stat.best_id).scores.find_by(player_id: stat.player_id)
+            temp['best'] = best.score_box            
+            squad = SquadPlayer.find_by(tournament_id: self.id, player_id: stat.player_id).squad
+            temp['color'] = Util.get_team_color(self.id ,squad.abbrevation)
+            temp['teamname'] = squad.get_abb
+            arr << temp
+        end
+        arr
+    end
+
+    def individual_ball_stats
+        arr = []
+        stats = BallStat.where(sub_type: "tour_#{self.id}").where("overs > 0").order(wickets: :desc, economy: :asc)
+        stats.each do |stat|
+            temp = stat.attributes.slice('matches', 'innings', 'overs', 'maidens', 'wickets', 'economy', 'sr', 'avg', 'three_wickets', 'five_wickets', 'boundary_p', 'dot_p')
+            temp['player'] = stat.player.attributes.slice('id', 'name', 'fullname')
+            best = Inning.find_by_id(stat.best_id).spells.find_by(player_id: stat.player_id)
+            temp['best'] = best.spell_box
+            squad = SquadPlayer.find_by(tournament_id: self.id, player_id: stat.player_id).squad
+            temp['color'] = Util.get_team_color(self.id ,squad.abbrevation)
+            temp['teamname'] = squad.get_abb
+            arr << temp
+        end
+        arr
+    end
+
     def self.create_using_json(json)
         t = Tournament.new(name: json['name'])
         t.season = Tournament.where(name: json['name']).last.season + 1

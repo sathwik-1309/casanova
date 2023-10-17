@@ -39,7 +39,7 @@
     gap: 140px;
 }
 
-.flex-centered {
+.flex-centered {    
     display: flex;
     align-items: center;
     justify-content: center;

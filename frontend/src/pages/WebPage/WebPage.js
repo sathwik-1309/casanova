@@ -6,6 +6,10 @@ function WebPage(props) {
     let topbar = <></>
     let classname1 = "webpage_layout_item2"
     switch (props.s_id) {
+        case "overall":
+            classname1 += " webpage_layout_item2_margin"
+            topbar = <Topbar s_id='overall'/>
+            break;
         case "tour":
             classname1 += " webpage_layout_item2_margin"
             topbar = <Topbar s_id='tour'/>

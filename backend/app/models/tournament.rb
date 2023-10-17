@@ -128,9 +128,25 @@ class Tournament < ApplicationRecord
         arr
     end
 
+    def self.overall_individual_bat_stats
+        arr = []
+        bat_stats = BatStat.where(sub_type: "overall").where("runs > 0").order(runs: :desc).limit(20)
+        bat_stats.each do |stat|
+            temp = stat.attributes.slice('matches', 'innings', 'runs', 'sr', 'avg', 'c4', 'c6', 'thirties', 'fifties', 'hundreds', 'boundary_p', 'dot_p')
+            temp['player'] = stat.player.attributes.slice('id', 'name', 'fullname')
+            best = Inning.find_by_id(stat.best_id).scores.find_by(player_id: stat.player_id)
+            temp['best'] = best.score_box
+            country = stat.player.country       
+            temp['color'] = country.abbrevation
+            temp['teamname'] = country.get_abb
+            arr << temp
+        end
+        arr
+    end
+
     def self.tour_class_individual_bat_stats(tour_class)
         arr = []
-        bat_stats = BatStat.where(sub_type: tour_class).where("runs > 0").order(runs: :desc)
+        bat_stats = BatStat.where(sub_type: tour_class).where("runs > 0").order(runs: :desc).limit(20)
         bat_stats.each do |stat|
             temp = stat.attributes.slice('matches', 'innings', 'runs', 'sr', 'avg', 'c4', 'c6', 'thirties', 'fifties', 'hundreds', 'boundary_p', 'dot_p')
             temp['player'] = stat.player.attributes.slice('id', 'name', 'fullname')
@@ -160,9 +176,25 @@ class Tournament < ApplicationRecord
         arr
     end
 
+    def self.overall_individual_ball_stats
+        arr = []
+        stats = BallStat.where(sub_type: "overall").where("overs > 0").order(wickets: :desc, economy: :asc).limit(20)
+        stats.each do |stat|
+            temp = stat.attributes.slice('matches', 'innings', 'overs', 'maidens', 'wickets', 'economy', 'sr', 'avg', 'three_wickets', 'five_wickets', 'boundary_p', 'dot_p')
+            temp['player'] = stat.player.attributes.slice('id', 'name', 'fullname')
+            best = Inning.find_by_id(stat.best_id).spells.find_by(player_id: stat.player_id)
+            temp['best'] = best.spell_box
+            country = stat.player.country
+            temp['color'] = country.abbrevation
+            temp['teamname'] = country.get_abb
+            arr << temp
+        end
+        arr
+    end
+
     def self.tour_class_individual_ball_stats(tour_class)
         arr = []
-        stats = BallStat.where(sub_type: tour_class).where("overs > 0").order(wickets: :desc, economy: :asc)
+        stats = BallStat.where(sub_type: tour_class).where("overs > 0").order(wickets: :desc, economy: :asc).limit(20)
         stats.each do |stat|
             temp = stat.attributes.slice('matches', 'innings', 'overs', 'maidens', 'wickets', 'economy', 'sr', 'avg', 'three_wickets', 'five_wickets', 'boundary_p', 'dot_p')
             temp['player'] = stat.player.attributes.slice('id', 'name', 'fullname')

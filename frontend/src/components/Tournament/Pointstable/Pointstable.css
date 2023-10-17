@@ -89,6 +89,7 @@
     flex-direction: row;
     height: fit-content;
     width: fit-content;
+    margin-top: 50px;
 }
 .pt_journey_box {
     display: flex;

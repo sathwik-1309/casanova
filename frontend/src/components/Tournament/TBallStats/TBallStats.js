@@ -15,10 +15,13 @@ function TBallStats(props) {
     if (props.t_id){
         url = `${BACKEND_API_URL}/tournament/${t_id}/ball_stats`
         box_url = `ball_stats2?tour=${t_id}`
-    }else {
+    }else if (props.tour_class) {
         url = `${BACKEND_API_URL}/tournaments/${tour_class}/ball_stats`
         box_url = `ball_stats2?tour_class=${tour_class}`
-    } 
+    }else {
+        url = `${BACKEND_API_URL}/ball_stats`
+        box_url = `ball_stats2`
+    }
 
     const [data, setData] = useState(null);
 

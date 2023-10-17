@@ -3,6 +3,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  get '/bat_stats' => 'tournament#overall_bat_stats'
+  get '/ball_stats' => 'tournament#overall_ball_stats'
+  
   scope :match do
     get '/:m_id/summary' => 'match#summary'
     get '/:m_id/:inn_no/scorecard' => 'match#scorecard'

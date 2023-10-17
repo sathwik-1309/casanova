@@ -14,10 +14,14 @@ function TBatStats(props) {
     if (props.t_id){
         url = `${BACKEND_API_URL}/tournament/${t_id}/bat_stats`
         box_url = `bat_stats2?tour=${t_id}`
-    }else {
+    }else if (props.tour_class) {
         url = `${BACKEND_API_URL}/tournaments/${tour_class}/bat_stats`
         box_url = `bat_stats2?tour_class=${tour_class}`
-    } 
+    } else {
+        url = `${BACKEND_API_URL}/bat_stats`
+        box_url = `bat_stats2`
+    }
+
     const [data, setData] = useState(null);
     // const [listcard, setListcard] = useState(null)
 

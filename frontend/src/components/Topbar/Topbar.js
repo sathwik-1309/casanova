@@ -106,6 +106,18 @@ function TopbarItem(props) {
                 classname1 = classname1 + ' topbar_selected'
             }
             break;
+        case "bat_meta":
+            name = "BATTING META"
+            if (selected === props.name) {
+                classname1 = classname1 + ' topbar_selected'
+            }
+            break;
+        case "ball_meta":
+            name = "BOWLING META"
+            if (selected === props.name) {
+                classname1 = classname1 + ' topbar_selected'
+            }
+            break;
     }
     return (
         <a className={classname1} href={link}>
@@ -124,6 +136,15 @@ function Topbar(props) {
     let topbar = <></>
     let toggle = <></>
     switch (props.s_id) {
+        case 'overall':
+            topbar = <>
+                <TopbarItem name='home' link={`${FRONTEND_API_URL}/`}/>
+                <TopbarItem name='bat_stats' link={`${FRONTEND_API_URL}/bat_stats`}/>
+                <TopbarItem name='ball_stats' link={`${FRONTEND_API_URL}/ball_stats`}/>
+                <TopbarItem name='bat_meta' link={`${FRONTEND_API_URL}/meta/batting`}/>
+                <TopbarItem name='ball_meta' link={`${FRONTEND_API_URL}/meta/bowling`}/>
+            </>
+            break;
         case 'tour':
             topbar = <>
                 <TopbarItem name='home' link={`${FRONTEND_API_URL}/tournament/${t_id}`}/>

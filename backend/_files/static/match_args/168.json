@@ -1,0 +1,23 @@
+{
+  "m_id": 168,
+  "batted_first": "eng",
+  "batted_second": "afg",
+  "toss": "eng",
+  "pitch": 2,
+  "ball_color": [
+    "y",
+    "y",
+    "y",
+    "y"
+  ],
+  "cap1": "buttler",
+  "cap2": "shahidi",
+  "keeper1": "buttler",
+  "keeper2": "ikram",
+  "winner": "afg",
+  "stage": "league",
+  "venue": "delhi",
+  "motm_player": "azmatullah",
+  "motm_team": "afg",
+  "t_id": 7
+}

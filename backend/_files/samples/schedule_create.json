@@ -8,11 +8,6 @@
       "venue": "mumbai"
     },
     {
-      "team1": "aus",
-      "team2": "nz",
-      "venue": "ahmedabad"
-    },
-    {
       "team1": "ban",
       "team2": "pak",
       "venue": "kolkata"
@@ -22,26 +17,10 @@
       "team2": "afg",
       "venue": "delhi"
     },
-
-    {
-      "team1": "sl",
-      "team2": "sa",
-      "venue": "bengaluru"
-    },
-    {
-      "team1": "ind",
-      "team2": "pak",
-      "venue": "ahmedabad"
-    },
-    {
-      "team1": "eng",
-      "team2": "nz",
-      "venue": "dharamshala"
-    },
     {
       "team1": "aus",
-      "team2": "ban",
-      "venue": "pune"
+      "team2": "nz",
+      "venue": "ahmedabad"
     },
 
     {
@@ -63,6 +42,27 @@
       "team1": "pak",
       "team2": "aus",
       "venue": "bengaluru"
+    },
+
+    {
+      "team1": "sl",
+      "team2": "sa",
+      "venue": "bengaluru"
+    },
+    {
+      "team1": "ind",
+      "team2": "pak",
+      "venue": "ahmedabad"
+    },
+    {
+      "team1": "eng",
+      "team2": "nz",
+      "venue": "dharamshala"
+    },
+    {
+      "team1": "aus",
+      "team2": "ban",
+      "venue": "pune"
     },
 
     {

@@ -33,6 +33,15 @@ function TopbarItem(props) {
             break;
         case "home":
             name = "HOME"
+            if (selected === props.name) {
+                classname1 = classname1 + ' topbar_selected'
+            }
+            break;
+        case "tour_home":
+            name = "TOUR"
+            if (selected === props.name) {
+                classname1 = classname1 + ' topbar_selected'
+            }
             break;
         case "summary":
             name = "SUMMARY"
@@ -118,6 +127,14 @@ function TopbarItem(props) {
                 classname1 = classname1 + ' topbar_selected'
             }
             break;
+        case "head_to_head":
+            name = "H2H"
+            if (selected === props.name) {
+                classname1 = classname1 + ' topbar_selected'
+            }
+            break;
+            
+
     }
     return (
         <a className={classname1} href={link}>
@@ -133,6 +150,8 @@ function Topbar(props) {
     let { p_id } = useParams();
     let { inn_no } = useParams();
     let { tour_class } = useParams();
+    let { squad_id } = useParams();
+    let { team_id } = useParams();
     let topbar = <></>
     let toggle = <></>
     switch (props.s_id) {
@@ -188,9 +207,17 @@ function Topbar(props) {
             break;
         case 'squad':
             topbar = <>
-                <TopbarItem name='home' link={`${FRONTEND_API_URL}/tournament/${t_id}`}/>
-                
+                <TopbarItem name='tour_home' link={`${FRONTEND_API_URL}/tournament/${t_id}`}/>
+                <TopbarItem name='home' link={`${FRONTEND_API_URL}/tournament/${t_id}/squads/${squad_id}`}/>
+                <TopbarItem name='head_to_head' link={`${FRONTEND_API_URL}/tournament/${t_id}/squads/${squad_id}/head_to_head`}/>
             </>
+            break;
+        case 'team':
+            topbar = <>
+                <TopbarItem name='home' link={`${FRONTEND_API_URL}/teams/${team_id}`}/>
+                <TopbarItem name='head_to_head' link={`${FRONTEND_API_URL}/teams/${team_id}/head_to_head`}/>
+            </>
+            break;
     }
     return (
         <div className='topbar default-font font-0_9'>

@@ -68,6 +68,8 @@ Rails.application.routes.draw do
     get '' => 'team#teams'
     get '/player_create' => 'team#player_create'
     get '/:team_id/team_page' => 'team#team_page'
+    get '/head_to_head' => 'team#head_to_head'
+    get '/head_to_head_detailed' => 'team#head_to_head_detailed'
   end
 
   scope :venues do

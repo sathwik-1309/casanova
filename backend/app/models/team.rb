@@ -125,4 +125,10 @@ class Team < ApplicationRecord
         hash
     end
 
+    def matches
+        squad_ids = self.squads.pluck(:id)
+        matches = Match.where('winner_id IN (?) OR loser_id IN (?)', squad_ids, squad_ids)
+        matches
+    end
+
 end

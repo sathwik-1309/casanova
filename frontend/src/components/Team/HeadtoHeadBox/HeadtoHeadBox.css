@@ -1,0 +1,16 @@
+.h2h_red {
+  background-color: red;
+}
+.h2h_green {
+  background-color: green;
+}
+.h2h_gray {
+  background-color: gray;
+}
+.record_box {
+  border-radius: 3px;
+  margin-left: 30px;
+}
+.h2hbox {
+  padding-right: 50px;
+}

@@ -1,13 +1,13 @@
 WT20 3
 
-PAK VS BAN
-Kolkata 13-Oct-2023
+ENG VS AFG
+Delhi 20-Oct-2023
 
-PAK:200/7
+ENG:165/7
 
 First Innings-Batting
 Overs:20.0
-EXTRAS: 0(B:0 LB:0 NB:0 WD:0)
+EXTRAS: 1(B:0 LB:0 NB:1 WD:0)
 
 Batsman
 
@@ -23,143 +23,31 @@ B
 
 SR
 
-Imam-ul-Haq
+Bairstow
 
-b Mustafizur
+b Rashid Khan
 
-109
+15
 
-54
-
-17
-
-6
-
-11
-
-201.9
-
-A Shafique
-
-b Shoriful
-
-24
-
-21
-
-10
-
-2
-
-1
-
-114.3
-
-Babar
-
-b Taskin
-
-31
-
-21
-
-7
-
-4
-
-1
-
-147.6
-
-Rizwan
-
-b Taskin
-
-0
-
-1
-
-1
-
-0
-
-0
-
-0.0
-
-Iftikhar
-
-lbw b Mustafizur
+19
 
 5
 
-4
-
-2
-
-1
-
-0
-
-125.0
-
-Saud Shakeel
-
-lbw b Taskin
-
-3
-
-5
-
-4
-
 0
 
 0
 
-60.0
+78.9
 
-Shadab
+Malan
 
-not out
-
-14
-
-4
-
-2
-
-2
-
-1
-
-350.0
-
-Nawaz
-
-b Mustafizur
-
-0
-
-2
-
-2
-
-0
-
-0
-
-0.0
-
-Hassan Ali
-
-not out
+b Farooqi
 
 14
 
 8
 
-4
+1
 
 1
 
@@ -167,7 +55,120 @@ not out
 
 175.0
 
-Haris Rauf
+Root
+
+c Rahmat b Mujeeb
+
+0
+
+2
+
+2
+
+0
+
+0
+
+0.0
+
+Brook
+
+b Mujeeb
+
+0
+
+1
+
+1
+
+0
+
+0
+
+0.0
+
+Moen
+
+lbw b Mujeeb
+
+14
+
+8
+
+3
+
+3
+
+0
+
+175.0
+
+Buttler
+
+b Azmatullah
+
+56
+
+36
+
+5
+
+3
+
+3
+
+155.6
+
+Livingstone
+
+c Rashid Khan b
+Azmatullah
+
+30
+
+29
+
+8
+
+1
+
+1
+
+103.4
+
+Sam Curran
+
+not out
+
+29
+
+14
+
+5
+
+5
+
+0
+
+207.1
+
+Rashid
+
+not out
+
+6
+
+4
+
+2
+
+1
+
+0
+
+150.0
+
+Wood
 
 Did not Bat
 
@@ -183,7 +184,7 @@ Did not Bat
 
 0.0
 
-Shaheen
+Topley
 
 Did not Bat
 
@@ -218,115 +219,137 @@ WD NB 4s
 
 6s
 
-Taskin
-
-4.0
-
-33
-
-3
-
-0
-
-8.3
-
-10
-
-0
-
-0
-
-4
-
-2
-
-Mehidy
-
-4.0
-
-58
-
-0
-
-0
-
-14.5
-
-4
-
-0
-
-0
-
-4
-
-5
-
-Shakib
+Farooqi
 
 4.0
 
 38
 
-0
+1
 
 0
 
 9.5
 
-7
+5
 
 0
 
 0
 
-3
+5
 
-2
+1
 
-Shoriful
+Mujeeb
 
 4.0
 
-37
+25
+
+3
+
+0
+
+6.3
+
+5
+
+0
+
+0
+
+2
+
+0
+
+Azmatullah
+
+3.0
+
+26
+
+2
+
+0
+
+8.7
+
+6
+
+0
+
+0
+
+4
+
+0
+
+Naveen
+
+2.0
+
+26
+
+0
+
+0
+
+13.0
 
 1
 
 0
 
-9.3
-
-11
-
 0
 
 0
 
 3
 
-3
-
-Mustafizur
+Rashid Khan
 
 4.0
 
-34
+29
+
+1
+
+0
+
+7.3
+
+4
+
+0
+
+0
 
 3
 
 0
 
-8.5
+Nabi
 
-10
+3.0
+
+21
 
 0
 
 0
 
-2
+7.0
 
 3
+
+0
+
+1
+
+0
+
+1
 
 First Innings-Fall of Wickets
 No
@@ -341,73 +364,73 @@ Bowler
 
 1
 
-53
+21
 
-6.6
+2.6
 
-A Shafique
+Malan
 
-Shoriful
+Farooqi
 
-2
+2
 
-154
+22
 
-15.2
+3.3
 
-Babar
+Root
 
-Taskin
+Mujeeb
 
-3
+3
 
-154
+22
 
-15.3
+3.4
 
-Rizwan
+Brook
 
-Taskin
+Mujeeb
 
 4
 
-159
+38
 
-16.1
+5.4
 
-Iftikhar
+Moen
 
-Mustafizur
+Mujeeb
 
 5
 
-168
+53
 
-17.2
+7.3
 
-Saud Shakeel
+Bairstow
 
-Taskin
+Rashid Khan
 
 6
 
-186
+127
 
-18.2
+16.2
 
-Imam-ul-Haq
+Livingstone
 
-Mustafizur
+Azmatullah
 
 7
 
-186
+146
 
-18.4
+18.1
 
-Nawaz
+Buttler
 
-Mustafizur
+Azmatullah
 
 First Innings-OVERS
 No
@@ -437,152 +460,152 @@ Runs Wkts Per Ball Score
 19
 20
 
-Taskin
-
-11
-
-0
-
-Mehidy
-
-14
-
-0
-
-Taskin
-
-3
-
-0
-
-Shakib
-
-10
-
-0
-
-Shoriful
-
-2
-
-0
-
-Mustafizur
-
-8
-
-0
-
-Shoriful
-
-5
-
-1
-
-Shakib
-
-9
-
-0
-
-Shoriful
-
-17
-
-0
-
-Mehidy
-
-18
-
-0
-
-Shakib
-
-14
-
-0
-
-Mustafizur
-
-12
-
-0
-
-Mehidy
-
-8
-
-0
-
-Shakib
-
-5
-
-0
-
-Mehidy
-
-18
-
-0
-
-Taskin
-
-5
-
-2
-
-Mustafizur
-
-9
-
-1
-
-Taskin
-
-14
-
-1
-
-Mustafizur
-
-5
-
-2
-
-Shoriful
+Farooqi
 
 13
 
 0
 
-060410
-120416
-001011
-310006
-000101
-016001
-00140W
-061011
-601640
-610416
-441041
-061014
-014111
-011111
-604116
-0WW041
-W00360
-0W0446
-4W0W01
-600241
+Mujeeb
 
-BAN:191/2
+5
+
+0
+
+Farooqi
+
+3
+
+1
+
+Mujeeb
+
+2
+
+2
+
+Azmatullah
+
+10
+
+0
+
+Mujeeb
+
+9
+
+1
+
+Naveen
+
+10
+
+0
+
+R Khan
+
+6
+
+1
+
+Nabi
+
+5
+
+0
+
+R Khan
+
+9
+
+0
+
+Nabi
+
+11
+
+0
+
+Naveen
+
+16
+
+0
+
+R Khan
+
+6
+
+0
+
+Mujeeb
+
+9
+
+0
+
+Nabi
+
+5
+
+0
+
+R Khan
+
+8
+
+0
+
+Azmatullah
+
+8
+
+1
+
+Farooqi
+
+11
+
+0
+
+Azmatullah
+
+8
+
+1
+
+Farooqi
+
+11
+
+0
+
+014611
+011111
+10101W
+10WW01
+101044
+014W13
+160111
+01W014
+011111
+111411
+0 6 0nb 1 1 1 1
+661111
+012111
+401112
+101111
+014111
+0W0314
+111440
+W01403
+041114
+
+AFG:169/8
 
 Second Innings-Batting
 Overs:20.0
-EXTRAS: 0(B:0 LB:0 NB:0 WD:0)
+EXTRAS: 1(B:0 LB:0 NB:0 WD:1)
 
 Batsman
 
@@ -598,167 +621,167 @@ B
 
 SR
 
-Tanzid
+Gurbaz
 
-not out
+lbw b Topley
 
-98
+0
 
-61
+1
+
+0
+
+0
+
+0
+
+0.0
+
+Ibrahim
+
+lbw b Sam Curran
+
+18
+
+14
+
+8
+
+1
+
+2
+
+128.6
+
+Rahmat
+
+b Sam Curran
+
+1
+
+4
+
+3
+
+0
+
+0
+
+25.0
+
+Shahidi
+
+c Livingstone b Wood
+
+8
+
+8
+
+4
+
+1
+
+0
+
+100.0
+
+Azmatullah
+
+b Sam Curran
+
+76
+
+50
 
 14
 
 10
 
-4
+2
 
-160.7
+152.0
 
-Litton
+Ikram
 
-b Nawaz
+lbw b Moen
 
-62
-
-38
-
-9
-
-8
+0
 
 2
 
-163.2
-
-Shanto
-
-b Haris Rauf
-
-21
-
-9
-
-3
+2
 
 0
 
-3
+0
 
-233.3
+0.0
 
-Shakib
+Nabi
 
-not out
+c Sam Curran b Topley
 
-10
+57
 
-12
+34
+
+7
 
 6
 
-0
+2
 
-0
+167.6
 
-83.3
+Rashid Khan
 
-Mushfiqur
+lbw b Sam Curran
 
-Did not Bat
+1
 
-0
+4
 
-0
-
-0
-
-0
-
-0
-
-0.0
-
-Mahmudullah
-
-Did not Bat
+3
 
 0
 
 0
 
-0
+25.0
+
+Mujeeb
+
+not out
+
+3
+
+2
+
+1
 
 0
 
 0
 
-0.0
+150.0
 
-Mehidy
+Naveen
 
-Did not Bat
+not out
 
-0
+4
 
-0
+1
 
-0
+1
 
-0
-
-0
-
-0.0
-
-Mustafizur
-
-Did not Bat
+1
 
 0
 
-0
+400.0
 
-0
-
-0
-
-0
-
-0.0
-
-Shoriful
-
-Did not Bat
-
-0
-
-0
-
-0
-
-0
-
-0
-
-0.0
-
-Taskin
-
-Did not Bat
-
-0
-
-0
-
-0
-
-0
-
-0
-
-0.0
-
-Towhid Hridoy
+Farooqi
 
 Did not Bat
 
@@ -793,137 +816,137 @@ WD NB 4s
 
 6s
 
-Shaheen
+Topley
 
 4.0
 
-25
-
-0
-
-0
-
-6.3
-
-10
-
-0
-
-0
+33
 
 2
 
+0
+
+8.3
+
+9
+
+0
+
+0
+
+5
+
 1
 
-Hassan Ali
+Sam Curran
 
 4.0
 
-44
+31
+
+4
+
+0
+
+7.8
+
+9
 
 0
 
 0
 
-11.0
-
-6
-
-0
-
-0
-
-7
+4
 
 1
 
-Haris Rauf
-
-4.0
-
-38
-
-1
-
-0
-
-9.5
-
-7
-
-0
-
-0
-
-2
-
-3
-
-Nawaz
+Wood
 
 3.0
 
-45
+39
 
 1
-
-0
-
-15.0
-
-2
-
-0
-
-0
-
-4
-
-3
-
-Shadab
-
-4.0
-
-26
-
-0
-
-0
-
-6.5
-
-4
-
-0
-
-0
-
-2
-
-0
-
-Iftikhar
-
-1.0
-
-13
-
-0
 
 0
 
 13.0
 
-1
+5
 
 0
 
 0
 
-1
+2
+
+4
+
+Moen
+
+4.0
+
+25
 
 1
+
+0
+
+6.3
+
+7
+
+0
+
+0
+
+3
+
+0
+
+Rashid
+
+3.0
+
+24
+
+0
+
+0
+
+8.0
+
+3
+
+0
+
+0
+
+3
+
+0
+
+Livingstone
+
+2.0
+
+17
+
+0
+
+0
+
+8.5
+
+2
+
+1
+
+0
+
+2
+
+0
 
 Second Innings-Fall of Wickets
 No
@@ -938,23 +961,83 @@ Bowler
 
 1
 
-132
+0
 
-13.4
+0.1
 
-Litton
+Gurbaz
 
-Nawaz
+Topley
 
 2
 
-160
+5
 
-15.5
+1.1
 
-Shanto
+Rahmat
 
-Haris Rauf
+Sam Curran
+
+3
+
+24
+
+3.4
+
+Ibrahim
+
+Sam Curran
+
+4
+
+28
+
+4.6
+
+Shahidi
+
+Wood
+
+5
+
+29
+
+5.4
+
+Ikram
+
+Moen
+
+6
+
+161
+
+18.4
+
+Nabi
+
+Topley
+
+7
+
+162
+
+19.2
+
+Rashid Khan
+
+Sam Curran
+
+8
+
+165
+
+19.5
+
+Azmatullah
+
+Sam Curran
 
 Second Innings-OVERS
 No
@@ -984,147 +1067,148 @@ Runs Wkts Per Ball Score
 19
 20
 
-Shaheen
+Topley
 
-12
-
-0
-
-H Ali
-
-10
-
-0
-
-Shaheen
+5
 
 1
 
-0
+S Curran
 
-H Ali
-
-12
-
-0
-
-H Rauf
-
-7
-
-0
-
-Nawaz
-
-19
-
-0
-
-Shadab
-
-8
-
-0
-
-Iftikhar
-
-13
-
-0
-
-Shadab
-
-5
-
-0
-
-H Ali
-
-14
-
-0
-
-H Rauf
-
-18
-
-0
-
-Shaheen
-
-5
-
-0
-
-Shadab
-
-5
-
-0
-
-Nawaz
-
-15
+2
 
 1
 
-Shadab
-
-8
-
-0
-
-H Rauf
-
-8
-
-1
-
-Shaheen
-
-7
-
-0
-
-H Rauf
-
-5
-
-0
-
-H Ali
-
-8
-
-0
-
-Nawaz
+Topley
 
 11
 
 0
 
-061041
-014041
-000100
-014061
-001141
-440146
-410111
-046111
-110111
-401441
-601641
-011111
-111101
-111W66
-410111
-0611W0
-041110
-120110
-410111
-113204
+S Curran
 
-Result: PAK won the match by 9 runs
+6
+
+1
+
+Wood
+
+4
+
+1
+
+Moen
+
+1
+
+1
+
+Wood
+
+19
+
+0
+
+Moen
+
+5
+
+0
+
+Rashid
+
+5
+
+0
+
+Livingstone
+
+8
+
+0
+
+Rashid
+
+11
+
+0
+
+Moen
+
+14
+
+0
+
+Topley
+
+8
+
+0
+
+Rashid
+
+8
+
+0
+
+Livingstone
+
+9
+
+0
+
+Wood
+
+16
+
+0
+
+Moen
+
+5
+
+0
+
+S Curran
+
+16
+
+0
+
+Topley
+
+9
+
+1
+
+S Curran
+
+7
+
+2
+
+W00104
+W01001
+600014
+600W00
+00112W
+010W00
+066016
+101111
+101111
+011114
+141104
+014144
+041111
+111014
+4 0 0wd 1 1 1 1
+610414
+011111
+013444
+044W01
+0W21W4
+
+Result: AFG won the match by 2 wickets
 Generated by Cricket Scorer
 
+

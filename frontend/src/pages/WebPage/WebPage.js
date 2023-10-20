@@ -30,6 +30,10 @@ function WebPage(props) {
             classname1 += " webpage_layout_item2_margin"
             topbar = <Topbar s_id='player'/>
             break;
+        case "team":
+            classname1 += " webpage_layout_item2_margin"
+            topbar = <Topbar s_id='team'/>
+            break;
         case "squad":
             classname1 += " webpage_layout_item2_margin"
             topbar = <Topbar s_id='squad'/>

@@ -17,6 +17,8 @@ Rails.application.routes.draw do
     get '/:m_id/worm' => 'match#worm'
     get '/:m_id/:inn_no/commentry' => 'match#commentry'
     get '/:m_id/innings_progression' => 'match#innings_progression'
+    get '/:m_id/player_rankings' => 'match#player_rankings'
+    get '/:m_id/player_rankings_list' => 'match#player_rankings_list'
     # get '/:m_id/match_box' => 'match#match_box'
   end
 
@@ -48,6 +50,7 @@ Rails.application.routes.draw do
 
 
   scope :player do
+    get '/leaderboard' => 'player#leaderboard'
     get '/:p_id/bat_stats' => 'player#bat_stats'
     get '/:p_id/bat_stats2' => 'player#bat_stats2'
     get '/:p_id/ball_stats' => 'player#ball_stats'
@@ -91,6 +94,8 @@ Rails.application.routes.draw do
 
   scope :schedule do
     post '/upload_file' => 'schedule#upload_file'
+    get '/pre_match' => 'schedule#pre_match'
+    get '/pre_match_squads' => 'schedule#pre_match_squads'
   end
 
   get 'home_page' => 'tournament#home_page'

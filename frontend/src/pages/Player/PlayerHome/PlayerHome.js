@@ -1,7 +1,7 @@
 import Photocard from "../../../components/Player/Photocard/Photocard";
 import {React, useState, useEffect } from "react";
 import {useParams} from "react-router-dom";
-import {BACKEND_API_URL} from "../../../my_constants";
+import {BACKEND_API_URL, FRONTEND_API_URL} from "../../../my_constants";
 import './PlayerHome.css'
 import ControlBox from "../../../components/Player/Stats/ControlBox/ControlBox";
 import BatStats from "../../../components/Player/Stats/BatStats/BatStats";
@@ -76,6 +76,55 @@ function TrophyBox1(props) {
     );
 }
 
+function RankBoxItem(props) {
+    const data = props.data
+    const color = props.color
+    const [display, setDisplay] = useState(true)
+    const handleClick = () => {
+        setDisplay(!display)
+    }
+    return (
+        <div className={`w-100 ml-1 mr-1 rounded-2`}>
+            <div className={`h-35 flex-centered font-1_1 font-600 ${color}1 pt-3`} onClick={handleClick}>{data.current_rank}</div>
+            {
+                display ?
+                <div className={`h-25 flex-centered font-0_7 font-500 opacity-8 ${color}1 pb-3 pt-3`}>Best <span className="pl-5 font-0_9 font-600 pt-1"> {data.best_rank}</span></div>
+                : 
+                <a className={`h-25 flex-centered font-0_7 font-500 opacity-8 ${color}1 pb-3 pt-3 decoration-none`} href={`${FRONTEND_API_URL}/match/${data.best_rank_match}/1/summary`}>match_id <span className="pl-5 font-0_9 font-600 pt-1"> {data.best_rank_match}</span></a>
+            }
+        </div>
+    )
+}
+
+function RankBoxRow(props) {
+    const color = props.data.color
+    return (
+        <div className="flex-row font-600 font-0_9 h-60 mt-2">
+            <div className={`w-80 flex-centered ${color}1 mr-1 rounded-2`}>{props.label}</div>
+            <RankBoxItem data={props.data.batting} color={color}/>
+            <RankBoxItem data={props.data.bowling} color={color}/>
+            <RankBoxItem data={props.data.allrounder} color={color}/>
+        </div>
+    )
+}
+
+function RankBox(props){
+    const data = props.data
+    return(
+        <div className="flex-col bg-white bg-shadow p-3 mt-10 default-font">
+            <div className='font-1 font-600 flex-centered h-35 bg-black c-white'>PLAYER RANKINGS</div>
+            <div className="flex-row font-0_8 font-600 h-30">
+                <div className="w-80 flex-centered">FORMATS</div>
+                <div className="w-100 flex-centered">BATTING</div>
+                <div className="w-100 flex-centered">BOWLING</div>
+                <div className="w-100 flex-centered">ALLROUNDER</div>
+            </div>
+            <RankBoxRow data={data.wt20} label='WT20'/>
+            <RankBoxRow data={data.csl} label='CSL'/>
+        </div>
+    )
+}
+
 function PlayerHome(props) {
     let { p_id } = useParams();
     let url = `${BACKEND_API_URL}/player/${p_id}`
@@ -109,7 +158,11 @@ function PlayerHome(props) {
         <div className="player_home flex-col wrap gap-60">
             <div className='flex-row wrap gap-60'>
                 <PlayerProfile p_id={p_id} data={data.profile}/>
-                <TrophyCabinet data={data.trophy_cabinet}/>
+                <div className="flex-col">
+                    <TrophyCabinet data={data.trophy_cabinet}/>
+                    <RankBox data={data.ranking} />
+                </div>
+                
             </div>
             <div className='flex-row wrap gap-60'>
                 <div className='flex-col bg-shadow'>

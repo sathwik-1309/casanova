@@ -1,0 +1,23 @@
+{
+  "m_id": 173,
+  "batted_first": "ban",
+  "batted_second": "sl",
+  "toss": "ban",
+  "pitch": 2.5,
+  "ball_color": [
+    "y",
+    "y",
+    "y",
+    "y"
+  ],
+  "cap1": "shakib",
+  "cap2": "shanaka",
+  "keeper1": "litton",
+  "keeper2": "kusal mendis",
+  "winner": "ban",
+  "stage": "league",
+  "venue": "lucknow",
+  "motm_player": "shanto",
+  "motm_team": "ban",
+  "t_id": 7
+}

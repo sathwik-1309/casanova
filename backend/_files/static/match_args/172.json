@@ -1,0 +1,23 @@
+{
+  "m_id": 172,
+  "batted_first": "aus",
+  "batted_second": "pak",
+  "toss": "aus",
+  "pitch": 3,
+  "ball_color": [
+    "r",
+    "y",
+    "y",
+    "r"
+  ],
+  "cap1": "cummins",
+  "cap2": "babar",
+  "keeper1": "inglis",
+  "keeper2": "rizwan",
+  "winner": "aus",
+  "stage": "league",
+  "venue": "bengaluru",
+  "motm_player": "hazlewood",
+  "motm_team": "aus",
+  "t_id": 7
+}

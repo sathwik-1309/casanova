@@ -16,6 +16,7 @@ function BallStats(props) {
 
         fetchData();
     }, [url]);
+    
     if (!data) {
         return <div>Loading...</div>;
     }

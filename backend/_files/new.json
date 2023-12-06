@@ -1,23 +1,23 @@
 {
-  "m_id": 168,
-  "batted_first": "eng",
+  "m_id": 179,
+  "batted_first": "aus",
   "batted_second": "afg",
-  "toss": "eng",
+  "toss": "aus",
   "pitch": 2,
   "ball_color": [
     "y",
+    "g",
     "y",
-    "y",
-    "y"
+    "g"
   ],
-  "cap1": "buttler",
+  "cap1": "cummins",
   "cap2": "shahidi",
-  "keeper1": "buttler",
+  "keeper1": "inglis",
   "keeper2": "ikram",
   "winner": "afg",
   "stage": "league",
-  "venue": "delhi",
-  "motm_player": "azmatullah",
+  "venue": "dharamshala",
+  "motm_player": "rashid khan",
   "motm_team": "afg",
   "t_id": 7
 }

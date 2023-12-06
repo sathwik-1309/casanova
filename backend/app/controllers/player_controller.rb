@@ -214,6 +214,7 @@ class PlayerController < ApplicationController
     hash = {}
     hash['profile'] = player.profile_hash
     hash['trophy_cabinet'] = player.trophy_cabinet_hash
+    hash['ranking'] = player.rank_box_hash
     hash['stat_options'] = player.get_stat_options
     render(:json => Oj.dump(hash))
   end
@@ -334,6 +335,45 @@ class PlayerController < ApplicationController
     end
     hash['spells'] = total_spells
     hash['stat_options'] = player.get_stat_options
+    render(:json => Oj.dump(hash))
+  end
+
+  def leaderboard
+    rformats = ['wt20', 'csl']
+    hash = {}
+    rformats.each do |rformat|
+      hash[rformat] = {}
+      PLAYER_RATING_RTYPES.each do |rtype|
+        hash[rformat][rtype] = {}
+        pls = PLeaderboard.where(rformat: rformat, rtype: rtype)
+        history = []
+        leaderboard = []
+        pls.each do |pl|
+          temp = pl.attributes.slice('matches', 'highest_rating', 'player_id', 'match_id')
+          case rformat
+          when 'wt20'
+            team = pl.player.country
+          when 'csl'
+            team = Team.find_by_id(pl.player.csl_team_id)
+          end
+          temp['name'] = pl.player.fullname.titleize
+          temp['teamname'] = team.get_teamname
+          temp['color'] = team.abbrevation
+          history << temp
+          pl_dict = leaderboard.find{|h| h['player_id'] == pl.player.id}
+          if pl_dict.nil?
+            leaderboard << {'player_id'=>pl.player.id, 'times'=>0, 'matches'=>0, 'highest_rating'=>0, 'name'=>temp['name'], 'color'=>temp['color'], 'teamname'=>temp['teamname']}
+            pl_dict = leaderboard[-1]
+          end
+          pl_dict['times'] += 1
+          pl_dict['matches'] += pl.matches
+          pl_dict['highest_rating'] = pl.highest_rating if pl.highest_rating > pl_dict['highest_rating']
+        end
+        leaderboard = leaderboard.sort_by{|l| -l['matches']}
+        hash[rformat][rtype]['history'] = history
+        hash[rformat][rtype]['leaderboard'] = leaderboard
+      end
+    end
     render(:json => Oj.dump(hash))
   end
 

@@ -470,4 +470,26 @@ class MatchController < ApplicationController
         hash['tour_font'] = match.tournament.get_tour_font
         render(:json => Oj.dump(hash))
     end
+
+    def player_rankings
+        m_id = params[:m_id]
+        match = Match.find(m_id)
+        hash = {}
+        hash['squad1'] = match.inn1.get_squad_hash
+        hash['squad2'] = match.inn2.get_squad_hash
+        hash['most_points_batting'] = match.most_points_hash(RTYPE_BAT)
+        hash['most_points_bowling'] = match.most_points_hash(RTYPE_BALL)
+        render(:json => Oj.dump(hash))
+    end
+
+    def player_rankings_list
+        m_id = params[:m_id]
+        match = Match.find(m_id)
+        hash = {}
+        hash['batting_rankings'] = match.get_rankings_list(RTYPE_BAT)
+        hash['bowling_rankings'] = match.get_rankings_list(RTYPE_BALL)
+        hash['all_rankings'] = match.get_rankings_list(RTYPE_ALL)
+        render(:json => Oj.dump(hash))
+    end
+
 end

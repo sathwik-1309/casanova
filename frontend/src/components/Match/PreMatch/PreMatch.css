@@ -1,0 +1,10 @@
+.display_select{
+  background-color: var(--analysis1);
+  color: white;
+}
+
+.display_unselect{
+  color: var(--analysis1);
+  background-color: white;
+  border: 1px solid var(--analysis1);
+}

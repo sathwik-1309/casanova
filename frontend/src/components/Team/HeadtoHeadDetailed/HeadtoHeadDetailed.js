@@ -9,7 +9,7 @@ function MatchBoxDeatailed({data}){
     <div className='flex-col default-font flex-centered'>
       <MatchBox data={data.match_box}/>
       <div className='flex-col flex-centered h2hborder rounded-4 bg-dark c-white'>
-        <div className='font-0_7 font-600'>WINNER</div>
+        <div className={`${data.winner.color}1 opacity-9 font-0_7 font-600`}>WINNER</div>
         <div className={`${data.winner.color}1 h-50 flex-centered w-180 font-0_9 font-600`}>{data.winner.teamname}</div>
       </div>
       <div className='flex-col flex-centered h2hborder rounded-4 bg-dark c-white'>

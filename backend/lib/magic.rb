@@ -99,6 +99,7 @@ module Magic
         if team_id.nil?
             puts "#Magic team not found #{team} ❌"
         end
+        
         runs = temp[1].split("/")[0]
         wickets = temp[1].split("/")[1]
         overs = list[over_index][0].split(":")[1]

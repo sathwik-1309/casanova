@@ -349,12 +349,16 @@ class Ingest
                 @parent.overs = 20
             end
 
-            @parent.b1["not_out"] = true
-            @parent.b2["not_out"] = true
+            @parent.b1["not_out"] = true unless @parent.b1["not_out"] == false
+            @parent.b2["not_out"] = true unless @parent.b2["not_out"] == false
             @parent.scores_hash << @parent.b1
             @parent.scores_hash << @parent.b2
             @parent.scores_hash = @parent.scores_hash.sort_by { |hash| hash["pos"] }
             l = @parent.scores_hash.length
+            if l > 11
+                @parent.scores_hash.pop
+                l = @parent.scores_hash.length
+            end
             while l < 11
                 @parent.scores_hash << Ingest.set_batsman_config(@parent.batsmen[l], Squad.find(@parent.bat_team_id).team_id, false)
                 l += 1
@@ -529,10 +533,10 @@ class Ingest
         # t.integer :fielder_id
         def create_hash
             if @batsman_out["id"] == @parent.b1["id"]
-                @parent.b1 = Ingest.set_batsman_config(@parent.batsmen[@parent.for+1], Squad.find(@parent.bat_team_id).team_id, @parent.for+2)
+                @parent.b1 = Ingest.set_batsman_config(@parent.batsmen[@parent.for+1], Squad.find(@parent.bat_team_id).team_id, @parent.for+2) unless @parent.for == 10
                 @parent.sr = @parent.b1["id"]
             else
-                @parent.b2 = Ingest.set_batsman_config(@parent.batsmen[@parent.for+1], Squad.find(@parent.bat_team_id).team_id, @parent.for+2)
+                @parent.b2 = Ingest.set_batsman_config(@parent.batsmen[@parent.for+1], Squad.find(@parent.bat_team_id).team_id, @parent.for+2) unless @parent.for == 10
                 @parent.sr = @parent.b2["id"]
             end
 

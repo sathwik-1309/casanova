@@ -483,7 +483,7 @@ class TournamentController < ApplicationController
     boxes << Helper.construct_tour_class_bat_stats(bat_stats[0..4], 'boundary_p', "Lowest Boundary %", tour_class)
     arr['ball_stats'] = {}
     arr['ball_stats']['boxes'] = boxes
-    arr['individual_ball_stats'] = Tournament.overall_individual_ball_stats
+    arr['individual_ball_stats'] = Tournament.tour_class_individual_ball_stats(tour_class)
     render(:json => Oj.dump(arr))
   end
 

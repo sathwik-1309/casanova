@@ -49,6 +49,18 @@ function TopbarItem(props) {
                 classname1 = classname1 + ' topbar_selected'
             }
             break;
+        case "rankings":
+            name = "RANKINGS"
+            if (selected === props.name) {
+                classname1 = classname1 + ' topbar_selected'
+            }
+            break;
+        case "pre_match":
+            name = "PRE-MATCH"
+            if (selected === props.name) {
+                classname1 = classname1 + ' topbar_selected'
+            }
+            break;
         case "scorecard":
             name = "SCORECARD"
             if (selected === props.name) {
@@ -152,6 +164,7 @@ function Topbar(props) {
     let { tour_class } = useParams();
     let { squad_id } = useParams();
     let { team_id } = useParams();
+    let {schedule_id} = useParams()
     let topbar = <></>
     let toggle = <></>
     switch (props.s_id) {
@@ -162,6 +175,7 @@ function Topbar(props) {
                 <TopbarItem name='ball_stats' link={`${FRONTEND_API_URL}/ball_stats`}/>
                 <TopbarItem name='bat_meta' link={`${FRONTEND_API_URL}/meta/batting`}/>
                 <TopbarItem name='ball_meta' link={`${FRONTEND_API_URL}/meta/bowling`}/>
+                <TopbarItem name='rankings' link={`${FRONTEND_API_URL}/rankings`}/>
             </>
             break;
         case 'tour':
@@ -191,8 +205,16 @@ function Topbar(props) {
                 <TopbarItem name='manhatten' link={`${FRONTEND_API_URL}/match/${m_id}/${inn_no}/manhatten`}/>
                 <TopbarItem name='worm' link={`${FRONTEND_API_URL}/match/${m_id}/${inn_no}/worm`}/>
                 <TopbarItem name='commentry' link={`${FRONTEND_API_URL}/match/${m_id}/${inn_no}/commentry`}/>
+                <TopbarItem name='pre_match' link={`${FRONTEND_API_URL}/match/${m_id}/${inn_no}/pre_match`}/>
+                <TopbarItem name='rankings' link={`${FRONTEND_API_URL}/match/${m_id}/${inn_no}/rankings`}/>
+                {/* <TopbarItem name='rankings' link={`${FRONTEND_API_URL}/match/${m_id}/${inn_no}/rankings`}/> */}
             </>
             break;
+        case 'schedule':
+            topbar = <>
+            <TopbarItem name='pre_match' link={`${FRONTEND_API_URL}/schedule/${schedule_id}`}/>
+            </>
+            break
         case 'players_page':
             topbar = <>
             <Searchbar type='players'/>

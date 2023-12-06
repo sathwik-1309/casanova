@@ -10,6 +10,7 @@ class Tournament < ApplicationRecord
     has_many :partnerships
     has_many :performances
     has_many :schedules
+    has_many :player_match_points
 
     after_create :populate_groups_in_seeding
 

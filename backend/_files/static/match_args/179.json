@@ -1,0 +1,23 @@
+{
+  "m_id": 179,
+  "batted_first": "aus",
+  "batted_second": "afg",
+  "toss": "aus",
+  "pitch": 2,
+  "ball_color": [
+    "y",
+    "g",
+    "y",
+    "g"
+  ],
+  "cap1": "cummins",
+  "cap2": "shahidi",
+  "keeper1": "inglis",
+  "keeper2": "ikram",
+  "winner": "afg",
+  "stage": "league",
+  "venue": "dharamshala",
+  "motm_player": "rashid khan",
+  "motm_team": "afg",
+  "t_id": 7
+}

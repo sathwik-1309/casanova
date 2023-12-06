@@ -1,0 +1,23 @@
+{
+  "m_id": 169,
+  "batted_first": "nz",
+  "batted_second": "aus",
+  "toss": "aus",
+  "pitch": 3,
+  "ball_color": [
+    "y",
+    "r",
+    "y",
+    "r"
+  ],
+  "cap1": "williamson",
+  "cap2": "cummins",
+  "keeper1": "latham",
+  "keeper2": "inglis",
+  "winner": "nz",
+  "stage": "league",
+  "venue": "ahmedabad",
+  "motm_player": "rachin ravindra",
+  "motm_team": "nz",
+  "t_id": 7
+}

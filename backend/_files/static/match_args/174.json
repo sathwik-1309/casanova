@@ -1,0 +1,23 @@
+{
+  "m_id": 174,
+  "batted_first": "eng",
+  "batted_second": "nz",
+  "toss": "eng",
+  "pitch": 2.5,
+  "ball_color": [
+    "y",
+    "r",
+    "r",
+    "y"
+  ],
+  "cap1": "buttler",
+  "cap2": "latham",
+  "keeper1": "buttler",
+  "keeper2": "latham",
+  "winner": "nz",
+  "stage": "league",
+  "venue": "dharamshala",
+  "motm_player": "rachin ravindra",
+  "motm_team": "nz",
+  "t_id": 7
+}

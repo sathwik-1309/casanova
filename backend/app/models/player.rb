@@ -4,6 +4,8 @@ class Player < ApplicationRecord
     has_one :bat_stats
     has_one :ball_stats
     has_many :performances
+    has_many :player_match_points
+    has_many :player_ratings
 
     # player types
     OVERALL ='overall'
@@ -253,6 +255,51 @@ class Player < ApplicationRecord
             return team.get_teamname, team.abbrevation
         end
         return self.country.get_teamname, self.country.abbrevation
+    end
+
+    def rank_box_hash
+        hash = {}
+        hash['wt20'] = {
+            'color' => self.country.abbrevation,
+            'batting' => self.get_rank_hash('wt20', RTYPE_BAT),
+            'bowling' => self.get_rank_hash('wt20', RTYPE_BALL),
+            'allrounder' => self.get_rank_hash('wt20', RTYPE_ALL)
+        }
+        csl_team = Team.find_by_id(self.csl_team_id)
+        color = csl_team.nil? ? self.country.abbrevation : csl_team.abbrevation
+        hash['csl'] = {
+            'color' => color,
+            'batting' => self.get_rank_hash('csl', RTYPE_BAT),
+            'bowling' => self.get_rank_hash('csl', RTYPE_BALL),
+            'allrounder' => self.get_rank_hash('csl', RTYPE_ALL)
+        }
+        hash
+    end
+
+    def get_rank_hash(rformat, rtype)
+        hash = {}
+        cur_rank = PlayerRating.get_rank(rformat, rtype, self.id, true)
+        hash['current_rank'] = cur_rank.nil? ? '-' : cur_rank
+        pr = self.player_ratings.find_by(rformat: rformat)
+        if pr.present?
+            case (rtype)
+            when RTYPE_BAT
+                best_rank = pr.best_bat_rank.nil? ? '-' : pr.best_bat_rank
+                best_rank_match = pr.best_bat_rank_match
+            when RTYPE_BALL
+                best_rank =  pr.best_ball_rank.nil? ? '-' : pr.best_ball_rank
+                best_rank_match = pr.best_ball_rank_match
+            when RTYPE_ALL
+                best_rank =  pr.best_all_rank.nil? ? '-' : pr.best_all_rank
+                best_rank_match = pr.best_all_rank_match
+            end
+        else
+            best_rank = '-'
+            best_rank_match = nil
+        end
+        hash['best_rank'] =  best_rank
+        hash['best_rank_match'] = best_rank_match
+        hash
     end
 
     # private

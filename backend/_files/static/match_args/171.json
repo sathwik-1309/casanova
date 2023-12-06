@@ -1,0 +1,23 @@
+{
+  "m_id": 171,
+  "batted_first": "nz",
+  "batted_second": "afg",
+  "toss": "afg",
+  "pitch": 3,
+  "ball_color": [
+    "g",
+    "y",
+    "y",
+    "g"
+  ],
+  "cap1": "latham",
+  "cap2": "shahidi",
+  "keeper1": "latham",
+  "keeper2": "ikram",
+  "winner": "nz",
+  "stage": "league",
+  "venue": "hyderabad",
+  "motm_player": "glenn phillips",
+  "motm_team": "nz",
+  "t_id": 7
+}

@@ -1,4 +1,6 @@
 .player_scores_page {
-    margin-top: 20px;
+    margin: 20px;
     margin-bottom: 50px;
+    display: flex;
+    align-items: center;
 }

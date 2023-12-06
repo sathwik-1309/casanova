@@ -221,6 +221,19 @@ module Util
         return abbrevation
     end
 
+    def self.get_skillname(skill)
+        case skill
+        when 'bat'
+            return 'Batsman'
+        when 'bow'
+            return 'Bowler'
+        when 'all'
+            return 'All-rounder'
+        when 'wk'
+            return 'Wk-Batsman'
+        end
+    end
+
     def self.get_worm_color(team_code)
 
     end

@@ -28,6 +28,7 @@ import TeamPage from "./pages/Team/TeamPage/TeamPage";
 import TournamentsHome from "./pages/Tournament/TournamentsPage/TournamentsHome/TournamentsHome";
 import HomePages from "./pages/HomePages/HomePages";
 import { HeadtoHead } from "./pages/Team/HeadtoHead/HeadtoHead";
+import PreMatch from "./components/Match/PreMatch/PreMatch";
 
 
 function App() {
@@ -74,6 +75,7 @@ function App() {
       <Route path="/venues" element={<WebPage page={<VenuesPage/>}/>}  />
 
       <Route path="/match/:m_id/:inn_no/:graphic" element={<WebPage page={<MatchPage/>} s_id='match'/>}/>
+      <Route path="/schedule/:schedule_id" element={<WebPage page={<PreMatch />} s_id='schedule'/>}/>
 
       <Route path="/player/:p_id" element={<WebPage page={<PlayerHome/>} s_id='player'/>} />
       <Route path="/player/:p_id/matches" element={<WebPage page={<MatchesPage p_id={true}/>} s_id='player' />}  />

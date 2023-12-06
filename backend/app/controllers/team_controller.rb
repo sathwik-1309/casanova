@@ -120,7 +120,7 @@ class TeamController < ApplicationController
   def head_to_head
     team = params[:team_id].present? ? Team.find_by_id(params[:team_id]) : Squad.find_by_id(params[:squad_id]).team
     squad_ids = team.squads.pluck(:id)
-    matches = team.matches
+    matches = team.get_matches
     hash = {}
     matches.each do |match|
       if squad_ids.include? match.winner_id
@@ -159,26 +159,7 @@ class TeamController < ApplicationController
   def head_to_head_detailed
     team1 = params[:team1].present? ? Team.find(params[:team1]) : Squad.find(params[:squad1]).team
     team2 = params[:team2].present? ? Team.find(params[:team2]) : Squad.find(params[:squad2]).team
-    squad_ids1 = team1.squads.pluck(:id)
-    squad_ids2 = team2.squads.pluck(:id)
-    ids = squad_ids1+squad_ids2
-    matches = Match.where('winner_id IN (?) AND loser_id IN (?)', ids, ids)
-    hash = {}
-    boxes = []
-    matches.each do |match|
-      temp = {}
-      temp['match_box'] = match.match_box
-      motm = match.motm.attributes.slice('id')
-      motm['name'] = match.motm.fullname.titleize
-      motm['color'] = match.scores.find_by(player_id: match.motm.id).squad.team.abbrevation
-      temp['motm'] = motm
-      winner = {}
-      winner['teamname'] = match.winner.get_teamname
-      winner['color'] = match.winner.team.abbrevation
-      temp['winner'] = winner
-      boxes << temp
-    end
-    hash['boxes'] = boxes
+    hash = Team.head_to_head_boxes_hash(team1, team2)
     render(:json => Oj.dump(hash))
   end
 

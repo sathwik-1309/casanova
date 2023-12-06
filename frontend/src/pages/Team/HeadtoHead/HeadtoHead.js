@@ -4,6 +4,7 @@ import { BACKEND_API_URL } from '../../../my_constants'
 import HeadtoHeadBox from '../../../components/Team/HeadtoHeadBox/HeadtoHeadBox'
 import { HeadtoHeadDetailed } from '../../../components/Team/HeadtoHeadDetailed/HeadtoHeadDetailed'
 import './HeadtoHead.css'
+import PreMatch from '../../../components/Match/PreMatch/PreMatch'
 
 export function HeadtoHead(props) {
   let {team_id} = useParams()
@@ -33,6 +34,7 @@ export function HeadtoHead(props) {
 
   const changeTeam2 = (id) => {
     console.log(id)
+    console.log('change')
     setTeam2(id)
   }
 
@@ -45,7 +47,8 @@ export function HeadtoHead(props) {
       <HeadtoHeadBox data={data.head_to_head} onClick={changeTeam2}/>
       {
         team2 &&
-        <HeadtoHeadDetailed team1={team1} team2={team2}/>
+        // <HeadtoHeadDetailed team1={team1} team2={team2}/>
+        <PreMatch team1={team1} team2={team2} />
       }
     </div>
   )

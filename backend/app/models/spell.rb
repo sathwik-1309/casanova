@@ -27,12 +27,14 @@ class Spell < ApplicationRecord
         hash["sixes"] = self.c6
         hash["economy"] = self.economy
         hash["maidens"] = self.maidens
+        # hash["color"] = self.squad.abbrevation
         hash["color"] = Util.get_team_color(self.tournament_id, self.squad.abbrevation)
         hash["p_id"] = self.player_id
         hash["vs_team"] = self.inning.bat_team.get_abb
         hash["venue"] = self.match.venue.upcase
         hash["id"] = self.id
         hash["match_id"] = self.match_id
+        hash["points"] = PlayerMatchPoint.find_by(player_id: self.player_id, match_id: self.match_id, rtype: RTYPE_BALL)&.points || 0
         return hash
     end
 
@@ -106,6 +108,33 @@ class Spell < ApplicationRecord
         return arr
     end
 
+    def get_points(benchmark, player_bat_ratings, batting_team_strength)
+        inn = self.inning
+        spell_balls = Util.overs_to_balls(self.overs)
+        bpo =  spell_balls / self.wickets.to_f
+        part1 = benchmark['bpw'] / bpo
+        part2 = benchmark['economy'] / self.economy
+        total_balls = (Util.overs_to_balls(self.inning.overs).to_f/5).round(2)
+        bat_rat = []
+        inn.wickets.where(bowler_id: self.player_id).each do |wicket|
+          bat_rat << wicket.get_wicket_weight(player_bat_ratings)
+        end
+        avg_wicket_weight = bat_rat.present? ? (bat_rat.sum.to_f/bat_rat.length).round(2) : 0
+        
+        calculated_points = (((part2*spell_balls*10) + (part1*avg_wicket_weight*(spell_balls.to_f/total_balls))) / 2).round(2)
+        
+        if ["league", "group"].exclude? inn.match.stage
+          if inn.match.stage == "final"
+            factor = 1.2
+          else
+            factor = 1.1
+          end
+          calculated_points = (calculated_points*factor).round(2)
+        end
+        points = ((calculated_points*TEAM_STRENGTH_WEIGHTAGE*batting_team_strength) + (calculated_points*(0.9))).round(2)
+        return points.round(2)
+    end
+
     private
 
     def self.empty_spell_hash
@@ -140,4 +169,5 @@ class Spell < ApplicationRecord
         hash["wickets"] = 1 if ball.wicket_ball
         return hash
     end
+
 end

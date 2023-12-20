@@ -1,23 +1,23 @@
 {
-  "m_id": 179,
-  "batted_first": "aus",
-  "batted_second": "afg",
-  "toss": "aus",
-  "pitch": 2,
+  "m_id": 186,
+  "batted_first": "afg",
+  "batted_second": "sl",
+  "toss": "afg",
+  "pitch": 3.5,
   "ball_color": [
-    "y",
+    "r",
     "g",
-    "y",
-    "g"
+    "g",
+    "r"
   ],
-  "cap1": "cummins",
-  "cap2": "shahidi",
-  "keeper1": "inglis",
-  "keeper2": "ikram",
+  "cap1": "shahidi",
+  "cap2": "kusal mendis",
+  "keeper1": "ikram",
+  "keeper2": "kusal mendis",
   "winner": "afg",
   "stage": "league",
-  "venue": "dharamshala",
-  "motm_player": "rashid khan",
+  "venue": "pune",
+  "motm_player": "naveen",
   "motm_team": "afg",
   "t_id": 7
 }

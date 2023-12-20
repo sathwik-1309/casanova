@@ -134,7 +134,11 @@ class Ingest
         if self.b1["id"]== self.sr
             self.b1["runs"] += runs
             self.b1["balls"] += 1
+            begin
             self.b1[cat] += 1
+            rescue StandardError => ex
+                byebug
+            end
         else
             self.b2["runs"] += runs
             self.b2["balls"] += 1
@@ -150,16 +154,17 @@ class Ingest
             self.part["balls"] += 1
             cat = Ingest.get_ball_category(runs)
             self.part[cat] += 1
-        end
-        if self.sr == self.b1["id"]
-            self.part["b1s"] += runs
-            self.part["b1b"] += 1
-        else
-            self.part["b2s"] += runs
-            self.part["b2b"] += 1
+            if self.sr == self.b1["id"]
+                self.part["b1s"] += runs
+                self.part["b1b"] += 1
+            else
+                self.part["b2s"] += runs
+                self.part["b2b"] += 1
+            end
         end
 
         self.part["runs"] += runs + extras
+        byebug
     end
 
     def get_performances
@@ -493,6 +498,7 @@ class Ingest
                     end
                 else
                     puts "!!!*!**!*!*!*!*!* NEW EXTRA TYPE #{extra_type}!#&@°&!#‡€!*‹°€"
+                    byebug
                 end
                 @parent.update_part(runs, extras, extra_type)
             end

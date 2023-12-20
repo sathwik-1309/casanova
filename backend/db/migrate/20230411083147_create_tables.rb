@@ -396,5 +396,21 @@ class CreateTables < ActiveRecord::Migration[7.0]
       t.belongs_to :player, foreign_key: true
     end
 
+    create_table :team_match_points do |t|
+      t.string :rformat
+      t.float :points
+      t.belongs_to :match, foreign_key: true
+      t.belongs_to :team, foreign_key: true
+      t.belongs_to :tournament, foreign_key: true
+    end
+
+    create_table :t_leaderboards do |t|
+      t.string :rformat
+      t.integer :matches
+      t.float :highest_rating
+      t.belongs_to :match, foreign_key: true
+      t.belongs_to :team, foreign_key: true
+    end
+
   end
 end

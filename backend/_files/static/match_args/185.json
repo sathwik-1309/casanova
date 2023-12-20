@@ -1,0 +1,23 @@
+{
+  "m_id": 185,
+  "batted_first": "aus",
+  "batted_second": "eng",
+  "toss": "eng",
+  "pitch": 2.5,
+  "ball_color": [
+    "y",
+    "r",
+    "y",
+    "r"
+  ],
+  "cap1": "cummins",
+  "cap2": "buttler",
+  "keeper1": "inglis",
+  "keeper2": "buttler",
+  "winner": "eng",
+  "stage": "league",
+  "venue": "kolkata",
+  "motm_player": "bairstow",
+  "motm_team": "eng",
+  "t_id": 7
+}

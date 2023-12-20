@@ -304,7 +304,7 @@ class TournamentController < ApplicationController
         most_runs_player = Player.find(most_runs.player_id)
         box2["most_runs"] = most_runs_player.tour_individual_awards_to_hash(t_id, "most_runs", {"runs" => most_runs.runs})
 
-        most_wickets = BallStat.where(sub_type: "tour_#{t_id}").order(wickets: :desc).limit(1).first
+        most_wickets = BallStat.where(sub_type: "tour_#{t_id}").order(wickets: :desc, economy: :asc).limit(1).first
         most_wickets_player = Player.find(most_wickets.player_id)
         box2["most_wickets"] = most_wickets_player.tour_individual_awards_to_hash(t_id, "most_wickets", {"wickets" => most_wickets.wickets})
       end

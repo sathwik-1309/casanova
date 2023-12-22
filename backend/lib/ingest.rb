@@ -134,11 +134,7 @@ class Ingest
         if self.b1["id"]== self.sr
             self.b1["runs"] += runs
             self.b1["balls"] += 1
-            begin
             self.b1[cat] += 1
-            rescue StandardError => ex
-                byebug
-            end
         else
             self.b2["runs"] += runs
             self.b2["balls"] += 1
@@ -149,12 +145,12 @@ class Ingest
         end
     end
 
-    def update_part(runs, extras=0, extra_type=nil)
+    def update_part(sr_batsman, runs, extras=0, extra_type=nil)
         if extra_type != 'wd'
             self.part["balls"] += 1
             cat = Ingest.get_ball_category(runs)
             self.part[cat] += 1
-            if self.sr == self.b1["id"]
+            if sr_batsman == self.b1["id"]
                 self.part["b1s"] += runs
                 self.part["b1b"] += 1
             else
@@ -164,7 +160,7 @@ class Ingest
         end
 
         self.part["runs"] += runs + extras
-        byebug
+        
     end
 
     def get_performances
@@ -427,6 +423,7 @@ class Ingest
             extra_type = NILL
             wicket_ball = false
             bow_runs = 0
+            sr_batsman = @parent.sr
             if @parent.spells.keys().exclude? @parent.current_bowler
                 @parent.spells[@parent.current_bowler] = {
                     "runs"=> 0,
@@ -442,7 +439,7 @@ class Ingest
                     wicket_ball = true
                     @parent.spells[@parent.current_bowler]["balls"] += 1
                     @parent.spells[@parent.current_bowler]["wickets"] += 1
-                    @parent.update_part(0)
+                    @parent.update_part(sr_batsman, 0)
                 else
                     runs = @ball.to_i
                     bow_runs = runs
@@ -450,7 +447,7 @@ class Ingest
                     @parent.add_batsman_runs(@parent.sr, @parent.b1, @parent.b2, runs)
                     @parent.spells[@parent.current_bowler]["runs"] += runs
                     @parent.spells[@parent.current_bowler]["balls"] += 1
-                    @parent.update_part(runs)
+                    @parent.update_part(sr_batsman, runs)
                 end
             else
                 e_runs = @ball[0].to_i
@@ -500,11 +497,11 @@ class Ingest
                     puts "!!!*!**!*!*!*!*!* NEW EXTRA TYPE #{extra_type}!#&@°&!#‡€!*‹°€"
                     byebug
                 end
-                @parent.update_part(runs, extras, extra_type)
+                @parent.update_part(sr_batsman, runs, extras, extra_type)
             end
             @parent.score += runs + extras
             @parent.for += 1 if wicket_ball
-            ball_csv = [@parent.b_id, runs, extras, extra_type, @parent.overs, wicket_ball, @parent.score, @parent.for, category, bow_runs, @parent.ball_color, @parent.sr, @parent.current_bowler, @parent.o_id, @parent.inn_id, @parent.m_id, @parent.args["t_id"] ]
+            ball_csv = [@parent.b_id, runs, extras, extra_type, @parent.overs, wicket_ball, @parent.score, @parent.for, category, bow_runs, @parent.ball_color, sr_batsman, @parent.current_bowler, @parent.o_id, @parent.inn_id, @parent.m_id, @parent.args["t_id"] ]
             @parent.balls_csv << ball_csv
             Ingest::Wicket_.new(@parent) if wicket_ball
         end

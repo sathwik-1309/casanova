@@ -45,7 +45,11 @@ class PlayerRatingImage < ApplicationRecord
       hash['rating'] = (hash['points']/hash['matches']).round(2)
     end
 
+    begin
     rating_image = rating_image.sort_by { |hash| -hash['rating'] }
+    rescue StandardError => ex
+      byebug
+    end
     i = 1
     rating_image.each do |hash|
       hash['rank'] = i
@@ -163,6 +167,15 @@ class PlayerRatingImage < ApplicationRecord
 
   def get_rank(player_id, under_50 = true)
     im = self.rating_image
+    hash = im.find{|hash| hash['id'] == player_id}
+    return nil if hash.nil?
+    if under_50
+      return nil if hash['rank'] > 50
+    end
+    return hash['rank']
+  end
+
+  def self.get_rank(im, player_id, under_50=true)
     hash = im.find{|hash| hash['id'] == player_id}
     return nil if hash.nil?
     if under_50

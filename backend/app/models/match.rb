@@ -242,8 +242,8 @@ class Match < ApplicationRecord
         inn1_benchmark = {}
         inn1_benchmark['runs'] = inn1.for == 0 ? inn1.score.to_f : (inn1.score/inn1.for.to_f).round(2)
         inn1_benchmark['sr'] = Util.get_sr(inn1.score, Util.overs_to_balls(inn1.overs)).to_f
-        benchmark_runs = (MATCH_WEIGHT*benchmark['runs']) + (INN_WEIGHT*inn1_benchmark['runs'])
-        benchmark_sr = (MATCH_WEIGHT*benchmark['sr']) + (INN_WEIGHT*inn1_benchmark['sr'])
+        benchmark_runs = (MATCH_WEIGHT_BAT*benchmark['runs']) + (INN_WEIGHT_BAT*inn1_benchmark['runs'])
+        benchmark_sr = (MATCH_WEIGHT_BAT*benchmark['sr']) + (INN_WEIGHT_BAT*inn1_benchmark['sr'])
         bowling_team_strength = inn1.get_bow_team_strength(player_bow_ratings)
 
         inn1.scores.where(batted: true).each do |score|
@@ -253,8 +253,8 @@ class Match < ApplicationRecord
         inn1_benchmark = {}
         inn1_benchmark['runs'] = inn2.for == 0 ? inn2.score.to_f : (inn2.score/inn2.for.to_f).round(2)
         inn1_benchmark['sr'] = Util.get_sr(inn2.score, Util.overs_to_balls(inn2.overs)).to_f
-        benchmark_runs = (MATCH_WEIGHT*benchmark['runs']) + (INN_WEIGHT*inn1_benchmark['runs'])
-        benchmark_sr = (MATCH_WEIGHT*benchmark['sr']) + (INN_WEIGHT*inn1_benchmark['sr'])
+        benchmark_runs = (MATCH_WEIGHT_BAT*benchmark['runs']) + (INN_WEIGHT_BAT*inn1_benchmark['runs'])
+        benchmark_sr = (MATCH_WEIGHT_BAT*benchmark['sr']) + (INN_WEIGHT_BAT*inn1_benchmark['sr'])
         bowling_team_strength = inn2.get_bow_team_strength(player_bow_ratings)
         inn2.scores.where(batted: true).each do |score|
             points[score.player_id] = score.get_points(bowling_team_strength, benchmark_runs, benchmark_sr) if score.balls > 0
@@ -277,13 +277,28 @@ class Match < ApplicationRecord
         benchmark['bpw'] = balls_per_wicket.round(2)
         benchmark['economy'] = (((inn1.score+inn2.score)*6).to_f / (Util.overs_to_balls(inn1.overs)+Util.overs_to_balls(inn2.overs))).round(2)
         batting_team_strength = inn1.get_bat_team_strength(player_bat_ratings)
+        match_rr = Util.get_rr(inn1.score+inn2.score, Util.overs_to_balls(inn1.overs)+Util.overs_to_balls(inn2.overs)).to_f
+        pp_overs = self.overs.where("over_no <= 6")
+        mid_overs = self.overs.where("over_no > 6 and over_no < 16")
+        death_overs = self.overs.where("over_no >= 16")
+        pp_rr = Util.get_rr(pp_overs.map{|o| o.runs}.sum, pp_overs.map{|o| o.balls}.sum).to_f
+        mid_rr = Util.get_rr(mid_overs.map{|o| o.runs}.sum, mid_overs.map{|o| o.balls}.sum).to_f
+        death_rr = Util.get_rr(death_overs.map{|o| o.runs}.sum, death_overs.map{|o| o.balls}.sum).to_f
+        pp_w = pp_overs.map{|o| o.wickets}.sum
+        mid_w = mid_overs.map{|o| o.wickets}.sum
+        death_w = death_overs.map{|o| o.wickets}.sum
+
         inn1.spells.each do |spell|
-          points[spell.player_id] = spell.get_points(benchmark, player_bat_ratings, batting_team_strength)
+            inn_rr = inn1.get_rr.to_f
+            points[spell.player_id] = spell.get_points(benchmark, player_bat_ratings, batting_team_strength)
+            # points[spell.player_id] = spell.get_points2(inn_rr, match_rr, pp_rr, mid_rr, death_rr, player_bat_ratings, pp_w, mid_w, death_w, batting_team_strength)
         end
       
         batting_team_strength = inn2.get_bat_team_strength(player_bat_ratings)
         inn2.spells.each do |spell|
-          points[spell.player_id] = spell.get_points(benchmark, player_bat_ratings, batting_team_strength)
+            inn_rr = inn2.get_rr.to_f
+            points[spell.player_id] = spell.get_points(benchmark, player_bat_ratings, batting_team_strength)
+            # points[spell.player_id] = spell.get_points2(inn_rr, match_rr, pp_rr, mid_rr, death_rr, player_bat_ratings, pp_w, mid_w, death_w, batting_team_strength)
         end
       
         return points
@@ -552,8 +567,8 @@ class Match < ApplicationRecord
         ball_rating_image = prev_rating_images[1]
         all_rating_image = prev_rating_images[2]
         
-        batsman_points = self.batsman_points(bat_rating_image.rating_image)
-        bowler_points = self.bowler_points(ball_rating_image.rating_image)
+        batsman_points = self.batsman_points(ball_rating_image.rating_image)
+        bowler_points = self.bowler_points(bat_rating_image.rating_image)
 
         batsman_points.each do |id, points|
             PlayerMatchPoint.create_new(id, points, RTYPE_BAT, self)

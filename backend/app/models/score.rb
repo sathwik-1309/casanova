@@ -126,7 +126,7 @@ class Score < ApplicationRecord
           end
           calculated_points = (calculated_points*factor).round(2)
         end
-        points =  calculated_points*(1.0-TEAM_STRENGTH_WEIGHTAGE) + (TEAM_STRENGTH_WEIGHTAGE*calculated_points*bowling_team_strength)
+        points =  calculated_points*(1.0-TEAM_STRENGTH_WEIGHTAGE_BAT) + (TEAM_STRENGTH_WEIGHTAGE_BAT*calculated_points*bowling_team_strength)
         return points.round(2)
     end
 

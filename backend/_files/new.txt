@@ -1,13 +1,13 @@
 WT20 3
 
-AFG VS SL
-Pune 20-Dec-2023
+SA VS AFG
+Ahmedabad 22-Dec-2023
 
-AFG:187/5
+SA:180/6
 
 First Innings-Batting
 Overs:20.0
-EXTRAS: 3(B:0 LB:0 NB:0 WD:3)
+EXTRAS: 5(B:0 LB:0 NB:4 WD:1)
 
 Batsman
 
@@ -23,154 +23,135 @@ B
 
 SR
 
-Gurbaz
+de Kock
 
-c Angelo Mathews b
-Theekshana
+b Naveen
 
-49
+10
 
-34
-
-7
+14
 
 6
-
-1
-
-144.1
-
-Ibrahim
-
-b Madushanka
-
-58
-
-31
-
-8
-
-6
-
-3
-
-187.1
-
-Rahmat
-
-c Kusal Mendis b
-Theekshana
-
-29
-
-20
-
-9
-
-4
-
-1
-
-145.0
-
-Azmatullah
-
-c Kusal Perera b
-Dhananjaya
-
-12
-
-13
-
-4
 
 1
 
 0
 
-92.3
+71.4
 
-Nabi
+Hendricks
 
-b Dhananjaya
+c Ikram b Rashid Khan
 
-30
+44
 
-13
+28
 
 5
 
+5
+
+1
+
+157.1
+
+van der Dussen
+
+b Rashid Khan
+
+28
+
+18
+
+7
+
 4
 
-2
+1
 
-230.8
+155.6
 
-Rashid Khan
+Markram
 
-not out
+b Azmatullah
 
-4
+17
+
+17
 
 6
 
-3
+2
 
 0
 
-0
+100.0
 
-66.7
-
-Ikram
+Klaasen
 
 not out
 
-2
+57
+
+29
+
+5
+
+5
 
 3
 
+196.6
+
+Miller
+
+b Azmatullah
+
+0
+
+1
+
+1
+
+0
+
+0
+
+0.0
+
+Jansen
+
+b Azmatullah
+
+6
+
+7
+
 2
 
 0
 
 0
 
-66.7
+85.7
 
-Mujeeb
+Getald Coetzee
 
-Did not Bat
+not out
 
-0
+15
 
-0
+8
 
-0
+4
 
-0
+1
 
-0
+1
 
-0.0
+187.5
 
-Naveen
-
-Did not Bat
-
-0
-
-0
-
-0
-
-0
-
-0
-
-0.0
-
-Farooqi
+Rabada
 
 Did not Bat
 
@@ -186,7 +167,23 @@ Did not Bat
 
 0.0
 
-Shahidi
+Shamsi
+
+Did not Bat
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0.0
+
+Maharaj
 
 Did not Bat
 
@@ -221,105 +218,83 @@ WD NB 4s
 
 6s
 
-Madushanka
-
-4.0
-
-56
-
-1
-
-0
-
-14.0
-
-6
-
-0
-
-0
-
-8
-
-3
-
-Chameera
-
-4.0
-
-31
-
-0
-
-0
-
-7.8
-
-8
-
-0
-
-0
-
-3
-
-1
-
-Theekshana
-
-4.0
-
-26
-
-2
-
-0
-
-6.5
-
-6
-
-1
-
-0
-
-3
-
-0
-
-Rajitha
-
-1.0
-
-12
-
-0
-
-0
-
-12.0
-
-2
-
-0
-
-0
-
-1
-
-1
-
-Angelo Mathews
+Mujeeb
 
 3.0
 
-35
+24
 
 0
 
 0
 
-11.7
+8.0
+
+5
+
+0
+
+0
+
+2
+
+1
+
+Naveen
+
+4.0
+
+37
+
+1
+
+0
+
+9.3
+
+7
+
+0
+
+1
+
+3
+
+1
+
+Azmatullah
+
+4.0
+
+32
+
+3
+
+0
+
+8.0
+
+8
+
+0
+
+0
+
+3
+
+2
+
+Noor Ahmed
+
+3.0
+
+28
+
+0
+
+0
+
+9.3
 
 4
 
@@ -329,27 +304,49 @@ Angelo Mathews
 
 3
 
-2
+1
 
-Dhananjaya
+Rashid Khan
 
 4.0
 
-27
+45
 
 2
 
 0
 
-6.8
+11.3
 
-7
-
-2
+4
 
 0
 
-3
+1
+
+6
+
+1
+
+Nabi
+
+2.0
+
+14
+
+0
+
+0
+
+7.0
+
+2
+
+1
+
+0
+
+1
 
 0
 
@@ -364,55 +361,65 @@ Batsman
 
 Bowler
 
-1
+1
 
-96
+26
 
-9.1
+3.5
 
-Ibrahim
+de Kock
 
-Madushanka
+Naveen
 
-2
+2
 
-133
+84
 
-13.2
+9.3
 
-Rahmat
+Hendricks
 
-Theekshana
+Rashid Khan
 
 3
 
-145
+85
 
-15.5
+9.5
 
-Gurbaz
+van der Dussen
 
-Theekshana
+Rashid Khan
 
 4
 
-180
+128
 
-18.2
+14.5
 
-Nabi
-
-Dhananjaya
-
-5
-
-182
-
-18.6
+Markram
 
 Azmatullah
 
-Dhananjaya
+5
+
+128
+
+14.6
+
+Miller
+
+Azmatullah
+
+6
+
+158
+
+18.1
+
+Jansen
+
+Azmatullah
 
 First Innings-OVERS
 No
@@ -442,152 +449,152 @@ Runs Wkts Per Ball Score
 19
 20
 
-Madushanka
-
-18
-
-0
-
-Chameera
-
-6
-
-0
-
-Theekshana
-
-11
-
-0
-
-Chameera
+Mujeeb
 
 7
 
 0
 
-Rajitha
+Naveen
 
-12
-
-0
-
-Chameera
-
-13
+6
 
 0
 
-A Mathews
-
-10
-
-0
-
-Theekshana
-
-8
-
-0
-
-A Mathews
-
-11
-
-0
-
-Madushanka
-
-5
-
-1
-
-Dhananjaya
+Mujeeb
 
 9
 
 0
 
-Madushanka
-
-16
-
-0
-
-Dhananjaya
-
-7
-
-0
-
-Theekshana
-
-3
-
-1
-
-Dhananjaya
-
-5
-
-0
-
-Theekshana
+Naveen
 
 4
 
 1
 
-A Mathews
+Mujeeb
 
-14
-
-0
-
-Madushanka
-
-17
+8
 
 0
 
-Dhananjaya
+Azmatullah
 
-6
+12
+
+0
+
+N Ahmed
+
+7
+
+0
+
+R Khan
+
+12
+
+0
+
+N Ahmed
+
+11
+
+0
+
+R Khan
+
+15
 
 2
 
-Chameera
+Nabi
+
+8
+
+0
+
+R Khan
 
 5
 
 0
 
-401661
-001401
-011144
-100141
-601041
-402601
-101431
-411011
-041114
-W04001
-440001
-046141
-0 0wd 1 1 1 2 1
-0W0111
-011111
-0 1 1 0wd 1 W 0
-106601
-044414
-4 W 0 0 1 0wd W
-101111
+Nabi
 
-SL:150/10
+6
+
+0
+
+N Ahmed
+
+10
+
+0
+
+Azmatullah
+
+8
+
+2
+
+R Khan
+
+13
+
+0
+
+Azmatullah
+
+5
+
+0
+
+Naveen
+
+12
+
+0
+
+Azmatullah
+
+7
+
+1
+
+Naveen
+
+15
+
+0
+
+401110
+001113
+101610
+1 0 1nb 0 1 W 0
+111410
+604011
+010411
+4 1 0 0 1nb 4 1
+141401
+44W1W6
+014111
+101111
+1 1 1 1 0 0wd 1
+101116
+0440WW
+443101
+011111
+412014
+W00601
+160143
+
+AFG:180/5
 
 Second Innings-Batting
-Overs:19.0
-EXTRAS: 1(B:0 LB:0 NB:0 WD:1)
+Overs:20.0
+EXTRAS: 5(B:0 LB:0 NB:0 WD:5)
 
 Batsman
 
@@ -603,178 +610,176 @@ B
 
 SR
 
-Nissanka
+Gurbaz
 
-c Rahmat b Azmatullah
-
-28
-
-28
-
-11
-
-4
-
-0
-
-100.0
-
-Kusal Perera
-
-c Ikram b Rashid Khan
-
-25
-
-16
-
-3
-
-2
-
-1
-
-156.3
-
-Kusal Mendis
-
-lbw b Naveen
-
-38
-
-24
-
-4
-
-4
-
-1
-
-158.3
-
-Samarawickrama
-
-b Azmatullah
-
-11
-
-7
-
-4
-
-1
-
-1
-
-157.1
-
-Asalanka
-
-c Shahidi b Naveen
-
-16
-
-11
-
-3
-
-1
-
-1
-
-145.5
-
-Angelo Mathews
-
-b Naveen
-
-0
-
-2
-
-2
-
-0
-
-0
-
-0.0
-
-Dhananjaya
-
-not out
-
-8
-
-9
-
-3
-
-0
-
-0
-
-88.9
-
-Theekshana
-
-c Nabi b Rashid Khan
+c Miller b Shamsi
 
 23
 
-14
+17
 
-5
+6
+
+1
+
+2
+
+135.3
+
+Ibrahim
+
+c Hendricks b Jansen
+
+46
+
+34
+
+10
+
+4
+
+2
+
+135.3
+
+Rahmat
+
+b Rabada
+
+52
+
+32
+
+8
+
+4
+
+3
+
+162.5
+
+Shahidi
+
+b Rabada
+
+16
+
+10
 
 4
 
 0
 
-164.3
+2
 
-Chameera
+160.0
 
-c Rashid Khan b Rashid
-Khan
+Azmatullah
 
-0
+not out
 
-1
+11
 
-1
+13
 
-0
-
-0
-
-0.0
-
-Rajitha
-
-c Rashid Khan b Rashid
-Khan
-
-0
-
-1
+6
 
 1
 
 0
 
-0
+84.6
 
-0.0
+Nabi
 
-Madushanka
-
-c Rashid Khan b Rashid
-Khan
+c Markram b Getald
+Coetzee
 
 0
-
-1
 
 2
+
+2
+
+0
+
+0
+
+0.0
+
+Rashid Khan
+
+not out
+
+27
+
+12
+
+3
+
+4
+
+1
+
+225.0
+
+Mujeeb
+
+Did not Bat
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0.0
+
+Naveen
+
+Did not Bat
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0.0
+
+Ikram
+
+Did not Bat
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0.0
+
+Noor Ahmed
+
+Did not Bat
+
+0
+
+0
+
+0
 
 0
 
@@ -801,119 +806,39 @@ WD NB 4s
 
 6s
 
-Farooqi
-
-4.0
-
-35
-
-0
-
-0
-
-8.8
-
-7
-
-0
-
-0
-
-4
-
-1
-
-Mujeeb
-
-2.0
-
-21
-
-0
-
-0
-
-10.5
-
-3
-
-1
-
-0
-
-3
-
-0
-
-Naveen
-
-3.0
-
-15
-
-3
-
-0
-
-5.0
-
-7
-
-0
-
-0
-
-2
-
-0
-
-Rashid Khan
+Jansen
 
 4.0
 
 30
 
-5
+1
 
 0
 
 7.5
 
-5
-
-0
-
-0
-
-2
-
-2
-
-Azmatullah
-
-4.0
-
-39
+9
 
 2
 
 0
 
-9.8
-
-5
-
-0
-
-0
-
-5
+3
 
 1
 
-Nabi
+Rabada
 
-2.0
+4.0
+
+25
+
+2
+
+0
+
+6.3
 
 10
 
@@ -921,17 +846,75 @@ Nabi
 
 0
 
-5.0
+1
 
 2
 
+Getald Coetzee
+
+4.0
+
+47
+
+1
+
 0
+
+11.8
+
+6
+
+1
+
+0
+
+3
+
+4
+
+Maharaj
+
+4.0
+
+36
 
 0
 
 0
 
+9.0
+
+5
+
+1
+
 0
+
+3
+
+1
+
+Shamsi
+
+4.0
+
+42
+
+1
+
+0
+
+10.5
+
+4
+
+1
+
+0
+
+4
+
+2
 
 Second Innings-Fall of Wickets
 No
@@ -946,106 +929,57 @@ Bowler
 
 1
 
-52
+58
 
 6.4
 
-Kusal Perera
+Gurbaz
 
-Rashid Khan
+Shamsi
 
 2
 
-60
+119
 
-7.5
+12.5
 
-Nissanka
+Ibrahim
 
-Azmatullah
+Jansen
 
 3
 
-76
-
-9.3
-
-Samarawickrama
-
-Azmatullah
-
-4
-
-114
-
-13.2
-
-Asalanka
-
-Naveen
-
-5
-
-114
-
-13.4
-
-Angelo Mathews
-
-Naveen
-
-6
-
-121
+141
 
 15.2
 
-Kusal Mendis
+Rahmat
 
-Naveen
+Rabada
 
-7
+4
 
-150
+142
 
-18.3
+15.5
 
-Theekshana
+Shahidi
 
-Rashid Khan
+Rabada
 
-8
+5
 
-150
+144
 
-18.4
+16.3
 
-Chameera
+Nabi
 
-Rashid Khan
-
-9
-
-150
-
-18.5
-
-Rajitha
-
-Rashid Khan
-
-10
-
-150
-
-18.6
-
-Madushanka
-
-Rashid Khan
+Getald Coetzee
 
 Second Innings-OVERS
-No
+
+No
 
 Bowler
 
@@ -1070,140 +1004,149 @@ Runs Wkts Per Ball Score
 17
 18
 19
+20
 
-Farooqi
+Jansen
 
-7
+6
 
 0
 
-Mujeeb
+Rabada
 
 9
 
 0
 
-Farooqi
-
-8
-
-0
-
-Mujeeb
-
-12
-
-0
-
-Farooqi
-
-8
-
-0
-
-Naveen
-
-3
-
-0
-
-R Khan
+Jansen
 
 7
 
-1
+0
 
-Azmatullah
+Rabada
 
-6
+8
 
-1
+0
 
-R Khan
+G Coetzee
+
+14
+
+0
+
+Maharaj
 
 12
 
 0
 
-Azmatullah
+Shamsi
 
-10
+12
 
 1
 
-R Khan
+Maharaj
 
-10
-
-0
-
-Azmatullah
-
-16
+6
 
 0
 
-Nabi
+Shamsi
 
 5
 
 0
 
-Naveen
+Maharaj
+
+7
+
+0
+
+Shamsi
+
+12
+
+0
+
+G Coetzee
+
+15
+
+0
+
+Jansen
+
+7
+
+1
+
+Maharaj
+
+11
+
+0
+
+Jansen
+
+10
+
+0
+
+Rabada
 
 1
 
 2
 
-Nabi
+G Coetzee
 
-5
-
-0
-
-Naveen
-
-11
+4
 
 1
 
-Farooqi
-
-12
-
-0
-
-Azmatullah
+Rabada
 
 7
 
 0
 
-R Khan
+G Coetzee
 
-1
+14
 
-4
+0
 
-010141
-014211
-016100
-0 2 0 0wd 1 4 4
-101411
-011001
-041W11
-1410W0
-401601
-40W411
-016111
-146410
-101111
-1W0W00
+Shamsi
+
+13
+
+0
+
+001410
+006111
+041101
+060011
+606011
+024141
+011W46
+011121
 011111
-2W4401
-401124
-210211
-10WWWW
+014011
+0 4 4 0wd 1 1 1
+061161
+0 0wd 0 4 1 W 0wd 0
+1 6 0 0wd 1 1 1
+601111
+0W01W0
+0 1 0wd W 0 1 1
+010411
+014414
+116410
 
-Result: AFG won the match by 37 runs
+Result: Match Drawn
 Generated by Cricket Scorer
+

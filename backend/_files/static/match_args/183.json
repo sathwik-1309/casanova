@@ -1,0 +1,23 @@
+{
+  "m_id": 183,
+  "batted_first": "aus",
+  "batted_second": "sa",
+  "toss": "aus",
+  "pitch": 2.5,
+  "ball_color": [
+    "y",
+    "y",
+    "y",
+    "y"
+  ],
+  "cap1": "cummins",
+  "cap2": "bavuma",
+  "keeper1": "inglis",
+  "keeper2": "de kock",
+  "winner": "sa",
+  "stage": "league",
+  "venue": "chennai",
+  "motm_player": "markram",
+  "motm_team": "sa",
+  "t_id": 7
+}

@@ -93,6 +93,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
     t.index ["player_id"], name: "index_bat_stats_on_player_id"
   end
 
+  create_table "current_squads", force: :cascade do |t|
+    t.json "jan", default: []
+    t.json "feb", default: []
+    t.json "mar", default: []
+    t.json "apr", default: []
+    t.json "may", default: []
+    t.json "june", default: []
+    t.json "july", default: []
+    t.json "aug", default: []
+    t.json "sept", default: []
+    t.json "oct", default: []
+    t.json "nov", default: []
+    t.json "dec", default: []
+  end
+
   create_table "innings", force: :cascade do |t|
     t.integer "inn_no"
     t.float "overs"
@@ -200,6 +215,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
     t.index ["tournament_id"], name: "index_overs_on_tournament_id"
   end
 
+  create_table "p_leaderboards", force: :cascade do |t|
+    t.string "rtype"
+    t.string "rformat"
+    t.integer "matches"
+    t.float "highest_rating"
+    t.integer "match_id"
+    t.integer "player_id"
+    t.index ["match_id"], name: "index_p_leaderboards_on_match_id"
+    t.index ["player_id"], name: "index_p_leaderboards_on_player_id"
+  end
+
   create_table "partnerships", force: :cascade do |t|
     t.integer "runs"
     t.integer "balls"
@@ -234,6 +260,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
     t.boolean "won"
     t.boolean "captain"
     t.boolean "keeper"
+    t.integer "rank_bat_before"
+    t.integer "rank_bat_after"
+    t.integer "rank_bow_before"
+    t.integer "rank_bow_after"
+    t.integer "rank_all_before"
+    t.integer "rank_all_after"
     t.integer "match_id"
     t.integer "tournament_id"
     t.integer "player_id"
@@ -244,6 +276,47 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
     t.index ["player_id"], name: "index_performances_on_player_id"
     t.index ["squad_id"], name: "index_performances_on_squad_id"
     t.index ["tournament_id"], name: "index_performances_on_tournament_id"
+  end
+
+  create_table "player_match_points", force: :cascade do |t|
+    t.string "rtype"
+    t.string "rformat"
+    t.float "points"
+    t.integer "match_id"
+    t.integer "player_id"
+    t.integer "tournament_id"
+    t.index ["match_id"], name: "index_player_match_points_on_match_id"
+    t.index ["player_id"], name: "index_player_match_points_on_player_id"
+    t.index ["tournament_id"], name: "index_player_match_points_on_tournament_id"
+  end
+
+  create_table "player_rating_images", force: :cascade do |t|
+    t.string "rformat"
+    t.string "rtype"
+    t.json "rating_image"
+    t.integer "counter"
+    t.integer "match_id"
+    t.integer "tournament_id"
+    t.index ["match_id"], name: "index_player_rating_images_on_match_id"
+    t.index ["tournament_id"], name: "index_player_rating_images_on_tournament_id"
+  end
+
+  create_table "player_ratings", force: :cascade do |t|
+    t.string "rformat"
+    t.integer "best_bat_rank"
+    t.integer "best_bat_rank_match"
+    t.integer "best_bat_rating"
+    t.integer "best_bat_rating_match"
+    t.integer "best_ball_rank"
+    t.integer "best_ball_rank_match"
+    t.integer "best_ball_rating"
+    t.integer "best_ball_rating_match"
+    t.integer "best_all_rank"
+    t.integer "best_all_rank_match"
+    t.integer "best_all_rating"
+    t.integer "best_all_rating_match"
+    t.integer "player_id"
+    t.index ["player_id"], name: "index_player_ratings_on_player_id"
   end
 
   create_table "players", force: :cascade do |t|
@@ -364,6 +437,47 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
     t.index ["tournament_id"], name: "index_squads_on_tournament_id"
   end
 
+  create_table "t_leaderboards", force: :cascade do |t|
+    t.string "rformat"
+    t.integer "matches"
+    t.float "highest_rating"
+    t.integer "match_id"
+    t.integer "team_id"
+    t.index ["match_id"], name: "index_t_leaderboards_on_match_id"
+    t.index ["team_id"], name: "index_t_leaderboards_on_team_id"
+  end
+
+  create_table "team_match_points", force: :cascade do |t|
+    t.string "rformat"
+    t.float "points"
+    t.integer "match_id"
+    t.integer "team_id"
+    t.integer "tournament_id"
+    t.index ["match_id"], name: "index_team_match_points_on_match_id"
+    t.index ["team_id"], name: "index_team_match_points_on_team_id"
+    t.index ["tournament_id"], name: "index_team_match_points_on_tournament_id"
+  end
+
+  create_table "team_rating_images", force: :cascade do |t|
+    t.string "rformat"
+    t.json "rating_image"
+    t.integer "counter"
+    t.integer "match_id"
+    t.integer "tournament_id"
+    t.index ["match_id"], name: "index_team_rating_images_on_match_id"
+    t.index ["tournament_id"], name: "index_team_rating_images_on_tournament_id"
+  end
+
+  create_table "team_ratings", force: :cascade do |t|
+    t.string "rformat"
+    t.integer "best_rank"
+    t.integer "best_rank_match"
+    t.integer "best_rating"
+    t.integer "best_rating_match"
+    t.integer "team_id"
+    t.index ["team_id"], name: "index_team_ratings_on_team_id"
+  end
+
   create_table "teams", force: :cascade do |t|
     t.string "name"
     t.string "abbrevation"
@@ -428,6 +542,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
   add_foreign_key "overs", "innings"
   add_foreign_key "overs", "matches"
   add_foreign_key "overs", "tournaments"
+  add_foreign_key "p_leaderboards", "matches"
+  add_foreign_key "p_leaderboards", "players"
   add_foreign_key "partnerships", "innings"
   add_foreign_key "partnerships", "matches"
   add_foreign_key "partnerships", "tournaments"
@@ -435,6 +551,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
   add_foreign_key "performances", "players"
   add_foreign_key "performances", "squads"
   add_foreign_key "performances", "tournaments"
+  add_foreign_key "player_match_points", "matches"
+  add_foreign_key "player_match_points", "players"
+  add_foreign_key "player_match_points", "tournaments"
+  add_foreign_key "player_rating_images", "matches"
+  add_foreign_key "player_rating_images", "tournaments"
+  add_foreign_key "player_ratings", "players"
   add_foreign_key "schedules", "tournaments"
   add_foreign_key "scores", "innings"
   add_foreign_key "scores", "matches"
@@ -452,6 +574,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
   add_foreign_key "squad_players", "tournaments"
   add_foreign_key "squads", "teams"
   add_foreign_key "squads", "tournaments"
+  add_foreign_key "t_leaderboards", "matches"
+  add_foreign_key "t_leaderboards", "teams"
+  add_foreign_key "team_match_points", "matches"
+  add_foreign_key "team_match_points", "teams"
+  add_foreign_key "team_match_points", "tournaments"
+  add_foreign_key "team_rating_images", "matches"
+  add_foreign_key "team_rating_images", "tournaments"
+  add_foreign_key "team_ratings", "teams"
   add_foreign_key "wickets", "balls"
   add_foreign_key "wickets", "innings"
   add_foreign_key "wickets", "matches"

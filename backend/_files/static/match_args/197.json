@@ -1,0 +1,23 @@
+{
+  "m_id": 197,
+  "batted_first": "ind",
+  "batted_second": "afg",
+  "toss": "ind",
+  "pitch": 2.5,
+  "ball_color": [
+    "r",
+    "y",
+    "r",
+    "y"
+  ],
+  "cap1": "rohit",
+  "cap2": "shahidi",
+  "keeper1": "kl rahul",
+  "keeper2": "ikram",
+  "winner": "afg",
+  "stage": "league",
+  "venue": "kolkata",
+  "motm_player": "mujeeb",
+  "motm_team": "afg",
+  "t_id": 7
+}

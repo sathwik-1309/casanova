@@ -71,7 +71,7 @@ function Pointstable(props) {
       }
 
     return (
-        <div className={`pt_parent ${data.tour}`}>
+        <div className={`pt_parent default-font`}>
             <div className={`pt`}>
                 {data.points_table.map((group, index) => (
                 <GroupTable key={index} group={group} func={handleBox}/>

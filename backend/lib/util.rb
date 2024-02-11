@@ -32,11 +32,20 @@ module Util
         file = File.read(PLAYERS_JSON_PATH)
         data = JSON.parse(file)
         data.each do|player|
-            if [player["country"],player["ipl"],player["csl"]].include? team_id
-                if player["names"].include? name
-                    return player["id"]
+            if team_id >= 30 and player["csl_teams"]
+                if player["csl_teams"].include? team_id
+                    if player["names"].include? name
+                        return player["id"]
+                    end
+                end
+            else
+                if [player["country"],player["ipl"],player["csl"]].include? team_id
+                    if player["names"].include? name
+                        return player["id"]
+                    end
                 end
             end
+            
         end
         return nil if name == nil
         raise "Player not found #{name} for #{team_id}"
@@ -215,12 +224,38 @@ module Util
             return "#{abbrevation}#{t_id}_" if TC_TOUR_5.include? abbrevation
         when 6
             return "#{abbrevation}#{t_id}_" if TC_TOUR_6.include? abbrevation
+        when 7
+            return "#{abbrevation}#{t_id}_" if TC_TOUR_7.include? abbrevation
+        when 8
+            return "#{abbrevation}#{t_id}_" if TC_TOUR_8.include? abbrevation
         end
         return abbrevation
     end
 
+    def self.get_skillname(skill)
+        case skill
+        when 'bat'
+            return 'Batsman'
+        when 'bow'
+            return 'Bowler'
+        when 'all'
+            return 'All-rounder'
+        when 'wk'
+            return 'Wk-Batsman'
+        end
+    end
+
     def self.get_worm_color(team_code)
 
+    end
+
+    def self.point_6_fix(overs)
+        o = overs.to_s.split(".")
+        if o[1] == "6"
+            return "#{o[0].to_i+1}.0"
+        else
+            return overs
+        end
     end
 
 

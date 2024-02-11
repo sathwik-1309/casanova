@@ -10,7 +10,7 @@ function Sidebar(props){
     let { p_id } = useParams();
     let { team_id } = useParams();
     let { squad_id } = useParams();
-    if (s_id === 'home') {
+    if (s_id === 'overall') {
         return(
             <div className="sidebar">
                 <SidebarItem name="Home" url={`${FRONTEND_API_URL}/`}/>

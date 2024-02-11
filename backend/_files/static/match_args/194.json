@@ -1,0 +1,23 @@
+{
+  "m_id": 194,
+  "batted_first": "eng",
+  "batted_second": "sl",
+  "toss": "sl",
+  "pitch": 2.5,
+  "ball_color": [
+    "g",
+    "y",
+    "y",
+    "g"
+  ],
+  "cap1": "buttler",
+  "cap2": "kusal mendis",
+  "keeper1": "buttler",
+  "keeper2": "kusal mendis",
+  "winner": "eng",
+  "stage": "league",
+  "venue": "chennai",
+  "motm_player": "bairstow",
+  "motm_team": "eng",
+  "t_id": 7
+}

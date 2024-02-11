@@ -1,0 +1,23 @@
+{
+  "m_id": 180,
+  "batted_first": "eng",
+  "batted_second": "ind",
+  "toss": "eng",
+  "pitch": 3.5,
+  "ball_color": [
+    "r",
+    "g",
+    "r",
+    "g"
+  ],
+  "cap1": "buttler",
+  "cap2": "rohit",
+  "keeper1": "buttler",
+  "keeper2": "kl rahul",
+  "winner": "ind",
+  "stage": "league",
+  "venue": "bengaluru",
+  "motm_player": "shubman gill",
+  "motm_team": "ind",
+  "t_id": 7
+}

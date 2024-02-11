@@ -6,13 +6,25 @@ function WebPage(props) {
     let topbar = <></>
     let classname1 = "webpage_layout_item2"
     switch (props.s_id) {
+        case "overall":
+            classname1 += " webpage_layout_item2_margin"
+            topbar = <Topbar s_id='overall'/>
+            break;
         case "tour":
             classname1 += " webpage_layout_item2_margin"
             topbar = <Topbar s_id='tour'/>
             break;
+        case "tour_class":
+            classname1 += " webpage_layout_item2_margin"
+            topbar = <Topbar s_id='tour_class'/>
+            break;
         case "match":
             classname1 += " webpage_layout_item2_margin"
             topbar = <Topbar s_id='match'/>
+            break;
+        case "schedule":
+            classname1 += " webpage_layout_item2_margin"
+            topbar = <Topbar s_id='schedule'/>
             break;
         case "players_page":
             classname1 += " webpage_layout_item2_margin"
@@ -21,6 +33,10 @@ function WebPage(props) {
         case "player":
             classname1 += " webpage_layout_item2_margin"
             topbar = <Topbar s_id='player'/>
+            break;
+        case "team":
+            classname1 += " webpage_layout_item2_margin"
+            topbar = <Topbar s_id='team'/>
             break;
         case "squad":
             classname1 += " webpage_layout_item2_margin"

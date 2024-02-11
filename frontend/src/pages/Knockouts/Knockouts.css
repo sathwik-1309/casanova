@@ -1,0 +1,22 @@
+.rb-1{
+  border-right: 3px solid;
+}
+
+.lb-1{
+  border-left: 3px solid ;
+}
+
+.tb-1{
+  border-top: 3px solid ;
+}
+
+.bb-1 {
+  border-bottom: 3px solid ;
+}
+
+.rtr-1{
+  border-top-right-radius: 4px;
+}
+.ltr-1{
+  border-top-left-radius: 4px;
+}

@@ -18,16 +18,22 @@ function TotalBox(props) {
 
 function TeamTotals(props) {
   const data = props.data
+  console.log(data)
   return (
-    <div className="flex-col">
+    <>
+    {
+      data.highest_total &&
+      <div className="flex-col">
       <div className="bg-dark c-white flex-centered h-30 font-0_9 font-600">TEAM TOTALS</div>
       <div className='flex-row team-totals bg-shadow bg-white font-1 font-500'>
-        <TotalBox label='LOWEST' score={data.lowest_total.score} meta={props.meta} vs_team={data.lowest_total.vs_team}/>
-        <TotalBox label='AVERAGE' score={data.avg_total} meta={props.meta} avg={true}/>
-        <TotalBox label='HIGHEST' score={data.highest_total.score} meta={props.meta} vs_team={data.highest_total.vs_team}/>
+        {data.lowest_total && <TotalBox label='LOWEST' score={data.lowest_total.score} meta={props.meta} vs_team={data.lowest_total.vs_team}/>}
+        {data.avg_total && <TotalBox label='AVERAGE' score={data.avg_total} meta={props.meta} avg={true}/>}
+        {data.highest_total && <TotalBox label='HIGHEST' score={data.highest_total.score} meta={props.meta} vs_team={data.highest_total.vs_team}/>}
       </div>
       
     </div>
+    }
+    </>
   )
 }
 

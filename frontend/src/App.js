@@ -25,6 +25,12 @@ import Create from "./pages/Create/Create";
 import SquadPage from "./pages/Squad/SquadPage/SquadPage";
 import SquadsPage from "./pages/SquadsPage/SquadsPage";
 import TeamPage from "./pages/Team/TeamPage/TeamPage";
+import TournamentsHome from "./pages/Tournament/TournamentsPage/TournamentsHome/TournamentsHome";
+import HomePages from "./pages/HomePages/HomePages";
+import { HeadtoHead } from "./pages/Team/HeadtoHead/HeadtoHead";
+import PreMatch from "./components/Match/PreMatch/PreMatch";
+import SelectSquads from "./pages/SelectSquads/SelectSquads";
+import SelectSquadsPage from "./pages/SelectSquads/SelectSquadsPage";
 
 
 function App() {
@@ -34,13 +40,16 @@ function App() {
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com"/>
     <link
-            href="https://fonts.googleapis.com/css2?family=Audiowide&family=Karla:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lexend:wght@400;500;600&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Noto+Sans+JP:wght@400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Audiowide&family=Karla:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lexend:wght@400;500;600&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Noto+Sans+JP:wght@400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Red+Rose:wght@400;500;600;700&family=Rubik:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
             rel="stylesheet"/><link/>
     <Routes>
-      <Route path="/" element={<WebPage page={<HomePage/>} s_id='home'/>} />
+      <Route path="/" element={<WebPage page={<HomePage/>} s_id='overall'/>} />
+      <Route path="/select_squads" element={<WebPage page={<SelectSquadsPage/>} />} />
+      <Route path="/select_squads/:team_id/:pools" element={<WebPage page={<SelectSquads/>} />} />
+      <Route path="/:page" element={<WebPage page={<HomePages/>} s_id='overall'/>} />
 
-      <Route path="/meta/batting" element={<WebPage page={<Meta type={`batting`}/>} s_id='home'/>} />
-      <Route path="/meta/bowling" element={<WebPage page={<Meta type={`bowling`}/>} s_id='home'/>} />
+      <Route path="/meta/batting" element={<WebPage page={<Meta type={`batting`}/>} s_id='overall'/>} />
+      <Route path="/meta/bowling" element={<WebPage page={<Meta type={`bowling`}/>} s_id='overall'/>} />
 
       <Route path="/tournament/:t_id" element={<WebPage page={<TournamentHome/>} s_id='tour' />}/>
       <Route path="/tournament/:t_id/matches" element={<WebPage page={<MatchesPage t_id={true}/>} s_id='tour' />}/>
@@ -52,21 +61,25 @@ function App() {
       <Route path="/tournament/:t_id/squads/:squad_id" element={<WebPage page={<SquadPage/>} s_id={'squad'}/>} />
       <Route path="/tournament/:t_id/squads/:squad_id/players" element={<WebPage page={<PlayersPage squad_id={true}/>} s_id={'squad'}/>} />
       <Route path="/tournament/:t_id/squads/:squad_id/matches" element={<WebPage page={<MatchesPage squad_id={true}/>} s_id={'squad'}/>} />
+      <Route path="/tournament/:t_id/squads/:squad_id/head_to_head" element={<WebPage page={<HeadtoHead squad_id={true}/>} s_id={'squad'}/>} />
 
-      <Route path="/tournaments/:tour_class" element={<WebPage page={<TournamentsPage/>} s_id='tour_class'/>} />
+      <Route path="/tournaments/:tour_class" element={<WebPage page={<TournamentsHome/>} s_id='tour_class'/>} />
       <Route path="/tournaments/:tour_class/matches" element={<WebPage page={<MatchesPage tour_class={true}/>} s_id='tour_class' />}  />
       <Route path="/tournaments/:tour_class/venues" element={<WebPage page={<VenuesPage tour_class={true}/>} s_id='tour_class' />}  />
       <Route path="/tournaments/:tour_class/teams" element={<WebPage page={<TeamsPage tour_class={true}/>} s_id='tour_class' />}  />
       <Route path="/tournaments/:tour_class/players" element={<WebPage page={<PlayersPage tour_class={true}/>} s_id='tour_class' />}  />
+      <Route path="/tournaments/:tour_class/:page" element={<WebPage page={<TournamentsPage/>} s_id={'tour_class'}/>} />
 
       <Route path="/teams" element={<WebPage page={<TeamsPage/>}/>}  />
       <Route path="/teams/:team_id" element={<WebPage page={<TeamPage/>} s_id={'team'}/>} />
       <Route path="/teams/:team_id/matches" element={<WebPage page={<MatchesPage team_id={true}/>} s_id='team' />}  />
       <Route path="/teams/:team_id/players" element={<WebPage page={<PlayersPage team_id={true}/>} s_id='team' />}  />
+      <Route path="/teams/:team_id/head_to_head" element={<WebPage page={<HeadtoHead team_id={true}/>} s_id='team' />}  />
 
       <Route path="/venues" element={<WebPage page={<VenuesPage/>}/>}  />
 
       <Route path="/match/:m_id/:inn_no/:graphic" element={<WebPage page={<MatchPage/>} s_id='match'/>}/>
+      <Route path="/schedule/:schedule_id" element={<WebPage page={<PreMatch />} s_id='schedule'/>}/>
 
       <Route path="/player/:p_id" element={<WebPage page={<PlayerHome/>} s_id='player'/>} />
       <Route path="/player/:p_id/matches" element={<WebPage page={<MatchesPage p_id={true}/>} s_id='player' />}  />

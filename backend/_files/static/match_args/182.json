@@ -1,0 +1,23 @@
+{
+  "m_id": 182,
+  "batted_first": "pak",
+  "batted_second": "eng",
+  "toss": "eng",
+  "pitch": 3.5,
+  "ball_color": [
+    "g",
+    "y",
+    "g",
+    "y"
+  ],
+  "cap1": "babar",
+  "cap2": "buttler",
+  "keeper1": "rizwan",
+  "keeper2": "buttler",
+  "winner": "pak",
+  "stage": "league",
+  "venue": "mumbai",
+  "motm_player": "malan",
+  "motm_team": "eng",
+  "t_id": 7
+}

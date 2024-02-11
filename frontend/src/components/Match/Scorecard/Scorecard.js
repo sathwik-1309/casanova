@@ -12,10 +12,10 @@ function Header(props) {
     let class5 = 'match_scorecard_header_score ' + color + "2"
     return (
     <div id="match_scorecard_header">
-        <div className={class2}>
+        <div className={`${class2} bg-shadow`}>
             {props.header.teamname}
         </div>
-        <div className="match_scorecard_header2">
+        <div className="match_scorecard_header2 bg-shadow">
             <div className={class3}>
                 Fours: {props.header.fours}
             </div>
@@ -63,7 +63,7 @@ function ScoreItem(props) {
     let class5 = 'scorecard_runs '+ temp1
 
     return (
-        <div id="scorecard_item" onClick={() => props.func(i.scorebox)}>
+        <div id="scorecard_item" className={`bg-shadow`} onClick={() => props.func(i.scorebox)}>
             <div className={class1}>
                 {i.name}
             </div>
@@ -125,7 +125,7 @@ function Scorecard(props) {
                 <Header header={scorecard.header}/>
                 <div id="match_scorecard_body">
                     {scorecard.body.map((item, index) => (
-                    <ScoreItem key={index} item={item} color={scorecard.header.color} func={handleBox}/>
+                    <ScoreItem index={index} item={item} color={scorecard.header.color} func={handleBox}/>
                     ))}
                 </div>
             </div>

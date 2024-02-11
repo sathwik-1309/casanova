@@ -1,0 +1,23 @@
+{
+  "m_id": 178,
+  "batted_first": "sl",
+  "batted_second": "nz",
+  "toss": "sl",
+  "pitch": 2,
+  "ball_color": [
+    "y",
+    "y",
+    "y",
+    "y"
+  ],
+  "cap1": "kusal mendis",
+  "cap2": "latham",
+  "keeper1": "kusal mendis",
+  "keeper2": "latham",
+  "winner": "sl",
+  "stage": "league",
+  "venue": "delhi",
+  "motm_player": "phillips",
+  "motm_team": "nz",
+  "t_id": 7
+}

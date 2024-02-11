@@ -39,25 +39,25 @@ class Squad < ApplicationRecord
             runs = bat_innings.score
             wickets = bat_innings.for
             if wickets == 10
-                overs = 20.0
+                balls = 120
             else
-                overs = bat_innings.overs
+                balls = Util.overs_to_balls(bat_innings.overs)
             end
             runs_list.append(runs)
-            overs_list.append(overs)
+            overs_list.append(balls)
 
             ball_innings = Inning.find_by(match_id: match.to_i, bow_team_id: self.id)
             runs_conceded = ball_innings.score
             wickets_taken = ball_innings.for
             if wickets_taken == 10
-                overs_bowled = 20.0
+                balls_bowled = 120
             else
-                overs_bowled = ball_innings.overs
+                balls_bowled = Util.overs_to_balls(ball_innings.overs)
             end
             runs_conceded_list.append(runs_conceded)
-            overs_bowled_list.append(overs_bowled)
+            overs_bowled_list.append(balls_bowled)
         end
-        nrr = ((runs_list.sum.to_f / overs_list.sum.to_f) - (runs_conceded_list.sum.to_f / overs_bowled_list.sum.to_f)).round(2)
+        nrr = (((runs_list.sum.to_f*6) / overs_list.sum.to_f) - ((runs_conceded_list.sum.to_f*6) / overs_bowled_list.sum.to_f)).round(2)
         return nrr
     end
 
@@ -73,7 +73,8 @@ class Squad < ApplicationRecord
         temp = {}
         temp['name'] = self.get_teamname
         temp['abbrevation'] = self.get_abb
-        temp['color'] = self.abbrevation
+        temp['color'] = Util.get_team_color(self.tournament_id, self.abbrevation)
+        temp['code'] = self.abbrevation
         temp['id'] = self.id
         temp
     end
@@ -91,7 +92,7 @@ class Squad < ApplicationRecord
         games = Schedule.where("squad1_id = ? or squad2_id =?", squad.id, squad.id)
         games.each do |schedule|
             temp = schedule.schedule_box
-            if temp['squad1']['color'] != squad.abbrevation
+            if temp['squad1']['code'] != squad.abbrevation
                 temp['squad1'], temp['squad2'] = temp['squad2'], temp['squad1']
             end
             arr << temp
@@ -102,13 +103,13 @@ class Squad < ApplicationRecord
     def top_players
         hash = {}
         bat_stats = self.bat_stats
-        hash['most_runs'] = bat_stats[0].slice("player", "runs", "innings")
-        hash['best_score'] = bat_stats.sort_by{|stat| [-stat['best']['score'].to_i, stat['best']['balls']]}[0].slice("best", "player")
-        hash['best_sr'] = bat_stats.filter{|stat| stat['runs'] > 50 }.sort_by{|stat| -stat['sr']} [0].slice("player", "sr", "runs")
+        hash['most_runs'] = bat_stats[0]&.slice("player", "runs", "innings")
+        hash['best_score'] = bat_stats.sort_by{|stat| [-stat['best']['score'].to_i, stat['best']['balls']]}[0]&.slice("best", "player")
+        hash['best_sr'] = bat_stats.filter{|stat| stat['runs'] > 50 }.sort_by{|stat| -stat['sr']} [0]&.slice("player", "sr", "runs")
         ball_stats = self.ball_stats
-        hash['most_wickets'] = ball_stats[0].slice("player", "wickets", "innings")
-        hash['best_spell'] = ball_stats.sort_by{|stat| [-stat['best']['wickets'].to_i, stat['best']['runs']] }[0].slice("best", "player")
-        hash['best_economy'] = ball_stats.filter{|stat| stat['overs'] > 8}.sort_by{|stat| stat['economy']}[0].slice("player", "economy", "wickets")
+        hash['most_wickets'] = ball_stats[0]&.slice("player", "wickets", "innings")
+        hash['best_spell'] = ball_stats.sort_by{|stat| [-stat['best']['wickets'].to_i, stat['best']['runs']] }[0]&.slice("best", "player")
+        hash['best_economy'] = ball_stats.filter{|stat| stat['overs'] > 8}.sort_by{|stat| stat['economy']}[0]&.slice("player", "economy", "wickets")
         
         hash
     end
@@ -147,7 +148,7 @@ class Squad < ApplicationRecord
         hash = {}
         matches = Match.where("winner_id = ? or loser_id = ?", self.id, self.id)
         matches_won = matches.select{ |m| m.winner_id == self.id }.length
-        win_p = (matches_won*100/matches.length).to_i
+        win_p = matches.length == 0 ? 0 : (matches_won*100/matches.length).to_i
         hash['result_stats'] = {
             "total_matches" => matches.length,
             "won" => matches_won,
@@ -160,7 +161,7 @@ class Squad < ApplicationRecord
 
         matches_defended = innings.where(inn_no: 1).map{|i| i.match }
         matches_won = matches_defended.select{ |m| m.winner_id == self.id }.length
-        win_p = (matches_won*100/matches_defended.length).to_i
+        win_p = matches_defended.length == 0 ? 0 : (matches_won*100/matches_defended.length).to_i
         hash['defended'] = {
             "total_matches" => matches_defended.length,
             "won" => matches_won,
@@ -170,7 +171,7 @@ class Squad < ApplicationRecord
 
         matches_chased = matches - matches_defended
         matches_won = matches_chased.select{ |m| m.winner_id == self.id }.length
-        win_p = (matches_won*100/matches_chased.length).to_i
+        win_p = matches_chased.length == 0 ? 0 : (matches_won*100/matches_chased.length).to_i
         hash['chased'] = {
             "total_matches" => matches_chased.length,
             "won" => matches_won,
@@ -193,7 +194,7 @@ class Squad < ApplicationRecord
     def meta
         meta = {
             "id" => self.id,
-            "color" => self.abbrevation,
+            "color" => Util.get_team_color(self.tournament_id, self.abbrevation),
             "abbrevation" => self.get_abb,
             "teamname" => self.get_teamname,
             "tour" => self.tournament.get_tour_with_season

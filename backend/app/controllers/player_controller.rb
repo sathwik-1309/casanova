@@ -124,14 +124,47 @@ class PlayerController < ApplicationController
   end
 
   def players
+    # array = []
+    # players = Player.all
+    # if params[:tour_class]
+    #   tour_ids = Helper.get_tour_class_ids2(params[:tour_class])
+    #   array = Helper.construct_players_hash_for_tour(tour_ids, players)
+    # elsif params[:t_id]
+    #   tour_ids = params[:t_id]
+    #   array = Helper.construct_players_hash_for_tour(tour_ids, players)
+    # else
+    #   players.each do |player|
+    #     hash = Helper.construct_player_details(player)
+    #     hash["color"] = player.country.abbrevation || nil
+    #     hash["teamname"] = player.country.get_teamname || nil
+    #     array << hash
+    #   end
+    # end
     array = []
     players = Player.all
     if params[:tour_class]
       tour_ids = Helper.get_tour_class_ids2(params[:tour_class])
-      array = Helper.construct_players_hash_for_tour(tour_ids, players)
+      sp = SquadPlayer.where(tournament_id: tour_ids)
+      sp.each do |s|
+        hash = s.player.attributes.slice('p_id', 'batting_hand', 'bowling_hand', 'bowling_style')
+        hash["p_id"] = s.player.id
+        hash["name"] = s.player.fullname.length > 13 ? s.player.name.titleize : s.player.fullname.titleize
+        hash["color"] = s.squad.abbrevation || nil
+        hash["teamname"] = s.squad.get_teamname || nil
+        hash["skill"] = s.player.keeper ? 'WK' : s.player.skill.upcase
+        array << hash
+      end
     elsif params[:t_id]
-      tour_ids = params[:t_id]
-      array = Helper.construct_players_hash_for_tour(tour_ids, players)
+      sp = SquadPlayer.where(tournament_id: params[:t_id])
+      sp.each do |s|
+        hash = s.player.attributes.slice('p_id', 'batting_hand', 'bowling_hand', 'bowling_style')
+        hash["p_id"] = s.player.id
+        hash["name"] = s.player.fullname.length > 13 ? s.player.name.titleize : s.player.fullname.titleize
+        hash["color"] = Util.get_team_color(s.squad.tournament_id ,s.squad.abbrevation) || nil
+        hash["teamname"] = s.squad.get_teamname || nil
+        hash["skill"] = s.player.keeper ? 'WK' : s.player.skill.upcase
+        array << hash
+      end
     elsif params[:team_id]
       team = Team.find_by_id(params[:team_id])
       squad_ids = team.squads.pluck(:id)
@@ -147,7 +180,7 @@ class PlayerController < ApplicationController
       players = SquadPlayer.where(squad_id: squad.id).map{|s| s.player }
       players.each do |player|
         temp = Helper.construct_player_details(player)
-        temp["color"] = squad.abbrevation
+        temp["color"] = Util.get_team_color(squad.tournament_id ,squad.abbrevation)
         temp["teamname"] = squad.get_teamname
         array << temp
       end
@@ -181,6 +214,7 @@ class PlayerController < ApplicationController
     hash = {}
     hash['profile'] = player.profile_hash
     hash['trophy_cabinet'] = player.trophy_cabinet_hash
+    hash['ranking'] = player.rank_box_hash
     hash['stat_options'] = player.get_stat_options
     render(:json => Oj.dump(hash))
   end
@@ -302,6 +336,48 @@ class PlayerController < ApplicationController
     hash['spells'] = total_spells
     hash['stat_options'] = player.get_stat_options
     render(:json => Oj.dump(hash))
+  end
+
+  def leaderboard
+    rformats = ['wt20', 'csl']
+    hash = {}
+    rformats.each do |rformat|
+      hash[rformat] = {}
+      PLAYER_RATING_RTYPES.each do |rtype|
+        hash[rformat][rtype] = {}
+        pls = PLeaderboard.where(rformat: rformat, rtype: rtype)
+        history = []
+        leaderboard = []
+        pls.each do |pl|
+          temp = pl.attributes.slice('matches', 'highest_rating', 'player_id', 'match_id')
+          case rformat
+          when 'wt20'
+            team = pl.player.country
+          when 'csl'
+            team = Team.find_by_id(pl.player.csl_team_id)
+          end
+          temp['name'] = pl.player.fullname.titleize
+          temp['teamname'] = team.get_teamname
+          temp['color'] = team.abbrevation
+          history << temp
+          pl_dict = leaderboard.find{|h| h['player_id'] == pl.player.id}
+          if pl_dict.nil?
+            leaderboard << {'player_id'=>pl.player.id, 'times'=>0, 'matches'=>0, 'highest_rating'=>0, 'name'=>temp['name'], 'color'=>temp['color'], 'teamname'=>temp['teamname']}
+            pl_dict = leaderboard[-1]
+          end
+          pl_dict['times'] += 1
+          pl_dict['matches'] += pl.matches
+          pl_dict['highest_rating'] = pl.highest_rating if pl.highest_rating > pl_dict['highest_rating']
+        end
+        leaderboard = leaderboard.sort_by{|l| -l['matches']}
+        hash[rformat][rtype]['history'] = history
+        hash[rformat][rtype]['leaderboard'] = leaderboard
+      end
+    end
+    render(:json => Oj.dump(hash))
+  end
+
+  def bowling_analysis
   end
 
   private

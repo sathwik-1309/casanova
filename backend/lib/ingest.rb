@@ -145,21 +145,22 @@ class Ingest
         end
     end
 
-    def update_part(runs, extras=0, extra_type=nil)
+    def update_part(sr_batsman, runs, extras=0, extra_type=nil)
         if extra_type != 'wd'
             self.part["balls"] += 1
             cat = Ingest.get_ball_category(runs)
             self.part[cat] += 1
-        end
-        if self.sr == self.b1["id"]
-            self.part["b1s"] += runs
-            self.part["b1b"] += 1
-        else
-            self.part["b2s"] += runs
-            self.part["b2b"] += 1
+            if sr_batsman == self.b1["id"]
+                self.part["b1s"] += runs
+                self.part["b1b"] += 1
+            else
+                self.part["b2s"] += runs
+                self.part["b2b"] += 1
+            end
         end
 
         self.part["runs"] += runs + extras
+        
     end
 
     def get_performances
@@ -349,12 +350,16 @@ class Ingest
                 @parent.overs = 20
             end
 
-            @parent.b1["not_out"] = true
-            @parent.b2["not_out"] = true
+            @parent.b1["not_out"] = true unless @parent.b1["not_out"] == false
+            @parent.b2["not_out"] = true unless @parent.b2["not_out"] == false
             @parent.scores_hash << @parent.b1
             @parent.scores_hash << @parent.b2
             @parent.scores_hash = @parent.scores_hash.sort_by { |hash| hash["pos"] }
             l = @parent.scores_hash.length
+            if l > 11
+                @parent.scores_hash.pop
+                l = @parent.scores_hash.length
+            end
             while l < 11
                 @parent.scores_hash << Ingest.set_batsman_config(@parent.batsmen[l], Squad.find(@parent.bat_team_id).team_id, false)
                 l += 1
@@ -418,6 +423,7 @@ class Ingest
             extra_type = NILL
             wicket_ball = false
             bow_runs = 0
+            sr_batsman = @parent.sr
             if @parent.spells.keys().exclude? @parent.current_bowler
                 @parent.spells[@parent.current_bowler] = {
                     "runs"=> 0,
@@ -433,7 +439,7 @@ class Ingest
                     wicket_ball = true
                     @parent.spells[@parent.current_bowler]["balls"] += 1
                     @parent.spells[@parent.current_bowler]["wickets"] += 1
-                    @parent.update_part(0)
+                    @parent.update_part(sr_batsman, 0)
                 else
                     runs = @ball.to_i
                     bow_runs = runs
@@ -441,7 +447,7 @@ class Ingest
                     @parent.add_batsman_runs(@parent.sr, @parent.b1, @parent.b2, runs)
                     @parent.spells[@parent.current_bowler]["runs"] += runs
                     @parent.spells[@parent.current_bowler]["balls"] += 1
-                    @parent.update_part(runs)
+                    @parent.update_part(sr_batsman, runs)
                 end
             else
                 e_runs = @ball[0].to_i
@@ -489,12 +495,13 @@ class Ingest
                     end
                 else
                     puts "!!!*!**!*!*!*!*!* NEW EXTRA TYPE #{extra_type}!#&@°&!#‡€!*‹°€"
+                    
                 end
-                @parent.update_part(runs, extras, extra_type)
+                @parent.update_part(sr_batsman, runs, extras, extra_type)
             end
             @parent.score += runs + extras
             @parent.for += 1 if wicket_ball
-            ball_csv = [@parent.b_id, runs, extras, extra_type, @parent.overs, wicket_ball, @parent.score, @parent.for, category, bow_runs, @parent.ball_color, @parent.sr, @parent.current_bowler, @parent.o_id, @parent.inn_id, @parent.m_id, @parent.args["t_id"] ]
+            ball_csv = [@parent.b_id, runs, extras, extra_type, @parent.overs, wicket_ball, @parent.score, @parent.for, category, bow_runs, @parent.ball_color, sr_batsman, @parent.current_bowler, @parent.o_id, @parent.inn_id, @parent.m_id, @parent.args["t_id"] ]
             @parent.balls_csv << ball_csv
             Ingest::Wicket_.new(@parent) if wicket_ball
         end
@@ -529,10 +536,10 @@ class Ingest
         # t.integer :fielder_id
         def create_hash
             if @batsman_out["id"] == @parent.b1["id"]
-                @parent.b1 = Ingest.set_batsman_config(@parent.batsmen[@parent.for+1], Squad.find(@parent.bat_team_id).team_id, @parent.for+2)
+                @parent.b1 = Ingest.set_batsman_config(@parent.batsmen[@parent.for+1], Squad.find(@parent.bat_team_id).team_id, @parent.for+2) unless @parent.for == 10
                 @parent.sr = @parent.b1["id"]
             else
-                @parent.b2 = Ingest.set_batsman_config(@parent.batsmen[@parent.for+1], Squad.find(@parent.bat_team_id).team_id, @parent.for+2)
+                @parent.b2 = Ingest.set_batsman_config(@parent.batsmen[@parent.for+1], Squad.find(@parent.bat_team_id).team_id, @parent.for+2) unless @parent.for == 10
                 @parent.sr = @parent.b2["id"]
             end
 

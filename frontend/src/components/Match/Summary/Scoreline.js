@@ -2,7 +2,7 @@ import './Scoreline.css'
 
 function Scoreline(props) {
     return (
-        <div id="summary_scoreline">
+        <div id="summary_scoreline" className='bg-shadow'>
             <div className={`summary_teamname ${props.team}1`}>
                 {props.teamname.toUpperCase()}
             </div>

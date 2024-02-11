@@ -12,7 +12,6 @@ class TournamentController < ApplicationController
       group.each do |team_id|
         pt = {}
         squad = Squad.find_by(team_id: team_id, tournament_id: t_id.to_i)
-        print [team_id, t_id]
         pt["team"] = "#{Util.get_flag(team_id)} #{squad.abbrevation.upcase}"
         pt["color"] = Util.get_team_color(t_id, squad.abbrevation)
         pt["won"] = Match.where(stage: ['league','group'],winner_id: squad.id).length
@@ -157,8 +156,10 @@ class TournamentController < ApplicationController
     #   "header"=> "Highest Boundary %",
     #   "data"=>Helper.format_individual_stats(bat_stats_hash_bp[0..4], "boundary_p", "runs", t_id)}
 
-    hash["tour"] = Tournament.find(t_id).get_tour_font
+    tour = Tournament.find(t_id)
+    hash["tour"] = tour.get_tour_font
     hash["bat_stats"] = bat_stats
+    hash["individual_bat_stats"] = tour.individual_bat_stats
     render(:json => Oj.dump(hash))
   end
 
@@ -215,8 +216,10 @@ class TournamentController < ApplicationController
       "header"=> "Lowest Boundary %",
       "data"=> Helper.format_individual_stats(ball_stats_hash_bp[0..4], "boundary_p", "eco", t_id)}
 
-    hash["tour"] = Tournament.find(t_id).get_tour_font
+    tour = Tournament.find(t_id)
+    hash["tour"] = tour.get_tour_font
     hash["ball_stats"] = ball_stats
+    hash["individual_ball_stats"] = tour.individual_ball_stats
     render(:json => Oj.dump(hash))
   end
 
@@ -276,8 +279,8 @@ class TournamentController < ApplicationController
       box2["most_wickets"] = most_wickets_player.tour_individual_awards_to_hash(t_id, "most_wickets")
     else
       hash['ongoing'] = true
-      latest_mid = Match.last.id
-      schedules = Schedule.where(tournament_id: t_id).where("id > #{latest_mid}").order(id: :asc).limit(3)
+      latest_match = tour.matches.last
+      schedules = Schedule.where(tournament_id: t_id).where("`order` > #{latest_match&.schedule&.order || 0}").order(id: :asc).limit(3)
       tourname = Tournament.find(t_id).get_tour_with_season
       upcoming_matches = []
       schedules.each do|schedule|
@@ -300,7 +303,7 @@ class TournamentController < ApplicationController
         most_runs_player = Player.find(most_runs.player_id)
         box2["most_runs"] = most_runs_player.tour_individual_awards_to_hash(t_id, "most_runs", {"runs" => most_runs.runs})
 
-        most_wickets = BallStat.where(sub_type: "tour_#{t_id}").order(wickets: :desc).limit(1).first
+        most_wickets = BallStat.where(sub_type: "tour_#{t_id}").order(wickets: :desc, economy: :asc).limit(1).first
         most_wickets_player = Player.find(most_wickets.player_id)
         box2["most_wickets"] = most_wickets_player.tour_individual_awards_to_hash(t_id, "most_wickets", {"wickets" => most_wickets.wickets})
       end
@@ -397,6 +400,158 @@ class TournamentController < ApplicationController
       arr << schedule.schedule_box
     end
     render(:json => Oj.dump(arr))
+  end
+
+  def tour_class_bat_stats
+    tour_class = params[:tour_class]
+    stats = BatStat.where(sub_type: tour_class).where("runs > 0").order(runs: :desc)
+    arr = {}
+    boxes = []
+    boxes << Helper.construct_tour_class_bat_stats(stats[0..4], 'runs', "Most Runs", tour_class)
+    bat_stats = stats.where("runs > 100").sort_by{|s| -s.sr }
+    boxes << Helper.construct_tour_class_bat_stats(bat_stats[0..4], 'sr', "Highest Strike-rate", tour_class, 'runs')
+    bat_stats = stats.where("runs > 100").sort_by{|s| -s.avg }
+    boxes << Helper.construct_tour_class_bat_stats(bat_stats[0..4], 'avg', "Highest Average", tour_class, 'runs')
+    bat_stats = stats.sort_by{|s| [-s.c6, -s.sr] }
+    boxes << Helper.construct_tour_class_bat_stats(bat_stats[0..4], 'c6', "Most Sixes", tour_class)
+    bat_stats = stats.sort_by{|s| [-s.c4, -s.sr] }
+    boxes << Helper.construct_tour_class_bat_stats(bat_stats[0..4], 'c4', "Most Fours", tour_class)
+    bat_stats = stats.sort_by{|s| [-s.fifties, -s.sr] }
+    boxes << Helper.construct_tour_class_bat_stats(bat_stats[0..4], 'fifties', "Most 50's", tour_class)
+    bat_stats = stats.sort_by{|s| [-s.hundreds, -s.sr] }
+    boxes << Helper.construct_tour_class_bat_stats(bat_stats[0..4], 'hundreds', "Most 100's", tour_class)
+    bat_stats = stats.where("runs > 100").sort_by{|s| -s.boundary_p }
+    boxes << Helper.construct_tour_class_bat_stats(bat_stats[0..4], 'boundary_p', "Highest Boundary %", tour_class, 'runs')
+    bat_stats = stats.where("runs > 100").sort_by{|s| s.dot_p }
+    boxes << Helper.construct_tour_class_bat_stats(bat_stats[0..4], 'dot_p', "Lowest Dot %", tour_class, 'runs')
+    arr['bat_stats'] = {}
+    arr['bat_stats']['boxes'] = boxes
+    arr['individual_bat_stats'] = Tournament.tour_class_individual_bat_stats(tour_class)
+    render(:json => Oj.dump(arr))
+  end
+
+  def overall_bat_stats
+    tour_class = 'wt20'
+    stats = BatStat.where(sub_type: "overall").where("runs > 0").order(runs: :desc)
+    arr = {}
+    boxes = []
+    boxes << Helper.construct_tour_class_bat_stats(stats[0..4], 'runs', "Most Runs", tour_class)
+    bat_stats = stats.where("runs > 100").sort_by{|s| -s.sr }
+    boxes << Helper.construct_tour_class_bat_stats(bat_stats[0..4], 'sr', "Highest Strike-rate", tour_class, 'runs')
+    bat_stats = stats.where("runs > 100").sort_by{|s| -s.avg }
+    boxes << Helper.construct_tour_class_bat_stats(bat_stats[0..4], 'avg', "Highest Average", tour_class, 'runs')
+    bat_stats = stats.sort_by{|s| [-s.c6, -s.sr] }
+    boxes << Helper.construct_tour_class_bat_stats(bat_stats[0..4], 'c6', "Most Sixes", tour_class)
+    bat_stats = stats.sort_by{|s| [-s.c4, -s.sr] }
+    boxes << Helper.construct_tour_class_bat_stats(bat_stats[0..4], 'c4', "Most Fours", tour_class)
+    bat_stats = stats.sort_by{|s| [-s.fifties, -s.sr] }
+    boxes << Helper.construct_tour_class_bat_stats(bat_stats[0..4], 'fifties', "Most 50's", tour_class)
+    bat_stats = stats.sort_by{|s| [-s.hundreds, -s.sr] }
+    boxes << Helper.construct_tour_class_bat_stats(bat_stats[0..4], 'hundreds', "Most 100's", tour_class)
+    bat_stats = stats.where("runs > 100").sort_by{|s| -s.boundary_p }
+    boxes << Helper.construct_tour_class_bat_stats(bat_stats[0..4], 'boundary_p', "Highest Boundary %", tour_class, 'runs')
+    bat_stats = stats.where("runs > 100").sort_by{|s| s.dot_p }
+    boxes << Helper.construct_tour_class_bat_stats(bat_stats[0..4], 'dot_p', "Lowest Dot %", tour_class, 'runs')
+    arr['bat_stats'] = {}
+    arr['bat_stats']['boxes'] = boxes
+    arr['individual_bat_stats'] = Tournament.overall_individual_bat_stats
+    render(:json => Oj.dump(arr))
+  end
+
+  def tour_class_ball_stats
+    tour_class = params[:tour_class]
+    stats = BallStat.where(sub_type: tour_class).order(wickets: :desc, economy: :asc)
+    arr = {}
+    boxes = []
+    boxes << Helper.construct_tour_class_bat_stats(stats[0..4], 'wickets', "Most Wickets", tour_class)
+    bat_stats = stats.where("overs > 12").sort_by{|s| [s.economy, -s.wickets] }
+    boxes << Helper.construct_tour_class_bat_stats(bat_stats[0..4], 'economy', "Best Economy", tour_class)
+    bat_stats = stats.where("wickets >= 1").sort_by{|s| [s.sr, -s.wickets] }
+    boxes << Helper.construct_tour_class_bat_stats(bat_stats[0..4], 'sr', "Best Strike-Rate", tour_class, 'wickets')
+    bat_stats = stats.where("wickets >= 1").sort_by{|s| [s.avg, -s.wickets] }
+    boxes << Helper.construct_tour_class_bat_stats(bat_stats[0..4], 'avg', "Best Average", tour_class, 'wickets')
+    bat_stats = stats.sort_by{|s| [-s.maidens, s.economy] }
+    boxes << Helper.construct_tour_class_bat_stats(bat_stats[0..4], 'maidens', "Most Maidens", tour_class)
+    bat_stats = stats.sort_by{|s| [-s.three_wickets, -s.sr] }
+    boxes << Helper.construct_tour_class_bat_stats(bat_stats[0..4], 'three_wickets', "Most 3+", tour_class)
+    bat_stats = stats.sort_by{|s| [-s.five_wickets, -s.sr] }
+    boxes << Helper.construct_tour_class_bat_stats(bat_stats[0..4], 'five_wickets', "Most 5+", tour_class)
+    bat_stats = stats.where("overs > 12").sort_by{|s| -s.dot_p }
+    boxes << Helper.construct_tour_class_bat_stats(bat_stats[0..4], 'dot_p', "Highest Dot %", tour_class)
+    bat_stats = stats.where("overs > 12").sort_by{|s| s.boundary_p }
+    boxes << Helper.construct_tour_class_bat_stats(bat_stats[0..4], 'boundary_p', "Lowest Boundary %", tour_class)
+    arr['ball_stats'] = {}
+    arr['ball_stats']['boxes'] = boxes
+    arr['individual_ball_stats'] = Tournament.tour_class_individual_ball_stats(tour_class)
+    render(:json => Oj.dump(arr))
+  end
+
+  def overall_ball_stats
+    tour_class = 'wt20'
+    stats = BallStat.where(sub_type: "overall").order(wickets: :desc, economy: :asc)
+    arr = {}
+    boxes = []
+    boxes << Helper.construct_tour_class_bat_stats(stats[0..4], 'wickets', "Most Wickets", tour_class)
+    bat_stats = stats.where("overs > 12").sort_by{|s| [s.economy, -s.wickets] }
+    boxes << Helper.construct_tour_class_bat_stats(bat_stats[0..4], 'economy', "Best Economy", tour_class)
+    bat_stats = stats.where("wickets >= 1").sort_by{|s| [s.sr, -s.wickets] }
+    boxes << Helper.construct_tour_class_bat_stats(bat_stats[0..4], 'sr', "Best Strike-Rate", tour_class, 'wickets')
+    bat_stats = stats.where("wickets >= 1").sort_by{|s| [s.avg, -s.wickets] }
+    boxes << Helper.construct_tour_class_bat_stats(bat_stats[0..4], 'avg', "Best Average", tour_class, 'wickets')
+    bat_stats = stats.sort_by{|s| [-s.maidens, s.economy] }
+    boxes << Helper.construct_tour_class_bat_stats(bat_stats[0..4], 'maidens', "Most Maidens", tour_class)
+    bat_stats = stats.sort_by{|s| [-s.three_wickets, -s.sr] }
+    boxes << Helper.construct_tour_class_bat_stats(bat_stats[0..4], 'three_wickets', "Most 3+", tour_class)
+    bat_stats = stats.sort_by{|s| [-s.five_wickets, -s.sr] }
+    boxes << Helper.construct_tour_class_bat_stats(bat_stats[0..4], 'five_wickets', "Most 5+", tour_class)
+    bat_stats = stats.where("overs > 12").sort_by{|s| -s.dot_p }
+    boxes << Helper.construct_tour_class_bat_stats(bat_stats[0..4], 'dot_p', "Highest Dot %", tour_class)
+    bat_stats = stats.where("overs > 12").sort_by{|s| s.boundary_p }
+    boxes << Helper.construct_tour_class_bat_stats(bat_stats[0..4], 'boundary_p', "Lowest Boundary %", tour_class)
+    arr['ball_stats'] = {}
+    arr['ball_stats']['boxes'] = boxes
+    arr['individual_ball_stats'] = Tournament.overall_individual_ball_stats
+    render(:json => Oj.dump(arr))
+  end
+
+  def knockouts
+    t_id = params[:t_id]
+    tour = Tournament.find_by_id(t_id)
+    hash = {}
+    file = File.read(TOURNAMENT_JSON_PATH)
+    data = JSON.parse(file)
+    t_json = data.find{|t| t['id'] == tour.id}
+    hash['format'] = t_json['knockout_type']
+    matches = tour.matches.where.not(stage: ['league','group'])
+    hash['matches'] = []
+    if matches != []
+      matches.each do |match|
+        hash['matches'].append(match.match_box)
+      end
+    else
+      t_json['knockouts'].each do |match|
+        t1 = Squad.find_by_abbrevation(match['team1'])
+        t2 = Squad.find_by_abbrevation(match['team2'])
+        temp = {
+          "inn1" => {
+            "teamname_full" => t1&.get_abb || match['team1'].upcase,
+            "color" => t1.nil? ? '' : Util.get_team_color(t_id, t1.abbrevation)
+          },
+          "inn2" => {
+            "teamname_full" => t2&.get_abb || match['team2'].upcase,
+            "color" => t2.nil? ? '' : Util.get_team_color(t_id, t2.abbrevation)
+          },
+          "result" => "-",
+          "stage" => match['match'].titleize,
+          "venue" => match['venue'].titleize
+        }
+        hash['matches'] << temp
+      end
+    end
+    
+    
+    
+    render(:json => Oj.dump(hash))
   end
 
   private

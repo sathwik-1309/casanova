@@ -9,7 +9,7 @@ function BatsmenItem(props) {
     const [selected, setSelected] = useState("career");
 
     return (
-        <div onClick={() => props.func(props.scorebox)} id="summary_batsmen_item">
+        <div onClick={() => props.func(props.scorebox)} id="summary_batsmen_item" className='bg-shadow mt-1'>
            <div className={class1}>{props.name}</div>
            <div className={class2}>
                 <div id="summary_batsman_score_runs">

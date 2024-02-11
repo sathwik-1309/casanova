@@ -1,0 +1,37 @@
+{
+  "vs": {
+    "ind": ["sl", "pak", "sa", "eng", "nz", "ban", "aus", "afg"],
+    "pak": ["ban", "ind", "aus", "eng", "sl", "nz", "sa", "afg"],
+    "aus": ["nz", "ban", "pak", "afg", "sa", "eng", "ind", "sl"],
+    "nz": ["aus", "eng", "afg", "sl", "ind", "pak", "ban"],
+    "eng": ["afg", "nz", "ind", "pak", "aus", "sa", "sl", "ban"],
+    "sa": ["sl", "ind", "ban", "aus", "afg", "eng", "pak"],
+    "ban": ["pak", "aus", "sl", "sa", "ind", "afg", "nz", "eng"],
+    "sl": ["ind", "sa", "ban", "nz", "afg", "pak", "eng", "aus"],
+    "afg": ["eng", "nz", "aus", "sl", "sa", "ban", "ind", "pak"]
+  },
+  "venue": {
+    "ind": ["mumbai", "ahmedabad", "chennai", "bengaluru", "dharamshala", "lucknow", "pune", "kolkata"],
+    "pak": ["kolkata", "ahmedabad", "bengaluru", "mumbai", "hyderabad", "chennai", "pune", "dharamshala"],
+    "aus": ["ahmedabad", "pune", "bengaluru", "dharamshala", "chennai", "kolkata", "pune", "delhi"],
+    "nz": ["ahmedabad", "dharamshala", "hyderabad", "delhi", "dharamshala", "chennai", "mumbai", "bengaluru"],
+    "eng": ["delhi", "dharamshala", "bengaluru", "mumbai", "kolkata", "lucknow", "chennai", "hyderabad"],
+    "sa": ["bengaluru", "chennai", "delhi", "chennai", "ahmedabad", "lucknow", "pune", "bengaluru"],
+    "ban": ["kolkata", "pune", "lucknow", "delhi", "lucknow", "hyderabad", "mumbai", "hyderabad"],
+    "sl": ["mumbai", "bengaluru", "lucknow", "delhi", "pune", "hyderabad", "chennai", "delhi"],
+    "afg": ["delhi", "hyderabad", "dharamshala", "pune", "ahmedabad", "hyderabad", "kolkata", "dharamshala"]
+  },
+  "venues": {
+    "bengaluru": [4],
+    "mumbai": [3],
+    "delhi": [4],
+    "kolkata": [3],
+    "hyderabad": [4],
+    "pune": [4],
+    "lucknow": [3],
+    "dharamshala": [4],
+    "chennai": [4],
+    "ahmedabad": [3]
+  }
+
+}

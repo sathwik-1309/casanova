@@ -1,0 +1,23 @@
+{
+  "m_id": 200,
+  "batted_first": "afg",
+  "batted_second": "pak",
+  "toss": "pak",
+  "pitch": 2.5,
+  "ball_color": [
+    "y",
+    "y",
+    "y",
+    "y"
+  ],
+  "cap1": "shahidi",
+  "cap2": "babar",
+  "keeper1": "ikram",
+  "keeper2": "rizwan",
+  "winner": "pak",
+  "stage": "league",
+  "venue": "dharamshala",
+  "motm_player": "haris rauf",
+  "motm_team": "pak",
+  "t_id": 7
+}

@@ -1,0 +1,23 @@
+{
+  "m_id": 176,
+  "batted_first": "ind",
+  "batted_second": "pak",
+  "toss": "ind",
+  "pitch": 3,
+  "ball_color": [
+    "y",
+    "y",
+    "y",
+    "y"
+  ],
+  "cap1": "rohit",
+  "cap2": "babar",
+  "keeper1": "kl rahul",
+  "keeper2": "rizwan",
+  "winner": "ind",
+  "stage": "league",
+  "venue": "ahmedabad",
+  "motm_player": "shami",
+  "motm_team": "ind",
+  "t_id": 7
+}

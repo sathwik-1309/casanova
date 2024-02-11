@@ -1,0 +1,23 @@
+{
+  "m_id": 186,
+  "batted_first": "afg",
+  "batted_second": "sl",
+  "toss": "afg",
+  "pitch": 3.5,
+  "ball_color": [
+    "r",
+    "g",
+    "g",
+    "r"
+  ],
+  "cap1": "shahidi",
+  "cap2": "kusal mendis",
+  "keeper1": "ikram",
+  "keeper2": "kusal mendis",
+  "winner": "afg",
+  "stage": "league",
+  "venue": "pune",
+  "motm_player": "naveen",
+  "motm_team": "afg",
+  "t_id": 7
+}

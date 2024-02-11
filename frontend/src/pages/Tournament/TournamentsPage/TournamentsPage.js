@@ -1,31 +1,39 @@
-import {useParams} from "react-router-dom";
+import { useParams } from 'react-router-dom';
 import './TournamentsPage.css'
-import React, {useEffect, useState} from "react";
-import TournamentsNavbar from "./TournamentsNavbar/TournamentsNavbar";
-import { BACKEND_API_URL } from '../../../my_constants'
+import Pointstable from '../../../components/Tournament/Pointstable/Pointstable';
+import BatStats from "../../../components/Tournament/TBatStats/TBatStats";
+import BallStats from "../../../components/Tournament/TBallStats/TBallStats";
+import Schedules from '../../../components/Tournament/Schedules/Schedules';
+import TournamentsHome from './TournamentsHome/TournamentsHome';
+import TBatStats from '../../../components/Tournament/TBatStats/TBatStats';
+import TBallStats from '../../../components/Tournament/TBallStats/TBallStats';
 
-function TournamentsPage(props) {
+
+function TournamentsPage() {
+    let { page } = useParams();
     let { tour_class } = useParams();
-    let url = `${BACKEND_API_URL}/tournaments/${tour_class}`
-    const [data, setData] = useState(null);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const response = await fetch(url);
-            const jsonData = await response.json();
-            setData(jsonData);
-        };
-
-        fetchData();
-    }, []);
-    if (!data) {
-        return <div>Loading...</div>;
-    }
+    let component = <TournamentsHome tour_class={tour_class}/>
+    switch(page) {
+        case "bat_stats":
+            component = <TBatStats tour_class={tour_class}/>
+          break;
+        case "ball_stats":
+            component = <TBallStats tour_class={tour_class}/>
+          break;
+        // case "partnerships":
+        //     component = <Partnerships m_id = {m_id} inn_no={inn_no}/>
+        //   break;
+        // case "manhatten":
+        //     component = <Manhatten m_id = {m_id} inn_no={inn_no}/>
+        //   break;
+        default:
+            component = component
+      }
     return (
-        <div className={`tournaments_page default-font`}>
-            <TournamentsNavbar tournaments={data.tournaments}/>
+        <div id="tournament_page">
+            {component}
         </div>
-    );
-}
+        )
 
+    }
 export default TournamentsPage;

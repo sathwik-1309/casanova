@@ -1,0 +1,23 @@
+{
+  "m_id": 175,
+  "batted_first": "sl",
+  "batted_second": "sa",
+  "toss": "sl",
+  "pitch": 3.5,
+  "ball_color": [
+    "g",
+    "y",
+    "y",
+    "g"
+  ],
+  "cap1": "kusal mendis",
+  "cap2": "bavuma",
+  "keeper1": "kusal mendis",
+  "keeper2": "de kock",
+  "winner": "sl",
+  "stage": "league",
+  "venue": "bengaluru",
+  "motm_player": "kusal mendis",
+  "motm_team": "sl",
+  "t_id": 7
+}

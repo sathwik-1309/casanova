@@ -30,7 +30,7 @@
     /*box-shadow: 0 4px 8px 0 lightskyblue, 0 6px 20px 0 lightskyblue;*/
     border: 1px solid lightskyblue;
 }
-.dropdown-menu {
+.dropdown-menu-teams {
     display: flex;
     flex-direction: column;
     border: 1px solid black;

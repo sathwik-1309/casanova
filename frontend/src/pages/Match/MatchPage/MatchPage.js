@@ -9,6 +9,9 @@ import './MatchPage.css'
 import Worm from "../../../components/Match/Worm/Worm";
 import Commentry from "../../../components/Match/Commentry/Commentry";
 import InningsProgression from '../../../components/Match/InningsProgression/InningsProgression';
+import TurningPoint from '../../../components/Match/TurningPoint/TurningPoint';
+import Rankings, { MatchRankings } from '../../../components/Match/Rankings/MatchRankings';
+import PreMatch from '../../../components/Match/PreMatch/PreMatch';
 
 function MatchPage() {
     let { m_id } = useParams();
@@ -49,6 +52,15 @@ function MatchPage() {
                 <InningsProgression m_id={m_id}/>
             </div>
             break;
+        // case "rankings":
+        //     component = <Rankings m_id = {m_id}/>
+        //     break;
+        case "pre_match":
+            component = <PreMatch match_id = {m_id}/>
+            break
+        case "rankings":
+            component = <MatchRankings match_id = {m_id}/>
+            break
         default:
             component = <Summary m_id = {m_id}/>
       }

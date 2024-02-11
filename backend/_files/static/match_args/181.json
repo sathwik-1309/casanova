@@ -1,0 +1,23 @@
+{
+  "m_id": 181,
+  "batted_first": "ban",
+  "batted_second": "sa",
+  "toss": "ban",
+  "pitch": 2.5,
+  "ball_color": [
+    "y",
+    "r",
+    "r",
+    "y"
+  ],
+  "cap1": "shakib",
+  "cap2": "bavuma",
+  "keeper1": "litton",
+  "keeper2": "de kock",
+  "winner": "ban",
+  "stage": "league",
+  "venue": "delhi",
+  "motm_player": "taskin",
+  "motm_team": "ban",
+  "t_id": 7
+}

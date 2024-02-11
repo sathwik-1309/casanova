@@ -6,9 +6,9 @@ function MetaItem(props) {
     let p = props.player
     if (props.type === 'batting') {
         return (
-            <div className={`meta_item ${p.color}1`}>
+            <div className={`meta_item ${p.color}1 font-1`}>
                 <div className='meta_field3'>{p.pos}</div>
-                <div className='meta_playername'>{p.name}</div>
+                <div className='meta_playername font-500'>{p.name}</div>
                 <div className='meta_field1'>{p.innings}</div>
                 <div className='meta_field1 meta_bold'>{p.runs}</div>
                 <div className='meta_field2'>{p.avg}</div>
@@ -253,7 +253,7 @@ function Meta(props) {
       }
 
     return (
-        <div className={`meta_parent ${data.font}`}>
+        <div className={`meta_parent wt20_7`}>
             <div className='meta_sort_buttons'>
                 <div className='meta_button_empty1'></div>
                 <div className='meta_button_empty2'></div>

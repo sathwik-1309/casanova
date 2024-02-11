@@ -1,0 +1,23 @@
+{
+  "m_id": 198,
+  "batted_first": "eng",
+  "batted_second": "ban",
+  "toss": "ban",
+  "pitch": 3,
+  "ball_color": [
+    "r",
+    "y",
+    "y",
+    "r"
+  ],
+  "cap1": "buttler",
+  "cap2": "shakib",
+  "keeper1": "buttler",
+  "keeper2": "litton",
+  "winner": "eng",
+  "stage": "league",
+  "venue": "hyderabad",
+  "motm_player": "willey",
+  "motm_team": "eng",
+  "t_id": 7
+}

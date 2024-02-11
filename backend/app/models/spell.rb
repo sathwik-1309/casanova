@@ -27,12 +27,14 @@ class Spell < ApplicationRecord
         hash["sixes"] = self.c6
         hash["economy"] = self.economy
         hash["maidens"] = self.maidens
+        hash["teamcolor"] = self.squad.team.abbrevation
         hash["color"] = Util.get_team_color(self.tournament_id, self.squad.abbrevation)
         hash["p_id"] = self.player_id
         hash["vs_team"] = self.inning.bat_team.get_abb
         hash["venue"] = self.match.venue.upcase
         hash["id"] = self.id
         hash["match_id"] = self.match_id
+        hash["points"] = PlayerMatchPoint.find_by(player_id: self.player_id, match_id: self.match_id, rtype: RTYPE_BALL)&.points || 0
         return hash
     end
 
@@ -106,6 +108,140 @@ class Spell < ApplicationRecord
         return arr
     end
 
+    def get_points2(inn_rr, match_rr, pp_rr, mid_rr, death_rr, player_bat_ratings, pp_w, mid_w, death_w, batting_team_strength)
+        spell_balls = Util.overs_to_balls(self.overs)
+        iE = (inn_rr/self.economy)*spell_balls
+        mE = (match_rr/self.economy)*spell_balls
+        pE = 0
+        i = 0
+        
+        [pp_rr, mid_rr, death_rr].each do |phase_rr|
+            case i
+            when 0
+                phase_overs = self.get_overs.where("over_no <= 6")
+            when 1
+                phase_overs = self.get_overs.where("over_no > 6 and over_no < 16")
+            when 2
+                phase_overs = self.get_overs.where("over_no >= 16")
+            end
+            if phase_overs.present?
+                phase_balls = phase_overs.map{|o| o.balls}.sum
+                phase_eco = (phase_overs.map{|o| o.bow_runs }.sum.to_f*6 / phase_balls).round(2)
+                phase_eco = 1 if phase_eco == 0
+                pE += (phase_rr/phase_eco)*phase_balls
+            end
+            i += 1
+        end
+        
+        eP = (W_IE*iE) + (W_ME*mE) + (W_PE*pE)
+
+        ww = 0
+        self.inning.wickets.where(bowler_id: self.player_id).each do |wicket|
+            ww += wicket.get_wicket_weight2(player_bat_ratings)
+        end
+
+        wP = 0
+        if self.wickets > 0
+            iW = (ww*WPC) + (ww*(1.0-WPC)*(self.wickets.to_f/self.inning.for))
+            mW = (ww*WPC) + (ww*(1.0-WPC)*((self.wickets.to_f*2)/self.match.wickets))
+            pW = 0
+            i = 0
+            [pp_w, mid_w, death_w].each do |phase_w|
+                if phase_w > 0
+                    case i
+                    when 0
+                        phase_overs = self.get_overs.where("over_no <= 6")
+                    when 1
+                        phase_overs = self.get_overs.where("over_no > 6 and over_no < 16")
+                    when 2
+                        phase_overs = self.get_overs.where("over_no >= 16")
+                    end
+                    phase_w_taken = phase_overs.map{|o| o.wickets}.sum
+                    pW += (phase_w_taken.to_f/phase_w).round(2)
+                end
+                i += 1
+            end
+            
+            wP = (W_IE*iW) + (W_ME*mW) + (W_PE*pW)
+        end
+        
+        score = self.inning.score
+        if score >= 200
+            eco_weight = 0.7
+        elsif score >= 180
+            eco_weight = 0.6
+        elsif score >= 160
+            eco_weight = 0.5
+        elsif score >= 140
+            eco_weight = 0.45
+        elsif score >= 120
+            eco_weight = 0.4
+        else
+            eco_weight = 0.3
+        end
+        calculated_points = (eP*(eco_weight)) + (wP*(1.0-eco_weight))*5
+        # calculated_points = eP + wP
+        if ["league", "group"].exclude? self.match.stage
+            if self.match.stage == "final"
+              factor = 1.2
+            else
+              factor = 1.1
+            end
+            calculated_points = (calculated_points*factor*1.2).round(2)
+        end
+
+        points = ((calculated_points*TEAM_STRENGTH_WEIGHTAGE*batting_team_strength) + (calculated_points*(1.0-TEAM_STRENGTH_WEIGHTAGE)))
+        
+        return points.round(2)
+    end
+
+    def get_points(benchmark, player_bat_ratings, batting_team_strength)
+        inn = self.inning
+        spell_balls = Util.overs_to_balls(self.overs)
+        bpo =  spell_balls / self.wickets.to_f
+        part1 = benchmark['bpw'] / bpo
+        part2 = benchmark['economy'] / self.economy
+        total_balls = (Util.overs_to_balls(self.inning.overs).to_f/5).round(2)
+        bat_rat = []
+        inn.wickets.where(bowler_id: self.player_id).each do |wicket|
+          bat_rat << wicket.get_wicket_weight2(player_bat_ratings)
+        end
+        avg_wicket_weight = bat_rat.present? ? (bat_rat.sum.to_f/bat_rat.length).round(2) : 0
+        
+        if self.inning.inn_no == 1
+            score = self.inning.score
+        else
+            score = (self.match.inn1.score + self.inning.score)/2
+        end
+
+        if score >= 200
+            eco_weight = 0.65
+        elsif score >= 180
+            eco_weight = 0.6
+        elsif score >= 160
+            eco_weight = 0.55
+        elsif score >= 140
+            eco_weight = 0.5
+        elsif score >= 120
+            eco_weight = 0.4
+        else
+            eco_weight = 0.35
+        end
+
+        calculated_points = ((part2*spell_balls*10*eco_weight) + (part1*avg_wicket_weight*(1.0-eco_weight)*(spell_balls.to_f/total_balls)))*2.round(2)
+        
+        if ["league", "group"].exclude? inn.match.stage
+          if inn.match.stage == "final"
+            factor = 1.2
+          else
+            factor = 1.1
+          end
+          calculated_points = (calculated_points*factor*1.2).round(2)
+        end
+        points = ((calculated_points*TEAM_STRENGTH_WEIGHTAGE*batting_team_strength) + (calculated_points*(1.0-TEAM_STRENGTH_WEIGHTAGE))).round(2)
+        return points.round(2)
+    end
+
     private
 
     def self.empty_spell_hash
@@ -140,4 +276,5 @@ class Spell < ApplicationRecord
         hash["wickets"] = 1 if ball.wicket_ball
         return hash
     end
+
 end

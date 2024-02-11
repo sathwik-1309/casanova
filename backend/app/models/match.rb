@@ -9,7 +9,11 @@ class Match < ApplicationRecord
     has_many :spells
     has_many :partnerships
     has_many :performances
+    has_many :player_rating_images
+    has_many :player_match_points
     belongs_to :tournament
+    has_one :team_rating_image
+    
 
     after_commit do
         unless self.runs.nil?
@@ -18,6 +22,9 @@ class Match < ApplicationRecord
             self.update_player_trophies
             Uploader.update_milestone_image(self)
             self.create_schedule
+            self.update_player_ratings
+            self.update_team_rankings
+            self.update_stumpings
         end
     end
 
@@ -51,7 +58,7 @@ class Match < ApplicationRecord
     end
 
     def create_schedule
-        last_match = self.tournament.schedules.order(order: :desc).limit(1)
+        last_match = self.tournament.schedules.where(completed: true).order(order: :desc).limit(1)
         if self.schedule.nil?
             schedule = Schedule.new
             schedule.squad1_id = self.winner_id
@@ -67,13 +74,14 @@ class Match < ApplicationRecord
             schedule.completed = true
             order = last_match.present? ? last_match.first.order+1 : 1
             unless schedule.order == order
-                to_update = self.tournament.schedules.where("order >= ?", order).where("order < ?", schedule.order)
+                to_update = self.tournament.schedules.where("`order` >= ?", order).where("`order` < ?", schedule.order)
                 to_update.each do |s|
                     s.order = s.order + 1
                     s.save!
                 end
             end
             schedule.order = order
+            schedule.match_id = self.id
         end
         schedule.save!
     end
@@ -84,29 +92,44 @@ class Match < ApplicationRecord
         inn2 = self.inn2
         hash["inn1"] = {}
         hash["inn1"]["teamname"] = inn1.bat_team.get_abb
+        hash["inn1"]["teamname_full"] = inn1.bat_team.get_abb
         hash["inn1"]["won"] = self.winner_id == inn1.bat_team_id
         if self.winner_id == inn1.bat_team_id
             hash["inn1"]["score"] = "⭐️ #{Util.get_score(inn1.score, inn1.for)}"
         else
             hash["inn1"]["score"] = "#{Util.get_score(inn1.score, inn1.for)}"
         end
+        hash["inn1"]["score2"] = "#{Util.get_score(inn1.score, inn1.for)}"
 
 
         hash["inn1"]["color"] = Util.get_team_color(self.tournament_id, inn1.bat_team.abbrevation)
         hash["inn2"] = {}
         hash["inn2"]["teamname"] = inn2.bat_team.get_abb
+        hash["inn2"]["teamname_full"] = inn2.bat_team.get_abb
         hash["inn2"]["won"] = self.winner_id == inn2.bat_team_id
         if self.winner_id == inn2.bat_team_id
             hash["inn2"]["score"] = "⭐️ #{Util.get_score(inn2.score, inn2.for)}"
         else
             hash["inn2"]["score"] = "#{Util.get_score(inn2.score, inn2.for)}"
         end
+        hash["inn2"]["score2"] = "#{Util.get_score(inn2.score, inn2.for)}"
         hash["inn2"]["color"] = Util.get_team_color(self.tournament_id, inn2.bat_team.abbrevation)
 
         hash["tour"] = self.get_tour_font
         hash["tour_name"] = "#{Tournament.find(self.tournament_id).name.upcase}"
         hash["venue"] = self.venue.titleize
         hash["m_id"] = self.id
+        hash["stage"] = self.stage.titleize
+        if self.win_by_runs==nil and self.win_by_wickets==nil
+            result = "won by super over"
+        elsif self.win_by_wickets==nil
+            result = "won by #{self.win_by_runs} runs"
+        else
+            result = "won by #{self.win_by_wickets} wickets"
+        end
+        result = "#{self.winner.get_abb} #{result}"
+        hash["result"] = result
+        hash["result_color"] = Util.get_team_color(self.tournament_id, self.winner.abbrevation)
         return hash
     end
 
@@ -158,6 +181,46 @@ class Match < ApplicationRecord
         arr
     end
 
+    def turning_point
+        # score,for, overs, req rr, crr, equation (runs, balls)
+        inn = self.inn2
+        target = self.inn1.score + 1
+        equation = {
+            'runs_left' => target,
+            'balls_left' => 120,
+            'crr' => 0,
+            'rrr' => Util.get_rr(target, 120).to_f,
+            'score' => 0,
+            'for' => 0,
+            'delivery' => 0.0,
+            'bat_team' => self.inn2.bat_team.get_abb,
+            'color' => Util.get_team_color(self.tournament_id, self.winner.abbrevation)
+        }
+        defended = self.inn1.bat_team_id == self.winner_id ? true : false
+        balls = inn.balls
+        temp = []
+        balls.each do |ball|
+            runs_left = target - ball.score
+            balls_bowled = Util.overs_to_balls(ball.delivery)
+            balls_left = 120 - balls_bowled
+            req_rate = Util.get_rr(runs_left, balls_left).to_f
+            temp << req_rate
+            check = defended ? equation['rrr'] > req_rate : equation['rrr'] < req_rate
+            if check and ball.delivery < 19.6
+                equation['runs_left'] = runs_left
+                equation['balls_left'] = balls_left
+                equation['crr'] = Util.get_rr(ball.score, balls_bowled)
+                equation['rrr'] = req_rate
+                equation['score'] = ball.score
+                equation['for'] = ball.for
+                equation['delivery'] = Util.point_6_fix(ball.delivery)
+            end
+        end
+        equation['statement'] = "#{self.winner.get_abb} #{defended ? 'defended' : 'chased'} #{defended ? target-1 : target} with #{defended ? 'LOWEST RR' : 'HIGHEST RR'} of #{equation['rrr']}"
+        equation['font'] = self.tournament.get_tour_font
+        equation
+    end
+
     def self.innings_phase_performers_hash(innings, phase)
         case phase
         when 'powerplay'
@@ -183,6 +246,297 @@ class Match < ApplicationRecord
             info = "#{self.win_by_runs} RUNS"
         end
         "#{self.winner.get_abb} BEAT #{self.loser.get_abb} BY #{info}"
+    end
+
+    def batsman_points(player_bow_ratings)
+        inn1 = self.inn1
+        inn2 = self.inn2
+        motm = self.motm_id
+        points = {}
+        benchmark = {}
+        benchmark['runs'] = ((inn1.score + inn2.score)/(inn1.for + inn2.for).to_f).round(2)
+        benchmark['sr'] = (Util.get_sr(inn1.score+inn2.score, Util.overs_to_balls(inn1.overs)+Util.overs_to_balls(inn2.overs))).to_f
+        
+        inn1_benchmark = {}
+        inn1_benchmark['runs'] = inn1.for == 0 ? inn1.score.to_f : (inn1.score/inn1.for.to_f).round(2)
+        inn1_benchmark['sr'] = Util.get_sr(inn1.score, Util.overs_to_balls(inn1.overs)).to_f
+        benchmark_runs = (MATCH_WEIGHT_BAT*benchmark['runs']) + (INN_WEIGHT_BAT*inn1_benchmark['runs'])
+        benchmark_sr = (MATCH_WEIGHT_BAT*benchmark['sr']) + (INN_WEIGHT_BAT*inn1_benchmark['sr'])
+        bowling_team_strength = inn1.get_bow_team_strength(player_bow_ratings)
+
+        inn1.scores.where(batted: true).each do |score|
+            points[score.player_id] = score.get_points(bowling_team_strength, benchmark_runs, benchmark_sr) if score.balls > 0
+        end
+
+        inn1_benchmark = {}
+        inn1_benchmark['runs'] = inn2.for == 0 ? inn2.score.to_f : (inn2.score/inn2.for.to_f).round(2)
+        inn1_benchmark['sr'] = Util.get_sr(inn2.score, Util.overs_to_balls(inn2.overs)).to_f
+        benchmark_runs = (MATCH_WEIGHT_BAT*benchmark['runs']) + (INN_WEIGHT_BAT*inn1_benchmark['runs'])
+        benchmark_sr = (MATCH_WEIGHT_BAT*benchmark['sr']) + (INN_WEIGHT_BAT*inn1_benchmark['sr'])
+        bowling_team_strength = inn2.get_bow_team_strength(player_bow_ratings)
+        inn2.scores.where(batted: true).each do |score|
+            points[score.player_id] = score.get_points(bowling_team_strength, benchmark_runs, benchmark_sr) if score.balls > 0
+        end
+        
+        return points
+    end
+
+    def bowler_points(player_bat_ratings)
+        inn1 = self.inn1
+        inn2 = self.inn2
+        motm = self.motm_id
+        inn1_win = self.winner_id == inn1.bow_team_id ? true : false
+      
+        points = {}
+      
+        benchmark = {}
+        balls_per_wicket = (Util.overs_to_balls(inn1.overs)+Util.overs_to_balls(inn2.overs)).to_f / (inn1.for + inn2.for)
+        
+        benchmark['bpw'] = balls_per_wicket.round(2)
+        benchmark['economy'] = (((inn1.score+inn2.score)*6).to_f / (Util.overs_to_balls(inn1.overs)+Util.overs_to_balls(inn2.overs))).round(2)
+        batting_team_strength = inn1.get_bat_team_strength(player_bat_ratings)
+        match_rr = Util.get_rr(inn1.score+inn2.score, Util.overs_to_balls(inn1.overs)+Util.overs_to_balls(inn2.overs)).to_f
+        pp_overs = self.overs.where("over_no <= 6")
+        mid_overs = self.overs.where("over_no > 6 and over_no < 16")
+        death_overs = self.overs.where("over_no >= 16")
+        pp_rr = Util.get_rr(pp_overs.map{|o| o.runs}.sum, pp_overs.map{|o| o.balls}.sum).to_f
+        mid_rr = Util.get_rr(mid_overs.map{|o| o.runs}.sum, mid_overs.map{|o| o.balls}.sum).to_f
+        death_rr = Util.get_rr(death_overs.map{|o| o.runs}.sum, death_overs.map{|o| o.balls}.sum).to_f
+        pp_w = pp_overs.map{|o| o.wickets}.sum
+        mid_w = mid_overs.map{|o| o.wickets}.sum
+        death_w = death_overs.map{|o| o.wickets}.sum
+
+        inn1.spells.each do |spell|
+            inn_rr = inn1.get_rr.to_f
+            points[spell.player_id] = spell.get_points(benchmark, player_bat_ratings, batting_team_strength)
+            # points[spell.player_id] = spell.get_points2(inn_rr, match_rr, pp_rr, mid_rr, death_rr, player_bat_ratings, pp_w, mid_w, death_w, batting_team_strength)
+        end
+      
+        batting_team_strength = inn2.get_bat_team_strength(player_bat_ratings)
+        inn2.spells.each do |spell|
+            inn_rr = inn2.get_rr.to_f
+            points[spell.player_id] = spell.get_points(benchmark, player_bat_ratings, batting_team_strength)
+            # points[spell.player_id] = spell.get_points2(inn_rr, match_rr, pp_rr, mid_rr, death_rr, player_bat_ratings, pp_w, mid_w, death_w, batting_team_strength)
+        end
+      
+        return points
+      
+    end
+
+    def get_prev_player_rating_images
+        tour_class = self.tournament.name
+        tours = Tournament.where(name: tour_class)
+        prev_match = Match.where(tournament_id: tours.pluck(:id)).where("id < ?", self.id).last
+        if prev_match.present?
+            return prev_match.get_player_rating_images
+        else
+            images = []
+            PLAYER_RATING_RTYPES.each do |rtype|
+                images << PlayerRatingImage.dummy(tour_class, rtype)
+            end
+            return images
+        end
+    end
+
+    def get_prev_team_rating_image
+        tour_class = self.tournament.name
+        tours = Tournament.where(name: tour_class)
+        prev_match = Match.where(tournament_id: tours.pluck(:id)).where("id < ?", self.id).last
+        if prev_match.present?
+            return prev_match.team_rating_image
+        else
+            TeamRatingImage.dummy(tour_class)
+        end
+    end
+
+    def get_player_rating_images
+        images = []
+        PLAYER_RATING_RTYPES.each do |rtype|
+            images << self.player_rating_images.find_by(rtype: rtype)
+        end
+        return images
+    end
+
+    def update_performance_ranks
+        prev_rating_images = self.get_prev_player_rating_images
+        bat1 = prev_rating_images[0].rating_image
+        ball1 = prev_rating_images[1].rating_image
+        all1 = prev_rating_images[2]
+        cur_images = self.player_rating_images
+        bat2 = cur_images[0].rating_image
+        ball2 = cur_images[1].rating_image
+        all2 = cur_images[2]
+        all1 = all1.nil? ? [] : all1.rating_image
+        all2 = all2.nil? ? [] : all2.rating_image
+        self.performances.each do |perf|
+            hash = bat1.find{|h| h['id'] == perf.player_id}
+            perf.rank_bat_before = hash['rank'] if hash.present? and hash['rank'] <= MAX_RANK
+            hash = bat2.find{|h| h['id'] == perf.player_id}
+            perf.rank_bat_after = hash['rank'] if hash.present? and hash['rank'] <= MAX_RANK
+
+            hash = ball1.find{|h| h['id'] == perf.player_id}
+            perf.rank_bow_before = hash['rank'] if hash.present? and hash['rank'] <= MAX_RANK
+            hash = ball2.find{|h| h['id'] == perf.player_id}
+            perf.rank_bow_after = hash['rank'] if hash.present? and hash['rank'] <= MAX_RANK
+
+            hash = all1.find{|h| h['id'] == perf.player_id}
+            perf.rank_all_before = hash['rank'] if hash.present? and hash['rank'] <= MAX_RANK
+            hash = all2.find{|h| h['id'] == perf.player_id}
+            perf.rank_all_after = hash['rank'] if hash.present? and hash['rank'] <= MAX_RANK
+            perf.save!
+        end
+    end
+
+    def update_player_leaderboard(new_bat_rat_image, new_ball_rat_image, new_all_rat_image)
+        PLeaderboard.update_helper(new_bat_rat_image, self.id)
+        PLeaderboard.update_helper(new_ball_rat_image, self.id)
+        PLeaderboard.update_helper(new_all_rat_image, self.id)   
+    end
+
+    def update_team_leaderboard(new_image)
+        TLeaderboard.update_helper(new_image, self.id)
+    end
+
+    def update_player_rating_obj(new_bat_rat_image, new_ball_rat_image, new_all_rat_image)
+        PlayerRating.update(new_bat_rat_image, self.id)
+        PlayerRating.update(new_ball_rat_image, self.id)
+        PlayerRating.update(new_all_rat_image, self.id)
+    end
+
+    def update_team_rating_obj(new_image)
+        TeamRating.update(new_image, self.id)
+    end
+
+    def most_points_hash(rtype)
+        match_points = self.player_match_points.where(rtype: rtype).order(points: :desc).limit(5)
+        arr = []
+        match_points.each do |mph|
+            temp = mph.attributes.slice('player_id', 'points')
+            temp['name'] = mph.player.name.titleize
+            temp['color'] = SquadPlayer.find_by(player_id: mph.player_id, tournament_id: mph.tournament_id).squad.team.abbrevation
+            arr << temp
+        end
+        return arr
+    end
+
+    def get_rankings_list(rtype)
+        pri = PlayerRatingImage.where(rtype: rtype, rformat: self.tournament.name).where("match_id <= ?", self.id).last
+        im = pri.rating_image
+        arr = im.slice(0,50)
+        arr.each do |hash|
+            player = Player.find_by_id(hash['id'])
+            case (self.tournament.name)
+            when "wt20"
+                team = Team.find_by_id(player.country_team_id)
+            when "csl"
+                team = Team.find_by_id(player.csl_team_id)
+            end
+            
+            hash['teamname'] = team.get_teamname
+            hash['color'] = team.abbrevation
+            hash['name'] = player.fullname.titleize
+        end
+        return arr
+    end
+
+    def get_nrr_diff
+        rr1 = Util.get_rr(self.inn1.score, 120)
+        
+        if self.inn2.bat_team_id == self.winner_id
+            balls2 = Util.overs_to_balls(self.inn2.overs)
+            chased = true
+        else
+            chased = false
+            balls2 = 120
+        end
+        rr2 = Util.get_rr(self.inn2.score, balls2)
+ 
+        if chased
+            return (rr2.to_f - rr1.to_f).round(2)
+        else
+            return (rr1.to_f - rr2.to_f).round(2)
+        end
+    end
+
+    def get_team_points(rating_image)
+        t1 = {}
+        t2 = {}
+        t1['id'] = self.winner.team_id
+        t2['id'] = self.loser.team_id
+        nrr = self.get_nrr_diff
+        eff_runs = (nrr*20).to_i
+        t1_rat = rating_image.rating_image.find{|h| h['id'] == t1['id']}
+        t2_rat = rating_image.rating_image.find{|h| h['id'] == t1['id']}
+        t1_rat = t1_rat.present? ? t1_rat['rating'] : 100
+        t2_rat = t2_rat.present? ? t2_rat['rating'] : 100
+
+        if t1_rat > t2_rat
+            rat_diff = ((t1_rat-t2_rat).to_f/2)
+            rat_diff = rat_diff > 15 ? 15 : rat_diff
+            t1p = 100 - rat_diff
+            t2p = 100 + rat_diff
+        else
+            rat_diff = ((t2_rat-t1_rat).to_f/2)
+            rat_diff = rat_diff > 15 ? 15 : rat_diff
+            t1p = 100 + rat_diff
+            t2p = 100 - rat_diff
+        end
+
+        t2p -= eff_runs
+        t2p = t2p < 70 ? 70 : t2p
+        t2p = t2p > 95 ? 95 : t2p
+
+        t1p += eff_runs
+        t1p = t1p < 105 ? 105 : t1p
+        if t1p > 130
+            df = t1p - 130
+            t1p = 130 + (df/4).to_i
+        end
+
+        t1['points'] = t1p
+        t2['points'] = t2p
+
+        unless (self.stage == 'league' or self.stage == 'group')
+            if self.stage == 'final'
+                t1['points'] = (t1['points']*1.1).round(2)
+                t2['points'] = (t2['points']*1.1).round(2)
+            else
+                t1['points'] = (t1['points']*1.06).round(2)
+                t2['points'] = (t2['points']*1.06).round(2)
+            end
+        end
+
+        return t1, t2
+    end
+
+    def team_rankings_hash
+        arr = []
+        temp = self.winner.team.meta
+        temp['points'] = TeamMatchPoint.find_by(match_id: self.id, team_id: temp['id']).points
+        temp['rank'] = self.team_rating_image.get_rank(temp['id'])
+        arr << temp
+        temp = self.loser.team.meta
+        temp['points'] = TeamMatchPoint.find_by(match_id: self.id, team_id: temp['id']).points
+        temp['rank'] = self.team_rating_image.get_rank(temp['id'])
+        arr << temp
+        arr
+    end
+
+    def team_ranking_list_hash
+        arr = []
+        cur = self.team_rating_image
+        old = TeamRatingImage.where(rformat: self.tournament.name).where("match_id < ?", self.id).order(id: :desc).limit(1)
+        old = old.nil? ? TeamRatingImage.dummy(self.tournament.name) : old.first
+        cur.rating_image.each do |hash|
+            temp = hash.slice('id', 'points', 'rating', 'rank')
+            team = Team.find_by_id(hash['id'])
+            temp['teamname'] = team.get_teamname
+            temp['abbrevation'] = team.get_abb
+            temp['color'] = team.abbrevation
+            temp['rank_before'], temp['rank_diff'], temp['rank_diff_color'] = TeamRatingImage.get_rank_diff(old, temp)
+            arr << temp
+        end
+        arr
     end
 
     private
@@ -344,7 +698,92 @@ class Match < ApplicationRecord
         end
     end
 
-    private
+    def update_player_ratings
+        return if ENABLED_PLAYER_RATING_TOUR_CLASS.exclude? self.tournament.name
+        prev_rating_images = self.get_prev_player_rating_images
+        bat_rating_image = prev_rating_images[0]
+        ball_rating_image = prev_rating_images[1]
+        all_rating_image = prev_rating_images[2]
+        
+        batsman_points = self.batsman_points(ball_rating_image.rating_image)
+        bowler_points = self.bowler_points(bat_rating_image.rating_image)
+
+        batsman_points.each do |id, points|
+            PlayerMatchPoint.create_new(id, points, RTYPE_BAT, self)
+        end
+        bowler_points.each do |id, points|
+            PlayerMatchPoint.create_new(id, points, RTYPE_BALL, self)
+        end
+
+        counter = bat_rating_image.counter + 1
+
+        if counter >= PR_PERIOD_MIN
+            counter = PR_PERIOD_MIN if counter == PR_PERIOD_MAX
+            if counter == PR_PERIOD_MIN
+                tours = Tournament.where(name: self.tournament.name)
+                m_ids = Match.where(tournament_id: tours.pluck(:id)).where("id <= ?", self.id).order(id: :desc).limit(PR_PERIOD_MIN).pluck(:id)
+                new_bat_rat_image = PlayerRatingImage.construct_rating_image(bat_rating_image, m_ids, self)
+                new_ball_rat_image = PlayerRatingImage.construct_rating_image(ball_rating_image, m_ids, self)
+            else
+                new_bat_rat_image = PlayerRatingImage.get_updated_rating_image(bat_rating_image, counter, batsman_points, self, 2)
+                new_ball_rat_image = PlayerRatingImage.get_updated_rating_image(ball_rating_image, counter, bowler_points, self, 2)
+            end
+
+            # all rounder ranking
+            new_all_rat_image = PlayerRatingImage.get_allr_rating_image(new_bat_rat_image, new_ball_rat_image)
+                        
+            self.update_performance_ranks
+
+            self.update_player_leaderboard(new_bat_rat_image, new_ball_rat_image, new_all_rat_image)
+
+            self.update_player_rating_obj(new_bat_rat_image, new_ball_rat_image, new_all_rat_image)
+        
+        else
+            new_bat_rat_image = PlayerRatingImage.get_updated_rating_image(bat_rating_image, counter, batsman_points, self)
+            new_ball_rat_image = PlayerRatingImage.get_updated_rating_image(ball_rating_image, counter, bowler_points, self)
+
+        end
+        
+    end
+
+    def update_stumpings
+        wickets = Wicket.where(method: 'stumped', match_id: self.id)
+        keepers = self.performances.where(keeper: true)
+        keeper1 = keepers[0]
+        keeper2 = keepers[1]
+        wickets.each do |wicket|
+            wicket.method = 'st'
+            wicket.fielder_id = wicket.inning.id % 2 == 0 ? keeper2.player_id : keeper1.player_id
+            wicket.save!
+        end
+    end
+
+    def update_team_rankings
+        return if ENABLED_PLAYER_RATING_TOUR_CLASS.exclude? self.tournament.name
+        prev_rating_image = self.get_prev_team_rating_image
+        t1, t2 = self.get_team_points(prev_rating_image)
+        TeamMatchPoint.create_new(t1['id'], t1['points'], self)
+        TeamMatchPoint.create_new(t2['id'], t2['points'], self)
+
+        counter = prev_rating_image.counter + 1
+
+        if counter >= TR_PERIOD_MIN
+            counter = TR_PERIOD_MIN if counter == TR_PERIOD_MAX
+            if counter == TR_PERIOD_MIN
+                tours = Tournament.where(name: self.tournament.name)
+                m_ids = Match.where(tournament_id: tours.pluck(:id)).where("id <= ?", self.id).order(id: :desc).limit(TR_PERIOD_MIN).pluck(:id)
+                new_rat_image = TeamRatingImage.construct_rating_image(prev_rating_image, m_ids, self)
+            else
+                new_rat_image = TeamRatingImage.get_updated_rating_image(prev_rating_image, counter, t1, t2, self, 2)
+            end
+
+            self.update_team_leaderboard(new_rat_image)
+            self.update_team_rating_obj(new_rat_image)
+        else
+            new_team_rating_image = TeamRatingImage.get_updated_rating_image(prev_rating_image, counter, t1, t2, self)
+        end
+
+    end
 
     def self.return_progression_hash(runs, wickets, innings, total_runs, total_wickets)
         return nil if runs.nil?

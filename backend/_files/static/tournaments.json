@@ -12,7 +12,27 @@
         "mvp_id": 29,
         "most_runs_id": 29,
         "most_wickets_id": 6,
-        "groups": [[1,2,3,5], [4,6,7,8]]
+        "groups": [[1,2,3,5], [4,6,7,8]],
+        "knockout_type": "semis",
+        "knockouts": [
+            {
+                "match": "sf-1",
+                "team1": "a1",
+                "team2": "b2",
+                "dest": "final"
+            },
+            {
+                "match": "sf-2",
+                "team1": "a2",
+                "team2": "b1",
+                "dest": "final"
+            },
+            {
+                "match": "final",
+                "team1": "W(sf-1)",
+                "team2": "W(sf-2)"
+            }
+        ]
     },
     {
         "id": 2,
@@ -27,7 +47,33 @@
         "mvp_id": 109,
         "most_runs_id": 147,
         "most_wickets_id": 114,
-        "groups": [[21,22,23,24,25,26,27,28]]
+        "groups": [[21,22,23,24,25,26,27,28]],
+        "knockout_type": "playoffs",
+        "knockouts": [
+            {
+                "match": "q-1",
+                "team1": "a1",
+                "team2": "a2",
+                "dest": "final"
+            },
+            {
+                "match": "e-1",
+                "team1": "a3",
+                "team2": "a4",
+                "dest": "q-2"
+            },
+            {
+                "match": "q-2",
+                "team1": "W(e-1)",
+                "team2": "L(q-1)",
+                "dest": "final"
+            },
+            {
+                "match": "final",
+                "team1": "W(q-1)",
+                "team2": "W(q-2)"
+            }
+        ]
     },
     {
         "id": 3,
@@ -42,7 +88,27 @@
         "mvp_id": 195,
         "most_runs_id": 18,
         "most_wickets_id": 36,
-        "groups": [[31,32,33,34,35,36], [37,38,39,40,41,42]]
+        "groups": [[31,32,33,34,35,36], [37,38,39,40,41,42]],
+        "knockout_type": "semis",
+        "knockouts": [
+            {
+                "match": "sf-1",
+                "team1": "a1",
+                "team2": "b2",
+                "dest": "final"
+            },
+            {
+                "match": "sf-2",
+                "team1": "a2",
+                "team2": "b1",
+                "dest": "final"
+            },
+            {
+                "match": "final",
+                "team1": "W(sf-1)",
+                "team2": "W(sf-2)"
+            }
+        ]
     },
     {
         "id": 4,
@@ -57,7 +123,33 @@
         "mvp_id": 50,
         "most_runs_id": 245,
         "most_wickets_id": 188,
-        "groups": [[1,2,3,4,5,6,7,8]]
+        "groups": [[1,2,3,4,5,6,7,8]],
+        "knockout_type": "playoffs",
+        "knockouts": [
+            {
+                "match": "q-1",
+                "team1": "a1",
+                "team2": "a2",
+                "dest": "final"
+            },
+            {
+                "match": "e-1",
+                "team1": "a3",
+                "team2": "a4",
+                "dest": "q-2"
+            },
+            {
+                "match": "q-2",
+                "team1": "W(e-1)",
+                "team2": "L(q-1)",
+                "dest": "final"
+            },
+            {
+                "match": "final",
+                "team1": "W(q-1)",
+                "team2": "W(q-2)"
+            }
+        ]
     },
     {
         "id": 5,
@@ -72,7 +164,27 @@
         "mvp_id": 31,
         "most_runs_id": 31,
         "most_wickets_id": 234,
-        "groups": [[1,3,10,8,6], [2,4,5,7,9]]
+        "groups": [[1,3,10,8,6], [2,4,5,7,9]],
+        "knockout_type": "semis",
+        "knockouts": [
+            {
+                "match": "sf-1",
+                "team1": "a1",
+                "team2": "b2",
+                "dest": "final"
+            },
+            {
+                "match": "sf-2",
+                "team1": "a2",
+                "team2": "b1",
+                "dest": "final"
+            },
+            {
+                "match": "final",
+                "team1": "W(sf-1)",
+                "team2": "W(sf-2)"
+            }
+        ]
     },
     {
         "id": 6,
@@ -87,6 +199,142 @@
         "mvp_id": 301,
         "most_runs_id": 300,
         "most_wickets_id": 53,
-        "groups": [[37,38,42],[31,32,35],[36,39,41],[33,34,40]]
+        "groups": [[37,38,42],[31,32,35],[36,39,41],[33,34,40]],
+        "knockout_type": "quarters",
+        "knockouts": [
+            {
+                "match": "qf-1",
+                "team1": "a1",
+                "team2": "b2",
+                "dest": "sf-1"
+            },
+            {
+                "match": "qf-2",
+                "team1": "c1",
+                "team2": "d2",
+                "dest": "sf-1"
+            },
+            {
+                "match": "qf-3",
+                "team1": "b1",
+                "team2": "a2",
+                "dest": "sf-2"
+            },
+            {
+                "match": "qf-4",
+                "team1": "d1",
+                "team2": "c2",
+                "dest": "sf-2"
+            },
+            {
+                "match": "sf-1",
+                "team1": "qf-1",
+                "team2": "qf-2",
+                "dest": "final"
+            },
+            {
+                "match": "sf-2",
+                "team1": "qf-3",
+                "team2": "qf-4",
+                "dest": "final"
+            },
+            {
+                "match": "final",
+                "team1": "W(sf-1)",
+                "team2": "W(sf-2)"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "name": "wt20",
+        "season": 4,
+        "medals": {
+            "gold": 65,
+            "silver": 59,
+            "bronze": [66, 60]
+        },
+        "pots_id": 106,
+        "mvp_id": 333,
+        "most_runs_id": 333,
+        "most_wickets_id": 106,
+        "groups": [[1,3,10,8,6,2,4,7,9]],
+        "knockout_type": "semis",
+        "knockouts": [
+            {
+                "match": "sf-1",
+                "team1": "a1",
+                "team2": "a4",
+                "dest": "final"
+            },
+            {
+                "match": "sf-2",
+                "team1": "a2",
+                "team2": "a3",
+                "dest": "final"
+            },
+            {
+                "match": "final",
+                "team1": "W(sf-1)",
+                "team2": "W(sf-2)"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "name": "csl",
+        "season": 3,
+        "groups": [[31, 32, 34], [36, 33, 35], [42, 40, 38], [39, 41, 37]],
+        "knockout_type": "quarters",
+        "knockouts": [
+            {
+                "match": "quarter-final 1",
+                "venue": "jaipur",
+                "team1": "apr",
+                "team2": "oct",
+                "dest": "sf-1"
+            },
+            {
+                "match": "quarter-final 2",
+                "venue": "bengaluru",
+                "team1": "june",
+                "team2": "july",
+                "dest": "sf-1"
+            },
+            {
+                "match": "quarter-final 3",
+                "venue": "chennai",
+                "team1": "dec",
+                "team2": "may",
+                "dest": "sf-2"
+            },
+            {
+                "match": "quarter-final 4",
+                "venue": "hyderabad",
+                "team1": "sept",
+                "team2": "feb",
+                "dest": "sf-2"
+            },
+            {
+                "match": "semi-final 1",
+                "venue": "mumbai",
+                "team1": "qf-1",
+                "team2": "qf-2",
+                "dest": "final"
+            },
+            {
+                "match": "semi-final 2",
+                "venue": "mohali",
+                "team1": "qf-3",
+                "team2": "qf-4",
+                "dest": "final"
+            },
+            {
+                "match": "final",
+                "venue": "kolkata",
+                "team1": "W(sf-1)",
+                "team2": "W(sf-2)"
+            }
+        ]
     }
 ]

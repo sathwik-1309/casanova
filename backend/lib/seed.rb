@@ -885,4 +885,9 @@ module Seed
     def self.add_existing_matches
         New.add_existing_matches_to_db
     end
+
+    def self.add_current_squads_entry
+        c = CurrentSquad.new
+        c.save!
+    end
 end

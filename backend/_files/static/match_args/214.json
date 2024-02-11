@@ -1,0 +1,23 @@
+{
+  "m_id": 214,
+  "batted_first": "apr",
+  "batted_second": "feb",
+  "toss": "feb",
+  "pitch": 3,
+  "ball_color": [
+    "y",
+    "r",
+    "y",
+    "r"
+  ],
+  "cap1": "rohit",
+  "cap2": "bhuvi",
+  "keeper1": "finn allen",
+  "keeper2": "kusal mendis",
+  "winner": "apr",
+  "stage": "group",
+  "venue": "hyderabad",
+  "motm_player": "shaheen",
+  "motm_team": "apr",
+  "t_id": 8
+}

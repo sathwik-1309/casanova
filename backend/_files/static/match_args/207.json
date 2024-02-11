@@ -1,0 +1,23 @@
+{
+  "m_id": 207,
+  "batted_first": "aug",
+  "batted_second": "dec",
+  "toss": "dec",
+  "pitch": 3,
+  "ball_color": [
+    "r",
+    "g",
+    "g",
+    "r"
+  ],
+  "cap1": "williamson",
+  "cap2": "wade",
+  "keeper1": "salt",
+  "keeper2": "de kock",
+  "winner": "dec",
+  "stage": "group",
+  "venue": "bengaluru",
+  "motm_player": "salt",
+  "motm_team": "aug",
+  "t_id": 8
+}

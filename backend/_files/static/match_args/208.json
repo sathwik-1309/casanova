@@ -1,0 +1,23 @@
+{
+  "m_id": 208,
+  "batted_first": "nov",
+  "batted_second": "july",
+  "toss": "july",
+  "pitch": 3.5,
+  "ball_color": [
+    "y",
+    "r",
+    "r",
+    "y"
+  ],
+  "cap1": "virat kohli",
+  "cap2": "dhoni",
+  "keeper1": "gurbaz",
+  "keeper2": "dhoni",
+  "winner": "nov",
+  "stage": "group",
+  "venue": "mohali",
+  "motm_player": "salman",
+  "motm_team": "nov",
+  "t_id": 8
+}

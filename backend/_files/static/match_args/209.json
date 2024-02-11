@@ -1,0 +1,23 @@
+{
+  "m_id": 209,
+  "batted_first": "june",
+  "batted_second": "mar",
+  "toss": "mar",
+  "pitch": 2,
+  "ball_color": [
+    "y",
+    "y",
+    "y",
+    "y"
+  ],
+  "cap1": "stokes",
+  "cap2": "shakib",
+  "keeper1": "rizwan",
+  "keeper2": "inglis",
+  "winner": "june",
+  "stage": "group",
+  "venue": "kolkata",
+  "motm_player": "adil rashid",
+  "motm_team": "june",
+  "t_id": 8
+}

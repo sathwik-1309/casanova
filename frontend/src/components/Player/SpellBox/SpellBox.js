@@ -8,7 +8,7 @@ function SpellBox(props) {
     let extra_details = <></>
     if (props.detailed) {
         extra_details = <a className={`scorebox_footer h-30 ${p.color}1 flex-row default-font font-0_8 font-600`} href={`${FRONTEND_API_URL}/match/${p.match_id}/1/summary`}>
-            <div className='scorebox_pos w-110 flex vert-align' ></div>
+            <div className='scorebox_pos w-110 flex vert-align font-600 font-0_9' >{p.points || '-'}</div>
             <div className='scorebox_venue w-200 flex vert-align'>at {p.venue}</div>
             <div className='scorebox_vs_team w-100 flex vert-align'>vs {p.vs_team}</div>
         </a>

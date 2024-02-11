@@ -1,0 +1,23 @@
+{
+  "m_id": 193,
+  "batted_first": "nz",
+  "batted_second": "pak",
+  "toss": "nz",
+  "pitch": 2.5,
+  "ball_color": [
+    "g",
+    "y",
+    "y",
+    "g"
+  ],
+  "cap1": "williamson",
+  "cap2": "babar azam",
+  "keeper1": "latham",
+  "keeper2": "rizwan",
+  "winner": "pak",
+  "stage": "league",
+  "venue": "chennai",
+  "motm_player": "imam",
+  "motm_team": "pak",
+  "t_id": 7
+}

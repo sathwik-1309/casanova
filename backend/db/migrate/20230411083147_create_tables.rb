@@ -304,6 +304,12 @@ class CreateTables < ActiveRecord::Migration[7.0]
       t.boolean :won
       t.boolean :captain
       t.boolean :keeper
+      t.integer :rank_bat_before
+      t.integer :rank_bat_after
+      t.integer :rank_bow_before
+      t.integer :rank_bow_after
+      t.integer :rank_all_before
+      t.integer :rank_all_after
       t.belongs_to :match, foreign_key: true
       t.belongs_to :tournament, foreign_key: true
       t.belongs_to :player, foreign_key: true
@@ -346,7 +352,97 @@ class CreateTables < ActiveRecord::Migration[7.0]
       t.belongs_to :tournament, foreign_key: true
     end
 
+    create_table :player_rating_images do |t|
+      t.string :rformat
+      t.string :rtype
+      t.json :rating_image
+      t.integer :counter
+      t.belongs_to :match, foreign_key: true
+      t.belongs_to :tournament, foreign_key: true
+    end
 
+    create_table :player_ratings do |t|
+      t.string :rformat
+      t.integer :best_bat_rank
+      t.integer :best_bat_rank_match
+      t.integer :best_bat_rating
+      t.integer :best_bat_rating_match
+      t.integer :best_ball_rank
+      t.integer :best_ball_rank_match
+      t.integer :best_ball_rating
+      t.integer :best_ball_rating_match
+      t.integer :best_all_rank
+      t.integer :best_all_rank_match
+      t.integer :best_all_rating
+      t.integer :best_all_rating_match
+      t.belongs_to :player, foreign_key: true
+    end
+
+    create_table :player_match_points do |t|
+      t.string :rtype
+      t.string :rformat
+      t.float :points
+      t.belongs_to :match, foreign_key: true
+      t.belongs_to :player, foreign_key: true
+      t.belongs_to :tournament, foreign_key: true
+    end
+
+    create_table :p_leaderboards do |t|
+      t.string :rtype
+      t.string :rformat
+      t.integer :matches
+      t.float :highest_rating
+      t.belongs_to :match, foreign_key: true
+      t.belongs_to :player, foreign_key: true
+    end
+
+    create_table :team_match_points do |t|
+      t.string :rformat
+      t.float :points
+      t.belongs_to :match, foreign_key: true
+      t.belongs_to :team, foreign_key: true
+      t.belongs_to :tournament, foreign_key: true
+    end
+
+    create_table :t_leaderboards do |t|
+      t.string :rformat
+      t.integer :matches
+      t.float :highest_rating
+      t.belongs_to :match, foreign_key: true
+      t.belongs_to :team, foreign_key: true
+    end
+
+    create_table :team_rating_images do |t|
+      t.string :rformat
+      t.json :rating_image
+      t.integer :counter
+      t.belongs_to :match, foreign_key: true
+      t.belongs_to :tournament, foreign_key: true
+    end
+
+    create_table :team_ratings do |t|
+      t.string :rformat
+      t.integer :best_rank
+      t.integer :best_rank_match
+      t.integer :best_rating
+      t.integer :best_rating_match
+      t.belongs_to :team, foreign_key: true
+    end
+
+    create_table :current_squads do |t|
+      t.json :jan, default: []
+      t.json :feb, default: []
+      t.json :mar, default: []
+      t.json :apr, default: []
+      t.json :may, default: []
+      t.json :june, default: []
+      t.json :july, default: []
+      t.json :aug, default: []
+      t.json :sept, default: []
+      t.json :oct, default: []
+      t.json :nov, default: []
+      t.json :dec, default: []
+    end
 
   end
 end

@@ -35,7 +35,7 @@
 .match_scorecard_header2 {
     height: 40px;
     display: flex;
-    border-top: 1px solid white;
+    /* border-top: 1px solid white; */
 }
 
 .match_scorecard_header_4s,
@@ -70,14 +70,13 @@
 
 #scorecard_item {
     height: 35px;
-    border-top: 1px solid white;
+    /* border-top: 1px solid white; */
     display: flex;
-    border-radius: 2px;
+    /* border-radius: 2px; */
     overflow: hidden;
 }
 
 #scorecard_item:hover {
-    /*border: 1px solid white;*/
     opacity: 0.8;
 }
 
@@ -143,5 +142,8 @@
     width: fit-content;
     height: fit-content;
     padding: 20px;
+}
+.opacity {
+    opacity: 0.9;
 }
 

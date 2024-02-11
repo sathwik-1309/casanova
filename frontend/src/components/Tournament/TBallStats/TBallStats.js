@@ -4,11 +4,25 @@ import Listcards from "../Listcards/Listcards";
 import { BACKEND_API_URL } from './../../../my_constants'
 import BatStats from "../../Player/Stats/BatStats/BatStats";
 import BallStats from "../../Player/Stats/BallStats/BallStats";
+import BowlerList from '../../Squad/BowlerList/BowlerList';
 
 function TBallStats(props) {
     let { t_id } = useParams();
+    let {tour_class} = useParams();
 
-    let url = `${BACKEND_API_URL}/tournament/${t_id}/ball_stats`
+    let url;
+    let box_url;
+    if (props.t_id){
+        url = `${BACKEND_API_URL}/tournament/${t_id}/ball_stats`
+        box_url = `ball_stats2?tour=${t_id}`
+    }else if (props.tour_class) {
+        url = `${BACKEND_API_URL}/tournaments/${tour_class}/ball_stats`
+        box_url = `ball_stats2?tour_class=${tour_class}`
+    }else {
+        url = `${BACKEND_API_URL}/ball_stats`
+        box_url = `ball_stats2`
+    }
+
     const [data, setData] = useState(null);
 
     useEffect(() => {
@@ -38,15 +52,18 @@ function TBallStats(props) {
     return (
 
         <div className={`tournament_ball_stats flex-col ${data.tour}`}>
-            <div className='flex-row gap-140'>
+            <div className='flex-row gap-140 ml-200'>
                 {data.ball_stats.boxes.map((lists, index) => (
                     <Listcards key={index} data={lists} func={handleclick}/>
                 ))}
             </div>
             <div className='flex-row gap-40'>
                 {selected.map((p_id, index) => (
-                    <BallStats url={`${BACKEND_API_URL}/player/${p_id}/ball_stats2?tour=${t_id}`} header={true} pic={true}/>
+                    <BallStats url={`${BACKEND_API_URL}/player/${p_id}/${box_url}`} header={true} pic={true}/>
                 ))}
+            </div>
+            <div className='w-fit m-hort-500'>
+                <BowlerList ball_stats={data.individual_ball_stats}/>
             </div>
         </div>
     )

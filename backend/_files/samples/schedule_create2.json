@@ -1,0 +1,68 @@
+{
+  "t_id": 8,
+  "default_stage": "group",
+  "matches": [
+    {
+      "team1": "jan",
+      "team2": "feb",
+      "venue": "chennai"
+    },
+    {
+      "team1": "june",
+      "team2": "may",
+      "venue": "jaipur"
+    },
+    {
+      "team1": "dec",
+      "team2": "aug",
+      "venue": "bengaluru"
+    },
+    {
+      "team1": "nov",
+      "team2": "july",
+      "venue": "mohali"
+    },
+
+    {
+      "team1": "apr",
+      "team2": "jan",
+      "venue": "mumbai"
+    },
+    {
+      "team1": "mar",
+      "team2": "june",
+      "venue": "kolkata"
+    },
+    {
+      "team1": "aug",
+      "team2": "oct",
+      "venue": "chennai"
+    },
+    {
+      "team1": "sept",
+      "team2": "nov",
+      "venue": "jaipur"
+    },
+
+    {
+      "team1": "feb",
+      "team2": "apr",
+      "venue": "hyderabad"
+    },
+    {
+      "team1": "may",
+      "team2": "mar",
+      "venue": "mohali"
+    },
+    {
+      "team1": "oct",
+      "team2": "dec",
+      "venue": "kolkata"
+    },
+    {
+      "team1": "july",
+      "team2": "sept",
+      "venue": "hyderabad"
+    }
+  ]
+}

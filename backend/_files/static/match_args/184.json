@@ -1,0 +1,23 @@
+{
+  "m_id": 184,
+  "batted_first": "ind",
+  "batted_second": "nz",
+  "toss": "ind",
+  "pitch": 2.5,
+  "ball_color": [
+    "y",
+    "y",
+    "y",
+    "y"
+  ],
+  "cap1": "rohit",
+  "cap2": "williamson",
+  "keeper1": "kl rahul",
+  "keeper2": "latham",
+  "winner": "ind",
+  "stage": "league",
+  "venue": "dharamshala",
+  "motm_player": "kl rahul",
+  "motm_team": "ind",
+  "t_id": 7
+}

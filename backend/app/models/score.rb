@@ -20,6 +20,7 @@ class Score < ApplicationRecord
         hash = {}
         hash["type"] = 'score'
         hash["color"] = Util.get_team_color(self.tournament_id, self.squad.abbrevation)
+        hash["teamcolor"] = self.squad.team.abbrevation
         hash["vs_team"] = self.inning.bow_team.get_abb
         hash["venue"] = self.match.venue.upcase
         hash["p_id"] = self.player_id
@@ -28,6 +29,7 @@ class Score < ApplicationRecord
         hash["batted"] = self.batted
         return hash unless self.batted
         hash["score"] = self.get_runs_with_notout
+        hash["runs"] = self.runs
         hash["balls"] = self.balls
         hash["dots"] = self.dots
         hash["ones"] = self.c1
@@ -39,6 +41,7 @@ class Score < ApplicationRecord
         hash["position"] = self.position
         hash["id"] = self.id
         hash["match_id"] = self.match_id
+        hash["points"] = PlayerMatchPoint.find_by(player_id: self.player_id, match_id: self.match_id, rtype: RTYPE_BAT)&.points || 0
         return hash
     end
 
@@ -105,6 +108,27 @@ class Score < ApplicationRecord
             arr << v
         end
         return arr
+    end
+
+    def get_points(bowling_team_strength, benchmark_runs, benchmark_sr)
+        inn = self.inning
+        not_out_points = self.not_out ? 6 : 0
+        sr = self.sr.nil? ? 0 : self.sr
+        part1 = ((self.runs+not_out_points)/benchmark_runs)*sr
+        part2 = (sr/benchmark_sr)*self.runs*5
+        motm_points = self.player_id == inn.match.motm_id ? MOTM_POINTS : 0
+        win_points = inn.match.winner_id == inn.bat_team.id ? WIN_POINTS : 0
+        calculated_points = (part1 + part2 + motm_points + win_points).round(2)
+        if ["league", "group"].exclude? inn.match.stage
+          if inn.match.stage == "final"
+            factor = 1.2
+          else
+            factor = 1.1
+          end
+          calculated_points = (calculated_points*factor).round(2)
+        end
+        points =  calculated_points*(1.0-TEAM_STRENGTH_WEIGHTAGE_BAT) + (TEAM_STRENGTH_WEIGHTAGE_BAT*calculated_points*bowling_team_strength)
+        return points.round(2)
     end
 
     private

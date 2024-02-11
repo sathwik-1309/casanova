@@ -70,6 +70,20 @@ class Team < ApplicationRecord
         }
     end
 
+    def get_ranking_hash
+        hash = {}
+        rformat = self.squads.first.tournament.name
+        im = TeamRatingImage.where(rformat: rformat).last
+        hash['rank'] = im.get_rank(self.id)
+        hash['rating'] = im.get_rating(self.id)
+        tr = TeamRating.find_by(team_id: self.id)
+        hash['best_rank'] = tr.best_rank
+        hash['best_rank_match'] = tr.best_rank_match
+        hash['best_rating'] = tr.best_rating
+        hash['best_rating_match'] = tr.best_rating_match
+        hash
+    end
+
     def team_stats
         hash = {}
         squad_ids = self.squads.pluck(:id)
@@ -124,5 +138,45 @@ class Team < ApplicationRecord
         hash = {}
         hash
     end
+
+    def get_matches
+        squad_ids = self.squads.pluck(:id)
+        matches = Match.where('winner_id IN (?) OR loser_id IN (?)', squad_ids, squad_ids)
+        matches
+    end
+
+    def self.head_to_head_boxes_hash(team1, team2, match_id = nil)
+        squad_ids1 = team1.squads.pluck(:id)
+        squad_ids2 = team2.squads.pluck(:id)
+        ids = squad_ids1+squad_ids2
+        matches = Match.where('winner_id IN (?) AND loser_id IN (?)', ids, ids)
+        unless match_id.nil?
+            matches = matches.where("id < ?", match_id)
+        end
+        hash = {}
+        boxes = []
+        h2h_record = [0,0]
+        matches.each do |match|
+          temp = {}
+          temp['match_box'] = match.match_box
+          motm = match.motm.attributes.slice('id')
+          motm['name'] = match.motm.fullname.titleize
+          motm['color'] = match.scores.find_by(player_id: match.motm.id).squad.team.abbrevation
+          temp['motm'] = motm
+          winner = {}
+          winner['teamname'] = match.winner.get_teamname
+          winner['color'] = match.winner.team.abbrevation
+          temp['winner'] = winner
+          if match.winner.team_id == team1.id
+            h2h_record[0] += 1
+          else
+            h2h_record[1] += 1
+          end
+          boxes << temp
+        end
+        hash['boxes'] = boxes
+        hash['h2h_record'] = h2h_record
+        return hash
+      end
 
 end

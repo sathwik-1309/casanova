@@ -1,0 +1,23 @@
+{
+  "m_id": 215,
+  "batted_first": "dec",
+  "batted_second": "oct",
+  "toss": "oct",
+  "pitch": 2.5,
+  "ball_color": [
+    "y",
+    "g",
+    "y",
+    "g"
+  ],
+  "cap1": "wade",
+  "cap2": "hardik",
+  "keeper1": "de kock",
+  "keeper2": "pooran",
+  "winner": "dec",
+  "stage": "group",
+  "venue": "kolkata",
+  "motm_player": "ibrahim",
+  "motm_team": "dec",
+  "t_id": 8
+}

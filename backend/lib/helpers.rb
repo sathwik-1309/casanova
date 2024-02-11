@@ -373,7 +373,7 @@ module Helper
     def self.upcoming_match_team_to_hash(squad)
         hash = {}
         hash['teamname'] = squad.get_abb
-        hash['color'] = squad.abbrevation
+        hash['color'] = Util.get_team_color(squad.tournament_id, squad.abbrevation)
         hash['captain_id'] = squad.captain_id
         hash
     end
@@ -399,6 +399,29 @@ module Helper
         when 'csl'
             return Tournament.csl_ids
         end
+    end
+
+    def self.construct_tour_class_bat_stats(stats, field, header, tour_class, field2='innings')
+        box = {}
+        box['header'] = header
+        box['data'] = []
+        temp_stats = stats
+        pos = 0
+        temp_stats.each do|stat|
+            pos += 1
+            temp = {}
+            player = stat.player
+            temp['p_id'] = stat.player_id
+            temp['name'] = player.fullname.titleize
+            team = player.get_tour_class_team(tour_class)
+            temp['color'] = team.abbrevation
+            temp['pos'] = pos
+            temp['teamname'] = team.get_abb
+            temp['data1'] = stat.send(field.to_sym)
+            temp['data2'] = "#{field2.titleize}: #{stat.send(field2.to_sym)}"
+            box['data'] << temp
+        end
+        box
     end
 
     def self.construct_ball_stats_hash2(spells)

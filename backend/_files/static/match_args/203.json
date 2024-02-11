@@ -1,0 +1,23 @@
+{
+  "m_id": 203,
+  "batted_first": "ind",
+  "batted_second": "afg",
+  "toss": "ind",
+  "pitch": 3.5,
+  "ball_color": [
+    "g",
+    "r",
+    "g",
+    "r"
+  ],
+  "cap1": "rohit",
+  "cap2": "shahidi",
+  "keeper1": "kl rahul",
+  "keeper2": "ikram",
+  "winner": "ind",
+  "stage": "semi-final",
+  "venue": "ahmedabad",
+  "motm_player": "siraj",
+  "motm_team": "ind",
+  "t_id": 7
+}

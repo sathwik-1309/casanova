@@ -1,0 +1,23 @@
+{
+  "m_id": 170,
+  "batted_first": "ind",
+  "batted_second": "sa",
+  "toss": "sa",
+  "pitch": 2,
+  "ball_color": [
+    "y",
+    "g",
+    "g",
+    "y"
+  ],
+  "cap1": "rohit",
+  "cap2": "bavuma",
+  "keeper1": "kl rahul",
+  "keeper2": "de kock",
+  "winner": "ind",
+  "stage": "league",
+  "venue": "chennai",
+  "motm_player": "rohit",
+  "motm_team": "ind",
+  "t_id": 7
+}

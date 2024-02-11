@@ -3,6 +3,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  get '/bat_stats' => 'tournament#overall_bat_stats'
+  get '/ball_stats' => 'tournament#overall_ball_stats'
+  
   scope :match do
     get '/:m_id/summary' => 'match#summary'
     get '/:m_id/:inn_no/scorecard' => 'match#scorecard'
@@ -13,6 +17,9 @@ Rails.application.routes.draw do
     get '/:m_id/worm' => 'match#worm'
     get '/:m_id/:inn_no/commentry' => 'match#commentry'
     get '/:m_id/innings_progression' => 'match#innings_progression'
+    get '/:m_id/player_rankings' => 'match#player_rankings'
+    get '/:m_id/team_rankings' => 'match#team_rankings'
+    get '/:m_id/player_rankings_list' => 'match#player_rankings_list'
     # get '/:m_id/match_box' => 'match#match_box'
   end
 
@@ -30,10 +37,13 @@ Rails.application.routes.draw do
     get '/:t_id/ball_stats' => 'tournament#ball_stats'
     get '/:t_id' => 'tournament#tournament_home'
     get '/:t_id/schedule' => 'tournament#schedule'
+    get '/:t_id/knockouts' => 'tournament#knockouts'
   end
 
   scope :tournaments do
     get '/:tour_class' => 'tournament#tournaments_home'
+    get '/:tour_class/bat_stats' => 'tournament#tour_class_bat_stats'
+    get '/:tour_class/ball_stats' => 'tournament#tour_class_ball_stats'
   end
 
   scope :search do
@@ -42,12 +52,14 @@ Rails.application.routes.draw do
 
 
   scope :player do
+    get '/leaderboard' => 'player#leaderboard'
     get '/:p_id/bat_stats' => 'player#bat_stats'
     get '/:p_id/bat_stats2' => 'player#bat_stats2'
     get '/:p_id/ball_stats' => 'player#ball_stats'
     get '/:p_id/ball_stats2' => 'player#ball_stats2'
     get '/:p_id/scores' => 'player#scores'
     get '/:p_id/spells' => 'player#spells'
+    get '/:p_id/bowling_analysis' => 'player#bowling_analysis'
     get '/:p_id' => 'player#home_page'
     post '/create' => 'player#create'
   end
@@ -62,6 +74,12 @@ Rails.application.routes.draw do
     get '' => 'team#teams'
     get '/player_create' => 'team#player_create'
     get '/:team_id/team_page' => 'team#team_page'
+    get '/head_to_head' => 'team#head_to_head'
+    get '/head_to_head_detailed' => 'team#head_to_head_detailed'
+    get '/leaderboard' => 'team#leaderboard'
+    get '/select_squads/:team_id' => 'team#select_squads'
+    get '/select_squads' => 'team#select_squads_home'
+    put '/:team_id/select_squads_action' => 'team#select_squads_action'
   end
 
   scope :venues do
@@ -83,6 +101,8 @@ Rails.application.routes.draw do
 
   scope :schedule do
     post '/upload_file' => 'schedule#upload_file'
+    get '/pre_match' => 'schedule#pre_match'
+    get '/pre_match_squads' => 'schedule#pre_match_squads'
   end
 
   get 'home_page' => 'tournament#home_page'

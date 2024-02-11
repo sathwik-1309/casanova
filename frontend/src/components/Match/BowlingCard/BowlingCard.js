@@ -41,7 +41,7 @@ function Header(props) {
 function BowlerItem(x) {
     let class1 = "bowling_card_bowleritem "+x.color+"1"
     return (
-        <div className={class1} onClick={() => x.func(x.bowler.spellbox)}>
+        <div className={`${class1} bg-shadow`} onClick={() => x.func(x.bowler.spellbox)}>
             <div id="bowling_card_bowleritem_name">
                 {x.bowler.name}
             </div>

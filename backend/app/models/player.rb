@@ -4,6 +4,8 @@ class Player < ApplicationRecord
     has_one :bat_stats
     has_one :ball_stats
     has_many :performances
+    has_many :player_match_points
+    has_many :player_ratings
 
     # player types
     OVERALL ='overall'
@@ -151,12 +153,90 @@ class Player < ApplicationRecord
         return scores.count
     end
 
+    def profile_hash2
+        hash = self.profile_hash
+        if self.skill == 'bat'
+            bat_stat = BatStat.find_by(sub_type: 'overall', player_id: self.id)
+            if bat_stat
+                hash['runs'] = bat_stat.runs
+                hash['avg'] = bat_stat.avg
+                hash['sr'] = bat_stat.sr
+                hash['top_csl_rank'] = self.player_ratings.find_by(rformat: 'csl')&.best_bat_rank || 1000
+                hash['top_wt20_rank'] = self.player_ratings.find_by(rformat: 'wt20')&.best_bat_rank || 1000
+            else
+                hash['runs'] = 0
+                hash['avg'] = 0
+                hash['sr'] = 0
+                hash['top_csl_rank'] = 1000
+                hash['top_wt20_rank'] = 1000
+            end
+            
+        elsif self.skill == 'bow'
+            bow_stat = BallStat.find_by(sub_type: 'overall', player_id: self.id)
+            if bow_stat
+                hash['wickets'] = bow_stat.wickets
+                hash['economy'] = bow_stat.economy
+                hash['bow_sr'] = bow_stat.sr
+                hash['top_csl_rank'] = self.player_ratings.find_by(rformat: 'csl')&.best_ball_rank || 1000
+                hash['top_wt20_rank'] = self.player_ratings.find_by(rformat: 'wt20')&.best_ball_rank || 1000
+            else
+                hash['wickets'] = 0
+                hash['economy'] = 0
+                hash['bow_sr'] = 0
+                hash['top_csl_rank'] = 1000
+                hash['top_wt20_rank'] = 1000
+            end
+        else
+            bat_stat = BatStat.find_by(sub_type: 'overall', player_id: self.id)
+            bow_stat = BallStat.find_by(sub_type: 'overall', player_id: self.id)
+            if bat_stat
+                hash['runs'] = bat_stat.runs
+                hash['avg'] = bat_stat.avg
+                hash['sr'] = bat_stat.sr
+                hash['top_csl_rank'] = self.player_ratings.find_by(rformat: 'csl')&.best_bat_rank || 1000
+                hash['top_wt20_rank'] = self.player_ratings.find_by(rformat: 'wt20')&.best_bat_rank || 1000
+            else
+                hash['runs'] = 0
+                hash['avg'] = 0
+                hash['sr'] = 0
+                hash['top_csl_rank'] = 1000
+                hash['top_wt20_rank'] = 1000
+            end
+            if bow_stat
+                hash['wickets'] = bow_stat.wickets
+                hash['economy'] = bow_stat.economy
+                hash['bow_sr'] = bow_stat.sr
+            else
+                hash['wickets'] = 0
+                hash['economy'] = 0
+                hash['bow_sr'] = 0
+            end
+            
+        end
+        return hash
+    end
+
     def profile_hash
         h = {}
         h['p_id'] = self.id
         h['fullname'] = self.fullname.upcase
+        h['fullname_title'] = self.fullname.titleize
         h['country'] = self.country.get_teamname
         h['color'] = self.country.abbrevation
+        if self.keeper
+            description = "#{self.batting_hand.upcase} - WK"
+        else
+            case self.skill
+            when 'bat'
+                description = "#{self.batting_hand.upcase} - BAT"
+            when 'bow'
+                description = "#{self.bowling_hand.upcase} - #{self.bowling_style.upcase}"
+            when 'all'
+                description = "#{self.bowling_hand.upcase} - #{self.bowling_style.upcase}"
+            end
+        end
+        
+        h['description'] = description
         h['role'] = Util.get_role(self.skill)
         h['batting'] = self.batting_hand == 'r' ? "Right-hand-bat" : "Left-hand-bat"
         h['bowling'] = "-"
@@ -170,6 +250,17 @@ class Player < ApplicationRecord
             h['teams'] << Team.find(team_id).get_abb
         end
         return h
+    end
+
+    def get_tour_class_team(tour_class)
+        case tour_class
+        when 'wt20'
+            return Team.find_by_id(self.country_team_id)
+        when 'csl'
+            return Team.find_by_id(self.csl_team_id)
+        when 'ipl'
+            return Team.find_by_id(self.ipl_team_id)
+        end
     end
 
     def trophy_cabinet_hash
@@ -242,6 +333,65 @@ class Player < ApplicationRecord
             return team.get_teamname, team.abbrevation
         end
         return self.country.get_teamname, self.country.abbrevation
+    end
+
+    def rank_box_hash
+        hash = {}
+        hash['wt20'] = {
+            'color' => self.country.abbrevation,
+            'batting' => self.get_rank_hash('wt20', RTYPE_BAT),
+            'bowling' => self.get_rank_hash('wt20', RTYPE_BALL),
+            'allrounder' => self.get_rank_hash('wt20', RTYPE_ALL)
+        }
+        csl_team = Team.find_by_id(self.csl_team_id)
+        color = csl_team.nil? ? self.country.abbrevation : csl_team.abbrevation
+        hash['csl'] = {
+            'color' => color,
+            'batting' => self.get_rank_hash('csl', RTYPE_BAT),
+            'bowling' => self.get_rank_hash('csl', RTYPE_BALL),
+            'allrounder' => self.get_rank_hash('csl', RTYPE_ALL)
+        }
+        hash
+    end
+
+    def get_rank_hash(rformat, rtype)
+        hash = {}
+        cur_rank = PlayerRating.get_rank(rformat, rtype, self.id, true)
+        hash['current_rank'] = cur_rank.nil? ? '-' : cur_rank
+        pr = self.player_ratings.find_by(rformat: rformat)
+        if pr.present?
+            case (rtype)
+            when RTYPE_BAT
+                best_rank = pr.best_bat_rank.nil? ? '-' : pr.best_bat_rank
+                best_rank_match = pr.best_bat_rank_match
+            when RTYPE_BALL
+                best_rank =  pr.best_ball_rank.nil? ? '-' : pr.best_ball_rank
+                best_rank_match = pr.best_ball_rank_match
+            when RTYPE_ALL
+                best_rank =  pr.best_all_rank.nil? ? '-' : pr.best_all_rank
+                best_rank_match = pr.best_all_rank_match
+            end
+        else
+            best_rank = '-'
+            best_rank_match = nil
+        end
+        hash['best_rank'] =  best_rank
+        hash['best_rank_match'] = best_rank_match
+        hash
+    end
+
+    def bowling_analysis
+
+        wickets = Wicket.where(bowler_id: self.id)
+        hash = {}
+        methods = {}
+        wickets.each do |wicket|
+            if methods.has_key? wicket.method
+            end
+        end
+        
+
+        hash
     end
 
     # private

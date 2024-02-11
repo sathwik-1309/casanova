@@ -39,25 +39,25 @@ class Squad < ApplicationRecord
             runs = bat_innings.score
             wickets = bat_innings.for
             if wickets == 10
-                overs = 20.0
+                balls = 120
             else
-                overs = bat_innings.overs
+                balls = Util.overs_to_balls(bat_innings.overs)
             end
             runs_list.append(runs)
-            overs_list.append(overs)
+            overs_list.append(balls)
 
             ball_innings = Inning.find_by(match_id: match.to_i, bow_team_id: self.id)
             runs_conceded = ball_innings.score
             wickets_taken = ball_innings.for
             if wickets_taken == 10
-                overs_bowled = 20.0
+                balls_bowled = 120
             else
-                overs_bowled = ball_innings.overs
+                balls_bowled = Util.overs_to_balls(ball_innings.overs)
             end
             runs_conceded_list.append(runs_conceded)
-            overs_bowled_list.append(overs_bowled)
+            overs_bowled_list.append(balls_bowled)
         end
-        nrr = ((runs_list.sum.to_f / overs_list.sum.to_f) - (runs_conceded_list.sum.to_f / overs_bowled_list.sum.to_f)).round(2)
+        nrr = (((runs_list.sum.to_f*6) / overs_list.sum.to_f) - ((runs_conceded_list.sum.to_f*6) / overs_bowled_list.sum.to_f)).round(2)
         return nrr
     end
 

@@ -1,0 +1,3 @@
+class CurrentSquad < ApplicationRecord
+  
+end

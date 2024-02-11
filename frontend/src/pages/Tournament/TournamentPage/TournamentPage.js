@@ -4,6 +4,7 @@ import Pointstable from '../../../components/Tournament/Pointstable/Pointstable'
 import BatStats from "../../../components/Tournament/TBatStats/TBatStats";
 import BallStats from "../../../components/Tournament/TBallStats/TBallStats";
 import Schedules from '../../../components/Tournament/Schedules/Schedules';
+import Knockouts from '../../Knockouts/Knockouts';
 
 
 function TournamentPage() {
@@ -22,6 +23,9 @@ function TournamentPage() {
           break;
         case "schedule":
           component = <Schedules t_id={t_id}/>
+          break;
+        case "knockouts":
+          component = <Knockouts t_id={t_id}/>
           break;
         // case "partnerships":
         //     component = <Partnerships m_id = {m_id} inn_no={inn_no}/>

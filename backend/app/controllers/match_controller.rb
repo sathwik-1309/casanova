@@ -482,6 +482,15 @@ class MatchController < ApplicationController
         render(:json => Oj.dump(hash))
     end
 
+    def team_rankings
+        m_id = params[:m_id]
+        match = Match.find(m_id)
+        hash = {}
+        hash['team_rankings'] = match.team_rankings_hash
+        hash['list'] = match.team_ranking_list_hash
+        render(:json => Oj.dump(hash))
+    end
+
     def player_rankings_list
         m_id = params[:m_id]
         match = Match.find(m_id)

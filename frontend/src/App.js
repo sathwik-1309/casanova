@@ -29,6 +29,8 @@ import TournamentsHome from "./pages/Tournament/TournamentsPage/TournamentsHome/
 import HomePages from "./pages/HomePages/HomePages";
 import { HeadtoHead } from "./pages/Team/HeadtoHead/HeadtoHead";
 import PreMatch from "./components/Match/PreMatch/PreMatch";
+import SelectSquads from "./pages/SelectSquads/SelectSquads";
+import SelectSquadsPage from "./pages/SelectSquads/SelectSquadsPage";
 
 
 function App() {
@@ -42,6 +44,8 @@ function App() {
             rel="stylesheet"/><link/>
     <Routes>
       <Route path="/" element={<WebPage page={<HomePage/>} s_id='overall'/>} />
+      <Route path="/select_squads" element={<WebPage page={<SelectSquadsPage/>} />} />
+      <Route path="/select_squads/:team_id/:pools" element={<WebPage page={<SelectSquads/>} />} />
       <Route path="/:page" element={<WebPage page={<HomePages/>} s_id='overall'/>} />
 
       <Route path="/meta/batting" element={<WebPage page={<Meta type={`batting`}/>} s_id='overall'/>} />

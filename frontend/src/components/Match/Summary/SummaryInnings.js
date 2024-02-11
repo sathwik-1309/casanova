@@ -12,5 +12,5 @@ function SummaryInnings(props) {
         </div>
     )
 
-    }
+}
 export default SummaryInnings;

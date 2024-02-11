@@ -1,0 +1,23 @@
+{
+  "m_id": 195,
+  "batted_first": "nz",
+  "batted_second": "ban",
+  "toss": "nz",
+  "pitch": 3.5,
+  "ball_color": [
+    "y",
+    "y",
+    "y",
+    "y"
+  ],
+  "cap1": "williamson",
+  "cap2": "shakib",
+  "keeper1": "latham",
+  "keeper2": "litton",
+  "winner": "ban",
+  "stage": "league",
+  "venue": "mumbai",
+  "motm_player": "williamson",
+  "motm_team": "nz",
+  "t_id": 7
+}

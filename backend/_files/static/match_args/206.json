@@ -1,0 +1,23 @@
+{
+  "m_id": 206,
+  "batted_first": "june",
+  "batted_second": "may",
+  "toss": "may",
+  "pitch": 2.5,
+  "ball_color": [
+    "y",
+    "g",
+    "y",
+    "g"
+  ],
+  "cap1": "stokes",
+  "cap2": "cummins",
+  "keeper1": "rizwan",
+  "keeper2": "ishan kishan",
+  "winner": "june",
+  "stage": "group",
+  "venue": "jaipur",
+  "motm_player": "rizwan",
+  "motm_team": "june",
+  "t_id": 8
+}

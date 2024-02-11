@@ -93,6 +93,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
     t.index ["player_id"], name: "index_bat_stats_on_player_id"
   end
 
+  create_table "current_squads", force: :cascade do |t|
+    t.json "jan", default: []
+    t.json "feb", default: []
+    t.json "mar", default: []
+    t.json "apr", default: []
+    t.json "may", default: []
+    t.json "june", default: []
+    t.json "july", default: []
+    t.json "aug", default: []
+    t.json "sept", default: []
+    t.json "oct", default: []
+    t.json "nov", default: []
+    t.json "dec", default: []
+  end
+
   create_table "innings", force: :cascade do |t|
     t.integer "inn_no"
     t.float "overs"
@@ -422,6 +437,47 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
     t.index ["tournament_id"], name: "index_squads_on_tournament_id"
   end
 
+  create_table "t_leaderboards", force: :cascade do |t|
+    t.string "rformat"
+    t.integer "matches"
+    t.float "highest_rating"
+    t.integer "match_id"
+    t.integer "team_id"
+    t.index ["match_id"], name: "index_t_leaderboards_on_match_id"
+    t.index ["team_id"], name: "index_t_leaderboards_on_team_id"
+  end
+
+  create_table "team_match_points", force: :cascade do |t|
+    t.string "rformat"
+    t.float "points"
+    t.integer "match_id"
+    t.integer "team_id"
+    t.integer "tournament_id"
+    t.index ["match_id"], name: "index_team_match_points_on_match_id"
+    t.index ["team_id"], name: "index_team_match_points_on_team_id"
+    t.index ["tournament_id"], name: "index_team_match_points_on_tournament_id"
+  end
+
+  create_table "team_rating_images", force: :cascade do |t|
+    t.string "rformat"
+    t.json "rating_image"
+    t.integer "counter"
+    t.integer "match_id"
+    t.integer "tournament_id"
+    t.index ["match_id"], name: "index_team_rating_images_on_match_id"
+    t.index ["tournament_id"], name: "index_team_rating_images_on_tournament_id"
+  end
+
+  create_table "team_ratings", force: :cascade do |t|
+    t.string "rformat"
+    t.integer "best_rank"
+    t.integer "best_rank_match"
+    t.integer "best_rating"
+    t.integer "best_rating_match"
+    t.integer "team_id"
+    t.index ["team_id"], name: "index_team_ratings_on_team_id"
+  end
+
   create_table "teams", force: :cascade do |t|
     t.string "name"
     t.string "abbrevation"
@@ -518,6 +574,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_083147) do
   add_foreign_key "squad_players", "tournaments"
   add_foreign_key "squads", "teams"
   add_foreign_key "squads", "tournaments"
+  add_foreign_key "t_leaderboards", "matches"
+  add_foreign_key "t_leaderboards", "teams"
+  add_foreign_key "team_match_points", "matches"
+  add_foreign_key "team_match_points", "teams"
+  add_foreign_key "team_match_points", "tournaments"
+  add_foreign_key "team_rating_images", "matches"
+  add_foreign_key "team_rating_images", "tournaments"
+  add_foreign_key "team_ratings", "teams"
   add_foreign_key "wickets", "balls"
   add_foreign_key "wickets", "innings"
   add_foreign_key "wickets", "matches"

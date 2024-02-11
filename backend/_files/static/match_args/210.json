@@ -1,0 +1,23 @@
+{
+  "m_id": 210,
+  "batted_first": "nov",
+  "batted_second": "sept",
+  "toss": "nov",
+  "pitch": 2.5,
+  "ball_color": [
+    "y",
+    "g",
+    "g",
+    "y"
+  ],
+  "cap1": "virat kohli",
+  "cap2": "buttler",
+  "keeper1": "gurbaz",
+  "keeper2": "buttler",
+  "winner": "sept",
+  "stage": "group",
+  "venue": "jaipur",
+  "motm_player": "nawaz",
+  "motm_team": "sept",
+  "t_id": 8
+}

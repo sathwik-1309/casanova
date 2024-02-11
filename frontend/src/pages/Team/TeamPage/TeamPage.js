@@ -12,6 +12,7 @@ import TeamPerformers from '../../../components/Team/TeamPerformers/TeamPerforme
 import TeamTotals from '../../../components/Team/TeamTotals/TeamTotals';
 import TeamWinPercentage from '../../../components/Team/TeamWinPercentage/TeamWinPercentage';
 import TeamDC from '../../../components/Team/TeamDC/TeamDC';
+import RankingBox from '../../../components/Team/RankingBox';
 
 function TeamPage(props) {
 
@@ -37,6 +38,7 @@ function TeamPage(props) {
       <div className='flex-row squad-page-row2'>
         <div className='flex-col flex-centered'>
           <TeamHeader data={data.meta} label={`Tournaments - ${data.tournaments}`}/>
+          <RankingBox data={data.ranking} meta={data.meta}/>
           {/* <SquadSchedules data={data.schedule} /> */}
         </div>
         <TeamPerformers data={data.top_players} meta={data.meta}/>

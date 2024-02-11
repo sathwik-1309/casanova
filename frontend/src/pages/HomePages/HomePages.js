@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import TBatStats from '../../components/Tournament/TBatStats/TBatStats';
 import TBallStats from '../../components/Tournament/TBallStats/TBallStats';
 import { Leaderboard } from '../../components/Leaderboard/Leaderboard';
+import { TeamLeaderboard } from '../../components/Leaderboard/TeamLeaderboard';
 
 function HomePages() {
     let { page } = useParams();
@@ -24,6 +25,10 @@ function HomePages() {
         //   break;
         case "rankings":
           component = <Leaderboard />
+          break
+        case "team_rankings":
+          component = <TeamLeaderboard />
+          break
         default:
             component = component
       }

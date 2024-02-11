@@ -41,7 +41,7 @@ def check_and_add(arr, hash, limit)
   return arr
 end
 
-fastest_to = 50
+fastest_to = 100
 
 arr = fastest_runs(fastest_to, 5)
 arr.each do |score|

@@ -1,0 +1,23 @@
+{
+  "m_id": 202,
+  "batted_first": "ban",
+  "batted_second": "pak",
+  "toss": "pak",
+  "pitch": 2.5,
+  "ball_color": [
+    "y",
+    "r",
+    "y",
+    "r"
+  ],
+  "cap1": "shakib",
+  "cap2": "babar",
+  "keeper1": "litton",
+  "keeper2": "rizwan",
+  "winner": "ban",
+  "stage": "semi-final",
+  "venue": "kolkata",
+  "motm_player": "towhid hridoy",
+  "motm_team": "ban",
+  "t_id": 7
+}

@@ -412,5 +412,37 @@ class CreateTables < ActiveRecord::Migration[7.0]
       t.belongs_to :team, foreign_key: true
     end
 
+    create_table :team_rating_images do |t|
+      t.string :rformat
+      t.json :rating_image
+      t.integer :counter
+      t.belongs_to :match, foreign_key: true
+      t.belongs_to :tournament, foreign_key: true
+    end
+
+    create_table :team_ratings do |t|
+      t.string :rformat
+      t.integer :best_rank
+      t.integer :best_rank_match
+      t.integer :best_rating
+      t.integer :best_rating_match
+      t.belongs_to :team, foreign_key: true
+    end
+
+    create_table :current_squads do |t|
+      t.json :jan, default: []
+      t.json :feb, default: []
+      t.json :mar, default: []
+      t.json :apr, default: []
+      t.json :may, default: []
+      t.json :june, default: []
+      t.json :july, default: []
+      t.json :aug, default: []
+      t.json :sept, default: []
+      t.json :oct, default: []
+      t.json :nov, default: []
+      t.json :dec, default: []
+    end
+
   end
 end

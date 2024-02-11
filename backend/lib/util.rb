@@ -32,11 +32,20 @@ module Util
         file = File.read(PLAYERS_JSON_PATH)
         data = JSON.parse(file)
         data.each do|player|
-            if [player["country"],player["ipl"],player["csl"]].include? team_id
-                if player["names"].include? name
-                    return player["id"]
+            if team_id >= 30 and player["csl_teams"]
+                if player["csl_teams"].include? team_id
+                    if player["names"].include? name
+                        return player["id"]
+                    end
+                end
+            else
+                if [player["country"],player["ipl"],player["csl"]].include? team_id
+                    if player["names"].include? name
+                        return player["id"]
+                    end
                 end
             end
+            
         end
         return nil if name == nil
         raise "Player not found #{name} for #{team_id}"
@@ -217,6 +226,8 @@ module Util
             return "#{abbrevation}#{t_id}_" if TC_TOUR_6.include? abbrevation
         when 7
             return "#{abbrevation}#{t_id}_" if TC_TOUR_7.include? abbrevation
+        when 8
+            return "#{abbrevation}#{t_id}_" if TC_TOUR_8.include? abbrevation
         end
         return abbrevation
     end

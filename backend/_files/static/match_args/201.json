@@ -1,0 +1,23 @@
+{
+  "m_id": 201,
+  "batted_first": "aus",
+  "batted_second": "sl",
+  "toss": "sl",
+  "pitch": 2,
+  "ball_color": [
+    "g",
+    "y",
+    "y",
+    "g"
+  ],
+  "cap1": "cummins",
+  "cap2": "kusal mendis",
+  "keeper1": "inglis",
+  "keeper2": "kusal mendis",
+  "winner": "sl",
+  "stage": "league",
+  "venue": "delhi",
+  "motm_player": "kusal perera",
+  "motm_team": "sl",
+  "t_id": 7
+}

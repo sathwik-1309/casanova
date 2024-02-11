@@ -1,0 +1,23 @@
+{
+  "m_id": 199,
+  "batted_first": "sa",
+  "batted_second": "nz",
+  "toss": "nz",
+  "pitch": 3,
+  "ball_color": [
+    "r",
+    "g",
+    "r",
+    "g"
+  ],
+  "cap1": "markram",
+  "cap2": "williamson",
+  "keeper1": "de kock",
+  "keeper2": "latham",
+  "winner": "sa",
+  "stage": "league",
+  "venue": "bengaluru",
+  "motm_player": "van der dussen",
+  "motm_team": "sa",
+  "t_id": 7
+}

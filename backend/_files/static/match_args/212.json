@@ -1,0 +1,23 @@
+{
+  "m_id": 212,
+  "batted_first": "oct",
+  "batted_second": "aug",
+  "toss": "aug",
+  "pitch": 2.5,
+  "ball_color": [
+    "y",
+    "r",
+    "y",
+    "r"
+  ],
+  "cap1": "hardik",
+  "cap2": "williamson",
+  "keeper1": "pooran",
+  "keeper2": "salt",
+  "winner": "oct",
+  "stage": "group",
+  "venue": "chennai",
+  "motm_player": "madushanka",
+  "motm_team": "oct",
+  "t_id": 8
+}

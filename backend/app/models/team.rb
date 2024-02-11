@@ -70,6 +70,20 @@ class Team < ApplicationRecord
         }
     end
 
+    def get_ranking_hash
+        hash = {}
+        rformat = self.squads.first.tournament.name
+        im = TeamRatingImage.where(rformat: rformat).last
+        hash['rank'] = im.get_rank(self.id)
+        hash['rating'] = im.get_rating(self.id)
+        tr = TeamRating.find_by(team_id: self.id)
+        hash['best_rank'] = tr.best_rank
+        hash['best_rank_match'] = tr.best_rank_match
+        hash['best_rating'] = tr.best_rating
+        hash['best_rating_match'] = tr.best_rating_match
+        hash
+    end
+
     def team_stats
         hash = {}
         squad_ids = self.squads.pluck(:id)

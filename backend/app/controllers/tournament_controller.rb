@@ -12,7 +12,6 @@ class TournamentController < ApplicationController
       group.each do |team_id|
         pt = {}
         squad = Squad.find_by(team_id: team_id, tournament_id: t_id.to_i)
-        print [team_id, t_id]
         pt["team"] = "#{Util.get_flag(team_id)} #{squad.abbrevation.upcase}"
         pt["color"] = Util.get_team_color(t_id, squad.abbrevation)
         pt["won"] = Match.where(stage: ['league','group'],winner_id: squad.id).length
@@ -281,7 +280,7 @@ class TournamentController < ApplicationController
     else
       hash['ongoing'] = true
       latest_match = tour.matches.last
-      schedules = Schedule.where(tournament_id: t_id).where("`order` > #{latest_match.schedule.order}").order(id: :asc).limit(3)
+      schedules = Schedule.where(tournament_id: t_id).where("`order` > #{latest_match&.schedule&.order || 0}").order(id: :asc).limit(3)
       tourname = Tournament.find(t_id).get_tour_with_season
       upcoming_matches = []
       schedules.each do|schedule|
@@ -513,6 +512,46 @@ class TournamentController < ApplicationController
     arr['ball_stats']['boxes'] = boxes
     arr['individual_ball_stats'] = Tournament.overall_individual_ball_stats
     render(:json => Oj.dump(arr))
+  end
+
+  def knockouts
+    t_id = params[:t_id]
+    tour = Tournament.find_by_id(t_id)
+    hash = {}
+    file = File.read(TOURNAMENT_JSON_PATH)
+    data = JSON.parse(file)
+    t_json = data.find{|t| t['id'] == tour.id}
+    hash['format'] = t_json['knockout_type']
+    matches = tour.matches.where.not(stage: ['league','group'])
+    hash['matches'] = []
+    if matches != []
+      matches.each do |match|
+        hash['matches'].append(match.match_box)
+      end
+    else
+      t_json['knockouts'].each do |match|
+        t1 = Squad.find_by_abbrevation(match['team1'])
+        t2 = Squad.find_by_abbrevation(match['team2'])
+        temp = {
+          "inn1" => {
+            "teamname_full" => t1&.get_abb || match['team1'].upcase,
+            "color" => t1.nil? ? '' : Util.get_team_color(t_id, t1.abbrevation)
+          },
+          "inn2" => {
+            "teamname_full" => t2&.get_abb || match['team2'].upcase,
+            "color" => t2.nil? ? '' : Util.get_team_color(t_id, t2.abbrevation)
+          },
+          "result" => "-",
+          "stage" => match['match'].titleize,
+          "venue" => match['venue'].titleize
+        }
+        hash['matches'] << temp
+      end
+    end
+    
+    
+    
+    render(:json => Oj.dump(hash))
   end
 
   private

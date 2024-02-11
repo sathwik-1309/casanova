@@ -6,8 +6,6 @@
 .performer-box {
   margin-bottom: 20px;
   width: fit-content;
-  border-radius: 2px;
-  overflow: hidden;
 }
 
 .squad-performers-rows {
@@ -18,6 +16,4 @@
 .captain-box {
   margin-bottom: 20px;
   width: fit-content;
-  border-radius: 2px;
-  overflow: hidden;
 }

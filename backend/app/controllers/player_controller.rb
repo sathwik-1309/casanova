@@ -377,6 +377,9 @@ class PlayerController < ApplicationController
     render(:json => Oj.dump(hash))
   end
 
+  def bowling_analysis
+  end
+
   private
 
   def filter_params

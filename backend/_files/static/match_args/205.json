@@ -1,0 +1,23 @@
+{
+  "m_id": 205,
+  "batted_first": "jan",
+  "batted_second": "feb",
+  "toss": "feb",
+  "pitch": 2.5,
+  "ball_color": [
+    "y",
+    "y",
+    "y",
+    "y"
+  ],
+  "cap1": "faf du plessis",
+  "cap2": "bhuvi",
+  "keeper1": "rishab pant",
+  "keeper2": "kusal mendis",
+  "winner": "feb",
+  "stage": "group",
+  "venue": "chennai",
+  "motm_player": "bhuvi",
+  "motm_team": "feb",
+  "t_id": 8
+}

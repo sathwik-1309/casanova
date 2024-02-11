@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     get '/:m_id/:inn_no/commentry' => 'match#commentry'
     get '/:m_id/innings_progression' => 'match#innings_progression'
     get '/:m_id/player_rankings' => 'match#player_rankings'
+    get '/:m_id/team_rankings' => 'match#team_rankings'
     get '/:m_id/player_rankings_list' => 'match#player_rankings_list'
     # get '/:m_id/match_box' => 'match#match_box'
   end
@@ -36,6 +37,7 @@ Rails.application.routes.draw do
     get '/:t_id/ball_stats' => 'tournament#ball_stats'
     get '/:t_id' => 'tournament#tournament_home'
     get '/:t_id/schedule' => 'tournament#schedule'
+    get '/:t_id/knockouts' => 'tournament#knockouts'
   end
 
   scope :tournaments do
@@ -57,6 +59,7 @@ Rails.application.routes.draw do
     get '/:p_id/ball_stats2' => 'player#ball_stats2'
     get '/:p_id/scores' => 'player#scores'
     get '/:p_id/spells' => 'player#spells'
+    get '/:p_id/bowling_analysis' => 'player#bowling_analysis'
     get '/:p_id' => 'player#home_page'
     post '/create' => 'player#create'
   end
@@ -73,6 +76,10 @@ Rails.application.routes.draw do
     get '/:team_id/team_page' => 'team#team_page'
     get '/head_to_head' => 'team#head_to_head'
     get '/head_to_head_detailed' => 'team#head_to_head_detailed'
+    get '/leaderboard' => 'team#leaderboard'
+    get '/select_squads/:team_id' => 'team#select_squads'
+    get '/select_squads' => 'team#select_squads_home'
+    put '/:team_id/select_squads_action' => 'team#select_squads_action'
   end
 
   scope :venues do

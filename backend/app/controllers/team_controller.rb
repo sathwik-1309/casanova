@@ -103,6 +103,7 @@ class TeamController < ApplicationController
     team = Team.find_by_id(filter_params[:team_id])
     hash = {}
     hash['tournaments'] = team.squads.count
+    hash['ranking'] = team.get_ranking_hash
     hash['bat_stats'] = team.bat_stats
     hash['ball_stats'] = team.ball_stats
     hash['top_players'] = team.top_players
@@ -163,6 +164,169 @@ class TeamController < ApplicationController
     render(:json => Oj.dump(hash))
   end
 
+  def leaderboard
+    rformats = ['wt20', 'csl']
+    hash = {}
+    rformats.each do |rformat|
+      hash[rformat] = {}
+      tls = TLeaderboard.where(rformat: rformat)
+      history = []
+      leaderboard = []
+      tls.each do |tl|
+        temp = tl.attributes.slice('matches', 'highest_rating', 'team_id', 'match_id')
+        team = tl.team
+        temp['name'] = team.get_teamname
+        temp['color'] = team.abbrevation
+        history << temp
+        tl_dict = leaderboard.find{|h| h['team_id'] == tl.team_id}
+        if tl_dict.nil?
+          leaderboard << {'team_id'=>tl.team_id, 'times'=>0, 'matches'=>0, 'highest_rating'=>0, 'name'=>temp['name'], 'color'=>temp['color']}
+          tl_dict = leaderboard[-1]
+        end
+        tl_dict['times'] += 1
+        tl_dict['matches'] += tl.matches
+        tl_dict['highest_rating'] = tl.highest_rating if tl.highest_rating > tl_dict['highest_rating']
+      end
+      leaderboard = leaderboard.sort_by{|l| -l['matches']}
+      hash[rformat]['history'] = history
+      hash[rformat]['leaderboard'] = leaderboard
+    end
+    render(:json => Oj.dump(hash))
+  end
+
+  def select_squads_home
+    teams = Team.where("id between 30 and 43")
+    arr = []
+    teams.each do |team|
+      hash = team.meta
+      hash['selected_players'] = CurrentSquad.first.send(team.abbrevation.to_sym).length
+      arr << hash
+    end
+    render(:json => Oj.dump(arr))
+  end
+
+  def select_squads_action
+    begin
+      team_id = filter_params[:team_id]
+      team = Team.find_by_id(team_id)
+      css = CurrentSquad.first
+      cs = css.send(Team.find(team_id).abbrevation.to_sym)
+      if filter_params[:add]
+        cs << filter_params[:player_id]
+        css.update(team.abbrevation => cs)
+      else
+        cs.delete(filter_params[:player_id])
+        css.update(team.abbrevation => cs)
+      end
+      
+      css.save!
+      render_200("Updated")
+    rescue StandardError => ex
+      render_202(ex.message)
+    end
+  end
+
+  def select_squads
+    team_id = filter_params[:team_id]
+    team = Team.find(team_id)
+    hash = {}
+    selected = CurrentSquad.first.send(team.abbrevation.to_sym)
+    players = Player.where(id: selected)
+    batters = []
+    all_rounders = []
+    bowlers = []
+    players.each do |player|
+      case player.skill
+      when 'bat'
+        batters << player.profile_hash2
+      when 'bow'
+        bowlers << player.profile_hash2
+      when 'all'
+        all_rounders << player.profile_hash2
+      end
+    end
+    hash['selected'] = {
+      'total' => batters.length + all_rounders.length + bowlers.length,
+      'batsmen' => {
+        'count' => batters.length,
+        'players' => batters
+      },
+      'all_rounders' => {
+        'count' => all_rounders.length,
+        'players' => all_rounders
+      },
+      'bowlers' => {
+        'count' => bowlers.length,
+        'players' => bowlers
+      }
+    }
+
+    born = Player.where(born_team_id: team_id).filter{|p| selected.exclude? p.id}
+    batters = []
+    all_rounders = []
+    bowlers = []
+    born.each do |player|
+      case player.skill
+      when 'bat'
+        batters << player.profile_hash2
+      when 'bow'
+        bowlers << player.profile_hash2
+      when 'all'
+        all_rounders << player.profile_hash2
+      end
+    end
+    hash['pool'] = {
+      'total' => batters.length + all_rounders.length + bowlers.length,
+      'batsmen' => {
+        'count' => batters.length,
+        'players' => batters
+      },
+      'all_rounders' => {
+        'count' => all_rounders.length,
+        'players' => all_rounders
+      },
+      'bowlers' => {
+        'count' => bowlers.length,
+        'players' => bowlers
+      }
+    }
+    cs = CurrentSquad.first
+    all_selected = cs.jan + cs.feb + cs.mar + cs.apr + cs.may + cs.june + cs.july + cs.aug + cs.sept + cs.oct + cs.nov + cs.dec
+    unselected = Player.all.pluck(:id) - all_selected
+    batters = []
+    all_rounders = []
+    bowlers = []
+    Player.where(id: unselected).each do |player|
+      case player.skill
+      when 'bat'
+        batters << player.profile_hash2
+      when 'bow'
+        bowlers << player.profile_hash2
+      when 'all'
+        all_rounders << player.profile_hash2
+      end
+    end
+    
+    hash['unselected'] = {
+      'total' => batters.length + all_rounders.length + bowlers.length,
+      'batsmen' => {
+        'count' => batters.length,
+        'players' => batters
+      },
+      'all_rounders' => {
+        'count' => all_rounders.length,
+        'players' => all_rounders
+      },
+      'bowlers' => {
+        'count' => bowlers.length,
+        'players' => bowlers
+      }
+    }
+    hash['color'] = team.abbrevation
+    hash['teamname'] = team.get_teamname
+    render(:json => Oj.dump(hash))
+  end
+
   private
 
   def get_teams(tour_class)
@@ -186,7 +350,7 @@ class TeamController < ApplicationController
   end
 
   def filter_params
-    params.permit(:team_id)
+    params.permit(:team_id, :add, :player_id)
   end
 
 end

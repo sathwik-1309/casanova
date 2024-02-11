@@ -1,0 +1,23 @@
+{
+  "m_id": 190,
+  "batted_first": "ban",
+  "batted_second": "afg",
+  "toss": "ban",
+  "pitch": 3,
+  "ball_color": [
+    "r",
+    "y",
+    "r",
+    "y"
+  ],
+  "cap1": "shakib",
+  "cap2": "shahidi",
+  "keeper1": "litton",
+  "keeper2": "ikram",
+  "winner": "ban",
+  "stage": "league",
+  "venue": "hyderabad",
+  "motm_player": "towhid hridoy",
+  "motm_team": "ban",
+  "t_id": 7
+}

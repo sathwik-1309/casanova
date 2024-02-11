@@ -49,6 +49,12 @@ function TopbarItem(props) {
                 classname1 = classname1 + ' topbar_selected'
             }
             break;
+        case "knockouts":
+            name = "KNOCKOUTS"
+            if (selected === props.name) {
+                classname1 = classname1 + ' topbar_selected'
+            }
+            break;
         case "rankings":
             name = "RANKINGS"
             if (selected === props.name) {
@@ -121,6 +127,12 @@ function TopbarItem(props) {
                 classname1 = classname1 + ' topbar_selected'
             }
             break;
+        case "team_rankings":
+            name = "T-RANKINGS"
+            if (selected === props.name) {
+                classname1 = classname1 + ' topbar_selected'
+            }
+            break;
         case "schedule":
             name = "SCHEDULE"
             if (selected === props.name) {
@@ -176,6 +188,7 @@ function Topbar(props) {
                 <TopbarItem name='bat_meta' link={`${FRONTEND_API_URL}/meta/batting`}/>
                 <TopbarItem name='ball_meta' link={`${FRONTEND_API_URL}/meta/bowling`}/>
                 <TopbarItem name='rankings' link={`${FRONTEND_API_URL}/rankings`}/>
+                <TopbarItem name='team_rankings' link={`${FRONTEND_API_URL}/team_rankings`}/>
             </>
             break;
         case 'tour':
@@ -185,6 +198,7 @@ function Topbar(props) {
                 <TopbarItem name='bat_stats' link={`${FRONTEND_API_URL}/tournament/${t_id}/bat_stats`}/>
                 <TopbarItem name='ball_stats' link={`${FRONTEND_API_URL}/tournament/${t_id}/ball_stats`}/>
                 <TopbarItem name='schedule' link={`${FRONTEND_API_URL}/tournament/${t_id}/schedule`}/>
+                <TopbarItem name='knockouts' link={`${FRONTEND_API_URL}/tournament/${t_id}/knockouts`}/>
             </>
             break;
         case 'tour_class':

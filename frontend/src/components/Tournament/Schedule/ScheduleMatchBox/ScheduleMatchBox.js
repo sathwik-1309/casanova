@@ -4,9 +4,10 @@ import { FRONTEND_API_URL } from "../../../../my_constants";
 
 function Teambox(props) {
   const data = props.data
+  console.log(data)
   return (
     <div className={`${data.color}1 font-600 font-1_1 schedule-teambox flex-centered`}>
-      {data.name}
+      {data.abbrevation}
     </div>
   )
 }

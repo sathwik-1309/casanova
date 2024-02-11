@@ -20,6 +20,7 @@ class Score < ApplicationRecord
         hash = {}
         hash["type"] = 'score'
         hash["color"] = Util.get_team_color(self.tournament_id, self.squad.abbrevation)
+        hash["teamcolor"] = self.squad.team.abbrevation
         hash["vs_team"] = self.inning.bow_team.get_abb
         hash["venue"] = self.match.venue.upcase
         hash["p_id"] = self.player_id

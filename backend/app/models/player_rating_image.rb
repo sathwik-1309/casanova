@@ -45,11 +45,7 @@ class PlayerRatingImage < ApplicationRecord
       hash['rating'] = (hash['points']/hash['matches']).round(2)
     end
 
-    begin
     rating_image = rating_image.sort_by { |hash| -hash['rating'] }
-    rescue StandardError => ex
-      byebug
-    end
     i = 1
     rating_image.each do |hash|
       hash['rank'] = i

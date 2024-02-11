@@ -12,7 +12,7 @@ class Wicket < ApplicationRecord
         return Player.find(self.batsman_id)
     end
     def fielder
-        return Player.find(self.fielder_id)
+        return Player.find_by_id(self.fielder_id)
     end
     def get_data1
         return "b #{self.bowler.name.titleize}"

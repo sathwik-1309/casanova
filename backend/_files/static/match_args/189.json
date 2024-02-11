@@ -1,0 +1,23 @@
+{
+  "m_id": 189,
+  "batted_first": "pak",
+  "batted_second": "sl",
+  "toss": "pak",
+  "pitch": 3,
+  "ball_color": [
+    "y",
+    "r",
+    "r",
+    "y"
+  ],
+  "cap1": "babar",
+  "cap2": "kusal mendis",
+  "keeper1": "rizwan",
+  "keeper2": "kusal mendis",
+  "winner": "pak",
+  "stage": "league",
+  "venue": "hyderabad",
+  "motm_player": "rizwan",
+  "motm_team": "pak",
+  "t_id": 7
+}

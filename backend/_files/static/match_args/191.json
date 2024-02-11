@@ -1,0 +1,23 @@
+{
+  "m_id": 191,
+  "batted_first": "sa",
+  "batted_second": "eng",
+  "toss": "eng",
+  "pitch": 2,
+  "ball_color": [
+    "y",
+    "y",
+    "y",
+    "y"
+  ],
+  "cap1": "markram",
+  "cap2": "buttler",
+  "keeper1": "de kock",
+  "keeper2": "buttler",
+  "winner": "eng",
+  "stage": "league",
+  "venue": "lucknow",
+  "motm_player": "stokes",
+  "motm_team": "eng",
+  "t_id": 7
+}

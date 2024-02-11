@@ -1,0 +1,23 @@
+{
+  "m_id": 211,
+  "batted_first": "apr",
+  "batted_second": "jan",
+  "toss": "jan",
+  "pitch": 3.5,
+  "ball_color": [
+    "r",
+    "g",
+    "r",
+    "g"
+  ],
+  "cap1": "rohit",
+  "cap2": "faf du plessis",
+  "keeper1": "finn allen",
+  "keeper2": "pant",
+  "winner": "apr",
+  "stage": "group",
+  "venue": "mumbai",
+  "motm_player": "kl rahul",
+  "motm_team": "apr",
+  "t_id": 8
+}

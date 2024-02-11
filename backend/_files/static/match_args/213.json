@@ -1,0 +1,23 @@
+{
+  "m_id": 213,
+  "batted_first": "mar",
+  "batted_second": "may",
+  "toss": "may",
+  "pitch": 3,
+  "ball_color": [
+    "g",
+    "r",
+    "g",
+    "r"
+  ],
+  "cap1": "shakib",
+  "cap2": "cummins",
+  "keeper1": "inglis",
+  "keeper2": "ishan kishan",
+  "winner": "may",
+  "stage": "group",
+  "venue": "mohali",
+  "motm_player": "agar",
+  "motm_team": "may",
+  "t_id": 8
+}

@@ -315,6 +315,24 @@
     color: rgb(255,255,255);
 }
 .jan2{
+    background-color: rgb(219, 0, 7);
+    color: rgb(255,255,255);
+    opacity: 0.8;
+}
+
+.jan3_1{
+    background-color: rgb(219, 0, 7);
+    color: rgb(255,255,255);
+}
+.jan3_2{
+    background-color: rgb(247, 132, 124);
+    color: rgb(255,255,255);
+}
+.jan6_1{
+    background-color: rgb(219, 0, 7);
+    color: rgb(255,255,255);
+}
+.jan6_2{
     background-color: rgb(247, 132, 124);
     color: rgb(255,255,255);
 }
@@ -328,6 +346,24 @@
     color: rgb(255,255,255);
 }
 .feb2{
+    background-color: rgb(125,12,148);
+    color: white;
+    opacity: 0.8;
+}
+
+.feb3_1{
+    background-color: rgb(125,12,148);
+    color: rgb(255,255,255);
+}
+.feb3_2{
+    background-color: rgb(207, 139, 252);
+    color: rgb(125,12,148);
+}
+.feb6_1{
+    background-color: rgb(125,12,148);
+    color: rgb(255,255,255);
+}
+.feb6_2{
     background-color: rgb(207, 139, 252);
     color: rgb(125,12,148);
 }
@@ -338,13 +374,32 @@
     border: 1px solid rgb(125,12,148);
 }
 
+.mar3_1{
+    background-color: rgb(255, 209, 0);
+    color: rgb(0, 53, 148);
+}
+.mar3_2{
+    background-color: rgb(0, 53, 148);
+    color: rgb(255,255,255);
+}
+
+.mar6_1{
+    background-color: rgb(255, 209, 0);
+    color: rgb(0, 53, 148);
+}
+.mar6_2{
+    background-color: rgb(0, 53, 148);
+    color: rgb(255,255,255);
+}
+
 .mar1{
     background-color: rgb(255, 209, 0);
     color: rgb(0, 53, 148);
 }
 .mar2{
-    background-color: rgb(0, 53, 148);
-    color: rgb(255,255,255);
+    background-color: rgb(255, 209, 0);
+    color: rgb(0, 53, 148);
+    opacity: 0.8;
 }
 .mar4 {
     border: 1px solid rgb(255,255,255);
@@ -354,13 +409,32 @@
 }
 
 
+.apr6_1{
+    background-color: rgb(255,20,147);
+    color: rgb(255,255,255);
+}
+.apr6_2{
+    background-color: rgb(250, 230, 248);
+    color: rgb(255,20,147);
+}
+
+.apr3_1{
+    background-color: rgb(255,20,147);
+    color: rgb(255,255,255);
+}
+.apr3_2{
+    background-color: rgb(250, 230, 248);
+    color: rgb(255,20,147);
+}
+
 .apr1{
     background-color: rgb(255,20,147);
     color: rgb(255,255,255);
 }
 .apr2{
-    background-color: rgb(250, 230, 248);
-    color: rgb(255,20,147);
+    background-color: rgb(255,20,147);
+    color: rgb(255,255,255);
+    opacity: 0.8;
 }
 .apr3 {
     border: 1px solid rgb(255,255,255);
@@ -369,13 +443,31 @@
     border: 1px solid rgb(255,20,147);
 }
 
+.may3_1{
+    background-color: rgb(67, 110, 27);
+    color: rgb(255,255,255);
+}
+.may3_2{
+    background-color: rgb(255, 184, 28);
+    color: rgb(18, 87, 64);
+}
+.may6_1{
+    background-color: rgb(67, 110, 27);
+    color: rgb(255,255,255);
+}
+.may6_2{
+    background-color: rgb(255, 184, 28);
+    color: rgb(18, 87, 64);
+}
+
 .may1{
     background-color: rgb(67, 110, 27);
     color: rgb(255,255,255);
 }
 .may2{
-    background-color: rgb(255, 184, 28);
-    color: rgb(18, 87, 64);
+    background-color: rgb(67, 110, 27);
+    color: rgb(255,255,255);
+    opacity: 0.8;
 }
 .may3 {
     border: 1px solid rgb(255,255,255);
@@ -384,13 +476,32 @@
     border: 1px solid rgb(18, 87, 64);
 }
 
+.june3_1{
+    background-color: rgb(112, 68, 4);
+    color: rgb(255,255,255);
+}
+.june3_2{
+    background-color: rgb(209, 164, 100);
+    color: rgb(112, 68, 4);
+}
+
+.june6_1{
+    background-color: rgb(112, 68, 4);
+    color: rgb(255,255,255);
+}
+.june6_2{
+    background-color: rgb(209, 164, 100);
+    color: rgb(112, 68, 4);
+}
+
 .june1{
     background-color: rgb(112, 68, 4);
     color: rgb(255,255,255);
 }
 .june2{
-    background-color: rgb(209, 164, 100);
-    color: rgb(112, 68, 4);
+    background-color: rgb(112, 68, 4);
+    color: white;
+    opacity: 0.8;
 }
 .june3 {
     border: 1px solid rgb(255,255,255);
@@ -400,13 +511,32 @@
 }
 
 
-.july1{
+.july6_1{
     background-color: rgb(227, 157, 245);
     color: rgb(0,0,0)
 }
-.july2{
+.july6_2{
     background-color: rgb(0,0,0);
     color: rgb(222, 164, 237);
+}
+
+.july3_1{
+    background-color: rgb(227, 157, 245);
+    color: rgb(0,0,0)
+}
+.july3_2{
+    background-color: rgb(0,0,0);
+    color: rgb(222, 164, 237);
+}
+
+.july1{
+    background-color: rgb(227, 157, 245);
+    color: black;
+}
+.july2{
+    background-color: rgb(227, 157, 245);
+    color: black;
+    opacity: 0.8;
 }
 .july3 {
     border: 1px solid rgb(0,0,0);
@@ -415,13 +545,32 @@
     border: 1px solid rgb(222, 164, 237);
 }
 
-.aug1{
+.aug3_1{
     background-color: rgb(18, 91, 52);
     color: rgb(126, 200, 174);
 }
-.aug2{
+.aug3_2{
     background-color:whitesmoke;
     color: rgb(18, 91, 52);
+}
+
+.aug6_1{
+    background-color: rgb(18, 91, 52);
+    color: rgb(126, 200, 174);
+}
+.aug6_2{
+    background-color:whitesmoke;
+    color: rgb(18, 91, 52);
+}
+
+.aug1{
+    background-color: #046633;
+    color: white;
+}
+.aug2{
+    background-color: #046633;
+    color: white;
+    opacity: 0.8;
 }
 .aug3 {
     border: 1px solid rgb(126, 200, 174);
@@ -430,13 +579,31 @@
     border: 1px solid rgb(18, 91, 52);
 }
 
+.sept3_1{
+    background-color: rgb(0, 118, 182);
+    color: rgb(255,255,255);
+}
+.sept3_2{
+    background-color: whitesmoke;
+    color: rgb(0, 118, 182);
+}
+.sept6_1{
+    background-color: rgb(0, 118, 182);
+    color: rgb(255,255,255);
+}
+.sept6_2{
+    background-color: whitesmoke;
+    color: rgb(0, 118, 182);
+}
+
 .sept1{
     background-color: rgb(0, 118, 182);
     color: rgb(255,255,255);
 }
 .sept2{
-    background-color: whitesmoke;
-    color: rgb(0, 118, 182);
+    background-color: rgb(0, 118, 182);
+    color: rgb(255,255,255);
+    opacity: 0.8;
 }
 .sept3 {
     border: 1px solid rgb(255,255,255);
@@ -445,13 +612,31 @@
     border: 1px solid rgb(0,118,182);
 }
 
+.oct3_1{
+    background-color: rgb(168, 5, 84);
+    color: rgb(255,255,255);
+}
+.oct3_2{
+    background-color: rgb(2,2,2);
+    color: rgb(229,184,11);
+}
+.oct6_1{
+    background-color: rgb(168, 5, 84);
+    color: rgb(255,255,255);
+}
+.oct6_2{
+    background-color: rgb(2,2,2);
+    color: rgb(229,184,11);
+}
+
 .oct1{
     background-color: rgb(168, 5, 84);
     color: rgb(255,255,255);
 }
 .oct2{
-    background-color: rgb(2,2,2);
-    color: rgb(229,184,11);
+    background-color: rgb(168, 5, 84);
+    color: rgb(255,255,255);
+    opacity: 0.8;
 }
 .oct3 {
     border: 1px solid rgb(255,255,255);
@@ -460,13 +645,31 @@
     border: 1px solid rgb(229,184,11);
 }
 
-.nov1{
+.nov3_1{
     background-color: rgb(245, 151, 10);
     color: rgb(16, 24, 32);
 }
-.nov2{
+.nov3_2{
     background-color: rgb(38, 36, 33);
     color: rgb(245, 151, 10);
+}
+.nov6_1{
+    background-color: rgb(245, 151, 10);
+    color: rgb(16, 24, 32);
+}
+.nov6_2{
+    background-color: rgb(38, 36, 33);
+    color: rgb(245, 151, 10);
+}
+
+.nov1{
+    background-color: #f06902;
+    color: white;
+}
+.nov2{
+    background-color: #f06902;
+    color: white;
+    opacity: 0.8;
 }
 .nov3 {
     border: 1px solid rgb(16,24,32);
@@ -475,13 +678,31 @@
     border: 1px solid rgb(245,151,10);
 }
 
+.dec3_1{
+    background-color: rgb(33, 48, 77);
+    color: rgb(255,255,255);
+}
+.dec3_2{
+    background-color: rgb(212,175,55);
+    color: rgb(33, 48, 77);
+}
+.dec6_1{
+    background-color: rgb(33, 48, 77);
+    color: rgb(255,255,255);
+}
+.dec6_2{
+    background-color: rgb(212,175,55);
+    color: rgb(33, 48, 77);
+}
+
 .dec1{
     background-color: rgb(33, 48, 77);
     color: rgb(255,255,255);
 }
 .dec2{
-    background-color: rgb(212,175,55);
-    color: rgb(33, 48, 77);
+    background-color: rgb(33, 48, 77);
+    color: rgb(255,255,255);
+    opacity: 0.8;
 }
 .dec3 {
     border: 1px solid rgb(255,255,255);
@@ -665,8 +886,14 @@
     font-size: 20px;
 }
 
-.csl_3,
-.csl_6 {
+.csl_3 {
+    font-family: 'Rubik', sans-serif;
+    font-style: italic;
+    font-size: 20px;
+}
+
+.csl_6,
+.csl_8 {
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
     font-style: italic;

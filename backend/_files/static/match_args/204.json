@@ -1,0 +1,23 @@
+{
+  "m_id": 204,
+  "batted_first": "ban",
+  "batted_second": "ind",
+  "toss": "ban",
+  "pitch": 3,
+  "ball_color": [
+    "g",
+    "y",
+    "g",
+    "y"
+  ],
+  "cap1": "shakib",
+  "cap2": "rohit",
+  "keeper1": "litton",
+  "keeper2": "kl rahul",
+  "winner": "ban",
+  "stage": "final",
+  "venue": "mumbai",
+  "motm_player": "mustafizur",
+  "motm_team": "ban",
+  "t_id": 7
+}

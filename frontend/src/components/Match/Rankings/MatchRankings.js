@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { PlayerMatchRankings } from './PlayerMatchRankings'
 import { BACKEND_API_URL } from '../../../my_constants';
+import TeamMatchRankings from './TeamMatchRankings';
 
 
 export function MatchRankings({match_id}) {
@@ -16,7 +17,7 @@ export function MatchRankings({match_id}) {
         {
           rankType == 'player' ?
           <PlayerMatchRankings match_id={match_id}/> :
-          <></>
+          <TeamMatchRankings match_id={match_id}/>
         }
       </div>
     </div>

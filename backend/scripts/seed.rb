@@ -56,4 +56,6 @@ Seed.add_new_squads
 # clears and preloads squad_player entries in db
 Seed.update_squad_players
 
+Seed.add_current_squads_entry
+
 # Seed.add_existing_matches

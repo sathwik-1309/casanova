@@ -27,15 +27,15 @@ function AwardBox(props){
     }
 
     return (
-        <div className='award_box'>
+        <div className='award_box rounded-3'>
             {content}
-            <div className={`award_box_data ${player.color}1`}>
-                <div className='ab_row1'>
+            <div className={`award_box_data`}>
+                <div className={`ab_row1 ${player.color}1`}>
                     <div className='ab_name'>{player.name}</div>
                     <div className={`ab_teamname ${player.color}1`}>{player.teamname}</div>
                 </div>
                 <div className='ab_row2'>
-                    <div className='ab_info'>{player.data}</div>
+                    <div className={`ab_info ${player.color}1`}>{player.data}</div>
                     <div className={`ab_logo ${player.color}2`}>{logo}</div>
                 </div>
             </div>

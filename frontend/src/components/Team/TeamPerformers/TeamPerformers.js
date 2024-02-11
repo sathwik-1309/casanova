@@ -5,7 +5,7 @@ import Photocard from "../../Player/Photocard/Photocard"
 function CaptainBox(props) {
   const data = props.data
   return (
-      <div className={`flex-col ${props.meta.color}1 captain-box`}>
+      <div className={`flex-col ${props.meta.color}1 captain-box rounded-4`}>
         <div className={`font-600 font-0_7 flex-centered pt-3 ${props.meta.color}2`}>CAPTAIN</div>
         <div className='flex-row'>
           <Photocard p_id={data.id} color={props.meta.color} height='60px'/>
@@ -21,9 +21,9 @@ function PerformerBox({header, player, info, meta, label, size}) {
     height = '70px'
   }
   return (
-    <div className='flex-col performer-box'>
+    <div className={`flex-col performer-box ${meta.color}1 rounded-4`}>
       <div className={`font-600 font-0_7 flex-centered pt-3 ${meta.color}2`}>{header}</div>
-      <div className={`flex-row ${meta.color}1 font-600 font-1 flex-centered`}>
+      <div className={`flex-row  font-600 font-1 flex-centered`}>
         <Photocard p_id={player.id} color={meta.color} height={height} />
         <div className='w-180 lp-10'>{player.fullname}</div>
         <div className='w-100 flex-centered'>{info} <span className='font-500 font-0_7 pt-3 pl-5'> {label}</span></div>

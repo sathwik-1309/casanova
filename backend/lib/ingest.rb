@@ -495,7 +495,7 @@ class Ingest
                     end
                 else
                     puts "!!!*!**!*!*!*!*!* NEW EXTRA TYPE #{extra_type}!#&@°&!#‡€!*‹°€"
-                    byebug
+                    
                 end
                 @parent.update_part(sr_batsman, runs, extras, extra_type)
             end

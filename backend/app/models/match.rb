@@ -12,6 +12,7 @@ class Match < ApplicationRecord
     has_many :player_rating_images
     has_many :player_match_points
     belongs_to :tournament
+    has_one :team_rating_image
     
 
     after_commit do
@@ -22,6 +23,8 @@ class Match < ApplicationRecord
             Uploader.update_milestone_image(self)
             self.create_schedule
             self.update_player_ratings
+            self.update_team_rankings
+            self.update_stumpings
         end
     end
 
@@ -89,29 +92,44 @@ class Match < ApplicationRecord
         inn2 = self.inn2
         hash["inn1"] = {}
         hash["inn1"]["teamname"] = inn1.bat_team.get_abb
+        hash["inn1"]["teamname_full"] = inn1.bat_team.get_abb
         hash["inn1"]["won"] = self.winner_id == inn1.bat_team_id
         if self.winner_id == inn1.bat_team_id
             hash["inn1"]["score"] = "⭐️ #{Util.get_score(inn1.score, inn1.for)}"
         else
             hash["inn1"]["score"] = "#{Util.get_score(inn1.score, inn1.for)}"
         end
+        hash["inn1"]["score2"] = "#{Util.get_score(inn1.score, inn1.for)}"
 
 
         hash["inn1"]["color"] = Util.get_team_color(self.tournament_id, inn1.bat_team.abbrevation)
         hash["inn2"] = {}
         hash["inn2"]["teamname"] = inn2.bat_team.get_abb
+        hash["inn2"]["teamname_full"] = inn2.bat_team.get_abb
         hash["inn2"]["won"] = self.winner_id == inn2.bat_team_id
         if self.winner_id == inn2.bat_team_id
             hash["inn2"]["score"] = "⭐️ #{Util.get_score(inn2.score, inn2.for)}"
         else
             hash["inn2"]["score"] = "#{Util.get_score(inn2.score, inn2.for)}"
         end
+        hash["inn2"]["score2"] = "#{Util.get_score(inn2.score, inn2.for)}"
         hash["inn2"]["color"] = Util.get_team_color(self.tournament_id, inn2.bat_team.abbrevation)
 
         hash["tour"] = self.get_tour_font
         hash["tour_name"] = "#{Tournament.find(self.tournament_id).name.upcase}"
         hash["venue"] = self.venue.titleize
         hash["m_id"] = self.id
+        hash["stage"] = self.stage.titleize
+        if self.win_by_runs==nil and self.win_by_wickets==nil
+            result = "won by super over"
+        elsif self.win_by_wickets==nil
+            result = "won by #{self.win_by_runs} runs"
+        else
+            result = "won by #{self.win_by_wickets} wickets"
+        end
+        result = "#{self.winner.get_abb} #{result}"
+        hash["result"] = result
+        hash["result_color"] = Util.get_team_color(self.tournament_id, self.winner.abbrevation)
         return hash
     end
 
@@ -320,6 +338,17 @@ class Match < ApplicationRecord
         end
     end
 
+    def get_prev_team_rating_image
+        tour_class = self.tournament.name
+        tours = Tournament.where(name: tour_class)
+        prev_match = Match.where(tournament_id: tours.pluck(:id)).where("id < ?", self.id).last
+        if prev_match.present?
+            return prev_match.team_rating_image
+        else
+            TeamRatingImage.dummy(tour_class)
+        end
+    end
+
     def get_player_rating_images
         images = []
         PLAYER_RATING_RTYPES.each do |rtype|
@@ -364,10 +393,18 @@ class Match < ApplicationRecord
         PLeaderboard.update_helper(new_all_rat_image, self.id)   
     end
 
+    def update_team_leaderboard(new_image)
+        TLeaderboard.update_helper(new_image, self.id)
+    end
+
     def update_player_rating_obj(new_bat_rat_image, new_ball_rat_image, new_all_rat_image)
         PlayerRating.update(new_bat_rat_image, self.id)
         PlayerRating.update(new_ball_rat_image, self.id)
         PlayerRating.update(new_all_rat_image, self.id)
+    end
+
+    def update_team_rating_obj(new_image)
+        TeamRating.update(new_image, self.id)
     end
 
     def most_points_hash(rtype)
@@ -394,11 +431,112 @@ class Match < ApplicationRecord
             when "csl"
                 team = Team.find_by_id(player.csl_team_id)
             end
+            
             hash['teamname'] = team.get_teamname
             hash['color'] = team.abbrevation
             hash['name'] = player.fullname.titleize
         end
         return arr
+    end
+
+    def get_nrr_diff
+        rr1 = Util.get_rr(self.inn1.score, 120)
+        
+        if self.inn2.bat_team_id == self.winner_id
+            balls2 = Util.overs_to_balls(self.inn2.overs)
+            chased = true
+        else
+            chased = false
+            balls2 = 120
+        end
+        rr2 = Util.get_rr(self.inn2.score, balls2)
+ 
+        if chased
+            return (rr2.to_f - rr1.to_f).round(2)
+        else
+            return (rr1.to_f - rr2.to_f).round(2)
+        end
+    end
+
+    def get_team_points(rating_image)
+        t1 = {}
+        t2 = {}
+        t1['id'] = self.winner.team_id
+        t2['id'] = self.loser.team_id
+        nrr = self.get_nrr_diff
+        eff_runs = (nrr*20).to_i
+        t1_rat = rating_image.rating_image.find{|h| h['id'] == t1['id']}
+        t2_rat = rating_image.rating_image.find{|h| h['id'] == t1['id']}
+        t1_rat = t1_rat.present? ? t1_rat['rating'] : 100
+        t2_rat = t2_rat.present? ? t2_rat['rating'] : 100
+
+        if t1_rat > t2_rat
+            rat_diff = ((t1_rat-t2_rat).to_f/2)
+            rat_diff = rat_diff > 15 ? 15 : rat_diff
+            t1p = 100 - rat_diff
+            t2p = 100 + rat_diff
+        else
+            rat_diff = ((t2_rat-t1_rat).to_f/2)
+            rat_diff = rat_diff > 15 ? 15 : rat_diff
+            t1p = 100 + rat_diff
+            t2p = 100 - rat_diff
+        end
+
+        t2p -= eff_runs
+        t2p = t2p < 70 ? 70 : t2p
+        t2p = t2p > 95 ? 95 : t2p
+
+        t1p += eff_runs
+        t1p = t1p < 105 ? 105 : t1p
+        if t1p > 130
+            df = t1p - 130
+            t1p = 130 + (df/4).to_i
+        end
+
+        t1['points'] = t1p
+        t2['points'] = t2p
+
+        unless (self.stage == 'league' or self.stage == 'group')
+            if self.stage == 'final'
+                t1['points'] = (t1['points']*1.1).round(2)
+                t2['points'] = (t2['points']*1.1).round(2)
+            else
+                t1['points'] = (t1['points']*1.06).round(2)
+                t2['points'] = (t2['points']*1.06).round(2)
+            end
+        end
+
+        return t1, t2
+    end
+
+    def team_rankings_hash
+        arr = []
+        temp = self.winner.team.meta
+        temp['points'] = TeamMatchPoint.find_by(match_id: self.id, team_id: temp['id']).points
+        temp['rank'] = self.team_rating_image.get_rank(temp['id'])
+        arr << temp
+        temp = self.loser.team.meta
+        temp['points'] = TeamMatchPoint.find_by(match_id: self.id, team_id: temp['id']).points
+        temp['rank'] = self.team_rating_image.get_rank(temp['id'])
+        arr << temp
+        arr
+    end
+
+    def team_ranking_list_hash
+        arr = []
+        cur = self.team_rating_image
+        old = TeamRatingImage.where(rformat: self.tournament.name).where("match_id < ?", self.id).order(id: :desc).limit(1)
+        old = old.nil? ? TeamRatingImage.dummy(self.tournament.name) : old.first
+        cur.rating_image.each do |hash|
+            temp = hash.slice('id', 'points', 'rating', 'rank')
+            team = Team.find_by_id(hash['id'])
+            temp['teamname'] = team.get_teamname
+            temp['abbrevation'] = team.get_abb
+            temp['color'] = team.abbrevation
+            temp['rank_before'], temp['rank_diff'], temp['rank_diff_color'] = TeamRatingImage.get_rank_diff(old, temp)
+            arr << temp
+        end
+        arr
     end
 
     private
@@ -606,6 +744,45 @@ class Match < ApplicationRecord
 
         end
         
+    end
+
+    def update_stumpings
+        wickets = Wicket.where(method: 'stumped', match_id: self.id)
+        keepers = self.performances.where(keeper: true)
+        keeper1 = keepers[0]
+        keeper2 = keepers[1]
+        wickets.each do |wicket|
+            wicket.method = 'st'
+            wicket.fielder_id = wicket.inning.id % 2 == 0 ? keeper2.player_id : keeper1.player_id
+            wicket.save!
+        end
+    end
+
+    def update_team_rankings
+        return if ENABLED_PLAYER_RATING_TOUR_CLASS.exclude? self.tournament.name
+        prev_rating_image = self.get_prev_team_rating_image
+        t1, t2 = self.get_team_points(prev_rating_image)
+        TeamMatchPoint.create_new(t1['id'], t1['points'], self)
+        TeamMatchPoint.create_new(t2['id'], t2['points'], self)
+
+        counter = prev_rating_image.counter + 1
+
+        if counter >= TR_PERIOD_MIN
+            counter = TR_PERIOD_MIN if counter == TR_PERIOD_MAX
+            if counter == TR_PERIOD_MIN
+                tours = Tournament.where(name: self.tournament.name)
+                m_ids = Match.where(tournament_id: tours.pluck(:id)).where("id <= ?", self.id).order(id: :desc).limit(TR_PERIOD_MIN).pluck(:id)
+                new_rat_image = TeamRatingImage.construct_rating_image(prev_rating_image, m_ids, self)
+            else
+                new_rat_image = TeamRatingImage.get_updated_rating_image(prev_rating_image, counter, t1, t2, self, 2)
+            end
+
+            self.update_team_leaderboard(new_rat_image)
+            self.update_team_rating_obj(new_rat_image)
+        else
+            new_team_rating_image = TeamRatingImage.get_updated_rating_image(prev_rating_image, counter, t1, t2, self)
+        end
+
     end
 
     def self.return_progression_hash(runs, wickets, innings, total_runs, total_wickets)

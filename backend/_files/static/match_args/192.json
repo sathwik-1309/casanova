@@ -1,0 +1,23 @@
+{
+  "m_id": 192,
+  "batted_first": "aus",
+  "batted_second": "ind",
+  "toss": "ind",
+  "pitch": 3,
+  "ball_color": [
+    "y",
+    "y",
+    "y",
+    "y"
+  ],
+  "cap1": "cummins",
+  "cap2": "rohit",
+  "keeper1": "inglis",
+  "keeper2": "kl rahul",
+  "winner": "ind",
+  "stage": "league",
+  "venue": "pune",
+  "motm_player": "rohit",
+  "motm_team": "ind",
+  "t_id": 7
+}

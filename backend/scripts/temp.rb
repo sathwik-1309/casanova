@@ -442,3 +442,25 @@ def get_bow_team_strength(inn, player_bow_ratings)
 end
 
 points = player_ratings(Match.where(tournament_id: Tournament.wt20_ids))
+
+afg = [1202, 834, 1163, 840]
+ban = [1476, 960, 1407, 960]
+pak = [1188, 826, 1229, 839]
+
+jan - [pant, faf, rinku, asalanka]
+feb - [hetmyer, harshal, naib, chapman]
+mar - [malan, arshdeep, reeza, dk]
+apr - [bishnoi, shepherd, mukesh, mathews]
+may - [marsh, mir, asalanka, agar, ishan]
+june - [rashid, krunal, chameera, jaiswal]
+july - [pathirana, imad, thakur, lungi]
+aug - [sodhi, rajapaksa, holder]
+sept - [nawaz, mehidy]
+oct - [madushanka, archer, ellis, neesham]
+nov - [shamsi, brook, amir, shanaka]
+dec - [ashwin]
+
+jan, may, june, oct, dec, nov, july, aug, mar, sept, apr, feb
+jan, oct, may, june, nov, mar, dec, july, aug, feb, apr, sept
+may, jan, june, oct, nov, july, dec, mar, aug, feb, sept, apr
+may, june, jan, oct, dec, july, mar, nov, apr, aug, feb, sept

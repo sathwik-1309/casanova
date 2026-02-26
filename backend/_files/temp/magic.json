@@ -1,12 +1,12 @@
 {
   "inn1": {
     "team": 37,
-    "score": "185",
-    "for": "5",
-    "overs": "20.0",
+    "score": "95",
+    "for": "10",
+    "overs": "15.2",
     "extras": {
-      "total_extras": "2",
-      "wides": "2",
+      "total_extras": "1",
+      "wides": "1",
       "no_balls": "0",
       "lbs": "0",
       "byes": "0"
@@ -14,261 +14,283 @@
     "batting": [
       {
         "name": "conway",
-        "method": "b",
+        "method": "lbw",
         "not_out": false,
         "batted": true,
         "fielder": null,
-        "runs": 44,
-        "balls": 27,
-        "bowler": "rashid khan"
+        "runs": 26,
+        "balls": 22,
+        "bowler": "harshal"
       },
       {
         "name": "jason roy",
-        "method": "b",
+        "method": "c",
         "not_out": false,
         "batted": true,
-        "fielder": null,
-        "runs": 2,
-        "balls": 4,
-        "bowler": "mohammad shami"
+        "fielder": "naseem shah",
+        "runs": 9,
+        "balls": 8,
+        "bowler": "topley"
       },
       {
         "name": "klaasen",
-        "method": "c",
-        "not_out": false,
-        "batted": true,
-        "fielder": "jos buttler",
-        "runs": 4,
-        "balls": 4,
-        "bowler": "mohammad shami"
-      },
-      {
-        "name": "hasaranga",
-        "method": "c",
-        "not_out": false,
-        "batted": true,
-        "fielder": "gill",
-        "runs": 26,
-        "balls": 22,
-        "bowler": "mustafizur"
-      },
-      {
-        "name": "rovman powell",
-        "method": null,
-        "not_out": true,
-        "batted": true,
-        "fielder": null,
-        "runs": 48,
-        "balls": 34,
-        "bowler": null
-      },
-      {
-        "name": "imad",
         "method": "b",
         "not_out": false,
         "batted": true,
         "fielder": null,
-        "runs": 19,
-        "balls": 12,
-        "bowler": "mohammad shami"
+        "runs": 1,
+        "balls": 3,
+        "bowler": "bhuvi"
+      },
+      {
+        "name": "hasaranga",
+        "method": "b",
+        "not_out": false,
+        "batted": true,
+        "fielder": null,
+        "runs": 1,
+        "balls": 4,
+        "bowler": "topley"
+      },
+      {
+        "name": "rovman powell",
+        "method": "c",
+        "not_out": false,
+        "batted": true,
+        "fielder": "hetmyer",
+        "runs": 1,
+        "balls": 6,
+        "bowler": "naseem shah"
       },
       {
         "name": "ms dhoni",
-        "method": null,
-        "not_out": true,
+        "method": "b",
+        "not_out": false,
         "batted": true,
         "fielder": null,
-        "runs": 40,
-        "balls": 17,
-        "bowler": null
+        "runs": 39,
+        "balls": 28,
+        "bowler": "bhuvi"
       },
       {
-        "name": "parnell",
-        "method": null,
+        "name": "imad",
+        "method": "lbw",
         "not_out": false,
-        "batted": false,
+        "batted": true,
         "fielder": null,
         "runs": 0,
-        "balls": 0,
-        "bowler": null
+        "balls": 1,
+        "bowler": "harshal"
+      },
+      {
+        "name": "thakur",
+        "method": "b",
+        "not_out": false,
+        "batted": true,
+        "fielder": null,
+        "runs": 10,
+        "balls": 8,
+        "bowler": "harshal"
       },
       {
         "name": "trent boult",
         "method": null,
-        "not_out": false,
-        "batted": false,
+        "not_out": true,
+        "batted": true,
         "fielder": null,
-        "runs": 0,
-        "balls": 0,
+        "runs": 4,
+        "balls": 6,
         "bowler": null
       },
       {
         "name": "yuzvendra chahal",
-        "method": null,
+        "method": "c",
         "not_out": false,
-        "batted": false,
-        "fielder": null,
-        "runs": 0,
-        "balls": 0,
-        "bowler": null
+        "batted": true,
+        "fielder": "naseem shah",
+        "runs": 3,
+        "balls": 5,
+        "bowler": "naseem shah"
       },
       {
         "name": "pathirana",
-        "method": null,
+        "method": "c",
         "not_out": false,
-        "batted": false,
-        "fielder": null,
+        "batted": true,
+        "fielder": "naseem shah",
         "runs": 0,
-        "balls": 0,
-        "bowler": null
+        "balls": 1,
+        "bowler": "naseem shah"
       }
     ],
     "spells": [
       {
-        "bowler": 295,
-        "overs": 4.0,
-        "runs": 32,
-        "wickets": 0
+        "bowler": 10,
+        "overs": 3.0,
+        "runs": 16,
+        "wickets": 2
       },
       {
-        "bowler": 14,
-        "overs": 4.0,
-        "runs": 33,
+        "bowler": 306,
+        "overs": 3.0,
+        "runs": 19,
+        "wickets": 2
+      },
+      {
+        "bowler": 281,
+        "overs": 2.2,
+        "runs": 15,
         "wickets": 3
       },
       {
-        "bowler": 112,
-        "overs": 4.0,
-        "runs": 30,
-        "wickets": 1
-      },
-      {
-        "bowler": 243,
+        "bowler": 50,
         "overs": 3.0,
-        "runs": 33,
+        "runs": 22,
         "wickets": 0
       },
       {
-        "bowler": 106,
+        "bowler": 313,
         "overs": 4.0,
-        "runs": 49,
-        "wickets": 1
-      },
-      {
-        "bowler": 228,
-        "overs": 1.0,
-        "runs": 8,
-        "wickets": 0
+        "runs": 23,
+        "wickets": 3
       }
     ],
     "bowling": [
       {
         "over_no": "1",
-        "bowler": "farooqi",
-        "runs": "4",
+        "bowler": "bhuvi",
+        "runs": "6",
         "wickets": "0",
         "sequence": [
+          "1",
           "0",
-          "1",
-          "1",
-          "1",
+          "0",
+          "4",
           "0",
           "1"
         ]
       },
       {
         "over_no": "2",
-        "bowler": "m shami",
-        "runs": "4",
-        "wickets": "2",
+        "bowler": "topley",
+        "runs": "6",
+        "wickets": "1",
         "sequence": [
-          "W",
+          "0",
           "4",
-          "0",
-          "0",
           "W",
-          "0"
+          "0",
+          "1",
+          "1"
         ]
       },
       {
         "over_no": "3",
-        "bowler": "farooqi",
-        "runs": "4",
-        "wickets": "0",
+        "bowler": "bhuvi",
+        "runs": "3",
+        "wickets": "1",
         "sequence": [
           "1",
+          "W",
           "0",
           "0",
-          "1",
           "1",
           "1"
         ]
       },
       {
         "over_no": "4",
-        "bowler": "m shami",
-        "runs": "7",
-        "wickets": "0",
+        "bowler": "topley",
+        "runs": "3",
+        "wickets": "1",
         "sequence": [
           "1",
+          "W",
+          "0",
           "0",
           "1",
-          "4",
-          "1",
-          "0"
+          "1"
         ]
       },
       {
         "over_no": "5",
-        "bowler": "farooqi",
-        "runs": "14",
-        "wickets": "0",
+        "bowler": "n shah",
+        "runs": "2",
+        "wickets": "1",
         "sequence": [
           "1",
-          "6",
           "0",
           "0",
-          "4",
-          "3"
+          "W",
+          "0",
+          "1"
         ]
       },
       {
         "over_no": "6",
-        "bowler": "r khan",
-        "runs": "7",
+        "bowler": "topley",
+        "runs": "10",
         "wickets": "0",
         "sequence": [
-          "1",
-          "4",
-          "0",
+          "6",
           "0",
           "1",
+          "1",
+          "0",
+          "0wd",
           "1"
         ]
       },
       {
         "over_no": "7",
-        "bowler": "nawaz",
-        "runs": "16",
+        "bowler": "n shah",
+        "runs": "13",
         "wickets": "0",
         "sequence": [
-          "4",
-          "4",
-          "1",
+          "6",
           "0",
           "1",
-          "6"
+          "1",
+          "4",
+          "1"
         ]
       },
       {
         "over_no": "8",
-        "bowler": "r khan",
-        "runs": "12",
+        "bowler": "m santner",
+        "runs": "7",
         "wickets": "0",
         "sequence": [
-          "0",
+          "1",
           "4",
-          "0wd",
+          "1",
+          "0",
+          "1",
+          "0"
+        ]
+      },
+      {
+        "over_no": "9",
+        "bowler": "harshal",
+        "runs": "6",
+        "wickets": "0",
+        "sequence": [
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1"
+        ]
+      },
+      {
+        "over_no": "10",
+        "bowler": "m santner",
+        "runs": "9",
+        "wickets": "0",
+        "sequence": [
+          "2",
+          "0",
           "4",
           "1",
           "1",
@@ -276,251 +298,142 @@
         ]
       },
       {
-        "over_no": "9",
-        "bowler": "mustafizur",
-        "runs": "6",
-        "wickets": "1",
-        "sequence": [
-          "1",
-          "1",
-          "W",
-          "4",
-          "0",
-          "0"
-        ]
-      },
-      {
-        "over_no": "10",
-        "bowler": "dhananjaya",
-        "runs": "8",
-        "wickets": "0",
-        "sequence": [
-          "1",
-          "1",
-          "1",
-          "1",
-          "0",
-          "4"
-        ]
-      },
-      {
         "over_no": "11",
-        "bowler": "r khan",
-        "runs": "3",
-        "wickets": "1",
+        "bowler": "harshal",
+        "runs": "8",
+        "wickets": "2",
         "sequence": [
           "1",
           "1",
-          "1",
+          "W",
           "W",
           "0",
-          "0"
+          "6"
         ]
       },
       {
         "over_no": "12",
-        "bowler": "nawaz",
-        "runs": "7",
+        "bowler": "m santner",
+        "runs": "6",
         "wickets": "0",
         "sequence": [
-          "4",
-          "0",
           "0",
           "1",
+          "0",
           "1",
+          "3",
           "1"
         ]
       },
       {
         "over_no": "13",
-        "bowler": "mustafizur",
-        "runs": "13",
-        "wickets": "0",
+        "bowler": "harshal",
+        "runs": "4",
+        "wickets": "1",
         "sequence": [
           "1",
-          "4",
           "1",
           "1",
-          "0",
-          "6"
+          "1",
+          "W",
+          "0"
         ]
       },
       {
         "over_no": "14",
-        "bowler": "nawaz",
-        "runs": "10",
-        "wickets": "0",
+        "bowler": "bhuvi",
+        "runs": "7",
+        "wickets": "1",
         "sequence": [
-          "0",
-          "0wd",
           "4",
-          "2",
           "1",
+          "0",
           "1",
+          "W",
           "1"
         ]
       },
       {
         "over_no": "15",
-        "bowler": "r khan",
-        "runs": "8",
+        "bowler": "harshal",
+        "runs": "5",
         "wickets": "0",
         "sequence": [
-          "1",
-          "1",
+          "0",
           "1",
           "2",
-          "3",
-          "0"
+          "0",
+          "1",
+          "1"
         ]
       },
       {
         "over_no": "16",
-        "bowler": "m shami",
-        "runs": "8",
-        "wickets": "1",
+        "bowler": "n shah",
+        "runs": "0",
+        "wickets": "2",
         "sequence": [
           "W",
-          "0",
-          "6",
-          "0",
-          "1",
-          "1"
-        ]
-      },
-      {
-        "over_no": "17",
-        "bowler": "farooqi",
-        "runs": "10",
-        "wickets": "0",
-        "sequence": [
-          "1",
-          "6",
-          "0",
-          "1",
-          "1",
-          "1"
-        ]
-      },
-      {
-        "over_no": "18",
-        "bowler": "mustafizur",
-        "runs": "17",
-        "wickets": "0",
-        "sequence": [
-          "4",
-          "1",
-          "4",
-          "0",
-          "4",
-          "4"
-        ]
-      },
-      {
-        "over_no": "19",
-        "bowler": "m shami",
-        "runs": "14",
-        "wickets": "0",
-        "sequence": [
-          "4",
-          "0",
-          "1",
-          "1",
-          "4",
-          "4"
-        ]
-      },
-      {
-        "over_no": "20",
-        "bowler": "mustafizur",
-        "runs": "13",
-        "wickets": "0",
-        "sequence": [
-          "0",
-          "4",
-          "1",
-          "3",
-          "1",
-          "4"
+          "W"
         ]
       }
     ]
   },
   "inn2": {
-    "team": 39,
-    "score": "167",
-    "for": "4",
-    "overs": "20.0",
+    "team": 32,
+    "score": "96",
+    "for": "2",
+    "overs": "13.3",
     "extras": {
-      "total_extras": "3",
-      "wides": "3",
+      "total_extras": "0",
+      "wides": "0",
       "no_balls": "0",
       "lbs": "0",
       "byes": "0"
     },
     "batting": [
       {
-        "name": "johnny bairstow",
-        "method": "lbw",
-        "not_out": false,
-        "batted": true,
-        "fielder": null,
-        "runs": 105,
-        "balls": 63,
-        "bowler": "parnell"
-      },
-      {
-        "name": "gill",
-        "method": "c",
-        "not_out": false,
-        "batted": true,
-        "fielder": "jason roy",
-        "runs": 46,
-        "balls": 42,
-        "bowler": "pathirana"
-      },
-      {
-        "name": "jos buttler",
-        "method": "c",
-        "not_out": false,
-        "batted": true,
-        "fielder": "hasaranga",
-        "runs": 2,
-        "balls": 4,
-        "bowler": "pathirana"
-      },
-      {
-        "name": "iftikhar",
-        "method": null,
-        "not_out": true,
-        "batted": true,
-        "fielder": null,
-        "runs": 6,
-        "balls": 3,
-        "bowler": null
-      },
-      {
-        "name": "kyle mayers",
+        "name": "litton",
         "method": "b",
         "not_out": false,
         "batted": true,
         "fielder": null,
-        "runs": 2,
-        "balls": 5,
-        "bowler": "parnell"
+        "runs": 27,
+        "balls": 22,
+        "bowler": "hasaranga"
       },
       {
-        "name": "rashid khan",
+        "name": "kusal mendis",
         "method": null,
         "not_out": true,
         "batted": true,
         "fielder": null,
-        "runs": 3,
-        "balls": 3,
+        "runs": 46,
+        "balls": 38,
         "bowler": null
       },
       {
-        "name": "dhananjaya",
+        "name": "van der dussen",
+        "method": "c",
+        "not_out": false,
+        "batted": true,
+        "fielder": "ms dhoni",
+        "runs": 2,
+        "balls": 5,
+        "bowler": "hasaranga"
+      },
+      {
+        "name": "chapman",
+        "method": null,
+        "not_out": true,
+        "batted": true,
+        "fielder": null,
+        "runs": 21,
+        "balls": 16,
+        "bowler": null
+      },
+      {
+        "name": "hetmyer",
         "method": null,
         "not_out": false,
         "batted": false,
@@ -530,7 +443,7 @@
         "bowler": null
       },
       {
-        "name": "mohammad shami",
+        "name": "mitchell santner",
         "method": null,
         "not_out": false,
         "batted": false,
@@ -540,7 +453,7 @@
         "bowler": null
       },
       {
-        "name": "mustafizur",
+        "name": "gulbadin",
         "method": null,
         "not_out": false,
         "batted": false,
@@ -550,7 +463,7 @@
         "bowler": null
       },
       {
-        "name": "nawaz",
+        "name": "bhuvi",
         "method": null,
         "not_out": false,
         "batted": false,
@@ -560,7 +473,27 @@
         "bowler": null
       },
       {
-        "name": "farooqi",
+        "name": "naseem shah",
+        "method": null,
+        "not_out": false,
+        "batted": false,
+        "fielder": null,
+        "runs": 0,
+        "balls": 0,
+        "bowler": null
+      },
+      {
+        "name": "topley",
+        "method": null,
+        "not_out": false,
+        "batted": false,
+        "fielder": null,
+        "runs": 0,
+        "balls": 0,
+        "bowler": null
+      },
+      {
+        "name": "harshal",
         "method": null,
         "not_out": false,
         "batted": false,
@@ -573,39 +506,39 @@
     "spells": [
       {
         "bowler": 52,
-        "overs": 4.0,
-        "runs": 27,
+        "overs": 3.0,
+        "runs": 25,
         "wickets": 0
       },
       {
         "bowler": 22,
-        "overs": 3.0,
-        "runs": 22,
-        "wickets": 0
-      },
-      {
-        "bowler": 282,
-        "overs": 4.0,
-        "runs": 38,
-        "wickets": 2
-      },
-      {
-        "bowler": 268,
-        "overs": 3.0,
-        "runs": 30,
+        "overs": 2.0,
+        "runs": 17,
         "wickets": 0
       },
       {
         "bowler": 13,
         "overs": 2.0,
-        "runs": 21,
+        "runs": 14,
         "wickets": 0
       },
       {
-        "bowler": 340,
-        "overs": 4.0,
-        "runs": 29,
+        "bowler": 126,
+        "overs": 1.0,
+        "runs": 6,
+        "wickets": 0
+      },
+      {
+        "bowler": 268,
+        "overs": 3.3,
+        "runs": 19,
         "wickets": 2
+      },
+      {
+        "bowler": 340,
+        "overs": 2.0,
+        "runs": 15,
+        "wickets": 0
       }
     ],
     "bowling": [
@@ -615,23 +548,23 @@
         "runs": "3",
         "wickets": "0",
         "sequence": [
-          "1",
           "0",
           "1",
           "0",
+          "0",
           "1",
-          "0"
+          "1"
         ]
       },
       {
         "over_no": "2",
         "bowler": "imad",
-        "runs": "11",
+        "runs": "5",
         "wickets": "0",
         "sequence": [
           "0",
-          "4",
-          "4",
+          "1",
+          "1",
           "1",
           "1",
           "1"
@@ -640,125 +573,53 @@
       {
         "over_no": "3",
         "bowler": "t boult",
-        "runs": "10",
+        "runs": "14",
         "wickets": "0",
         "sequence": [
-          "4",
-          "0",
+          "6",
           "0",
           "1",
+          "0",
           "1",
-          "4"
+          "6"
         ]
       },
       {
         "over_no": "4",
-        "bowler": "parnell",
-        "runs": "8",
-        "wickets": "0",
-        "sequence": [
-          "4",
-          "1",
-          "0",
-          "1",
-          "1",
-          "1"
-        ]
-      },
-      {
-        "over_no": "5",
-        "bowler": "hasaranga",
-        "runs": "5",
-        "wickets": "0",
-        "sequence": [
-          "1",
-          "1",
-          "0",
-          "0wd",
-          "0",
-          "1",
-          "1"
-        ]
-      },
-      {
-        "over_no": "6",
-        "bowler": "parnell",
-        "runs": "10",
-        "wickets": "0",
-        "sequence": [
-          "1",
-          "6",
-          "1",
-          "0",
-          "1",
-          "1"
-        ]
-      },
-      {
-        "over_no": "7",
-        "bowler": "hasaranga",
+        "bowler": "imad",
         "runs": "12",
         "wickets": "0",
         "sequence": [
-          "1",
-          "1",
-          "4",
           "4",
           "0",
-          "0wd",
-          "1"
-        ]
-      },
-      {
-        "over_no": "8",
-        "bowler": "y chahal",
-        "runs": "8",
-        "wickets": "0",
-        "sequence": [
           "4",
-          "1",
-          "0",
-          "1",
-          "1",
-          "1"
-        ]
-      },
-      {
-        "over_no": "9",
-        "bowler": "imad",
-        "runs": "6",
-        "wickets": "0",
-        "sequence": [
-          "1",
-          "0",
-          "1",
           "1",
           "2",
           "1"
         ]
       },
       {
-        "over_no": "10",
+        "over_no": "5",
         "bowler": "y chahal",
-        "runs": "13",
-        "wickets": "0",
-        "sequence": [
-          "6",
-          "1",
-          "1",
-          "1",
-          "0",
-          "4"
-        ]
-      },
-      {
-        "over_no": "11",
-        "bowler": "pathirana",
         "runs": "4",
         "wickets": "0",
         "sequence": [
           "1",
+          "0",
+          "2",
+          "0",
           "1",
+          "0"
+        ]
+      },
+      {
+        "over_no": "6",
+        "bowler": "thakur",
+        "runs": "6",
+        "wickets": "0",
+        "sequence": [
+          "0",
+          "4",
           "0",
           "1",
           "0",
@@ -766,8 +627,78 @@
         ]
       },
       {
+        "over_no": "7",
+        "bowler": "y chahal",
+        "runs": "10",
+        "wickets": "0",
+        "sequence": [
+          "1",
+          "6",
+          "0",
+          "1",
+          "1",
+          "1"
+        ]
+      },
+      {
+        "over_no": "8",
+        "bowler": "hasaranga",
+        "runs": "5",
+        "wickets": "1",
+        "sequence": [
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "W"
+        ]
+      },
+      {
+        "over_no": "9",
+        "bowler": "pathirana",
+        "runs": "4",
+        "wickets": "0",
+        "sequence": [
+          "1",
+          "0",
+          "0",
+          "1",
+          "1",
+          "1"
+        ]
+      },
+      {
+        "over_no": "10",
+        "bowler": "hasaranga",
+        "runs": "7",
+        "wickets": "1",
+        "sequence": [
+          "W",
+          "1",
+          "1",
+          "1",
+          "4",
+          "0"
+        ]
+      },
+      {
+        "over_no": "11",
+        "bowler": "pathirana",
+        "runs": "11",
+        "wickets": "0",
+        "sequence": [
+          "1",
+          "2",
+          "0",
+          "1",
+          "6",
+          "1"
+        ]
+      },
+      {
         "over_no": "12",
-        "bowler": "imad",
+        "bowler": "hasaranga",
         "runs": "5",
         "wickets": "0",
         "sequence": [
@@ -781,115 +712,27 @@
       },
       {
         "over_no": "13",
-        "bowler": "pathirana",
+        "bowler": "t boult",
         "runs": "8",
         "wickets": "0",
         "sequence": [
-          "2",
+          "0",
+          "0",
           "1",
-          "4",
           "1",
           "0",
-          "0"
+          "6"
         ]
       },
       {
         "over_no": "14",
-        "bowler": "t boult",
-        "runs": "5",
-        "wickets": "0",
-        "sequence": [
-          "0",
-          "1",
-          "1",
-          "1",
-          "1",
-          "1"
-        ]
-      },
-      {
-        "over_no": "15",
         "bowler": "hasaranga",
-        "runs": "13",
+        "runs": "2",
         "wickets": "0",
         "sequence": [
           "1",
-          "4",
           "0",
-          "1",
-          "6",
           "1"
-        ]
-      },
-      {
-        "over_no": "16",
-        "bowler": "pathirana",
-        "runs": "14",
-        "wickets": "1",
-        "sequence": [
-          "4",
-          "0wd",
-          "1",
-          "4",
-          "0",
-          "4",
-          "W"
-        ]
-      },
-      {
-        "over_no": "17",
-        "bowler": "t boult",
-        "runs": "9",
-        "wickets": "0",
-        "sequence": [
-          "3",
-          "1",
-          "0",
-          "4",
-          "1",
-          "0"
-        ]
-      },
-      {
-        "over_no": "18",
-        "bowler": "parnell",
-        "runs": "12",
-        "wickets": "1",
-        "sequence": [
-          "6",
-          "1",
-          "1",
-          "0",
-          "4",
-          "W"
-        ]
-      },
-      {
-        "over_no": "19",
-        "bowler": "pathirana",
-        "runs": "3",
-        "wickets": "1",
-        "sequence": [
-          "W",
-          "0",
-          "0",
-          "1",
-          "1",
-          "1"
-        ]
-      },
-      {
-        "over_no": "20",
-        "bowler": "parnell",
-        "runs": "8",
-        "wickets": "1",
-        "sequence": [
-          "W",
-          "0",
-          "1",
-          "4",
-          "1",
-          "2"
         ]
       }
     ]

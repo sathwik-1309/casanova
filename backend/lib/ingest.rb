@@ -352,14 +352,25 @@ class Ingest
 
             @parent.b1["not_out"] = true unless @parent.b1["not_out"] == false
             @parent.b2["not_out"] = true unless @parent.b2["not_out"] == false
-            @parent.scores_hash << @parent.b1
-            @parent.scores_hash << @parent.b2
+            if @parent.for == 10
+                last_out = @parent.scores_hash[-1]['id']
+                if last_out == @parent.b1['id']
+                    @parent.scores_hash << @parent.b2
+                else
+                    @parent.scores_hash << @parent.b1
+                end
+            else
+                @parent.scores_hash << @parent.b1
+                @parent.scores_hash << @parent.b2
+            end
+            
             @parent.scores_hash = @parent.scores_hash.sort_by { |hash| hash["pos"] }
             l = @parent.scores_hash.length
-            if l > 11
-                @parent.scores_hash.pop
-                l = @parent.scores_hash.length
-            end
+            # if l > 11
+            #     byebug
+            #     @parent.scores_hash.pop
+            #     l = @parent.scores_hash.length
+            # end
             while l < 11
                 @parent.scores_hash << Ingest.set_batsman_config(@parent.batsmen[l], Squad.find(@parent.bat_team_id).team_id, false)
                 l += 1

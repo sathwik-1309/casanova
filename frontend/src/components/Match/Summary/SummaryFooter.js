@@ -67,7 +67,8 @@ function SummaryFooter(props) {
             <div className={class2}>
                 {footer.result}
             </div>
-            <Motm color={footer.result_color} motm={footer.motm}/>
+            {footer.motm && <Motm color={footer.result_color} motm={footer.motm}/>}
+            
         </div>
     )
 

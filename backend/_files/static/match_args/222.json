@@ -1,0 +1,23 @@
+{
+  "m_id": 222,
+  "batted_first": "feb",
+  "batted_second": "dec",
+  "toss": "dec",
+  "pitch": 3,
+  "ball_color": [
+    "y",
+    "r",
+    "y",
+    "r"
+  ],
+  "cap1": "bhuvi",
+  "cap2": "wade",
+  "keeper1": "kusal mendis",
+  "keeper2": "de kock",
+  "winner": "feb",
+  "stage": "semi-final 2",
+  "venue": "mohali",
+  "motm_player": "matt henry",
+  "motm_team": "dec",
+  "t_id": 8
+}

@@ -13,6 +13,7 @@ class TournamentController < ApplicationController
         pt = {}
         squad = Squad.find_by(team_id: team_id, tournament_id: t_id.to_i)
         pt["team"] = "#{Util.get_flag(team_id)} #{squad.abbrevation.upcase}"
+        pt["teamname"] = squad.get_teamname.upcase
         pt["color"] = Util.get_team_color(t_id, squad.abbrevation)
         pt["won"] = Match.where(stage: ['league','group'],winner_id: squad.id).length
         pt["lost"] = Match.where(stage: ['league','group'],loser_id: squad.id).length
@@ -522,34 +523,45 @@ class TournamentController < ApplicationController
     data = JSON.parse(file)
     t_json = data.find{|t| t['id'] == tour.id}
     hash['format'] = t_json['knockout_type']
-    matches = tour.matches.where.not(stage: ['league','group'])
-    hash['matches'] = []
-    if matches != []
-      matches.each do |match|
-        hash['matches'].append(match.match_box)
-      end
-    else
-      t_json['knockouts'].each do |match|
-        t1 = Squad.find_by_abbrevation(match['team1'])
-        t2 = Squad.find_by_abbrevation(match['team2'])
-        temp = {
-          "inn1" => {
-            "teamname_full" => t1&.get_abb || match['team1'].upcase,
-            "color" => t1.nil? ? '' : Util.get_team_color(t_id, t1.abbrevation)
-          },
-          "inn2" => {
-            "teamname_full" => t2&.get_abb || match['team2'].upcase,
-            "color" => t2.nil? ? '' : Util.get_team_color(t_id, t2.abbrevation)
-          },
-          "result" => "-",
-          "stage" => match['match'].titleize,
-          "venue" => match['venue'].titleize
-        }
-        hash['matches'] << temp
-      end
+
+    case t_json['knockout_type']
+    when "semis"
+      total_ko_matches = 3
+    when "quarters"
+      total_ko_matches = 7
+    when "playoffs"
+      total_ko_matches = 4
     end
     
+    matches = tour.matches.where.not(stage: ['league','group'])
+    hash['matches'] = []
+
+    counter = 0
+    matches.each do |match|
+      hash['matches'].append(match.match_box)
+      counter += 1
+    end
     
+    while counter < total_ko_matches
+      match = t_json['knockouts'][counter]
+      t1 = Squad.find_by_abbrevation(match['team1'])
+      t2 = Squad.find_by_abbrevation(match['team2'])
+      temp = {
+        "inn1" => {
+          "teamname_full" => t1&.get_abb || match['team1'].upcase,
+          "color" => t1.nil? ? '' : Util.get_team_color(t_id, t1.abbrevation)
+        },
+        "inn2" => {
+          "teamname_full" => t2&.get_abb || match['team2'].upcase,
+          "color" => t2.nil? ? '' : Util.get_team_color(t_id, t2.abbrevation)
+        },
+        "result" => "-",
+        "stage" => match['match'].titleize,
+        "venue" => match['venue'].titleize
+      }
+      hash['matches'] << temp
+      counter += 1
+    end
     
     render(:json => Oj.dump(hash))
   end

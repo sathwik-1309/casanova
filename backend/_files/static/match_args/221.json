@@ -1,0 +1,23 @@
+{
+  "m_id": 221,
+  "batted_first": "oct",
+  "batted_second": "july",
+  "toss": "oct",
+  "pitch": 3,
+  "ball_color": [
+    "y",
+    "g",
+    "y",
+    "g"
+  ],
+  "cap1": "hardik",
+  "cap2": "dhoni",
+  "keeper1": "pooran",
+  "keeper2": "dhoni",
+  "winner": "july",
+  "stage": "semi-final 1",
+  "venue": "mumbai",
+  "motm_player": "klaasen",
+  "motm_team": "july",
+  "t_id": 8
+}

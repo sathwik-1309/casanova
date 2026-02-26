@@ -1,0 +1,23 @@
+{
+  "m_id": 220,
+  "batted_first": "sept",
+  "batted_second": "feb",
+  "toss": "sept",
+  "pitch": 3.5,
+  "ball_color": [
+    "y",
+    "g",
+    "y",
+    "g"
+  ],
+  "cap1": "buttler",
+  "cap2": "bhuvi",
+  "keeper1": "buttler",
+  "keeper2": "kusal mendis",
+  "winner": "feb",
+  "stage": "quater-final 4",
+  "venue": "hyderabad",
+  "motm_player": "reece topley",
+  "motm_team": "feb",
+  "t_id": 8
+}

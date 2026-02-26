@@ -4,6 +4,7 @@ class Squad < ApplicationRecord
     has_many :performances
     has_many :scores
     has_many :spells
+    has_many :squad_players
 
     def keeper
         return Player.find(self.keeper_id)
@@ -62,11 +63,11 @@ class Squad < ApplicationRecord
     end
 
     def get_teamname
-        return "#{Util.get_flag(self.team_id)} #{self.name.upcase}"
+        self.name.upcase
     end
 
     def get_abb
-        return "#{Util.get_flag(self.team_id)} #{self.abbrevation.upcase}"
+        self.abbrevation.upcase
     end
 
     def squad_box

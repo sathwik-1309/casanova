@@ -1,0 +1,23 @@
+{
+  "m_id": 223,
+  "batted_first": "july",
+  "batted_second": "feb",
+  "toss": "july",
+  "pitch": 2.5,
+  "ball_color": [
+    "y",
+    "y",
+    "y",
+    "y"
+  ],
+  "cap1": "dhoni",
+  "cap2": "bhuvi",
+  "keeper1": "dhoni",
+  "keeper2": "kusal mendis",
+  "winner": "feb",
+  "stage": "final",
+  "venue": "kolkata",
+  "motm_player": "harshal patel",
+  "motm_team": "feb",
+  "t_id": 8
+}

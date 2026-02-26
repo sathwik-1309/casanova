@@ -2,6 +2,7 @@ import './Scorecard.css'
 import React, { useState, useEffect } from 'react';
 import PerformanceBox from '../../Player/PerformanceBox/PerformanceBox';
 import { BACKEND_API_URL } from '../../../my_constants';
+import Logo from '../../Team/Logo/Logo';
 
 function Header(props) {
 
@@ -12,8 +13,12 @@ function Header(props) {
     let class5 = 'match_scorecard_header_score ' + color + "2"
     return (
     <div id="match_scorecard_header">
-        <div className={`${class2} bg-shadow`}>
-            {props.header.teamname}
+        <div className={`h-50 ${color}1 flex-centered font-600 font-1_1`}>
+            <div className='h-50 flex-row'>
+                <Logo team={props.header.abbrevation} height={40} width={50}/>
+                <div className='pl-5 h-50 flex-centered'>{props.header.teamname}</div>
+            </div>
+            
         </div>
         <div className="match_scorecard_header2 bg-shadow">
             <div className={class3}>

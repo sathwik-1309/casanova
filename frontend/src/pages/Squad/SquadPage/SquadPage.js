@@ -45,7 +45,7 @@ function SquadPage(props) {
     if (!data) {
         return <div>Loading...</div>;
     }
-    console.log(data)
+    
   return (
     <div className='squad-page flex-col default-font'>
       <div className='flex-row squad-page-row2'>

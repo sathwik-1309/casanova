@@ -284,6 +284,15 @@
         "id": 8,
         "name": "csl",
         "season": 3,
+        "medals": {
+            "gold": 69,
+            "silver": 74,
+            "bronze": [77, 79]
+        },
+        "pots_id": 10,
+        "mvp_id": 173,
+        "most_runs_id": 173,
+        "most_wickets_id": 10,
         "groups": [[31, 32, 34], [36, 33, 35], [42, 40, 38], [39, 41, 37]],
         "knockout_type": "quarters",
         "knockouts": [
@@ -318,20 +327,49 @@
             {
                 "match": "semi-final 1",
                 "venue": "mumbai",
-                "team1": "qf-1",
-                "team2": "qf-2",
+                "team1": "oct",
+                "team2": "july",
                 "dest": "final"
             },
             {
                 "match": "semi-final 2",
                 "venue": "mohali",
-                "team1": "qf-3",
-                "team2": "qf-4",
+                "team1": "dec",
+                "team2": "feb",
                 "dest": "final"
             },
             {
                 "match": "final",
                 "venue": "kolkata",
+                "team1": "july",
+                "team2": "feb"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "name": "wt20",
+        "season": 5,
+        "groups": [[7,3,4,9,8], [1,6,2,5,10]],
+        "knockout_type": "semis",
+        "knockouts": [
+            {
+                "match": "sf-1",
+                "team1": "a1",
+                "team2": "b2",
+                "venue": "edgbaston",
+                "dest": "final"
+            },
+            {
+                "match": "sf-2",
+                "team1": "b2",
+                "team2": "a1",
+                "venue": "manchester",
+                "dest": "final"
+            },
+            {
+                "match": "final",
+                "venue": "lords",
                 "team1": "W(sf-1)",
                 "team2": "W(sf-2)"
             }

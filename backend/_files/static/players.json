@@ -2174,7 +2174,8 @@
     "keeper": false,
     "country": 7,
     "ipl": 25,
-    "csl": 34,
+    "csl": 40,
+    "csl_teams": [34, 40],
     "names": [
       "joffra archer",
       "archer",
@@ -7147,7 +7148,7 @@
     "keeper": false,
     "country": 1,
     "ipl": null,
-    "csl": null,
+    "csl": 36,
     "names": [
       "shivam dube",
       "dube"

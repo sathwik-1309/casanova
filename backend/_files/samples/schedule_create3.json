@@ -1,0 +1,110 @@
+{
+  "t_id": 9,
+  "default_stage": "group",
+  "matches": [
+    {
+      "team1": "eng",
+      "team2": "ban",
+      "venue": "edgbaston"
+    },
+    {
+      "team1": "nz",
+      "team2": "afg",
+      "venue": "nottingham"
+    },
+    {
+      "team1": "wi",
+      "team2": "sa",
+      "venue": "headingly"
+    },
+    {
+      "team1": "ind",
+      "team2": "pak",
+      "venue": "manchester"
+    },
+
+    {
+      "team1": "aus",
+      "team2": "afg",
+      "venue": "southampton"
+    },
+    {
+      "team1": "nz",
+      "team2": "ban",
+      "venue": "lords"
+    },
+    {
+      "team1": "sl",
+      "team2": "pak",
+      "venue": "edgbaston"
+    },
+    {
+      "team1": "ind",
+      "team2": "wi",
+      "venue": "nottingham"
+    },
+
+    {
+      "team1": "eng",
+      "team2": "aus",
+      "venue": "lords"
+    },
+    {
+      "team1": "afg",
+      "team2": "ban",
+      "venue": "headingly"
+    },
+    {
+      "team1": "sa",
+      "team2": "ind",
+      "venue": "southampton"
+    },
+    {
+      "team1": "sl",
+      "team2": "wi",
+      "venue": "manchester"
+    },
+
+    {
+      "team1": "nz",
+      "team2": "aus",
+      "venue": "edgbaston"
+    },
+    {
+      "team1": "eng",
+      "team2": "afg",
+      "venue": "manchester"
+    },
+    {
+      "team1": "sl",
+      "team2": "ind",
+      "venue": "headingly"
+    },
+    {
+      "team1": "sa",
+      "team2": "pak",
+      "venue": "lords"
+    },
+
+    {
+      "team1": "eng",
+      "team2": "nz",
+      "venue": "southampton"
+    },
+    {
+      "team1": "ban",
+      "team2": "aus",
+      "venue": "nottingham"
+    },
+    {
+      "team1": "pak",
+      "team2": "wi",
+      "venue": "southampton"
+    },
+    {
+      "team1": "sa",
+      "team2": "sl",
+      "venue": "headingly"
+    }
+  ]
+}

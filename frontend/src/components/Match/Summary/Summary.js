@@ -54,9 +54,10 @@ function Summary(props) {
                     ))}
                 </div>
             </div>
-            <TurningPoint data={data.turning_point}/>
-            <HighlightsBox data={data.highlights} font={data.tour}/>
-            <MilestoneBox data={data.milestones} font={data.tour}/>
+            {data.turning_point && <TurningPoint data={data.turning_point}/>}
+            {data.highlights && <HighlightsBox data={data.highlights} font={data.tour}/>}
+            {data.milestones && <MilestoneBox data={data.milestones} font={data.tour}/>}
+            
         </div>
     )
 

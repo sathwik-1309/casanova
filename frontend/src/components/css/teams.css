@@ -310,6 +310,62 @@
     border: 1px solid rgb(0,0,0);
 }
 
+.zim1 {
+    background-color: #D40000;
+    color: white;
+}
+.zim2 {
+    background-color: #FFCC00;
+    color: #000000;
+}
+
+.ned1 {
+    background-color: #F36C21;
+    color: white;
+}
+.ned2 {
+    background-color: #15295e;
+    opacity: 0.9;
+    color: white;
+}
+.ire1 {
+    background-color: #31742d;
+    color: white;
+}
+.ire2 {
+    background-color: #0f265c;
+    opacity: 0.9;
+    color: white;
+}
+.nam1{
+    background-color: #0e1319;
+    color: white;
+}
+.nam2{
+    background-color: #1986d1;
+    color: white;
+}
+
+.sco1{
+    background-color: #522798;
+    color: white;
+}
+.sco2{
+    background-color: #3b2652;
+    color: white;
+}
+
+.uae1{
+    background-color: #c83063;
+    color: white;
+}
+.uae2{
+    background-color: #262281;
+    color: white;
+}
+
+
+
 .jan1{
     background-color: rgb(219, 0, 7);
     color: rgb(255,255,255);
@@ -712,12 +768,14 @@
 }
 
 .mi1{
-    background-color: rgb(0, 75, 141);
+    /* background-color: #005FA2; */
+    background-color: #004B8D;
     color: #fefefe;
 }
 .mi2{
-    background-color: rgb(255, 209, 65);
-    color: rgb(0,0,0);
+    /* background-color: rgb(255, 209, 65); */
+    background-color: #FFD700;
+    color: black
 }
 .mi3 {
     border: 1px solid white;
@@ -732,6 +790,7 @@
 }
 .rr2{
     background-color: rgb(7, 78, 162);
+    /* background-color: #04408a; */
     color: #fefefe;
 }
 .rr3,
@@ -741,12 +800,14 @@
 
 .csk1 {
     /* background-color: rgb(249, 205, 5); */
-    background-color: #F9CD05;
-    color: #000;
+    /* background-color: rgb(255, 209, 0); */
+    /* background-color: #F9CD05; */
+    background-color: #FFDF00;
+    color: rgb(0,0,0, 0.9);
 }
 .csk2 {
-    /* background-color: rgb(29, 65, 140); */
-    background-color: #1D418C;
+    background-color: rgb(29, 65, 140);
+    /* background-color: #1D418C; */
     color: white;
 }
 .csk4 {
@@ -757,11 +818,12 @@
 }
 
 .srh1 {
-    background-color: #EE7429;
+    /* background-color: #EE7429; */
+    background-color: #f06902;
     color: white;
 }
 .srh2 {
-    background-color: rgb(0,0,0);
+    background-color: rgb(0,0,0, 0.85);
     color: white;
 }
 .srh3,
@@ -776,9 +838,10 @@
     color: white;
 }
 .rcb2 {
-    background-color: rgb(255, 209, 65);
-    /* background-color: rgb(242, 209, 160); */
-    color: #2b2a29;
+    /* background-color: rgb(255, 209, 65); */
+    /* background-color: #FFDF00; */
+    background-color: rgb(255, 209, 0);
+    color: black;
 }
 .rcb3 {
     border: 1px solid white;
@@ -807,7 +870,7 @@
     color: white;
 }
 .pbks2 {
-    background-color: #dcdddf;
+    background-color: #e3c205;
     color: #000;
 }
 .pbks3 {
@@ -823,7 +886,8 @@
     color: white;
 }
 .dc2 {
-    background-color: #d71921;
+    /* background-color: #d71921; */
+    background-color: #db0202;
     color: white;
 }
 .dc3,
@@ -836,7 +900,10 @@
     color: white;
 }
 .kkr2 {
-    background-color: #f2c028;
+    /* background-color: #f2c028; */
+    /* background-color: #FFDF00; */
+    background-color: #FFD700;
+    /* background-color: #e3c205; */
     color: black;
 }
 .kkr3 {
@@ -844,6 +911,93 @@
 }
 .kkr4 {
     border: 1px solid black;
+}
+.lsg1 {
+    background-color: #214375;
+    color: white;
+}
+.lsg2{
+    /* background-color: #ea422d; */
+    background-color: #e3432d;
+    color: white;
+}
+.gt1 {
+    /* background-color: #1B2133; */
+    background-color: #232b42;
+    color: white;
+}
+.gt2 {
+    background-color: #e3c205;
+    color: black
+}
+.dch1 {
+    background-color: #2a3b5c;
+    color: white;
+}
+.dch2 {
+    background-color: #425170;
+    color: white;
+}
+.rpsg1 {
+    background-color: #9E3495;
+    /* background-color: #D11D9B; */
+    color: white;
+}
+.rpsg2 {
+    background-color: #161370;
+    color: white;
+}
+.pwi1 {
+    background-color: #2F9BE3;
+    /* background-color: #D11D9B; */
+    color: white;
+}
+.pwi2 {
+    background-color: #C0D6EB;
+    color: black;
+}
+.ktk1 {
+    background-color: #E94017;
+    /* background-color: #D11D9B; */
+    color: white;
+}
+.ktk2 {
+    background-color: #632B72;
+    color: white;
+}
+.gl1 {
+    background-color: #F97324;
+    color: white;
+}
+.gl2 {
+    background-color: rgb(7, 78, 162);
+    color: white;
+}
+.dd1 {
+    background-color: #213F7D;
+    color: white;
+}
+.dd2 {
+    background-color: #C02826;
+    color: white;
+}
+.kar1 {
+    background-color: #1c65ca;
+    color: white;
+}
+.kar2 {
+    background-color: #1c65ca;
+    color: white;
+    opacity: 0.8;
+}
+
+.tn1 {
+    background-color: #efd35b;
+    color: #345180;
+}
+.tn2 {
+    background-color: #345180;
+    color: white;
 }
 
 .default-font {

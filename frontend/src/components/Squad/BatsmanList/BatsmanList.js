@@ -2,6 +2,7 @@ import React from 'react'
 import Photocard from '../../Player/Photocard/Photocard'
 import './BatsmanList.css'
 import { TitleCase } from '../../../my_constants'
+import Logo from '../../Team/Logo/Logo'
 
 function BatsmanListItem (props) {
   const data = props.data
@@ -21,7 +22,9 @@ function BatsmanListItem (props) {
     opacity_index = 1
     content = <div className='flex-row'>
       <Photocard p_id={player.id} height='60px'/>
-      <div className='w-60 font-0_8 font-400 flex-centered justify-center'>{data.teamname}</div>
+        <div className='w-60 flex-centered'>
+          <Logo team={color} height={40}/>
+        </div>
       </div>
     // content = <div className='w-60 font-0_8 font-400 flex-centered justify-start'>{data.teamname}</div>
   }

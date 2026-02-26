@@ -1,0 +1,2698 @@
+{
+  "tournaments": [
+    {
+      "id": 9,
+      "name": "wt20",
+      "season": 5,
+      "ongoing": true
+    }
+  ],
+  "teams": [
+    {
+      "id": 1,
+      "name": "india",
+      "abbrevation": "ind"
+    },
+    {
+      "id": 2,
+      "name": "pakistan",
+      "abbrevation": "pak"
+    },
+    {
+      "id": 3,
+      "name": "australia",
+      "abbrevation": "aus"
+    },
+    {
+      "id": 4,
+      "name": "new zealand",
+      "abbrevation": "nz"
+    },
+    {
+      "id": 6,
+      "name": "south africa",
+      "abbrevation": "sa"
+    },
+    {
+      "id": 7,
+      "name": "england",
+      "abbrevation": "eng"
+    },
+    {
+      "id": 8,
+      "name": "bangladesh",
+      "abbrevation": "ban"
+    },
+    {
+      "id": 9,
+      "name": "afganistan",
+      "abbrevation": "afg"
+    },
+    {
+      "id": 10,
+      "name": "srilanka",
+      "abbrevation": "sl"
+    },
+    {
+      "id": 5,
+      "name": "west indies",
+      "abbrevation": "wi"
+    }
+  ],
+  "squads": [
+    {
+      "id": 80,
+      "name": "india",
+      "abbrevation": "ind",
+      "team_id": 1,
+      "tournament_id": 9,
+      "captain_id": 2
+    },
+    {
+      "id": 81,
+      "name": "pakistan",
+      "abbrevation": "pak",
+      "team_id": 2,
+      "tournament_id": 9,
+      "captain_id": 18
+    },
+    {
+      "id": 82,
+      "name": "australia",
+      "abbrevation": "aus",
+      "team_id": 3,
+      "tournament_id": 9,
+      "captain_id": 261
+    },
+    {
+      "id": 83,
+      "name": "new zealand",
+      "abbrevation": "nz",
+      "team_id": 4,
+      "tournament_id": 9,
+      "captain_id": 45
+    },
+    {
+      "id": 84,
+      "name": "south africa",
+      "abbrevation": "sa",
+      "team_id": 6,
+      "tournament_id": 9,
+      "captain_id": 72
+    },
+    {
+      "id": 85,
+      "name": "england",
+      "abbrevation": "eng",
+      "team_id": 7,
+      "tournament_id": 9,
+      "captain_id": 88
+    },
+    {
+      "id": 86,
+      "name": "bangladesh",
+      "abbrevation": "ban",
+      "team_id": 8,
+      "tournament_id": 9,
+      "captain_id": 273
+    },
+    {
+      "id": 87,
+      "name": "afganistan",
+      "abbrevation": "afg",
+      "team_id": 9,
+      "tournament_id": 9,
+      "captain_id": 112
+    },
+    {
+      "id": 88,
+      "name": "srilanka",
+      "abbrevation": "sl",
+      "team_id": 10,
+      "tournament_id": 9,
+      "captain_id": 268
+    },
+    {
+      "id": 89,
+      "name": "west indies",
+      "abbrevation": "wi",
+      "team_id": 5,
+      "tournament_id": 9,
+      "captain_id": 285
+    }
+  ],
+  "squad_players": [
+    {
+      "player_id": 2,
+      "squad_id": 80,
+      "team_id": 1,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 3,
+      "squad_id": 80,
+      "team_id": 1,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 4,
+      "squad_id": 80,
+      "team_id": 1,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 137,
+      "squad_id": 80,
+      "team_id": 1,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 311,
+      "squad_id": 80,
+      "team_id": 1,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 6,
+      "squad_id": 80,
+      "team_id": 1,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 9,
+      "squad_id": 80,
+      "team_id": 1,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 177,
+      "squad_id": 80,
+      "team_id": 1,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 11,
+      "squad_id": 80,
+      "team_id": 1,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 12,
+      "squad_id": 80,
+      "team_id": 1,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 132,
+      "squad_id": 80,
+      "team_id": 1,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 169,
+      "squad_id": 80,
+      "team_id": 1,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 13,
+      "squad_id": 80,
+      "team_id": 1,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 148,
+      "squad_id": 80,
+      "team_id": 1,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 349,
+      "squad_id": 80,
+      "team_id": 1,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 18,
+      "squad_id": 81,
+      "team_id": 2,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 216,
+      "squad_id": 81,
+      "team_id": 2,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 16,
+      "squad_id": 81,
+      "team_id": 2,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 354,
+      "squad_id": 81,
+      "team_id": 2,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 278,
+      "squad_id": 81,
+      "team_id": 2,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 361,
+      "squad_id": 81,
+      "team_id": 2,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 22,
+      "squad_id": 81,
+      "team_id": 2,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 23,
+      "squad_id": 81,
+      "team_id": 2,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 230,
+      "squad_id": 81,
+      "team_id": 2,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 25,
+      "squad_id": 81,
+      "team_id": 2,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 26,
+      "squad_id": 81,
+      "team_id": 2,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 281,
+      "squad_id": 81,
+      "team_id": 2,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 363,
+      "squad_id": 81,
+      "team_id": 2,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 364,
+      "squad_id": 81,
+      "team_id": 2,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 365,
+      "squad_id": 81,
+      "team_id": 2,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 29,
+      "squad_id": 82,
+      "team_id": 3,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 208,
+      "squad_id": 82,
+      "team_id": 3,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 261,
+      "squad_id": 82,
+      "team_id": 3,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 32,
+      "squad_id": 82,
+      "team_id": 3,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 33,
+      "squad_id": 82,
+      "team_id": 3,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 297,
+      "squad_id": 82,
+      "team_id": 3,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 195,
+      "squad_id": 82,
+      "team_id": 3,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 301,
+      "squad_id": 82,
+      "team_id": 3,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 35,
+      "squad_id": 82,
+      "team_id": 3,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 36,
+      "squad_id": 82,
+      "team_id": 3,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 39,
+      "squad_id": 82,
+      "team_id": 3,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 198,
+      "squad_id": 82,
+      "team_id": 3,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 226,
+      "squad_id": 82,
+      "team_id": 3,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 308,
+      "squad_id": 82,
+      "team_id": 3,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 360,
+      "squad_id": 82,
+      "team_id": 3,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 245,
+      "squad_id": 83,
+      "team_id": 4,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 276,
+      "squad_id": 83,
+      "team_id": 4,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 327,
+      "squad_id": 83,
+      "team_id": 4,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 45,
+      "squad_id": 83,
+      "team_id": 4,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 246,
+      "squad_id": 83,
+      "team_id": 4,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 231,
+      "squad_id": 83,
+      "team_id": 4,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 326,
+      "squad_id": 83,
+      "team_id": 4,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 50,
+      "squad_id": 83,
+      "team_id": 4,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 48,
+      "squad_id": 83,
+      "team_id": 4,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 51,
+      "squad_id": 83,
+      "team_id": 4,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 52,
+      "squad_id": 83,
+      "team_id": 4,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 53,
+      "squad_id": 83,
+      "team_id": 4,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 54,
+      "squad_id": 83,
+      "team_id": 4,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 55,
+      "squad_id": 83,
+      "team_id": 4,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 318,
+      "squad_id": 83,
+      "team_id": 4,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 71,
+      "squad_id": 84,
+      "team_id": 6,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 238,
+      "squad_id": 84,
+      "team_id": 6,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 72,
+      "squad_id": 84,
+      "team_id": 6,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 82,
+      "squad_id": 84,
+      "team_id": 6,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 252,
+      "squad_id": 84,
+      "team_id": 6,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 272,
+      "squad_id": 84,
+      "team_id": 6,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 304,
+      "squad_id": 84,
+      "team_id": 6,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 296,
+      "squad_id": 84,
+      "team_id": 6,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 78,
+      "squad_id": 84,
+      "team_id": 6,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 229,
+      "squad_id": 84,
+      "team_id": 6,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 236,
+      "squad_id": 84,
+      "team_id": 6,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 330,
+      "squad_id": 84,
+      "team_id": 6,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 366,
+      "squad_id": 84,
+      "team_id": 6,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 367,
+      "squad_id": 84,
+      "team_id": 6,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 368,
+      "squad_id": 84,
+      "team_id": 6,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 88,
+      "squad_id": 85,
+      "team_id": 7,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 298,
+      "squad_id": 85,
+      "team_id": 7,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 84,
+      "squad_id": 85,
+      "team_id": 7,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 352,
+      "squad_id": 85,
+      "team_id": 7,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 94,
+      "squad_id": 85,
+      "team_id": 7,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 157,
+      "squad_id": 85,
+      "team_id": 7,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 162,
+      "squad_id": 85,
+      "team_id": 7,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 287,
+      "squad_id": 85,
+      "team_id": 7,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 91,
+      "squad_id": 85,
+      "team_id": 7,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 93,
+      "squad_id": 85,
+      "team_id": 7,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 92,
+      "squad_id": 85,
+      "team_id": 7,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 225,
+      "squad_id": 85,
+      "team_id": 7,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 306,
+      "squad_id": 85,
+      "team_id": 7,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 369,
+      "squad_id": 85,
+      "team_id": 7,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 370,
+      "squad_id": 85,
+      "team_id": 7,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 273,
+      "squad_id": 86,
+      "team_id": 8,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 100,
+      "squad_id": 86,
+      "team_id": 8,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 333,
+      "squad_id": 86,
+      "team_id": 8,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 98,
+      "squad_id": 86,
+      "team_id": 8,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 332,
+      "squad_id": 86,
+      "team_id": 8,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 97,
+      "squad_id": 86,
+      "team_id": 8,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 101,
+      "squad_id": 86,
+      "team_id": 8,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 259,
+      "squad_id": 86,
+      "team_id": 8,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 257,
+      "squad_id": 86,
+      "team_id": 8,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 106,
+      "squad_id": 86,
+      "team_id": 8,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 258,
+      "squad_id": 86,
+      "team_id": 8,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 334,
+      "squad_id": 86,
+      "team_id": 8,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 371,
+      "squad_id": 86,
+      "team_id": 8,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 372,
+      "squad_id": 86,
+      "team_id": 8,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 373,
+      "squad_id": 86,
+      "team_id": 8,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 290,
+      "squad_id": 87,
+      "team_id": 9,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 288,
+      "squad_id": 87,
+      "team_id": 9,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 289,
+      "squad_id": 87,
+      "team_id": 9,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 344,
+      "squad_id": 87,
+      "team_id": 9,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 292,
+      "squad_id": 87,
+      "team_id": 9,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 113,
+      "squad_id": 87,
+      "team_id": 9,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 293,
+      "squad_id": 87,
+      "team_id": 9,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 112,
+      "squad_id": 87,
+      "team_id": 9,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 294,
+      "squad_id": 87,
+      "team_id": 9,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 295,
+      "squad_id": 87,
+      "team_id": 9,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 347,
+      "squad_id": 87,
+      "team_id": 9,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 374,
+      "squad_id": 87,
+      "team_id": 9,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 365,
+      "squad_id": 87,
+      "team_id": 9,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 376,
+      "squad_id": 87,
+      "team_id": 9,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 377,
+      "squad_id": 87,
+      "team_id": 9,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 262,
+      "squad_id": 88,
+      "team_id": 10,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 263,
+      "squad_id": 88,
+      "team_id": 10,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 266,
+      "squad_id": 88,
+      "team_id": 10,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 337,
+      "squad_id": 88,
+      "team_id": 10,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 265,
+      "squad_id": 88,
+      "team_id": 10,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 228,
+      "squad_id": 88,
+      "team_id": 10,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 268,
+      "squad_id": 88,
+      "team_id": 10,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 348,
+      "squad_id": 88,
+      "team_id": 10,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 269,
+      "squad_id": 88,
+      "team_id": 10,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 270,
+      "squad_id": 88,
+      "team_id": 10,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 319,
+      "squad_id": 88,
+      "team_id": 10,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 340,
+      "squad_id": 88,
+      "team_id": 10,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 338,
+      "squad_id": 88,
+      "team_id": 10,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 378,
+      "squad_id": 88,
+      "team_id": 10,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 379,
+      "squad_id": 88,
+      "team_id": 10,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 284,
+      "squad_id": 89,
+      "team_id": 5,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 58,
+      "squad_id": 89,
+      "team_id": 5,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 283,
+      "squad_id": 89,
+      "team_id": 5,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 59,
+      "squad_id": 89,
+      "team_id": 5,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 60,
+      "squad_id": 89,
+      "team_id": 5,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 285,
+      "squad_id": 89,
+      "team_id": 5,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 175,
+      "squad_id": 89,
+      "team_id": 5,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 61,
+      "squad_id": 89,
+      "team_id": 5,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 309,
+      "squad_id": 89,
+      "team_id": 5,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 353,
+      "squad_id": 89,
+      "team_id": 5,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 146,
+      "squad_id": 89,
+      "team_id": 5,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 234,
+      "squad_id": 89,
+      "team_id": 5,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 249,
+      "squad_id": 89,
+      "team_id": 5,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 380,
+      "squad_id": 89,
+      "team_id": 5,
+      "tournament_id": 9
+    },
+    {
+      "player_id": 381,
+      "squad_id": 89,
+      "team_id": 5,
+      "tournament_id": 9
+    }
+  ],
+  "players": [
+    {
+      "id": 2,
+      "name": "rohit",
+      "fullname": "rohit sharma",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": false,
+      "country_team_id": 1
+    },
+    {
+      "id": 3,
+      "name": "kohli",
+      "fullname": "virat kohli",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": false,
+      "country_team_id": 1
+    },
+    {
+      "id": 4,
+      "name": "pant",
+      "fullname": "rishab pant",
+      "skill": "bat",
+      "batting_hand": "l",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": true,
+      "country_team_id": 1
+    },
+    {
+      "id": 137,
+      "name": "suryakumar",
+      "fullname": "suryakumar yadav",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": false,
+      "country_team_id": 1
+    },
+    {
+      "id": 311,
+      "name": "dube",
+      "fullname": "shivam dube",
+      "skill": "all",
+      "batting_hand": "l",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 1
+    },
+    {
+      "id": 6,
+      "name": "hardik",
+      "fullname": "hardik pandya",
+      "skill": "all",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 1
+    },
+    {
+      "id": 9,
+      "name": "jadeja",
+      "fullname": "ravi jadeja",
+      "skill": "all",
+      "batting_hand": "l",
+      "bowling_hand": "l",
+      "bowling_style": "off",
+      "keeper": false,
+      "country_team_id": 1
+    },
+    {
+      "id": 177,
+      "name": "axar",
+      "fullname": "axar patel",
+      "skill": "all",
+      "batting_hand": "l",
+      "bowling_hand": "l",
+      "bowling_style": "off",
+      "keeper": false,
+      "country_team_id": 1
+    },
+    {
+      "id": 11,
+      "name": "kuldeep",
+      "fullname": "kuldeep yadav",
+      "skill": "bow",
+      "batting_hand": "l",
+      "bowling_hand": "l",
+      "bowling_style": "leg",
+      "keeper": false,
+      "country_team_id": 1
+    },
+    {
+      "id": 12,
+      "name": "bumrah",
+      "fullname": "jasprit bumrah",
+      "skill": "bow",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 1
+    },
+    {
+      "id": 132,
+      "name": "siraj",
+      "fullname": "mohammad siraj",
+      "skill": "bow",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 1
+    },
+    {
+      "id": 169,
+      "name": "arshdeep",
+      "fullname": "arshdeep singh",
+      "skill": "bow",
+      "batting_hand": "l",
+      "bowling_hand": "l",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 1
+    },
+    {
+      "id": 13,
+      "name": "chahal",
+      "fullname": "yuzi chahal",
+      "skill": "bow",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "leg",
+      "keeper": false,
+      "country_team_id": 1
+    },
+    {
+      "id": 148,
+      "name": "samson",
+      "fullname": "sanju samson",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": true,
+      "country_team_id": 1
+    },
+    {
+      "id": 349,
+      "name": "jaiswal",
+      "fullname": "yashasvi jaiswal",
+      "skill": "bat",
+      "batting_hand": "l",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": false,
+      "country_team_id": 1
+    },
+    {
+      "id": 18,
+      "name": "babar",
+      "fullname": "babar azam",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": false,
+      "country_team_id": 2
+    },
+    {
+      "id": 216,
+      "name": "rizwan",
+      "fullname": "mohammad rizwan",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": true,
+      "country_team_id": 2
+    },
+    {
+      "id": 16,
+      "name": "fakhar",
+      "fullname": "fakhar zaman",
+      "skill": "bat",
+      "batting_hand": "l",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": false,
+      "country_team_id": 2
+    },
+    {
+      "id": 354,
+      "name": "azam khan",
+      "fullname": "azam khan",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": true,
+      "country_team_id": 2
+    },
+    {
+      "id": 278,
+      "name": "iftikhar",
+      "fullname": "iftikhar ahmed",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "off",
+      "keeper": false,
+      "country_team_id": 2
+    },
+    {
+      "id": 361,
+      "name": "s ayub",
+      "fullname": "saim ayub",
+      "skill": "bat",
+      "batting_hand": "l",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": false,
+      "country_team_id": 2
+    },
+    {
+      "id": 22,
+      "name": "imad",
+      "fullname": "imad wasim",
+      "skill": "all",
+      "batting_hand": "l",
+      "bowling_hand": "l",
+      "bowling_style": "off",
+      "keeper": false,
+      "country_team_id": 2
+    },
+    {
+      "id": 23,
+      "name": "shadab",
+      "fullname": "shadab khan",
+      "skill": "all",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "leg",
+      "keeper": false,
+      "country_team_id": 2
+    },
+    {
+      "id": 230,
+      "name": "haris rauf",
+      "fullname": "haris rauf",
+      "skill": "bow",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 2
+    },
+    {
+      "id": 25,
+      "name": "amir",
+      "fullname": "mohammad amir",
+      "skill": "bow",
+      "batting_hand": "l",
+      "bowling_hand": "l",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 2
+    },
+    {
+      "id": 26,
+      "name": "shaheen",
+      "fullname": "shaheen afridi",
+      "skill": "bow",
+      "batting_hand": "l",
+      "bowling_hand": "l",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 2
+    },
+    {
+      "id": 281,
+      "name": "naseem",
+      "fullname": "naseem shah",
+      "skill": "bow",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 2
+    },
+    {
+      "id": 363,
+      "name": "u khan",
+      "fullname": "usman khan",
+      "skill": "bat",
+      "batting_hand": "l",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": false,
+      "country_team_id": 2
+    },
+    {
+      "id": 364,
+      "name": "abrar ahmed",
+      "fullname": "abrar ahmed",
+      "skill": "bow",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "leg",
+      "keeper": false,
+      "country_team_id": 2
+    },
+    {
+      "id": 365,
+      "name": "abbas afridi",
+      "fullname": "abbas afridi",
+      "skill": "bow",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 2
+    },
+    {
+      "id": 29,
+      "name": "warner",
+      "fullname": "david warner",
+      "skill": "bat",
+      "batting_hand": "l",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": false,
+      "country_team_id": 3
+    },
+    {
+      "id": 208,
+      "name": "head",
+      "fullname": "travis head",
+      "skill": "bat",
+      "batting_hand": "l",
+      "bowling_hand": "r",
+      "bowling_style": "off",
+      "keeper": false,
+      "country_team_id": 3
+    },
+    {
+      "id": 261,
+      "name": "m marsh",
+      "fullname": "mitchel marsh",
+      "skill": "all",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 3
+    },
+    {
+      "id": 32,
+      "name": "maxwell",
+      "fullname": "glenn maxwell",
+      "skill": "all",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "off",
+      "keeper": false,
+      "country_team_id": 3
+    },
+    {
+      "id": 33,
+      "name": "stoinis",
+      "fullname": "marcus stoinis",
+      "skill": "all",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 3
+    },
+    {
+      "id": 297,
+      "name": "t david",
+      "fullname": "tim david",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": false,
+      "country_team_id": 3
+    },
+    {
+      "id": 195,
+      "name": "wade",
+      "fullname": "matthew wade",
+      "skill": "bat",
+      "batting_hand": "l",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": true,
+      "country_team_id": 3
+    },
+    {
+      "id": 301,
+      "name": "c green",
+      "fullname": "cameron green",
+      "skill": "all",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 3
+    },
+    {
+      "id": 35,
+      "name": "cummins",
+      "fullname": "pat cummins",
+      "skill": "bow",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 3
+    },
+    {
+      "id": 36,
+      "name": "starc",
+      "fullname": "mitchell starc",
+      "skill": "bow",
+      "batting_hand": "l",
+      "bowling_hand": "l",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 3
+    },
+    {
+      "id": 39,
+      "name": "zampa",
+      "fullname": "adam zampa",
+      "skill": "bow",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "leg",
+      "keeper": false,
+      "country_team_id": 3
+    },
+    {
+      "id": 198,
+      "name": "hazlewood",
+      "fullname": "josh hazlewood",
+      "skill": "bow",
+      "batting_hand": "l",
+      "bowling_hand": "l",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 3
+    },
+    {
+      "id": 226,
+      "name": "agar",
+      "fullname": "ashton agar",
+      "skill": "bow",
+      "batting_hand": "l",
+      "bowling_hand": "l",
+      "bowling_style": "off",
+      "keeper": false,
+      "country_team_id": 3
+    },
+    {
+      "id": 308,
+      "name": "inglis",
+      "fullname": "josh inglis",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": false,
+      "country_team_id": 3
+    },
+    {
+      "id": 360,
+      "name": "n ellis",
+      "fullname": "nathan ellis",
+      "skill": "bow",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 3
+    },
+    {
+      "id": 245,
+      "name": "conway",
+      "fullname": "devon conway",
+      "skill": "bat",
+      "batting_hand": "l",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": true,
+      "country_team_id": 4
+    },
+    {
+      "id": 276,
+      "name": "finn",
+      "fullname": "finn allen",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": false,
+      "country_team_id": 4
+    },
+    {
+      "id": 327,
+      "name": "r ravindra",
+      "fullname": "rachin ravindra",
+      "skill": "all",
+      "batting_hand": "l",
+      "bowling_hand": "l",
+      "bowling_style": "off",
+      "keeper": false,
+      "country_team_id": 4
+    },
+    {
+      "id": 45,
+      "name": "williamson",
+      "fullname": "kane williamson",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "off",
+      "keeper": false,
+      "country_team_id": 4
+    },
+    {
+      "id": 246,
+      "name": "d mitchell",
+      "fullname": "daryll mitchell",
+      "skill": "all",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 4
+    },
+    {
+      "id": 231,
+      "name": "phillips",
+      "fullname": "glenn phillips",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": false,
+      "country_team_id": 4
+    },
+    {
+      "id": 326,
+      "name": "m chapman",
+      "fullname": "mark chapman",
+      "skill": "bat",
+      "batting_hand": "l",
+      "bowling_hand": "l",
+      "bowling_style": "off",
+      "keeper": false,
+      "country_team_id": 4
+    },
+    {
+      "id": 50,
+      "name": "santner",
+      "fullname": "mitchell santner",
+      "skill": "all",
+      "batting_hand": "l",
+      "bowling_hand": "l",
+      "bowling_style": "off",
+      "keeper": false,
+      "country_team_id": 4
+    },
+    {
+      "id": 48,
+      "name": "neesham",
+      "fullname": "jimmy neesham",
+      "skill": "all",
+      "batting_hand": "l",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 4
+    },
+    {
+      "id": 51,
+      "name": "henry",
+      "fullname": "matt henry",
+      "skill": "bow",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 4
+    },
+    {
+      "id": 52,
+      "name": "boult",
+      "fullname": "trent boult",
+      "skill": "bow",
+      "batting_hand": "r",
+      "bowling_hand": "l",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 4
+    },
+    {
+      "id": 53,
+      "name": "ferguson",
+      "fullname": "lockie ferguson",
+      "skill": "bow",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 4
+    },
+    {
+      "id": 54,
+      "name": "southee",
+      "fullname": "tim southee",
+      "skill": "bow",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 4
+    },
+    {
+      "id": 55,
+      "name": "sodhi",
+      "fullname": "ish sodhi",
+      "skill": "bow",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "leg",
+      "keeper": false,
+      "country_team_id": 4
+    },
+    {
+      "id": 318,
+      "name": "m bracewell",
+      "fullname": "michael bracewell",
+      "skill": "all",
+      "batting_hand": "l",
+      "bowling_hand": "r",
+      "bowling_style": "off",
+      "keeper": false,
+      "country_team_id": 4
+    },
+    {
+      "id": 71,
+      "name": "de kock",
+      "fullname": "quinton de kock",
+      "skill": "bat",
+      "batting_hand": "l",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": true,
+      "country_team_id": 6
+    },
+    {
+      "id": 238,
+      "name": "r hendricks",
+      "fullname": "reeza hendricks",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": false,
+      "country_team_id": 6
+    },
+    {
+      "id": 72,
+      "name": "markram",
+      "fullname": "aiden markram",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": false,
+      "country_team_id": 6
+    },
+    {
+      "id": 82,
+      "name": "miller",
+      "fullname": "david miller",
+      "skill": "bat",
+      "batting_hand": "l",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": false,
+      "country_team_id": 6
+    },
+    {
+      "id": 252,
+      "name": "klaasen",
+      "fullname": "heinrich klaasen",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": false,
+      "country_team_id": 6
+    },
+    {
+      "id": 272,
+      "name": "stubbs",
+      "fullname": "tristan stubbs",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": false,
+      "country_team_id": 6
+    },
+    {
+      "id": 304,
+      "name": "jansen",
+      "fullname": "marco jansen",
+      "skill": "bow",
+      "batting_hand": "r",
+      "bowling_hand": "l",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 6
+    },
+    {
+      "id": 296,
+      "name": "maharaj",
+      "fullname": "kesav maharaj",
+      "skill": "bow",
+      "batting_hand": "r",
+      "bowling_hand": "l",
+      "bowling_style": "off",
+      "keeper": false,
+      "country_team_id": 6
+    },
+    {
+      "id": 78,
+      "name": "rabada",
+      "fullname": "kagiso rabada",
+      "skill": "bow",
+      "batting_hand": "l",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 6
+    },
+    {
+      "id": 229,
+      "name": "nortje",
+      "fullname": "anrich nortje",
+      "skill": "bow",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 6
+    },
+    {
+      "id": 236,
+      "name": "shamsi",
+      "fullname": "tabraiz shamsi",
+      "skill": "bow",
+      "batting_hand": "l",
+      "bowling_hand": "l",
+      "bowling_style": "leg",
+      "keeper": false,
+      "country_team_id": 6
+    },
+    {
+      "id": 330,
+      "name": "g coetzee",
+      "fullname": "gerald coetzee",
+      "skill": "bow",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 6
+    },
+    {
+      "id": 366,
+      "name": "rickelton",
+      "fullname": "ryan rickelton",
+      "skill": "bat",
+      "batting_hand": "l",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": false,
+      "country_team_id": 6
+    },
+    {
+      "id": 367,
+      "name": "baartman",
+      "fullname": "ottniel baartman",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 6
+    },
+    {
+      "id": 368,
+      "name": "fortuin",
+      "fullname": "bjorn fortuin",
+      "skill": "bow",
+      "batting_hand": "l",
+      "bowling_hand": "l",
+      "bowling_style": "off",
+      "keeper": false,
+      "country_team_id": 6
+    },
+    {
+      "id": 88,
+      "name": "buttler",
+      "fullname": "jos buttler",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": true,
+      "country_team_id": 7
+    },
+    {
+      "id": 298,
+      "name": "salt",
+      "fullname": "phil salt",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": false,
+      "country_team_id": 7
+    },
+    {
+      "id": 84,
+      "name": "bairstow",
+      "fullname": "jonny bairstow",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": true,
+      "country_team_id": 7
+    },
+    {
+      "id": 352,
+      "name": "will jacks",
+      "fullname": "will jacks",
+      "skill": "all",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "off",
+      "keeper": false,
+      "country_team_id": 7
+    },
+    {
+      "id": 94,
+      "name": "m ali",
+      "fullname": "moen ali",
+      "skill": "all",
+      "batting_hand": "l",
+      "bowling_hand": "r",
+      "bowling_style": "off",
+      "keeper": false,
+      "country_team_id": 7
+    },
+    {
+      "id": 157,
+      "name": "livingstone",
+      "fullname": "liam livingstone",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": false,
+      "country_team_id": 7
+    },
+    {
+      "id": 162,
+      "name": "s curran",
+      "fullname": "sam curran",
+      "skill": "all",
+      "batting_hand": "l",
+      "bowling_hand": "l",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 7
+    },
+    {
+      "id": 287,
+      "name": "h brook",
+      "fullname": "harry brook",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": false,
+      "country_team_id": 7
+    },
+    {
+      "id": 91,
+      "name": "archer",
+      "fullname": "joffra archer",
+      "skill": "all",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 7
+    },
+    {
+      "id": 93,
+      "name": "wood",
+      "fullname": "mark wood",
+      "skill": "bow",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 7
+    },
+    {
+      "id": 92,
+      "name": "a rashid",
+      "fullname": "adil rashid",
+      "skill": "bow",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "leg",
+      "keeper": false,
+      "country_team_id": 7
+    },
+    {
+      "id": 225,
+      "name": "jordan",
+      "fullname": "chris jordan",
+      "skill": "all",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 7
+    },
+    {
+      "id": 306,
+      "name": "topley",
+      "fullname": "reece topley",
+      "skill": "bow",
+      "batting_hand": "l",
+      "bowling_hand": "l",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 7
+    },
+    {
+      "id": 369,
+      "name": "b duckett",
+      "fullname": "ben duckett",
+      "skill": "bat",
+      "batting_hand": "l",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": false,
+      "country_team_id": 7
+    },
+    {
+      "id": 370,
+      "name": "hartley",
+      "fullname": "tom hartley",
+      "skill": "bow",
+      "batting_hand": "l",
+      "bowling_hand": "l",
+      "bowling_style": "off",
+      "keeper": false,
+      "country_team_id": 7
+    },
+    {
+      "id": 273,
+      "name": "shanto",
+      "fullname": "najmul hossain shanto",
+      "skill": "bat",
+      "batting_hand": "l",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": false,
+      "country_team_id": 8
+    },
+    {
+      "id": 100,
+      "name": "litton",
+      "fullname": "liton das",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": true,
+      "country_team_id": 8
+    },
+    {
+      "id": 333,
+      "name": "tanzid",
+      "fullname": "tanzid hasan",
+      "skill": "bat",
+      "batting_hand": "l",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": false,
+      "country_team_id": 8
+    },
+    {
+      "id": 98,
+      "name": "shakib",
+      "fullname": "shakib al hasan",
+      "skill": "all",
+      "batting_hand": "l",
+      "bowling_hand": "l",
+      "bowling_style": "off",
+      "keeper": false,
+      "country_team_id": 8
+    },
+    {
+      "id": 332,
+      "name": "t hridoy",
+      "fullname": "towhid hridoy",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "off",
+      "keeper": false,
+      "country_team_id": 8
+    },
+    {
+      "id": 97,
+      "name": "s sarkar",
+      "fullname": "soumya sarkar",
+      "skill": "bat",
+      "batting_hand": "l",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": false,
+      "country_team_id": 8
+    },
+    {
+      "id": 101,
+      "name": "mahmudullah",
+      "fullname": "mahmudullah",
+      "skill": "all",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "off",
+      "keeper": false,
+      "country_team_id": 8
+    },
+    {
+      "id": 259,
+      "name": "mahedi",
+      "fullname": "mahedi hassan",
+      "skill": "bow",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "off",
+      "keeper": false,
+      "country_team_id": 8
+    },
+    {
+      "id": 257,
+      "name": "taskin",
+      "fullname": "taskin ahmed",
+      "skill": "bow",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 8
+    },
+    {
+      "id": 106,
+      "name": "mustafizur",
+      "fullname": "mustafizur rahman",
+      "skill": "bow",
+      "batting_hand": "l",
+      "bowling_hand": "l",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 8
+    },
+    {
+      "id": 258,
+      "name": "shoriful",
+      "fullname": "shoriful islam",
+      "skill": "bow",
+      "batting_hand": "l",
+      "bowling_hand": "l",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 8
+    },
+    {
+      "id": 334,
+      "name": "tanzim hasan",
+      "fullname": "tanzim hasan sakib",
+      "skill": "bow",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 8
+    },
+    {
+      "id": 371,
+      "name": "jaker ali",
+      "fullname": "jaker ali",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": true,
+      "country_team_id": 8
+    },
+    {
+      "id": 372,
+      "name": "rishad",
+      "fullname": "rishad hossain",
+      "skill": "all",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "leg",
+      "keeper": false,
+      "country_team_id": 8
+    },
+    {
+      "id": 373,
+      "name": "tanvir islam",
+      "fullname": "tanvir islam",
+      "skill": "bow",
+      "batting_hand": "l",
+      "bowling_hand": "l",
+      "bowling_style": "off",
+      "keeper": false,
+      "country_team_id": 8
+    },
+    {
+      "id": 290,
+      "name": "ibrahim",
+      "fullname": "ibrahim zadran",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": false,
+      "country_team_id": 9
+    },
+    {
+      "id": 288,
+      "name": "gurbaz",
+      "fullname": "rahmanullah gurbaz",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": true,
+      "country_team_id": 9
+    },
+    {
+      "id": 289,
+      "name": "zazai",
+      "fullname": "hazratullah zazai",
+      "skill": "bat",
+      "batting_hand": "l",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": false,
+      "country_team_id": 9
+    },
+    {
+      "id": 344,
+      "name": "azmatullah",
+      "fullname": "azmatullah omarzai",
+      "skill": "all",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 9
+    },
+    {
+      "id": 292,
+      "name": "gulbadin",
+      "fullname": "gulbadin naib",
+      "skill": "all",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 9
+    },
+    {
+      "id": 113,
+      "name": "nabi",
+      "fullname": "mohammad nabi",
+      "skill": "all",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "off",
+      "keeper": false,
+      "country_team_id": 9
+    },
+    {
+      "id": 293,
+      "name": "najibullah",
+      "fullname": "najibullah zadran",
+      "skill": "bat",
+      "batting_hand": "l",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": false,
+      "country_team_id": 9
+    },
+    {
+      "id": 112,
+      "name": "rashid khan",
+      "fullname": "rashid khan",
+      "skill": "all",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "leg",
+      "keeper": false,
+      "country_team_id": 9
+    },
+    {
+      "id": 294,
+      "name": "naveen",
+      "fullname": "naveen ul haq",
+      "skill": "bow",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 9
+    },
+    {
+      "id": 295,
+      "name": "farooqi",
+      "fullname": "fazalhaq farooqi",
+      "skill": "bow",
+      "batting_hand": "l",
+      "bowling_hand": "l",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 9
+    },
+    {
+      "id": 347,
+      "name": "noor ahmed",
+      "fullname": "noor ahmed",
+      "skill": "bow",
+      "batting_hand": "r",
+      "bowling_hand": "l",
+      "bowling_style": "leg",
+      "keeper": false,
+      "country_team_id": 9
+    },
+    {
+      "id": 374,
+      "name": "m ishaq",
+      "fullname": "mohammad ishaq",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": true,
+      "country_team_id": 9
+    },
+    {
+      "id": 365,
+      "name": "abbas afridi",
+      "fullname": "abbas afridi",
+      "skill": "bow",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 2
+    },
+    {
+      "id": 376,
+      "name": "janat",
+      "fullname": "karim janat",
+      "skill": "all",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 9
+    },
+    {
+      "id": 377,
+      "name": "fareed",
+      "fullname": "fareed ahmed",
+      "skill": "bow",
+      "batting_hand": "l",
+      "bowling_hand": "l",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 9
+    },
+    {
+      "id": 262,
+      "name": "nissanka",
+      "fullname": "pathum nissanka",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": false,
+      "country_team_id": 10
+    },
+    {
+      "id": 263,
+      "name": "k mendis",
+      "fullname": "kusal mendis",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": true,
+      "country_team_id": 10
+    },
+    {
+      "id": 266,
+      "name": "asalanka",
+      "fullname": "charith asalanka",
+      "skill": "bat",
+      "batting_hand": "l",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": false,
+      "country_team_id": 10
+    },
+    {
+      "id": 337,
+      "name": "samarawickrama",
+      "fullname": "sadeera samarawickrama",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": true,
+      "country_team_id": 10
+    },
+    {
+      "id": 265,
+      "name": "shanaka",
+      "fullname": "dasun shanaka",
+      "skill": "all",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 10
+    },
+    {
+      "id": 228,
+      "name": "dhananjaya",
+      "fullname": "dhananjaya de silva",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "off",
+      "keeper": false,
+      "country_team_id": 10
+    },
+    {
+      "id": 268,
+      "name": "hasaranga",
+      "fullname": "wanindu hasaranga",
+      "skill": "bow",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "leg",
+      "keeper": false,
+      "country_team_id": 10
+    },
+    {
+      "id": 348,
+      "name": "mathews",
+      "fullname": "angelo mathews",
+      "skill": "all",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 10
+    },
+    {
+      "id": 269,
+      "name": "theekshana",
+      "fullname": "maheesh theekshana",
+      "skill": "bow",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "off",
+      "keeper": false,
+      "country_team_id": 10
+    },
+    {
+      "id": 270,
+      "name": "chameera",
+      "fullname": "dushmantha chameera",
+      "skill": "bow",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 10
+    },
+    {
+      "id": 319,
+      "name": "madushanka",
+      "fullname": "dilshan madushanka",
+      "skill": "bow",
+      "batting_hand": "l",
+      "bowling_hand": "l",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 10
+    },
+    {
+      "id": 340,
+      "name": "pathirana",
+      "fullname": "matheesha pathirana",
+      "skill": "bow",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 10
+    },
+    {
+      "id": 338,
+      "name": "wellalage",
+      "fullname": "dunith wellalage",
+      "skill": "bow",
+      "batting_hand": "l",
+      "bowling_hand": "l",
+      "bowling_style": "off",
+      "keeper": false,
+      "country_team_id": 10
+    },
+    {
+      "id": 378,
+      "name": "kamindu mendis",
+      "fullname": "kamindu mendis",
+      "skill": "all",
+      "batting_hand": "l",
+      "bowling_hand": "l",
+      "bowling_style": "off",
+      "keeper": false,
+      "country_team_id": 10
+    },
+    {
+      "id": 379,
+      "name": "nuwan thushara",
+      "fullname": "nuwan thushara",
+      "skill": "bow",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 10
+    },
+    {
+      "id": 284,
+      "name": "king",
+      "fullname": "brandon king",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": false,
+      "country_team_id": 5
+    },
+    {
+      "id": 58,
+      "name": "hope",
+      "fullname": "shai hope",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": true,
+      "country_team_id": 5
+    },
+    {
+      "id": 283,
+      "name": "k mayers",
+      "fullname": "kyle mayers",
+      "skill": "all",
+      "batting_hand": "l",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 5
+    },
+    {
+      "id": 59,
+      "name": "pooran",
+      "fullname": "nicolas pooran",
+      "skill": "bat",
+      "batting_hand": "l",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": true,
+      "country_team_id": 5
+    },
+    {
+      "id": 60,
+      "name": "hetmyer",
+      "fullname": "shimron hetmyer",
+      "skill": "bat",
+      "batting_hand": "l",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": false,
+      "country_team_id": 5
+    },
+    {
+      "id": 285,
+      "name": "r powell",
+      "fullname": "rovman powell",
+      "skill": "bat",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 5
+    },
+    {
+      "id": 175,
+      "name": "rutherford",
+      "fullname": "sherfane rutherford",
+      "skill": "bat",
+      "batting_hand": "l",
+      "bowling_hand": null,
+      "bowling_style": null,
+      "keeper": false,
+      "country_team_id": 5
+    },
+    {
+      "id": 61,
+      "name": "russell",
+      "fullname": "andre russell",
+      "skill": "all",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 5
+    },
+    {
+      "id": 309,
+      "name": "r chase",
+      "fullname": "roston chase",
+      "skill": "all",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "off",
+      "keeper": false,
+      "country_team_id": 5
+    },
+    {
+      "id": 353,
+      "name": "r shepherd",
+      "fullname": "romario shepherd",
+      "skill": "all",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 5
+    },
+    {
+      "id": 146,
+      "name": "alzzari",
+      "fullname": "alzzari joseph",
+      "skill": "bow",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 5
+    },
+    {
+      "id": 234,
+      "name": "akeal",
+      "fullname": "akeal hossain",
+      "skill": "bow",
+      "batting_hand": "l",
+      "bowling_hand": "l",
+      "bowling_style": "off",
+      "keeper": false,
+      "country_team_id": 5
+    },
+    {
+      "id": 249,
+      "name": "o mccoy",
+      "fullname": "obed mccoy",
+      "skill": "bow",
+      "batting_hand": "l",
+      "bowling_hand": "l",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 5
+    },
+    {
+      "id": 380,
+      "name": "shamar joseph",
+      "fullname": "shamar joseph",
+      "skill": "bow",
+      "batting_hand": "r",
+      "bowling_hand": "r",
+      "bowling_style": "fast",
+      "keeper": false,
+      "country_team_id": 5
+    },
+    {
+      "id": 381,
+      "name": "g motie",
+      "fullname": "gudakesh motie",
+      "skill": "bow",
+      "batting_hand": "l",
+      "bowling_hand": "l",
+      "bowling_style": "off",
+      "keeper": false,
+      "country_team_id": 5
+    }
+  ]
+}

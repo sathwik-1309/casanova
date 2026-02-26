@@ -37,7 +37,7 @@ function TeamPerformers(props) {
   console.log(data)
   return (
     <div className='flex-col bg-white bg-shadow squad-performers flex-centered'>
-      <CaptainBox data={data.captain} meta={props.meta}/>
+      {data.captain && <CaptainBox data={data.captain} meta={props.meta}/>}
       <div className='flex-row squad-performers-rows'>
         {data.most_runs && <PerformerBox header='MOST RUNS' meta={props.meta} player={data.most_runs.player} info={data.most_runs.runs} label='RUNS' size={true}/>}
         {data.most_wickets && <PerformerBox header='MOST WICKETS' meta={props.meta} player={data.most_wickets.player} info={data.most_wickets.wickets} label='WICKETS' size={true}/>}

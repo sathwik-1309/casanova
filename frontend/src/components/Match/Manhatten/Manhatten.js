@@ -13,13 +13,13 @@ function Wicket(x) {
 
 function Header(x) {
     let class1 = "manhatten_1_1 font-600 " + x.color + "1"
-    let class2 = "manhatten_1_2 font-600 " + x.color + "2"
+    let class2 = "manhatten_1_2 font-600 " + x.color + "1"
     return (
         <div id="manhatten_1">
             <div className={class1}>
                 {x.teamname}
             </div>
-            <div className={class2}>
+            <div className={`${class2} opacity-8`}>
                 <div id='manhatten_1_2_1'>
                     #
                 </div>
@@ -57,18 +57,20 @@ function Graphics(x) {
     let r_w = Math.round((runs/30)*90)
     const r_w2 = `${r_w}%`;
     const runs_width = {
-        width: r_w2
+        width: r_w2,
+        // borderTopRightRadius: 15,
+        // borderBottomRightRadius: 15
       };
 
-    let class1 = "manhatten_2_1_3_1 "+x.color+"2"
+    let class1 = "manhatten_2_1_3_1 "+x.color+"1"
     let class2= "manhatten_2_1_3_2 "+x.color+"1"
     let empty = " "
     return (
         <div id="manhatten_2_1_3">
-            <div className={class1}>
+            <div className={`${class1} opacity-8`}>
                 {x.runs}
             </div>
-            <div style={runs_width}  className={class2}>
+            <div style={runs_width} className={class2}>
                 {empty}
             </div>
             {x.wickets.map((w, index) => (
@@ -79,12 +81,12 @@ function Graphics(x) {
 }
 function ManhattenItem(x) {
     let empty = ""
-    let class1 = "manhatten_2_1_1_1 " + x.color + "2"
+    let class1 = "manhatten_2_1_1_1 " + x.color + "1"
     let class2 = "manhatten_2_1_1_2 " + x.color + "1"
     return (
         <div id="manhatten_2_1">
             <div id="manhatten_2_1_1">
-                <div className={class1}>
+                <div className={`${class1} opacity-8`}>
                     {x.over.over_no}
                 </div>
                 <div className={class2}>

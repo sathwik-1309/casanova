@@ -71,9 +71,10 @@ function OverBox(props) {
                 <div className='co_header_row2'>
                     <div className='co_header_row2_col1'>
                         <div className='co_header_batsman'>
-                            <div className='co_header_batsman_name'>{over.batsman1.name}</div>
-                            <div className='co_header_batsman_runs'>{over.batsman1.runs}</div>
-                            <div className='co_header_batsman_balls'>{over.batsman1.balls}</div>
+                            <div className='co_header_batsman_name'>{over.batsman1 && over.batsman1.name}</div>
+                            <div className='co_header_batsman_runs'>{over.batsman1 && over.batsman1.runs}</div>
+                            <div className='co_header_batsman_balls'>{over.batsman1 && over.batsman1.balls}</div>
+                            
                         </div>
                         {batsman2}
                     </div>

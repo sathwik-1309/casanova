@@ -1,10 +1,14 @@
 import {FRONTEND_API_URL} from "../../../my_constants";
+import Logo from "../../Team/Logo/Logo";
 import './MatchBox.css'
 
 function MatchBoxItem(props) {
     const inn = props.inn
-    return (<div className={`matchbox_inn ${inn.color}1`}>
-        <div className='matchbox_teamname'>
+    return (<div className={`matchbox_inn ${inn.color}1 flex-centered`}>
+        <div className="w-30 flex-centered pl-3 h-25">
+            <Logo team={inn.color} height={20}/>
+        </div>
+        <div className='w-45 pl-5 vert-align flex'>
             {inn.teamname}
         </div>
         <div className='matchbox_score'>

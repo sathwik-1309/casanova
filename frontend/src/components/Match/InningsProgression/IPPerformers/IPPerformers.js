@@ -1,4 +1,5 @@
 import Photocard from '../../../Player/Photocard/Photocard';
+import Logo from '../../../Team/Logo/Logo';
 import './IPPerformers.css'
 
 function PlayerBox(props) {
@@ -47,7 +48,10 @@ function PerformersInningsBox(props) {
     return (
         <div className='flex-col ip_performers_innings font-600 font-1'>
             <div className={`flex-row vert-align pib_scoreline b-radius-2 ${data.color}1`}>
-                <div className='pibs_teamname'>{data.teamname}</div>
+                <div className='pibs_teamname flex-row pl-20'>
+                    <Logo team={data.color} height={37}/>
+                    <div className='pl-15 h-40 vert-align flex'>{data.teamname}</div>
+                </div>
                 <div className='pibs_score'>{data.score}</div>
                 <div className='pibs_overs font-400 font-0_8'>{data.overs}</div>
             </div>

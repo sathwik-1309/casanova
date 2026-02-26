@@ -71,7 +71,7 @@ end
 # mar
 # may
 
-# injured = [[brook, iftikhar], [pathirana, haider ali], [ruturaj, mosaddek], [surya, parthiv]]
+# injured = [[brook, iftikhar], [pathirana, haider ali], [ruturaj, mosaddek], [surya, parthiv], [tye, bavuma]]
 
 # july win by 25-26 runs, they top, sept go through
 # july win by 35 runs, sept out

@@ -1,13 +1,18 @@
 import React from "react";
 import './ScheduleMatchBox.css'
 import { FRONTEND_API_URL } from "../../../../my_constants";
+import Logo from "../../../Team/Logo/Logo";
 
 function Teambox(props) {
   const data = props.data
   console.log(data)
   return (
     <div className={`${data.color}1 font-600 font-1_1 schedule-teambox flex-centered`}>
-      {data.abbrevation}
+      <div className="flex-row h-50 flex-centered">
+        <Logo team={data.color} height={40}/>
+        <div className="pl-15">{data.abbrevation}</div>
+      </div>
+      
     </div>
   )
 }

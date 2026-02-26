@@ -33,10 +33,6 @@ class Schedule < ApplicationRecord
     end
   end
 
-  def match
-    Match.find_by_id(self.match_id)
-  end
-
   def schedule_box
     temp = self.attributes.slice('order', 'completed', 'match_id')
     temp['schedule_id'] = self.id

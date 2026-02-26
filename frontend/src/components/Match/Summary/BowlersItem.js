@@ -7,7 +7,7 @@ function BowlersItem(props) {
     return (
         <div id="bowlers_item" onClick={() => props.func(props.spellbox)} className='bg-shadow mt-1'>
            <div className={class1}>{props.name}</div>
-           <div className={class2}>
+           <div className={`bowler_fig wt20 ${props.team}2 `}>
                 <div className="fig">
                     {props.fig}
                 </div>

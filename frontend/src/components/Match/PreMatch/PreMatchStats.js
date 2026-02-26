@@ -93,11 +93,17 @@ function PreMatchStats(props) {
         </div>
         </div>
 
-        <div className='flex-row mt-30 bg-white flex-centered bg-shadow pb-15 w-1000'>
+        {
+          data.bat_rankings &&
+          <div className='flex-row mt-30 bg-white flex-centered bg-shadow pb-15 w-1000'>
           <RankingList label='Batting Rank' data={data.bat_rankings}/>
           <RankingList label='Bowling Rank' data={data.bow_rankings}/>
           <RankingList label='All-rounders Rank' data={data.all_rankings}/>
         </div>
+
+        }
+
+        
 
         <div className='flex-row bg-white wrap gap-50 bg-shadow h2hdetailed mt-30'>
           {

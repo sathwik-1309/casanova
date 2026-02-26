@@ -69,6 +69,7 @@ class MatchController < ApplicationController
         hash = {}
         m_id = inn.match_id
         hash["teamname"] = inn.bat_team_id == toss ? "#{inn.bat_team.get_teamname} 🪙" : inn.bat_team.get_teamname
+        hash["logo"] = inn.bat_team.abbrevation
         hash["bat_team"] = Util.get_team_color(inn.tournament_id, Squad.find(inn.bat_team_id).abbrevation)
         hash["bow_team"] = Util.get_team_color(inn.tournament_id, Squad.find(inn.bow_team_id).abbrevation)
         hash["score"] = Util.get_score(inn.score, inn.for)
@@ -118,6 +119,7 @@ class MatchController < ApplicationController
         header["fours"] = inn.c4
         header["sixes"] = inn.c6
         header["dots"] = inn.dots
+        
 
         body = []
         scores = inn.scores

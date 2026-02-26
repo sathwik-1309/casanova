@@ -1,13 +1,13 @@
 CSL 3
 
-JULY VS SEPT
-Hyderabad 10-Feb-2024
+JULY VS FEB
+Kolkata 19-Feb-2024
 
-JULY:185/5
+JULY:95/10
 
 First Innings-Batting
-Overs:20.0
-EXTRAS: 2(B:0 LB:0 NB:0 WD:2)
+Overs:15.2
+EXTRAS: 1(B:0 LB:0 NB:0 WD:1)
 
 Batsman
 
@@ -25,174 +25,177 @@ SR
 
 Conway
 
-b Rashid Khan
-
-44
-
-27
-
-6
-
-4
-
-2
-
-163.0
-
-Jason Roy
-
-b Mohammad Shami
-
-2
-
-4
-
-1
-
-0
-
-0
-
-50.0
-
-Klaasen
-
-c Jos Buttler b
-Mohammad Shami
-
-4
-
-4
-
-3
-
-1
-
-0
-
-100.0
-
-Hasaranga
-
-c Gill b Mustafizur
+lbw b Harshal
 
 26
 
 22
 
-8
+2
 
-4
+2
 
 0
 
 118.2
 
-Rovman Powell
+Jason Roy
 
-not out
-
-48
-
-34
+c Naseem Shah b
+Topley
 
 9
 
-7
-
-0
-
-141.2
-
-Imad
-
-b Mohammad Shami
-
-19
-
-12
+8
 
 4
 
-1
+2
+
+0
+
+112.5
+
+Klaasen
+
+b Bhuvi
 
 1
 
-158.3
+3
+
+2
+
+0
+
+0
+
+33.3
+
+Hasaranga
+
+b Topley
+
+1
+
+4
+
+3
+
+0
+
+0
+
+25.0
+
+Rovman Powell
+
+c Hetmyer b Naseem
+Shah
+
+1
+
+6
+
+5
+
+0
+
+0
+
+16.7
 
 MS Dhoni
 
+b Bhuvi
+
+39
+
+28
+
+7
+
+2
+
+2
+
+139.3
+
+Imad
+
+lbw b Harshal
+
+0
+
+1
+
+1
+
+0
+
+0
+
+0.0
+
+Thakur
+
+b Harshal
+
+10
+
+8
+
+3
+
+0
+
+1
+
+125.0
+
+Trent Boult
+
 not out
 
-40
+4
 
-17
+6
 
-5
+4
+
+0
+
+0
+
+66.7
+
+Yuzvendra Chahal
+
+c Naseem Shah b
+Naseem Shah
+
+3
 
 5
 
 2
 
-235.3
-
-Trent Boult
-
-Did not Bat
-
 0
 
 0
 
-0
-
-0
-
-0
-
-0.0
-
-Yuzvendra Chahal
-
-Did not Bat
-
-0
-
-0
-
-0
-
-0
-
-0
-
-0.0
-
-Parnell
-
-Did not Bat
-
-0
-
-0
-
-0
-
-0
-
-0
-
-0.0
+60.0
 
 Pathirana
 
-Did not Bat
+c Naseem Shah b
+Naseem Shah
 
 0
 
-0
+1
 
-0
+2
 
 0
 
@@ -219,61 +222,39 @@ WD NB 4s
 
 6s
 
-Farooqi
+Bhuvi
 
-4.0
+3.0
 
-32
-
-0
-
-0
-
-8.0
-
-7
-
-0
-
-0
-
-1
+16
 
 2
 
-Mohammad Shami
-
-4.0
-
-33
-
-3
-
 0
 
-8.3
+5.3
 
-8
+6
 
 0
 
 0
 
-5
-
-1
-
-Rashid Khan
-
-4.0
-
-30
-
-1
+2
 
 0
 
-7.5
+Topley
+
+3.0
+
+19
+
+2
+
+0
+
+6.3
 
 6
 
@@ -281,43 +262,43 @@ Rashid Khan
 
 0
 
+1
+
+1
+
+Naseem Shah
+
+2.2
+
+15
+
 3
 
 0
 
-Nawaz
+6.4
+
+4
+
+0
+
+0
+
+1
+
+1
+
+Mitchell Santner
 
 3.0
 
-33
+22
 
 0
 
 0
 
-11.0
-
-4
-
-1
-
-0
-
-4
-
-1
-
-Mustafizur
-
-4.0
-
-49
-
-1
-
-0
-
-12.3
+7.3
 
 5
 
@@ -325,31 +306,31 @@ Mustafizur
 
 0
 
-8
+2
+
+0
+
+Harshal
+
+4.0
+
+23
+
+3
+
+0
+
+5.8
+
+4
+
+0
+
+0
+
+0
 
 1
-
-Dhananjaya
-
-1.0
-
-8
-
-0
-
-0
-
-8.0
-
-1
-
-0
-
-0
-
-1
-
-0
 
 First Innings-Fall of Wickets
 No
@@ -364,53 +345,103 @@ Bowler
 
 1
 
-4
+10
 
-1.1
+1.3
 
 Jason Roy
 
-Mohammad Shami
+Topley
 
 2
 
-8
+13
 
-1.5
+2.2
 
 Klaasen
 
-Mohammad Shami
+Bhuvi
 
 3
 
-70
+16
 
-8.3
+3.2
 
 Hasaranga
 
-Mustafizur
+Topley
 
 4
 
-85
+19
 
-10.4
+4.4
 
-Conway
+Rovman Powell
 
-Rashid Khan
+Naseem Shah
 
 5
 
-123
+67
 
-15.1
+10.3
+
+Conway
+
+Harshal
+
+6
+
+67
+
+10.4
 
 Imad
 
-Mohammad Shami
+Harshal
+
+7
+
+83
+
+12.5
+
+Thakur
+
+Harshal
+
+8
+
+89
+
+13.5
+
+MS Dhoni
+
+Bhuvi
+
+9
+
+95
+
+15.1
+
+Yuzvendra Chahal
+
+Naseem Shah
+
+10
+
+95
+
+15.2
+
+Pathirana
+
+Naseem Shah
 
 First Innings-OVERS
 No
@@ -435,157 +466,125 @@ Runs Wkts Per Ball Score
 14
 15
 16
-17
-18
-19
-20
 
-Farooqi
+Bhuvi
 
-4
+6
 
 0
 
-M Shami
-
-4
-
-2
-
-Farooqi
-
-4
-
-0
-
-M Shami
-
-7
-
-0
-
-Farooqi
-
-14
-
-0
-
-R Khan
-
-7
-
-0
-
-Nawaz
-
-16
-
-0
-
-R Khan
-
-12
-
-0
-
-Mustafizur
+Topley
 
 6
 
 1
 
-Dhananjaya
-
-8
-
-0
-
-R Khan
+Bhuvi
 
 3
 
 1
 
-Nawaz
+Topley
+
+3
+
+1
+
+N Shah
+
+2
+
+1
+
+Topley
+
+10
+
+0
+
+N Shah
+
+13
+
+0
+
+M Santner
 
 7
 
 0
 
-Mustafizur
+Harshal
 
-13
-
-0
-
-Nawaz
-
-10
+6
 
 0
 
-R Khan
+M Santner
+
+9
+
+0
+
+Harshal
 
 8
 
+2
+
+M Santner
+
+6
+
 0
 
-M Shami
+Harshal
 
-8
+4
 
 1
 
-Farooqi
+Bhuvi
 
-10
+7
 
-0
+1
 
-Mustafizur
+Harshal
 
-17
-
-0
-
-M Shami
-
-14
+5
 
 0
 
-Mustafizur
-
-13
+N Shah
 
 0
 
-011101
-W400W0
-100111
-101410
-160043
-140011
-441016
-0 4 0wd 4 1 1 1
-11W400
-111104
-111W00
-400111
-141106
-0 0wd 4 2 1 1 1
-111230
-W06011
-160111
-414044
-401144
-041314
+2
 
-SEPT:167/4
+100401
+04W011
+1W0011
+1W0011
+100W01
+6 0 1 1 0 0wd 1
+601141
+141010
+111111
+204111
+11WW06
+010131
+1111W0
+4101W1
+012011
+WW
+
+FEB:96/2
 
 Second Innings-Batting
-Overs:20.0
-EXTRAS: 3(B:0 LB:0 NB:0 WD:3)
+Overs:13.3
+EXTRAS: 0(B:0 LB:0 NB:0 WD:0)
 
 Batsman
 
@@ -601,73 +600,42 @@ B
 
 SR
 
-Johnny Bairstow
+Litton
 
-lbw b Parnell
+b Hasaranga
 
-105
+27
 
-63
-
-13
-
-11
-
-4
-
-166.7
-
-Gill
-
-c Jason Roy b Pathirana
-
-46
-
-42
-
-11
+22
 
 5
 
 0
 
-109.5
-
-Jos Buttler
-
-c Hasaranga b Pathirana
-
 2
 
-4
+122.7
 
-2
-
-0
-
-0
-
-50.0
-
-Iftikhar
+Kusal Mendis
 
 not out
 
-6
+46
 
-3
+38
+
+11
+
+4
 
 1
 
-1
+121.1
 
-0
+Van Der Dussen
 
-200.0
-
-Kyle Mayers
-
-b Parnell
+c MS Dhoni b
+Hasaranga
 
 2
 
@@ -681,23 +649,23 @@ b Parnell
 
 40.0
 
-Rashid Khan
+Chapman
 
 not out
 
-3
+21
 
-3
+16
+
+6
+
+0
 
 2
 
-0
+131.3
 
-0
-
-100.0
-
-Mohammad Shami
+Mitchell Santner
 
 Did not Bat
 
@@ -713,7 +681,7 @@ Did not Bat
 
 0.0
 
-Mustafizur
+Bhuvi
 
 Did not Bat
 
@@ -729,7 +697,7 @@ Did not Bat
 
 0.0
 
-Nawaz
+Naseem Shah
 
 Did not Bat
 
@@ -745,7 +713,7 @@ Did not Bat
 
 0.0
 
-Farooqi
+Gulbadin
 
 Did not Bat
 
@@ -761,7 +729,39 @@ Did not Bat
 
 0.0
 
-Dhananjaya
+Hetmyer
+
+Did not Bat
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0.0
+
+Topley
+
+Did not Bat
+
+0
+
+0
+
+0
+
+0
+
+0
+
+0.0
+
+Harshal
 
 Did not Bat
 
@@ -798,15 +798,15 @@ WD NB 4s
 
 Trent Boult
 
-4.0
+3.0
 
-27
-
-0
+25
 
 0
 
-6.8
+0
+
+8.3
 
 8
 
@@ -814,23 +814,23 @@ Trent Boult
 
 0
 
-3
-
 0
+
+3
 
 Imad
 
-3.0
+2.0
 
-22
-
-0
+17
 
 0
 
-7.3
+0
 
-3
+8.5
+
+2
 
 0
 
@@ -839,94 +839,94 @@ Imad
 2
 
 0
-
-Parnell
-
-4.0
-
-38
-
-2
-
-0
-
-9.5
-
-4
-
-0
-
-0
-
-3
-
-2
-
-Hasaranga
-
-3.0
-
-30
-
-0
-
-0
-
-10.0
-
-4
-
-2
-
-0
-
-3
-
-1
 
 Yuzvendra Chahal
 
 2.0
 
-21
+14
 
 0
 
 0
 
-10.5
-
-2
-
-0
-
-0
-
-2
-
-1
-
-Pathirana
-
-4.0
-
-29
-
-2
-
-0
-
-7.3
-
-7
-
-1
-
-0
+7.0
 
 4
 
 0
+
+0
+
+0
+
+1
+
+Thakur
+
+1.0
+
+6
+
+0
+
+0
+
+6.0
+
+3
+
+0
+
+0
+
+1
+
+0
+
+Hasaranga
+
+3.3
+
+19
+
+2
+
+0
+
+5.4
+
+3
+
+0
+
+0
+
+1
+
+0
+
+Pathirana
+
+2.0
+
+15
+
+0
+
+0
+
+7.5
+
+3
+
+0
+
+0
+
+0
+
+1
 
 Second Innings-Fall of Wickets
 No
@@ -941,47 +941,26 @@ Bowler
 
 1
 
-135
+59
 
-15.6
+7.6
 
-Gill
+Litton
 
-Pathirana
+Hasaranga
 
 2
 
-156
+63
 
-17.6
+9.1
 
-Johnny Bairstow
+Van Der Dussen
 
-Parnell
-
-3
-
-156
-
-18.1
-
-Jos Buttler
-
-Pathirana
-
-4
-
-159
-
-19.1
-
-Kyle Mayers
-
-Parnell
+Hasaranga
 
 Second Innings-OVERS
-
-No
+No
 
 Bowler
 
@@ -1001,12 +980,6 @@ Runs Wkts Per Ball Score
 12
 13
 14
-15
-16
-17
-18
-19
-20
 
 T Boult
 
@@ -1016,35 +989,17 @@ T Boult
 
 Imad
 
-11
+5
 
 0
 
 T Boult
 
-10
+14
 
 0
 
-Parnell
-
-8
-
-0
-
-Hasaranga
-
-5
-
-0
-
-Parnell
-
-10
-
-0
-
-Hasaranga
+Imad
 
 12
 
@@ -1052,11 +1007,11 @@ Hasaranga
 
 Y Chahal
 
-8
+4
 
 0
 
-Imad
+Thakur
 
 6
 
@@ -1064,9 +1019,15 @@ Imad
 
 Y Chahal
 
-13
+10
 
 0
+
+Hasaranga
+
+5
+
+1
 
 Pathirana
 
@@ -1074,81 +1035,51 @@ Pathirana
 
 0
 
-Imad
+Hasaranga
 
-5
+7
 
-0
+1
 
 Pathirana
 
-8
-
-0
-
-T Boult
-
-5
+11
 
 0
 
 Hasaranga
 
-13
+5
 
 0
-
-Pathirana
-
-14
-
-1
 
 T Boult
 
-9
+8
 
 0
 
-Parnell
+Hasaranga
 
-12
+2
 
-1
+0
 
-Pathirana
-
-3
-
-1
-
-Parnell
-
-8
-
-1
-
-101010
-044111
-400114
-410111
-1 1 0 0wd 0 1 1
-161011
-1 1 4 4 0 0wd 1
-410111
-101121
-611104
-110101
+010011
 011111
-214100
+601016
+404121
+102010
+040101
+160111
+11111W
+100111
+W11140
+120161
 011111
-140161
-4 0wd 1 4 0 4 W
-310410
-61104W
-W00111
-W01412
+001106
+101
 
-Result: JULY won the match by 18 runs
+Result: FEB won the match by 8 wickets
 Generated by Cricket Scorer
 

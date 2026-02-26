@@ -1,0 +1,23 @@
+{
+  "m_id": 217,
+  "batted_first": "oct",
+  "batted_second": "apr",
+  "toss": "oct",
+  "pitch": 2.5,
+  "ball_color": [
+    "r",
+    "y",
+    "y",
+    "r"
+  ],
+  "cap1": "hardik",
+  "cap2": "rohit",
+  "keeper1": "pooran",
+  "keeper2": "finn allen",
+  "winner": "oct",
+  "stage": "quater-final 1",
+  "venue": "jaipur",
+  "motm_player": "coetzee",
+  "motm_team": "oct",
+  "t_id": 8
+}

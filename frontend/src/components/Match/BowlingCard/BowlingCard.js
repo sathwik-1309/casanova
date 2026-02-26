@@ -2,14 +2,19 @@ import './BowlingCard.css'
 import React, { useState, useEffect } from 'react';
 import PerformanceBox from '../../Player/PerformanceBox/PerformanceBox';
 import { BACKEND_API_URL } from '../../../my_constants';
+import Logo from '../../Team/Logo/Logo';
 
 function Header(props) {
-    let class1 = "bowling_card_header1 " + props.color + "1"
+    console.log(props)
     let class2 = "bowling_card_header2 " + props.color + "2"
     return (
         <div id="bowling_card_header">
-            <div className={class1}>
-                {props.teamname}
+            <div className={`h-45 flex-centered ${props.color}1`}>
+                <div className='flex-row h-45'>
+                    <Logo team={props.color} height={40} width={50}/>
+                    <div className='h-45 flex-centered pl-5 font-1_1 font-600'>{props.teamname}</div>
+                </div>
+                
             </div>
             <div className={class2}>
                 <div id='bowling_card_name'>

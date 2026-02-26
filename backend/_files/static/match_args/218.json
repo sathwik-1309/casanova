@@ -1,0 +1,23 @@
+{
+  "m_id": 218,
+  "batted_first": "july",
+  "batted_second": "june",
+  "toss": "july",
+  "pitch": 3.5,
+  "ball_color": [
+    "r",
+    "g",
+    "r",
+    "g"
+  ],
+  "cap1": "dhoni",
+  "cap2": "stokes",
+  "keeper1": "dhoni",
+  "keeper2": "rizwan",
+  "winner": "july",
+  "stage": "quater-final 2",
+  "venue": "bengaluru",
+  "motm_player": "chahal",
+  "motm_team": "july",
+  "t_id": 8
+}

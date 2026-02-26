@@ -1,16 +1,21 @@
 import './Partnerships.css'
 import React, { useState, useEffect } from 'react';
 import { BACKEND_API_URL } from '../../../my_constants';
+import Logo from '../../Team/Logo/Logo';
 
 function Header(props) {
-    let class1 = "partnership_header1 " + props.color + "1"
-    let class2 = "partnership_header2 " + props.color + "2"
+    let class1 = "" + props.color + "1"
+    let class2 = "partnership_header2 " + props.color + "1"
     return (
         <div id="partnership_header">
-            <div className={class1}>
-                {props.teamname}
+            <div className={`${props.color}1 h-40 font-600 font-1_1`}>
+                <div className='flex-row h-40 flex-centered'>
+                    <Logo team={props.color} height={38}/>
+                    <div className='pl-10'>{props.teamname}</div>
+                </div>
+                
             </div>
-            <div className={class2}>
+            <div className={`${class2} opacity-8`}>
                 PARTNERSHIPS
             </div>
         </div>
@@ -19,13 +24,13 @@ function Header(props) {
 
 function Namebox(x) {
     let class1 = "partnership_namebox_name "+x.color+"1"
-    let class2 = "partnership_namebox_score "+x.color+"2"
+    let class2 = "partnership_namebox_score "+x.color+"1"
     return (
         <div className='partnership_namebox'>
             <div className={class1}>
                 {x.name}
             </div>
-            <div className={class2}>
+            <div className={`${class2} opacity-8`}>
                 <div className='partnership_namebox_score_runs'>
                     {x.runs}
                 </div>

@@ -69,7 +69,7 @@ end
 #   end
 # end
 
-points = get_mvp_tid(7)
+points = get_mvp_tid(8)
 points = points.sort_by { |key, value| -value }
 points = points[..6]
 
